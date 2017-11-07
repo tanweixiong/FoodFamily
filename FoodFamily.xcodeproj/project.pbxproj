@@ -320,9 +320,7 @@
 			isa = PBXGroup;
 			children = (
 				2316A2C81FAD934C00A0B512 /* Controller */,
-				2316A2C91FAD934C00A0B512 /* Model */,
 				2316A2CA1FAD934C00A0B512 /* View */,
-				2316A2CB1FAD934C00A0B512 /* ViewModel */,
 			);
 			path = "Home(主页)";
 			sourceTree = "<group>";
@@ -336,13 +334,6 @@
 				23BADCF21FB14D8A00FCD373 /* FoodReservationVC.swift */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		2316A2C91FAD934C00A0B512 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		2316A2CA1FAD934C00A0B512 /* View */ = {
@@ -366,13 +357,6 @@
 				2388E0A91FB0486C00AB6853 /* FoodDetailsFoodView.xib */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		2316A2CB1FAD934C00A0B512 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		2316A2CC1FAD93D800A0B512 /* Chef(厨师) */ = {
