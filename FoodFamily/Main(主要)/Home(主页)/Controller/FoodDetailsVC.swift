@@ -68,7 +68,7 @@ class FoodDetailsVC: MainViewController,UITableViewDelegate,UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return FoodDetailsUX.sectionHeight
+        return section == 0 ? FoodDetailsUX.sectionHeight : 0
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -124,6 +124,7 @@ class FoodDetailsVC: MainViewController,UITableViewDelegate,UITableViewDataSourc
         let headView = UIView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: FoodDetailsUX.headViewHeight))
         headView.backgroundColor = UIColor.clear
         tableView.tableHeaderView = headView
+        tableView.separatorStyle = .none
         return tableView
     }()
     

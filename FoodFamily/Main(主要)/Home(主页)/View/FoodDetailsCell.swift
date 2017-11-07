@@ -56,6 +56,7 @@ class FoodDetailsCell: UITableViewCell {
         let layers = CALayer()
         layers.frame = CGRect(x: 26, y: listView.frame.size.height - 0.5 ,width: SCREEN_WIDTH - 52  ,height:0.5)
         layers.backgroundColor  = UIColor.R_UIRGBColor(red: 237, green: 237, blue: 237, alpha: 1).cgColor
+//        layers.backgroundColor = UIColor.orange.cgColor
         return layers
     }()
     

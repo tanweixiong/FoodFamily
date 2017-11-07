@@ -34,7 +34,8 @@ class FoodReservationVC: UIViewController,UITableViewDelegate,UITableViewDataSou
     }
     
     @objc func nextOnClick(){
-         
+        let vc = FoodReservationPayVC()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -50,7 +51,7 @@ class FoodReservationVC: UIViewController,UITableViewDelegate,UITableViewDataSou
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return FoodReservationUX.sectionHeight
+        return section == 0 ? FoodReservationUX.sectionHeight/2 : FoodReservationUX.sectionHeight
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

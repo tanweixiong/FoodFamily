@@ -52,6 +52,18 @@
 		23BADCFC1FB1503F00FCD373 /* FoodReservationCodeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23BADCFA1FB1503F00FCD373 /* FoodReservationCodeCell.xib */; };
 		23BADCFF1FB1508C00FCD373 /* FoodReservationFilliCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BADCFD1FB1508C00FCD373 /* FoodReservationFilliCell.swift */; };
 		23BADD001FB1508C00FCD373 /* FoodReservationFilliCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23BADCFE1FB1508C00FCD373 /* FoodReservationFilliCell.xib */; };
+		23BADD021FB18CD100FCD373 /* FoodReservationPayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BADD011FB18CD100FCD373 /* FoodReservationPayVC.swift */; };
+		23BADD061FB18D2200FCD373 /* FoodReservationPayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BADD041FB18D2200FCD373 /* FoodReservationPayCell.swift */; };
+		23BADD071FB18D2200FCD373 /* FoodReservationPayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23BADD051FB18D2200FCD373 /* FoodReservationPayCell.xib */; };
+		23BADD0A1FB18D5E00FCD373 /* FoodReservationPaymentMethodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BADD081FB18D5E00FCD373 /* FoodReservationPaymentMethodCell.swift */; };
+		23BADD0B1FB18D5E00FCD373 /* FoodReservationPaymentMethodCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23BADD091FB18D5E00FCD373 /* FoodReservationPaymentMethodCell.xib */; };
+		23BADD0E1FB1988600FCD373 /* FoodReservationPaymentCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BADD0C1FB1988600FCD373 /* FoodReservationPaymentCardCell.swift */; };
+		23BADD0F1FB1988600FCD373 /* FoodReservationPaymentCardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23BADD0D1FB1988600FCD373 /* FoodReservationPaymentCardCell.xib */; };
+		23BADD111FB1A32F00FCD373 /* FoodPurchaseNotesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BADD101FB1A32F00FCD373 /* FoodPurchaseNotesVC.swift */; };
+		23BADD141FB1A38000FCD373 /* FoodPurchaseNotesHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BADD131FB1A38000FCD373 /* FoodPurchaseNotesHeadView.swift */; };
+		23BADD161FB1A38F00FCD373 /* FoodPurchaseNotesHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23BADD151FB1A38F00FCD373 /* FoodPurchaseNotesHeadView.xib */; };
+		23BADD191FB1A5BE00FCD373 /* FoodPurchaseNotesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BADD171FB1A5BE00FCD373 /* FoodPurchaseNotesCell.swift */; };
+		23BADD1A1FB1A5BE00FCD373 /* FoodPurchaseNotesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23BADD181FB1A5BE00FCD373 /* FoodPurchaseNotesCell.xib */; };
 		23D0E3E01FAD97B70058EA34 /* TopicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D0E3DE1FAD97B70058EA34 /* TopicTableViewCell.swift */; };
 		23D0E3E11FAD97B70058EA34 /* TopicTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23D0E3DF1FAD97B70058EA34 /* TopicTableViewCell.xib */; };
 		23D0E3E41FAD9C380058EA34 /* RecommendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D0E3E21FAD9C380058EA34 /* RecommendTableViewCell.swift */; };
@@ -137,6 +149,18 @@
 		23BADCFA1FB1503F00FCD373 /* FoodReservationCodeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoodReservationCodeCell.xib; sourceTree = "<group>"; };
 		23BADCFD1FB1508C00FCD373 /* FoodReservationFilliCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodReservationFilliCell.swift; sourceTree = "<group>"; };
 		23BADCFE1FB1508C00FCD373 /* FoodReservationFilliCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoodReservationFilliCell.xib; sourceTree = "<group>"; };
+		23BADD011FB18CD100FCD373 /* FoodReservationPayVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodReservationPayVC.swift; sourceTree = "<group>"; };
+		23BADD041FB18D2200FCD373 /* FoodReservationPayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodReservationPayCell.swift; sourceTree = "<group>"; };
+		23BADD051FB18D2200FCD373 /* FoodReservationPayCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoodReservationPayCell.xib; sourceTree = "<group>"; };
+		23BADD081FB18D5E00FCD373 /* FoodReservationPaymentMethodCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodReservationPaymentMethodCell.swift; sourceTree = "<group>"; };
+		23BADD091FB18D5E00FCD373 /* FoodReservationPaymentMethodCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoodReservationPaymentMethodCell.xib; sourceTree = "<group>"; };
+		23BADD0C1FB1988600FCD373 /* FoodReservationPaymentCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodReservationPaymentCardCell.swift; sourceTree = "<group>"; };
+		23BADD0D1FB1988600FCD373 /* FoodReservationPaymentCardCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoodReservationPaymentCardCell.xib; sourceTree = "<group>"; };
+		23BADD101FB1A32F00FCD373 /* FoodPurchaseNotesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodPurchaseNotesVC.swift; sourceTree = "<group>"; };
+		23BADD131FB1A38000FCD373 /* FoodPurchaseNotesHeadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodPurchaseNotesHeadView.swift; sourceTree = "<group>"; };
+		23BADD151FB1A38F00FCD373 /* FoodPurchaseNotesHeadView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoodPurchaseNotesHeadView.xib; sourceTree = "<group>"; };
+		23BADD171FB1A5BE00FCD373 /* FoodPurchaseNotesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodPurchaseNotesCell.swift; sourceTree = "<group>"; };
+		23BADD181FB1A5BE00FCD373 /* FoodPurchaseNotesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoodPurchaseNotesCell.xib; sourceTree = "<group>"; };
 		23D0E3DE1FAD97B70058EA34 /* TopicTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicTableViewCell.swift; sourceTree = "<group>"; };
 		23D0E3DF1FAD97B70058EA34 /* TopicTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopicTableViewCell.xib; sourceTree = "<group>"; };
 		23D0E3E21FAD9C380058EA34 /* RecommendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendTableViewCell.swift; sourceTree = "<group>"; };
@@ -330,8 +354,10 @@
 			children = (
 				2316A2E01FAD941700A0B512 /* HomeController.swift */,
 				2359E2251FB06207009CEE5D /* RecommendDetailsVC.swift */,
+				23BADD101FB1A32F00FCD373 /* FoodPurchaseNotesVC.swift */,
 				2388E09B1FAFFF4600AB6853 /* FoodDetailsVC.swift */,
 				23BADCF21FB14D8A00FCD373 /* FoodReservationVC.swift */,
+				23BADD011FB18CD100FCD373 /* FoodReservationPayVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -341,6 +367,8 @@
 			children = (
 				2359E2271FB0626B009CEE5D /* RecommendDetailsView */,
 				23BADCF41FB14E4000FCD373 /* FoodReservationView */,
+				23BADD031FB18CEC00FCD373 /* FoodReservationPayView */,
+				23BADD121FB1A35800FCD373 /* FoodPurchaseNotesView */,
 				23D0E3FA1FADBCFD0058EA34 /* BoutiqueScrollView.h */,
 				23D0E3FB1FADBCFD0058EA34 /* BoutiqueScrollView.m */,
 				23D0E3F61FADBC4B0058EA34 /* TYCyclePagerViewCell.h */,
@@ -559,6 +587,30 @@
 			path = FoodReservationView;
 			sourceTree = "<group>";
 		};
+		23BADD031FB18CEC00FCD373 /* FoodReservationPayView */ = {
+			isa = PBXGroup;
+			children = (
+				23BADD041FB18D2200FCD373 /* FoodReservationPayCell.swift */,
+				23BADD051FB18D2200FCD373 /* FoodReservationPayCell.xib */,
+				23BADD0C1FB1988600FCD373 /* FoodReservationPaymentCardCell.swift */,
+				23BADD0D1FB1988600FCD373 /* FoodReservationPaymentCardCell.xib */,
+				23BADD081FB18D5E00FCD373 /* FoodReservationPaymentMethodCell.swift */,
+				23BADD091FB18D5E00FCD373 /* FoodReservationPaymentMethodCell.xib */,
+			);
+			path = FoodReservationPayView;
+			sourceTree = "<group>";
+		};
+		23BADD121FB1A35800FCD373 /* FoodPurchaseNotesView */ = {
+			isa = PBXGroup;
+			children = (
+				23BADD131FB1A38000FCD373 /* FoodPurchaseNotesHeadView.swift */,
+				23BADD151FB1A38F00FCD373 /* FoodPurchaseNotesHeadView.xib */,
+				23BADD171FB1A5BE00FCD373 /* FoodPurchaseNotesCell.swift */,
+				23BADD181FB1A5BE00FCD373 /* FoodPurchaseNotesCell.xib */,
+			);
+			path = FoodPurchaseNotesView;
+			sourceTree = "<group>";
+		};
 		23D0E3EA1FADBC000058EA34 /* Vender(第三方) */ = {
 			isa = PBXGroup;
 			children = (
@@ -719,11 +771,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23BADD1A1FB1A5BE00FCD373 /* FoodPurchaseNotesCell.xib in Resources */,
 				2316A28D1FAD71FE00A0B512 /* LaunchScreen.storyboard in Resources */,
 				23BADCFC1FB1503F00FCD373 /* FoodReservationCodeCell.xib in Resources */,
 				2388E0AA1FB0486C00AB6853 /* FoodDetailsFoodView.xib in Resources */,
+				23BADD161FB1A38F00FCD373 /* FoodPurchaseNotesHeadView.xib in Resources */,
 				2359E2371FB06345009CEE5D /* RecommendedReasonCell.xib in Resources */,
 				23D0E3E11FAD97B70058EA34 /* TopicTableViewCell.xib in Resources */,
+				23BADD0F1FB1988600FCD373 /* FoodReservationPaymentCardCell.xib in Resources */,
 				23D0E3E51FAD9C380058EA34 /* RecommendTableViewCell.xib in Resources */,
 				2359E23F1FB0639D009CEE5D /* RecommendedCommentCell.xib in Resources */,
 				23D0E3E91FADA2740058EA34 /* BoutiqueTableViewCell.xib in Resources */,
@@ -735,7 +790,9 @@
 				23BADCF81FB14EA500FCD373 /* FoodReservationCell.xib in Resources */,
 				23BADD001FB1508C00FCD373 /* FoodReservationFilliCell.xib in Resources */,
 				2388E0A01FAFFF7B00AB6853 /* FoodDetailsCell.xib in Resources */,
+				23BADD0B1FB18D5E00FCD373 /* FoodReservationPaymentMethodCell.xib in Resources */,
 				2359E2431FB086A5009CEE5D /* RecommendHeadView.xib in Resources */,
+				23BADD071FB18D2200FCD373 /* FoodReservationPayCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -901,12 +958,15 @@
 				2388E0A81FB0485A00AB6853 /* FoodDetailsFoodView.swift in Sources */,
 				2316A2BB1FAD8BD000A0B512 /* RegularDefinition.swift in Sources */,
 				23D0E3E81FADA2740058EA34 /* BoutiqueTableViewCell.swift in Sources */,
+				23BADD191FB1A5BE00FCD373 /* FoodPurchaseNotesCell.swift in Sources */,
 				2316A2E31FAD942C00A0B512 /* CrowdfundingController.swift in Sources */,
 				2316A2C31FAD8F4700A0B512 /* Extensions.swift in Sources */,
 				2359E22E1FB062CA009CEE5D /* RecommendNaviCell.swift in Sources */,
+				23BADD111FB1A32F00FCD373 /* FoodPurchaseNotesVC.swift in Sources */,
 				23BADCFB1FB1503F00FCD373 /* FoodReservationCodeCell.swift in Sources */,
 				2316A2851FAD71FE00A0B512 /* ViewController.swift in Sources */,
 				23D0E3FC1FADBCFD0058EA34 /* BoutiqueScrollView.m in Sources */,
+				23BADD0E1FB1988600FCD373 /* FoodReservationPaymentCardCell.swift in Sources */,
 				2388E0A61FB00FD400AB6853 /* UINavigationBar+Other.m in Sources */,
 				23D0E3F41FADBC000058EA34 /* TYPageControl.m in Sources */,
 				23D0E3E41FAD9C380058EA34 /* RecommendTableViewCell.swift in Sources */,
@@ -923,9 +983,11 @@
 				2316A2B71FAD8AF300A0B512 /* FMNavigationController.swift in Sources */,
 				23D0E3E01FAD97B70058EA34 /* TopicTableViewCell.swift in Sources */,
 				2316A2E51FAD944300A0B512 /* CollegeController.swift in Sources */,
+				23BADD061FB18D2200FCD373 /* FoodReservationPayCell.swift in Sources */,
 				2359E2411FB08698009CEE5D /* RecommendHeadView.swift in Sources */,
 				2359E2361FB06345009CEE5D /* RecommendedReasonCell.swift in Sources */,
 				23BADCFF1FB1508C00FCD373 /* FoodReservationFilliCell.swift in Sources */,
+				23BADD141FB1A38000FCD373 /* FoodPurchaseNotesHeadView.swift in Sources */,
 				23BADCF71FB14EA500FCD373 /* FoodReservationCell.swift in Sources */,
 				23BADCEF1FB140B600FCD373 /* RecommendedFoodView.swift in Sources */,
 				2316A2831FAD71FE00A0B512 /* AppDelegate.swift in Sources */,
@@ -933,6 +995,8 @@
 				2359E23A1FB06376009CEE5D /* RecommendedMoneyCell.swift in Sources */,
 				2316A2E91FAD947300A0B512 /* MineController.swift in Sources */,
 				23D0E3F21FADBC000058EA34 /* TYCyclePagerTransformLayout.m in Sources */,
+				23BADD0A1FB18D5E00FCD373 /* FoodReservationPaymentMethodCell.swift in Sources */,
+				23BADD021FB18CD100FCD373 /* FoodReservationPayVC.swift in Sources */,
 				2388E09F1FAFFF7B00AB6853 /* FoodDetailsCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
