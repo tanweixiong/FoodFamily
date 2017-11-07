@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="RecommendedCommentCell" customModule="FoodFamily" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="199.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_home_icon" translatesAutoresizingMaskIntoConstraints="NO" id="U4f-OW-yyA">
+                        <rect key="frame" x="26" y="20" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="U4f-OW-yyA" secondAttribute="height" multiplier="1:1" id="On5-0C-4dh"/>
+                            <constraint firstAttribute="width" constant="40" id="msU-fO-aTX"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="20"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="狄瑞吉" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Hb-jx-VLL">
+                        <rect key="frame" x="71" y="30.5" width="43" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="zJZ-Kb-1oE"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.2627450980392157" green="0.25882352941176467" blue="0.2627450980392157" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2017-10-10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="URY-Ux-JlM">
+                        <rect key="frame" x="273.5" y="32" width="74.5" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="dYd-n0-bWK"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zuR-Q3-OW3">
+                        <rect key="frame" x="71" y="64" width="277" height="42"/>
+                        <attributedString key="attributedText">
+                            <fragment content="菜品不错，味道很好，棒棒哒">
+                                <attributes>
+                                    <color key="NSColor" red="0.26274509800000001" green="0.25882352939999997" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <font key="NSFont" size="14" name=".PingFangSC-Regular"/>
+                                </attributes>
+                            </fragment>
+                            <fragment content="菜品不错，味道很好，棒棒哒菜品不错，味道很好，棒棒哒">
+                                <attributes>
+                                    <color key="NSColor" red="0.26274999999999998" green="0.25881999999999999" blue="0.26274999999999998" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                    <font key="NSFont" size="14" name=".PingFangSC-Regular"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VT2-ev-31b">
+                        <rect key="frame" x="71" y="120" width="203" height="65"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_home_food" translatesAutoresizingMaskIntoConstraints="NO" id="Jrr-EC-76c">
+                                <rect key="frame" x="0.0" y="0.0" width="64.5" height="65"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_home_food" translatesAutoresizingMaskIntoConstraints="NO" id="V7f-ha-oAU">
+                                <rect key="frame" x="69.5" y="0.0" width="64" height="65"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_home_food" translatesAutoresizingMaskIntoConstraints="NO" id="5YK-rf-PHf">
+                                <rect key="frame" x="138.5" y="0.0" width="64.5" height="65"/>
+                            </imageView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="V7f-ha-oAU" secondAttribute="bottom" id="2H6-kD-i29"/>
+                            <constraint firstAttribute="width" constant="203" id="35F-ZB-W2o"/>
+                            <constraint firstItem="Jrr-EC-76c" firstAttribute="top" secondItem="VT2-ev-31b" secondAttribute="top" id="8pT-cZ-KIS"/>
+                            <constraint firstAttribute="bottom" secondItem="Jrr-EC-76c" secondAttribute="bottom" id="BkG-QJ-XeB"/>
+                            <constraint firstItem="5YK-rf-PHf" firstAttribute="leading" secondItem="V7f-ha-oAU" secondAttribute="trailing" constant="5" id="FfA-Cl-gne"/>
+                            <constraint firstItem="V7f-ha-oAU" firstAttribute="width" secondItem="Jrr-EC-76c" secondAttribute="width" id="IM3-wQ-c02"/>
+                            <constraint firstItem="5YK-rf-PHf" firstAttribute="height" secondItem="Jrr-EC-76c" secondAttribute="height" id="bPo-ku-HoG"/>
+                            <constraint firstItem="Jrr-EC-76c" firstAttribute="leading" secondItem="VT2-ev-31b" secondAttribute="leading" id="eVR-Zb-7gU"/>
+                            <constraint firstItem="5YK-rf-PHf" firstAttribute="top" secondItem="VT2-ev-31b" secondAttribute="top" id="iak-Fl-ifh"/>
+                            <constraint firstItem="5YK-rf-PHf" firstAttribute="width" secondItem="Jrr-EC-76c" secondAttribute="width" id="k3A-2a-6WL"/>
+                            <constraint firstItem="V7f-ha-oAU" firstAttribute="top" secondItem="VT2-ev-31b" secondAttribute="top" id="kYe-gw-8PK"/>
+                            <constraint firstAttribute="trailing" secondItem="5YK-rf-PHf" secondAttribute="trailing" id="rAO-Ic-mS2"/>
+                            <constraint firstItem="V7f-ha-oAU" firstAttribute="leading" secondItem="Jrr-EC-76c" secondAttribute="trailing" constant="5" id="wSu-ag-Ey3"/>
+                            <constraint firstItem="V7f-ha-oAU" firstAttribute="height" secondItem="Jrr-EC-76c" secondAttribute="height" id="x08-I6-gi6"/>
+                            <constraint firstAttribute="bottom" secondItem="5YK-rf-PHf" secondAttribute="bottom" id="xN2-cr-DY4"/>
+                            <constraint firstAttribute="height" constant="65" id="zJJ-y7-A92"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="7Hb-jx-VLL" firstAttribute="centerY" secondItem="U4f-OW-yyA" secondAttribute="centerY" id="30z-aB-16C"/>
+                    <constraint firstItem="7Hb-jx-VLL" firstAttribute="leading" secondItem="U4f-OW-yyA" secondAttribute="trailing" constant="5" id="5jh-rO-3Ar"/>
+                    <constraint firstItem="U4f-OW-yyA" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="K7L-f1-cwr"/>
+                    <constraint firstAttribute="trailing" secondItem="URY-Ux-JlM" secondAttribute="trailing" constant="27" id="RAM-bi-Peh"/>
+                    <constraint firstItem="U4f-OW-yyA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="26" id="TZp-ho-NB1"/>
+                    <constraint firstItem="URY-Ux-JlM" firstAttribute="trailing" secondItem="zuR-Q3-OW3" secondAttribute="trailing" id="UJ5-jj-cka"/>
+                    <constraint firstItem="zuR-Q3-OW3" firstAttribute="leading" secondItem="7Hb-jx-VLL" secondAttribute="leading" id="W4y-uz-Cgp"/>
+                    <constraint firstItem="VT2-ev-31b" firstAttribute="top" secondItem="zuR-Q3-OW3" secondAttribute="bottom" constant="14" id="Y7w-rk-SHv"/>
+                    <constraint firstItem="zuR-Q3-OW3" firstAttribute="top" secondItem="7Hb-jx-VLL" secondAttribute="bottom" constant="13" id="a6Z-DP-54p"/>
+                    <constraint firstItem="VT2-ev-31b" firstAttribute="leading" secondItem="7Hb-jx-VLL" secondAttribute="leading" id="gZf-t4-Pcl"/>
+                    <constraint firstItem="URY-Ux-JlM" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="32" id="msO-FW-kP2"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="ic_home_food" width="151" height="129"/>
+        <image name="ic_home_icon" width="28" height="26"/>
+    </resources>
+</document>
