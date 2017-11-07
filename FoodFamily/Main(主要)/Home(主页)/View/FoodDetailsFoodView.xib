@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="FoodDetailsFoodView" customModule="FoodFamily" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pwk-MX-Eq2">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="399" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xh7-LZ-fuK">
+                            <rect key="frame" x="28" y="14.5" width="40.5" height="22"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="22" id="Me4-xm-6Av"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                            <color key="textColor" red="1" green="0.15686274510000001" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¥" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iF0-i1-EJq">
+                            <rect key="frame" x="20" y="22" width="8" height="14.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <color key="textColor" red="1" green="0.15686274510000001" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SRs-ya-tFN">
+                            <rect key="frame" x="256" y="7" width="110" height="36"/>
+                            <color key="backgroundColor" red="0.82745098039999998" green="0.69803921570000005" blue="0.41176470590000003" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="110" id="KHf-Yg-dex"/>
+                                <constraint firstAttribute="height" constant="36" id="c7R-oK-aw0"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <state key="normal" title="立即购买">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="5"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="buyNowClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="VNP-Oz-Yba"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¥713" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C80-oe-79m">
+                            <rect key="frame" x="73.5" y="19.5" width="32" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="xh7-LZ-fuK" firstAttribute="leading" secondItem="iF0-i1-EJq" secondAttribute="trailing" id="6fV-CY-uzD"/>
+                        <constraint firstItem="xh7-LZ-fuK" firstAttribute="centerY" secondItem="pwk-MX-Eq2" secondAttribute="centerY" id="AfW-Xb-cti"/>
+                        <constraint firstItem="C80-oe-79m" firstAttribute="leading" secondItem="xh7-LZ-fuK" secondAttribute="trailing" constant="5" id="Bbb-BH-sNa"/>
+                        <constraint firstAttribute="trailing" secondItem="SRs-ya-tFN" secondAttribute="trailing" constant="9" id="CxC-ru-ltA"/>
+                        <constraint firstItem="C80-oe-79m" firstAttribute="bottom" secondItem="xh7-LZ-fuK" secondAttribute="bottom" id="P8S-Lm-84z"/>
+                        <constraint firstItem="SRs-ya-tFN" firstAttribute="centerY" secondItem="pwk-MX-Eq2" secondAttribute="centerY" id="e6r-XG-WSo"/>
+                        <constraint firstItem="iF0-i1-EJq" firstAttribute="leading" secondItem="pwk-MX-Eq2" secondAttribute="leading" constant="20" id="nt9-hY-sbl"/>
+                        <constraint firstItem="xh7-LZ-fuK" firstAttribute="bottom" secondItem="iF0-i1-EJq" secondAttribute="bottom" id="sbR-Gp-qWC"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="pwk-MX-Eq2" secondAttribute="trailing" id="GTx-K2-HTg"/>
+                <constraint firstItem="pwk-MX-Eq2" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="R23-ya-9Gm"/>
+                <constraint firstItem="pwk-MX-Eq2" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="y9T-48-JPx"/>
+                <constraint firstAttribute="bottom" secondItem="pwk-MX-Eq2" secondAttribute="bottom" id="zbv-wA-MyZ"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="discountLabel" destination="C80-oe-79m" id="b96-ff-qg2"/>
+            </connections>
+            <point key="canvasLocation" x="5" y="-157"/>
+        </view>
+    </objects>
+</document>
