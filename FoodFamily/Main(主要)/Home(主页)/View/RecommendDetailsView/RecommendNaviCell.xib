@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="RecommendNaviCell" customModule="FoodFamily" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="49.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_home_address" translatesAutoresizingMaskIntoConstraints="NO" id="GYL-3a-vio">
+                        <rect key="frame" x="20" y="17.5" width="12" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="12" id="8R0-ct-xaN"/>
+                            <constraint firstAttribute="height" constant="15" id="ATB-gS-u1C"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="广州天河区高德置地花城汇北2027号" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="smM-uE-gqN">
+                        <rect key="frame" x="37" y="17" width="213" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.26274509800000001" green="0.25882352939999997" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yRt-Zl-VRP">
+                        <rect key="frame" x="255" y="12.5" width="55" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="55" id="Wp0-mA-7Ql"/>
+                            <constraint firstAttribute="height" constant="25" id="u9P-gE-iXy"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <state key="normal" title="导航">
+                            <color key="titleColor" red="1" green="0.36078431372549019" blue="0.51764705882352935" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="5"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="GYL-3a-vio" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="345-jN-EeY"/>
+                    <constraint firstAttribute="trailing" secondItem="yRt-Zl-VRP" secondAttribute="trailing" constant="10" id="Bbu-VH-rpO"/>
+                    <constraint firstItem="yRt-Zl-VRP" firstAttribute="leading" secondItem="smM-uE-gqN" secondAttribute="trailing" constant="5" id="Bw5-NF-Vb7"/>
+                    <constraint firstItem="yRt-Zl-VRP" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="XXB-tW-gi6"/>
+                    <constraint firstItem="smM-uE-gqN" firstAttribute="leading" secondItem="GYL-3a-vio" secondAttribute="trailing" constant="5" id="ezZ-Bg-rJM"/>
+                    <constraint firstItem="GYL-3a-vio" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="u1z-Ma-ncx"/>
+                    <constraint firstItem="smM-uE-gqN" firstAttribute="centerY" secondItem="GYL-3a-vio" secondAttribute="centerY" id="xQ6-1h-9e1"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="naviButton" destination="yRt-Zl-VRP" id="DTz-Wo-Hmd"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="ic_home_address" width="12" height="15"/>
+    </resources>
+</document>
