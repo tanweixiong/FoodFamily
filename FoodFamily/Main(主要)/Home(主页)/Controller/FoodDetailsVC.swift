@@ -173,7 +173,9 @@ class FoodDetailsVC: MainViewController,UITableViewDelegate,UITableViewDataSourc
         priceString.addAttribute(NSAttributedStringKey.strikethroughStyle, value: NSNumber.init(value: 1), range: NSRange(location: 0, length: priceString.length))
         view.discountLabel.attributedText = priceString
         view.buyNowCallBack = {(sender:UIButton) in
-            
+            let foodReservationPayVC = FoodReservationPayVC()
+            foodReservationPayVC.foodPaymentMethod = .normalPaymentStatus
+            self.navigationController?.pushViewController(foodReservationPayVC, animated: true)
         }
         return view
     }()

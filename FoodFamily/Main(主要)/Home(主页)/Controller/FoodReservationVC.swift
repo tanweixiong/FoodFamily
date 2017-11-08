@@ -33,11 +33,6 @@ class FoodReservationVC: UIViewController,UITableViewDelegate,UITableViewDataSou
         tableView.addSubview(nextBtn)
     }
     
-    @objc func nextOnClick(){
-        let vc = FoodReservationPayVC()
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
-    
     func numberOfSections(in tableView: UITableView) -> Int {
         return  5
     }
@@ -124,5 +119,11 @@ class FoodReservationVC: UIViewController,UITableViewDelegate,UITableViewDataSou
         btn.clipsToBounds = true
         return btn
     }()
+    
+    @objc func nextOnClick(){
+        let vc = FoodReservationPayVC()
+        vc.foodPaymentMethod = .reservationPaymentStatus
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     
 }

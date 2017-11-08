@@ -20,7 +20,7 @@ class FoodDetailsFoodView: UIView {
     */
     @IBAction func buyNowClick(_ sender: UIButton) {
         if self.buyNowCallBack != nil {
-            self.buyNowClick(sender)
+            self.buyNowCallBack!(sender)
         }
     }
     

@@ -398,16 +398,16 @@
 			children = (
 				239F06A11FB2F3D30067D810 /* HomeController.swift */,
 				239F06991FB2F3D10067D810 /* FoodDetailsVC.swift */,
-				239F06A31FB2F3D30067D810 /* FoodPurchaseNotesVC.swift */,
-				239F069E1FB2F3D20067D810 /* FoodReservationPayVC.swift */,
-				239F06A01FB2F3D20067D810 /* FoodReservationVC.swift */,
 				239F06981FB2F3D10067D810 /* RecommendDetailsVC.swift */,
-				239F069A1FB2F3D10067D810 /* FoodFeaturesDetailVC.swift */,
+				239F06A31FB2F3D30067D810 /* FoodPurchaseNotesVC.swift */,
+				239F06A01FB2F3D20067D810 /* FoodReservationVC.swift */,
+				239F069E1FB2F3D20067D810 /* FoodReservationPayVC.swift */,
 				239F069C1FB2F3D20067D810 /* FoodOrderDetailsVC.swift */,
+				239F069A1FB2F3D10067D810 /* FoodFeaturesDetailVC.swift */,
 				239F069D1FB2F3D20067D810 /* FoodPaymentCardCouponsVC.swift */,
-				239F069B1FB2F3D20067D810 /* FoodPurchaseSuccessVC.swift */,
 				239F06A21FB2F3D30067D810 /* FoodRecommendDetailVC.swift */,
 				239F069F1FB2F3D20067D810 /* FoodReservationFinishVC.swift */,
+				239F069B1FB2F3D20067D810 /* FoodPurchaseSuccessVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -416,15 +416,15 @@
 			isa = PBXGroup;
 			children = (
 				239F06C41FB2F4000067D810 /* RecommendDetailsView */,
+				239F06B81FB2F3FF0067D810 /* FoodReservationView */,
 				239F06E31FB2F4010067D810 /* FoodFeaturesDetailView */,
+				239F06DB1FB2F4010067D810 /* FoodPurchaseNotesView */,
 				239F06B01FB2F3FF0067D810 /* FoodOrderDetailsView */,
 				239F06B51FB2F3FF0067D810 /* FoodPaymentCardCouponsView */,
-				239F06DB1FB2F4010067D810 /* FoodPurchaseNotesView */,
 				239F06E01FB2F4010067D810 /* FoodPurchaseSuccessView */,
 				239F06D11FB2F4000067D810 /* FoodRecommendDetailView */,
 				239F06BF1FB2F4000067D810 /* FoodReservationFinishView */,
 				239F06D41FB2F4010067D810 /* FoodReservationPayView */,
-				239F06B81FB2F3FF0067D810 /* FoodReservationView */,
 				23D0E3FA1FADBCFD0058EA34 /* BoutiqueScrollView.h */,
 				23D0E3FB1FADBCFD0058EA34 /* BoutiqueScrollView.m */,
 				23D0E3F61FADBC4B0058EA34 /* TYCyclePagerViewCell.h */,

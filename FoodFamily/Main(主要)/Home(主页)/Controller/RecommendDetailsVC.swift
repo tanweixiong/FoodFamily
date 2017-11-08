@@ -41,8 +41,8 @@ class RecommendDetailsVC: UIViewController,UITableViewDelegate,UITableViewDataSo
     override func viewDidLoad() {
         super.viewDidLoad()
        self.view.addSubview(tableView)
-       self.view.addSubview(backBtn)
        self.view.addSubview(recommendFootView)
+       self.view.addSubview(backBtn)
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -163,13 +163,15 @@ class RecommendDetailsVC: UIViewController,UITableViewDelegate,UITableViewDataSo
         let view = Bundle.main.loadNibNamed("RecommendedFoodView", owner: nil, options: nil)?.last as! RecommendedFoodView
         view.frame = CGRect(x: 0, y:self.tableView.frame.maxY, width: SCREEN_WIDTH, height: RecommendDetailsUX.footViewHeight)
         view.recommendedFoodCallBack = {(recommendedType) in
+            self.navigationController?.navigationBar.alpha = 1
             if recommendedType == .collectionStatus {
                 
             }else if recommendedType == .reservationStatus {
                 let foodReservationVC = FoodReservationVC()
                 self.navigationController?.pushViewController(foodReservationVC, animated: true)
             }else if recommendedType == .payStatus {
-                
+                let foodReservationPayVC = FoodReservationPayVC()
+                self.navigationController?.pushViewController(foodReservationPayVC, animated: true)
             }
         }
         return view

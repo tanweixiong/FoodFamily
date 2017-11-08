@@ -22,8 +22,8 @@ class FoodPurchaseNotesVC: UIViewController,UITableViewDataSource,UITableViewDel
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         view.addSubview(tableView)
+        view.addSubview(backBtn)
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -81,6 +81,16 @@ class FoodPurchaseNotesVC: UIViewController,UITableViewDataSource,UITableViewDel
         return view
     }()
     
+    lazy var backBtn: UIButton = {
+        let backButton = UIButton.init(type: .custom)
+        backButton.setImage(UIImage(named: "ic_nav_back_white"), for: .normal)
+        backButton.sizeToFit()
+        backButton.contentEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0)
+        backButton.addTarget(self, action:  #selector(FoodDetailsVC.backClick), for: .touchUpInside)
+        backButton.frame = CGRect(x: 1, y: 21, width: 40, height: 40)
+        return backButton
+    }()
+    
     lazy var footView: FoodDetailsFoodView = {
         let view = Bundle.main.loadNibNamed("FoodDetailsFoodView", owner: nil, options: nil)?.last as! FoodDetailsFoodView
         view.frame = CGRect(x: 0, y: SCREEN_HEIGHT - 50 , width: SCREEN_WIDTH, height: FoodPurchaseNotesUX.footHeight)
@@ -88,7 +98,9 @@ class FoodPurchaseNotesVC: UIViewController,UITableViewDataSource,UITableViewDel
         priceString.addAttribute(NSAttributedStringKey.strikethroughStyle, value: NSNumber.init(value: 1), range: NSRange(location: 0, length: priceString.length))
         view.discountLabel.attributedText = priceString
         view.buyNowCallBack = {(sender:UIButton) in
-            
+            let foodReservationPayVC = FoodReservationPayVC()
+            foodReservationPayVC.foodPaymentMethod = .normalPaymentStatus
+            self.navigationController?.pushViewController(foodReservationPayVC, animated: true)
         }
         return view
     }()

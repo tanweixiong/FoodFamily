@@ -8,6 +8,11 @@
 
 import UIKit
 
+enum FoodPaymentMethodStatus {
+    case normalPaymentStatus
+    case reservationPaymentStatus
+}
+
 class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     fileprivate let dataScorce = ["使用卡券","钱包支付","微信支付","支付宝支付"]
     fileprivate let imageArray = ["ic_home_card","ic_home_card","ic_home_wechat","ic_home_alipay"]
@@ -15,6 +20,8 @@ class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewData
     fileprivate let foodReservationPaymentCardCell = "FoodReservationPaymentCardCell"
     fileprivate let foodReservationPaymentMethodCell = "FoodReservationPaymentMethodCell"
     fileprivate var indexPath = IndexPath()
+    
+    var foodPaymentMethod = FoodPaymentMethodStatus.normalPaymentStatus
     
     struct FoodReservationPayUX {
         static let foodReservationPayHeight:CGFloat = 90
@@ -24,7 +31,11 @@ class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewData
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.title = "支付"
+        if foodPaymentMethod == .normalPaymentStatus {
+            self.title = "支付"
+        }else{
+            self.title = "预约"
+        }
     }
     
     override func viewDidLoad() {
@@ -32,10 +43,6 @@ class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewData
          self.indexPath = NSIndexPath(row: 0, section: 2) as IndexPath
         view.addSubview(tableView)
         tableView.addSubview(confirmBtn)
-    }
-    
-    @objc func confirmOnClick(){
-        
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -82,7 +89,11 @@ class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewData
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.section == 0 || indexPath.section == 1 {return}
+        if indexPath.section == 0  {return}
+        if indexPath.section == 1 {
+            let foodPaymentCardCouponsVC = FoodPaymentCardCouponsVC()
+            self.navigationController?.pushViewController(foodPaymentCardCouponsVC, animated: true)
+            return}
         let selectedCell = tableView.cellForRow(at: IndexPath(row: 0, section: indexPath.section))as! FoodReservationPaymentMethodCell
         selectedCell.chooseBtn.isSelected = true
         let restoreCell = tableView.cellForRow(at: self.indexPath as IndexPath) as! FoodReservationPaymentMethodCell
@@ -115,5 +126,10 @@ class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewData
         btn.clipsToBounds = true
         return btn
     }()
+    
+    @objc func confirmOnClick(){
+        let foodPurchaseSuccessVC = FoodPurchaseSuccessVC()
+        self.navigationController?.pushViewController(foodPurchaseSuccessVC, animated: true)
+    }
     
 }
