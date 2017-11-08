@@ -12,6 +12,8 @@ let        SCREEN_WIDTH = UIScreen.main.bounds.size.width;
 
 let        SCREEN_HEIGHT = UIScreen.main.bounds.size.height;
 
+let        SCREEN_HEIGHT_INSIDE = UIScreen.main.bounds.size.height - 64;
+
 func       XMAKE(_ x: CGFloat) -> CGFloat {
     return x * UIScreen.main.bounds.size.width/375;
 }

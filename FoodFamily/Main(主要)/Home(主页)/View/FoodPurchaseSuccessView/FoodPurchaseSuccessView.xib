@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="FoodPurchaseSuccessView" customModule="FoodFamily" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="85E-Kj-2By">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_all_success" translatesAutoresizingMaskIntoConstraints="NO" id="UQg-er-J41">
+                            <rect key="frame" x="123" y="52" width="129" height="103.5"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="129" id="jPB-0E-yw3"/>
+                                <constraint firstAttribute="height" constant="103.5" id="xfA-Oo-vdI"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="购买成功，消费 12909个EC" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HEP-Z7-kx8">
+                            <rect key="frame" x="0.0" y="173" width="375" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="20" id="1eo-BD-4eJ"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mKf-ci-tJU">
+                            <rect key="frame" x="52.5" y="210" width="130" height="40"/>
+                            <state key="normal" title="查看详情">
+                                <color key="titleColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="5"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="onClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="zmI-GF-PIH"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Huq-Ws-XkC">
+                            <rect key="frame" x="192.5" y="210" width="130" height="40"/>
+                            <color key="backgroundColor" red="0.82745098039999998" green="0.69803921570000005" blue="0.41176470590000003" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="5zN-kJ-CTk"/>
+                                <constraint firstAttribute="width" constant="130" id="lww-Hr-c5F"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <state key="normal" title="继续购买">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="5"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="onClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="Sas-fW-weB"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.099394746124744415" green="0.088113375008106232" blue="0.098063625395298004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="HEP-Z7-kx8" secondAttribute="trailing" id="8Tm-KI-8mq"/>
+                        <constraint firstItem="HEP-Z7-kx8" firstAttribute="top" secondItem="85E-Kj-2By" secondAttribute="top" constant="173" id="Lab-bA-Mi2"/>
+                        <constraint firstItem="UQg-er-J41" firstAttribute="centerX" secondItem="85E-Kj-2By" secondAttribute="centerX" id="Llx-9c-cCE"/>
+                        <constraint firstItem="Huq-Ws-XkC" firstAttribute="leading" secondItem="85E-Kj-2By" secondAttribute="centerX" constant="5" id="Ms5-uQ-bwn"/>
+                        <constraint firstItem="mKf-ci-tJU" firstAttribute="trailing" secondItem="85E-Kj-2By" secondAttribute="centerX" constant="-5" id="ToE-A1-BiU"/>
+                        <constraint firstItem="Huq-Ws-XkC" firstAttribute="top" secondItem="mKf-ci-tJU" secondAttribute="top" id="a08-nr-IEB"/>
+                        <constraint firstItem="UQg-er-J41" firstAttribute="top" secondItem="85E-Kj-2By" secondAttribute="top" constant="52" id="kPs-Xm-y7p"/>
+                        <constraint firstItem="Huq-Ws-XkC" firstAttribute="width" secondItem="mKf-ci-tJU" secondAttribute="width" id="mAa-kn-oYn"/>
+                        <constraint firstItem="HEP-Z7-kx8" firstAttribute="centerX" secondItem="85E-Kj-2By" secondAttribute="centerX" id="oRE-a5-D7L"/>
+                        <constraint firstItem="Huq-Ws-XkC" firstAttribute="height" secondItem="mKf-ci-tJU" secondAttribute="height" id="rvg-KE-ubc"/>
+                        <constraint firstItem="HEP-Z7-kx8" firstAttribute="leading" secondItem="85E-Kj-2By" secondAttribute="leading" id="wqp-g2-QgN"/>
+                        <constraint firstItem="Huq-Ws-XkC" firstAttribute="centerY" secondItem="HEP-Z7-kx8" secondAttribute="bottom" constant="37" id="x4R-Uh-oKo"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="85E-Kj-2By" secondAttribute="trailing" id="AY7-RS-8of"/>
+                <constraint firstItem="85E-Kj-2By" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="ei2-MB-zIY"/>
+                <constraint firstItem="85E-Kj-2By" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="kx1-SH-are"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="85E-Kj-2By" secondAttribute="bottom" id="oqg-ZB-cIe"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="buyNowButton" destination="Huq-Ws-XkC" id="ML9-tM-MSN"/>
+                <outlet property="seeDetailsButton" destination="mKf-ci-tJU" id="Jbq-Oh-yVk"/>
+            </connections>
+            <point key="canvasLocation" x="-110" y="-271"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ic_all_success" width="134" height="104"/>
+    </resources>
+</document>
