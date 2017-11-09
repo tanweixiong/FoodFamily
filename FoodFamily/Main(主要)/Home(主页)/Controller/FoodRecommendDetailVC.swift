@@ -13,6 +13,7 @@ class FoodRecommendDetailVC: UIViewController,UITableViewDelegate,UITableViewDat
     
     struct FoodRecommendDetailUX {
         static let cellHeight:CGFloat = 180
+        static let sectionHeight:CGFloat = 20
     }
 
     override func viewDidLoad() {
@@ -21,15 +22,25 @@ class FoodRecommendDetailVC: UIViewController,UITableViewDelegate,UITableViewDat
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return  1
+        return  10
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return 1
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return  FoodRecommendDetailUX.cellHeight
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return FoodRecommendDetailUX.sectionHeight
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = UIView.init(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: FoodRecommendDetailUX.sectionHeight))
+        view.backgroundColor = UIColor.white
+        return view
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

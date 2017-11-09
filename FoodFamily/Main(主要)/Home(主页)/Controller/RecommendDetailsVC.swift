@@ -57,7 +57,7 @@ class RecommendDetailsVC: UIViewController,UITableViewDelegate,UITableViewDataSo
         if indexPath.section == 0 {
             return RecommendDetailsUX.recommendNaviHeight
         }else if indexPath.section == 1 {
-            return RecommendDetailsUX.recommendedReasonHeight
+            return  UserDefaults.standard.object(forKey: "height") != nil ? UserDefaults.standard.object(forKey: "height") as! CGFloat : 0
         }else if indexPath.section == 2 {
             return RecommendDetailsUX.recommendedMomeyHeight
         }else{
@@ -96,13 +96,21 @@ class RecommendDetailsVC: UIViewController,UITableViewDelegate,UITableViewDataSo
             return cell
         }else if indexPath.section == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: recommendedReasonCell, for: indexPath) as! RecommendedReasonCell
+            cell.setData()
+            cell.recommendedReasonCallBack = { (_ type:RecommendedType) in
+                self.pushViewController(type)
+            }
+            cell.recommendedReasonRefreshTheData = {() in
+                let vc = OCTools.getCurrentVC() as! RecommendDetailsVC
+                vc.tableView.reloadData()
+            }
             cell.selectionStyle = .none
+            cell.setNeedsDisplay()
             return cell
         }else if indexPath.section == 2 {
             let cell = tableView.dequeueReusableCell(withIdentifier: recommendedMomeyCell, for: indexPath) as! RecommendedMoneyCell
             cell.recommendedMoneyCallBack = {(sender:UIButton) in
-                let vc = FoodDetailsVC()
-                self.navigationController?.pushViewController(vc, animated: true)
+                self.pushViewController(.vouchersDetailStatus)
             }
             cell.selectionStyle = .none
             return cell
@@ -162,20 +170,48 @@ class RecommendDetailsVC: UIViewController,UITableViewDelegate,UITableViewDataSo
     lazy var recommendFootView: RecommendedFoodView = {
         let view = Bundle.main.loadNibNamed("RecommendedFoodView", owner: nil, options: nil)?.last as! RecommendedFoodView
         view.frame = CGRect(x: 0, y:self.tableView.frame.maxY, width: SCREEN_WIDTH, height: RecommendDetailsUX.footViewHeight)
-        view.recommendedFoodCallBack = {(recommendedType) in
-            self.navigationController?.navigationBar.alpha = 1
-            if recommendedType == .collectionStatus {
-                
-            }else if recommendedType == .reservationStatus {
-                let foodReservationVC = FoodReservationVC()
-                self.navigationController?.pushViewController(foodReservationVC, animated: true)
-            }else if recommendedType == .payStatus {
-                let foodReservationPayVC = FoodReservationPayVC()
-                self.navigationController?.pushViewController(foodReservationPayVC, animated: true)
-            }
+        view.recommendedFoodCallBack = {(_ type:RecommendedType) in
+           self.pushViewController(recommendedType)
         }
         return view
     }()
+    
+    func pushViewController(_ recommendedType:RecommendedType){
+        self.navigationController?.navigationBar.alpha = 1
+        switch recommendedType {
+        case .collectionStatus:
+            
+            break
+        case .reservationStatus:
+            let foodReservationVC = FoodReservationVC()
+            self.navigationController?.pushViewController(foodReservationVC, animated: true)
+            break
+        case .payStatus:
+            let foodReservationPayVC = FoodReservationPayVC()
+            self.navigationController?.pushViewController(foodReservationPayVC, animated: true)
+            break
+        case .recommendStatus:
+            let foodRecommendDetailVC = FoodRecommendDetailVC()
+            self.navigationController?.pushViewController(foodRecommendDetailVC, animated: true)
+            break
+        case .featuresStatus:
+            let foodFeaturesDetailVC = FoodFeaturesDetailVC()
+            self.navigationController?.pushViewController(foodFeaturesDetailVC, animated: true)
+            break
+        case .vouchersDetailStatus:
+            let foodPurchaseNotesVC = FoodPurchaseNotesVC()
+            self.navigationController?.pushViewController(foodPurchaseNotesVC, animated: true)
+            break
+        case .defaultDetailStatus:
+            let foodDetailsVC = FoodDetailsVC()
+            self.navigationController?.pushViewController(foodDetailsVC, animated: true)
+            break
+
+        default: break
+   
+        }
+    }
+    
     
     lazy var backBtn: UIButton = {
         let backButton = UIButton.init(type: .custom)

@@ -12,6 +12,10 @@ enum RecommendedType {
     case collectionStatus
     case reservationStatus
     case payStatus
+    case recommendStatus
+    case featuresStatus
+    case vouchersDetailStatus
+    case defaultDetailStatus
 }
 var recommendedType = RecommendedType.collectionStatus
 class RecommendedFoodView: UIView {

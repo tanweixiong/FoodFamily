@@ -8,33 +8,45 @@
 
 import UIKit
 
-class FoodFeaturesDetailVC: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        self.title = "特色菜"
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+class FoodFeaturesDetailVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
+    fileprivate let foodFeaturesDetailCell = "FoodFeaturesDetailCell"
+    
+    struct FoodFeaturesDetailUX {
+        static let cellHeight:CGFloat = 130
     }
     
-
-
-//    lazy var tableView: UITableView = {
-//        let tableView = UITableView.init(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT))
-//        tableView.showsVerticalScrollIndicator = false
-//        tableView.dataSource = self
-//        tableView.delegate = self
-//        tableView.register(UINib(nibName: "FoodReservationFinishHeadCell", bundle: nil),forCellReuseIdentifier: self.foodReservationFinishHeadCell)
-//        tableView.register(UINib(nibName: "FoodReservationFinishListCell", bundle: nil),forCellReuseIdentifier: self.foodReservationFinishListCell)
-//        tableView.backgroundColor = R_UISectionLineColor
-//        tableView.separatorColor = UIColor.clear
-//        tableView.tableFooterView = UIView()
-//        return tableView
-//    }()
-
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.title = "特色菜"
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return  1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return  FoodFeaturesDetailUX.cellHeight
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: foodFeaturesDetailCell, for: indexPath) as! FoodFeaturesDetailCell
+        cell.selectionStyle = .none
+        return cell
+    }
+    
+    lazy var tableView: UITableView = {
+        let tableView = UITableView.init(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT_INSIDE))
+        tableView.showsVerticalScrollIndicator = false
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(UINib(nibName: "FoodFeaturesDetailCell", bundle: nil),forCellReuseIdentifier: self.foodFeaturesDetailCell)
+        tableView.backgroundColor = R_UISectionLineColor
+        tableView.separatorColor = UIColor.clear
+        tableView.tableFooterView = UIView()
+        return tableView
+    }()
 }
