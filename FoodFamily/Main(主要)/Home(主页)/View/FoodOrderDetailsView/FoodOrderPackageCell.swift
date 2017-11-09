@@ -12,7 +12,7 @@ class FoodOrderPackageCell: UITableViewCell {
 
     struct FoodOrderPackageUX {
         static let backgroundHeight:CGFloat = 38.5
-        static let space:CGFloat = 0
+        static let space:CGFloat = 40
     }
     
     override func awakeFromNib() {

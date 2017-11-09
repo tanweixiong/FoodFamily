@@ -27,7 +27,7 @@ class RecommendedFoodView: UIView {
         case 2:
             recommendedType = .reservationStatus
         case 3:
-            recommendedType = .payStatus
+            recommendedType = .defaultDetailStatus
         default:
             break
         }

@@ -9,7 +9,7 @@
 import UIKit
 
 class FoodOrderDetailsCell: UITableViewCell {
-    var orderPaymentMethod = OrderPaymentMethod.normalPaymentStatus
+    var orderPaymentMethod = OrderPaymentMethod.ordinaryPaymentStatus
     struct FoodOrderDetailsUX {
         static let titleHeight:CGFloat = 14
         static let backgroundHeight:CGFloat = 38.5
@@ -18,7 +18,7 @@ class FoodOrderDetailsCell: UITableViewCell {
     
     var headingContentArray:NSArray = [] {
         didSet{
-            if orderPaymentMethod == .normalPaymentStatus {
+            if orderPaymentMethod == .ordinaryPaymentStatus {
                 headingContentArray = ["订单号码","订单时间","支付方式","使用卡券","消费总额"]
             }else{
                 headingContentArray = ["卷码","订单号码","订单时间","支付方式"]
@@ -28,7 +28,7 @@ class FoodOrderDetailsCell: UITableViewCell {
     
     var contentArray:NSArray = [] {
         didSet{
-            if orderPaymentMethod == .normalPaymentStatus {
+            if orderPaymentMethod == .ordinaryPaymentStatus {
                 contentArray = ["123123128390","2017-10-27 10:22:41","余额支付","满200减50","¥248"]
             }else{
                 contentArray = ["123192031239","123192031239","2017-10-27 10:22:41","余额支付"]
@@ -47,6 +47,9 @@ class FoodOrderDetailsCell: UITableViewCell {
     }
 
     lazy var listView: UIView = {
+        headingContentArray = NSArray()
+        contentArray = NSArray()
+        
         let view = UIView()
         for item in 0...headingContentArray.count - 1 {
             let backgroundVw = UIView()

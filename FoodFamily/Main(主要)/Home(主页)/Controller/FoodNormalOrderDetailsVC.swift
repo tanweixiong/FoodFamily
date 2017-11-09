@@ -50,7 +50,7 @@ class FoodNormalOrderDetailsVC: UIViewController,UITableViewDelegate,UITableView
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return FoodNormalOrderDetailsUX.sectionHeight
+        return section == 0 ? 0 : FoodNormalOrderDetailsUX.sectionHeight
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -76,7 +76,7 @@ class FoodNormalOrderDetailsVC: UIViewController,UITableViewDelegate,UITableView
         }else{
             let cell = tableView.dequeueReusableCell(withIdentifier: foodOrderDetailsCell, for: indexPath) as! FoodOrderDetailsCell
             cell.selectionStyle = .none
-            cell.setData(.normalPaymentStatus)
+            cell.setData(.ordinaryPaymentStatus)
             return cell
         }
     }

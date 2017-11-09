@@ -19,15 +19,21 @@ class FoodPurchaseNotesVC: UIViewController,UITableViewDataSource,UITableViewDel
          static let headViewHeight:CGFloat = 308
          static let sectionHeight:CGFloat = 20
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.alpha = 0
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(tableView)
+        view.addSubview(footView)
         view.addSubview(backBtn)
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        return  3
+        return  1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -49,15 +55,23 @@ class FoodPurchaseNotesVC: UIViewController,UITableViewDataSource,UITableViewDel
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.section == 0  {
-            let cell = tableView.dequeueReusableCell(withIdentifier: foodDetailsCell, for: indexPath) as! FoodDetailsCell
-            cell.selectionStyle = .none
-            cell.setData()
-            return cell
-        }else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: foodPurchaseNotesCell, for: indexPath) as! FoodPurchaseNotesCell
-            cell.selectionStyle = .none
-            return cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: foodDetailsCell, for: indexPath) as! FoodDetailsCell
+        cell.selectionStyle = .none
+        cell.setData()
+        return cell
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let sectionHeaderHeight:CGFloat = FoodPurchaseNotesUX.sectionHeight
+        if scrollView == self.tableView {
+            if scrollView.contentOffset.y <= sectionHeaderHeight&&scrollView.contentOffset.y >= 20 {
+                scrollView.contentInset = UIEdgeInsetsMake(-scrollView.contentOffset.y, 0, 0, 0);
+            }else if scrollView.contentOffset.y >= FoodPurchaseNotesUX.sectionHeight {
+                scrollView.contentInset = UIEdgeInsetsMake(-sectionHeaderHeight, 0, 0, 0);
+            }
+            if scrollView.contentOffset.y < 0 {
+                scrollView.contentInset = UIEdgeInsetsMake(-sectionHeaderHeight, 0, 0, 0);
+            }
         }
     }
     
@@ -69,7 +83,7 @@ class FoodPurchaseNotesVC: UIViewController,UITableViewDataSource,UITableViewDel
         tableView.register(UINib(nibName: "FoodPurchaseNotesHeadView", bundle: nil),forCellReuseIdentifier: self.foodPurchaseNotesHeadView)
         tableView.register(UINib(nibName: "FoodDetailsCell", bundle: nil),forCellReuseIdentifier: self.foodDetailsCell)
         tableView.register(UINib(nibName: "FoodPurchaseNotesCell", bundle: nil),forCellReuseIdentifier: self.foodPurchaseNotesCell)
-        tableView.backgroundColor = UIColor.clear
+        tableView.backgroundColor = R_UISectionLineColor
         tableView.tableFooterView = UIView()
         tableView.tableHeaderView = self.headView
         return tableView
@@ -86,10 +100,15 @@ class FoodPurchaseNotesVC: UIViewController,UITableViewDataSource,UITableViewDel
         backButton.setImage(UIImage(named: "ic_nav_back_white"), for: .normal)
         backButton.sizeToFit()
         backButton.contentEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0)
-        backButton.addTarget(self, action:  #selector(FoodDetailsVC.backClick), for: .touchUpInside)
+        backButton.addTarget(self, action:  #selector(FoodPurchaseNotesVC.backClick), for: .touchUpInside)
         backButton.frame = CGRect(x: 1, y: 21, width: 40, height: 40)
         return backButton
     }()
+    
+    @objc func backClick(){
+        self.navigationController?.navigationBar.alpha = 0
+        self.navigationController?.popViewController(animated: true)
+    }
     
     lazy var footView: FoodDetailsFoodView = {
         let view = Bundle.main.loadNibNamed("FoodDetailsFoodView", owner: nil, options: nil)?.last as! FoodDetailsFoodView
@@ -98,8 +117,10 @@ class FoodPurchaseNotesVC: UIViewController,UITableViewDataSource,UITableViewDel
         priceString.addAttribute(NSAttributedStringKey.strikethroughStyle, value: NSNumber.init(value: 1), range: NSRange(location: 0, length: priceString.length))
         view.discountLabel.attributedText = priceString
         view.buyNowCallBack = {(sender:UIButton) in
+            self.navigationController?.navigationBar.alpha = 1
             let foodReservationPayVC = FoodReservationPayVC()
             foodReservationPayVC.foodPaymentMethod = .normalPaymentStatus
+            foodReservationPayVC.paymentMethod = .voucherPaymentStatus
             self.navigationController?.pushViewController(foodReservationPayVC, animated: true)
         }
         return view

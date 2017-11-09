@@ -50,7 +50,7 @@ class FoodVoucherOrderDetailsVC: UIViewController,UITableViewDelegate,UITableVie
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return FoodVoucherOrderDetailsUX.sectionHeight
+        return section == 0 ? 0 : FoodVoucherOrderDetailsUX.sectionHeight
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

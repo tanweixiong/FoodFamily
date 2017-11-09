@@ -9,12 +9,12 @@
 import UIKit
 
 enum OrderPaymentMethod {
-    case normalPaymentStatus //线上支付方式
+    case ordinaryPaymentStatus //线上支付方式
     case voucherPaymentStatus //代金券支付方式
 }
 
 class FoodPurchaseSuccessVC: MainViewController {
-    var orderPaymentMethod = OrderPaymentMethod.normalPaymentStatus
+    var paymentMethod = OrderPaymentMethod.ordinaryPaymentStatus
     struct FoodPurchaseSuccessUX {
         static let foodPurchaseSuccessViewHeight:CGFloat = 300
     }
@@ -46,8 +46,13 @@ class FoodPurchaseSuccessVC: MainViewController {
         view.frame = CGRect(x: 0, y: 0 , width: SCREEN_WIDTH, height:FoodPurchaseSuccessUX.foodPurchaseSuccessViewHeight)
         view.foodPurchaseSuccessCallBack = {(_ foodPurchaseSuccessChooseType:FoodPurchaseSuccessChooseType) in
             if foodPurchaseSuccessChooseType == .seeDetailsStatus{
-                let foodVoucherOrderDetailsVC = FoodVoucherOrderDetailsVC()
-                self.navigationController?.pushViewController(foodVoucherOrderDetailsVC, animated: true)
+                if self.paymentMethod == .ordinaryPaymentStatus{
+                    let foodNormalOrderDetailsVC = FoodNormalOrderDetailsVC()
+                    self.navigationController?.pushViewController(foodNormalOrderDetailsVC, animated: true)
+                }else{
+                    let foodVoucherOrderDetailsVC = FoodVoucherOrderDetailsVC()
+                    self.navigationController?.pushViewController(foodVoucherOrderDetailsVC, animated: true)
+                }
             }else{
                 
             }

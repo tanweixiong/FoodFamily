@@ -22,6 +22,7 @@ class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewData
     fileprivate var indexPath = IndexPath()
     
     var foodPaymentMethod = FoodPaymentMethodStatus.normalPaymentStatus
+    var paymentMethod = OrderPaymentMethod.ordinaryPaymentStatus
     
     struct FoodReservationPayUX {
         static let foodReservationPayHeight:CGFloat = 90
@@ -129,6 +130,7 @@ class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewData
     
     @objc func confirmOnClick(){
         let foodPurchaseSuccessVC = FoodPurchaseSuccessVC()
+        foodPurchaseSuccessVC.paymentMethod = self.paymentMethod
         self.navigationController?.pushViewController(foodPurchaseSuccessVC, animated: true)
     }
     
