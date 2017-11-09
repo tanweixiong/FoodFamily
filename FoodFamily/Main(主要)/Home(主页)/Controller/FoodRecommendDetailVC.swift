@@ -8,17 +8,28 @@
 
 import UIKit
 
-class FoodRecommendDetailVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
+class FoodRecommendDetailVC: MainViewController,UITableViewDelegate,UITableViewDataSource {
     fileprivate let foodRecommendDetailCell = "FoodRecommendDetailCell"
     
     struct FoodRecommendDetailUX {
         static let cellHeight:CGFloat = 180
-        static let sectionHeight:CGFloat = 20
+        static let sectionHeight:CGFloat = 15
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "推荐菜"
+        addDefaultButtonImageLeft("")
+        addDefaultButtonTextRight("关闭")
+        view.addSubview(tableView)
+    }
+    
+    override func rightTextBtn(_ sender:UIBarButtonItem) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    override func leftImageBtn(_ sender:UIBarButtonItem) {
+        
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -30,11 +41,11 @@ class FoodRecommendDetailVC: UIViewController,UITableViewDelegate,UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return  FoodRecommendDetailUX.cellHeight
+        return  UserDefaults.standard.object(forKey: "height") != nil ? UserDefaults.standard.object(forKey: "height") as! CGFloat : 0
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return FoodRecommendDetailUX.sectionHeight
+        return section == 0 ? FoodRecommendDetailUX.sectionHeight : FoodRecommendDetailUX.sectionHeight + 5
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -45,6 +56,7 @@ class FoodRecommendDetailVC: UIViewController,UITableViewDelegate,UITableViewDat
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: foodRecommendDetailCell, for: indexPath) as! FoodRecommendDetailCell
+        cell.setData()
         cell.selectionStyle = .none
         return cell
     }

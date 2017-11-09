@@ -105,7 +105,6 @@ class RecommendDetailsVC: UIViewController,UITableViewDelegate,UITableViewDataSo
                 vc.tableView.reloadData()
             }
             cell.selectionStyle = .none
-            cell.setNeedsDisplay()
             return cell
         }else if indexPath.section == 2 {
             let cell = tableView.dequeueReusableCell(withIdentifier: recommendedMomeyCell, for: indexPath) as! RecommendedMoneyCell

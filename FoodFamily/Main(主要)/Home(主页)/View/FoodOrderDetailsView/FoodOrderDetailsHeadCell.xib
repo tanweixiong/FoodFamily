@@ -6,20 +6,86 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="FoodOrderDetailsHeadCell" customModule="FoodFamily" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="AFc-7D-gUE" customClass="FoodOrderDetailsHeadCell" customModule="FoodFamily" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AFc-7D-gUE" id="ObA-hE-AIM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_home_mydianpu" translatesAutoresizingMaskIntoConstraints="NO" id="aN6-wN-79I">
+                        <rect key="frame" x="15" y="20" width="50" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="5If-W2-3Wv"/>
+                            <constraint firstAttribute="width" secondItem="aN6-wN-79I" secondAttribute="height" multiplier="1:1" id="qtk-TC-eQ5"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mbi-G3-b34">
+                        <rect key="frame" x="74" y="31.5" width="168" height="28"/>
+                        <attributedString key="attributedText">
+                            <fragment content="喜贺极上烤肉（花城汇店喜贺极上烤肉汇店喜贺极上烤肉汇店喜贺极上烤肉">
+                                <attributes>
+                                    <color key="NSColor" red="0.098039215686274508" green="0.086274509803921567" blue="0.098039215686274508" alpha="1" colorSpace="calibratedRGB"/>
+                                    <font key="NSFont" size="14" name=".PingFangSC-Regular"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="¥399" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gij-cb-ug4">
+                        <rect key="frame" x="270" y="33" width="80" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="80" id="GRO-59-IP9"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                        <color key="textColor" red="1" green="0.15686274510000001" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_home_more" translatesAutoresizingMaskIntoConstraints="NO" id="L6V-jz-KNw">
+                        <rect key="frame" x="353" y="39.5" width="7" height="11"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="10.800000000000001" id="EZX-lf-D5E"/>
+                            <constraint firstAttribute="width" constant="7.2000000000000002" id="jVq-e4-Loe"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100元代金券1张,可叠加使用...." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Zd-N3-cC5">
+                        <rect key="frame" x="74" y="60.5" width="168" height="17"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="17" id="Do6-SG-avW"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="5Zd-N3-cC5" firstAttribute="top" secondItem="mbi-G3-b34" secondAttribute="bottom" constant="1" id="6Rw-Z9-hKC"/>
+                    <constraint firstItem="5Zd-N3-cC5" firstAttribute="leading" secondItem="mbi-G3-b34" secondAttribute="leading" id="80x-xb-4It"/>
+                    <constraint firstAttribute="trailing" secondItem="Gij-cb-ug4" secondAttribute="trailing" constant="25" id="Dot-GF-s4u"/>
+                    <constraint firstItem="Gij-cb-ug4" firstAttribute="centerY" secondItem="L6V-jz-KNw" secondAttribute="centerY" id="Dq4-mc-lcu"/>
+                    <constraint firstItem="L6V-jz-KNw" firstAttribute="centerY" secondItem="ObA-hE-AIM" secondAttribute="centerY" id="Nou-kI-Mk6"/>
+                    <constraint firstItem="Gij-cb-ug4" firstAttribute="leading" secondItem="mbi-G3-b34" secondAttribute="trailing" constant="28" id="WfT-CZ-0g7"/>
+                    <constraint firstItem="mbi-G3-b34" firstAttribute="centerY" secondItem="ObA-hE-AIM" secondAttribute="centerY" id="WtR-3s-bQK"/>
+                    <constraint firstItem="aN6-wN-79I" firstAttribute="centerY" secondItem="ObA-hE-AIM" secondAttribute="centerY" id="Yjm-mv-ZV8"/>
+                    <constraint firstAttribute="trailing" secondItem="L6V-jz-KNw" secondAttribute="trailing" constant="14.199999999999999" id="oUR-x2-oKa"/>
+                    <constraint firstItem="mbi-G3-b34" firstAttribute="leading" secondItem="aN6-wN-79I" secondAttribute="trailing" constant="9" id="rjM-9R-veZ"/>
+                    <constraint firstItem="aN6-wN-79I" firstAttribute="leading" secondItem="ObA-hE-AIM" secondAttribute="leading" constant="15" id="w6K-We-tVd"/>
+                    <constraint firstItem="5Zd-N3-cC5" firstAttribute="width" secondItem="mbi-G3-b34" secondAttribute="width" id="ySp-qO-EIY"/>
+                </constraints>
             </tableViewCellContentView>
-            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <viewLayoutGuide key="safeArea" id="95P-zB-0kz"/>
+            <point key="canvasLocation" x="25.5" y="52"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="ic_home_more" width="8" height="12"/>
+        <image name="ic_home_mydianpu" width="49" height="49"/>
+    </resources>
 </document>
