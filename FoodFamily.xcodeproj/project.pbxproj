@@ -11,6 +11,9 @@
 		230FA7651FB539C600190F2B /* FoodMerchantsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230FA7641FB539C600190F2B /* FoodMerchantsListView.swift */; };
 		230FA7681FB53BF800190F2B /* FoodMerchantsListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230FA7661FB53BF800190F2B /* FoodMerchantsListCell.swift */; };
 		230FA7691FB53BF800190F2B /* FoodMerchantsListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 230FA7671FB53BF800190F2B /* FoodMerchantsListCell.xib */; };
+		230FA76F1FB5A94500190F2B /* MineOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230FA76E1FB5A94500190F2B /* MineOptionView.swift */; };
+		230FA7711FB5AA7C00190F2B /* MineHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230FA7701FB5AA7C00190F2B /* MineHeadView.swift */; };
+		230FA7731FB5AA8B00190F2B /* MineHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 230FA7721FB5AA8B00190F2B /* MineHeadView.xib */; };
 		2316A2831FAD71FE00A0B512 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2316A2821FAD71FE00A0B512 /* AppDelegate.swift */; };
 		2316A2851FAD71FE00A0B512 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2316A2841FAD71FE00A0B512 /* ViewController.swift */; };
 		2316A2881FAD71FE00A0B512 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2316A2861FAD71FE00A0B512 /* Main.storyboard */; };
@@ -136,6 +139,9 @@
 		230FA7641FB539C600190F2B /* FoodMerchantsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodMerchantsListView.swift; sourceTree = "<group>"; };
 		230FA7661FB53BF800190F2B /* FoodMerchantsListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodMerchantsListCell.swift; sourceTree = "<group>"; };
 		230FA7671FB53BF800190F2B /* FoodMerchantsListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoodMerchantsListCell.xib; sourceTree = "<group>"; };
+		230FA76E1FB5A94500190F2B /* MineOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineOptionView.swift; sourceTree = "<group>"; };
+		230FA7701FB5AA7C00190F2B /* MineHeadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineHeadView.swift; sourceTree = "<group>"; };
+		230FA7721FB5AA8B00190F2B /* MineHeadView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineHeadView.xib; sourceTree = "<group>"; };
 		2316A27F1FAD71FE00A0B512 /* FoodFamily.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodFamily.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2316A2821FAD71FE00A0B512 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2316A2841FAD71FE00A0B512 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -289,6 +295,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		230FA76A1FB5A8C500190F2B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ViewModel;
+			path = "FoodFamily/Main(主要)/Mine(个人)/ViewModel";
+			sourceTree = SOURCE_ROOT;
+		};
+		230FA76B1FB5A8C600190F2B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				230FA76D1FB5A90700190F2B /* MineControllerView */,
+			);
+			name = View;
+			path = "FoodFamily/Main(主要)/Mine(个人)/View";
+			sourceTree = SOURCE_ROOT;
+		};
+		230FA76C1FB5A8C600190F2B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			path = "FoodFamily/Main(主要)/Mine(个人)/Model";
+			sourceTree = SOURCE_ROOT;
+		};
+		230FA76D1FB5A90700190F2B /* MineControllerView */ = {
+			isa = PBXGroup;
+			children = (
+				230FA7701FB5AA7C00190F2B /* MineHeadView.swift */,
+				230FA7721FB5AA8B00190F2B /* MineHeadView.xib */,
+				230FA76E1FB5A94500190F2B /* MineOptionView.swift */,
+			);
+			path = MineControllerView;
+			sourceTree = "<group>";
+		};
 		2316A2761FAD71FE00A0B512 = {
 			isa = PBXGroup;
 			children = (
@@ -520,9 +561,9 @@
 			isa = PBXGroup;
 			children = (
 				2316A2D21FAD93D800A0B512 /* Controller */,
-				2316A2D31FAD93D800A0B512 /* Model */,
-				2316A2D41FAD93D800A0B512 /* View */,
-				2316A2D51FAD93D800A0B512 /* ViewModel */,
+				230FA76C1FB5A8C600190F2B /* Model */,
+				230FA76B1FB5A8C600190F2B /* View */,
+				230FA76A1FB5A8C500190F2B /* ViewModel */,
 			);
 			path = "Mine(个人)";
 			sourceTree = "<group>";
@@ -533,27 +574,6 @@
 				2316A2E81FAD947300A0B512 /* MineController.swift */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		2316A2D31FAD93D800A0B512 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		2316A2D41FAD93D800A0B512 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		2316A2D51FAD93D800A0B512 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		2316A2D61FAD93D800A0B512 /* College(学院) */ = {
@@ -600,9 +620,6 @@
 			isa = PBXGroup;
 			children = (
 				2316A2DC1FAD93D800A0B512 /* Controller */,
-				2316A2DD1FAD93D800A0B512 /* Model */,
-				2316A2DE1FAD93D800A0B512 /* View */,
-				2316A2DF1FAD93D800A0B512 /* ViewModel */,
 			);
 			path = "Crowdfunding(众筹)";
 			sourceTree = "<group>";
@@ -613,27 +630,6 @@
 				2316A2E21FAD942C00A0B512 /* CrowdfundingController.swift */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		2316A2DD1FAD93D800A0B512 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		2316A2DE1FAD93D800A0B512 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		2316A2DF1FAD93D800A0B512 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		2353EC191FB3F6BA005E1548 /* Custom */ = {
@@ -948,6 +944,7 @@
 				239F07011FB2F4020067D810 /* RecommendNaviCell.xib in Resources */,
 				236C44301FB4750800AC3010 /* FoodMerchantsHeadView.xib in Resources */,
 				239F070F1FB2F4020067D810 /* FoodPurchaseSuccessView.xib in Resources */,
+				230FA7731FB5AA8B00190F2B /* MineHeadView.xib in Resources */,
 				239F070B1FB2F4020067D810 /* FoodPurchaseNotesCell.xib in Resources */,
 				2316A28D1FAD71FE00A0B512 /* LaunchScreen.storyboard in Resources */,
 				239F070D1FB2F4020067D810 /* FoodPurchaseNotesHeadView.xib in Resources */,
@@ -1143,6 +1140,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2388E0A81FB0485A00AB6853 /* FoodDetailsFoodView.swift in Sources */,
+				230FA76F1FB5A94500190F2B /* MineOptionView.swift in Sources */,
 				2316A2BB1FAD8BD000A0B512 /* RegularDefinition.swift in Sources */,
 				23D0E3E81FADA2740058EA34 /* BoutiqueTableViewCell.swift in Sources */,
 				239F06F01FB2F4020067D810 /* FoodReservationFilliCell.swift in Sources */,
@@ -1196,6 +1194,7 @@
 				239F06F21FB2F4020067D810 /* FoodReservationFinishHeadCell.swift in Sources */,
 				239F06E81FB2F4020067D810 /* FoodOrderDetailsHeadCell.swift in Sources */,
 				239F06AB1FB2F3D30067D810 /* FoodReservationFinishVC.swift in Sources */,
+				230FA7711FB5AA7C00190F2B /* MineHeadView.swift in Sources */,
 				239F06AE1FB2F3D30067D810 /* FoodRecommendDetailVC.swift in Sources */,
 				239F070E1FB2F4020067D810 /* FoodPurchaseSuccessView.swift in Sources */,
 				239F06AA1FB2F3D30067D810 /* FoodReservationPayVC.swift in Sources */,

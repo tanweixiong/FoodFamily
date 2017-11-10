@@ -23,8 +23,8 @@ class HomeController: MainViewController,UITableViewDelegate,UITableViewDataSour
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.addDefaultButtonTextRight("筛选 >")
         self.view.addSubview(tableView)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: self.filterButton)
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -89,6 +89,19 @@ class HomeController: MainViewController,UITableViewDelegate,UITableViewDataSour
         tableView.separatorInset = UIEdgeInsetsMake(0,SCREEN_WIDTH, 0,SCREEN_WIDTH);
         tableView.tableFooterView = UIView()
         return tableView
+    }()
+    
+    lazy var filterButton:UIButton = {
+        let button =   UIButton(type: .custom)
+        button.frame = CGRect(x:0, y:0, width:60, height:50)
+        button.setTitle("筛选", for: .normal)
+        button.setImage(UIImage.init(named: "ic_nav_right_white"), for: .normal)
+        button.setTitleColor(UIColor.white, for: .normal)
+        button.imageEdgeInsets = UIEdgeInsetsMake(10, 10, 10, -70);
+        button.titleEdgeInsets = UIEdgeInsetsMake(0, -12, 0, 0)
+        button.addTarget(self, action: #selector(rightTextBtn(_:)), for: .touchUpInside)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 16)
+        return button
     }()
     
     override func rightTextBtn(_ sender: UIBarButtonItem) {
