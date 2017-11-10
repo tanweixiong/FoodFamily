@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+class HomeController: MainViewController,UITableViewDelegate,UITableViewDataSource {
     
    fileprivate let boutiqueTableViewCell = "BoutiqueTableViewCell"
    fileprivate let topicTableViewCell = "TopicTableViewCell"
@@ -23,6 +23,7 @@ class HomeController: UIViewController,UITableViewDelegate,UITableViewDataSource
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.addDefaultButtonTextRight("筛选 >")
         self.view.addSubview(tableView)
     }
 
@@ -89,4 +90,9 @@ class HomeController: UIViewController,UITableViewDelegate,UITableViewDataSource
         tableView.tableFooterView = UIView()
         return tableView
     }()
+    
+    override func rightTextBtn(_ sender: UIBarButtonItem) {
+        let foodMerchantsVC = FoodMerchantsVC()
+        self.navigationController?.pushViewController(foodMerchantsVC, animated: true)
+    }
 }

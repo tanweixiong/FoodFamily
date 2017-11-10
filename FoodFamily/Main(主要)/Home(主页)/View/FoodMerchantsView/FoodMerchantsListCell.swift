@@ -1,19 +1,16 @@
 //
-//  FoodMerchantsCell.swift
+//  FoodMerchantsListCell.swift
 //  FoodFamily
 //
-//  Created by tam on 2017/11/9.
+//  Created by tam on 2017/11/10.
 //  Copyright © 2017年 Wilkinson. All rights reserved.
 //
 
 import UIKit
 
-class FoodMerchantsCell: UITableViewCell {
-    @IBOutlet weak var iconImageView: UIImageView!
+class FoodMerchantsListCell: UITableViewCell {
     @IBOutlet weak var headingLabel: UILabel!
-    @IBOutlet weak var addressLabel: UILabel!
-    @IBOutlet weak var distanceLabel: UILabel!
-    @IBOutlet weak var perCapitaLabel: UILabel!
+    @IBOutlet weak var checkedImageView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

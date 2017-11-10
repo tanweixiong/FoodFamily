@@ -9,13 +9,14 @@
 import UIKit
 
 class FoodMerchantsHeadView: UIView {
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    var foodMerchantsHeadCallBack:((UIButton)->())?;
+    @IBOutlet weak var allButton: UIButton!
+    @IBOutlet weak var recentButton: UIButton!
+    @IBOutlet weak var allArrowButton: UIButton!
+    @IBOutlet weak var recentArrowButton: UIButton!
+    @IBAction func onClick(_ sender: UIButton) {
+        if foodMerchantsHeadCallBack != nil {
+            foodMerchantsHeadCallBack!(sender)
+        }
     }
-    */
-
 }
