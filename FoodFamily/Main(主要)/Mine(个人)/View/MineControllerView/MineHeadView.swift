@@ -9,13 +9,11 @@
 import UIKit
 
 class MineHeadView: UIView {
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+   var mineHeadCallBack:(()->())?;
+    @IBOutlet weak var backgroundVw: UIView!
+    @IBAction func onClick(_ sender: UIButton) {
+        if mineHeadCallBack != nil {
+            mineHeadCallBack!()
+        }
     }
-    */
-
 }

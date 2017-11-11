@@ -16,7 +16,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="99.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kNf-Md-LpL">
@@ -90,6 +90,13 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="couponsBackgroundImg" destination="FGg-PW-c3S" id="hjg-dZ-AsR"/>
+                <outlet property="headingLabel" destination="r6g-ls-qc1" id="Edz-E1-FN3"/>
+                <outlet property="priceLabel" destination="MZ7-Rh-XWZ" id="wDw-Y2-yml"/>
+                <outlet property="scopeLabel" destination="yFt-Km-rDK" id="YcI-jK-VcU"/>
+                <outlet property="validityLabel" destination="nMj-Me-BBV" id="Rn7-NZ-3wo"/>
+            </connections>
         </tableViewCell>
     </objects>
     <resources>

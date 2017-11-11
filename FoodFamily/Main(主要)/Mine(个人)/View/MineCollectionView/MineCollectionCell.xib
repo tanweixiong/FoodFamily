@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="MineCollectionCell" customModule="FoodFamily" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="74.5"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="74"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2Mr-QR-ENa">
+                        <rect key="frame" x="15" y="12" width="50" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="6hR-0E-fo9"/>
+                            <constraint firstAttribute="height" constant="50" id="NGp-hc-kHl"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KLG-9V-TYL">
+                        <rect key="frame" x="79" y="28" width="195" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.099394746120000002" green="0.088113375009999995" blue="0.098063625400000007" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w9D-tS-SVZ">
+                        <rect key="frame" x="279" y="27" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="GhG-iR-dB6"/>
+                            <constraint firstAttribute="width" constant="20" id="gDG-nY-wCV"/>
+                        </constraints>
+                        <state key="normal" backgroundImage="ic_mine_addAttention"/>
+                        <state key="selected" backgroundImage="ic_home_invalidName"/>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mSc-1H-mc7">
+                        <rect key="frame" x="283.5" y="49" width="11" height="16"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="16" id="45d-n3-mBC"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <color key="textColor" red="0.5725490196078431" green="0.5725490196078431" blue="0.098039215686274508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="w9D-tS-SVZ" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="8CP-Fl-Imj"/>
+                    <constraint firstAttribute="trailing" secondItem="w9D-tS-SVZ" secondAttribute="trailing" constant="21" id="ElV-Yi-Dge"/>
+                    <constraint firstItem="mSc-1H-mc7" firstAttribute="centerX" secondItem="w9D-tS-SVZ" secondAttribute="centerX" id="JyB-2V-hPU"/>
+                    <constraint firstItem="w9D-tS-SVZ" firstAttribute="leading" secondItem="KLG-9V-TYL" secondAttribute="trailing" constant="5" id="LmM-z1-3kY"/>
+                    <constraint firstItem="KLG-9V-TYL" firstAttribute="centerY" secondItem="2Mr-QR-ENa" secondAttribute="centerY" id="OK1-MI-MhN"/>
+                    <constraint firstItem="2Mr-QR-ENa" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="dPE-FF-BxE"/>
+                    <constraint firstItem="KLG-9V-TYL" firstAttribute="leading" secondItem="2Mr-QR-ENa" secondAttribute="trailing" constant="14" id="g8O-Ia-lcu"/>
+                    <constraint firstItem="mSc-1H-mc7" firstAttribute="top" secondItem="w9D-tS-SVZ" secondAttribute="bottom" constant="2" id="nha-4i-Fit"/>
+                    <constraint firstItem="2Mr-QR-ENa" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="so7-Mk-dAX"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="ic_home_invalidName" width="26" height="26"/>
+        <image name="ic_mine_addAttention" width="20" height="20"/>
+    </resources>
+</document>

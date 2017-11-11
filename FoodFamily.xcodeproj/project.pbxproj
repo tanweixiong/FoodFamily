@@ -8,6 +8,30 @@
 
 /* Begin PBXBuildFile section */
 		065325FDDDF5167D2625021D /* Pods_FoodFamilyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0968298AEB219742737CBE3 /* Pods_FoodFamilyUITests.framework */; };
+		230BE0CD1FB68F1300AD47E0 /* MineOptionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 230BE0CC1FB68F1300AD47E0 /* MineOptionView.xib */; };
+		230BE0CF1FB69B2A00AD47E0 /* MineCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230BE0CE1FB69B2A00AD47E0 /* MineCollectionVC.swift */; };
+		230BE0D31FB69B5800AD47E0 /* MineCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230BE0D11FB69B5800AD47E0 /* MineCollectionCell.swift */; };
+		230BE0D41FB69B5800AD47E0 /* MineCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 230BE0D21FB69B5800AD47E0 /* MineCollectionCell.xib */; };
+		230BE0E01FB6A27600AD47E0 /* SGHelperTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 230BE0D71FB6A27500AD47E0 /* SGHelperTool.m */; };
+		230BE0E11FB6A27600AD47E0 /* SGPageContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 230BE0D91FB6A27600AD47E0 /* SGPageContentView.m */; };
+		230BE0E21FB6A27600AD47E0 /* SGPageTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 230BE0DB1FB6A27600AD47E0 /* SGPageTitleView.m */; };
+		230BE0E31FB6A27600AD47E0 /* UIView+SGFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 230BE0DF1FB6A27600AD47E0 /* UIView+SGFrame.m */; };
+		230BE0E51FB6A2BA00AD47E0 /* MineExpensesRecordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230BE0E41FB6A2BA00AD47E0 /* MineExpensesRecordVC.swift */; };
+		230BE0E71FB6A34E00AD47E0 /* MineAllOrderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230BE0E61FB6A34E00AD47E0 /* MineAllOrderVC.swift */; };
+		230BE0E91FB6A37D00AD47E0 /* MineOrderEvaluatedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230BE0E81FB6A37D00AD47E0 /* MineOrderEvaluatedVC.swift */; };
+		230BE0EB1FB6A39F00AD47E0 /* MineOrderUseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230BE0EA1FB6A39F00AD47E0 /* MineOrderUseVC.swift */; };
+		230BE0EF1FB6A4BE00AD47E0 /* MineExpensesRecordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230BE0ED1FB6A4BE00AD47E0 /* MineExpensesRecordCell.swift */; };
+		230BE0F01FB6A4BE00AD47E0 /* MineExpensesRecordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 230BE0EE1FB6A4BE00AD47E0 /* MineExpensesRecordCell.xib */; };
+		230BE0F41FB6DAA600AD47E0 /* MineDiscountCouponsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230BE0F31FB6DAA600AD47E0 /* MineDiscountCouponsVC.swift */; };
+		230BE0F71FB6DAF600AD47E0 /* MineUsableCoupons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230BE0F61FB6DAF600AD47E0 /* MineUsableCoupons.swift */; };
+		230BE0F91FB6DB1900AD47E0 /* MineExpiredCoupons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230BE0F81FB6DB1900AD47E0 /* MineExpiredCoupons.swift */; };
+		230BE0FD1FB6DBAF00AD47E0 /* MineDiscountCouponsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230BE0FB1FB6DBAF00AD47E0 /* MineDiscountCouponsCell.swift */; };
+		230BE0FE1FB6DBAF00AD47E0 /* MineDiscountCouponsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 230BE0FC1FB6DBAF00AD47E0 /* MineDiscountCouponsCell.xib */; };
+		230BE1001FB6E16800AD47E0 /* MineReservationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230BE0FF1FB6E16800AD47E0 /* MineReservationVC.swift */; };
+		230BE1031FB6E27D00AD47E0 /* MineReservationFinishVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230BE1021FB6E27D00AD47E0 /* MineReservationFinishVC.swift */; };
+		230BE1051FB6E2A900AD47E0 /* MineReservationExpiredVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230BE1041FB6E2A900AD47E0 /* MineReservationExpiredVC.swift */; };
+		230BE1091FB6E2EC00AD47E0 /* MineReservationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230BE1071FB6E2EC00AD47E0 /* MineReservationCell.swift */; };
+		230BE10A1FB6E2EC00AD47E0 /* MineReservationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 230BE1081FB6E2EC00AD47E0 /* MineReservationCell.xib */; };
 		230FA7651FB539C600190F2B /* FoodMerchantsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230FA7641FB539C600190F2B /* FoodMerchantsListView.swift */; };
 		230FA7681FB53BF800190F2B /* FoodMerchantsListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230FA7661FB53BF800190F2B /* FoodMerchantsListCell.swift */; };
 		230FA7691FB53BF800190F2B /* FoodMerchantsListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 230FA7671FB53BF800190F2B /* FoodMerchantsListCell.xib */; };
@@ -114,6 +138,11 @@
 		23D0E3F41FADBC000058EA34 /* TYPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D0E3F11FADBC000058EA34 /* TYPageControl.m */; };
 		23D0E3F71FADBC4B0058EA34 /* TYCyclePagerViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D0E3F51FADBC4A0058EA34 /* TYCyclePagerViewCell.m */; };
 		23D0E3FC1FADBCFD0058EA34 /* BoutiqueScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D0E3FB1FADBCFD0058EA34 /* BoutiqueScrollView.m */; };
+		23E214C21FB6E91B00C7D085 /* MineInformationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E214C11FB6E91B00C7D085 /* MineInformationVC.swift */; };
+		23E214C61FB6EA1B00C7D085 /* MineInformationHeadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E214C41FB6EA1B00C7D085 /* MineInformationHeadCell.swift */; };
+		23E214C71FB6EA1B00C7D085 /* MineInformationHeadCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23E214C51FB6EA1B00C7D085 /* MineInformationHeadCell.xib */; };
+		23E214CA1FB6EA3600C7D085 /* MineInformationListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E214C81FB6EA3600C7D085 /* MineInformationListCell.swift */; };
+		23E214CB1FB6EA3600C7D085 /* MineInformationListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23E214C91FB6EA3600C7D085 /* MineInformationListCell.xib */; };
 		2991A1F58EB40DC9F5A972A4 /* Pods_FoodFamilyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31FBFBF79EFC7ADF1C5D0808 /* Pods_FoodFamilyTests.framework */; };
 		98CC1D2B92B4EEC555950E97 /* Pods_FoodFamily.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5C40086A4006C908F68FB04 /* Pods_FoodFamily.framework */; };
 /* End PBXBuildFile section */
@@ -136,6 +165,36 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		230BE0CC1FB68F1300AD47E0 /* MineOptionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineOptionView.xib; sourceTree = "<group>"; };
+		230BE0CE1FB69B2A00AD47E0 /* MineCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineCollectionVC.swift; sourceTree = "<group>"; };
+		230BE0D11FB69B5800AD47E0 /* MineCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineCollectionCell.swift; sourceTree = "<group>"; };
+		230BE0D21FB69B5800AD47E0 /* MineCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineCollectionCell.xib; sourceTree = "<group>"; };
+		230BE0D61FB6A27500AD47E0 /* SGHelperTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGHelperTool.h; sourceTree = "<group>"; };
+		230BE0D71FB6A27500AD47E0 /* SGHelperTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGHelperTool.m; sourceTree = "<group>"; };
+		230BE0D81FB6A27600AD47E0 /* SGPageContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGPageContentView.h; sourceTree = "<group>"; };
+		230BE0D91FB6A27600AD47E0 /* SGPageContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGPageContentView.m; sourceTree = "<group>"; };
+		230BE0DA1FB6A27600AD47E0 /* SGPageTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGPageTitleView.h; sourceTree = "<group>"; };
+		230BE0DB1FB6A27600AD47E0 /* SGPageTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGPageTitleView.m; sourceTree = "<group>"; };
+		230BE0DC1FB6A27600AD47E0 /* SGPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGPageView.h; sourceTree = "<group>"; };
+		230BE0DD1FB6A27600AD47E0 /* SGPageViewHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGPageViewHelper.h; sourceTree = "<group>"; };
+		230BE0DE1FB6A27600AD47E0 /* UIView+SGFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SGFrame.h"; sourceTree = "<group>"; };
+		230BE0DF1FB6A27600AD47E0 /* UIView+SGFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SGFrame.m"; sourceTree = "<group>"; };
+		230BE0E41FB6A2BA00AD47E0 /* MineExpensesRecordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineExpensesRecordVC.swift; sourceTree = "<group>"; };
+		230BE0E61FB6A34E00AD47E0 /* MineAllOrderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineAllOrderVC.swift; sourceTree = "<group>"; };
+		230BE0E81FB6A37D00AD47E0 /* MineOrderEvaluatedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineOrderEvaluatedVC.swift; sourceTree = "<group>"; };
+		230BE0EA1FB6A39F00AD47E0 /* MineOrderUseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineOrderUseVC.swift; sourceTree = "<group>"; };
+		230BE0ED1FB6A4BE00AD47E0 /* MineExpensesRecordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineExpensesRecordCell.swift; sourceTree = "<group>"; };
+		230BE0EE1FB6A4BE00AD47E0 /* MineExpensesRecordCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineExpensesRecordCell.xib; sourceTree = "<group>"; };
+		230BE0F31FB6DAA600AD47E0 /* MineDiscountCouponsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineDiscountCouponsVC.swift; sourceTree = "<group>"; };
+		230BE0F61FB6DAF600AD47E0 /* MineUsableCoupons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineUsableCoupons.swift; sourceTree = "<group>"; };
+		230BE0F81FB6DB1900AD47E0 /* MineExpiredCoupons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineExpiredCoupons.swift; sourceTree = "<group>"; };
+		230BE0FB1FB6DBAF00AD47E0 /* MineDiscountCouponsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineDiscountCouponsCell.swift; sourceTree = "<group>"; };
+		230BE0FC1FB6DBAF00AD47E0 /* MineDiscountCouponsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineDiscountCouponsCell.xib; sourceTree = "<group>"; };
+		230BE0FF1FB6E16800AD47E0 /* MineReservationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineReservationVC.swift; sourceTree = "<group>"; };
+		230BE1021FB6E27D00AD47E0 /* MineReservationFinishVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineReservationFinishVC.swift; sourceTree = "<group>"; };
+		230BE1041FB6E2A900AD47E0 /* MineReservationExpiredVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineReservationExpiredVC.swift; sourceTree = "<group>"; };
+		230BE1071FB6E2EC00AD47E0 /* MineReservationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineReservationCell.swift; sourceTree = "<group>"; };
+		230BE1081FB6E2EC00AD47E0 /* MineReservationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineReservationCell.xib; sourceTree = "<group>"; };
 		230FA7641FB539C600190F2B /* FoodMerchantsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodMerchantsListView.swift; sourceTree = "<group>"; };
 		230FA7661FB53BF800190F2B /* FoodMerchantsListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodMerchantsListCell.swift; sourceTree = "<group>"; };
 		230FA7671FB53BF800190F2B /* FoodMerchantsListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoodMerchantsListCell.xib; sourceTree = "<group>"; };
@@ -256,6 +315,11 @@
 		23D0E3F61FADBC4B0058EA34 /* TYCyclePagerViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYCyclePagerViewCell.h; sourceTree = "<group>"; };
 		23D0E3FA1FADBCFD0058EA34 /* BoutiqueScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BoutiqueScrollView.h; sourceTree = "<group>"; };
 		23D0E3FB1FADBCFD0058EA34 /* BoutiqueScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BoutiqueScrollView.m; sourceTree = "<group>"; };
+		23E214C11FB6E91B00C7D085 /* MineInformationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineInformationVC.swift; sourceTree = "<group>"; };
+		23E214C41FB6EA1B00C7D085 /* MineInformationHeadCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineInformationHeadCell.swift; sourceTree = "<group>"; };
+		23E214C51FB6EA1B00C7D085 /* MineInformationHeadCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineInformationHeadCell.xib; sourceTree = "<group>"; };
+		23E214C81FB6EA3600C7D085 /* MineInformationListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineInformationListCell.swift; sourceTree = "<group>"; };
+		23E214C91FB6EA3600C7D085 /* MineInformationListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineInformationListCell.xib; sourceTree = "<group>"; };
 		2880E6CA79A8B64607284A8E /* Pods-FoodFamily.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodFamily.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FoodFamily/Pods-FoodFamily.debug.xcconfig"; sourceTree = "<group>"; };
 		31FBFBF79EFC7ADF1C5D0808 /* Pods_FoodFamilyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodFamilyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		33224DA83A15716AA0896400 /* Pods-FoodFamilyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodFamilyUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FoodFamilyUITests/Pods-FoodFamilyUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -295,6 +359,87 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		230BE0D01FB69B4100AD47E0 /* MineCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				230BE0D11FB69B5800AD47E0 /* MineCollectionCell.swift */,
+				230BE0D21FB69B5800AD47E0 /* MineCollectionCell.xib */,
+			);
+			path = MineCollectionView;
+			sourceTree = "<group>";
+		};
+		230BE0D51FB6A27500AD47E0 /* SGPageView */ = {
+			isa = PBXGroup;
+			children = (
+				230BE0D61FB6A27500AD47E0 /* SGHelperTool.h */,
+				230BE0D71FB6A27500AD47E0 /* SGHelperTool.m */,
+				230BE0D81FB6A27600AD47E0 /* SGPageContentView.h */,
+				230BE0D91FB6A27600AD47E0 /* SGPageContentView.m */,
+				230BE0DA1FB6A27600AD47E0 /* SGPageTitleView.h */,
+				230BE0DB1FB6A27600AD47E0 /* SGPageTitleView.m */,
+				230BE0DC1FB6A27600AD47E0 /* SGPageView.h */,
+				230BE0DD1FB6A27600AD47E0 /* SGPageViewHelper.h */,
+				230BE0DE1FB6A27600AD47E0 /* UIView+SGFrame.h */,
+				230BE0DF1FB6A27600AD47E0 /* UIView+SGFrame.m */,
+			);
+			path = SGPageView;
+			sourceTree = "<group>";
+		};
+		230BE0EC1FB6A46A00AD47E0 /* MineExpensesRecordView */ = {
+			isa = PBXGroup;
+			children = (
+				230BE0ED1FB6A4BE00AD47E0 /* MineExpensesRecordCell.swift */,
+				230BE0EE1FB6A4BE00AD47E0 /* MineExpensesRecordCell.xib */,
+			);
+			path = MineExpensesRecordView;
+			sourceTree = "<group>";
+		};
+		230BE0F21FB6AD8700AD47E0 /* MineExpensesRecordChildVC */ = {
+			isa = PBXGroup;
+			children = (
+				230BE0E61FB6A34E00AD47E0 /* MineAllOrderVC.swift */,
+				230BE0E81FB6A37D00AD47E0 /* MineOrderEvaluatedVC.swift */,
+				230BE0EA1FB6A39F00AD47E0 /* MineOrderUseVC.swift */,
+			);
+			path = MineExpensesRecordChildVC;
+			sourceTree = "<group>";
+		};
+		230BE0F51FB6DAC800AD47E0 /* MineDiscountCouponsChildVC */ = {
+			isa = PBXGroup;
+			children = (
+				230BE0F61FB6DAF600AD47E0 /* MineUsableCoupons.swift */,
+				230BE0F81FB6DB1900AD47E0 /* MineExpiredCoupons.swift */,
+			);
+			path = MineDiscountCouponsChildVC;
+			sourceTree = "<group>";
+		};
+		230BE0FA1FB6DB9200AD47E0 /* MineDiscountCouponsView */ = {
+			isa = PBXGroup;
+			children = (
+				230BE0FB1FB6DBAF00AD47E0 /* MineDiscountCouponsCell.swift */,
+				230BE0FC1FB6DBAF00AD47E0 /* MineDiscountCouponsCell.xib */,
+			);
+			path = MineDiscountCouponsView;
+			sourceTree = "<group>";
+		};
+		230BE1011FB6E18400AD47E0 /* MineReservationChildVC */ = {
+			isa = PBXGroup;
+			children = (
+				230BE1021FB6E27D00AD47E0 /* MineReservationFinishVC.swift */,
+				230BE1041FB6E2A900AD47E0 /* MineReservationExpiredVC.swift */,
+			);
+			path = MineReservationChildVC;
+			sourceTree = "<group>";
+		};
+		230BE1061FB6E2D000AD47E0 /* MineReservationView */ = {
+			isa = PBXGroup;
+			children = (
+				230BE1071FB6E2EC00AD47E0 /* MineReservationCell.swift */,
+				230BE1081FB6E2EC00AD47E0 /* MineReservationCell.xib */,
+			);
+			path = MineReservationView;
+			sourceTree = "<group>";
+		};
 		230FA76A1FB5A8C500190F2B /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -307,6 +452,11 @@
 			isa = PBXGroup;
 			children = (
 				230FA76D1FB5A90700190F2B /* MineControllerView */,
+				230BE0D01FB69B4100AD47E0 /* MineCollectionView */,
+				230BE0EC1FB6A46A00AD47E0 /* MineExpensesRecordView */,
+				230BE0FA1FB6DB9200AD47E0 /* MineDiscountCouponsView */,
+				230BE1061FB6E2D000AD47E0 /* MineReservationView */,
+				23E214C31FB6E9FA00C7D085 /* MineInformationView */,
 			);
 			name = View;
 			path = "FoodFamily/Main(主要)/Mine(个人)/View";
@@ -326,6 +476,7 @@
 				230FA7701FB5AA7C00190F2B /* MineHeadView.swift */,
 				230FA7721FB5AA8B00190F2B /* MineHeadView.xib */,
 				230FA76E1FB5A94500190F2B /* MineOptionView.swift */,
+				230BE0CC1FB68F1300AD47E0 /* MineOptionView.xib */,
 			);
 			path = MineControllerView;
 			sourceTree = "<group>";
@@ -572,6 +723,14 @@
 			isa = PBXGroup;
 			children = (
 				2316A2E81FAD947300A0B512 /* MineController.swift */,
+				230BE0CE1FB69B2A00AD47E0 /* MineCollectionVC.swift */,
+				230BE0E41FB6A2BA00AD47E0 /* MineExpensesRecordVC.swift */,
+				230BE0F31FB6DAA600AD47E0 /* MineDiscountCouponsVC.swift */,
+				230BE0FF1FB6E16800AD47E0 /* MineReservationVC.swift */,
+				23E214C11FB6E91B00C7D085 /* MineInformationVC.swift */,
+				230BE0F21FB6AD8700AD47E0 /* MineExpensesRecordChildVC */,
+				230BE0F51FB6DAC800AD47E0 /* MineDiscountCouponsChildVC */,
+				230BE1011FB6E18400AD47E0 /* MineReservationChildVC */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -784,6 +943,7 @@
 		23D0E3EA1FADBC000058EA34 /* Vender(第三方) */ = {
 			isa = PBXGroup;
 			children = (
+				230BE0D51FB6A27500AD47E0 /* SGPageView */,
 				23D0E3EB1FADBC000058EA34 /* TYCyclePagerView */,
 			);
 			path = "Vender(第三方)";
@@ -800,6 +960,17 @@
 				23D0E3F11FADBC000058EA34 /* TYPageControl.m */,
 			);
 			path = TYCyclePagerView;
+			sourceTree = "<group>";
+		};
+		23E214C31FB6E9FA00C7D085 /* MineInformationView */ = {
+			isa = PBXGroup;
+			children = (
+				23E214C41FB6EA1B00C7D085 /* MineInformationHeadCell.swift */,
+				23E214C51FB6EA1B00C7D085 /* MineInformationHeadCell.xib */,
+				23E214C81FB6EA3600C7D085 /* MineInformationListCell.swift */,
+				23E214C91FB6EA3600C7D085 /* MineInformationListCell.xib */,
+			);
+			path = MineInformationView;
 			sourceTree = "<group>";
 		};
 		690ACFDC0297A4B26BE68581 /* Pods */ = {
@@ -944,9 +1115,12 @@
 				239F07011FB2F4020067D810 /* RecommendNaviCell.xib in Resources */,
 				236C44301FB4750800AC3010 /* FoodMerchantsHeadView.xib in Resources */,
 				239F070F1FB2F4020067D810 /* FoodPurchaseSuccessView.xib in Resources */,
+				230BE10A1FB6E2EC00AD47E0 /* MineReservationCell.xib in Resources */,
 				230FA7731FB5AA8B00190F2B /* MineHeadView.xib in Resources */,
+				23E214CB1FB6EA3600C7D085 /* MineInformationListCell.xib in Resources */,
 				239F070B1FB2F4020067D810 /* FoodPurchaseNotesCell.xib in Resources */,
 				2316A28D1FAD71FE00A0B512 /* LaunchScreen.storyboard in Resources */,
+				23E214C71FB6EA1B00C7D085 /* MineInformationHeadCell.xib in Resources */,
 				239F070D1FB2F4020067D810 /* FoodPurchaseNotesHeadView.xib in Resources */,
 				239F06FB1FB2F4020067D810 /* RecommendedMoneyCell.xib in Resources */,
 				239F06E91FB2F4020067D810 /* FoodOrderDetailsHeadCell.xib in Resources */,
@@ -955,10 +1129,14 @@
 				239F07111FB2F4020067D810 /* FoodFeaturesDetailCell.xib in Resources */,
 				239F06FD1FB2F4020067D810 /* RecommendedReasonCell.xib in Resources */,
 				239F06EB1FB2F4020067D810 /* FoodPaymentCardCouponsCell.xib in Resources */,
+				230BE0CD1FB68F1300AD47E0 /* MineOptionView.xib in Resources */,
 				230FA7691FB53BF800190F2B /* FoodMerchantsListCell.xib in Resources */,
 				239F07091FB2F4020067D810 /* FoodReservationPaymentMethodCell.xib in Resources */,
 				23D0E3E51FAD9C380058EA34 /* RecommendTableViewCell.xib in Resources */,
+				230BE0D41FB69B5800AD47E0 /* MineCollectionCell.xib in Resources */,
 				239F06ED1FB2F4020067D810 /* FoodReservationCell.xib in Resources */,
+				230BE0F01FB6A4BE00AD47E0 /* MineExpensesRecordCell.xib in Resources */,
+				230BE0FE1FB6DBAF00AD47E0 /* MineDiscountCouponsCell.xib in Resources */,
 				239F07071FB2F4020067D810 /* FoodReservationPaymentCardCell.xib in Resources */,
 				239F06F31FB2F4020067D810 /* FoodReservationFinishHeadCell.xib in Resources */,
 				239F06F11FB2F4020067D810 /* FoodReservationFilliCell.xib in Resources */,
@@ -1139,48 +1317,67 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				230BE0EB1FB6A39F00AD47E0 /* MineOrderUseVC.swift in Sources */,
 				2388E0A81FB0485A00AB6853 /* FoodDetailsFoodView.swift in Sources */,
+				230BE0E51FB6A2BA00AD47E0 /* MineExpensesRecordVC.swift in Sources */,
 				230FA76F1FB5A94500190F2B /* MineOptionView.swift in Sources */,
 				2316A2BB1FAD8BD000A0B512 /* RegularDefinition.swift in Sources */,
 				23D0E3E81FADA2740058EA34 /* BoutiqueTableViewCell.swift in Sources */,
+				230BE0D31FB69B5800AD47E0 /* MineCollectionCell.swift in Sources */,
 				239F06F01FB2F4020067D810 /* FoodReservationFilliCell.swift in Sources */,
 				239F06AC1FB2F3D30067D810 /* FoodReservationVC.swift in Sources */,
 				239F06F81FB2F4020067D810 /* RecommendedFoodView.swift in Sources */,
 				2316A2E31FAD942C00A0B512 /* CrowdfundingController.swift in Sources */,
 				230FA7651FB539C600190F2B /* FoodMerchantsListView.swift in Sources */,
 				2316A2C31FAD8F4700A0B512 /* Extensions.swift in Sources */,
+				23E214CA1FB6EA3600C7D085 /* MineInformationListCell.swift in Sources */,
 				239F06EA1FB2F4020067D810 /* FoodPaymentCardCouponsCell.swift in Sources */,
 				2353EC1C1FB3F6BA005E1548 /* OCTools.m in Sources */,
 				239F06FE1FB2F4020067D810 /* RecommendHeadView.swift in Sources */,
 				239F06A71FB2F3D30067D810 /* FoodPurchaseSuccessVC.swift in Sources */,
+				230BE1031FB6E27D00AD47E0 /* MineReservationFinishVC.swift in Sources */,
 				2316A2851FAD71FE00A0B512 /* ViewController.swift in Sources */,
+				230BE0E31FB6A27600AD47E0 /* UIView+SGFrame.m in Sources */,
 				23D0E3FC1FADBCFD0058EA34 /* BoutiqueScrollView.m in Sources */,
 				239F06A41FB2F3D30067D810 /* RecommendDetailsVC.swift in Sources */,
 				2388E0A61FB00FD400AB6853 /* UINavigationBar+Other.m in Sources */,
 				239F07041FB2F4020067D810 /* FoodReservationPayCell.swift in Sources */,
 				239F06FA1FB2F4020067D810 /* RecommendedMoneyCell.swift in Sources */,
 				236C442E1FB474EA00AC3010 /* FoodMerchantsHeadView.swift in Sources */,
+				23E214C61FB6EA1B00C7D085 /* MineInformationHeadCell.swift in Sources */,
 				23D0E3F41FADBC000058EA34 /* TYPageControl.m in Sources */,
+				230BE1001FB6E16800AD47E0 /* MineReservationVC.swift in Sources */,
+				230BE0FD1FB6DBAF00AD47E0 /* MineDiscountCouponsCell.swift in Sources */,
+				230BE0CF1FB69B2A00AD47E0 /* MineCollectionVC.swift in Sources */,
 				239F06EC1FB2F4020067D810 /* FoodReservationCell.swift in Sources */,
 				23D0E3E41FAD9C380058EA34 /* RecommendTableViewCell.swift in Sources */,
 				239F06E61FB2F4020067D810 /* FoodOrderDetailsEvaluationCell.swift in Sources */,
+				230BE0E11FB6A27600AD47E0 /* SGPageContentView.m in Sources */,
 				239F06A61FB2F3D30067D810 /* FoodFeaturesDetailVC.swift in Sources */,
 				2316A2B41FAD8ACF00A0B512 /* MainTabBarController.swift in Sources */,
+				230BE1051FB6E2A900AD47E0 /* MineReservationExpiredVC.swift in Sources */,
 				2316A2E71FAD945600A0B512 /* ChefController.swift in Sources */,
 				2353EC231FB4080D005E1548 /* FoodOrderPackageCell.swift in Sources */,
 				239F07021FB2F4020067D810 /* FoodRecommendDetailCell.swift in Sources */,
+				230BE0E01FB6A27600AD47E0 /* SGHelperTool.m in Sources */,
 				239F06F41FB2F4020067D810 /* FoodReservationFinishListCell.swift in Sources */,
+				230BE0F71FB6DAF600AD47E0 /* MineUsableCoupons.swift in Sources */,
 				239F06F61FB2F4020067D810 /* RecommendedCommentCell.swift in Sources */,
 				23D0E3F71FADBC4B0058EA34 /* TYCyclePagerViewCell.m in Sources */,
+				230BE0F41FB6DAA600AD47E0 /* MineDiscountCouponsVC.swift in Sources */,
 				236C44331FB4788000AC3010 /* FoodMerchantsCell.swift in Sources */,
 				239F06AD1FB2F3D30067D810 /* HomeController.swift in Sources */,
+				230BE0F91FB6DB1900AD47E0 /* MineExpiredCoupons.swift in Sources */,
 				239F06EE1FB2F4020067D810 /* FoodReservationCodeCell.swift in Sources */,
+				230BE0E21FB6A27600AD47E0 /* SGPageTitleView.m in Sources */,
 				239F07101FB2F4020067D810 /* FoodFeaturesDetailCell.swift in Sources */,
 				239F07001FB2F4020067D810 /* RecommendNaviCell.swift in Sources */,
 				2316A2C41FAD8F4700A0B512 /* TPTextField.swift in Sources */,
 				239F06A81FB2F3D30067D810 /* FoodVoucherOrderDetailsVC.swift in Sources */,
 				239F07061FB2F4020067D810 /* FoodReservationPaymentCardCell.swift in Sources */,
 				239F070A1FB2F4020067D810 /* FoodPurchaseNotesCell.swift in Sources */,
+				230BE0EF1FB6A4BE00AD47E0 /* MineExpensesRecordCell.swift in Sources */,
+				23E214C21FB6E91B00C7D085 /* MineInformationVC.swift in Sources */,
 				230FA7681FB53BF800190F2B /* FoodMerchantsListCell.swift in Sources */,
 				236C442B1FB474B700AC3010 /* FoodMerchantsVC.swift in Sources */,
 				2388E0A31FB00D0C00AB6853 /* MainViewController.swift in Sources */,
@@ -1196,12 +1393,15 @@
 				239F06AB1FB2F3D30067D810 /* FoodReservationFinishVC.swift in Sources */,
 				230FA7711FB5AA7C00190F2B /* MineHeadView.swift in Sources */,
 				239F06AE1FB2F3D30067D810 /* FoodRecommendDetailVC.swift in Sources */,
+				230BE1091FB6E2EC00AD47E0 /* MineReservationCell.swift in Sources */,
 				239F070E1FB2F4020067D810 /* FoodPurchaseSuccessView.swift in Sources */,
 				239F06AA1FB2F3D30067D810 /* FoodReservationPayVC.swift in Sources */,
 				2316A2831FAD71FE00A0B512 /* AppDelegate.swift in Sources */,
 				239F06AF1FB2F3D30067D810 /* FoodPurchaseNotesVC.swift in Sources */,
 				2316A2E91FAD947300A0B512 /* MineController.swift in Sources */,
 				23D0E3F21FADBC000058EA34 /* TYCyclePagerTransformLayout.m in Sources */,
+				230BE0E71FB6A34E00AD47E0 /* MineAllOrderVC.swift in Sources */,
+				230BE0E91FB6A37D00AD47E0 /* MineOrderEvaluatedVC.swift in Sources */,
 				239F06A91FB2F3D30067D810 /* FoodPaymentCardCouponsVC.swift in Sources */,
 				2323931F1FB43B6E00425BDA /* FoodNormalOrderDetailsVC.swift in Sources */,
 				2353EC1F1FB4047A005E1548 /* FoodOrderDetailsCell.swift in Sources */,

@@ -9,27 +9,79 @@
 import UIKit
 
 class MineController: MainViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.addDefaultButtonImageRight("ic_mine_setting")
+        self.addDefaultButtonImageLeft("ic_mine_message")
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        headView.frame = CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: self.headView.backgroundVw.frame.size.height)
+        view.addSubview(headView)
+        mineOptionView.frame = CGRect(x: 0, y: headView.frame.maxY, width: SCREEN_WIDTH, height: self.mineOptionView.backgroundVw.frame.size.height)
+        view.addSubview(mineOptionView)
     }
-    */
-
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+    }
+    
+    override func rightImageBtn(_ sender: UIBarButtonItem) {
+        
+    }
+    
+    override func leftImageBtn(_ sender: UIBarButtonItem) {
+        
+    }
+    
+    func pushNextViewController(type:Int){
+//        self.navigationController?.navigationBar.alpha = 1
+        switch type {
+        case 0:
+            let mineCollectionVC = MineCollectionVC()
+            self.navigationController?.pushViewController(mineCollectionVC, animated: true)
+            break
+        case 1:
+            let mineExpensesRecordVC = MineExpensesRecordVC()
+            self.navigationController?.pushViewController(mineExpensesRecordVC, animated: true)
+            break
+        case 2:
+            let mineDiscountCouponsVC = MineDiscountCouponsVC()
+            self.navigationController?.pushViewController(mineDiscountCouponsVC, animated: true)
+            break
+        case 3:
+            let mineReservationVC = MineReservationVC()
+            self.navigationController?.pushViewController(mineReservationVC, animated: true)
+            break
+        
+        case 4:
+            break
+            
+        case 5:
+            let mineInformationVC = MineInformationVC()
+            self.navigationController?.pushViewController(mineInformationVC, animated: true)
+            break
+            
+        default:
+            break
+        }
+    }
+    
+    lazy var headView: MineHeadView = {
+        let view = Bundle.main.loadNibNamed("MineHeadView", owner: nil, options: nil)?.last as! MineHeadView
+        view.mineHeadCallBack = {() in
+            self.pushNextViewController(type: 5)
+        }
+        return view
+    }()
+    
+    lazy var mineOptionView: MineOptionView = {
+        let view = Bundle.main.loadNibNamed("MineOptionView", owner: nil, options: nil)?.last as! MineOptionView
+        view.mineOptionViewCallBack = {(_ type:Int) in
+            self.pushNextViewController(type: type)
+        }
+        return view
+    }()
 }

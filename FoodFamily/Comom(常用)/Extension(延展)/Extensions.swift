@@ -158,3 +158,14 @@ extension UILabel {
     }
 }
 
+extension UIViewController {
+    func setCloseRoundKeyboard() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.closeKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func closeKeyboard() {
+        view.endEditing(true)
+    }
+}
+

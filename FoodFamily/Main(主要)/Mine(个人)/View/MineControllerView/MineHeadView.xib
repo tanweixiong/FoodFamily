@@ -14,35 +14,54 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="MineHeadView" customModule="FoodFamily" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
-            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="116"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EdL-cS-TA7">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="116"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CXi-Uj-nTG">
-                            <rect key="frame" x="162" y="65" width="50" height="50"/>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_home_food" translatesAutoresizingMaskIntoConstraints="NO" id="CXi-Uj-nTG" customClass="ic_home_food">
+                            <rect key="frame" x="162.5" y="20.5" width="50" height="50"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="50" id="2hE-An-6NV"/>
                                 <constraint firstAttribute="width" secondItem="CXi-Uj-nTG" secondAttribute="height" multiplier="1:1" id="WrZ-2a-che"/>
                             </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="25"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                            </userDefinedRuntimeAttributes>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oio-Kp-SWF">
-                            <rect key="frame" x="180" y="125" width="14" height="21"/>
+                            <rect key="frame" x="0.0" y="80.5" width="375" height="15"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="21" id="Ivf-3l-eF7"/>
+                                <constraint firstAttribute="height" constant="15" id="Ivf-3l-eF7"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="huj-kZ-QG0">
+                            <rect key="frame" x="152.5" y="20.5" width="70" height="75"/>
+                            <connections>
+                                <action selector="onClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="eI2-JJ-vSW"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" red="0.099394746124744415" green="0.088113375008106232" blue="0.098063625395298004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
+                        <constraint firstItem="huj-kZ-QG0" firstAttribute="top" secondItem="CXi-Uj-nTG" secondAttribute="top" id="1P8-JY-lPf"/>
                         <constraint firstItem="oio-Kp-SWF" firstAttribute="top" secondItem="CXi-Uj-nTG" secondAttribute="bottom" constant="10" id="Dvq-gd-ZJH"/>
+                        <constraint firstItem="oio-Kp-SWF" firstAttribute="leading" secondItem="EdL-cS-TA7" secondAttribute="leading" id="GxM-jG-4kk"/>
                         <constraint firstItem="oio-Kp-SWF" firstAttribute="centerX" secondItem="CXi-Uj-nTG" secondAttribute="centerX" id="J0a-7W-gox"/>
+                        <constraint firstAttribute="width" secondItem="EdL-cS-TA7" secondAttribute="height" multiplier="375:116" id="JOS-Qx-iec"/>
+                        <constraint firstItem="huj-kZ-QG0" firstAttribute="width" secondItem="CXi-Uj-nTG" secondAttribute="width" constant="20" id="Tcq-3L-bsw"/>
+                        <constraint firstItem="huj-kZ-QG0" firstAttribute="centerX" secondItem="EdL-cS-TA7" secondAttribute="centerX" id="aJy-S8-yBu"/>
+                        <constraint firstAttribute="trailing" secondItem="oio-Kp-SWF" secondAttribute="trailing" id="dUa-WF-oud"/>
+                        <constraint firstItem="huj-kZ-QG0" firstAttribute="bottom" secondItem="oio-Kp-SWF" secondAttribute="bottom" id="mw7-oi-Dq5"/>
                         <constraint firstItem="CXi-Uj-nTG" firstAttribute="centerX" secondItem="EdL-cS-TA7" secondAttribute="centerX" id="p0C-S2-7QZ"/>
-                        <constraint firstItem="CXi-Uj-nTG" firstAttribute="centerY" secondItem="EdL-cS-TA7" secondAttribute="centerY" id="vR4-sl-Mem"/>
+                        <constraint firstItem="CXi-Uj-nTG" firstAttribute="centerY" secondItem="EdL-cS-TA7" secondAttribute="centerY" constant="-12.5" id="vR4-sl-Mem"/>
                     </constraints>
                 </view>
             </subviews>
@@ -51,11 +70,16 @@
                 <constraint firstItem="EdL-cS-TA7" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="97W-iA-VN4"/>
                 <constraint firstItem="EdL-cS-TA7" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Dbt-9j-daq"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="EdL-cS-TA7" secondAttribute="trailing" id="Y2v-mm-X5k"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="EdL-cS-TA7" secondAttribute="bottom" id="qxf-hV-9Ww"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="1.5" y="-252"/>
+            <connections>
+                <outlet property="backgroundVw" destination="EdL-cS-TA7" id="VWu-OK-cG4"/>
+            </connections>
+            <point key="canvasLocation" x="-289.5" y="-241"/>
         </view>
     </objects>
+    <resources>
+        <image name="ic_home_food" width="151" height="129"/>
+    </resources>
 </document>

@@ -11,4 +11,5 @@
 #import "BoutiqueScrollView.h"
 #import "UINavigationBar+Other.h"
 #import "OCTools.h"
+#import "SGPageView.h"
 #endif
