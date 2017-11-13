@@ -18,7 +18,6 @@ class MineInformationHeadCell: UITableViewCell {
     }
 
     @IBAction func onClick(_ sender: UIButton) {
-    
         if mineInformationHeadCallBack != nil {
             mineInformationHeadCallBack!()
         }

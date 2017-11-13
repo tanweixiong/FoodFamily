@@ -12,4 +12,5 @@
 #import "UINavigationBar+Other.h"
 #import "OCTools.h"
 #import "SGPageView.h"
+#import "LJXPhotoAlbum.h"
 #endif

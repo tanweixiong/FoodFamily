@@ -65,6 +65,7 @@
 		236C44301FB4750800AC3010 /* FoodMerchantsHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 236C442F1FB4750800AC3010 /* FoodMerchantsHeadView.xib */; };
 		236C44331FB4788000AC3010 /* FoodMerchantsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236C44311FB4788000AC3010 /* FoodMerchantsCell.swift */; };
 		236C44341FB4788000AC3010 /* FoodMerchantsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 236C44321FB4788000AC3010 /* FoodMerchantsCell.xib */; };
+		238092DD1FB93FE40051EF3D /* LJXPhotoAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = 238092DC1FB93FE40051EF3D /* LJXPhotoAlbum.m */; };
 		2388E09F1FAFFF7B00AB6853 /* FoodDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2388E09D1FAFFF7B00AB6853 /* FoodDetailsCell.swift */; };
 		2388E0A01FAFFF7B00AB6853 /* FoodDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2388E09E1FAFFF7B00AB6853 /* FoodDetailsCell.xib */; };
 		2388E0A31FB00D0C00AB6853 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2388E0A21FB00D0C00AB6853 /* MainViewController.swift */; };
@@ -236,6 +237,8 @@
 		236C44311FB4788000AC3010 /* FoodMerchantsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodMerchantsCell.swift; sourceTree = "<group>"; };
 		236C44321FB4788000AC3010 /* FoodMerchantsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoodMerchantsCell.xib; sourceTree = "<group>"; };
 		2377C9501FADC0E900FE1605 /* FoodFamily_Brigding_Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodFamily_Brigding_Header.h; sourceTree = "<group>"; };
+		238092DB1FB93FE40051EF3D /* LJXPhotoAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJXPhotoAlbum.h; sourceTree = "<group>"; };
+		238092DC1FB93FE40051EF3D /* LJXPhotoAlbum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJXPhotoAlbum.m; sourceTree = "<group>"; };
 		2388E09D1FAFFF7B00AB6853 /* FoodDetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDetailsCell.swift; sourceTree = "<group>"; };
 		2388E09E1FAFFF7B00AB6853 /* FoodDetailsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoodDetailsCell.xib; sourceTree = "<group>"; };
 		2388E0A21FB00D0C00AB6853 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -814,6 +817,15 @@
 			path = FoodMerchantsView;
 			sourceTree = "<group>";
 		};
+		238092DA1FB93FE40051EF3D /* LJXPhotoAlbum */ = {
+			isa = PBXGroup;
+			children = (
+				238092DB1FB93FE40051EF3D /* LJXPhotoAlbum.h */,
+				238092DC1FB93FE40051EF3D /* LJXPhotoAlbum.m */,
+			);
+			path = LJXPhotoAlbum;
+			sourceTree = "<group>";
+		};
 		2388E0A11FB00D0C00AB6853 /* MainVC(根控制器) */ = {
 			isa = PBXGroup;
 			children = (
@@ -943,6 +955,7 @@
 		23D0E3EA1FADBC000058EA34 /* Vender(第三方) */ = {
 			isa = PBXGroup;
 			children = (
+				238092DA1FB93FE40051EF3D /* LJXPhotoAlbum */,
 				230BE0D51FB6A27500AD47E0 /* SGPageView */,
 				23D0E3EB1FADBC000058EA34 /* TYCyclePagerView */,
 			);
@@ -1330,6 +1343,7 @@
 				2316A2E31FAD942C00A0B512 /* CrowdfundingController.swift in Sources */,
 				230FA7651FB539C600190F2B /* FoodMerchantsListView.swift in Sources */,
 				2316A2C31FAD8F4700A0B512 /* Extensions.swift in Sources */,
+				238092DD1FB93FE40051EF3D /* LJXPhotoAlbum.m in Sources */,
 				23E214CA1FB6EA3600C7D085 /* MineInformationListCell.swift in Sources */,
 				239F06EA1FB2F4020067D810 /* FoodPaymentCardCouponsCell.swift in Sources */,
 				2353EC1C1FB3F6BA005E1548 /* OCTools.m in Sources */,
