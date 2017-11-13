@@ -66,6 +66,15 @@
 		236C44331FB4788000AC3010 /* FoodMerchantsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236C44311FB4788000AC3010 /* FoodMerchantsCell.swift */; };
 		236C44341FB4788000AC3010 /* FoodMerchantsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 236C44321FB4788000AC3010 /* FoodMerchantsCell.xib */; };
 		238092DD1FB93FE40051EF3D /* LJXPhotoAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = 238092DC1FB93FE40051EF3D /* LJXPhotoAlbum.m */; };
+		238092DF1FB943D30051EF3D /* MineSetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238092DE1FB943D30051EF3D /* MineSetVC.swift */; };
+		238092E31FB945100051EF3D /* MineSetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238092E11FB945100051EF3D /* MineSetCell.swift */; };
+		238092E41FB945100051EF3D /* MineSetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 238092E21FB945100051EF3D /* MineSetCell.xib */; };
+		238092E61FB94CB50051EF3D /* MineSetPayPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238092E51FB94CB50051EF3D /* MineSetPayPasswordVC.swift */; };
+		238092EA1FB94EEF0051EF3D /* UIButton+CountDown.m in Sources */ = {isa = PBXBuildFile; fileRef = 238092E91FB94EEF0051EF3D /* UIButton+CountDown.m */; };
+		238092EE1FB94F580051EF3D /* MineSetPayPasswordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238092EC1FB94F580051EF3D /* MineSetPayPasswordCell.swift */; };
+		238092EF1FB94F580051EF3D /* MineSetPayPasswordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 238092ED1FB94F580051EF3D /* MineSetPayPasswordCell.xib */; };
+		238092F61FB96D420051EF3D /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238092F51FB96D420051EF3D /* LoginVC.swift */; };
+		238092F81FB971340051EF3D /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238092F71FB971340051EF3D /* InputView.swift */; };
 		2388E09F1FAFFF7B00AB6853 /* FoodDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2388E09D1FAFFF7B00AB6853 /* FoodDetailsCell.swift */; };
 		2388E0A01FAFFF7B00AB6853 /* FoodDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2388E09E1FAFFF7B00AB6853 /* FoodDetailsCell.xib */; };
 		2388E0A31FB00D0C00AB6853 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2388E0A21FB00D0C00AB6853 /* MainViewController.swift */; };
@@ -239,6 +248,16 @@
 		2377C9501FADC0E900FE1605 /* FoodFamily_Brigding_Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodFamily_Brigding_Header.h; sourceTree = "<group>"; };
 		238092DB1FB93FE40051EF3D /* LJXPhotoAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJXPhotoAlbum.h; sourceTree = "<group>"; };
 		238092DC1FB93FE40051EF3D /* LJXPhotoAlbum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJXPhotoAlbum.m; sourceTree = "<group>"; };
+		238092DE1FB943D30051EF3D /* MineSetVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineSetVC.swift; sourceTree = "<group>"; };
+		238092E11FB945100051EF3D /* MineSetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineSetCell.swift; sourceTree = "<group>"; };
+		238092E21FB945100051EF3D /* MineSetCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineSetCell.xib; sourceTree = "<group>"; };
+		238092E51FB94CB50051EF3D /* MineSetPayPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineSetPayPasswordVC.swift; sourceTree = "<group>"; };
+		238092E81FB94EEF0051EF3D /* UIButton+CountDown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+CountDown.h"; sourceTree = "<group>"; };
+		238092E91FB94EEF0051EF3D /* UIButton+CountDown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+CountDown.m"; sourceTree = "<group>"; };
+		238092EC1FB94F580051EF3D /* MineSetPayPasswordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineSetPayPasswordCell.swift; sourceTree = "<group>"; };
+		238092ED1FB94F580051EF3D /* MineSetPayPasswordCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineSetPayPasswordCell.xib; sourceTree = "<group>"; };
+		238092F51FB96D420051EF3D /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		238092F71FB971340051EF3D /* InputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
 		2388E09D1FAFFF7B00AB6853 /* FoodDetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDetailsCell.swift; sourceTree = "<group>"; };
 		2388E09E1FAFFF7B00AB6853 /* FoodDetailsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoodDetailsCell.xib; sourceTree = "<group>"; };
 		2388E0A21FB00D0C00AB6853 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -460,6 +479,8 @@
 				230BE0FA1FB6DB9200AD47E0 /* MineDiscountCouponsView */,
 				230BE1061FB6E2D000AD47E0 /* MineReservationView */,
 				23E214C31FB6E9FA00C7D085 /* MineInformationView */,
+				238092E01FB944EB0051EF3D /* MineSetView */,
+				238092EB1FB94F320051EF3D /* MineSetPayPasswordView */,
 			);
 			name = View;
 			path = "FoodFamily/Main(主要)/Mine(个人)/View";
@@ -549,6 +570,7 @@
 				2316A2D61FAD93D800A0B512 /* College(学院) */,
 				2316A2CC1FAD93D800A0B512 /* Chef(厨师) */,
 				2316A2D11FAD93D800A0B512 /* Mine(个人) */,
+				238092F01FB96CC20051EF3D /* Login&Register(注册与登录) */,
 				2316A2B11FAD8ACF00A0B512 /* Other */,
 			);
 			path = "Main(主要)";
@@ -731,6 +753,8 @@
 				230BE0F31FB6DAA600AD47E0 /* MineDiscountCouponsVC.swift */,
 				230BE0FF1FB6E16800AD47E0 /* MineReservationVC.swift */,
 				23E214C11FB6E91B00C7D085 /* MineInformationVC.swift */,
+				238092DE1FB943D30051EF3D /* MineSetVC.swift */,
+				238092E51FB94CB50051EF3D /* MineSetPayPasswordVC.swift */,
 				230BE0F21FB6AD8700AD47E0 /* MineExpensesRecordChildVC */,
 				230BE0F51FB6DAC800AD47E0 /* MineDiscountCouponsChildVC */,
 				230BE1011FB6E18400AD47E0 /* MineReservationChildVC */,
@@ -824,6 +848,74 @@
 				238092DC1FB93FE40051EF3D /* LJXPhotoAlbum.m */,
 			);
 			path = LJXPhotoAlbum;
+			sourceTree = "<group>";
+		};
+		238092E01FB944EB0051EF3D /* MineSetView */ = {
+			isa = PBXGroup;
+			children = (
+				238092E11FB945100051EF3D /* MineSetCell.swift */,
+				238092E21FB945100051EF3D /* MineSetCell.xib */,
+			);
+			path = MineSetView;
+			sourceTree = "<group>";
+		};
+		238092E71FB94EEF0051EF3D /* CountDown */ = {
+			isa = PBXGroup;
+			children = (
+				238092E81FB94EEF0051EF3D /* UIButton+CountDown.h */,
+				238092E91FB94EEF0051EF3D /* UIButton+CountDown.m */,
+			);
+			path = CountDown;
+			sourceTree = "<group>";
+		};
+		238092EB1FB94F320051EF3D /* MineSetPayPasswordView */ = {
+			isa = PBXGroup;
+			children = (
+				238092EC1FB94F580051EF3D /* MineSetPayPasswordCell.swift */,
+				238092ED1FB94F580051EF3D /* MineSetPayPasswordCell.xib */,
+			);
+			path = MineSetPayPasswordView;
+			sourceTree = "<group>";
+		};
+		238092F01FB96CC20051EF3D /* Login&Register(注册与登录) */ = {
+			isa = PBXGroup;
+			children = (
+				238092F31FB96CEB0051EF3D /* Controller */,
+				238092F41FB96CEB0051EF3D /* Model */,
+				238092F11FB96CEB0051EF3D /* View */,
+				238092F21FB96CEB0051EF3D /* ViewModel */,
+			);
+			path = "Login&Register(注册与登录)";
+			sourceTree = "<group>";
+		};
+		238092F11FB96CEB0051EF3D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				238092F71FB971340051EF3D /* InputView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		238092F21FB96CEB0051EF3D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		238092F31FB96CEB0051EF3D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				238092F51FB96D420051EF3D /* LoginVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		238092F41FB96CEB0051EF3D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		2388E0A11FB00D0C00AB6853 /* MainVC(根控制器) */ = {
@@ -955,6 +1047,7 @@
 		23D0E3EA1FADBC000058EA34 /* Vender(第三方) */ = {
 			isa = PBXGroup;
 			children = (
+				238092E71FB94EEF0051EF3D /* CountDown */,
 				238092DA1FB93FE40051EF3D /* LJXPhotoAlbum */,
 				230BE0D51FB6A27500AD47E0 /* SGPageView */,
 				23D0E3EB1FADBC000058EA34 /* TYCyclePagerView */,
@@ -1139,6 +1232,7 @@
 				239F06E91FB2F4020067D810 /* FoodOrderDetailsHeadCell.xib in Resources */,
 				2388E0AA1FB0486C00AB6853 /* FoodDetailsFoodView.xib in Resources */,
 				23D0E3E11FAD97B70058EA34 /* TopicTableViewCell.xib in Resources */,
+				238092EF1FB94F580051EF3D /* MineSetPayPasswordCell.xib in Resources */,
 				239F07111FB2F4020067D810 /* FoodFeaturesDetailCell.xib in Resources */,
 				239F06FD1FB2F4020067D810 /* RecommendedReasonCell.xib in Resources */,
 				239F06EB1FB2F4020067D810 /* FoodPaymentCardCouponsCell.xib in Resources */,
@@ -1150,6 +1244,7 @@
 				239F06ED1FB2F4020067D810 /* FoodReservationCell.xib in Resources */,
 				230BE0F01FB6A4BE00AD47E0 /* MineExpensesRecordCell.xib in Resources */,
 				230BE0FE1FB6DBAF00AD47E0 /* MineDiscountCouponsCell.xib in Resources */,
+				238092E41FB945100051EF3D /* MineSetCell.xib in Resources */,
 				239F07071FB2F4020067D810 /* FoodReservationPaymentCardCell.xib in Resources */,
 				239F06F31FB2F4020067D810 /* FoodReservationFinishHeadCell.xib in Resources */,
 				239F06F11FB2F4020067D810 /* FoodReservationFilliCell.xib in Resources */,
@@ -1339,6 +1434,7 @@
 				230BE0D31FB69B5800AD47E0 /* MineCollectionCell.swift in Sources */,
 				239F06F01FB2F4020067D810 /* FoodReservationFilliCell.swift in Sources */,
 				239F06AC1FB2F3D30067D810 /* FoodReservationVC.swift in Sources */,
+				238092EE1FB94F580051EF3D /* MineSetPayPasswordCell.swift in Sources */,
 				239F06F81FB2F4020067D810 /* RecommendedFoodView.swift in Sources */,
 				2316A2E31FAD942C00A0B512 /* CrowdfundingController.swift in Sources */,
 				230FA7651FB539C600190F2B /* FoodMerchantsListView.swift in Sources */,
@@ -1357,6 +1453,8 @@
 				2388E0A61FB00FD400AB6853 /* UINavigationBar+Other.m in Sources */,
 				239F07041FB2F4020067D810 /* FoodReservationPayCell.swift in Sources */,
 				239F06FA1FB2F4020067D810 /* RecommendedMoneyCell.swift in Sources */,
+				238092EA1FB94EEF0051EF3D /* UIButton+CountDown.m in Sources */,
+				238092F81FB971340051EF3D /* InputView.swift in Sources */,
 				236C442E1FB474EA00AC3010 /* FoodMerchantsHeadView.swift in Sources */,
 				23E214C61FB6EA1B00C7D085 /* MineInformationHeadCell.swift in Sources */,
 				23D0E3F41FADBC000058EA34 /* TYPageControl.m in Sources */,
@@ -1366,6 +1464,7 @@
 				239F06EC1FB2F4020067D810 /* FoodReservationCell.swift in Sources */,
 				23D0E3E41FAD9C380058EA34 /* RecommendTableViewCell.swift in Sources */,
 				239F06E61FB2F4020067D810 /* FoodOrderDetailsEvaluationCell.swift in Sources */,
+				238092E61FB94CB50051EF3D /* MineSetPayPasswordVC.swift in Sources */,
 				230BE0E11FB6A27600AD47E0 /* SGPageContentView.m in Sources */,
 				239F06A61FB2F3D30067D810 /* FoodFeaturesDetailVC.swift in Sources */,
 				2316A2B41FAD8ACF00A0B512 /* MainTabBarController.swift in Sources */,
@@ -1378,6 +1477,7 @@
 				230BE0F71FB6DAF600AD47E0 /* MineUsableCoupons.swift in Sources */,
 				239F06F61FB2F4020067D810 /* RecommendedCommentCell.swift in Sources */,
 				23D0E3F71FADBC4B0058EA34 /* TYCyclePagerViewCell.m in Sources */,
+				238092E31FB945100051EF3D /* MineSetCell.swift in Sources */,
 				230BE0F41FB6DAA600AD47E0 /* MineDiscountCouponsVC.swift in Sources */,
 				236C44331FB4788000AC3010 /* FoodMerchantsCell.swift in Sources */,
 				239F06AD1FB2F3D30067D810 /* HomeController.swift in Sources */,
@@ -1414,11 +1514,13 @@
 				239F06AF1FB2F3D30067D810 /* FoodPurchaseNotesVC.swift in Sources */,
 				2316A2E91FAD947300A0B512 /* MineController.swift in Sources */,
 				23D0E3F21FADBC000058EA34 /* TYCyclePagerTransformLayout.m in Sources */,
+				238092DF1FB943D30051EF3D /* MineSetVC.swift in Sources */,
 				230BE0E71FB6A34E00AD47E0 /* MineAllOrderVC.swift in Sources */,
 				230BE0E91FB6A37D00AD47E0 /* MineOrderEvaluatedVC.swift in Sources */,
 				239F06A91FB2F3D30067D810 /* FoodPaymentCardCouponsVC.swift in Sources */,
 				2323931F1FB43B6E00425BDA /* FoodNormalOrderDetailsVC.swift in Sources */,
 				2353EC1F1FB4047A005E1548 /* FoodOrderDetailsCell.swift in Sources */,
+				238092F61FB96D420051EF3D /* LoginVC.swift in Sources */,
 				239F070C1FB2F4020067D810 /* FoodPurchaseNotesHeadView.swift in Sources */,
 				2388E09F1FAFFF7B00AB6853 /* FoodDetailsCell.swift in Sources */,
 			);

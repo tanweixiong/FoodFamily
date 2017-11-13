@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="MineSetCell" customModule="FoodFamily" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gLg-7c-Sp6">
+                        <rect key="frame" x="15" y="13.5" width="278" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.40784313725490196" green="0.40784313725490196" blue="0.40784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_home_more" translatesAutoresizingMaskIntoConstraints="NO" id="Ci2-ZP-kTW">
+                        <rect key="frame" x="298" y="16.5" width="7" height="10.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="7.2000000000000002" id="Evb-ou-09a"/>
+                            <constraint firstAttribute="height" constant="10.800000000000001" id="vFB-qx-DJc"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Ci2-ZP-kTW" firstAttribute="leading" secondItem="gLg-7c-Sp6" secondAttribute="trailing" constant="5" id="2JP-cb-8GV"/>
+                    <constraint firstItem="gLg-7c-Sp6" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Ufg-bm-aaL"/>
+                    <constraint firstAttribute="trailing" secondItem="Ci2-ZP-kTW" secondAttribute="trailing" constant="15.199999999999999" id="Usg-Fx-F5y"/>
+                    <constraint firstItem="Ci2-ZP-kTW" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Yf6-cr-39C"/>
+                    <constraint firstItem="gLg-7c-Sp6" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="ovN-zW-1yZ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="headingLabel" destination="gLg-7c-Sp6" id="ENB-Xe-Bc2"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="ic_home_more" width="8" height="12"/>
+    </resources>
+</document>

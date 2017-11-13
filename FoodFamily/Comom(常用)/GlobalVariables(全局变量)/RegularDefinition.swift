@@ -83,3 +83,6 @@ public let R_UINavigationBarColor = UIColor.R_UIColorFromRGB(color: 0x191619)
 
 //section分割线颜色
 public let R_UISectionLineColor = UIColor.R_UIRGBColor(red: 251, green: 251, blue: 251, alpha: 1)
+
+//主题金色
+public let R_UIThemeGoldColor = UIColor.R_UIRGBColor(red: 211, green: 178, blue: 105, alpha: 1)

@@ -29,7 +29,8 @@ class MineController: MainViewController {
     }
     
     override func rightImageBtn(_ sender: UIBarButtonItem) {
-        
+        let mineSetVC = MineSetVC()
+        self.navigationController?.pushViewController(mineSetVC, animated: true)
     }
     
     override func leftImageBtn(_ sender: UIBarButtonItem) {
@@ -37,7 +38,6 @@ class MineController: MainViewController {
     }
     
     func pushNextViewController(type:Int){
-//        self.navigationController?.navigationBar.alpha = 1
         switch type {
         case 0:
             let mineCollectionVC = MineCollectionVC()
@@ -52,11 +52,12 @@ class MineController: MainViewController {
             self.navigationController?.pushViewController(mineDiscountCouponsVC, animated: true)
             break
         case 3:
-            let mineReservationVC = MineReservationVC()
-            self.navigationController?.pushViewController(mineReservationVC, animated: true)
+           
             break
         
         case 4:
+            let mineReservationVC = MineReservationVC()
+            self.navigationController?.pushViewController(mineReservationVC, animated: true)
             break
             
         case 5:
