@@ -16,5 +16,5 @@
 #import "UIButton+CountDown.h"
 #import "SnapKit.h"
 #import "ObjectMapper.h"
-#import "HJRatingView.h"
+#import "TggStarEvaluationView.h"
 #endif

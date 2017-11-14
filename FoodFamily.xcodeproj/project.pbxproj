@@ -32,7 +32,7 @@
 		230BE1051FB6E2A900AD47E0 /* MineReservationExpiredVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230BE1041FB6E2A900AD47E0 /* MineReservationExpiredVC.swift */; };
 		230BE1091FB6E2EC00AD47E0 /* MineReservationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230BE1071FB6E2EC00AD47E0 /* MineReservationCell.swift */; };
 		230BE10A1FB6E2EC00AD47E0 /* MineReservationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 230BE1081FB6E2EC00AD47E0 /* MineReservationCell.xib */; };
-		230F3C641FBAD7DC00D188DB /* HJRatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 230F3C631FBAD7DC00D188DB /* HJRatingView.m */; };
+		230F3C731FBAEA0900D188DB /* TggStarEvaluationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 230F3C721FBAEA0900D188DB /* TggStarEvaluationView.m */; };
 		230FA7651FB539C600190F2B /* FoodMerchantsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230FA7641FB539C600190F2B /* FoodMerchantsListView.swift */; };
 		230FA7681FB53BF800190F2B /* FoodMerchantsListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230FA7661FB53BF800190F2B /* FoodMerchantsListCell.swift */; };
 		230FA7691FB53BF800190F2B /* FoodMerchantsListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 230FA7671FB53BF800190F2B /* FoodMerchantsListCell.xib */; };
@@ -282,8 +282,8 @@
 		230BE1041FB6E2A900AD47E0 /* MineReservationExpiredVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineReservationExpiredVC.swift; sourceTree = "<group>"; };
 		230BE1071FB6E2EC00AD47E0 /* MineReservationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineReservationCell.swift; sourceTree = "<group>"; };
 		230BE1081FB6E2EC00AD47E0 /* MineReservationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineReservationCell.xib; sourceTree = "<group>"; };
-		230F3C621FBAD7DC00D188DB /* HJRatingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJRatingView.h; sourceTree = "<group>"; };
-		230F3C631FBAD7DC00D188DB /* HJRatingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJRatingView.m; sourceTree = "<group>"; };
+		230F3C711FBAEA0900D188DB /* TggStarEvaluationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TggStarEvaluationView.h; sourceTree = "<group>"; };
+		230F3C721FBAEA0900D188DB /* TggStarEvaluationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TggStarEvaluationView.m; sourceTree = "<group>"; };
 		230FA7641FB539C600190F2B /* FoodMerchantsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodMerchantsListView.swift; sourceTree = "<group>"; };
 		230FA7661FB53BF800190F2B /* FoodMerchantsListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodMerchantsListCell.swift; sourceTree = "<group>"; };
 		230FA7671FB53BF800190F2B /* FoodMerchantsListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoodMerchantsListCell.xib; sourceTree = "<group>"; };
@@ -1344,8 +1344,8 @@
 		23D147421FBA93540028CD09 /* FoodEvaluationView */ = {
 			isa = PBXGroup;
 			children = (
-				230F3C621FBAD7DC00D188DB /* HJRatingView.h */,
-				230F3C631FBAD7DC00D188DB /* HJRatingView.m */,
+				230F3C711FBAEA0900D188DB /* TggStarEvaluationView.h */,
+				230F3C721FBAEA0900D188DB /* TggStarEvaluationView.m */,
 				23D147431FBA938A0028CD09 /* FoodEvaluationHeadCell.swift */,
 				23D147441FBA938A0028CD09 /* FoodEvaluationHeadCell.xib */,
 				23D147561FBA9A2E0028CD09 /* FoodEvaluationListCell.swift */,
@@ -1828,6 +1828,7 @@
 				239F07061FB2F4020067D810 /* FoodReservationPaymentCardCell.swift in Sources */,
 				2380933C1FB97BAD0051EF3D /* ConstraintView+Extensions.swift in Sources */,
 				239F070A1FB2F4020067D810 /* FoodPurchaseNotesCell.swift in Sources */,
+				230F3C731FBAEA0900D188DB /* TggStarEvaluationView.m in Sources */,
 				2380932C1FB97BAD0051EF3D /* ConstraintLayoutGuide.swift in Sources */,
 				230BE0EF1FB6A4BE00AD47E0 /* MineExpensesRecordCell.swift in Sources */,
 				2380932D1FB97BAD0051EF3D /* ConstraintLayoutGuideDSL.swift in Sources */,
@@ -1844,7 +1845,6 @@
 				239F07081FB2F4020067D810 /* FoodReservationPaymentMethodCell.swift in Sources */,
 				23D0E3E01FAD97B70058EA34 /* TopicTableViewCell.swift in Sources */,
 				2316A2E51FAD944300A0B512 /* CollegeController.swift in Sources */,
-				230F3C641FBAD7DC00D188DB /* HJRatingView.m in Sources */,
 				239F06F21FB2F4020067D810 /* FoodReservationFinishHeadCell.swift in Sources */,
 				239F06E81FB2F4020067D810 /* FoodOrderDetailsHeadCell.swift in Sources */,
 				239F06AB1FB2F3D30067D810 /* FoodReservationFinishVC.swift in Sources */,
