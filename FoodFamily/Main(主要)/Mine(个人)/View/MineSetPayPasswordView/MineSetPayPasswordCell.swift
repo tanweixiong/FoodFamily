@@ -9,6 +9,7 @@
 import UIKit
 
 class MineSetPayPasswordCell: UITableViewCell {
+    @IBOutlet weak var headingLabel: UILabel!
     @IBOutlet weak var textfield: UITextField!
     override func awakeFromNib() {
         super.awakeFromNib()

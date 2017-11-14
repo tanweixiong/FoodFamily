@@ -75,6 +75,74 @@
 		238092EF1FB94F580051EF3D /* MineSetPayPasswordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 238092ED1FB94F580051EF3D /* MineSetPayPasswordCell.xib */; };
 		238092F61FB96D420051EF3D /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238092F51FB96D420051EF3D /* LoginVC.swift */; };
 		238092F81FB971340051EF3D /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238092F71FB971340051EF3D /* InputView.swift */; };
+		238093221FB97BAD0051EF3D /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238092FE1FB97BAD0051EF3D /* Constraint.swift */; };
+		238093231FB97BAD0051EF3D /* ConstraintAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238092FF1FB97BAD0051EF3D /* ConstraintAttributes.swift */; };
+		238093241FB97BAD0051EF3D /* ConstraintConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238093001FB97BAD0051EF3D /* ConstraintConfig.swift */; };
+		238093251FB97BAD0051EF3D /* ConstraintConstantTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238093011FB97BAD0051EF3D /* ConstraintConstantTarget.swift */; };
+		238093261FB97BAD0051EF3D /* ConstraintDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238093021FB97BAD0051EF3D /* ConstraintDescription.swift */; };
+		238093271FB97BAD0051EF3D /* ConstraintDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238093031FB97BAD0051EF3D /* ConstraintDSL.swift */; };
+		238093281FB97BAD0051EF3D /* ConstraintInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238093041FB97BAD0051EF3D /* ConstraintInsets.swift */; };
+		238093291FB97BAD0051EF3D /* ConstraintInsetTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238093051FB97BAD0051EF3D /* ConstraintInsetTarget.swift */; };
+		2380932A1FB97BAD0051EF3D /* ConstraintItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238093061FB97BAD0051EF3D /* ConstraintItem.swift */; };
+		2380932B1FB97BAD0051EF3D /* ConstraintLayoutGuide+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238093071FB97BAD0051EF3D /* ConstraintLayoutGuide+Extensions.swift */; };
+		2380932C1FB97BAD0051EF3D /* ConstraintLayoutGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238093081FB97BAD0051EF3D /* ConstraintLayoutGuide.swift */; };
+		2380932D1FB97BAD0051EF3D /* ConstraintLayoutGuideDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238093091FB97BAD0051EF3D /* ConstraintLayoutGuideDSL.swift */; };
+		2380932E1FB97BAD0051EF3D /* ConstraintLayoutSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2380930A1FB97BAD0051EF3D /* ConstraintLayoutSupport.swift */; };
+		2380932F1FB97BAD0051EF3D /* ConstraintLayoutSupportDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2380930B1FB97BAD0051EF3D /* ConstraintLayoutSupportDSL.swift */; };
+		238093301FB97BAD0051EF3D /* ConstraintMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2380930C1FB97BAD0051EF3D /* ConstraintMaker.swift */; };
+		238093311FB97BAD0051EF3D /* ConstraintMakerEditable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2380930D1FB97BAD0051EF3D /* ConstraintMakerEditable.swift */; };
+		238093321FB97BAD0051EF3D /* ConstraintMakerExtendable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2380930E1FB97BAD0051EF3D /* ConstraintMakerExtendable.swift */; };
+		238093331FB97BAD0051EF3D /* ConstraintMakerFinalizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2380930F1FB97BAD0051EF3D /* ConstraintMakerFinalizable.swift */; };
+		238093341FB97BAD0051EF3D /* ConstraintMakerPriortizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238093101FB97BAD0051EF3D /* ConstraintMakerPriortizable.swift */; };
+		238093351FB97BAD0051EF3D /* ConstraintMakerRelatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238093111FB97BAD0051EF3D /* ConstraintMakerRelatable.swift */; };
+		238093361FB97BAD0051EF3D /* ConstraintMultiplierTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238093121FB97BAD0051EF3D /* ConstraintMultiplierTarget.swift */; };
+		238093371FB97BAD0051EF3D /* ConstraintOffsetTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238093131FB97BAD0051EF3D /* ConstraintOffsetTarget.swift */; };
+		238093381FB97BAD0051EF3D /* ConstraintPriority.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238093141FB97BAD0051EF3D /* ConstraintPriority.swift */; };
+		238093391FB97BAD0051EF3D /* ConstraintPriorityTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238093151FB97BAD0051EF3D /* ConstraintPriorityTarget.swift */; };
+		2380933A1FB97BAD0051EF3D /* ConstraintRelatableTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238093161FB97BAD0051EF3D /* ConstraintRelatableTarget.swift */; };
+		2380933B1FB97BAD0051EF3D /* ConstraintRelation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238093171FB97BAD0051EF3D /* ConstraintRelation.swift */; };
+		2380933C1FB97BAD0051EF3D /* ConstraintView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238093181FB97BAD0051EF3D /* ConstraintView+Extensions.swift */; };
+		2380933D1FB97BAD0051EF3D /* ConstraintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238093191FB97BAD0051EF3D /* ConstraintView.swift */; };
+		2380933E1FB97BAD0051EF3D /* ConstraintViewDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2380931A1FB97BAD0051EF3D /* ConstraintViewDSL.swift */; };
+		2380933F1FB97BAD0051EF3D /* Debugging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2380931B1FB97BAD0051EF3D /* Debugging.swift */; };
+		238093401FB97BAD0051EF3D /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2380931C1FB97BAD0051EF3D /* Info.plist */; };
+		238093411FB97BAD0051EF3D /* LayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2380931D1FB97BAD0051EF3D /* LayoutConstraint.swift */; };
+		238093421FB97BAD0051EF3D /* LayoutConstraintItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2380931E1FB97BAD0051EF3D /* LayoutConstraintItem.swift */; };
+		238093431FB97BAD0051EF3D /* Typealiases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238093201FB97BAD0051EF3D /* Typealiases.swift */; };
+		238093441FB97BAD0051EF3D /* UILayoutSupport+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238093211FB97BAD0051EF3D /* UILayoutSupport+Extensions.swift */; };
+		238093491FB97D240051EF3D /* BaseURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238093461FB97D230051EF3D /* BaseURL.swift */; };
+		2380934A1FB97D240051EF3D /* ConstAPIURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238093471FB97D230051EF3D /* ConstAPIURL.swift */; };
+		2380934B1FB97D240051EF3D /* NetWorkTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238093481FB97D230051EF3D /* NetWorkTool.swift */; };
+		2380934E1FB9808C0051EF3D /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2380934D1FB9808B0051EF3D /* Tools.swift */; };
+		238093691FB9813D0051EF3D /* CustomDateFormatTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238093501FB9813D0051EF3D /* CustomDateFormatTransform.swift */; };
+		2380936A1FB9813D0051EF3D /* DataTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238093511FB9813D0051EF3D /* DataTransform.swift */; };
+		2380936B1FB9813D0051EF3D /* DateFormatterTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238093521FB9813D0051EF3D /* DateFormatterTransform.swift */; };
+		2380936C1FB9813D0051EF3D /* DateTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238093531FB9813D0051EF3D /* DateTransform.swift */; };
+		2380936D1FB9813D0051EF3D /* DictionaryTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238093541FB9813D0051EF3D /* DictionaryTransform.swift */; };
+		2380936E1FB9813D0051EF3D /* EnumOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238093551FB9813D0051EF3D /* EnumOperators.swift */; };
+		2380936F1FB9813D0051EF3D /* EnumTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238093561FB9813D0051EF3D /* EnumTransform.swift */; };
+		238093701FB9813D0051EF3D /* FromJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238093571FB9813D0051EF3D /* FromJSON.swift */; };
+		238093711FB9813D0051EF3D /* HexColorTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238093581FB9813D0051EF3D /* HexColorTransform.swift */; };
+		238093721FB9813D0051EF3D /* ImmutableMappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238093591FB9813D0051EF3D /* ImmutableMappable.swift */; };
+		238093731FB9813D0051EF3D /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2380935A1FB9813D0051EF3D /* Info.plist */; };
+		238093741FB9813D0051EF3D /* IntegerOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2380935B1FB9813D0051EF3D /* IntegerOperators.swift */; };
+		238093751FB9813D0051EF3D /* ISO8601DateTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2380935C1FB9813D0051EF3D /* ISO8601DateTransform.swift */; };
+		238093761FB9813D0051EF3D /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2380935D1FB9813D0051EF3D /* Map.swift */; };
+		238093771FB9813D0051EF3D /* MapError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2380935E1FB9813D0051EF3D /* MapError.swift */; };
+		238093781FB9813D0051EF3D /* Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2380935F1FB9813D0051EF3D /* Mappable.swift */; };
+		238093791FB9813D0051EF3D /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238093601FB9813D0051EF3D /* Mapper.swift */; };
+		2380937A1FB9813D0051EF3D /* NSDecimalNumberTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238093611FB9813D0051EF3D /* NSDecimalNumberTransform.swift */; };
+		2380937B1FB9813D0051EF3D /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238093631FB9813D0051EF3D /* Operators.swift */; };
+		2380937C1FB9813D0051EF3D /* ToJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238093641FB9813D0051EF3D /* ToJSON.swift */; };
+		2380937D1FB9813D0051EF3D /* TransformOf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238093651FB9813D0051EF3D /* TransformOf.swift */; };
+		2380937E1FB9813D0051EF3D /* TransformOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238093661FB9813D0051EF3D /* TransformOperators.swift */; };
+		2380937F1FB9813D0051EF3D /* TransformType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238093671FB9813D0051EF3D /* TransformType.swift */; };
+		238093801FB9813D0051EF3D /* URLTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238093681FB9813D0051EF3D /* URLTransform.swift */; };
+		238093821FB9A22D0051EF3D /* RegisterAndForgetPsdVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238093811FB9A22D0051EF3D /* RegisterAndForgetPsdVC.swift */; };
+		238093841FB9A2410051EF3D /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238093831FB9A2410051EF3D /* RegisterView.swift */; };
+		238093861FB9A24F0051EF3D /* RegisterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 238093851FB9A24F0051EF3D /* RegisterView.xib */; };
+		238093881FB9BEFE0051EF3D /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238093871FB9BEFE0051EF3D /* BaseViewModel.swift */; };
+		2380938A1FB9BFB60051EF3D /* ResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238093891FB9BFB60051EF3D /* ResponseData.swift */; };
 		2388E09F1FAFFF7B00AB6853 /* FoodDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2388E09D1FAFFF7B00AB6853 /* FoodDetailsCell.swift */; };
 		2388E0A01FAFFF7B00AB6853 /* FoodDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2388E09E1FAFFF7B00AB6853 /* FoodDetailsCell.xib */; };
 		2388E0A31FB00D0C00AB6853 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2388E0A21FB00D0C00AB6853 /* MainViewController.swift */; };
@@ -148,6 +216,9 @@
 		23D0E3F41FADBC000058EA34 /* TYPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D0E3F11FADBC000058EA34 /* TYPageControl.m */; };
 		23D0E3F71FADBC4B0058EA34 /* TYCyclePagerViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D0E3F51FADBC4A0058EA34 /* TYCyclePagerViewCell.m */; };
 		23D0E3FC1FADBCFD0058EA34 /* BoutiqueScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D0E3FB1FADBCFD0058EA34 /* BoutiqueScrollView.m */; };
+		23D1473B1FBA84780028CD09 /* RigisterFinshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D1473A1FBA84780028CD09 /* RigisterFinshView.swift */; };
+		23D1473D1FBA84830028CD09 /* RigisterFinshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23D1473C1FBA84830028CD09 /* RigisterFinshView.xib */; };
+		23D1473F1FBA879D0028CD09 /* RigisterFinshVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D1473E1FBA879D0028CD09 /* RigisterFinshVC.swift */; };
 		23E214C21FB6E91B00C7D085 /* MineInformationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E214C11FB6E91B00C7D085 /* MineInformationVC.swift */; };
 		23E214C61FB6EA1B00C7D085 /* MineInformationHeadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E214C41FB6EA1B00C7D085 /* MineInformationHeadCell.swift */; };
 		23E214C71FB6EA1B00C7D085 /* MineInformationHeadCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23E214C51FB6EA1B00C7D085 /* MineInformationHeadCell.xib */; };
@@ -258,6 +329,76 @@
 		238092ED1FB94F580051EF3D /* MineSetPayPasswordCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineSetPayPasswordCell.xib; sourceTree = "<group>"; };
 		238092F51FB96D420051EF3D /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		238092F71FB971340051EF3D /* InputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
+		238092FE1FB97BAD0051EF3D /* Constraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constraint.swift; sourceTree = "<group>"; };
+		238092FF1FB97BAD0051EF3D /* ConstraintAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintAttributes.swift; sourceTree = "<group>"; };
+		238093001FB97BAD0051EF3D /* ConstraintConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintConfig.swift; sourceTree = "<group>"; };
+		238093011FB97BAD0051EF3D /* ConstraintConstantTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintConstantTarget.swift; sourceTree = "<group>"; };
+		238093021FB97BAD0051EF3D /* ConstraintDescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintDescription.swift; sourceTree = "<group>"; };
+		238093031FB97BAD0051EF3D /* ConstraintDSL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintDSL.swift; sourceTree = "<group>"; };
+		238093041FB97BAD0051EF3D /* ConstraintInsets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintInsets.swift; sourceTree = "<group>"; };
+		238093051FB97BAD0051EF3D /* ConstraintInsetTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintInsetTarget.swift; sourceTree = "<group>"; };
+		238093061FB97BAD0051EF3D /* ConstraintItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintItem.swift; sourceTree = "<group>"; };
+		238093071FB97BAD0051EF3D /* ConstraintLayoutGuide+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ConstraintLayoutGuide+Extensions.swift"; sourceTree = "<group>"; };
+		238093081FB97BAD0051EF3D /* ConstraintLayoutGuide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintLayoutGuide.swift; sourceTree = "<group>"; };
+		238093091FB97BAD0051EF3D /* ConstraintLayoutGuideDSL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintLayoutGuideDSL.swift; sourceTree = "<group>"; };
+		2380930A1FB97BAD0051EF3D /* ConstraintLayoutSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintLayoutSupport.swift; sourceTree = "<group>"; };
+		2380930B1FB97BAD0051EF3D /* ConstraintLayoutSupportDSL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintLayoutSupportDSL.swift; sourceTree = "<group>"; };
+		2380930C1FB97BAD0051EF3D /* ConstraintMaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintMaker.swift; sourceTree = "<group>"; };
+		2380930D1FB97BAD0051EF3D /* ConstraintMakerEditable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintMakerEditable.swift; sourceTree = "<group>"; };
+		2380930E1FB97BAD0051EF3D /* ConstraintMakerExtendable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintMakerExtendable.swift; sourceTree = "<group>"; };
+		2380930F1FB97BAD0051EF3D /* ConstraintMakerFinalizable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintMakerFinalizable.swift; sourceTree = "<group>"; };
+		238093101FB97BAD0051EF3D /* ConstraintMakerPriortizable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintMakerPriortizable.swift; sourceTree = "<group>"; };
+		238093111FB97BAD0051EF3D /* ConstraintMakerRelatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintMakerRelatable.swift; sourceTree = "<group>"; };
+		238093121FB97BAD0051EF3D /* ConstraintMultiplierTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintMultiplierTarget.swift; sourceTree = "<group>"; };
+		238093131FB97BAD0051EF3D /* ConstraintOffsetTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintOffsetTarget.swift; sourceTree = "<group>"; };
+		238093141FB97BAD0051EF3D /* ConstraintPriority.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintPriority.swift; sourceTree = "<group>"; };
+		238093151FB97BAD0051EF3D /* ConstraintPriorityTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintPriorityTarget.swift; sourceTree = "<group>"; };
+		238093161FB97BAD0051EF3D /* ConstraintRelatableTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintRelatableTarget.swift; sourceTree = "<group>"; };
+		238093171FB97BAD0051EF3D /* ConstraintRelation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintRelation.swift; sourceTree = "<group>"; };
+		238093181FB97BAD0051EF3D /* ConstraintView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ConstraintView+Extensions.swift"; sourceTree = "<group>"; };
+		238093191FB97BAD0051EF3D /* ConstraintView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintView.swift; sourceTree = "<group>"; };
+		2380931A1FB97BAD0051EF3D /* ConstraintViewDSL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintViewDSL.swift; sourceTree = "<group>"; };
+		2380931B1FB97BAD0051EF3D /* Debugging.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Debugging.swift; sourceTree = "<group>"; };
+		2380931C1FB97BAD0051EF3D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2380931D1FB97BAD0051EF3D /* LayoutConstraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutConstraint.swift; sourceTree = "<group>"; };
+		2380931E1FB97BAD0051EF3D /* LayoutConstraintItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutConstraintItem.swift; sourceTree = "<group>"; };
+		2380931F1FB97BAD0051EF3D /* SnapKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SnapKit.h; sourceTree = "<group>"; };
+		238093201FB97BAD0051EF3D /* Typealiases.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Typealiases.swift; sourceTree = "<group>"; };
+		238093211FB97BAD0051EF3D /* UILayoutSupport+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILayoutSupport+Extensions.swift"; sourceTree = "<group>"; };
+		238093461FB97D230051EF3D /* BaseURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseURL.swift; sourceTree = "<group>"; };
+		238093471FB97D230051EF3D /* ConstAPIURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstAPIURL.swift; sourceTree = "<group>"; };
+		238093481FB97D230051EF3D /* NetWorkTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetWorkTool.swift; sourceTree = "<group>"; };
+		2380934D1FB9808B0051EF3D /* Tools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
+		238093501FB9813D0051EF3D /* CustomDateFormatTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomDateFormatTransform.swift; sourceTree = "<group>"; };
+		238093511FB9813D0051EF3D /* DataTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataTransform.swift; sourceTree = "<group>"; };
+		238093521FB9813D0051EF3D /* DateFormatterTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormatterTransform.swift; sourceTree = "<group>"; };
+		238093531FB9813D0051EF3D /* DateTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTransform.swift; sourceTree = "<group>"; };
+		238093541FB9813D0051EF3D /* DictionaryTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryTransform.swift; sourceTree = "<group>"; };
+		238093551FB9813D0051EF3D /* EnumOperators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnumOperators.swift; sourceTree = "<group>"; };
+		238093561FB9813D0051EF3D /* EnumTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnumTransform.swift; sourceTree = "<group>"; };
+		238093571FB9813D0051EF3D /* FromJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FromJSON.swift; sourceTree = "<group>"; };
+		238093581FB9813D0051EF3D /* HexColorTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HexColorTransform.swift; sourceTree = "<group>"; };
+		238093591FB9813D0051EF3D /* ImmutableMappable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImmutableMappable.swift; sourceTree = "<group>"; };
+		2380935A1FB9813D0051EF3D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2380935B1FB9813D0051EF3D /* IntegerOperators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntegerOperators.swift; sourceTree = "<group>"; };
+		2380935C1FB9813D0051EF3D /* ISO8601DateTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISO8601DateTransform.swift; sourceTree = "<group>"; };
+		2380935D1FB9813D0051EF3D /* Map.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
+		2380935E1FB9813D0051EF3D /* MapError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapError.swift; sourceTree = "<group>"; };
+		2380935F1FB9813D0051EF3D /* Mappable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mappable.swift; sourceTree = "<group>"; };
+		238093601FB9813D0051EF3D /* Mapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mapper.swift; sourceTree = "<group>"; };
+		238093611FB9813D0051EF3D /* NSDecimalNumberTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDecimalNumberTransform.swift; sourceTree = "<group>"; };
+		238093621FB9813D0051EF3D /* ObjectMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectMapper.h; sourceTree = "<group>"; };
+		238093631FB9813D0051EF3D /* Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
+		238093641FB9813D0051EF3D /* ToJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToJSON.swift; sourceTree = "<group>"; };
+		238093651FB9813D0051EF3D /* TransformOf.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransformOf.swift; sourceTree = "<group>"; };
+		238093661FB9813D0051EF3D /* TransformOperators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransformOperators.swift; sourceTree = "<group>"; };
+		238093671FB9813D0051EF3D /* TransformType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransformType.swift; sourceTree = "<group>"; };
+		238093681FB9813D0051EF3D /* URLTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLTransform.swift; sourceTree = "<group>"; };
+		238093811FB9A22D0051EF3D /* RegisterAndForgetPsdVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterAndForgetPsdVC.swift; sourceTree = "<group>"; };
+		238093831FB9A2410051EF3D /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		238093851FB9A24F0051EF3D /* RegisterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterView.xib; sourceTree = "<group>"; };
+		238093871FB9BEFE0051EF3D /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		238093891FB9BFB60051EF3D /* ResponseData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseData.swift; sourceTree = "<group>"; };
 		2388E09D1FAFFF7B00AB6853 /* FoodDetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDetailsCell.swift; sourceTree = "<group>"; };
 		2388E09E1FAFFF7B00AB6853 /* FoodDetailsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoodDetailsCell.xib; sourceTree = "<group>"; };
 		2388E0A21FB00D0C00AB6853 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -337,6 +478,9 @@
 		23D0E3F61FADBC4B0058EA34 /* TYCyclePagerViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYCyclePagerViewCell.h; sourceTree = "<group>"; };
 		23D0E3FA1FADBCFD0058EA34 /* BoutiqueScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BoutiqueScrollView.h; sourceTree = "<group>"; };
 		23D0E3FB1FADBCFD0058EA34 /* BoutiqueScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BoutiqueScrollView.m; sourceTree = "<group>"; };
+		23D1473A1FBA84780028CD09 /* RigisterFinshView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RigisterFinshView.swift; sourceTree = "<group>"; };
+		23D1473C1FBA84830028CD09 /* RigisterFinshView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RigisterFinshView.xib; sourceTree = "<group>"; };
+		23D1473E1FBA879D0028CD09 /* RigisterFinshVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RigisterFinshVC.swift; sourceTree = "<group>"; };
 		23E214C11FB6E91B00C7D085 /* MineInformationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineInformationVC.swift; sourceTree = "<group>"; };
 		23E214C41FB6EA1B00C7D085 /* MineInformationHeadCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineInformationHeadCell.swift; sourceTree = "<group>"; };
 		23E214C51FB6EA1B00C7D085 /* MineInformationHeadCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineInformationHeadCell.xib; sourceTree = "<group>"; };
@@ -605,6 +749,8 @@
 		2316A2B81FAD8B7000A0B512 /* Comom(常用) */ = {
 			isa = PBXGroup;
 			children = (
+				2380934C1FB9808B0051EF3D /* Tool(工具类) */,
+				238093451FB97D230051EF3D /* NetWork(网络) */,
 				2316A2B91FAD8BBC00A0B512 /* GlobalVariables(全局变量) */,
 				2316A2BC1FAD8F4700A0B512 /* Extension(延展) */,
 				2353EC191FB3F6BA005E1548 /* Custom */,
@@ -892,6 +1038,10 @@
 			isa = PBXGroup;
 			children = (
 				238092F71FB971340051EF3D /* InputView.swift */,
+				238093831FB9A2410051EF3D /* RegisterView.swift */,
+				238093851FB9A24F0051EF3D /* RegisterView.xib */,
+				23D1473A1FBA84780028CD09 /* RigisterFinshView.swift */,
+				23D1473C1FBA84830028CD09 /* RigisterFinshView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -899,6 +1049,8 @@
 		238092F21FB96CEB0051EF3D /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				238093891FB9BFB60051EF3D /* ResponseData.swift */,
+				238093871FB9BEFE0051EF3D /* BaseViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -907,6 +1059,8 @@
 			isa = PBXGroup;
 			children = (
 				238092F51FB96D420051EF3D /* LoginVC.swift */,
+				238093811FB9A22D0051EF3D /* RegisterAndForgetPsdVC.swift */,
+				23D1473E1FBA879D0028CD09 /* RigisterFinshVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -916,6 +1070,108 @@
 			children = (
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		238092FC1FB97BAD0051EF3D /* SnapKit */ = {
+			isa = PBXGroup;
+			children = (
+				238092FD1FB97BAD0051EF3D /* Source */,
+			);
+			name = SnapKit;
+			path = "FoodFamily/Vender(第三方)/SnapKit";
+			sourceTree = SOURCE_ROOT;
+		};
+		238092FD1FB97BAD0051EF3D /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				238092FE1FB97BAD0051EF3D /* Constraint.swift */,
+				238092FF1FB97BAD0051EF3D /* ConstraintAttributes.swift */,
+				238093001FB97BAD0051EF3D /* ConstraintConfig.swift */,
+				238093011FB97BAD0051EF3D /* ConstraintConstantTarget.swift */,
+				238093021FB97BAD0051EF3D /* ConstraintDescription.swift */,
+				238093031FB97BAD0051EF3D /* ConstraintDSL.swift */,
+				238093041FB97BAD0051EF3D /* ConstraintInsets.swift */,
+				238093051FB97BAD0051EF3D /* ConstraintInsetTarget.swift */,
+				238093061FB97BAD0051EF3D /* ConstraintItem.swift */,
+				238093071FB97BAD0051EF3D /* ConstraintLayoutGuide+Extensions.swift */,
+				238093081FB97BAD0051EF3D /* ConstraintLayoutGuide.swift */,
+				238093091FB97BAD0051EF3D /* ConstraintLayoutGuideDSL.swift */,
+				2380930A1FB97BAD0051EF3D /* ConstraintLayoutSupport.swift */,
+				2380930B1FB97BAD0051EF3D /* ConstraintLayoutSupportDSL.swift */,
+				2380930C1FB97BAD0051EF3D /* ConstraintMaker.swift */,
+				2380930D1FB97BAD0051EF3D /* ConstraintMakerEditable.swift */,
+				2380930E1FB97BAD0051EF3D /* ConstraintMakerExtendable.swift */,
+				2380930F1FB97BAD0051EF3D /* ConstraintMakerFinalizable.swift */,
+				238093101FB97BAD0051EF3D /* ConstraintMakerPriortizable.swift */,
+				238093111FB97BAD0051EF3D /* ConstraintMakerRelatable.swift */,
+				238093121FB97BAD0051EF3D /* ConstraintMultiplierTarget.swift */,
+				238093131FB97BAD0051EF3D /* ConstraintOffsetTarget.swift */,
+				238093141FB97BAD0051EF3D /* ConstraintPriority.swift */,
+				238093151FB97BAD0051EF3D /* ConstraintPriorityTarget.swift */,
+				238093161FB97BAD0051EF3D /* ConstraintRelatableTarget.swift */,
+				238093171FB97BAD0051EF3D /* ConstraintRelation.swift */,
+				238093181FB97BAD0051EF3D /* ConstraintView+Extensions.swift */,
+				238093191FB97BAD0051EF3D /* ConstraintView.swift */,
+				2380931A1FB97BAD0051EF3D /* ConstraintViewDSL.swift */,
+				2380931B1FB97BAD0051EF3D /* Debugging.swift */,
+				2380931C1FB97BAD0051EF3D /* Info.plist */,
+				2380931D1FB97BAD0051EF3D /* LayoutConstraint.swift */,
+				2380931E1FB97BAD0051EF3D /* LayoutConstraintItem.swift */,
+				2380931F1FB97BAD0051EF3D /* SnapKit.h */,
+				238093201FB97BAD0051EF3D /* Typealiases.swift */,
+				238093211FB97BAD0051EF3D /* UILayoutSupport+Extensions.swift */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		238093451FB97D230051EF3D /* NetWork(网络) */ = {
+			isa = PBXGroup;
+			children = (
+				238093461FB97D230051EF3D /* BaseURL.swift */,
+				238093471FB97D230051EF3D /* ConstAPIURL.swift */,
+				238093481FB97D230051EF3D /* NetWorkTool.swift */,
+			);
+			path = "NetWork(网络)";
+			sourceTree = "<group>";
+		};
+		2380934C1FB9808B0051EF3D /* Tool(工具类) */ = {
+			isa = PBXGroup;
+			children = (
+				2380934D1FB9808B0051EF3D /* Tools.swift */,
+			);
+			path = "Tool(工具类)";
+			sourceTree = "<group>";
+		};
+		2380934F1FB9813D0051EF3D /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				238093501FB9813D0051EF3D /* CustomDateFormatTransform.swift */,
+				238093511FB9813D0051EF3D /* DataTransform.swift */,
+				238093521FB9813D0051EF3D /* DateFormatterTransform.swift */,
+				238093531FB9813D0051EF3D /* DateTransform.swift */,
+				238093541FB9813D0051EF3D /* DictionaryTransform.swift */,
+				238093551FB9813D0051EF3D /* EnumOperators.swift */,
+				238093561FB9813D0051EF3D /* EnumTransform.swift */,
+				238093571FB9813D0051EF3D /* FromJSON.swift */,
+				238093581FB9813D0051EF3D /* HexColorTransform.swift */,
+				238093591FB9813D0051EF3D /* ImmutableMappable.swift */,
+				2380935A1FB9813D0051EF3D /* Info.plist */,
+				2380935B1FB9813D0051EF3D /* IntegerOperators.swift */,
+				2380935C1FB9813D0051EF3D /* ISO8601DateTransform.swift */,
+				2380935D1FB9813D0051EF3D /* Map.swift */,
+				2380935E1FB9813D0051EF3D /* MapError.swift */,
+				2380935F1FB9813D0051EF3D /* Mappable.swift */,
+				238093601FB9813D0051EF3D /* Mapper.swift */,
+				238093611FB9813D0051EF3D /* NSDecimalNumberTransform.swift */,
+				238093621FB9813D0051EF3D /* ObjectMapper.h */,
+				238093631FB9813D0051EF3D /* Operators.swift */,
+				238093641FB9813D0051EF3D /* ToJSON.swift */,
+				238093651FB9813D0051EF3D /* TransformOf.swift */,
+				238093661FB9813D0051EF3D /* TransformOperators.swift */,
+				238093671FB9813D0051EF3D /* TransformType.swift */,
+				238093681FB9813D0051EF3D /* URLTransform.swift */,
+			);
+			path = Sources;
 			sourceTree = "<group>";
 		};
 		2388E0A11FB00D0C00AB6853 /* MainVC(根控制器) */ = {
@@ -1050,6 +1306,8 @@
 				238092E71FB94EEF0051EF3D /* CountDown */,
 				238092DA1FB93FE40051EF3D /* LJXPhotoAlbum */,
 				230BE0D51FB6A27500AD47E0 /* SGPageView */,
+				238092FC1FB97BAD0051EF3D /* SnapKit */,
+				2380934F1FB9813D0051EF3D /* Sources */,
 				23D0E3EB1FADBC000058EA34 /* TYCyclePagerView */,
 			);
 			path = "Vender(第三方)";
@@ -1219,6 +1477,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				239F07011FB2F4020067D810 /* RecommendNaviCell.xib in Resources */,
+				238093861FB9A24F0051EF3D /* RegisterView.xib in Resources */,
 				236C44301FB4750800AC3010 /* FoodMerchantsHeadView.xib in Resources */,
 				239F070F1FB2F4020067D810 /* FoodPurchaseSuccessView.xib in Resources */,
 				230BE10A1FB6E2EC00AD47E0 /* MineReservationCell.xib in Resources */,
@@ -1228,6 +1487,8 @@
 				2316A28D1FAD71FE00A0B512 /* LaunchScreen.storyboard in Resources */,
 				23E214C71FB6EA1B00C7D085 /* MineInformationHeadCell.xib in Resources */,
 				239F070D1FB2F4020067D810 /* FoodPurchaseNotesHeadView.xib in Resources */,
+				238093731FB9813D0051EF3D /* Info.plist in Resources */,
+				238093401FB97BAD0051EF3D /* Info.plist in Resources */,
 				239F06FB1FB2F4020067D810 /* RecommendedMoneyCell.xib in Resources */,
 				239F06E91FB2F4020067D810 /* FoodOrderDetailsHeadCell.xib in Resources */,
 				2388E0AA1FB0486C00AB6853 /* FoodDetailsFoodView.xib in Resources */,
@@ -1248,6 +1509,7 @@
 				239F07071FB2F4020067D810 /* FoodReservationPaymentCardCell.xib in Resources */,
 				239F06F31FB2F4020067D810 /* FoodReservationFinishHeadCell.xib in Resources */,
 				239F06F11FB2F4020067D810 /* FoodReservationFilliCell.xib in Resources */,
+				23D1473D1FBA84830028CD09 /* RigisterFinshView.xib in Resources */,
 				23D0E3E91FADA2740058EA34 /* BoutiqueTableViewCell.xib in Resources */,
 				2316A28A1FAD71FE00A0B512 /* Assets.xcassets in Resources */,
 				239F06FF1FB2F4020067D810 /* RecommendHeadView.xib in Resources */,
@@ -1425,15 +1687,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2380934B1FB97D240051EF3D /* NetWorkTool.swift in Sources */,
 				230BE0EB1FB6A39F00AD47E0 /* MineOrderUseVC.swift in Sources */,
 				2388E0A81FB0485A00AB6853 /* FoodDetailsFoodView.swift in Sources */,
+				238093411FB97BAD0051EF3D /* LayoutConstraint.swift in Sources */,
 				230BE0E51FB6A2BA00AD47E0 /* MineExpensesRecordVC.swift in Sources */,
 				230FA76F1FB5A94500190F2B /* MineOptionView.swift in Sources */,
 				2316A2BB1FAD8BD000A0B512 /* RegularDefinition.swift in Sources */,
+				238093441FB97BAD0051EF3D /* UILayoutSupport+Extensions.swift in Sources */,
+				2380936D1FB9813D0051EF3D /* DictionaryTransform.swift in Sources */,
+				238093821FB9A22D0051EF3D /* RegisterAndForgetPsdVC.swift in Sources */,
+				238093261FB97BAD0051EF3D /* ConstraintDescription.swift in Sources */,
 				23D0E3E81FADA2740058EA34 /* BoutiqueTableViewCell.swift in Sources */,
 				230BE0D31FB69B5800AD47E0 /* MineCollectionCell.swift in Sources */,
+				2380937E1FB9813D0051EF3D /* TransformOperators.swift in Sources */,
+				2380936B1FB9813D0051EF3D /* DateFormatterTransform.swift in Sources */,
 				239F06F01FB2F4020067D810 /* FoodReservationFilliCell.swift in Sources */,
+				2380933D1FB97BAD0051EF3D /* ConstraintView.swift in Sources */,
 				239F06AC1FB2F3D30067D810 /* FoodReservationVC.swift in Sources */,
+				238093371FB97BAD0051EF3D /* ConstraintOffsetTarget.swift in Sources */,
 				238092EE1FB94F580051EF3D /* MineSetPayPasswordCell.swift in Sources */,
 				239F06F81FB2F4020067D810 /* RecommendedFoodView.swift in Sources */,
 				2316A2E31FAD942C00A0B512 /* CrowdfundingController.swift in Sources */,
@@ -1441,59 +1713,97 @@
 				2316A2C31FAD8F4700A0B512 /* Extensions.swift in Sources */,
 				238092DD1FB93FE40051EF3D /* LJXPhotoAlbum.m in Sources */,
 				23E214CA1FB6EA3600C7D085 /* MineInformationListCell.swift in Sources */,
+				2380936A1FB9813D0051EF3D /* DataTransform.swift in Sources */,
 				239F06EA1FB2F4020067D810 /* FoodPaymentCardCouponsCell.swift in Sources */,
 				2353EC1C1FB3F6BA005E1548 /* OCTools.m in Sources */,
+				2380932A1FB97BAD0051EF3D /* ConstraintItem.swift in Sources */,
+				238093801FB9813D0051EF3D /* URLTransform.swift in Sources */,
+				238093781FB9813D0051EF3D /* Mappable.swift in Sources */,
+				238093221FB97BAD0051EF3D /* Constraint.swift in Sources */,
 				239F06FE1FB2F4020067D810 /* RecommendHeadView.swift in Sources */,
 				239F06A71FB2F3D30067D810 /* FoodPurchaseSuccessVC.swift in Sources */,
+				238093271FB97BAD0051EF3D /* ConstraintDSL.swift in Sources */,
+				238093421FB97BAD0051EF3D /* LayoutConstraintItem.swift in Sources */,
 				230BE1031FB6E27D00AD47E0 /* MineReservationFinishVC.swift in Sources */,
+				238093491FB97D240051EF3D /* BaseURL.swift in Sources */,
 				2316A2851FAD71FE00A0B512 /* ViewController.swift in Sources */,
 				230BE0E31FB6A27600AD47E0 /* UIView+SGFrame.m in Sources */,
 				23D0E3FC1FADBCFD0058EA34 /* BoutiqueScrollView.m in Sources */,
+				2380932F1FB97BAD0051EF3D /* ConstraintLayoutSupportDSL.swift in Sources */,
+				2380932E1FB97BAD0051EF3D /* ConstraintLayoutSupport.swift in Sources */,
 				239F06A41FB2F3D30067D810 /* RecommendDetailsVC.swift in Sources */,
 				2388E0A61FB00FD400AB6853 /* UINavigationBar+Other.m in Sources */,
 				239F07041FB2F4020067D810 /* FoodReservationPayCell.swift in Sources */,
 				239F06FA1FB2F4020067D810 /* RecommendedMoneyCell.swift in Sources */,
 				238092EA1FB94EEF0051EF3D /* UIButton+CountDown.m in Sources */,
 				238092F81FB971340051EF3D /* InputView.swift in Sources */,
+				238093281FB97BAD0051EF3D /* ConstraintInsets.swift in Sources */,
 				236C442E1FB474EA00AC3010 /* FoodMerchantsHeadView.swift in Sources */,
 				23E214C61FB6EA1B00C7D085 /* MineInformationHeadCell.swift in Sources */,
+				238093751FB9813D0051EF3D /* ISO8601DateTransform.swift in Sources */,
+				23D1473F1FBA879D0028CD09 /* RigisterFinshVC.swift in Sources */,
+				238093251FB97BAD0051EF3D /* ConstraintConstantTarget.swift in Sources */,
 				23D0E3F41FADBC000058EA34 /* TYPageControl.m in Sources */,
+				238093341FB97BAD0051EF3D /* ConstraintMakerPriortizable.swift in Sources */,
+				238093391FB97BAD0051EF3D /* ConstraintPriorityTarget.swift in Sources */,
 				230BE1001FB6E16800AD47E0 /* MineReservationVC.swift in Sources */,
 				230BE0FD1FB6DBAF00AD47E0 /* MineDiscountCouponsCell.swift in Sources */,
 				230BE0CF1FB69B2A00AD47E0 /* MineCollectionVC.swift in Sources */,
 				239F06EC1FB2F4020067D810 /* FoodReservationCell.swift in Sources */,
+				2380936C1FB9813D0051EF3D /* DateTransform.swift in Sources */,
 				23D0E3E41FAD9C380058EA34 /* RecommendTableViewCell.swift in Sources */,
 				239F06E61FB2F4020067D810 /* FoodOrderDetailsEvaluationCell.swift in Sources */,
 				238092E61FB94CB50051EF3D /* MineSetPayPasswordVC.swift in Sources */,
 				230BE0E11FB6A27600AD47E0 /* SGPageContentView.m in Sources */,
 				239F06A61FB2F3D30067D810 /* FoodFeaturesDetailVC.swift in Sources */,
+				238093691FB9813D0051EF3D /* CustomDateFormatTransform.swift in Sources */,
 				2316A2B41FAD8ACF00A0B512 /* MainTabBarController.swift in Sources */,
 				230BE1051FB6E2A900AD47E0 /* MineReservationExpiredVC.swift in Sources */,
 				2316A2E71FAD945600A0B512 /* ChefController.swift in Sources */,
 				2353EC231FB4080D005E1548 /* FoodOrderPackageCell.swift in Sources */,
+				238093241FB97BAD0051EF3D /* ConstraintConfig.swift in Sources */,
+				2380933A1FB97BAD0051EF3D /* ConstraintRelatableTarget.swift in Sources */,
+				238093741FB9813D0051EF3D /* IntegerOperators.swift in Sources */,
+				238093301FB97BAD0051EF3D /* ConstraintMaker.swift in Sources */,
 				239F07021FB2F4020067D810 /* FoodRecommendDetailCell.swift in Sources */,
 				230BE0E01FB6A27600AD47E0 /* SGHelperTool.m in Sources */,
+				238093711FB9813D0051EF3D /* HexColorTransform.swift in Sources */,
 				239F06F41FB2F4020067D810 /* FoodReservationFinishListCell.swift in Sources */,
 				230BE0F71FB6DAF600AD47E0 /* MineUsableCoupons.swift in Sources */,
+				2380937A1FB9813D0051EF3D /* NSDecimalNumberTransform.swift in Sources */,
 				239F06F61FB2F4020067D810 /* RecommendedCommentCell.swift in Sources */,
+				2380936E1FB9813D0051EF3D /* EnumOperators.swift in Sources */,
 				23D0E3F71FADBC4B0058EA34 /* TYCyclePagerViewCell.m in Sources */,
+				2380933E1FB97BAD0051EF3D /* ConstraintViewDSL.swift in Sources */,
+				238093231FB97BAD0051EF3D /* ConstraintAttributes.swift in Sources */,
+				238093321FB97BAD0051EF3D /* ConstraintMakerExtendable.swift in Sources */,
+				2380936F1FB9813D0051EF3D /* EnumTransform.swift in Sources */,
 				238092E31FB945100051EF3D /* MineSetCell.swift in Sources */,
 				230BE0F41FB6DAA600AD47E0 /* MineDiscountCouponsVC.swift in Sources */,
+				2380938A1FB9BFB60051EF3D /* ResponseData.swift in Sources */,
 				236C44331FB4788000AC3010 /* FoodMerchantsCell.swift in Sources */,
 				239F06AD1FB2F3D30067D810 /* HomeController.swift in Sources */,
 				230BE0F91FB6DB1900AD47E0 /* MineExpiredCoupons.swift in Sources */,
 				239F06EE1FB2F4020067D810 /* FoodReservationCodeCell.swift in Sources */,
+				2380937D1FB9813D0051EF3D /* TransformOf.swift in Sources */,
 				230BE0E21FB6A27600AD47E0 /* SGPageTitleView.m in Sources */,
+				2380937F1FB9813D0051EF3D /* TransformType.swift in Sources */,
 				239F07101FB2F4020067D810 /* FoodFeaturesDetailCell.swift in Sources */,
 				239F07001FB2F4020067D810 /* RecommendNaviCell.swift in Sources */,
+				238093841FB9A2410051EF3D /* RegisterView.swift in Sources */,
 				2316A2C41FAD8F4700A0B512 /* TPTextField.swift in Sources */,
 				239F06A81FB2F3D30067D810 /* FoodVoucherOrderDetailsVC.swift in Sources */,
 				239F07061FB2F4020067D810 /* FoodReservationPaymentCardCell.swift in Sources */,
+				2380933C1FB97BAD0051EF3D /* ConstraintView+Extensions.swift in Sources */,
 				239F070A1FB2F4020067D810 /* FoodPurchaseNotesCell.swift in Sources */,
+				2380932C1FB97BAD0051EF3D /* ConstraintLayoutGuide.swift in Sources */,
 				230BE0EF1FB6A4BE00AD47E0 /* MineExpensesRecordCell.swift in Sources */,
+				2380932D1FB97BAD0051EF3D /* ConstraintLayoutGuideDSL.swift in Sources */,
 				23E214C21FB6E91B00C7D085 /* MineInformationVC.swift in Sources */,
 				230FA7681FB53BF800190F2B /* FoodMerchantsListCell.swift in Sources */,
 				236C442B1FB474B700AC3010 /* FoodMerchantsVC.swift in Sources */,
+				238093881FB9BEFE0051EF3D /* BaseViewModel.swift in Sources */,
+				2380934A1FB97D240051EF3D /* ConstAPIURL.swift in Sources */,
 				2388E0A31FB00D0C00AB6853 /* MainViewController.swift in Sources */,
 				239F06A51FB2F3D30067D810 /* FoodDetailsVC.swift in Sources */,
 				23D0E3F31FADBC000058EA34 /* TYCyclePagerView.m in Sources */,
@@ -1506,21 +1816,40 @@
 				239F06E81FB2F4020067D810 /* FoodOrderDetailsHeadCell.swift in Sources */,
 				239F06AB1FB2F3D30067D810 /* FoodReservationFinishVC.swift in Sources */,
 				230FA7711FB5AA7C00190F2B /* MineHeadView.swift in Sources */,
+				238093721FB9813D0051EF3D /* ImmutableMappable.swift in Sources */,
 				239F06AE1FB2F3D30067D810 /* FoodRecommendDetailVC.swift in Sources */,
 				230BE1091FB6E2EC00AD47E0 /* MineReservationCell.swift in Sources */,
+				23D1473B1FBA84780028CD09 /* RigisterFinshView.swift in Sources */,
 				239F070E1FB2F4020067D810 /* FoodPurchaseSuccessView.swift in Sources */,
 				239F06AA1FB2F3D30067D810 /* FoodReservationPayVC.swift in Sources */,
+				238093701FB9813D0051EF3D /* FromJSON.swift in Sources */,
 				2316A2831FAD71FE00A0B512 /* AppDelegate.swift in Sources */,
+				238093771FB9813D0051EF3D /* MapError.swift in Sources */,
 				239F06AF1FB2F3D30067D810 /* FoodPurchaseNotesVC.swift in Sources */,
 				2316A2E91FAD947300A0B512 /* MineController.swift in Sources */,
 				23D0E3F21FADBC000058EA34 /* TYCyclePagerTransformLayout.m in Sources */,
+				2380932B1FB97BAD0051EF3D /* ConstraintLayoutGuide+Extensions.swift in Sources */,
 				238092DF1FB943D30051EF3D /* MineSetVC.swift in Sources */,
+				2380937C1FB9813D0051EF3D /* ToJSON.swift in Sources */,
+				238093791FB9813D0051EF3D /* Mapper.swift in Sources */,
 				230BE0E71FB6A34E00AD47E0 /* MineAllOrderVC.swift in Sources */,
+				238093761FB9813D0051EF3D /* Map.swift in Sources */,
 				230BE0E91FB6A37D00AD47E0 /* MineOrderEvaluatedVC.swift in Sources */,
 				239F06A91FB2F3D30067D810 /* FoodPaymentCardCouponsVC.swift in Sources */,
+				238093381FB97BAD0051EF3D /* ConstraintPriority.swift in Sources */,
+				238093361FB97BAD0051EF3D /* ConstraintMultiplierTarget.swift in Sources */,
+				2380933B1FB97BAD0051EF3D /* ConstraintRelation.swift in Sources */,
+				2380933F1FB97BAD0051EF3D /* Debugging.swift in Sources */,
 				2323931F1FB43B6E00425BDA /* FoodNormalOrderDetailsVC.swift in Sources */,
+				238093351FB97BAD0051EF3D /* ConstraintMakerRelatable.swift in Sources */,
+				2380934E1FB9808C0051EF3D /* Tools.swift in Sources */,
 				2353EC1F1FB4047A005E1548 /* FoodOrderDetailsCell.swift in Sources */,
+				238093431FB97BAD0051EF3D /* Typealiases.swift in Sources */,
+				238093331FB97BAD0051EF3D /* ConstraintMakerFinalizable.swift in Sources */,
 				238092F61FB96D420051EF3D /* LoginVC.swift in Sources */,
+				2380937B1FB9813D0051EF3D /* Operators.swift in Sources */,
+				238093291FB97BAD0051EF3D /* ConstraintInsetTarget.swift in Sources */,
+				238093311FB97BAD0051EF3D /* ConstraintMakerEditable.swift in Sources */,
 				239F070C1FB2F4020067D810 /* FoodPurchaseNotesHeadView.swift in Sources */,
 				2388E09F1FAFFF7B00AB6853 /* FoodDetailsCell.swift in Sources */,
 			);
@@ -1691,6 +2020,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F75BQKJWV7;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FoodFamily/Vender(第三方)/SnapKit",
+				);
 				INFOPLIST_FILE = FoodFamily/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1709,6 +2042,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F75BQKJWV7;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FoodFamily/Vender(第三方)/SnapKit",
+				);
 				INFOPLIST_FILE = FoodFamily/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

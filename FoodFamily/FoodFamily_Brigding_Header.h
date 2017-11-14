@@ -14,4 +14,6 @@
 #import "SGPageView.h"
 #import "LJXPhotoAlbum.h"
 #import "UIButton+CountDown.h"
+#import "SnapKit.h"
+#import "ObjectMapper.h"
 #endif

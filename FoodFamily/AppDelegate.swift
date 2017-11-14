@@ -17,6 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         let navi = MainTabBarController()
         self.window?.rootViewController = navi
+        
+//        let navi = FMNavigationController(rootViewController: LoginVC())
+//        self.window?.rootViewController = navi
         return true
     }
 

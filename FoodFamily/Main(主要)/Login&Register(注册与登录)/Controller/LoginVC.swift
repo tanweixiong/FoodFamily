@@ -11,15 +11,86 @@ import UIKit
 class LoginVC: UIViewController {
     
     struct LoginUX {
-        static let textFieldHeight:CGFloat = 40
+        static let textFieldHeight:CGFloat = 30
+        static let logoSize:CGSize = CGSize(width: XMAKE(50), height: XMAKE(50))
+        static let buttonHeight:CGFloat = 40
+        static let textFieldSpace:CGFloat = 55.5
+        static let textFieldWidth:CGFloat = SCREEN_WIDTH - textFieldSpace * 2
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.setColor(UIColor.clear)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.navigationController?.navigationBar.alpha = 0
+        self.title = "注册"
+        self.setCloseRoundKeyboard()
+        self.createUI()
     }
 
+    func createUI(){
+        view.addSubview(backgorundImageView)
+        view.addSubview(logoImageView)
+        view.addSubview(phoneTextField)
+        view.addSubview(passwordTextField)
+        view.addSubview(forgetButton)
+        view.addSubview(loginButton)
+        view.addSubview(registerButton)
+
+        backgorundImageView.snp.makeConstraints { (make) in
+            make.top.equalTo(-64)
+            make.bottom.equalTo(self.view.snp.bottom)
+            make.left.equalTo(0)
+            make.width.equalTo(SCREEN_WIDTH)
+        }
+
+        logoImageView.snp.makeConstraints { (make) in
+            make.top.equalTo(backgorundImageView.snp.top).offset(YMAKE(70) + 64)
+            make.centerX.equalTo(self.view.snp.centerX)
+            make.width.greaterThanOrEqualTo(LoginUX.logoSize.width)
+            make.height.greaterThanOrEqualTo(LoginUX.logoSize.height)
+        }
+
+        phoneTextField.snp.makeConstraints { (make) in
+            make.top.equalTo(logoImageView.snp.bottom).offset(YMAKE(60))
+            make.height.equalTo(LoginUX.textFieldHeight)
+            make.left.equalTo(self.view.snp.left).offset(LoginUX.textFieldSpace)
+            make.right.equalTo(self.view.snp.right).offset(-LoginUX.textFieldSpace)
+        }
+
+        passwordTextField.snp.makeConstraints { (make) in
+            make.top.equalTo(phoneTextField.snp.bottom).offset(YMAKE(15))
+            make.height.equalTo(LoginUX.textFieldHeight)
+            make.left.equalTo(self.view.snp.left).offset(LoginUX.textFieldSpace)
+            make.right.equalTo(self.view.snp.right).offset(-LoginUX.textFieldSpace)
+        }
+        
+        forgetButton.snp.makeConstraints { (make) in
+            make.top.equalTo(passwordTextField.snp.bottom).offset(YMAKE(10))
+            make.height.equalTo(forgetButton.frame.size.height)
+            make.right.equalTo(passwordTextField.snp.right).offset(5)
+            make.width.greaterThanOrEqualTo(forgetButton.frame.size.width)
+        }
+
+        loginButton.snp.makeConstraints { (make) in
+            make.top.equalTo(forgetButton.snp.bottom).offset(YMAKE(40))
+            make.height.equalTo(LoginUX.buttonHeight)
+            make.left.equalTo(self.view.snp.left).offset(LoginUX.textFieldSpace)
+            make.right.equalTo(self.view.snp.right).offset(-LoginUX.textFieldSpace)
+        }
+
+        registerButton.snp.makeConstraints { (make) in
+            make.top.equalTo(loginButton.snp.bottom).offset(YMAKE(20))
+            make.height.equalTo(LoginUX.buttonHeight)
+            make.left.equalTo(self.view.snp.left).offset(LoginUX.textFieldSpace)
+            make.right.equalTo(self.view.snp.right).offset(-LoginUX.textFieldSpace)
+        }
+
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -38,9 +109,20 @@ class LoginVC: UIViewController {
     }()
     
     lazy var phoneTextField: InputView = {
-        let textField = InputView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: LoginUX.textFieldHeight))
-        textField.iconImageView.image = UIImage(named: "login_password")
-        textField.AGTextField.placeholder = "密码设置"
+        let textField = InputView(frame: CGRect(x: LoginUX.textFieldSpace, y:0, width: LoginUX.textFieldWidth, height: LoginUX.textFieldHeight))
+        let text = NSMutableAttributedString.init(string: "输入手机号")
+        text.addAttribute(NSAttributedStringKey.foregroundColor, value: UIColor.R_UIRGBColor(red: 144, green: 144, blue: 144, alpha: 1), range: NSMakeRange(0, text.length))
+        textField.AGTextField.attributedPlaceholder = text
+        textField.AGTextField.backgroundColor = UIColor.clear
+        return textField
+    }()
+    
+    lazy var passwordTextField: InputView = {
+         let textField = InputView(frame: CGRect(x: LoginUX.textFieldSpace, y:0, width: LoginUX.textFieldWidth, height: LoginUX.textFieldHeight))
+        let text = NSMutableAttributedString.init(string: "密码")
+        text.addAttribute(NSAttributedStringKey.foregroundColor, value: UIColor.R_UIRGBColor(red: 144, green: 144, blue: 144, alpha: 1), range: NSMakeRange(0, text.length))
+        textField.AGTextField.attributedPlaceholder = text
+        textField.AGTextField.backgroundColor = UIColor.clear
         return textField
     }()
     
@@ -51,6 +133,8 @@ class LoginVC: UIViewController {
         button.backgroundColor = R_UIThemeGoldColor
         button.layer.cornerRadius = 6
         button.clipsToBounds = true
+        button.addTarget(self, action: #selector(onClick(_:)), for: .touchUpInside)
+        button.tag = 0
         return button
     }()
 
@@ -61,9 +145,46 @@ class LoginVC: UIViewController {
         button.backgroundColor = UIColor.clear
         button.layer.borderWidth = 1
         button.layer.cornerRadius = 6
-        button.layer.borderColor = UIColor.white.cgColor
+        button.layer.borderColor = UIColor.R_UIRGBColor(red: 150, green: 150, blue: 150, alpha: 1).cgColor
         button.clipsToBounds = true
+        button.addTarget(self, action: #selector(onClick(_:)), for: .touchUpInside)
+        button.tag = 1
         return button
     }()
+    
+    lazy var forgetButton: UIButton = {
+        let button = UIButton()
+        let str:String = "忘记密码?"
+        let size:CGSize = (button.titleLabel?.getStringSize(text: str, size:CGSize(width:SCREEN_WIDTH,height:14), font: 14))!
+        button.setTitleColor(UIColor.R_UIRGBColor(red: 255, green: 255, blue: 255, alpha: 1), for: .normal)
+        button.setTitle(str, for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 14)
+        button.frame = CGRect(x: 0, y: 0, width: size.width, height:14)
+        button.backgroundColor = UIColor.clear
+        button.addTarget(self, action: #selector(onClick(_:)), for: .touchUpInside)
+        button.tag = 2
+        return button
+    }()
+    
+    @objc func onClick(_ sender:UIButton){
+        switch sender.tag {
+        case 0:
+            
+            
+            break
+        case 1:
+            let registerAndForgetPsdVC = RegisterAndForgetPsdVC()
+            registerAndForgetPsdVC.registerAndForgetPsdType = .registerStatus
+            self.navigationController?.pushViewController(registerAndForgetPsdVC, animated: true)
+            break
+        case 2:
+            let registerAndForgetPsdVC = RegisterAndForgetPsdVC()
+            registerAndForgetPsdVC.registerAndForgetPsdType = .forgetPsdStatus
+            self.navigationController?.pushViewController(registerAndForgetPsdVC, animated: true)
+            break
+        default:
+            break
+        }
+    }
     
 }

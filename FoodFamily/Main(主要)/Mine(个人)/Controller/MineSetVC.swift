@@ -54,6 +54,13 @@ class MineSetVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 0 {
+            let mineSetPayPasswordVC = MineSetPayPasswordVC()
+            self.navigationController?.pushViewController(mineSetPayPasswordVC, animated: true)
+        }
+    }
+    
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let sectionHeaderHeight:CGFloat = MineSetUX.sectionHeight
         if scrollView == self.tableView {
