@@ -49,6 +49,13 @@ class FoodNormalOrderDetailsVC: UIViewController,UITableViewDelegate,UITableView
         }
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 1 {
+            let foodEvaluationVC = FoodEvaluationVC()
+            self.navigationController?.pushViewController(foodEvaluationVC, animated: true)
+        }
+    }
+    
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return section == 0 ? 0 : FoodNormalOrderDetailsUX.sectionHeight
     }

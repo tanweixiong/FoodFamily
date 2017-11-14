@@ -49,6 +49,10 @@ class FoodVoucherOrderDetailsVC: UIViewController,UITableViewDelegate,UITableVie
         }
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
+    
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return section == 0 ? 0 : FoodVoucherOrderDetailsUX.sectionHeight
     }

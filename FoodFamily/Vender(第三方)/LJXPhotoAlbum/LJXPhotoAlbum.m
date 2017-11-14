@@ -215,7 +215,7 @@
     if (!image) {
         image = info[UIImagePickerControllerOriginalImage];
     }
-    NSLog(@"DELEGATE %@",image);
+//    NSLog(@"DELEGATE %@",image);
     if (self.photoBlock) {
         self.photoBlock(image);
     }

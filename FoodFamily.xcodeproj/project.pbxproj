@@ -32,6 +32,7 @@
 		230BE1051FB6E2A900AD47E0 /* MineReservationExpiredVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230BE1041FB6E2A900AD47E0 /* MineReservationExpiredVC.swift */; };
 		230BE1091FB6E2EC00AD47E0 /* MineReservationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230BE1071FB6E2EC00AD47E0 /* MineReservationCell.swift */; };
 		230BE10A1FB6E2EC00AD47E0 /* MineReservationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 230BE1081FB6E2EC00AD47E0 /* MineReservationCell.xib */; };
+		230F3C641FBAD7DC00D188DB /* HJRatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 230F3C631FBAD7DC00D188DB /* HJRatingView.m */; };
 		230FA7651FB539C600190F2B /* FoodMerchantsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230FA7641FB539C600190F2B /* FoodMerchantsListView.swift */; };
 		230FA7681FB53BF800190F2B /* FoodMerchantsListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230FA7661FB53BF800190F2B /* FoodMerchantsListCell.swift */; };
 		230FA7691FB53BF800190F2B /* FoodMerchantsListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 230FA7671FB53BF800190F2B /* FoodMerchantsListCell.xib */; };
@@ -219,6 +220,11 @@
 		23D1473B1FBA84780028CD09 /* RigisterFinshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D1473A1FBA84780028CD09 /* RigisterFinshView.swift */; };
 		23D1473D1FBA84830028CD09 /* RigisterFinshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23D1473C1FBA84830028CD09 /* RigisterFinshView.xib */; };
 		23D1473F1FBA879D0028CD09 /* RigisterFinshVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D1473E1FBA879D0028CD09 /* RigisterFinshVC.swift */; };
+		23D147411FBA92FA0028CD09 /* FoodEvaluationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D147401FBA92FA0028CD09 /* FoodEvaluationVC.swift */; };
+		23D147451FBA938A0028CD09 /* FoodEvaluationHeadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D147431FBA938A0028CD09 /* FoodEvaluationHeadCell.swift */; };
+		23D147461FBA938A0028CD09 /* FoodEvaluationHeadCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23D147441FBA938A0028CD09 /* FoodEvaluationHeadCell.xib */; };
+		23D147581FBA9A2E0028CD09 /* FoodEvaluationListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D147561FBA9A2E0028CD09 /* FoodEvaluationListCell.swift */; };
+		23D147591FBA9A2E0028CD09 /* FoodEvaluationListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23D147571FBA9A2E0028CD09 /* FoodEvaluationListCell.xib */; };
 		23E214C21FB6E91B00C7D085 /* MineInformationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E214C11FB6E91B00C7D085 /* MineInformationVC.swift */; };
 		23E214C61FB6EA1B00C7D085 /* MineInformationHeadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E214C41FB6EA1B00C7D085 /* MineInformationHeadCell.swift */; };
 		23E214C71FB6EA1B00C7D085 /* MineInformationHeadCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23E214C51FB6EA1B00C7D085 /* MineInformationHeadCell.xib */; };
@@ -276,6 +282,8 @@
 		230BE1041FB6E2A900AD47E0 /* MineReservationExpiredVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineReservationExpiredVC.swift; sourceTree = "<group>"; };
 		230BE1071FB6E2EC00AD47E0 /* MineReservationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineReservationCell.swift; sourceTree = "<group>"; };
 		230BE1081FB6E2EC00AD47E0 /* MineReservationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineReservationCell.xib; sourceTree = "<group>"; };
+		230F3C621FBAD7DC00D188DB /* HJRatingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJRatingView.h; sourceTree = "<group>"; };
+		230F3C631FBAD7DC00D188DB /* HJRatingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJRatingView.m; sourceTree = "<group>"; };
 		230FA7641FB539C600190F2B /* FoodMerchantsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodMerchantsListView.swift; sourceTree = "<group>"; };
 		230FA7661FB53BF800190F2B /* FoodMerchantsListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodMerchantsListCell.swift; sourceTree = "<group>"; };
 		230FA7671FB53BF800190F2B /* FoodMerchantsListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoodMerchantsListCell.xib; sourceTree = "<group>"; };
@@ -481,6 +489,11 @@
 		23D1473A1FBA84780028CD09 /* RigisterFinshView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RigisterFinshView.swift; sourceTree = "<group>"; };
 		23D1473C1FBA84830028CD09 /* RigisterFinshView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RigisterFinshView.xib; sourceTree = "<group>"; };
 		23D1473E1FBA879D0028CD09 /* RigisterFinshVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RigisterFinshVC.swift; sourceTree = "<group>"; };
+		23D147401FBA92FA0028CD09 /* FoodEvaluationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodEvaluationVC.swift; sourceTree = "<group>"; };
+		23D147431FBA938A0028CD09 /* FoodEvaluationHeadCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodEvaluationHeadCell.swift; sourceTree = "<group>"; };
+		23D147441FBA938A0028CD09 /* FoodEvaluationHeadCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoodEvaluationHeadCell.xib; sourceTree = "<group>"; };
+		23D147561FBA9A2E0028CD09 /* FoodEvaluationListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodEvaluationListCell.swift; sourceTree = "<group>"; };
+		23D147571FBA9A2E0028CD09 /* FoodEvaluationListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoodEvaluationListCell.xib; sourceTree = "<group>"; };
 		23E214C11FB6E91B00C7D085 /* MineInformationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineInformationVC.swift; sourceTree = "<group>"; };
 		23E214C41FB6EA1B00C7D085 /* MineInformationHeadCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineInformationHeadCell.swift; sourceTree = "<group>"; };
 		23E214C51FB6EA1B00C7D085 /* MineInformationHeadCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineInformationHeadCell.xib; sourceTree = "<group>"; };
@@ -803,6 +816,7 @@
 				239F069C1FB2F3D20067D810 /* FoodVoucherOrderDetailsVC.swift */,
 				2323931E1FB43B6E00425BDA /* FoodNormalOrderDetailsVC.swift */,
 				236C442A1FB474B700AC3010 /* FoodMerchantsVC.swift */,
+				23D147401FBA92FA0028CD09 /* FoodEvaluationVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -821,6 +835,7 @@
 				239F06BF1FB2F4000067D810 /* FoodReservationFinishView */,
 				239F06D41FB2F4010067D810 /* FoodReservationPayView */,
 				236C442C1FB474D000AC3010 /* FoodMerchantsView */,
+				23D147421FBA93540028CD09 /* FoodEvaluationView */,
 				23D0E3FA1FADBCFD0058EA34 /* BoutiqueScrollView.h */,
 				23D0E3FB1FADBCFD0058EA34 /* BoutiqueScrollView.m */,
 				23D0E3F61FADBC4B0058EA34 /* TYCyclePagerViewCell.h */,
@@ -1326,6 +1341,19 @@
 			path = TYCyclePagerView;
 			sourceTree = "<group>";
 		};
+		23D147421FBA93540028CD09 /* FoodEvaluationView */ = {
+			isa = PBXGroup;
+			children = (
+				230F3C621FBAD7DC00D188DB /* HJRatingView.h */,
+				230F3C631FBAD7DC00D188DB /* HJRatingView.m */,
+				23D147431FBA938A0028CD09 /* FoodEvaluationHeadCell.swift */,
+				23D147441FBA938A0028CD09 /* FoodEvaluationHeadCell.xib */,
+				23D147561FBA9A2E0028CD09 /* FoodEvaluationListCell.swift */,
+				23D147571FBA9A2E0028CD09 /* FoodEvaluationListCell.xib */,
+			);
+			path = FoodEvaluationView;
+			sourceTree = "<group>";
+		};
 		23E214C31FB6E9FA00C7D085 /* MineInformationView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1507,10 +1535,12 @@
 				230BE0FE1FB6DBAF00AD47E0 /* MineDiscountCouponsCell.xib in Resources */,
 				238092E41FB945100051EF3D /* MineSetCell.xib in Resources */,
 				239F07071FB2F4020067D810 /* FoodReservationPaymentCardCell.xib in Resources */,
+				23D147461FBA938A0028CD09 /* FoodEvaluationHeadCell.xib in Resources */,
 				239F06F31FB2F4020067D810 /* FoodReservationFinishHeadCell.xib in Resources */,
 				239F06F11FB2F4020067D810 /* FoodReservationFilliCell.xib in Resources */,
 				23D1473D1FBA84830028CD09 /* RigisterFinshView.xib in Resources */,
 				23D0E3E91FADA2740058EA34 /* BoutiqueTableViewCell.xib in Resources */,
+				23D147591FBA9A2E0028CD09 /* FoodEvaluationListCell.xib in Resources */,
 				2316A28A1FAD71FE00A0B512 /* Assets.xcassets in Resources */,
 				239F06FF1FB2F4020067D810 /* RecommendHeadView.xib in Resources */,
 				239F06F51FB2F4020067D810 /* FoodReservationFinishListCell.xib in Resources */,
@@ -1767,6 +1797,7 @@
 				238093301FB97BAD0051EF3D /* ConstraintMaker.swift in Sources */,
 				239F07021FB2F4020067D810 /* FoodRecommendDetailCell.swift in Sources */,
 				230BE0E01FB6A27600AD47E0 /* SGHelperTool.m in Sources */,
+				23D147451FBA938A0028CD09 /* FoodEvaluationHeadCell.swift in Sources */,
 				238093711FB9813D0051EF3D /* HexColorTransform.swift in Sources */,
 				239F06F41FB2F4020067D810 /* FoodReservationFinishListCell.swift in Sources */,
 				230BE0F71FB6DAF600AD47E0 /* MineUsableCoupons.swift in Sources */,
@@ -1785,6 +1816,7 @@
 				239F06AD1FB2F3D30067D810 /* HomeController.swift in Sources */,
 				230BE0F91FB6DB1900AD47E0 /* MineExpiredCoupons.swift in Sources */,
 				239F06EE1FB2F4020067D810 /* FoodReservationCodeCell.swift in Sources */,
+				23D147581FBA9A2E0028CD09 /* FoodEvaluationListCell.swift in Sources */,
 				2380937D1FB9813D0051EF3D /* TransformOf.swift in Sources */,
 				230BE0E21FB6A27600AD47E0 /* SGPageTitleView.m in Sources */,
 				2380937F1FB9813D0051EF3D /* TransformType.swift in Sources */,
@@ -1812,9 +1844,11 @@
 				239F07081FB2F4020067D810 /* FoodReservationPaymentMethodCell.swift in Sources */,
 				23D0E3E01FAD97B70058EA34 /* TopicTableViewCell.swift in Sources */,
 				2316A2E51FAD944300A0B512 /* CollegeController.swift in Sources */,
+				230F3C641FBAD7DC00D188DB /* HJRatingView.m in Sources */,
 				239F06F21FB2F4020067D810 /* FoodReservationFinishHeadCell.swift in Sources */,
 				239F06E81FB2F4020067D810 /* FoodOrderDetailsHeadCell.swift in Sources */,
 				239F06AB1FB2F3D30067D810 /* FoodReservationFinishVC.swift in Sources */,
+				23D147411FBA92FA0028CD09 /* FoodEvaluationVC.swift in Sources */,
 				230FA7711FB5AA7C00190F2B /* MineHeadView.swift in Sources */,
 				238093721FB9813D0051EF3D /* ImmutableMappable.swift in Sources */,
 				239F06AE1FB2F3D30067D810 /* FoodRecommendDetailVC.swift in Sources */,
