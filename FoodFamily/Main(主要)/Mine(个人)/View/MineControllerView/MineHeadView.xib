@@ -65,7 +65,7 @@
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.098039215686274508" green="0.086274509803921567" blue="0.098039215686274508" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="EdL-cS-TA7" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="97W-iA-VN4"/>
                 <constraint firstItem="EdL-cS-TA7" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Dbt-9j-daq"/>
@@ -74,6 +74,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
+                <outlet property="backgroundConstraintC" destination="JOS-Qx-iec" id="s1S-Xu-YfN"/>
                 <outlet property="backgroundVw" destination="EdL-cS-TA7" id="VWu-OK-cG4"/>
             </connections>
             <point key="canvasLocation" x="-289.5" y="-241"/>

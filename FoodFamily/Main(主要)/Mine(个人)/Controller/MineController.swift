@@ -48,21 +48,20 @@ class MineController: MainViewController {
             self.navigationController?.pushViewController(mineExpensesRecordVC, animated: true)
             break
         case 2:
-            let mineDiscountCouponsVC = MineDiscountCouponsVC()
+            let mineDiscountCouponsVC = MineReservationVC()
             self.navigationController?.pushViewController(mineDiscountCouponsVC, animated: true)
             break
         case 3:
-           
+            let mineDiscountCouponsVC = MineBlankCardManagementVC()
+            self.navigationController?.pushViewController(mineDiscountCouponsVC, animated: true)
             break
         
         case 4:
-            let mineReservationVC = MineReservationVC()
-            self.navigationController?.pushViewController(mineReservationVC, animated: true)
+     
             break
             
         case 5:
-            let mineInformationVC = MineInformationVC()
-            self.navigationController?.pushViewController(mineInformationVC, animated: true)
+   
             break
             
         default:

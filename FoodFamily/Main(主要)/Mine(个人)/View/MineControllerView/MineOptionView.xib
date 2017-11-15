@@ -111,15 +111,15 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eEu-5U-M4k">
                             <rect key="frame" x="188" y="0.0" width="93" height="93.5"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_mine_discount coupons" translatesAutoresizingMaskIntoConstraints="NO" id="HjH-LW-Ndr">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_mine_reservation" translatesAutoresizingMaskIntoConstraints="NO" id="HjH-LW-Ndr">
                                     <rect key="frame" x="31" y="17" width="30" height="30"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="30" id="Gn1-sv-VjS"/>
                                         <constraint firstAttribute="height" constant="30" id="mFc-bX-rvb"/>
                                     </constraints>
                                 </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="优惠卡券" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EKm-du-nLd">
-                                    <rect key="frame" x="18" y="52" width="57.5" height="20"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我的预约" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EKm-du-nLd">
+                                    <rect key="frame" x="18.5" y="52" width="57.5" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="20" id="ueV-d0-s4V"/>
                                     </constraints>
@@ -159,15 +159,15 @@
                                         <action selector="onClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="gTm-Pk-8ft"/>
                                     </connections>
                                 </button>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_mine_buyCoupons" translatesAutoresizingMaskIntoConstraints="NO" id="18P-Lf-hgy">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_mine_bankCard" translatesAutoresizingMaskIntoConstraints="NO" id="18P-Lf-hgy">
                                     <rect key="frame" x="31.5" y="17" width="30" height="30"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="30" id="LFq-YF-GEc"/>
                                         <constraint firstAttribute="width" constant="30" id="bFb-NW-sM4"/>
                                     </constraints>
                                 </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="购买卡券" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pGc-A2-CHy">
-                                    <rect key="frame" x="18" y="52" width="57.5" height="20"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="银行卡" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pGc-A2-CHy">
+                                    <rect key="frame" x="25.5" y="52" width="43" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="20" id="IMU-wl-fSP"/>
                                     </constraints>
@@ -195,14 +195,14 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wfx-qQ-zL8">
                             <rect key="frame" x="0.0" y="94" width="93.5" height="93.5"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_mine_reservation" translatesAutoresizingMaskIntoConstraints="NO" id="ET0-ZE-1VM">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_mine_wallet" translatesAutoresizingMaskIntoConstraints="NO" id="ET0-ZE-1VM">
                                     <rect key="frame" x="31" y="17" width="30" height="30"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="30" id="UXB-96-xEc"/>
                                         <constraint firstAttribute="width" constant="30" id="zBh-Uy-jGW"/>
                                     </constraints>
                                 </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我的预约" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FuX-1L-vMO">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我的钱包" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FuX-1L-vMO">
                                     <rect key="frame" x="18" y="52" width="57.5" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="20" id="DL5-v3-xxi"/>
@@ -218,7 +218,6 @@
                                     </connections>
                                 </button>
                             </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="PHn-nk-Rkf" secondAttribute="trailing" id="4pd-Jj-PPt"/>
                                 <constraint firstAttribute="bottom" secondItem="PHn-nk-Rkf" secondAttribute="bottom" id="91v-yh-eEP"/>
@@ -237,7 +236,7 @@
                                 <constraint firstAttribute="width" constant="0.5" id="zqF-2Q-L1f"/>
                             </constraints>
                         </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hVC-8s-i0z">
+                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hVC-8s-i0z">
                             <rect key="frame" x="94" y="94" width="93.5" height="93.5"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_mine_bankCard" translatesAutoresizingMaskIntoConstraints="NO" id="PXG-MA-3Fg">
@@ -273,14 +272,14 @@
                                 <constraint firstAttribute="trailing" secondItem="nY0-7b-Msx" secondAttribute="trailing" id="xta-Pq-Qme"/>
                             </constraints>
                         </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="44K-z6-Umx" userLabel="line">
+                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="44K-z6-Umx" userLabel="line">
                             <rect key="frame" x="187.5" y="94" width="0.5" height="93.5"/>
                             <color key="backgroundColor" red="0.92941176469999998" green="0.92941176469999998" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="0.5" id="GZP-xY-vab"/>
                             </constraints>
                         </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0oE-hZ-dAp">
+                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0oE-hZ-dAp">
                             <rect key="frame" x="188" y="94" width="93" height="93.5"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_mine_wallet" translatesAutoresizingMaskIntoConstraints="NO" id="eJY-gS-4KX">
@@ -316,7 +315,7 @@
                                 <constraint firstAttribute="trailing" secondItem="wQ4-Zo-w7y" secondAttribute="trailing" id="vvZ-A9-sse"/>
                             </constraints>
                         </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qv4-PN-KGj" userLabel="line">
+                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qv4-PN-KGj" userLabel="line">
                             <rect key="frame" x="281" y="94" width="0.5" height="93.5"/>
                             <color key="backgroundColor" red="0.92941176469999998" green="0.92941176469999998" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
@@ -324,7 +323,7 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lRt-g1-Qjd">
-                            <rect key="frame" x="0.0" y="187.5" width="375" height="0.5"/>
+                            <rect key="frame" x="0.0" y="187.5" width="93.5" height="0.5"/>
                             <color key="backgroundColor" red="0.92941176469999998" green="0.92941176469999998" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="0.5" id="4RR-8K-kCV"/>
@@ -336,7 +335,6 @@
                         <constraint firstItem="lRt-g1-Qjd" firstAttribute="leading" secondItem="e70-8a-hov" secondAttribute="leading" id="0jW-FB-Xtv"/>
                         <constraint firstItem="qv4-PN-KGj" firstAttribute="top" secondItem="rzJ-VC-2O6" secondAttribute="bottom" id="4xq-eT-27V"/>
                         <constraint firstItem="3dX-ac-PzT" firstAttribute="top" secondItem="e70-8a-hov" secondAttribute="top" id="512-00-pBz"/>
-                        <constraint firstAttribute="trailing" secondItem="lRt-g1-Qjd" secondAttribute="trailing" id="5I2-LM-oOj"/>
                         <constraint firstItem="eEu-5U-M4k" firstAttribute="top" secondItem="e70-8a-hov" secondAttribute="top" id="8o8-54-dix"/>
                         <constraint firstItem="eJY-gS-4KX" firstAttribute="top" secondItem="ET0-ZE-1VM" secondAttribute="top" id="98g-AG-Uxa"/>
                         <constraint firstItem="nsY-1i-Zh0" firstAttribute="top" secondItem="e70-8a-hov" secondAttribute="top" id="BYc-H0-FKn"/>
@@ -378,6 +376,7 @@
                         <constraint firstItem="rzJ-VC-2O6" firstAttribute="top" secondItem="8Hb-DB-7Tc" secondAttribute="bottom" id="eFi-gr-73Y"/>
                         <constraint firstItem="0oE-hZ-dAp" firstAttribute="leading" secondItem="44K-z6-Umx" secondAttribute="trailing" id="g3P-pq-LN5"/>
                         <constraint firstItem="yko-5l-eLk" firstAttribute="width" secondItem="8Hb-DB-7Tc" secondAttribute="width" id="h6l-tf-NAX"/>
+                        <constraint firstItem="lRt-g1-Qjd" firstAttribute="width" secondItem="wfx-qQ-zL8" secondAttribute="width" id="hKR-XX-g1D"/>
                         <constraint firstItem="hVC-8s-i0z" firstAttribute="width" secondItem="8Hb-DB-7Tc" secondAttribute="width" id="hbF-Xd-1e1"/>
                         <constraint firstItem="wfx-qQ-zL8" firstAttribute="leading" secondItem="e70-8a-hov" secondAttribute="leading" id="jSJ-cO-8Zu"/>
                         <constraint firstItem="hVC-8s-i0z" firstAttribute="top" secondItem="rzJ-VC-2O6" secondAttribute="bottom" id="ji9-xV-ouY"/>
@@ -416,9 +415,7 @@
     </objects>
     <resources>
         <image name="ic_mine_bankCard" width="30" height="30"/>
-        <image name="ic_mine_buyCoupons" width="31" height="30"/>
         <image name="ic_mine_collection" width="30" height="30"/>
-        <image name="ic_mine_discount coupons" width="30" height="30"/>
         <image name="ic_mine_expensesrecord" width="31" height="30"/>
         <image name="ic_mine_reservation" width="31" height="30"/>
         <image name="ic_mine_wallet" width="30" height="30"/>

@@ -11,6 +11,7 @@ import UIKit
 class MineHeadView: UIView {
    var mineHeadCallBack:(()->())?;
     @IBOutlet weak var backgroundVw: UIView!
+    @IBOutlet weak var backgroundConstraintC: NSLayoutConstraint!
     @IBAction func onClick(_ sender: UIButton) {
         if mineHeadCallBack != nil {
             mineHeadCallBack!()

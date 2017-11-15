@@ -206,6 +206,17 @@
 		239F070F1FB2F4020067D810 /* FoodPurchaseSuccessView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 239F06E21FB2F4010067D810 /* FoodPurchaseSuccessView.xib */; };
 		239F07101FB2F4020067D810 /* FoodFeaturesDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239F06E41FB2F4010067D810 /* FoodFeaturesDetailCell.swift */; };
 		239F07111FB2F4020067D810 /* FoodFeaturesDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 239F06E51FB2F4010067D810 /* FoodFeaturesDetailCell.xib */; };
+		23B67CFC1FBBD665000B18DB /* AddBankTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B67CFA1FBBD665000B18DB /* AddBankTextFieldCell.swift */; };
+		23B67CFD1FBBD665000B18DB /* AddBankTextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23B67CFB1FBBD665000B18DB /* AddBankTextFieldCell.xib */; };
+		23CB44EE1FBBCBE700D8988D /* MineBlankCardManagementVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CB44ED1FBBCBE700D8988D /* MineBlankCardManagementVC.swift */; };
+		23CB44F21FBBCC4700D8988D /* MyBlankCardManagementCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23CB44F01FBBCC4700D8988D /* MyBlankCardManagementCell.xib */; };
+		23CB44F31FBBCC4700D8988D /* MyBlankCardManagementCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CB44F11FBBCC4700D8988D /* MyBlankCardManagementCell.swift */; };
+		23CB44F51FBBCC8700D8988D /* MineAddBankCardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CB44F41FBBCC8700D8988D /* MineAddBankCardVC.swift */; };
+		23CB44F91FBBCD0600D8988D /* AddBankCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CB44F71FBBCD0600D8988D /* AddBankCardCell.swift */; };
+		23CB44FA1FBBCD0600D8988D /* AddBankCardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23CB44F81FBBCD0600D8988D /* AddBankCardCell.xib */; };
+		23CB44FC1FBBCD2B00D8988D /* MineAddBankCardDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CB44FB1FBBCD2B00D8988D /* MineAddBankCardDetailVC.swift */; };
+		23CB44FF1FBBCD5800D8988D /* MineAddBankCardFinishVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CB44FD1FBBCD5700D8988D /* MineAddBankCardFinishVC.swift */; };
+		23CB45001FBBCD5800D8988D /* MineAddBankCardFinishVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23CB44FE1FBBCD5700D8988D /* MineAddBankCardFinishVC.xib */; };
 		23D0E3E01FAD97B70058EA34 /* TopicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D0E3DE1FAD97B70058EA34 /* TopicTableViewCell.swift */; };
 		23D0E3E11FAD97B70058EA34 /* TopicTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23D0E3DF1FAD97B70058EA34 /* TopicTableViewCell.xib */; };
 		23D0E3E41FAD9C380058EA34 /* RecommendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D0E3E21FAD9C380058EA34 /* RecommendTableViewCell.swift */; };
@@ -470,6 +481,17 @@
 		239F06E21FB2F4010067D810 /* FoodPurchaseSuccessView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FoodPurchaseSuccessView.xib; sourceTree = "<group>"; };
 		239F06E41FB2F4010067D810 /* FoodFeaturesDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodFeaturesDetailCell.swift; sourceTree = "<group>"; };
 		239F06E51FB2F4010067D810 /* FoodFeaturesDetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FoodFeaturesDetailCell.xib; sourceTree = "<group>"; };
+		23B67CFA1FBBD665000B18DB /* AddBankTextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBankTextFieldCell.swift; sourceTree = "<group>"; };
+		23B67CFB1FBBD665000B18DB /* AddBankTextFieldCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddBankTextFieldCell.xib; sourceTree = "<group>"; };
+		23CB44ED1FBBCBE700D8988D /* MineBlankCardManagementVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MineBlankCardManagementVC.swift; sourceTree = "<group>"; };
+		23CB44F01FBBCC4700D8988D /* MyBlankCardManagementCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyBlankCardManagementCell.xib; sourceTree = "<group>"; };
+		23CB44F11FBBCC4700D8988D /* MyBlankCardManagementCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBlankCardManagementCell.swift; sourceTree = "<group>"; };
+		23CB44F41FBBCC8700D8988D /* MineAddBankCardVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MineAddBankCardVC.swift; sourceTree = "<group>"; };
+		23CB44F71FBBCD0600D8988D /* AddBankCardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddBankCardCell.swift; sourceTree = "<group>"; };
+		23CB44F81FBBCD0600D8988D /* AddBankCardCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddBankCardCell.xib; sourceTree = "<group>"; };
+		23CB44FB1FBBCD2B00D8988D /* MineAddBankCardDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MineAddBankCardDetailVC.swift; sourceTree = "<group>"; };
+		23CB44FD1FBBCD5700D8988D /* MineAddBankCardFinishVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MineAddBankCardFinishVC.swift; sourceTree = "<group>"; };
+		23CB44FE1FBBCD5700D8988D /* MineAddBankCardFinishVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MineAddBankCardFinishVC.xib; sourceTree = "<group>"; };
 		23D0E3DE1FAD97B70058EA34 /* TopicTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicTableViewCell.swift; sourceTree = "<group>"; };
 		23D0E3DF1FAD97B70058EA34 /* TopicTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopicTableViewCell.xib; sourceTree = "<group>"; };
 		23D0E3E21FAD9C380058EA34 /* RecommendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendTableViewCell.swift; sourceTree = "<group>"; };
@@ -638,6 +660,8 @@
 				23E214C31FB6E9FA00C7D085 /* MineInformationView */,
 				238092E01FB944EB0051EF3D /* MineSetView */,
 				238092EB1FB94F320051EF3D /* MineSetPayPasswordView */,
+				23CB44EF1FBBCC1D00D8988D /* MineBlankCardManagementView */,
+				23CB44F61FBBCCEC00D8988D /* MineAddBankCardView */,
 			);
 			name = View;
 			path = "FoodFamily/Main(主要)/Mine(个人)/View";
@@ -916,6 +940,11 @@
 				23E214C11FB6E91B00C7D085 /* MineInformationVC.swift */,
 				238092DE1FB943D30051EF3D /* MineSetVC.swift */,
 				238092E51FB94CB50051EF3D /* MineSetPayPasswordVC.swift */,
+				23CB44ED1FBBCBE700D8988D /* MineBlankCardManagementVC.swift */,
+				23CB44F41FBBCC8700D8988D /* MineAddBankCardVC.swift */,
+				23CB44FB1FBBCD2B00D8988D /* MineAddBankCardDetailVC.swift */,
+				23CB44FD1FBBCD5700D8988D /* MineAddBankCardFinishVC.swift */,
+				23CB44FE1FBBCD5700D8988D /* MineAddBankCardFinishVC.xib */,
 				230BE0F21FB6AD8700AD47E0 /* MineExpensesRecordChildVC */,
 				230BE0F51FB6DAC800AD47E0 /* MineDiscountCouponsChildVC */,
 				230BE1011FB6E18400AD47E0 /* MineReservationChildVC */,
@@ -1074,8 +1103,8 @@
 			isa = PBXGroup;
 			children = (
 				238092F51FB96D420051EF3D /* LoginVC.swift */,
-				238093811FB9A22D0051EF3D /* RegisterAndForgetPsdVC.swift */,
 				23D1473E1FBA879D0028CD09 /* RigisterFinshVC.swift */,
+				238093811FB9A22D0051EF3D /* RegisterAndForgetPsdVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1315,6 +1344,26 @@
 			path = FoodFeaturesDetailView;
 			sourceTree = "<group>";
 		};
+		23CB44EF1FBBCC1D00D8988D /* MineBlankCardManagementView */ = {
+			isa = PBXGroup;
+			children = (
+				23CB44F11FBBCC4700D8988D /* MyBlankCardManagementCell.swift */,
+				23CB44F01FBBCC4700D8988D /* MyBlankCardManagementCell.xib */,
+			);
+			path = MineBlankCardManagementView;
+			sourceTree = "<group>";
+		};
+		23CB44F61FBBCCEC00D8988D /* MineAddBankCardView */ = {
+			isa = PBXGroup;
+			children = (
+				23CB44F71FBBCD0600D8988D /* AddBankCardCell.swift */,
+				23CB44F81FBBCD0600D8988D /* AddBankCardCell.xib */,
+				23B67CFA1FBBD665000B18DB /* AddBankTextFieldCell.swift */,
+				23B67CFB1FBBD665000B18DB /* AddBankTextFieldCell.xib */,
+			);
+			path = MineAddBankCardView;
+			sourceTree = "<group>";
+		};
 		23D0E3EA1FADBC000058EA34 /* Vender(第三方) */ = {
 			isa = PBXGroup;
 			children = (
@@ -1511,9 +1560,11 @@
 				230BE10A1FB6E2EC00AD47E0 /* MineReservationCell.xib in Resources */,
 				230FA7731FB5AA8B00190F2B /* MineHeadView.xib in Resources */,
 				23E214CB1FB6EA3600C7D085 /* MineInformationListCell.xib in Resources */,
+				23CB44F21FBBCC4700D8988D /* MyBlankCardManagementCell.xib in Resources */,
 				239F070B1FB2F4020067D810 /* FoodPurchaseNotesCell.xib in Resources */,
 				2316A28D1FAD71FE00A0B512 /* LaunchScreen.storyboard in Resources */,
 				23E214C71FB6EA1B00C7D085 /* MineInformationHeadCell.xib in Resources */,
+				23CB45001FBBCD5800D8988D /* MineAddBankCardFinishVC.xib in Resources */,
 				239F070D1FB2F4020067D810 /* FoodPurchaseNotesHeadView.xib in Resources */,
 				238093731FB9813D0051EF3D /* Info.plist in Resources */,
 				238093401FB97BAD0051EF3D /* Info.plist in Resources */,
@@ -1528,6 +1579,8 @@
 				230BE0CD1FB68F1300AD47E0 /* MineOptionView.xib in Resources */,
 				230FA7691FB53BF800190F2B /* FoodMerchantsListCell.xib in Resources */,
 				239F07091FB2F4020067D810 /* FoodReservationPaymentMethodCell.xib in Resources */,
+				23CB44FA1FBBCD0600D8988D /* AddBankCardCell.xib in Resources */,
+				23B67CFD1FBBD665000B18DB /* AddBankTextFieldCell.xib in Resources */,
 				23D0E3E51FAD9C380058EA34 /* RecommendTableViewCell.xib in Resources */,
 				230BE0D41FB69B5800AD47E0 /* MineCollectionCell.xib in Resources */,
 				239F06ED1FB2F4020067D810 /* FoodReservationCell.xib in Resources */,
@@ -1718,6 +1771,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2380934B1FB97D240051EF3D /* NetWorkTool.swift in Sources */,
+				23CB44FC1FBBCD2B00D8988D /* MineAddBankCardDetailVC.swift in Sources */,
 				230BE0EB1FB6A39F00AD47E0 /* MineOrderUseVC.swift in Sources */,
 				2388E0A81FB0485A00AB6853 /* FoodDetailsFoodView.swift in Sources */,
 				238093411FB97BAD0051EF3D /* LayoutConstraint.swift in Sources */,
@@ -1758,6 +1812,7 @@
 				238093491FB97D240051EF3D /* BaseURL.swift in Sources */,
 				2316A2851FAD71FE00A0B512 /* ViewController.swift in Sources */,
 				230BE0E31FB6A27600AD47E0 /* UIView+SGFrame.m in Sources */,
+				23CB44FF1FBBCD5800D8988D /* MineAddBankCardFinishVC.swift in Sources */,
 				23D0E3FC1FADBCFD0058EA34 /* BoutiqueScrollView.m in Sources */,
 				2380932F1FB97BAD0051EF3D /* ConstraintLayoutSupportDSL.swift in Sources */,
 				2380932E1FB97BAD0051EF3D /* ConstraintLayoutSupport.swift in Sources */,
@@ -1777,12 +1832,14 @@
 				238093341FB97BAD0051EF3D /* ConstraintMakerPriortizable.swift in Sources */,
 				238093391FB97BAD0051EF3D /* ConstraintPriorityTarget.swift in Sources */,
 				230BE1001FB6E16800AD47E0 /* MineReservationVC.swift in Sources */,
+				23CB44EE1FBBCBE700D8988D /* MineBlankCardManagementVC.swift in Sources */,
 				230BE0FD1FB6DBAF00AD47E0 /* MineDiscountCouponsCell.swift in Sources */,
 				230BE0CF1FB69B2A00AD47E0 /* MineCollectionVC.swift in Sources */,
 				239F06EC1FB2F4020067D810 /* FoodReservationCell.swift in Sources */,
 				2380936C1FB9813D0051EF3D /* DateTransform.swift in Sources */,
 				23D0E3E41FAD9C380058EA34 /* RecommendTableViewCell.swift in Sources */,
 				239F06E61FB2F4020067D810 /* FoodOrderDetailsEvaluationCell.swift in Sources */,
+				23CB44F91FBBCD0600D8988D /* AddBankCardCell.swift in Sources */,
 				238092E61FB94CB50051EF3D /* MineSetPayPasswordVC.swift in Sources */,
 				230BE0E11FB6A27600AD47E0 /* SGPageContentView.m in Sources */,
 				239F06A61FB2F3D30067D810 /* FoodFeaturesDetailVC.swift in Sources */,
@@ -1802,6 +1859,7 @@
 				239F06F41FB2F4020067D810 /* FoodReservationFinishListCell.swift in Sources */,
 				230BE0F71FB6DAF600AD47E0 /* MineUsableCoupons.swift in Sources */,
 				2380937A1FB9813D0051EF3D /* NSDecimalNumberTransform.swift in Sources */,
+				23CB44F51FBBCC8700D8988D /* MineAddBankCardVC.swift in Sources */,
 				239F06F61FB2F4020067D810 /* RecommendedCommentCell.swift in Sources */,
 				2380936E1FB9813D0051EF3D /* EnumOperators.swift in Sources */,
 				23D0E3F71FADBC4B0058EA34 /* TYCyclePagerViewCell.m in Sources */,
@@ -1859,6 +1917,7 @@
 				238093701FB9813D0051EF3D /* FromJSON.swift in Sources */,
 				2316A2831FAD71FE00A0B512 /* AppDelegate.swift in Sources */,
 				238093771FB9813D0051EF3D /* MapError.swift in Sources */,
+				23B67CFC1FBBD665000B18DB /* AddBankTextFieldCell.swift in Sources */,
 				239F06AF1FB2F3D30067D810 /* FoodPurchaseNotesVC.swift in Sources */,
 				2316A2E91FAD947300A0B512 /* MineController.swift in Sources */,
 				23D0E3F21FADBC000058EA34 /* TYCyclePagerTransformLayout.m in Sources */,
@@ -1872,6 +1931,7 @@
 				239F06A91FB2F3D30067D810 /* FoodPaymentCardCouponsVC.swift in Sources */,
 				238093381FB97BAD0051EF3D /* ConstraintPriority.swift in Sources */,
 				238093361FB97BAD0051EF3D /* ConstraintMultiplierTarget.swift in Sources */,
+				23CB44F31FBBCC4700D8988D /* MyBlankCardManagementCell.swift in Sources */,
 				2380933B1FB97BAD0051EF3D /* ConstraintRelation.swift in Sources */,
 				2380933F1FB97BAD0051EF3D /* Debugging.swift in Sources */,
 				2323931F1FB43B6E00425BDA /* FoodNormalOrderDetailsVC.swift in Sources */,
