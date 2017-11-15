@@ -17,4 +17,5 @@
 #import "SnapKit.h"
 #import "ObjectMapper.h"
 #import "TggStarEvaluationView.h"
+#import "ZCTradeView.h"
 #endif

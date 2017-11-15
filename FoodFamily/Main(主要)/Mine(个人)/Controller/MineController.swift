@@ -55,9 +55,9 @@ class MineController: MainViewController {
             let mineDiscountCouponsVC = MineBlankCardManagementVC()
             self.navigationController?.pushViewController(mineDiscountCouponsVC, animated: true)
             break
-        
         case 4:
-     
+            let mineWalletVC = MineWalletVC()
+            self.navigationController?.pushViewController(mineWalletVC, animated: true)
             break
             
         case 5:

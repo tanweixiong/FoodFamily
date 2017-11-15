@@ -55,6 +55,11 @@
 		2316A2E51FAD944300A0B512 /* CollegeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2316A2E41FAD944300A0B512 /* CollegeController.swift */; };
 		2316A2E71FAD945600A0B512 /* ChefController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2316A2E61FAD945600A0B512 /* ChefController.swift */; };
 		2316A2E91FAD947300A0B512 /* MineController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2316A2E81FAD947300A0B512 /* MineController.swift */; };
+		2320D3E01FBC3F7800A5B507 /* MineRechargeMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2320D3DE1FBC3F7800A5B507 /* MineRechargeMessageCell.swift */; };
+		2320D3E11FBC3F7800A5B507 /* MineRechargeMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2320D3DF1FBC3F7800A5B507 /* MineRechargeMessageCell.xib */; };
+		232357B61FBC16700006E9A6 /* MineAmountOperationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232357B51FBC16700006E9A6 /* MineAmountOperationVC.swift */; };
+		232357BA1FBC190D0006E9A6 /* MineAmountOperationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232357B81FBC190D0006E9A6 /* MineAmountOperationCell.swift */; };
+		232357BB1FBC190D0006E9A6 /* MineAmountOperationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 232357B91FBC190D0006E9A6 /* MineAmountOperationCell.xib */; };
 		2323931F1FB43B6E00425BDA /* FoodNormalOrderDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2323931E1FB43B6E00425BDA /* FoodNormalOrderDetailsVC.swift */; };
 		2353EC1C1FB3F6BA005E1548 /* OCTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 2353EC1B1FB3F6BA005E1548 /* OCTools.m */; };
 		2353EC1F1FB4047A005E1548 /* FoodOrderDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2353EC1D1FB4047A005E1548 /* FoodOrderDetailsCell.swift */; };
@@ -217,6 +222,10 @@
 		23CB44FC1FBBCD2B00D8988D /* MineAddBankCardDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CB44FB1FBBCD2B00D8988D /* MineAddBankCardDetailVC.swift */; };
 		23CB44FF1FBBCD5800D8988D /* MineAddBankCardFinishVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CB44FD1FBBCD5700D8988D /* MineAddBankCardFinishVC.swift */; };
 		23CB45001FBBCD5800D8988D /* MineAddBankCardFinishVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23CB44FE1FBBCD5700D8988D /* MineAddBankCardFinishVC.xib */; };
+		23CF994D1FBC215B0002241F /* MineWithdrawVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CF994C1FBC215B0002241F /* MineWithdrawVC.swift */; };
+		23CF99511FBC21B00002241F /* MineWalletAddressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CF994F1FBC21B00002241F /* MineWalletAddressCell.swift */; };
+		23CF99521FBC21B00002241F /* MineWalletAddressCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23CF99501FBC21B00002241F /* MineWalletAddressCell.xib */; };
+		23CF99541FBC2CED0002241F /* MineAmountChoiceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CF99531FBC2CED0002241F /* MineAmountChoiceVC.swift */; };
 		23D0E3E01FAD97B70058EA34 /* TopicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D0E3DE1FAD97B70058EA34 /* TopicTableViewCell.swift */; };
 		23D0E3E11FAD97B70058EA34 /* TopicTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23D0E3DF1FAD97B70058EA34 /* TopicTableViewCell.xib */; };
 		23D0E3E41FAD9C380058EA34 /* RecommendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D0E3E21FAD9C380058EA34 /* RecommendTableViewCell.swift */; };
@@ -241,6 +250,26 @@
 		23E214C71FB6EA1B00C7D085 /* MineInformationHeadCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23E214C51FB6EA1B00C7D085 /* MineInformationHeadCell.xib */; };
 		23E214CA1FB6EA3600C7D085 /* MineInformationListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E214C81FB6EA3600C7D085 /* MineInformationListCell.swift */; };
 		23E214CB1FB6EA3600C7D085 /* MineInformationListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23E214C91FB6EA3600C7D085 /* MineInformationListCell.xib */; };
+		23F4A7361FBBE88E004C9266 /* MineWalletVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F4A7351FBBE88E004C9266 /* MineWalletVC.swift */; };
+		23F4A73A1FBBE8ED004C9266 /* MyBalanceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23F4A7381FBBE8ED004C9266 /* MyBalanceView.xib */; };
+		23F4A73B1FBBE8ED004C9266 /* MyBalanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F4A7391FBBE8ED004C9266 /* MyBalanceView.swift */; };
+		23F4A73E1FBBE938004C9266 /* MyBalanceListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F4A73C1FBBE938004C9266 /* MyBalanceListView.swift */; };
+		23F4A73F1FBBE938004C9266 /* MyBalanceListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23F4A73D1FBBE938004C9266 /* MyBalanceListView.xib */; };
+		23F4A7421FBBE9EB004C9266 /* MineSuccessfulOperationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F4A7401FBBE9EB004C9266 /* MineSuccessfulOperationVC.swift */; };
+		23F4A7431FBBE9EB004C9266 /* MineSuccessfulOperationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23F4A7411FBBE9EB004C9266 /* MineSuccessfulOperationVC.xib */; };
+		23F4A7451FBBEE74004C9266 /* MineRechargeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F4A7441FBBEE73004C9266 /* MineRechargeVC.swift */; };
+		23F4A7491FBBEF3A004C9266 /* MyRechargeHeadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F4A7471FBBEF3A004C9266 /* MyRechargeHeadCell.swift */; };
+		23F4A74A1FBBEF3A004C9266 /* MyRechargeHeadCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23F4A7481FBBEF3A004C9266 /* MyRechargeHeadCell.xib */; };
+		23F4A74D1FBBEF52004C9266 /* MyRechargeListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23F4A74B1FBBEF52004C9266 /* MyRechargeListCell.xib */; };
+		23F4A74E1FBBEF52004C9266 /* MyRechargeListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F4A74C1FBBEF52004C9266 /* MyRechargeListCell.swift */; };
+		23F4A7601FBBEFA0004C9266 /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 23F4A7511FBBEFA0004C9266 /* NSString+Extension.m */; };
+		23F4A7611FBBEFA0004C9266 /* trade.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 23F4A7531FBBEFA0004C9266 /* trade.bundle */; };
+		23F4A7621FBBEFA0004C9266 /* UIAlertView+Quick.m in Sources */ = {isa = PBXBuildFile; fileRef = 23F4A7551FBBEFA0004C9266 /* UIAlertView+Quick.m */; };
+		23F4A7631FBBEFA0004C9266 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 23F4A7571FBBEFA0004C9266 /* UIView+Extension.m */; };
+		23F4A7641FBBEFA0004C9266 /* ZCAudioTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 23F4A7591FBBEFA0004C9266 /* ZCAudioTool.m */; };
+		23F4A7651FBBEFA0004C9266 /* ZCTradeInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 23F4A75B1FBBEFA0004C9266 /* ZCTradeInputView.m */; };
+		23F4A7661FBBEFA0004C9266 /* ZCTradeKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 23F4A75D1FBBEFA0004C9266 /* ZCTradeKeyboard.m */; };
+		23F4A7671FBBEFA0004C9266 /* ZCTradeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 23F4A75F1FBBEFA0004C9266 /* ZCTradeView.m */; };
 		2991A1F58EB40DC9F5A972A4 /* Pods_FoodFamilyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31FBFBF79EFC7ADF1C5D0808 /* Pods_FoodFamilyTests.framework */; };
 		98CC1D2B92B4EEC555950E97 /* Pods_FoodFamily.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5C40086A4006C908F68FB04 /* Pods_FoodFamily.framework */; };
 /* End PBXBuildFile section */
@@ -323,6 +352,11 @@
 		2316A2E41FAD944300A0B512 /* CollegeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollegeController.swift; sourceTree = "<group>"; };
 		2316A2E61FAD945600A0B512 /* ChefController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChefController.swift; sourceTree = "<group>"; };
 		2316A2E81FAD947300A0B512 /* MineController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineController.swift; sourceTree = "<group>"; };
+		2320D3DE1FBC3F7800A5B507 /* MineRechargeMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineRechargeMessageCell.swift; sourceTree = "<group>"; };
+		2320D3DF1FBC3F7800A5B507 /* MineRechargeMessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineRechargeMessageCell.xib; sourceTree = "<group>"; };
+		232357B51FBC16700006E9A6 /* MineAmountOperationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineAmountOperationVC.swift; sourceTree = "<group>"; };
+		232357B81FBC190D0006E9A6 /* MineAmountOperationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineAmountOperationCell.swift; sourceTree = "<group>"; };
+		232357B91FBC190D0006E9A6 /* MineAmountOperationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineAmountOperationCell.xib; sourceTree = "<group>"; };
 		2323931E1FB43B6E00425BDA /* FoodNormalOrderDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodNormalOrderDetailsVC.swift; sourceTree = "<group>"; };
 		2353EC1A1FB3F6BA005E1548 /* OCTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCTools.h; sourceTree = "<group>"; };
 		2353EC1B1FB3F6BA005E1548 /* OCTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCTools.m; sourceTree = "<group>"; };
@@ -492,6 +526,10 @@
 		23CB44FB1FBBCD2B00D8988D /* MineAddBankCardDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MineAddBankCardDetailVC.swift; sourceTree = "<group>"; };
 		23CB44FD1FBBCD5700D8988D /* MineAddBankCardFinishVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MineAddBankCardFinishVC.swift; sourceTree = "<group>"; };
 		23CB44FE1FBBCD5700D8988D /* MineAddBankCardFinishVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MineAddBankCardFinishVC.xib; sourceTree = "<group>"; };
+		23CF994C1FBC215B0002241F /* MineWithdrawVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineWithdrawVC.swift; sourceTree = "<group>"; };
+		23CF994F1FBC21B00002241F /* MineWalletAddressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineWalletAddressCell.swift; sourceTree = "<group>"; };
+		23CF99501FBC21B00002241F /* MineWalletAddressCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineWalletAddressCell.xib; sourceTree = "<group>"; };
+		23CF99531FBC2CED0002241F /* MineAmountChoiceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineAmountChoiceVC.swift; sourceTree = "<group>"; };
 		23D0E3DE1FAD97B70058EA34 /* TopicTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicTableViewCell.swift; sourceTree = "<group>"; };
 		23D0E3DF1FAD97B70058EA34 /* TopicTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopicTableViewCell.xib; sourceTree = "<group>"; };
 		23D0E3E21FAD9C380058EA34 /* RecommendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendTableViewCell.swift; sourceTree = "<group>"; };
@@ -521,6 +559,34 @@
 		23E214C51FB6EA1B00C7D085 /* MineInformationHeadCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineInformationHeadCell.xib; sourceTree = "<group>"; };
 		23E214C81FB6EA3600C7D085 /* MineInformationListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineInformationListCell.swift; sourceTree = "<group>"; };
 		23E214C91FB6EA3600C7D085 /* MineInformationListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineInformationListCell.xib; sourceTree = "<group>"; };
+		23F4A7351FBBE88E004C9266 /* MineWalletVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MineWalletVC.swift; sourceTree = "<group>"; };
+		23F4A7381FBBE8ED004C9266 /* MyBalanceView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyBalanceView.xib; sourceTree = "<group>"; };
+		23F4A7391FBBE8ED004C9266 /* MyBalanceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBalanceView.swift; sourceTree = "<group>"; };
+		23F4A73C1FBBE938004C9266 /* MyBalanceListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBalanceListView.swift; sourceTree = "<group>"; };
+		23F4A73D1FBBE938004C9266 /* MyBalanceListView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyBalanceListView.xib; sourceTree = "<group>"; };
+		23F4A7401FBBE9EB004C9266 /* MineSuccessfulOperationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MineSuccessfulOperationVC.swift; sourceTree = "<group>"; };
+		23F4A7411FBBE9EB004C9266 /* MineSuccessfulOperationVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MineSuccessfulOperationVC.xib; sourceTree = "<group>"; };
+		23F4A7441FBBEE73004C9266 /* MineRechargeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MineRechargeVC.swift; sourceTree = "<group>"; };
+		23F4A7471FBBEF3A004C9266 /* MyRechargeHeadCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyRechargeHeadCell.swift; sourceTree = "<group>"; };
+		23F4A7481FBBEF3A004C9266 /* MyRechargeHeadCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyRechargeHeadCell.xib; sourceTree = "<group>"; };
+		23F4A74B1FBBEF52004C9266 /* MyRechargeListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyRechargeListCell.xib; sourceTree = "<group>"; };
+		23F4A74C1FBBEF52004C9266 /* MyRechargeListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyRechargeListCell.swift; sourceTree = "<group>"; };
+		23F4A7501FBBEFA0004C9266 /* NSString+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extension.h"; sourceTree = "<group>"; };
+		23F4A7511FBBEFA0004C9266 /* NSString+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extension.m"; sourceTree = "<group>"; };
+		23F4A7521FBBEFA0004C9266 /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
+		23F4A7531FBBEFA0004C9266 /* trade.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = trade.bundle; sourceTree = "<group>"; };
+		23F4A7541FBBEFA0004C9266 /* UIAlertView+Quick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+Quick.h"; sourceTree = "<group>"; };
+		23F4A7551FBBEFA0004C9266 /* UIAlertView+Quick.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+Quick.m"; sourceTree = "<group>"; };
+		23F4A7561FBBEFA0004C9266 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		23F4A7571FBBEFA0004C9266 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		23F4A7581FBBEFA0004C9266 /* ZCAudioTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCAudioTool.h; sourceTree = "<group>"; };
+		23F4A7591FBBEFA0004C9266 /* ZCAudioTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCAudioTool.m; sourceTree = "<group>"; };
+		23F4A75A1FBBEFA0004C9266 /* ZCTradeInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCTradeInputView.h; sourceTree = "<group>"; };
+		23F4A75B1FBBEFA0004C9266 /* ZCTradeInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCTradeInputView.m; sourceTree = "<group>"; };
+		23F4A75C1FBBEFA0004C9266 /* ZCTradeKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCTradeKeyboard.h; sourceTree = "<group>"; };
+		23F4A75D1FBBEFA0004C9266 /* ZCTradeKeyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCTradeKeyboard.m; sourceTree = "<group>"; };
+		23F4A75E1FBBEFA0004C9266 /* ZCTradeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCTradeView.h; sourceTree = "<group>"; };
+		23F4A75F1FBBEFA0004C9266 /* ZCTradeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCTradeView.m; sourceTree = "<group>"; };
 		2880E6CA79A8B64607284A8E /* Pods-FoodFamily.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodFamily.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FoodFamily/Pods-FoodFamily.debug.xcconfig"; sourceTree = "<group>"; };
 		31FBFBF79EFC7ADF1C5D0808 /* Pods_FoodFamilyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodFamilyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		33224DA83A15716AA0896400 /* Pods-FoodFamilyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodFamilyUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FoodFamilyUITests/Pods-FoodFamilyUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -662,6 +728,10 @@
 				238092EB1FB94F320051EF3D /* MineSetPayPasswordView */,
 				23CB44EF1FBBCC1D00D8988D /* MineBlankCardManagementView */,
 				23CB44F61FBBCCEC00D8988D /* MineAddBankCardView */,
+				23F4A7371FBBE8D2004C9266 /* MineWalletView */,
+				23F4A7461FBBEEFB004C9266 /* MineRechargeView */,
+				232357B71FBC18F90006E9A6 /* MineAmountOperationView */,
+				23CF994E1FBC217B0002241F /* MineWithdrawView */,
 			);
 			name = View;
 			path = "FoodFamily/Main(主要)/Mine(个人)/View";
@@ -943,8 +1013,15 @@
 				23CB44ED1FBBCBE700D8988D /* MineBlankCardManagementVC.swift */,
 				23CB44F41FBBCC8700D8988D /* MineAddBankCardVC.swift */,
 				23CB44FB1FBBCD2B00D8988D /* MineAddBankCardDetailVC.swift */,
+				23F4A7351FBBE88E004C9266 /* MineWalletVC.swift */,
+				23CF99531FBC2CED0002241F /* MineAmountChoiceVC.swift */,
+				23F4A7441FBBEE73004C9266 /* MineRechargeVC.swift */,
+				23CF994C1FBC215B0002241F /* MineWithdrawVC.swift */,
 				23CB44FD1FBBCD5700D8988D /* MineAddBankCardFinishVC.swift */,
 				23CB44FE1FBBCD5700D8988D /* MineAddBankCardFinishVC.xib */,
+				23F4A7401FBBE9EB004C9266 /* MineSuccessfulOperationVC.swift */,
+				23F4A7411FBBE9EB004C9266 /* MineSuccessfulOperationVC.xib */,
+				232357B51FBC16700006E9A6 /* MineAmountOperationVC.swift */,
 				230BE0F21FB6AD8700AD47E0 /* MineExpensesRecordChildVC */,
 				230BE0F51FB6DAC800AD47E0 /* MineDiscountCouponsChildVC */,
 				230BE1011FB6E18400AD47E0 /* MineReservationChildVC */,
@@ -1006,6 +1083,15 @@
 				2316A2E21FAD942C00A0B512 /* CrowdfundingController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		232357B71FBC18F90006E9A6 /* MineAmountOperationView */ = {
+			isa = PBXGroup;
+			children = (
+				232357B81FBC190D0006E9A6 /* MineAmountOperationCell.swift */,
+				232357B91FBC190D0006E9A6 /* MineAmountOperationCell.xib */,
+			);
+			path = MineAmountOperationView;
 			sourceTree = "<group>";
 		};
 		2353EC191FB3F6BA005E1548 /* Custom */ = {
@@ -1364,6 +1450,15 @@
 			path = MineAddBankCardView;
 			sourceTree = "<group>";
 		};
+		23CF994E1FBC217B0002241F /* MineWithdrawView */ = {
+			isa = PBXGroup;
+			children = (
+				23CF994F1FBC21B00002241F /* MineWalletAddressCell.swift */,
+				23CF99501FBC21B00002241F /* MineWalletAddressCell.xib */,
+			);
+			path = MineWithdrawView;
+			sourceTree = "<group>";
+		};
 		23D0E3EA1FADBC000058EA34 /* Vender(第三方) */ = {
 			isa = PBXGroup;
 			children = (
@@ -1373,6 +1468,7 @@
 				238092FC1FB97BAD0051EF3D /* SnapKit */,
 				2380934F1FB9813D0051EF3D /* Sources */,
 				23D0E3EB1FADBC000058EA34 /* TYCyclePagerView */,
+				23F4A74F1FBBEFA0004C9266 /* ZCTradeView */,
 			);
 			path = "Vender(第三方)";
 			sourceTree = "<group>";
@@ -1412,6 +1508,53 @@
 				23E214C91FB6EA3600C7D085 /* MineInformationListCell.xib */,
 			);
 			path = MineInformationView;
+			sourceTree = "<group>";
+		};
+		23F4A7371FBBE8D2004C9266 /* MineWalletView */ = {
+			isa = PBXGroup;
+			children = (
+				23F4A7391FBBE8ED004C9266 /* MyBalanceView.swift */,
+				23F4A7381FBBE8ED004C9266 /* MyBalanceView.xib */,
+				23F4A73C1FBBE938004C9266 /* MyBalanceListView.swift */,
+				23F4A73D1FBBE938004C9266 /* MyBalanceListView.xib */,
+			);
+			path = MineWalletView;
+			sourceTree = "<group>";
+		};
+		23F4A7461FBBEEFB004C9266 /* MineRechargeView */ = {
+			isa = PBXGroup;
+			children = (
+				23F4A7471FBBEF3A004C9266 /* MyRechargeHeadCell.swift */,
+				23F4A7481FBBEF3A004C9266 /* MyRechargeHeadCell.xib */,
+				23F4A74C1FBBEF52004C9266 /* MyRechargeListCell.swift */,
+				23F4A74B1FBBEF52004C9266 /* MyRechargeListCell.xib */,
+				2320D3DE1FBC3F7800A5B507 /* MineRechargeMessageCell.swift */,
+				2320D3DF1FBC3F7800A5B507 /* MineRechargeMessageCell.xib */,
+			);
+			path = MineRechargeView;
+			sourceTree = "<group>";
+		};
+		23F4A74F1FBBEFA0004C9266 /* ZCTradeView */ = {
+			isa = PBXGroup;
+			children = (
+				23F4A7501FBBEFA0004C9266 /* NSString+Extension.h */,
+				23F4A7511FBBEFA0004C9266 /* NSString+Extension.m */,
+				23F4A7521FBBEFA0004C9266 /* Singleton.h */,
+				23F4A7531FBBEFA0004C9266 /* trade.bundle */,
+				23F4A7541FBBEFA0004C9266 /* UIAlertView+Quick.h */,
+				23F4A7551FBBEFA0004C9266 /* UIAlertView+Quick.m */,
+				23F4A7561FBBEFA0004C9266 /* UIView+Extension.h */,
+				23F4A7571FBBEFA0004C9266 /* UIView+Extension.m */,
+				23F4A7581FBBEFA0004C9266 /* ZCAudioTool.h */,
+				23F4A7591FBBEFA0004C9266 /* ZCAudioTool.m */,
+				23F4A75A1FBBEFA0004C9266 /* ZCTradeInputView.h */,
+				23F4A75B1FBBEFA0004C9266 /* ZCTradeInputView.m */,
+				23F4A75C1FBBEFA0004C9266 /* ZCTradeKeyboard.h */,
+				23F4A75D1FBBEFA0004C9266 /* ZCTradeKeyboard.m */,
+				23F4A75E1FBBEFA0004C9266 /* ZCTradeView.h */,
+				23F4A75F1FBBEFA0004C9266 /* ZCTradeView.m */,
+			);
+			path = ZCTradeView;
 			sourceTree = "<group>";
 		};
 		690ACFDC0297A4B26BE68581 /* Pods */ = {
@@ -1562,9 +1705,12 @@
 				23E214CB1FB6EA3600C7D085 /* MineInformationListCell.xib in Resources */,
 				23CB44F21FBBCC4700D8988D /* MyBlankCardManagementCell.xib in Resources */,
 				239F070B1FB2F4020067D810 /* FoodPurchaseNotesCell.xib in Resources */,
+				23F4A73A1FBBE8ED004C9266 /* MyBalanceView.xib in Resources */,
+				23F4A74D1FBBEF52004C9266 /* MyRechargeListCell.xib in Resources */,
 				2316A28D1FAD71FE00A0B512 /* LaunchScreen.storyboard in Resources */,
 				23E214C71FB6EA1B00C7D085 /* MineInformationHeadCell.xib in Resources */,
 				23CB45001FBBCD5800D8988D /* MineAddBankCardFinishVC.xib in Resources */,
+				23CF99521FBC21B00002241F /* MineWalletAddressCell.xib in Resources */,
 				239F070D1FB2F4020067D810 /* FoodPurchaseNotesHeadView.xib in Resources */,
 				238093731FB9813D0051EF3D /* Info.plist in Resources */,
 				238093401FB97BAD0051EF3D /* Info.plist in Resources */,
@@ -1577,14 +1723,17 @@
 				239F06FD1FB2F4020067D810 /* RecommendedReasonCell.xib in Resources */,
 				239F06EB1FB2F4020067D810 /* FoodPaymentCardCouponsCell.xib in Resources */,
 				230BE0CD1FB68F1300AD47E0 /* MineOptionView.xib in Resources */,
+				23F4A73F1FBBE938004C9266 /* MyBalanceListView.xib in Resources */,
 				230FA7691FB53BF800190F2B /* FoodMerchantsListCell.xib in Resources */,
 				239F07091FB2F4020067D810 /* FoodReservationPaymentMethodCell.xib in Resources */,
 				23CB44FA1FBBCD0600D8988D /* AddBankCardCell.xib in Resources */,
 				23B67CFD1FBBD665000B18DB /* AddBankTextFieldCell.xib in Resources */,
 				23D0E3E51FAD9C380058EA34 /* RecommendTableViewCell.xib in Resources */,
 				230BE0D41FB69B5800AD47E0 /* MineCollectionCell.xib in Resources */,
+				23F4A7431FBBE9EB004C9266 /* MineSuccessfulOperationVC.xib in Resources */,
 				239F06ED1FB2F4020067D810 /* FoodReservationCell.xib in Resources */,
 				230BE0F01FB6A4BE00AD47E0 /* MineExpensesRecordCell.xib in Resources */,
+				232357BB1FBC190D0006E9A6 /* MineAmountOperationCell.xib in Resources */,
 				230BE0FE1FB6DBAF00AD47E0 /* MineDiscountCouponsCell.xib in Resources */,
 				238092E41FB945100051EF3D /* MineSetCell.xib in Resources */,
 				239F07071FB2F4020067D810 /* FoodReservationPaymentCardCell.xib in Resources */,
@@ -1595,8 +1744,10 @@
 				23D0E3E91FADA2740058EA34 /* BoutiqueTableViewCell.xib in Resources */,
 				23D147591FBA9A2E0028CD09 /* FoodEvaluationListCell.xib in Resources */,
 				2316A28A1FAD71FE00A0B512 /* Assets.xcassets in Resources */,
+				23F4A7611FBBEFA0004C9266 /* trade.bundle in Resources */,
 				239F06FF1FB2F4020067D810 /* RecommendHeadView.xib in Resources */,
 				239F06F51FB2F4020067D810 /* FoodReservationFinishListCell.xib in Resources */,
+				23F4A74A1FBBEF3A004C9266 /* MyRechargeHeadCell.xib in Resources */,
 				239F07031FB2F4020067D810 /* FoodRecommendDetailCell.xib in Resources */,
 				239F06EF1FB2F4020067D810 /* FoodReservationCodeCell.xib in Resources */,
 				236C44341FB4788000AC3010 /* FoodMerchantsCell.xib in Resources */,
@@ -1604,6 +1755,7 @@
 				2353EC241FB4080D005E1548 /* FoodOrderPackageCell.xib in Resources */,
 				239F06F91FB2F4020067D810 /* RecommendedFoodView.xib in Resources */,
 				2353EC201FB4047A005E1548 /* FoodOrderDetailsCell.xib in Resources */,
+				2320D3E11FBC3F7800A5B507 /* MineRechargeMessageCell.xib in Resources */,
 				239F06F71FB2F4020067D810 /* RecommendedCommentCell.xib in Resources */,
 				2388E0A01FAFFF7B00AB6853 /* FoodDetailsCell.xib in Resources */,
 				239F06E71FB2F4020067D810 /* FoodOrderDetailsEvaluationCell.xib in Resources */,
@@ -1770,6 +1922,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23F4A73E1FBBE938004C9266 /* MyBalanceListView.swift in Sources */,
 				2380934B1FB97D240051EF3D /* NetWorkTool.swift in Sources */,
 				23CB44FC1FBBCD2B00D8988D /* MineAddBankCardDetailVC.swift in Sources */,
 				230BE0EB1FB6A39F00AD47E0 /* MineOrderUseVC.swift in Sources */,
@@ -1779,10 +1932,12 @@
 				230FA76F1FB5A94500190F2B /* MineOptionView.swift in Sources */,
 				2316A2BB1FAD8BD000A0B512 /* RegularDefinition.swift in Sources */,
 				238093441FB97BAD0051EF3D /* UILayoutSupport+Extensions.swift in Sources */,
+				23F4A7451FBBEE74004C9266 /* MineRechargeVC.swift in Sources */,
 				2380936D1FB9813D0051EF3D /* DictionaryTransform.swift in Sources */,
 				238093821FB9A22D0051EF3D /* RegisterAndForgetPsdVC.swift in Sources */,
 				238093261FB97BAD0051EF3D /* ConstraintDescription.swift in Sources */,
 				23D0E3E81FADA2740058EA34 /* BoutiqueTableViewCell.swift in Sources */,
+				23F4A73B1FBBE8ED004C9266 /* MyBalanceView.swift in Sources */,
 				230BE0D31FB69B5800AD47E0 /* MineCollectionCell.swift in Sources */,
 				2380937E1FB9813D0051EF3D /* TransformOperators.swift in Sources */,
 				2380936B1FB9813D0051EF3D /* DateFormatterTransform.swift in Sources */,
@@ -1793,9 +1948,11 @@
 				238092EE1FB94F580051EF3D /* MineSetPayPasswordCell.swift in Sources */,
 				239F06F81FB2F4020067D810 /* RecommendedFoodView.swift in Sources */,
 				2316A2E31FAD942C00A0B512 /* CrowdfundingController.swift in Sources */,
+				23F4A7491FBBEF3A004C9266 /* MyRechargeHeadCell.swift in Sources */,
 				230FA7651FB539C600190F2B /* FoodMerchantsListView.swift in Sources */,
 				2316A2C31FAD8F4700A0B512 /* Extensions.swift in Sources */,
 				238092DD1FB93FE40051EF3D /* LJXPhotoAlbum.m in Sources */,
+				23F4A7421FBBE9EB004C9266 /* MineSuccessfulOperationVC.swift in Sources */,
 				23E214CA1FB6EA3600C7D085 /* MineInformationListCell.swift in Sources */,
 				2380936A1FB9813D0051EF3D /* DataTransform.swift in Sources */,
 				239F06EA1FB2F4020067D810 /* FoodPaymentCardCouponsCell.swift in Sources */,
@@ -1809,6 +1966,7 @@
 				238093271FB97BAD0051EF3D /* ConstraintDSL.swift in Sources */,
 				238093421FB97BAD0051EF3D /* LayoutConstraintItem.swift in Sources */,
 				230BE1031FB6E27D00AD47E0 /* MineReservationFinishVC.swift in Sources */,
+				23CF99511FBC21B00002241F /* MineWalletAddressCell.swift in Sources */,
 				238093491FB97D240051EF3D /* BaseURL.swift in Sources */,
 				2316A2851FAD71FE00A0B512 /* ViewController.swift in Sources */,
 				230BE0E31FB6A27600AD47E0 /* UIView+SGFrame.m in Sources */,
@@ -1818,6 +1976,7 @@
 				2380932E1FB97BAD0051EF3D /* ConstraintLayoutSupport.swift in Sources */,
 				239F06A41FB2F3D30067D810 /* RecommendDetailsVC.swift in Sources */,
 				2388E0A61FB00FD400AB6853 /* UINavigationBar+Other.m in Sources */,
+				23F4A7641FBBEFA0004C9266 /* ZCAudioTool.m in Sources */,
 				239F07041FB2F4020067D810 /* FoodReservationPayCell.swift in Sources */,
 				239F06FA1FB2F4020067D810 /* RecommendedMoneyCell.swift in Sources */,
 				238092EA1FB94EEF0051EF3D /* UIButton+CountDown.m in Sources */,
@@ -1846,23 +2005,28 @@
 				238093691FB9813D0051EF3D /* CustomDateFormatTransform.swift in Sources */,
 				2316A2B41FAD8ACF00A0B512 /* MainTabBarController.swift in Sources */,
 				230BE1051FB6E2A900AD47E0 /* MineReservationExpiredVC.swift in Sources */,
+				23CF994D1FBC215B0002241F /* MineWithdrawVC.swift in Sources */,
 				2316A2E71FAD945600A0B512 /* ChefController.swift in Sources */,
 				2353EC231FB4080D005E1548 /* FoodOrderPackageCell.swift in Sources */,
 				238093241FB97BAD0051EF3D /* ConstraintConfig.swift in Sources */,
 				2380933A1FB97BAD0051EF3D /* ConstraintRelatableTarget.swift in Sources */,
 				238093741FB9813D0051EF3D /* IntegerOperators.swift in Sources */,
 				238093301FB97BAD0051EF3D /* ConstraintMaker.swift in Sources */,
+				23F4A7621FBBEFA0004C9266 /* UIAlertView+Quick.m in Sources */,
 				239F07021FB2F4020067D810 /* FoodRecommendDetailCell.swift in Sources */,
 				230BE0E01FB6A27600AD47E0 /* SGHelperTool.m in Sources */,
 				23D147451FBA938A0028CD09 /* FoodEvaluationHeadCell.swift in Sources */,
+				23F4A7671FBBEFA0004C9266 /* ZCTradeView.m in Sources */,
 				238093711FB9813D0051EF3D /* HexColorTransform.swift in Sources */,
 				239F06F41FB2F4020067D810 /* FoodReservationFinishListCell.swift in Sources */,
 				230BE0F71FB6DAF600AD47E0 /* MineUsableCoupons.swift in Sources */,
+				232357B61FBC16700006E9A6 /* MineAmountOperationVC.swift in Sources */,
 				2380937A1FB9813D0051EF3D /* NSDecimalNumberTransform.swift in Sources */,
 				23CB44F51FBBCC8700D8988D /* MineAddBankCardVC.swift in Sources */,
 				239F06F61FB2F4020067D810 /* RecommendedCommentCell.swift in Sources */,
 				2380936E1FB9813D0051EF3D /* EnumOperators.swift in Sources */,
 				23D0E3F71FADBC4B0058EA34 /* TYCyclePagerViewCell.m in Sources */,
+				232357BA1FBC190D0006E9A6 /* MineAmountOperationCell.swift in Sources */,
 				2380933E1FB97BAD0051EF3D /* ConstraintViewDSL.swift in Sources */,
 				238093231FB97BAD0051EF3D /* ConstraintAttributes.swift in Sources */,
 				238093321FB97BAD0051EF3D /* ConstraintMakerExtendable.swift in Sources */,
@@ -1889,10 +2053,12 @@
 				230F3C731FBAEA0900D188DB /* TggStarEvaluationView.m in Sources */,
 				2380932C1FB97BAD0051EF3D /* ConstraintLayoutGuide.swift in Sources */,
 				230BE0EF1FB6A4BE00AD47E0 /* MineExpensesRecordCell.swift in Sources */,
+				2320D3E01FBC3F7800A5B507 /* MineRechargeMessageCell.swift in Sources */,
 				2380932D1FB97BAD0051EF3D /* ConstraintLayoutGuideDSL.swift in Sources */,
 				23E214C21FB6E91B00C7D085 /* MineInformationVC.swift in Sources */,
 				230FA7681FB53BF800190F2B /* FoodMerchantsListCell.swift in Sources */,
 				236C442B1FB474B700AC3010 /* FoodMerchantsVC.swift in Sources */,
+				23CF99541FBC2CED0002241F /* MineAmountChoiceVC.swift in Sources */,
 				238093881FB9BEFE0051EF3D /* BaseViewModel.swift in Sources */,
 				2380934A1FB97D240051EF3D /* ConstAPIURL.swift in Sources */,
 				2388E0A31FB00D0C00AB6853 /* MainViewController.swift in Sources */,
@@ -1912,10 +2078,12 @@
 				239F06AE1FB2F3D30067D810 /* FoodRecommendDetailVC.swift in Sources */,
 				230BE1091FB6E2EC00AD47E0 /* MineReservationCell.swift in Sources */,
 				23D1473B1FBA84780028CD09 /* RigisterFinshView.swift in Sources */,
+				23F4A7661FBBEFA0004C9266 /* ZCTradeKeyboard.m in Sources */,
 				239F070E1FB2F4020067D810 /* FoodPurchaseSuccessView.swift in Sources */,
 				239F06AA1FB2F3D30067D810 /* FoodReservationPayVC.swift in Sources */,
 				238093701FB9813D0051EF3D /* FromJSON.swift in Sources */,
 				2316A2831FAD71FE00A0B512 /* AppDelegate.swift in Sources */,
+				23F4A7601FBBEFA0004C9266 /* NSString+Extension.m in Sources */,
 				238093771FB9813D0051EF3D /* MapError.swift in Sources */,
 				23B67CFC1FBBD665000B18DB /* AddBankTextFieldCell.swift in Sources */,
 				239F06AF1FB2F3D30067D810 /* FoodPurchaseNotesVC.swift in Sources */,
@@ -1923,6 +2091,7 @@
 				23D0E3F21FADBC000058EA34 /* TYCyclePagerTransformLayout.m in Sources */,
 				2380932B1FB97BAD0051EF3D /* ConstraintLayoutGuide+Extensions.swift in Sources */,
 				238092DF1FB943D30051EF3D /* MineSetVC.swift in Sources */,
+				23F4A74E1FBBEF52004C9266 /* MyRechargeListCell.swift in Sources */,
 				2380937C1FB9813D0051EF3D /* ToJSON.swift in Sources */,
 				238093791FB9813D0051EF3D /* Mapper.swift in Sources */,
 				230BE0E71FB6A34E00AD47E0 /* MineAllOrderVC.swift in Sources */,
@@ -1930,11 +2099,14 @@
 				230BE0E91FB6A37D00AD47E0 /* MineOrderEvaluatedVC.swift in Sources */,
 				239F06A91FB2F3D30067D810 /* FoodPaymentCardCouponsVC.swift in Sources */,
 				238093381FB97BAD0051EF3D /* ConstraintPriority.swift in Sources */,
+				23F4A7651FBBEFA0004C9266 /* ZCTradeInputView.m in Sources */,
 				238093361FB97BAD0051EF3D /* ConstraintMultiplierTarget.swift in Sources */,
+				23F4A7361FBBE88E004C9266 /* MineWalletVC.swift in Sources */,
 				23CB44F31FBBCC4700D8988D /* MyBlankCardManagementCell.swift in Sources */,
 				2380933B1FB97BAD0051EF3D /* ConstraintRelation.swift in Sources */,
 				2380933F1FB97BAD0051EF3D /* Debugging.swift in Sources */,
 				2323931F1FB43B6E00425BDA /* FoodNormalOrderDetailsVC.swift in Sources */,
+				23F4A7631FBBEFA0004C9266 /* UIView+Extension.m in Sources */,
 				238093351FB97BAD0051EF3D /* ConstraintMakerRelatable.swift in Sources */,
 				2380934E1FB9808C0051EF3D /* Tools.swift in Sources */,
 				2353EC1F1FB4047A005E1548 /* FoodOrderDetailsCell.swift in Sources */,

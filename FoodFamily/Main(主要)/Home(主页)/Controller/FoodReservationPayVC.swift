@@ -14,8 +14,8 @@ enum FoodPaymentMethodStatus {
 }
 
 class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
-    fileprivate let dataScorce = ["使用卡券","钱包支付","微信支付","支付宝支付"]
-    fileprivate let imageArray = ["ic_home_card","ic_home_card","ic_home_wechat","ic_home_alipay"]
+    fileprivate let dataScorce = [[""],["使用卡券"],["钱包支付"],["微信支付","支付宝支付"]]
+    fileprivate let imageArray = [[""],["ic_home_card"],["ic_home_card"],["ic_home_wechat","ic_home_alipay"]]
     fileprivate let foodReservationPayCell = "FoodReservationPayCell"
     fileprivate let foodReservationPaymentCardCell = "FoodReservationPaymentCardCell"
     fileprivate let foodReservationPaymentMethodCell = "FoodReservationPaymentMethodCell"
@@ -27,7 +27,7 @@ class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewData
     struct FoodReservationPayUX {
         static let foodReservationPayHeight:CGFloat = 90
         static let foodReservationPaymentMethodHeight:CGFloat = 44
-        static let sectionHeight:CGFloat = 20
+        static let sectionHeight:CGFloat = 15
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -47,11 +47,16 @@ class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewData
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return  5
+        return  dataScorce.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        if indexPath.section == 0 {
+            return 1
+        }else{
+            let array:NSArray = self.dataScorce[section] as NSArray
+            return array.count
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -69,6 +74,8 @@ class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewData
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let headingArray = self.dataScorce[indexPath.section] as NSArray
+        let imageViewArray = self.imageArray[indexPath.section] as NSArray
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: foodReservationPayCell, for: indexPath) as! FoodReservationPayCell
             cell.selectionStyle = .none
@@ -76,15 +83,15 @@ class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewData
         }else if indexPath.section == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: foodReservationPaymentCardCell, for: indexPath) as! FoodReservationPaymentCardCell
             cell.selectionStyle = .none
-            cell.headingLabel.text = self.dataScorce[indexPath.section - 1]
-            cell.iconImageView.image = UIImage.init(named: self.imageArray[indexPath.section - 1])
+            cell.headingLabel.text = headingArray[indexPath.row] as? String
+            cell.iconImageView.image = UIImage.init(named: (imageViewArray[indexPath.row] as? String)!)
             return cell
         }else {
             let cell = tableView.dequeueReusableCell(withIdentifier: foodReservationPaymentMethodCell, for: indexPath) as! FoodReservationPaymentMethodCell
-            cell.chooseBtn.isSelected = indexPath.section == 2 ? true : false
+            cell.chooseBtn.isSelected = indexPath == self.indexPath ? true : false
             cell.selectionStyle = .none
-            cell.headingLabel.text = self.dataScorce[indexPath.section - 1]
-            cell.iconImageView.image = UIImage.init(named: self.imageArray[indexPath.section - 1])
+            cell.headingLabel.text = headingArray[indexPath.row] as? String
+            cell.iconImageView.image = UIImage.init(named: (imageViewArray[indexPath.row] as? String)!)
             return cell
         }
     }
@@ -95,11 +102,11 @@ class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewData
             let foodPaymentCardCouponsVC = FoodPaymentCardCouponsVC()
             self.navigationController?.pushViewController(foodPaymentCardCouponsVC, animated: true)
             return}
-        let selectedCell = tableView.cellForRow(at: IndexPath(row: 0, section: indexPath.section))as! FoodReservationPaymentMethodCell
+        let selectedCell = tableView.cellForRow(at: IndexPath(row: indexPath.row, section: indexPath.section))as! FoodReservationPaymentMethodCell
         selectedCell.chooseBtn.isSelected = true
         let restoreCell = tableView.cellForRow(at: self.indexPath as IndexPath) as! FoodReservationPaymentMethodCell
         restoreCell.chooseBtn.isSelected = false
-        self.indexPath  = NSIndexPath(row: 0, section: indexPath.section) as IndexPath
+        self.indexPath  = NSIndexPath(row: indexPath.row, section: indexPath.section) as IndexPath
     }
     
     lazy var tableView: UITableView = {
@@ -120,7 +127,7 @@ class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewData
         let btn = UIButton.init(type: .custom)
         btn.frame = CGRect(x: 15, y: YMAKE(392) , width: SCREEN_WIDTH - 30, height: 50)
         btn.addTarget(self, action:  #selector(FoodReservationPayVC.confirmOnClick), for: .touchUpInside)
-        btn.setTitle("确认支付 ¥99999.00", for: .normal)
+        btn.setTitle("确定支付 ¥99999.00", for: .normal)
         btn.backgroundColor = UIColor.R_UIRGBColor(red: 211, green: 178, blue: 105, alpha: 1)
         btn.setTitleColor(UIColor.white, for: .normal)
         btn.layer.cornerRadius = 5
