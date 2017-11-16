@@ -57,6 +57,8 @@
 		2316A2E91FAD947300A0B512 /* MineController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2316A2E81FAD947300A0B512 /* MineController.swift */; };
 		2319F1411FBD86D100EB0F14 /* FoodPaymentConsumptionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2319F13F1FBD86D100EB0F14 /* FoodPaymentConsumptionVC.swift */; };
 		2319F1421FBD86D100EB0F14 /* FoodPaymentConsumptionVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2319F1401FBD86D100EB0F14 /* FoodPaymentConsumptionVC.xib */; };
+		2319F1451FBD921300EB0F14 /* FoodVolumeCodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2319F1431FBD921300EB0F14 /* FoodVolumeCodeCell.swift */; };
+		2319F1461FBD921300EB0F14 /* FoodVolumeCodeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2319F1441FBD921300EB0F14 /* FoodVolumeCodeCell.xib */; };
 		2320D3E01FBC3F7800A5B507 /* MineRechargeMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2320D3DE1FBC3F7800A5B507 /* MineRechargeMessageCell.swift */; };
 		2320D3E11FBC3F7800A5B507 /* MineRechargeMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2320D3DF1FBC3F7800A5B507 /* MineRechargeMessageCell.xib */; };
 		232357B61FBC16700006E9A6 /* MineAmountOperationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232357B51FBC16700006E9A6 /* MineAmountOperationVC.swift */; };
@@ -361,6 +363,8 @@
 		2316A2E81FAD947300A0B512 /* MineController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineController.swift; sourceTree = "<group>"; };
 		2319F13F1FBD86D100EB0F14 /* FoodPaymentConsumptionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodPaymentConsumptionVC.swift; sourceTree = "<group>"; };
 		2319F1401FBD86D100EB0F14 /* FoodPaymentConsumptionVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoodPaymentConsumptionVC.xib; sourceTree = "<group>"; };
+		2319F1431FBD921300EB0F14 /* FoodVolumeCodeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodVolumeCodeCell.swift; sourceTree = "<group>"; };
+		2319F1441FBD921300EB0F14 /* FoodVolumeCodeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoodVolumeCodeCell.xib; sourceTree = "<group>"; };
 		2320D3DE1FBC3F7800A5B507 /* MineRechargeMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineRechargeMessageCell.swift; sourceTree = "<group>"; };
 		2320D3DF1FBC3F7800A5B507 /* MineRechargeMessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineRechargeMessageCell.xib; sourceTree = "<group>"; };
 		232357B51FBC16700006E9A6 /* MineAmountOperationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineAmountOperationVC.swift; sourceTree = "<group>"; };
@@ -1357,6 +1361,8 @@
 				2353EC1E1FB4047A005E1548 /* FoodOrderDetailsCell.xib */,
 				2353EC211FB4080D005E1548 /* FoodOrderPackageCell.swift */,
 				2353EC221FB4080D005E1548 /* FoodOrderPackageCell.xib */,
+				2319F1431FBD921300EB0F14 /* FoodVolumeCodeCell.swift */,
+				2319F1441FBD921300EB0F14 /* FoodVolumeCodeCell.xib */,
 			);
 			path = FoodOrderDetailsView;
 			sourceTree = "<group>";
@@ -1740,6 +1746,7 @@
 				230BE10A1FB6E2EC00AD47E0 /* MineReservationCell.xib in Resources */,
 				230FA7731FB5AA8B00190F2B /* MineHeadView.xib in Resources */,
 				23E214CB1FB6EA3600C7D085 /* MineInformationListCell.xib in Resources */,
+				2319F1461FBD921300EB0F14 /* FoodVolumeCodeCell.xib in Resources */,
 				23CB44F21FBBCC4700D8988D /* MyBlankCardManagementCell.xib in Resources */,
 				239F070B1FB2F4020067D810 /* FoodPurchaseNotesCell.xib in Resources */,
 				23F4A73A1FBBE8ED004C9266 /* MyBalanceView.xib in Resources */,
@@ -1981,6 +1988,7 @@
 				2380937E1FB9813D0051EF3D /* TransformOperators.swift in Sources */,
 				2380936B1FB9813D0051EF3D /* DateFormatterTransform.swift in Sources */,
 				239F06F01FB2F4020067D810 /* FoodReservationFilliCell.swift in Sources */,
+				2319F1451FBD921300EB0F14 /* FoodVolumeCodeCell.swift in Sources */,
 				2380933D1FB97BAD0051EF3D /* ConstraintView.swift in Sources */,
 				239F06AC1FB2F3D30067D810 /* FoodReservationVC.swift in Sources */,
 				238093371FB97BAD0051EF3D /* ConstraintOffsetTarget.swift in Sources */,

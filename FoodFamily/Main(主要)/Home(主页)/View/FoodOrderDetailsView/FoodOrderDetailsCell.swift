@@ -19,9 +19,9 @@ class FoodOrderDetailsCell: UITableViewCell {
     var headingContentArray:NSArray = [] {
         didSet{
             if orderPaymentMethod == .ordinaryPaymentStatus {
-                headingContentArray = ["订单号码","订单时间","支付方式","使用卡券","消费总额"]
+                headingContentArray = ["订单号码","订单时间","支付方式","积分折扣","消费总额"]
             }else{
-                headingContentArray = ["卷码","订单号码","订单时间","支付方式"]
+                headingContentArray = ["卷码","订单号码","订单时间","支付方式","积分折扣","消费总额"]
             }
         }
     }
@@ -29,9 +29,9 @@ class FoodOrderDetailsCell: UITableViewCell {
     var contentArray:NSArray = [] {
         didSet{
             if orderPaymentMethod == .ordinaryPaymentStatus {
-                contentArray = ["123123128390","2017-10-27 10:22:41","余额支付","满200减50","¥248"]
+                contentArray = ["123123128390","2017-10-27 10:22:41","余额支付","-100（10元）","¥248"]
             }else{
-                contentArray = ["123192031239","123192031239","2017-10-27 10:22:41","余额支付"]
+                contentArray = ["123192031239","123192031239","2017-10-27 10:22:41","余额支付","-100（10元）","70"]
             }
         }
     }
