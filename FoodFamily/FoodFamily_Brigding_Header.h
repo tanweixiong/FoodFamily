@@ -18,4 +18,5 @@
 #import "ObjectMapper.h"
 #import "TggStarEvaluationView.h"
 #import "ZCTradeView.h"
+#import "InputPaymentPasswordVw.h"
 #endif

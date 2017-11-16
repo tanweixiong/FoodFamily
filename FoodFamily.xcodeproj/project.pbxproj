@@ -71,6 +71,11 @@
 		236C44301FB4750800AC3010 /* FoodMerchantsHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 236C442F1FB4750800AC3010 /* FoodMerchantsHeadView.xib */; };
 		236C44331FB4788000AC3010 /* FoodMerchantsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236C44311FB4788000AC3010 /* FoodMerchantsCell.swift */; };
 		236C44341FB4788000AC3010 /* FoodMerchantsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 236C44321FB4788000AC3010 /* FoodMerchantsCell.xib */; };
+		23747F271FBD2020007FD859 /* GLTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 23747F261FBD201F007FD859 /* GLTextField.m */; };
+		23747F2D1FBD207B007FD859 /* InputPaymentPasswordVw.m in Sources */ = {isa = PBXBuildFile; fileRef = 23747F2C1FBD207B007FD859 /* InputPaymentPasswordVw.m */; };
+		23747F301FBD2234007FD859 /* UIView+category.m in Sources */ = {isa = PBXBuildFile; fileRef = 23747F2F1FBD2233007FD859 /* UIView+category.m */; };
+		23747F341FBD298A007FD859 /* PaymentPasswordAlertVw.m in Sources */ = {isa = PBXBuildFile; fileRef = 23747F331FBD298A007FD859 /* PaymentPasswordAlertVw.m */; };
+		23747F361FBD29A6007FD859 /* PaymentPasswordAlertVw.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23747F351FBD29A6007FD859 /* PaymentPasswordAlertVw.xib */; };
 		238092DD1FB93FE40051EF3D /* LJXPhotoAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = 238092DC1FB93FE40051EF3D /* LJXPhotoAlbum.m */; };
 		238092DF1FB943D30051EF3D /* MineSetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238092DE1FB943D30051EF3D /* MineSetVC.swift */; };
 		238092E31FB945100051EF3D /* MineSetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238092E11FB945100051EF3D /* MineSetCell.swift */; };
@@ -369,6 +374,15 @@
 		236C442F1FB4750800AC3010 /* FoodMerchantsHeadView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoodMerchantsHeadView.xib; sourceTree = "<group>"; };
 		236C44311FB4788000AC3010 /* FoodMerchantsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodMerchantsCell.swift; sourceTree = "<group>"; };
 		236C44321FB4788000AC3010 /* FoodMerchantsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoodMerchantsCell.xib; sourceTree = "<group>"; };
+		23747F251FBD201F007FD859 /* GLTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLTextField.h; sourceTree = "<group>"; };
+		23747F261FBD201F007FD859 /* GLTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLTextField.m; sourceTree = "<group>"; };
+		23747F2B1FBD207B007FD859 /* InputPaymentPasswordVw.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InputPaymentPasswordVw.h; sourceTree = "<group>"; };
+		23747F2C1FBD207B007FD859 /* InputPaymentPasswordVw.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InputPaymentPasswordVw.m; sourceTree = "<group>"; };
+		23747F2E1FBD2233007FD859 /* UIView+category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+category.h"; sourceTree = "<group>"; };
+		23747F2F1FBD2233007FD859 /* UIView+category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+category.m"; sourceTree = "<group>"; };
+		23747F321FBD298A007FD859 /* PaymentPasswordAlertVw.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PaymentPasswordAlertVw.h; sourceTree = "<group>"; };
+		23747F331FBD298A007FD859 /* PaymentPasswordAlertVw.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PaymentPasswordAlertVw.m; sourceTree = "<group>"; };
+		23747F351FBD29A6007FD859 /* PaymentPasswordAlertVw.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentPasswordAlertVw.xib; sourceTree = "<group>"; };
 		2377C9501FADC0E900FE1605 /* FoodFamily_Brigding_Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodFamily_Brigding_Header.h; sourceTree = "<group>"; };
 		238092DB1FB93FE40051EF3D /* LJXPhotoAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJXPhotoAlbum.h; sourceTree = "<group>"; };
 		238092DC1FB93FE40051EF3D /* LJXPhotoAlbum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJXPhotoAlbum.m; sourceTree = "<group>"; };
@@ -1117,6 +1131,22 @@
 			path = FoodMerchantsView;
 			sourceTree = "<group>";
 		};
+		23747F241FBD201F007FD859 /* InputPaymentPassword */ = {
+			isa = PBXGroup;
+			children = (
+				23747F2B1FBD207B007FD859 /* InputPaymentPasswordVw.h */,
+				23747F2C1FBD207B007FD859 /* InputPaymentPasswordVw.m */,
+				23747F321FBD298A007FD859 /* PaymentPasswordAlertVw.h */,
+				23747F331FBD298A007FD859 /* PaymentPasswordAlertVw.m */,
+				23747F351FBD29A6007FD859 /* PaymentPasswordAlertVw.xib */,
+				23747F251FBD201F007FD859 /* GLTextField.h */,
+				23747F261FBD201F007FD859 /* GLTextField.m */,
+				23747F2E1FBD2233007FD859 /* UIView+category.h */,
+				23747F2F1FBD2233007FD859 /* UIView+category.m */,
+			);
+			path = InputPaymentPassword;
+			sourceTree = "<group>";
+		};
 		238092DA1FB93FE40051EF3D /* LJXPhotoAlbum */ = {
 			isa = PBXGroup;
 			children = (
@@ -1462,6 +1492,7 @@
 		23D0E3EA1FADBC000058EA34 /* Vender(第三方) */ = {
 			isa = PBXGroup;
 			children = (
+				23747F241FBD201F007FD859 /* InputPaymentPassword */,
 				238092E71FB94EEF0051EF3D /* CountDown */,
 				238092DA1FB93FE40051EF3D /* LJXPhotoAlbum */,
 				230BE0D51FB6A27500AD47E0 /* SGPageView */,
@@ -1752,6 +1783,7 @@
 				239F06EF1FB2F4020067D810 /* FoodReservationCodeCell.xib in Resources */,
 				236C44341FB4788000AC3010 /* FoodMerchantsCell.xib in Resources */,
 				2316A2881FAD71FE00A0B512 /* Main.storyboard in Resources */,
+				23747F361FBD29A6007FD859 /* PaymentPasswordAlertVw.xib in Resources */,
 				2353EC241FB4080D005E1548 /* FoodOrderPackageCell.xib in Resources */,
 				239F06F91FB2F4020067D810 /* RecommendedFoodView.xib in Resources */,
 				2353EC201FB4047A005E1548 /* FoodOrderDetailsCell.xib in Resources */,
@@ -1995,6 +2027,7 @@
 				230BE0FD1FB6DBAF00AD47E0 /* MineDiscountCouponsCell.swift in Sources */,
 				230BE0CF1FB69B2A00AD47E0 /* MineCollectionVC.swift in Sources */,
 				239F06EC1FB2F4020067D810 /* FoodReservationCell.swift in Sources */,
+				23747F301FBD2234007FD859 /* UIView+category.m in Sources */,
 				2380936C1FB9813D0051EF3D /* DateTransform.swift in Sources */,
 				23D0E3E41FAD9C380058EA34 /* RecommendTableViewCell.swift in Sources */,
 				239F06E61FB2F4020067D810 /* FoodOrderDetailsEvaluationCell.swift in Sources */,
@@ -2058,6 +2091,7 @@
 				23E214C21FB6E91B00C7D085 /* MineInformationVC.swift in Sources */,
 				230FA7681FB53BF800190F2B /* FoodMerchantsListCell.swift in Sources */,
 				236C442B1FB474B700AC3010 /* FoodMerchantsVC.swift in Sources */,
+				23747F341FBD298A007FD859 /* PaymentPasswordAlertVw.m in Sources */,
 				23CF99541FBC2CED0002241F /* MineAmountChoiceVC.swift in Sources */,
 				238093881FB9BEFE0051EF3D /* BaseViewModel.swift in Sources */,
 				2380934A1FB97D240051EF3D /* ConstAPIURL.swift in Sources */,
@@ -2066,6 +2100,7 @@
 				23D0E3F31FADBC000058EA34 /* TYCyclePagerView.m in Sources */,
 				2316A2B71FAD8AF300A0B512 /* FMNavigationController.swift in Sources */,
 				239F06FC1FB2F4020067D810 /* RecommendedReasonCell.swift in Sources */,
+				23747F271FBD2020007FD859 /* GLTextField.m in Sources */,
 				239F07081FB2F4020067D810 /* FoodReservationPaymentMethodCell.swift in Sources */,
 				23D0E3E01FAD97B70058EA34 /* TopicTableViewCell.swift in Sources */,
 				2316A2E51FAD944300A0B512 /* CollegeController.swift in Sources */,
@@ -2084,6 +2119,7 @@
 				238093701FB9813D0051EF3D /* FromJSON.swift in Sources */,
 				2316A2831FAD71FE00A0B512 /* AppDelegate.swift in Sources */,
 				23F4A7601FBBEFA0004C9266 /* NSString+Extension.m in Sources */,
+				23747F2D1FBD207B007FD859 /* InputPaymentPasswordVw.m in Sources */,
 				238093771FB9813D0051EF3D /* MapError.swift in Sources */,
 				23B67CFC1FBBD665000B18DB /* AddBankTextFieldCell.swift in Sources */,
 				239F06AF1FB2F3D30067D810 /* FoodPurchaseNotesVC.swift in Sources */,

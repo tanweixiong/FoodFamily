@@ -15,7 +15,7 @@ class MineAmountChoiceVC: UIViewController,UITableViewDataSource,UITableViewDele
     
     struct MineAmountChoiceUX {
         static let sectionHeight:CGFloat = 16
-        static let rowHeight:CGFloat = YMAKE(44)
+        static let rowHeight:CGFloat = YMAKE(50)
         static let footHeight:CGFloat = YMAKE(51)
         static let footY:CGFloat = YMAKE(120)
     }
@@ -30,7 +30,7 @@ class MineAmountChoiceVC: UIViewController,UITableViewDataSource,UITableViewDele
     
     @objc func nextClick(_ sender:UIButton){
         let cell = self.tableView.cellForRow(at: IndexPath(row: 0, section: 0) )as! MineWalletAddressCell
-        if cell.textfield.text?.characters.count != 0  {
+        if cell.textfield.text?.characters.count == 0  {
             let mineRechargeVC = MineRechargeVC()
             mineRechargeVC.rechargeAmount = cell.textfield.text!
             self.navigationController?.pushViewController(mineRechargeVC, animated: true)
