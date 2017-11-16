@@ -16,4 +16,9 @@
     self.changeButton.layer.borderColor = [UIColor colorWithRed:237/255.0 green:237/255.0 blue:237/255.0 alpha:1].CGColor;
 }
 
+//切换银行卡
+- (IBAction)chooseBackCard:(UIButton *)sender {
+    
+}
+
 @end

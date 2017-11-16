@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "GLTextField.h"
 @interface PaymentPasswordAlertVw : UIView
-
+@property (nonatomic,copy) void (^paymentPasswordAlertCallBackBlock)(NSInteger type);
 @property (weak, nonatomic) IBOutlet UIView *backgroundVw;
 @property (weak, nonatomic) IBOutlet UILabel *needPayLabel;
 @property (weak, nonatomic) IBOutlet UIButton *changeButton;

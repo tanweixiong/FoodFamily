@@ -34,6 +34,7 @@ class MineAmountChoiceVC: UIViewController,UITableViewDataSource,UITableViewDele
             let mineRechargeVC = MineRechargeVC()
             mineRechargeVC.rechargeAmount = cell.textfield.text!
             self.navigationController?.pushViewController(mineRechargeVC, animated: true)
+            view.endEditing(true)
         }else{
             SVProgressHUD.showInfo(withStatus: "请输入金额")
         }

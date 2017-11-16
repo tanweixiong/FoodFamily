@@ -35,8 +35,7 @@ static CGFloat const kDotWith_height = 10;
 #define ZCScreenBounds [UIScreen mainScreen].bounds
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
-//#define passwordWidth = [UIScreen mainScreen].bounds.size.width
-
+#define WS(weakSelf)  __weak __typeof(&*self)weakSelf = self;
 // 屏幕适配
 #define XMAKE(x) (x) * [UIScreen mainScreen].bounds.size.width / 375
 #define YMAKE(y) (y) * [UIScreen mainScreen].bounds.size.height / 667
@@ -108,7 +107,7 @@ static CGFloat const kDotWith_height = 10;
     CGFloat keyboardHeight = kbSize.height;
     CGFloat maxHeight = [UIApplication sharedApplication].keyWindow.frame.size.height;
 
-    CGFloat currentHeight = maxHeight - keyboardHeight - CGRectGetHeight(self.alertVwRect);
+    CGFloat currentHeight = maxHeight - keyboardHeight - CGRectGetHeight(self.alertVwRect) - 10;
     
     [UIView animateWithDuration:duration animations:^{
         self.paymentPasswordAlertVw.frame = CGRectMake(0, currentHeight, CGRectGetWidth(self.paymentPasswordAlertVw.frame), CGRectGetHeight(self.paymentPasswordAlertVw.frame));
@@ -228,10 +227,10 @@ static CGFloat const kDotWith_height = 10;
     if (_passwordField.text.length == 6)
     {
         //正确的支付密码
-        if (_passwordField.text == _payThePassword) {
+        if ([_passwordField.text isEqualToString:_payThePassword]) {
             [self cancel];
-            if ([self.delegate respondsToSelector:@selector(finish:)]) {
-                [self.delegate finish:_passwordField.text];
+            if ([self.delegate respondsToSelector:@selector(inputPaymentPassword:)]) {
+                [self.delegate inputPaymentPassword:_passwordField.text];
             }
         //错误的支付密码
         }else{
@@ -257,6 +256,12 @@ static CGFloat const kDotWith_height = 10;
         _paymentPasswordAlertVw = [[NSBundle mainBundle] loadNibNamed:@"PaymentPasswordAlertVw" owner:nil options:nil].lastObject;
         _paymentPasswordAlertVw.frame = CGRectMake(0, 0, kScreenWidth, 204);
         _paymentPasswordAlertVw.center = self.center;
+        _paymentPasswordAlertVw.paymentPasswordAlertCallBackBlock = ^(NSInteger type) {
+            __weak typeof(self) bObject = self;
+            if ([bObject.delegate respondsToSelector:@selector(inputPaymentPasswordChangeBankCard)]) {
+                [bObject.delegate inputPaymentPasswordChangeBankCard];
+            }
+        };
     }
     return _paymentPasswordAlertVw;
 }

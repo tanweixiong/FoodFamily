@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class MineRechargeVC: MainViewController,UITableViewDelegate,UITableViewDataSource,InputPaymentPasswordDelegate {
+    
     fileprivate let mineRechargeMessageCell = "MineRechargeMessageCell"
     fileprivate let myRechargeListCellIdentifier = "MyRechargeListCellIdentifier"
     fileprivate let titleArray:NSArray = [["充值数量"],["当前汇率"],["微信充值","支付宝充值","银行卡充值"]]
@@ -38,16 +40,24 @@ class MineRechargeVC: MainViewController,UITableViewDelegate,UITableViewDataSour
     }
     
    @objc func rechargeClick(_ sender:UIButton){
-          let view = InputPaymentPasswordVw(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT))
-          view.delegate = self
-          view.show()
+        let view = InputPaymentPasswordVw(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT))
+        view.delegate = self
+        view.show()
     }
     
-    func finish(_ pwd: String) -> String! {
-        let mineSuccessfulOperationVC = MineSuccessfulOperationVC()
-        mineSuccessfulOperationVC.operationType = .rechargeOperationStatus
-        self.navigationController?.pushViewController(mineSuccessfulOperationVC, animated: true)
+    func inputPaymentPassword(_ pwd: String) -> String! {
+        SVProgressHUD.show(withStatus: "支付成功")
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: {
+            SVProgressHUD.dismiss()
+            let mineSuccessfulOperationVC = MineSuccessfulOperationVC()
+            mineSuccessfulOperationVC.operationType = .rechargeOperationStatus
+            self.navigationController?.pushViewController(mineSuccessfulOperationVC, animated: true)
+        })
         return pwd
+    }
+    
+    func inputPaymentPasswordChangeBankCard() {
+        
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

@@ -9,9 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @protocol InputPaymentPasswordDelegate <NSObject>
+-(void)inputPaymentPasswordChangeBankCard;
 @optional
 /** 输入完成后进行回调 */
-- (NSString *)finish:(NSString *)pwd;
+- (NSString *)inputPaymentPassword:(NSString *)pwd;
 @end
 
 @interface InputPaymentPasswordVw : UIView
