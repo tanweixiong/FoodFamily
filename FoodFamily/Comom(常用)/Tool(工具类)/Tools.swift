@@ -18,11 +18,11 @@ class Tools: NSObject {
         let emailTest = NSPredicate(format: "SELF MATCHES %@", emailRegex)
         return emailTest.evaluate(with: email)
     }
-    
+
     //判断是否为电话号码
     class func validateMobile(mobile: String) -> Bool {
         //电话号码
-        let MOBILE = "^1(3[0-9]|4[57]|5[0-35-9]|8[0-9]|7[0678])\\d{8}$"
+        let MOBILE = "^1(3[0-9]|4[57]|5[0-35-9]|8[0-9]|7[067853])\\d{8}$"
         //中国电信
         let CM = "(^1(3[4-9]|4[7]|5[0-27-9]|7[8]|8[2-478])\\d{8}$)|(^1705\\d{7}$)"
         //中国联通
@@ -58,6 +58,15 @@ class Tools: NSObject {
     class func isValidateByRegex(regex: String,mobile:String)-> Bool {
         let pre = NSPredicate(format: "SELF MATCHES %@", regex)
         return pre.evaluate(with: mobile)
+    }
+    
+    //判断是否为验证码
+    class func validateCode(code: String) -> Bool {
+        if code.characters.count > 3 {
+            return true
+        }else{
+            return false
+        }
     }
     
     //图片data转化字符串

@@ -35,5 +35,69 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FoodFamily/Main(&#x4e3b;&#x8981;)/Login&amp;Register(&#x6ce8;&#x518c;&#x4e0e;&#x767b;&#x5f55;)/Controller/LoginVC.swift"
+            timestampString = "532604167.971411"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "registerAndForgetPsdFinish(account:password:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FoodFamily/Main(&#x4e3b;&#x8981;)/Login&amp;Register(&#x6ce8;&#x518c;&#x4e0e;&#x767b;&#x5f55;)/Controller/LoginVC.swift"
+            timestampString = "532604170.633822"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "loginOnClick()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FoodFamily.LoginVC.loginOnClick() -&gt; ()"
+                  moduleName = "FoodFamily"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tam/Desktop/%E5%BF%A0%E9%A3%9F%E5%AE%B6/FoodFamily/Main(%E4%B8%BB%E8%A6%81)/Login&amp;Register(%E6%B3%A8%E5%86%8C%E4%B8%8E%E7%99%BB%E5%BD%95)/Controller/LoginVC.swift"
+                  timestampString = "532604170.860544"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "1056">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in FoodFamily.LoginVC.loginOnClick() -&gt; ()"
+                  moduleName = "FoodFamily"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tam/Desktop/%E5%BF%A0%E9%A3%9F%E5%AE%B6/FoodFamily/Main(%E4%B8%BB%E8%A6%81)/Login&amp;Register(%E6%B3%A8%E5%86%8C%E4%B8%8E%E7%99%BB%E5%BD%95)/Controller/LoginVC.swift"
+                  timestampString = "532604170.863939"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "12">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

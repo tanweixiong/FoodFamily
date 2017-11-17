@@ -14,11 +14,13 @@ class RegisterView: UIView {
     @IBOutlet weak var phoneTextField: UITextField!
     @IBOutlet weak var codeTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var recommendTextField: UITextField!
     @IBOutlet weak var firstView: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
-       finishButton.layer.borderColor = UIColor.R_UIRGBColor(red: 155, green: 155, blue: 155, alpha: 1).cgColor
+       finishButton.layer.borderColor = UIColor.lightGray.cgColor
        finishButton.layer.borderWidth = 1
+       finishButton.backgroundColor = UIColor.R_UIRGBColor(red: 251, green: 251, blue: 251, alpha: 1)
     }
 
     @IBAction func onClick(_ sender: UIButton) {

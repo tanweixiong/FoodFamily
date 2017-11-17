@@ -7,6 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+typedef enum{
+    balancePayment = 0,
+    bankCardPayment = 1
+} InputPaymentPasswordType;
 
 @protocol InputPaymentPasswordDelegate <NSObject>
 -(void)inputPaymentPasswordChangeBankCard;
@@ -14,8 +18,9 @@
 /** 输入完成后进行回调 */
 - (NSString *)inputPaymentPassword:(NSString *)pwd;
 @end
-
 @interface InputPaymentPasswordVw : UIView
+- (instancetype)initWithFrame:(CGRect)frame;
+@property (nonatomic,assign)InputPaymentPasswordType  style;
 @property (nonatomic, weak) id<InputPaymentPasswordDelegate> delegate;
 - (void)show;
 @end

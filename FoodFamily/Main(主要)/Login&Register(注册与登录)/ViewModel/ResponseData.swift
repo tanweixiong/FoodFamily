@@ -11,7 +11,7 @@ import UIKit
 class ResponseData: Mappable {
     
     var code: Int?
-    var msg: String?
+    var message: String?
     
     required init?(map: Map) {
         
@@ -20,7 +20,7 @@ class ResponseData: Mappable {
     func mapping(map: Map) {
         
         code        <- map["code"]
-        msg         <- map["msg"]
+        message         <- map["message"]
         
     }
 }

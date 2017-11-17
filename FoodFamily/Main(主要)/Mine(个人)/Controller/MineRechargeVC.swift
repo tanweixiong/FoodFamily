@@ -41,8 +41,9 @@ class MineRechargeVC: MainViewController,UITableViewDelegate,UITableViewDataSour
     
    @objc func rechargeClick(_ sender:UIButton){
         let view = InputPaymentPasswordVw(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT))
-        view.delegate = self
-        view.show()
+        view?.delegate = self
+        view?.style = .init(1)
+        view?.show()
     }
     
     func inputPaymentPassword(_ pwd: String) -> String! {

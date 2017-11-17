@@ -14,9 +14,11 @@ import SwiftyJSON
 
 class NetWorkTool: NSObject {
     class func request(requestType: HTTPMethod, URLString: String, parameters: [String : Any]?, showIndicator: Bool, success: @escaping (_ response : Any) -> () , failture: @escaping(_ error: Error) -> ()) {
+        let jsonParameters =  NetWorkTool.getJSONStringFromDictionary(dictionary:parameters! as NSDictionary)
+        let requestParameters = ["data":jsonParameters]
         let sessionManager = Alamofire.SessionManager.default
         sessionManager.session.configuration.timeoutIntervalForRequest = 10
-        sessionManager.request(URLString, method: requestType).validate().responseJSON { (response) in
+        sessionManager.request(URLString, method: requestType, parameters: requestParameters).validate().responseJSON { (response) in
             switch response.result {
             case .success(let value):
                 success(value)
@@ -60,6 +62,17 @@ class NetWorkTool: NSObject {
         }
         )
     }
+    
+   class func getJSONStringFromDictionary(dictionary:NSDictionary) -> String {
+        if (!JSONSerialization.isValidJSONObject(dictionary)) {
+            print("无法解析出JSONString")
+            return ""
+        }
+        let data : NSData! = try? JSONSerialization.data(withJSONObject: dictionary, options: []) as NSData!
+        let JSONString = NSString(data:data as Data,encoding: String.Encoding.utf8.rawValue)
+        return JSONString! as String
+    }
+    
 }
 
 extension NetWorkTool {

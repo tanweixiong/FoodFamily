@@ -18,7 +18,9 @@
 
 //切换银行卡
 - (IBAction)chooseBackCard:(UIButton *)sender {
-    
+    if (_paymentPasswordAlertCallBackBlock != nil) {
+        _paymentPasswordAlertCallBackBlock(sender.tag);
+    }
 }
 
 @end

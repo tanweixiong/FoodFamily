@@ -1218,7 +1218,6 @@
 			isa = PBXGroup;
 			children = (
 				238093891FB9BFB60051EF3D /* ResponseData.swift */,
-				238093871FB9BEFE0051EF3D /* BaseViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1298,6 +1297,7 @@
 				238093461FB97D230051EF3D /* BaseURL.swift */,
 				238093471FB97D230051EF3D /* ConstAPIURL.swift */,
 				238093481FB97D230051EF3D /* NetWorkTool.swift */,
+				238093871FB9BEFE0051EF3D /* BaseViewModel.swift */,
 			);
 			path = "NetWork(网络)";
 			sourceTree = "<group>";

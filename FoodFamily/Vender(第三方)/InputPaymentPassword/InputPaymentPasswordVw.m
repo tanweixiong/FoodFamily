@@ -10,7 +10,6 @@
 #import "GLTextField.h"
 #import "UIView+category.h"
 #import "PaymentPasswordAlertVw.h"
-
 @interface InputPaymentPasswordVw ()<UIAlertViewDelegate>
 /** 蒙板 */
 @property (nonatomic, weak) UIButton *cover;
@@ -132,6 +131,22 @@ static CGFloat const kDotWith_height = 10;
 - (void)show
 {
     [self showInView:[UIApplication sharedApplication].keyWindow];
+}
+
+-(void)setStyle:(InputPaymentPasswordType)style{
+    //余额支付
+    switch (style) {
+        case balancePayment:
+            
+            break;
+            
+        case bankCardPayment:
+            
+            break;
+        default:
+            break;
+    }
+    
 }
 
 -(void)cancel

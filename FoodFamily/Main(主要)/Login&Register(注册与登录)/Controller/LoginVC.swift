@@ -7,14 +7,15 @@
 //
 
 import UIKit
+import SVProgressHUD
 
-class LoginVC: UIViewController {
+class LoginVC: UIViewController,RegisterAndForgetPsdDeleagte {
     
     struct LoginUX {
-        static let textFieldHeight:CGFloat = 30
+        static let textFieldHeight:CGFloat = YMAKE(30)
         static let logoSize:CGSize = CGSize(width: XMAKE(50), height: XMAKE(50))
-        static let buttonHeight:CGFloat = 40
-        static let textFieldSpace:CGFloat = 55.5
+        static let buttonHeight:CGFloat = YMAKE(40)
+        static let textFieldSpace:CGFloat = 40
         static let textFieldWidth:CGFloat = SCREEN_WIDTH - textFieldSpace * 2
     }
 
@@ -26,9 +27,35 @@ class LoginVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.alpha = 0
-        self.title = "注册"
+        self.title = "登录"
         self.setCloseRoundKeyboard()
         self.createUI()
+    }
+    
+    func loginOnClick(){
+        if checkTheInput() {
+            let parameters = ["acount":self.phoneTextField.AGTextField.text!,"password":self.passwordTextField.AGTextField.text!]
+            BaseViewModel.loadSuccessfullyLoginData(requestType: .post, URLString: ConstAPI.kAPIUserLogin, parameters: parameters, finishedCallback: {
+                SVProgressHUD.showSuccess(withStatus: "登录成功")
+            })
+        }
+    }
+    
+    func checkTheInput()->Bool{
+        if !Tools.validateMobile(mobile:self.phoneTextField.AGTextField.text!){
+            SVProgressHUD.showInfo(withStatus: "请输入正确的手机号码")
+            return false
+        }
+        if !Tools.validatePassword(password:self.passwordTextField.AGTextField.text!){
+            SVProgressHUD.showInfo(withStatus: "请输入正确的密码")
+            return false
+        }
+        return true
+    }
+    
+    func registerAndForgetPsdFinish(account:String,password:String){
+        self.phoneTextField.AGTextField.text = account
+        self.passwordTextField.AGTextField.text = password
     }
 
     func createUI(){
@@ -41,14 +68,14 @@ class LoginVC: UIViewController {
         view.addSubview(registerButton)
 
         backgorundImageView.snp.makeConstraints { (make) in
-            make.top.equalTo(-64)
+            make.top.equalTo(-YMAKE(64))
             make.bottom.equalTo(self.view.snp.bottom)
             make.left.equalTo(0)
             make.width.equalTo(SCREEN_WIDTH)
         }
 
         logoImageView.snp.makeConstraints { (make) in
-            make.top.equalTo(backgorundImageView.snp.top).offset(YMAKE(70) + 64)
+            make.top.equalTo(backgorundImageView.snp.top).offset(YMAKE(70) + YMAKE(64))
             make.centerX.equalTo(self.view.snp.centerX)
             make.width.greaterThanOrEqualTo(LoginUX.logoSize.width)
             make.height.greaterThanOrEqualTo(LoginUX.logoSize.height)
@@ -123,6 +150,7 @@ class LoginVC: UIViewController {
         text.addAttribute(NSAttributedStringKey.foregroundColor, value: UIColor.R_UIRGBColor(red: 144, green: 144, blue: 144, alpha: 1), range: NSMakeRange(0, text.length))
         textField.AGTextField.attributedPlaceholder = text
         textField.AGTextField.backgroundColor = UIColor.clear
+        textField.AGTextField.isSecureTextEntry = true
         return textField
     }()
     
@@ -169,12 +197,12 @@ class LoginVC: UIViewController {
     @objc func onClick(_ sender:UIButton){
         switch sender.tag {
         case 0:
-            
-            
+            self.loginOnClick()
             break
         case 1:
             let registerAndForgetPsdVC = RegisterAndForgetPsdVC()
             registerAndForgetPsdVC.registerAndForgetPsdType = .registerStatus
+            registerAndForgetPsdVC.delegate = self
             self.navigationController?.pushViewController(registerAndForgetPsdVC, animated: true)
             break
         case 2:
