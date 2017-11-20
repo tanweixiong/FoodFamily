@@ -2390,7 +2390,7 @@
 					"$(PROJECT_DIR)/FoodFamily/Vender(第三方)/SnapKit",
 				);
 				INFOPLIST_FILE = FoodFamily/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hqtech.FoodFamily;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2412,7 +2412,7 @@
 					"$(PROJECT_DIR)/FoodFamily/Vender(第三方)/SnapKit",
 				);
 				INFOPLIST_FILE = FoodFamily/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hqtech.FoodFamily;
 				PRODUCT_NAME = "$(TARGET_NAME)";

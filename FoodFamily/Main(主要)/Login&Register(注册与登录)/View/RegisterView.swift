@@ -16,6 +16,9 @@ class RegisterView: UIView {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var recommendTextField: UITextField!
     @IBOutlet weak var firstView: UIView!
+    @IBOutlet weak var recommendView: UIView!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
        finishButton.layer.borderColor = UIColor.lightGray.cgColor

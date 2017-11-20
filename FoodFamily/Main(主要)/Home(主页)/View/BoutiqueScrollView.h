@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface BoutiqueScrollView : UIView
-- (instancetype)initWithFrame:(CGRect)frame;
+//- (instancetype)initWithFrame:(CGRect)frame;
+- (instancetype)initWithFrame:(CGRect)frame dataArray:(NSArray *)dataArray;
 @end

@@ -54,7 +54,7 @@ class StoreListModel: Mappable {
     }
 }
 
-class BannerList: Mappable {
+class BannerListModel: Mappable {
     var id: String?
     var bannerImg: String?
     var returnUrl: String?
@@ -93,7 +93,7 @@ class CategoryListModel: Mappable {
 
 class HomeListModel: Mappable {
     var storeList: StoreListModel?
-    var bannerList: BannerList?
+    var bannerList: [BannerListModel]?
     var categoryList: [CategoryListModel]?
     
     required init?(map: Map) {

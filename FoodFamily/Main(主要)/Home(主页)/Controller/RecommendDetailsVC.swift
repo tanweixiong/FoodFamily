@@ -51,7 +51,7 @@ class RecommendDetailsVC: UIViewController,UITableViewDelegate,UITableViewDataSo
     func getData(){
         print(self.storeID)
         let parameters = ["storeId":self.storeID]
-        recommendDetailsVM.loadSuccessfullyReturnedData(requestType: .get, URLString: ConstAPI.kAPIStoreGetStoreInfo, parameters: parameters, showIndicator: true) {
+        recommendDetailsVM.loadSuccessfullyReturnedData(requestType: .post, URLString: ConstAPI.kAPIStoreGetStoreInfo, parameters: parameters, showIndicator: true) {
             self.tableView.reloadData()
         }
     }

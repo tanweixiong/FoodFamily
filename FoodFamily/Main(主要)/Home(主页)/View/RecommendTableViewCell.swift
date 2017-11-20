@@ -12,7 +12,7 @@ class RecommendTableViewCell: UITableViewCell {
     @IBOutlet weak var storeNameLabel: UILabel!
     @IBOutlet weak var perPayLabel: UILabel!
     @IBOutlet weak var streetLabel: UILabel!
-    
+    @IBOutlet weak var backgroundImageVw: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -22,6 +22,7 @@ class RecommendTableViewCell: UITableViewCell {
         self.storeNameLabel.text = model.storeName
         self.perPayLabel.text = model.perPay?.stringValue
         self.streetLabel.text = model.street
+        self.backgroundImageVw.sd_setImage(with: NSURL(string: model.coverPic!)! as URL, placeholderImage: UIImage.init(named: "jiazaimoren"))
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

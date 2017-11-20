@@ -14,19 +14,17 @@ class BoutiqueTableViewCell: UITableViewCell,UIScrollViewDelegate {
     @IBOutlet weak var advertisingVw: UIView!
     @IBOutlet weak var classificationScrollVw: UIScrollView!
     
-    var categoryListModel : [CategoryListModel] = [CategoryListModel](){
-        didSet{
-            
-        }
-    }
+    var categoryListModel : [CategoryListModel] = [CategoryListModel]()
+    var bannerListModel : [BannerListModel] = [BannerListModel]()
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
     
-    func setData(_ model:[CategoryListModel]){
-        self.categoryListModel = model
+    func setData(_ categoryModel:[CategoryListModel],_ bannermodel:[BannerListModel]){
+        self.categoryListModel = categoryModel
+        self.bannerListModel = bannermodel
         //加载轮播图
         self.advertisingVw.addSubview(advertisingView)
         
@@ -36,7 +34,12 @@ class BoutiqueTableViewCell: UITableViewCell,UIScrollViewDelegate {
     }
     
     lazy var advertisingView: BoutiqueScrollView = {
-        let view = BoutiqueScrollView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: self.advertisingVw.frame.size.height))
+        let imageData = NSMutableArray()
+        for index in 0...self.bannerListModel.count - 1 {
+            let model = bannerListModel[index]
+            imageData.add(model.bannerImg!)
+        }
+        let view = BoutiqueScrollView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: self.advertisingVw.frame.size.height), dataArray: imageData as! [Any])
         return view!
     }()
     

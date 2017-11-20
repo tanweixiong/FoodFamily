@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -198,6 +197,7 @@
                 <outlet property="passwordTextField" destination="CkD-7q-lp7" id="Z90-eH-tzN"/>
                 <outlet property="phoneTextField" destination="DWJ-Dw-vsr" id="evV-Y1-uQm"/>
                 <outlet property="recommendTextField" destination="bGh-pW-CZ2" id="CNz-Ji-vod"/>
+                <outlet property="recommendView" destination="owk-rL-nvo" id="M25-RR-LpV"/>
             </connections>
             <point key="canvasLocation" x="-261" y="-190"/>
         </view>

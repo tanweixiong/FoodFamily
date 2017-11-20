@@ -58,7 +58,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FoodFamily/Main(&#x4e3b;&#x8981;)/Home(&#x4e3b;&#x9875;)/Controller/RecommendDetailsVC.swift"
-            timestampString = "532863854.441983"
+            timestampString = "532875645.789697"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "54"
@@ -74,7 +74,7 @@
                   moduleName = "FoodFamily"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/tam/Desktop/%E5%BF%A0%E9%A3%9F%E5%AE%B6/FoodFamily/Main(%E4%B8%BB%E8%A6%81)/Home(%E4%B8%BB%E9%A1%B5)/Controller/RecommendDetailsVC.swift"
-                  timestampString = "532863854.703367"
+                  timestampString = "532875646.033922"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "54"
@@ -89,92 +89,12 @@
                   moduleName = "FoodFamily"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/tam/Desktop/%E5%BF%A0%E9%A3%9F%E5%AE%B6/FoodFamily/Main(%E4%B8%BB%E8%A6%81)/Home(%E4%B8%BB%E9%A1%B5)/Controller/RecommendDetailsVC.swift"
-                  timestampString = "532863854.70715"
+                  timestampString = "532875646.036055"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "55"
                   endingLineNumber = "55"
                   offsetFromSymbolStart = "28">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FoodFamily/Main(&#x4e3b;&#x8981;)/Home(&#x4e3b;&#x9875;)/Controller/RecommendDetailsVC.swift"
-            timestampString = "532863854.442064"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
-            landmarkName = "getData()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FoodFamily/Main(&#x4e3b;&#x8981;)/Home(&#x4e3b;&#x9875;)/ViewModel/RecommendDetailsVM.swift"
-            timestampString = "532863854.442128"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "18"
-            endingLineNumber = "18"
-            landmarkName = "loadSuccessfullyReturnedData(requestType:URLString:parameters:showIndicator:finishedCallback:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FoodFamily/Main(&#x4e3b;&#x8981;)/Home(&#x4e3b;&#x9875;)/ViewModel/RecommendDetailsVM.swift"
-            timestampString = "532863854.442186"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "17"
-            endingLineNumber = "17"
-            landmarkName = "loadSuccessfullyReturnedData(requestType:URLString:parameters:showIndicator:finishedCallback:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "FoodFamily.RecommendDetailsVM.loadSuccessfullyReturnedData(requestType: Alamofire.HTTPMethod, URLString: Swift.String, parameters: Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Any&gt;&gt;, showIndicator: Swift.Bool, finishedCallback: () -&gt; ()) -&gt; ()"
-                  moduleName = "FoodFamily"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tam/Desktop/%E5%BF%A0%E9%A3%9F%E5%AE%B6/FoodFamily/Main(%E4%B8%BB%E8%A6%81)/Home(%E4%B8%BB%E9%A1%B5)/ViewModel/RecommendDetailsVM.swift"
-                  timestampString = "532863854.722165"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "17"
-                  endingLineNumber = "17"
-                  offsetFromSymbolStart = "68">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Dictionary&lt;Swift.String, Swift.AnyObject&gt;) -&gt; () in FoodFamily.RecommendDetailsVM.loadSuccessfullyReturnedData(requestType: Alamofire.HTTPMethod, URLString: Swift.String, parameters: Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Any&gt;&gt;, showIndicator: Swift.Bool, finishedCallback: () -&gt; ()) -&gt; ()"
-                  moduleName = "FoodFamily"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tam/Desktop/%E5%BF%A0%E9%A3%9F%E5%AE%B6/FoodFamily/Main(%E4%B8%BB%E8%A6%81)/Home(%E4%B8%BB%E9%A1%B5)/ViewModel/RecommendDetailsVM.swift"
-                  timestampString = "532863854.724465"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "18"
-                  endingLineNumber = "18"
-                  offsetFromSymbolStart = "40">
                </Location>
             </Locations>
          </BreakpointContent>

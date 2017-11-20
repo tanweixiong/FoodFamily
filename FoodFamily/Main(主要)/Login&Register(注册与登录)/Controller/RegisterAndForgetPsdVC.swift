@@ -32,6 +32,7 @@ class RegisterAndForgetPsdVC: MainViewController,UITextFieldDelegate {
         if registerAndForgetPsdType == .forgetPsdStatus{
             self.addDefaultButtonTextRight("确定")
             self.registerView.finishButton.isHidden = true
+            self.registerView.recommendView.isHidden = true
         }
     }
     
@@ -62,7 +63,7 @@ class RegisterAndForgetPsdVC: MainViewController,UITextFieldDelegate {
             let parameters =  ["acount":registerView.phoneTextField.text!]
             BaseViewModel.loadSuccessfullyReturnedData(requestType: .post, URLString: ConstAPI.kAPIUserGetPhoneCode, parameters: parameters, showIndicator: false) {
                 sender.start(withTime: 60, title: "重新获取", countDownTitle: "s", mainColor: UIColor.clear, count:UIColor.clear)
-                SVProgressHUD.showSuccess(withStatus: "发送成功")
+                SVProgressHUD.showSuccess(withStatus: "验证码发送成功")
             }
         }else{
             SVProgressHUD.showInfo(withStatus: "请输入正确的手机号码")
@@ -72,26 +73,13 @@ class RegisterAndForgetPsdVC: MainViewController,UITextFieldDelegate {
     //忘记密码
     override func rightTextBtn(_ sender: UIBarButtonItem) {
         if checkTheInput() {
-//            let parameters = ["acount":registerView.phoneTextField.text!,"code"]
-//            BaseViewModel.loadSuccessfullyReturnedData(requestType: .post, URLString: ConstAPI.kAPIUserGetPhoneCode, parameters: parameters) {
-//                
-//            }
+     let parameters =  ["acount":registerView.phoneTextField.text!,"code":registerView.codeTextField.text!,"password":registerView.passwordTextField.text!]
+            BaseViewModel.loadSuccessfullyReturnedData(requestType: .post, URLString: ConstAPI.kAPIUserForgetPassword, parameters: parameters, showIndicator: false) {
+                SVProgressHUD.showSuccess(withStatus: "找回密码成功,请直接登录")
+                self.delegate?.registerAndForgetPsdFinish(account: self.registerView.phoneTextField.text!,password: self.registerView.passwordTextField.text!)
+                 self.navigationController?.popViewController(animated: true)
+            }
         }
-    }
-    
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        var maxLength:Int = 0
-        if textField == registerView.phoneTextField {
-            maxLength = 11
-        }else if textField == registerView.codeTextField{
-            maxLength = 8
-        }else if textField == registerView.passwordTextField{
-            maxLength = 20
-        }
-        //限制长度
-        let proposeLength = (textField.text?.lengthOfBytes(using: String.Encoding.utf8))! - range.length + string.lengthOfBytes(using: String.Encoding.utf8)
-        if proposeLength > maxLength { return false }
-        return true
     }
     
     //注册账号
@@ -108,6 +96,21 @@ class RegisterAndForgetPsdVC: MainViewController,UITextFieldDelegate {
    
             }
         }
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        var maxLength:Int = 0
+        if textField == registerView.phoneTextField {
+            maxLength = 11
+        }else if textField == registerView.codeTextField{
+            maxLength = 8
+        }else if textField == registerView.passwordTextField{
+            maxLength = 20
+        }
+        //限制长度
+        let proposeLength = (textField.text?.lengthOfBytes(using: String.Encoding.utf8))! - range.length + string.lengthOfBytes(using: String.Encoding.utf8)
+        if proposeLength > maxLength { return false }
+        return true
     }
     
     func checkTheInput()->Bool{

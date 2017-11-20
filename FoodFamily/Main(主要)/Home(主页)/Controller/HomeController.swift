@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MJRefresh
 
 class HomeController: MainViewController,UITableViewDelegate,UITableViewDataSource,LocationDelegate {
     
@@ -14,11 +15,13 @@ class HomeController: MainViewController,UITableViewDelegate,UITableViewDataSour
    fileprivate let boutiqueTableViewCell = "BoutiqueTableViewCell"
    fileprivate let topicTableViewCell = "TopicTableViewCell"
    fileprivate let recommendTableViewCell = "RecommendTableViewCell"
+   fileprivate var latitudeStr = "23.171962"
+   fileprivate var longitudeStr = "113.461113"
     
     struct HomeControllerUX {
         static let boutiqueTableViewCellHeight:CGFloat = 256
         static let topicTableViewCellHeight:CGFloat = 252.5
-        static let recommendTableViewCellHeight:CGFloat = 342.2
+        static let recommendTableViewCellHeight:CGFloat = 304
         static let sectionHeight:CGFloat = 20
     }
 
@@ -37,16 +40,19 @@ class HomeController: MainViewController,UITableViewDelegate,UITableViewDataSour
     
     //传默认经纬度
     func getData(){
-        let parameters = ["lat":"23.171962","lng":"113.461113"]
-        homeVM.loadSuccessfullyReturnedData(requestType: .get, URLString: ConstAPI.kAPIAppIndex, parameters: parameters, showIndicator: false) {
+        let parameters = ["lat":self.latitudeStr,"lng":self.longitudeStr]
+        homeVM.loadSuccessfullyReturnedData(requestType: .post, URLString: ConstAPI.kAPIAppIndex, parameters: parameters, showIndicator: false) {
             self.tableView.reloadData()
+            self.tableView.mj_header.endRefreshing()
         }
     }
     
     //上传经纬度
     func locationCallBackDataLatitude(_ latitude: CGFloat, longitude: CGFloat) {
-        let parameters = ["lat":latitude,"log":longitude]
-        homeVM.loadSuccessfullyReturnedData(requestType: .get, URLString: ConstAPI.kAPIAppIndex, parameters: parameters, showIndicator: false) {
+        self.latitudeStr = "\(latitude)"
+        self.longitudeStr = "\(longitude)"
+        let parameters = ["lat":self.latitudeStr,"lng":self.longitudeStr]
+        homeVM.loadSuccessfullyReturnedData(requestType: .post, URLString: ConstAPI.kAPIAppIndex, parameters: parameters, showIndicator: false) {
              self.tableView.reloadData()
         }
     }
@@ -93,7 +99,7 @@ class HomeController: MainViewController,UITableViewDelegate,UITableViewDataSour
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: boutiqueTableViewCell, for: indexPath) as! BoutiqueTableViewCell
             if self.homeVM.homeModel.data != nil{
-               cell.setData((self.homeVM.homeModel.data?.categoryList)!)
+                cell.setData((self.homeVM.homeModel.data?.categoryList)!, (self.homeVM.homeModel.data?.bannerList)!)
             }
             cell.selectionStyle = .none
             return cell
@@ -122,6 +128,9 @@ class HomeController: MainViewController,UITableViewDelegate,UITableViewDataSour
         tableView.backgroundColor = R_UIThemeBackgroundColor
         tableView.separatorInset = UIEdgeInsetsMake(0,SCREEN_WIDTH, 0,SCREEN_WIDTH);
         tableView.tableFooterView = UIView()
+        tableView.mj_header = MJRefreshNormalHeader.init(refreshingBlock: {
+            self.getData()
+        })
         return tableView
     }()
     
