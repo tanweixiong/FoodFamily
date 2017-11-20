@@ -9,6 +9,7 @@
 import UIKit
 import SVProgressHUD
 import Alamofire
+import MJExtension
 
 enum BaseRequestType{
     case post
@@ -41,12 +42,19 @@ class BaseViewModel: NSObject {
     class func loadSuccessfullyLoginData(requestType: HTTPMethod, URLString : String, parameters : [String : Any]? = nil, finishedCallback : @escaping () -> ()) {
         NetWorkTool.request(requestType: requestType, URLString:URLString, parameters: parameters, showIndicator: true, success: { (json) in
             let responseData = Mapper<ResponseData>().map(JSONObject: json)
+            print(json)
             if let code = responseData?.code {
                 guard  100 == code else {
                     SVProgressHUD.showInfo(withStatus: responseData?.message)
                     return
                 }
-                SVProgressHUD.showSuccess(withStatus: responseData?.message)
+                if (json["data"] != nil) && String(describing: json["data"]) != "" {
+                    let data = json["data"] as![String:AnyObject]
+                    let user = data["user"] as![String:AnyObject]
+                    UserDefaults.standard.set(true, forKey: R_Theme_isLogin)
+                    let userInfo = UserInfo(dict: user as [String : AnyObject])
+                    UserDefaults.standard.saveCustomObject(customObject: userInfo, key: R_UserInfo)
+                }
                 finishedCallback()
             }
         }) { (error) in

@@ -13,4 +13,5 @@
 +(UIViewController *)getCurrentVC;
 +(NSDictionary *)getDictionaryFromJSONString:(NSString *)jsonStr;
 +(NSString *)getJSONStringFromDictionary:(id)testDict;
++(NSDictionary *)setValuesForKeysWithDictionary:(NSDictionary<NSString *,id> *)keyedValues;
 @end

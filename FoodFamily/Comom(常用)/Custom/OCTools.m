@@ -59,6 +59,17 @@
     return jsonStr;
 }
  
++(NSMutableDictionary *)setValuesForKeysWithDictionary:(NSDictionary<NSString *,id> *)keyedValues
+{
+    NSMutableDictionary *dic = [[NSMutableDictionary alloc] initWithDictionary:keyedValues];
+    NSArray *valueArray= [dic allKeys];
+    for (NSString *key in valueArray) {
+        if ([[dic objectForKey:key]isEqual:[NSNull null]]) {
+            [dic setObject:@"" forKey:key];
+        }
+    }
+    return dic;
+}
 
 
 //- (NSData *)toJSONData:(id)theData{

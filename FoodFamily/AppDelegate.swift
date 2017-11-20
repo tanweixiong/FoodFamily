@@ -15,11 +15,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-//        let navi = MainTabBarController()
-//        self.window?.rootViewController = navi
         
-        let navi = FMNavigationController(rootViewController: LoginVC())
-        self.window?.rootViewController = navi
+        if UserDefaults.standard.bool(forKey:R_Theme_isLogin) {
+            let navi = MainTabBarController()
+            self.window?.rootViewController = navi
+        }else{
+            let navi = FMNavigationController(rootViewController: LoginVC())
+            self.window?.rootViewController = navi
+        }
         return true
     }
 

@@ -67,34 +67,6 @@ extension UIView {
     }
 }
 
-extension UserDefaults {
-    func saveCustomObject(customObject object: NSCoding, key: String) {
-        let encodedObject = NSKeyedArchiver.archivedData(withRootObject: object)
-        self.set(encodedObject, forKey: key)
-        self.synchronize()
-    }
-    func getCustomObject(forKey key: String) -> AnyObject? {
-        let decodedObject = self.object(forKey: key) as? NSData
-        
-        if let decoded = decodedObject {
-            let object = NSKeyedUnarchiver.unarchiveObject(with: decoded as Data)
-            return object as AnyObject
-        }
-        return nil
-    }
-    
-    //获取用户信息
-//    func getUserInfo()-> UserInfo {
-//        let userInfo = UserDefaults.standard.getCustomObject(forKey: "userInfo")
-//        if userInfo == nil {
-//            let userInfo = UserInfo()
-//            return userInfo
-//        }else{
-//            return UserDefaults.standard.getCustomObject(forKey: "userInfo") as! UserInfo
-//        }
-//    }
-}
-
 //extension LBXScanViewController {
 //    func setCustomLBScan() ->LBXScanViewStyle{
 //        var style = LBXScanViewStyle()
@@ -136,6 +108,34 @@ extension UserDefaults {
 //    }
 //    
 //}
+
+extension UserDefaults {
+    func saveCustomObject(customObject object: NSCoding, key: String) {
+        let encodedObject = NSKeyedArchiver.archivedData(withRootObject: object)
+        self.set(encodedObject, forKey: key)
+        self.synchronize()
+    }
+    func getCustomObject(forKey key: String) -> AnyObject? {
+        let decodedObject = self.object(forKey: key) as? NSData
+        
+        if let decoded = decodedObject {
+            let object = NSKeyedUnarchiver.unarchiveObject(with: decoded as Data)
+            return object as AnyObject
+        }
+        return nil
+    }
+    
+    //获取用户信息
+    func getUserInfo()-> UserInfo {
+        let userInfo = UserDefaults.standard.getCustomObject(forKey: "userInfo")
+        if userInfo == nil {
+            let userInfo = UserInfo()
+            return userInfo
+        }else{
+            return UserDefaults.standard.getCustomObject(forKey: "userInfo") as! UserInfo
+        }
+    }
+}
 
 extension UIButton {
     

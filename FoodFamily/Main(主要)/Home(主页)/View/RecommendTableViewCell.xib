@@ -154,6 +154,11 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="perPayLabel" destination="xmN-hz-AzH" id="HE6-M7-rRr"/>
+                <outlet property="storeNameLabel" destination="sKg-oL-mgC" id="wvv-XI-co5"/>
+                <outlet property="streetLabel" destination="uMM-px-6pi" id="nph-Se-vGx"/>
+            </connections>
             <point key="canvasLocation" x="26.5" y="52"/>
         </tableViewCell>
     </objects>

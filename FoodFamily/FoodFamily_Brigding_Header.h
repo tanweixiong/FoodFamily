@@ -19,4 +19,5 @@
 #import "TggStarEvaluationView.h"
 #import "ZCTradeView.h"
 #import "InputPaymentPasswordVw.h"
+#import "LocationViewController.h"
 #endif

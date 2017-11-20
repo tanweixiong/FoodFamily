@@ -8,23 +8,47 @@
 
 import UIKit
 
-class HomeController: MainViewController,UITableViewDelegate,UITableViewDataSource {
+class HomeController: MainViewController,UITableViewDelegate,UITableViewDataSource,LocationDelegate {
     
+   fileprivate lazy var homeVM : HomeControllerVM = HomeControllerVM()
    fileprivate let boutiqueTableViewCell = "BoutiqueTableViewCell"
    fileprivate let topicTableViewCell = "TopicTableViewCell"
    fileprivate let recommendTableViewCell = "RecommendTableViewCell"
     
     struct HomeControllerUX {
         static let boutiqueTableViewCellHeight:CGFloat = 256
-        static let topicTableViewCellHeight:CGFloat = 430
+        static let topicTableViewCellHeight:CGFloat = 252.5
         static let recommendTableViewCellHeight:CGFloat = 342.2
         static let sectionHeight:CGFloat = 20
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.getData()
+        self.getTargetingData()
         self.view.addSubview(tableView)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: self.filterButton)
+    }
+    
+    func getTargetingData() {
+        LocationViewController.shareManager().startLocation();
+        LocationViewController.shareManager().delegate = self
+    }
+    
+    //传默认经纬度
+    func getData(){
+        let parameters = ["lat":"23.171962","lng":"113.461113"]
+        homeVM.loadSuccessfullyReturnedData(requestType: .get, URLString: ConstAPI.kAPIAppIndex, parameters: parameters, showIndicator: false) {
+            self.tableView.reloadData()
+        }
+    }
+    
+    //上传经纬度
+    func locationCallBackDataLatitude(_ latitude: CGFloat, longitude: CGFloat) {
+        let parameters = ["lat":latitude,"log":longitude]
+        homeVM.loadSuccessfullyReturnedData(requestType: .get, URLString: ConstAPI.kAPIAppIndex, parameters: parameters, showIndicator: false) {
+             self.tableView.reloadData()
+        }
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -32,7 +56,7 @@ class HomeController: MainViewController,UITableViewDelegate,UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+       return 1
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -56,14 +80,21 @@ class HomeController: MainViewController,UITableViewDelegate,UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = RecommendDetailsVC()
-        self.navigationController?.pushViewController(vc, animated: true)
+        if indexPath.section == 2 {
+            if self.homeVM.homeModel.data != nil{
+                let vc = RecommendDetailsVC()
+                vc.storeID = ((self.homeVM.homeModel.data?.storeList?.id)?.stringValue)!
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: boutiqueTableViewCell, for: indexPath) as! BoutiqueTableViewCell
-            cell.setData()
+            if self.homeVM.homeModel.data != nil{
+               cell.setData((self.homeVM.homeModel.data?.categoryList)!)
+            }
             cell.selectionStyle = .none
             return cell
         }else if indexPath.section == 1{
@@ -72,6 +103,9 @@ class HomeController: MainViewController,UITableViewDelegate,UITableViewDataSour
             return cell
         }else{
             let cell = tableView.dequeueReusableCell(withIdentifier: recommendTableViewCell, for: indexPath) as! RecommendTableViewCell
+            if self.homeVM.homeModel.data != nil{
+                cell.setData((self.homeVM.homeModel.data?.storeList)!)
+            }
             cell.selectionStyle = .none
             return cell
         }

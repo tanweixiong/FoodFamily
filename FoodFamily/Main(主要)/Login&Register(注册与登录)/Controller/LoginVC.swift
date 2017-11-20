@@ -30,13 +30,20 @@ class LoginVC: UIViewController,RegisterAndForgetPsdDeleagte {
         self.title = "登录"
         self.setCloseRoundKeyboard()
         self.createUI()
+        
+        self.phoneTextField.AGTextField.text = "17876489900"
+        self.passwordTextField.AGTextField.text = "123456"
     }
     
     func loginOnClick(){
         if checkTheInput() {
             let parameters = ["acount":self.phoneTextField.AGTextField.text!,"password":self.passwordTextField.AGTextField.text!]
+            SVProgressHUD.show(withStatus: "请稍等")
             BaseViewModel.loadSuccessfullyLoginData(requestType: .post, URLString: ConstAPI.kAPIUserLogin, parameters: parameters, finishedCallback: {
                 SVProgressHUD.showSuccess(withStatus: "登录成功")
+                SVProgressHUD.dismiss()
+                let tab = MainTabBarController()
+                UIApplication.shared.keyWindow?.rootViewController = tab
             })
         }
     }

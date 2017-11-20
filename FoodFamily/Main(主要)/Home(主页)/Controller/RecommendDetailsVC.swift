@@ -10,10 +10,12 @@ import UIKit
 
 class RecommendDetailsVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
+    fileprivate lazy var recommendDetailsVM : RecommendDetailsVM = RecommendDetailsVM()
     fileprivate let recommendNaviCell = "recommendNaviCell"
     fileprivate let recommendedReasonCell = "recommendedReasonCell"
     fileprivate let recommendedMomeyCell = "recommendedMomeyCell"
     fileprivate let recommendedCommentCell = "recommendedCommentCell"
+    var storeID = ""
     
     struct RecommendDetailsUX {
         static let recommendHeadHeight:CGFloat = 108
@@ -40,9 +42,18 @@ class RecommendDetailsVC: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     override func viewDidLoad() {
         super.viewDidLoad()
+       self.getData()
        self.view.addSubview(tableView)
        self.view.addSubview(recommendFootView)
        self.view.addSubview(backBtn)
+    }
+    
+    func getData(){
+        print(self.storeID)
+        let parameters = ["storeId":self.storeID]
+        recommendDetailsVM.loadSuccessfullyReturnedData(requestType: .get, URLString: ConstAPI.kAPIStoreGetStoreInfo, parameters: parameters, showIndicator: true) {
+            self.tableView.reloadData()
+        }
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -210,7 +221,6 @@ class RecommendDetailsVC: UIViewController,UITableViewDelegate,UITableViewDataSo
    
         }
     }
-    
     
     lazy var backBtn: UIButton = {
         let backButton = UIButton.init(type: .custom)

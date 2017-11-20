@@ -13,15 +13,18 @@ import SVProgressHUD
 import SwiftyJSON
 
 class NetWorkTool: NSObject {
-    class func request(requestType: HTTPMethod, URLString: String, parameters: [String : Any]?, showIndicator: Bool, success: @escaping (_ response : Any) -> () , failture: @escaping(_ error: Error) -> ()) {
-        let jsonParameters =  NetWorkTool.getJSONStringFromDictionary(dictionary:parameters! as NSDictionary)
-        let requestParameters = ["data":jsonParameters]
+    class func request(requestType: HTTPMethod, URLString: String, parameters: [String : Any]?, showIndicator: Bool, success: @escaping (_ response : [String:AnyObject]) -> () , failture: @escaping(_ error: Error) -> ()) {
+        var requestParameters = parameters
+        if parameters != nil {
+            let jsonParameters =  NetWorkTool.getJSONStringFromDictionary(dictionary:parameters! as NSDictionary)
+            requestParameters = ["data":jsonParameters]
+        }
         let sessionManager = Alamofire.SessionManager.default
         sessionManager.session.configuration.timeoutIntervalForRequest = 10
         sessionManager.request(URLString, method: requestType, parameters: requestParameters).validate().responseJSON { (response) in
             switch response.result {
             case .success(let value):
-                success(value)
+                success(value as! [String : AnyObject])
             case .failure(let error):
                 failture(error)
                 if showIndicator {
