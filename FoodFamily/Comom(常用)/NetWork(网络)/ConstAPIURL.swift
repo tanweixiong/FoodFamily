@@ -17,5 +17,6 @@ struct ConstAPI {
     static let kAPIUserRegister = kAPIBaseURL + "user/register" //忘记密码
     static let kAPIAppIndex = kAPIBaseURL + "index" //首页
     static let kAPIStoreGetStoreInfo = kAPIBaseURL + "store/getStoreInfo" //首页详情
+    static let kAPIAssessGetAssessList = kAPIBaseURL + "assess/getAssessList" //首页详情评论列表
 }
 

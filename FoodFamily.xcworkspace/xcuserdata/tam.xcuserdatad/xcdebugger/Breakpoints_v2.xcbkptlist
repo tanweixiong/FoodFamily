@@ -51,53 +51,5 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FoodFamily/Main(&#x4e3b;&#x8981;)/Home(&#x4e3b;&#x9875;)/Controller/RecommendDetailsVC.swift"
-            timestampString = "532875645.789697"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
-            landmarkName = "getData()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "FoodFamily.RecommendDetailsVC.getData() -&gt; ()"
-                  moduleName = "FoodFamily"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tam/Desktop/%E5%BF%A0%E9%A3%9F%E5%AE%B6/FoodFamily/Main(%E4%B8%BB%E8%A6%81)/Home(%E4%B8%BB%E9%A1%B5)/Controller/RecommendDetailsVC.swift"
-                  timestampString = "532875646.033922"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "54"
-                  endingLineNumber = "54"
-                  offsetFromSymbolStart = "392">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in FoodFamily.RecommendDetailsVC.getData() -&gt; ()"
-                  moduleName = "FoodFamily"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tam/Desktop/%E5%BF%A0%E9%A3%9F%E5%AE%B6/FoodFamily/Main(%E4%B8%BB%E8%A6%81)/Home(%E4%B8%BB%E9%A1%B5)/Controller/RecommendDetailsVC.swift"
-                  timestampString = "532875646.036055"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "55"
-                  endingLineNumber = "55"
-                  offsetFromSymbolStart = "28">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

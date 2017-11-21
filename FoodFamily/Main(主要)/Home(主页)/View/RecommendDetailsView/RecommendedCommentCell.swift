@@ -9,7 +9,19 @@
 import UIKit
 
 class RecommendedCommentCell: UITableViewCell {
-
+    
+    var commentDataModel : RecommendCommentListDataModel = RecommendCommentListDataModel()!{
+        didSet{
+            avatarImageView.sd_setImage(with: NSURL(string: commentDataModel.userHead!)! as URL, placeholderImage: UIImage.init(named: "ic_all_imageDefault"))
+            contextLabel.text = commentDataModel.context
+            nameLabel.text = commentDataModel.nickname
+            createTimeLabel.text = commentDataModel.createTime
+        }
+    }
+    @IBOutlet weak var contextLabel: UILabel!
+    @IBOutlet weak var avatarImageView: UIImageView!
+    @IBOutlet weak var createTimeLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

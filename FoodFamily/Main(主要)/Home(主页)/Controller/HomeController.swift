@@ -41,10 +41,10 @@ class HomeController: MainViewController,UITableViewDelegate,UITableViewDataSour
     //传默认经纬度
     func getData(){
         let parameters = ["lat":self.latitudeStr,"lng":self.longitudeStr]
-        homeVM.loadSuccessfullyReturnedData(requestType: .post, URLString: ConstAPI.kAPIAppIndex, parameters: parameters, showIndicator: false) {
+        homeVM.loadSuccessfullyReturnedData(requestType: .get, URLString: ConstAPI.kAPIAppIndex, parameters: parameters, showIndicator: false) {
             self.tableView.reloadData()
-            self.tableView.mj_header.endRefreshing()
         }
+         self.tableView.mj_header.endRefreshing()
     }
     
     //上传经纬度
@@ -52,7 +52,7 @@ class HomeController: MainViewController,UITableViewDelegate,UITableViewDataSour
         self.latitudeStr = "\(latitude)"
         self.longitudeStr = "\(longitude)"
         let parameters = ["lat":self.latitudeStr,"lng":self.longitudeStr]
-        homeVM.loadSuccessfullyReturnedData(requestType: .post, URLString: ConstAPI.kAPIAppIndex, parameters: parameters, showIndicator: false) {
+        homeVM.loadSuccessfullyReturnedData(requestType: .get, URLString: ConstAPI.kAPIAppIndex, parameters: parameters, showIndicator: false) {
              self.tableView.reloadData()
         }
     }

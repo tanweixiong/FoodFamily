@@ -7,14 +7,18 @@
 //
 
 import UIKit
+import MJRefresh
 
 class RecommendDetailsVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
     fileprivate lazy var recommendDetailsVM : RecommendDetailsVM = RecommendDetailsVM()
+    fileprivate lazy var homeVM : HomeControllerVM = HomeControllerVM()
+
     fileprivate let recommendNaviCell = "recommendNaviCell"
     fileprivate let recommendedReasonCell = "recommendedReasonCell"
     fileprivate let recommendedMomeyCell = "recommendedMomeyCell"
     fileprivate let recommendedCommentCell = "recommendedCommentCell"
+    fileprivate var pageNum:Int = 0
     var storeID = ""
     
     struct RecommendDetailsUX {
@@ -42,18 +46,31 @@ class RecommendDetailsVC: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       self.getData()
        self.view.addSubview(tableView)
        self.view.addSubview(recommendFootView)
        self.view.addSubview(backBtn)
+       self.getData()
+       self.getCommentData()
     }
     
     func getData(){
-        print(self.storeID)
         let parameters = ["storeId":self.storeID]
-        recommendDetailsVM.loadSuccessfullyReturnedData(requestType: .post, URLString: ConstAPI.kAPIStoreGetStoreInfo, parameters: parameters, showIndicator: true) {
+        //获取头部
+        recommendDetailsVM.loadSuccessfullyReturnedData(requestType: .get, URLString: ConstAPI.kAPIStoreGetStoreInfo, parameters: parameters, showIndicator: false) {
+            self.headScrollView.recommendDataModel = self.recommendDetailsVM.recommendDataModel
+            self.recommendHeadView.recommendDataModel = self.recommendDetailsVM.recommendDataModel
             self.tableView.reloadData()
         }
+    }
+    
+    func getCommentData(){
+        //获取评论列表
+        let commentParameters = ["storeId":"1","pageNum":"0","pageSize":""]
+        recommendDetailsVM.loadSuccessfullyCommentReturnedData(requestType: .get, URLString: ConstAPI.kAPIAssessGetAssessList, parameters: commentParameters, showIndicator: false) {
+//            self.pageNum = self.pageNum + 1
+//            self.tableView.reloadData()
+        }
+        self.tableView.mj_footer.endRefreshing()
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -61,7 +78,12 @@ class RecommendDetailsVC: UIViewController,UITableViewDelegate,UITableViewDataSo
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        if section != 3 {
+            return 1
+        }else{
+//            return self.recommendDetailsVM.recommendListModel.count == 0 ? 1 : self.recommendDetailsVM.recommendListModel.count
+            return 1
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -127,6 +149,9 @@ class RecommendDetailsVC: UIViewController,UITableViewDelegate,UITableViewDataSo
         }else {
             let cell = tableView.dequeueReusableCell(withIdentifier: recommendedCommentCell, for: indexPath) as! RecommendedCommentCell
             cell.selectionStyle = .none
+//            if self.recommendDetailsVM.recommendListModel.count != 0 {
+//                cell.commentDataModel = self.recommendDetailsVM.recommendListModel[indexPath.row]
+//            }
             return cell
         }
     }
@@ -141,29 +166,29 @@ class RecommendDetailsVC: UIViewController,UITableViewDelegate,UITableViewDataSo
         tableView.register(UINib(nibName: "RecommendedMoneyCell", bundle: nil),forCellReuseIdentifier: self.recommendedMomeyCell)
        tableView.register(UINib(nibName: "RecommendedCommentCell", bundle: nil),forCellReuseIdentifier: self.recommendedCommentCell)
         tableView.backgroundColor = UIColor.white
-        tableView.tableFooterView = UIView()
+//        tableView.tableFooterView = UIView()
         let headView = UIView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: RecommendDetailsUX.headViewHeight))
         headView.backgroundColor = UIColor.white
         tableView.tableHeaderView = headView
-        
-        headView.addSubview(headImageView)
+        headView.addSubview(headScrollView)
         headView.addSubview(recommendHeadView)
         headView.addSubview(logoView)
+        tableView.mj_footer = MJRefreshAutoNormalFooter.init(refreshingBlock: {
+            self.getCommentData()
+        })
         return tableView
     }()
     
-    lazy var headImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = UIImage.init(named: "foodDeatil")
-        imageView.frame = CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: RecommendDetailsUX.headimageHeight)
-        return imageView
+    lazy var headScrollView: RecommendDetailsScrollView = {
+        let view = RecommendDetailsScrollView.init(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: RecommendDetailsUX.headimageHeight))
+        return view
     }()
     
     lazy var logoView: UIImageView = {
         let space:CGFloat = 2
         let imageView = UIImageView()
         imageView.image = UIImage.init(named: "foodDeatil")
-        imageView.frame = CGRect(x: SCREEN_WIDTH/2 - RecommendDetailsUX.logoViewSize.width/2 , y:self.headImageView.frame.maxY - RecommendDetailsUX.logoViewSize.height/2, width: RecommendDetailsUX.logoViewSize.width, height: RecommendDetailsUX.logoViewSize.height);
+        imageView.frame = CGRect(x: SCREEN_WIDTH/2 - RecommendDetailsUX.logoViewSize.width/2 , y:RecommendDetailsUX.headimageHeight - RecommendDetailsUX.logoViewSize.height/2, width: RecommendDetailsUX.logoViewSize.width, height: RecommendDetailsUX.logoViewSize.height);
         imageView.layer.cornerRadius = imageView.frame.size.width/2
         imageView.clipsToBounds = true
         imageView.layer.borderWidth = 2

@@ -9,7 +9,6 @@
 import UIKit
 
 class RecommendNaviCell: UITableViewCell {
-
     @IBOutlet weak var naviButton: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()

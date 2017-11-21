@@ -93,6 +93,16 @@ class Tools: NSObject {
         return currentTime;
     }
     
+      //转化特定的时间格式
+    class func getTimeStampToString(timeStamp:String)->String {
+        let string = NSString(string: timeStamp)
+        let timeSta:TimeInterval = string.doubleValue
+        let dfmatter = DateFormatter()
+        dfmatter.dateFormat="yyyy-MM-dd"
+        let date = NSDate(timeIntervalSince1970: timeSta)
+        return dfmatter.string(from: date as Date)
+    }
+    
     //获取价格的格式包含符号
     class func getConversionPriceFormatSymbol(_ price:String)-> String {
         let newPrice = String(format: "¥%.2f", NSString(string:price).floatValue/100)

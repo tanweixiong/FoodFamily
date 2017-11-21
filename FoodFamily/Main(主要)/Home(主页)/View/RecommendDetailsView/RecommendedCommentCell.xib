@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -33,15 +32,6 @@
                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                         </userDefinedRuntimeAttributes>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="狄瑞吉" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Hb-jx-VLL">
-                        <rect key="frame" x="71" y="30.5" width="43" height="20"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="20" id="zJZ-Kb-1oE"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <color key="textColor" red="0.2627450980392157" green="0.25882352941176467" blue="0.2627450980392157" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2017-10-10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="URY-Ux-JlM">
                         <rect key="frame" x="273.5" y="32" width="74.5" height="20"/>
                         <constraints>
@@ -52,7 +42,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zuR-Q3-OW3">
-                        <rect key="frame" x="71" y="64" width="277" height="42"/>
+                        <rect key="frame" x="71" y="63" width="277" height="42"/>
                         <attributedString key="attributedText">
                             <fragment content="菜品不错，味道很好，棒棒哒">
                                 <attributes>
@@ -70,7 +60,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VT2-ev-31b">
-                        <rect key="frame" x="71" y="120" width="203" height="65"/>
+                        <rect key="frame" x="71" y="119" width="203" height="65"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_home_food" translatesAutoresizingMaskIntoConstraints="NO" id="Jrr-EC-76c">
                                 <rect key="frame" x="0.0" y="0.0" width="64.5" height="65"/>
@@ -101,6 +91,15 @@
                             <constraint firstAttribute="height" constant="65" id="zJJ-y7-A92"/>
                         </constraints>
                     </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="狄瑞吉" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Hb-jx-VLL">
+                        <rect key="frame" x="71" y="30" width="43" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="zJZ-Kb-1oE"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.2627450980392157" green="0.25882352941176467" blue="0.2627450980392157" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="7Hb-jx-VLL" firstAttribute="centerY" secondItem="U4f-OW-yyA" secondAttribute="centerY" id="30z-aB-16C"/>
@@ -117,6 +116,13 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="avatarImageView" destination="U4f-OW-yyA" id="cdb-Hb-4eO"/>
+                <outlet property="contextLabel" destination="zuR-Q3-OW3" id="0vG-FR-ald"/>
+                <outlet property="createTimeLabel" destination="URY-Ux-JlM" id="RII-mX-wzJ"/>
+                <outlet property="nameLabel" destination="7Hb-jx-VLL" id="aEm-5r-tjK"/>
+            </connections>
+            <point key="canvasLocation" x="-67" y="84"/>
         </tableViewCell>
     </objects>
     <resources>

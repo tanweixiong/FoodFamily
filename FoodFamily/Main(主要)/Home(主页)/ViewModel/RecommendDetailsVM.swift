@@ -11,12 +11,11 @@ import Alamofire
 import SVProgressHUD
 
 class RecommendDetailsVM: NSObject {
-    
-    lazy var homeModel : RecommendModel = RecommendModel()!
+    lazy var recommendDataModel : RecommendDataModel = RecommendDataModel()!
     func loadSuccessfullyReturnedData(requestType: HTTPMethod, URLString : String, parameters : [String : Any]? = nil, showIndicator: Bool,finishedCallback : @escaping () -> ()) {
         NetWorkTool.request(requestType: requestType, URLString:URLString, parameters: parameters, showIndicator: true, success: { (json) in
-            let responseData = Mapper<RecommendModel>().map(JSONObject: json)
             print(json)
+            let responseData = Mapper<RecommendModel>().map(JSONObject: json)
             if let code = responseData?.code {
                 guard  100 == code else {
                     SVProgressHUD.showInfo(withStatus: responseData?.message)
@@ -25,10 +24,34 @@ class RecommendDetailsVM: NSObject {
                 if showIndicator {
                     SVProgressHUD.showSuccess(withStatus: responseData?.message)
                 }
-                self.homeModel = responseData!
+                self.recommendDataModel = (responseData?.data)!
                 finishedCallback()
             }
         }) { (error) in
         }
     }
+    
+    lazy var recommendListModel : [RecommendCommentListDataModel] = [RecommendCommentListDataModel]()
+    func loadSuccessfullyCommentReturnedData(requestType: HTTPMethod, URLString : String, parameters : [String : Any]? = nil, showIndicator: Bool,finishedCallback : @escaping () -> ()) {
+        NetWorkTool.request(requestType: requestType, URLString:URLString, parameters: parameters, showIndicator: true, success: { (json) in
+            print(json)
+            let responseData = Mapper<RecommendCommentModel>().map(JSONObject: json)
+            if let code = responseData?.code {
+                guard  100 == code else {
+                    SVProgressHUD.showInfo(withStatus: responseData?.message)
+                    return
+                }
+                if showIndicator {
+                    SVProgressHUD.showSuccess(withStatus: responseData?.message)
+                }
+
+                if responseData?.data?.list?.count != 0 {
+                     self.recommendListModel = (responseData?.data?.list)!
+                }
+                finishedCallback()
+            }
+        }) { (error) in
+        }
+    }
+    
 }
