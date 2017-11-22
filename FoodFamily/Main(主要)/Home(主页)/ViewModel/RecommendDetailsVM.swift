@@ -46,7 +46,10 @@ class RecommendDetailsVM: NSObject {
                 }
 
                 if responseData?.data?.list?.count != 0 {
-                     self.recommendListModel = (responseData?.data?.list)!
+                    let array = NSMutableArray()
+                    array.addObjects(from: self.recommendListModel)
+                    array.addObjects(from: (responseData?.data?.list)!)
+                    self.recommendListModel = array as! [RecommendCommentListDataModel]
                 }
                 finishedCallback()
             }

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import MJRefresh
+
 
 class RecommendDetailsVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
@@ -38,7 +38,7 @@ class RecommendDetailsVC: UIViewController,UITableViewDelegate,UITableViewDataSo
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.alpha = 0
     }
-    
+
     @objc func backClick(){
         self.navigationController?.navigationBar.alpha = 1
         self.navigationController?.popViewController(animated: true)
@@ -50,7 +50,7 @@ class RecommendDetailsVC: UIViewController,UITableViewDelegate,UITableViewDataSo
        self.view.addSubview(recommendFootView)
        self.view.addSubview(backBtn)
        self.getData()
-       self.getCommentData()
+       self.getCommentData(isfirst: true)
     }
     
     func getData(){
@@ -63,14 +63,18 @@ class RecommendDetailsVC: UIViewController,UITableViewDelegate,UITableViewDataSo
         }
     }
     
-    func getCommentData(){
+    func getCommentData(isfirst:Bool){
         //获取评论列表
-        let commentParameters = ["storeId":"1","pageNum":"0","pageSize":""]
+        let commentParameters = ["storeId":"1","pageNum":"\(self.pageNum)","pageSize":""]
         recommendDetailsVM.loadSuccessfullyCommentReturnedData(requestType: .get, URLString: ConstAPI.kAPIAssessGetAssessList, parameters: commentParameters, showIndicator: false) {
-//            self.pageNum = self.pageNum + 1
-//            self.tableView.reloadData()
+            self.pageNum = self.pageNum + 1
+            self.tableView.reloadData()
+            if !isfirst{
+              let indexPath = IndexPath(item: self.recommendDetailsVM.recommendListModel.count - 1, section: 3)
+              self.tableView.scrollToRow(at: indexPath, at: .bottom, animated: false)
+            }
         }
-        self.tableView.mj_footer.endRefreshing()
+         self.tableView.endRefreshing(at: .bottom)
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -81,8 +85,7 @@ class RecommendDetailsVC: UIViewController,UITableViewDelegate,UITableViewDataSo
         if section != 3 {
             return 1
         }else{
-//            return self.recommendDetailsVM.recommendListModel.count == 0 ? 1 : self.recommendDetailsVM.recommendListModel.count
-            return 1
+            return self.recommendDetailsVM.recommendListModel.count == 0 ? 1 : self.recommendDetailsVM.recommendListModel.count
         }
     }
     
@@ -149,9 +152,9 @@ class RecommendDetailsVC: UIViewController,UITableViewDelegate,UITableViewDataSo
         }else {
             let cell = tableView.dequeueReusableCell(withIdentifier: recommendedCommentCell, for: indexPath) as! RecommendedCommentCell
             cell.selectionStyle = .none
-//            if self.recommendDetailsVM.recommendListModel.count != 0 {
-//                cell.commentDataModel = self.recommendDetailsVM.recommendListModel[indexPath.row]
-//            }
+            if self.recommendDetailsVM.recommendListModel.count != 0 {
+                cell.commentDataModel = self.recommendDetailsVM.recommendListModel[indexPath.row]
+            }
             return cell
         }
     }
@@ -166,16 +169,15 @@ class RecommendDetailsVC: UIViewController,UITableViewDelegate,UITableViewDataSo
         tableView.register(UINib(nibName: "RecommendedMoneyCell", bundle: nil),forCellReuseIdentifier: self.recommendedMomeyCell)
        tableView.register(UINib(nibName: "RecommendedCommentCell", bundle: nil),forCellReuseIdentifier: self.recommendedCommentCell)
         tableView.backgroundColor = UIColor.white
-//        tableView.tableFooterView = UIView()
         let headView = UIView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: RecommendDetailsUX.headViewHeight))
         headView.backgroundColor = UIColor.white
         tableView.tableHeaderView = headView
         headView.addSubview(headScrollView)
         headView.addSubview(recommendHeadView)
         headView.addSubview(logoView)
-        tableView.mj_footer = MJRefreshAutoNormalFooter.init(refreshingBlock: {
-            self.getCommentData()
-        })
+        tableView.addPullToRefresh(PullToRefresh(position: .bottom)) { [weak self] in
+            self?.getCommentData(isfirst: false)
+        }
         return tableView
     }()
     

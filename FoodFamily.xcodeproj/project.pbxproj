@@ -41,6 +41,13 @@
 		230FA76F1FB5A94500190F2B /* MineOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230FA76E1FB5A94500190F2B /* MineOptionView.swift */; };
 		230FA7711FB5AA7C00190F2B /* MineHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230FA7701FB5AA7C00190F2B /* MineHeadView.swift */; };
 		230FA7731FB5AA8B00190F2B /* MineHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 230FA7721FB5AA8B00190F2B /* MineHeadView.xib */; };
+		2313CEA51FC425860038BDDF /* DefaultRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2313CE9D1FC425850038BDDF /* DefaultRefreshView.swift */; };
+		2313CEA61FC425860038BDDF /* DefaultViewAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2313CE9E1FC425850038BDDF /* DefaultViewAnimator.swift */; };
+		2313CEA71FC425860038BDDF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2313CE9F1FC425850038BDDF /* Info.plist */; };
+		2313CEA81FC425860038BDDF /* PullToRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2313CEA11FC425850038BDDF /* PullToRefresh.swift */; };
+		2313CEA91FC425860038BDDF /* RefreshViewAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2313CEA21FC425850038BDDF /* RefreshViewAnimator.swift */; };
+		2313CEAA1FC425860038BDDF /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2313CEA31FC425850038BDDF /* State.swift */; };
+		2313CEAB1FC425860038BDDF /* UIScrollView+PullToRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2313CEA41FC425850038BDDF /* UIScrollView+PullToRefresh.swift */; };
 		2316A2831FAD71FE00A0B512 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2316A2821FAD71FE00A0B512 /* AppDelegate.swift */; };
 		2316A2851FAD71FE00A0B512 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2316A2841FAD71FE00A0B512 /* ViewController.swift */; };
 		2316A2881FAD71FE00A0B512 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2316A2861FAD71FE00A0B512 /* Main.storyboard */; };
@@ -350,6 +357,14 @@
 		230FA76E1FB5A94500190F2B /* MineOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineOptionView.swift; sourceTree = "<group>"; };
 		230FA7701FB5AA7C00190F2B /* MineHeadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineHeadView.swift; sourceTree = "<group>"; };
 		230FA7721FB5AA8B00190F2B /* MineHeadView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineHeadView.xib; sourceTree = "<group>"; };
+		2313CE9D1FC425850038BDDF /* DefaultRefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultRefreshView.swift; sourceTree = "<group>"; };
+		2313CE9E1FC425850038BDDF /* DefaultViewAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultViewAnimator.swift; sourceTree = "<group>"; };
+		2313CE9F1FC425850038BDDF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2313CEA01FC425850038BDDF /* PullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PullToRefresh.h; sourceTree = "<group>"; };
+		2313CEA11FC425850038BDDF /* PullToRefresh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullToRefresh.swift; sourceTree = "<group>"; };
+		2313CEA21FC425850038BDDF /* RefreshViewAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshViewAnimator.swift; sourceTree = "<group>"; };
+		2313CEA31FC425850038BDDF /* State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
+		2313CEA41FC425850038BDDF /* UIScrollView+PullToRefresh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+PullToRefresh.swift"; sourceTree = "<group>"; };
 		2316A27F1FAD71FE00A0B512 /* FoodFamily.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodFamily.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2316A2821FAD71FE00A0B512 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2316A2841FAD71FE00A0B512 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -816,6 +831,21 @@
 				230BE0CC1FB68F1300AD47E0 /* MineOptionView.xib */,
 			);
 			path = MineControllerView;
+			sourceTree = "<group>";
+		};
+		2313CE9C1FC425850038BDDF /* PullToRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				2313CE9D1FC425850038BDDF /* DefaultRefreshView.swift */,
+				2313CE9E1FC425850038BDDF /* DefaultViewAnimator.swift */,
+				2313CE9F1FC425850038BDDF /* Info.plist */,
+				2313CEA01FC425850038BDDF /* PullToRefresh.h */,
+				2313CEA11FC425850038BDDF /* PullToRefresh.swift */,
+				2313CEA21FC425850038BDDF /* RefreshViewAnimator.swift */,
+				2313CEA31FC425850038BDDF /* State.swift */,
+				2313CEA41FC425850038BDDF /* UIScrollView+PullToRefresh.swift */,
+			);
+			path = PullToRefresh;
 			sourceTree = "<group>";
 		};
 		2316A2761FAD71FE00A0B512 = {
@@ -1548,6 +1578,7 @@
 		23D0E3EA1FADBC000058EA34 /* Vender(第三方) */ = {
 			isa = PBXGroup;
 			children = (
+				2313CE9C1FC425850038BDDF /* PullToRefresh */,
 				23747F241FBD201F007FD859 /* InputPaymentPassword */,
 				238092E71FB94EEF0051EF3D /* CountDown */,
 				238092DA1FB93FE40051EF3D /* LJXPhotoAlbum */,
@@ -1848,6 +1879,7 @@
 				239F06F51FB2F4020067D810 /* FoodReservationFinishListCell.xib in Resources */,
 				23F4A74A1FBBEF3A004C9266 /* MyRechargeHeadCell.xib in Resources */,
 				239F07031FB2F4020067D810 /* FoodRecommendDetailCell.xib in Resources */,
+				2313CEA71FC425860038BDDF /* Info.plist in Resources */,
 				239F06EF1FB2F4020067D810 /* FoodReservationCodeCell.xib in Resources */,
 				236C44341FB4788000AC3010 /* FoodMerchantsCell.xib in Resources */,
 				2316A2881FAD71FE00A0B512 /* Main.storyboard in Resources */,
@@ -2025,6 +2057,7 @@
 				23F4A73E1FBBE938004C9266 /* MyBalanceListView.swift in Sources */,
 				2380934B1FB97D240051EF3D /* NetWorkTool.swift in Sources */,
 				23CB44FC1FBBCD2B00D8988D /* MineAddBankCardDetailVC.swift in Sources */,
+				2313CEAA1FC425860038BDDF /* State.swift in Sources */,
 				230BE0EB1FB6A39F00AD47E0 /* MineOrderUseVC.swift in Sources */,
 				2388E0A81FB0485A00AB6853 /* FoodDetailsFoodView.swift in Sources */,
 				238093411FB97BAD0051EF3D /* LayoutConstraint.swift in Sources */,
@@ -2044,6 +2077,7 @@
 				239F06F01FB2F4020067D810 /* FoodReservationFilliCell.swift in Sources */,
 				2319F1451FBD921300EB0F14 /* FoodVolumeCodeCell.swift in Sources */,
 				2380933D1FB97BAD0051EF3D /* ConstraintView.swift in Sources */,
+				2313CEAB1FC425860038BDDF /* UIScrollView+PullToRefresh.swift in Sources */,
 				239F06AC1FB2F3D30067D810 /* FoodReservationVC.swift in Sources */,
 				238093371FB97BAD0051EF3D /* ConstraintOffsetTarget.swift in Sources */,
 				238092EE1FB94F580051EF3D /* MineSetPayPasswordCell.swift in Sources */,
@@ -2088,6 +2122,7 @@
 				238093281FB97BAD0051EF3D /* ConstraintInsets.swift in Sources */,
 				236C442E1FB474EA00AC3010 /* FoodMerchantsHeadView.swift in Sources */,
 				23E214C61FB6EA1B00C7D085 /* MineInformationHeadCell.swift in Sources */,
+				2313CEA51FC425860038BDDF /* DefaultRefreshView.swift in Sources */,
 				238093751FB9813D0051EF3D /* ISO8601DateTransform.swift in Sources */,
 				23D1473F1FBA879D0028CD09 /* RigisterFinshVC.swift in Sources */,
 				238093251FB97BAD0051EF3D /* ConstraintConstantTarget.swift in Sources */,
@@ -2122,6 +2157,7 @@
 				230BE0E01FB6A27600AD47E0 /* SGHelperTool.m in Sources */,
 				23D147451FBA938A0028CD09 /* FoodEvaluationHeadCell.swift in Sources */,
 				23F4A7671FBBEFA0004C9266 /* ZCTradeView.m in Sources */,
+				2313CEA61FC425860038BDDF /* DefaultViewAnimator.swift in Sources */,
 				238093711FB9813D0051EF3D /* HexColorTransform.swift in Sources */,
 				239F06F41FB2F4020067D810 /* FoodReservationFinishListCell.swift in Sources */,
 				230BE0F71FB6DAF600AD47E0 /* MineUsableCoupons.swift in Sources */,
@@ -2157,6 +2193,7 @@
 				239F06A81FB2F3D30067D810 /* FoodVoucherOrderDetailsVC.swift in Sources */,
 				239F07061FB2F4020067D810 /* FoodReservationPaymentCardCell.swift in Sources */,
 				2380933C1FB97BAD0051EF3D /* ConstraintView+Extensions.swift in Sources */,
+				2313CEA81FC425860038BDDF /* PullToRefresh.swift in Sources */,
 				239F070A1FB2F4020067D810 /* FoodPurchaseNotesCell.swift in Sources */,
 				230F3C731FBAEA0900D188DB /* TggStarEvaluationView.m in Sources */,
 				2380932C1FB97BAD0051EF3D /* ConstraintLayoutGuide.swift in Sources */,
@@ -2204,6 +2241,7 @@
 				23D0E3F21FADBC000058EA34 /* TYCyclePagerTransformLayout.m in Sources */,
 				2380932B1FB97BAD0051EF3D /* ConstraintLayoutGuide+Extensions.swift in Sources */,
 				238092DF1FB943D30051EF3D /* MineSetVC.swift in Sources */,
+				2313CEA91FC425860038BDDF /* RefreshViewAnimator.swift in Sources */,
 				23F4A74E1FBBEF52004C9266 /* MyRechargeListCell.swift in Sources */,
 				2380937C1FB9813D0051EF3D /* ToJSON.swift in Sources */,
 				238093791FB9813D0051EF3D /* Mapper.swift in Sources */,

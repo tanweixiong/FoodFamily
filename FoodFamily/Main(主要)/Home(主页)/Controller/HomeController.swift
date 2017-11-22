@@ -45,6 +45,7 @@ class HomeController: MainViewController,UITableViewDelegate,UITableViewDataSour
             self.tableView.reloadData()
         }
          self.tableView.mj_header.endRefreshing()
+//        self.tableView.mj_footer.endRefreshing()
     }
     
     //上传经纬度
@@ -131,6 +132,10 @@ class HomeController: MainViewController,UITableViewDelegate,UITableViewDataSour
         tableView.mj_header = MJRefreshNormalHeader.init(refreshingBlock: {
             self.getData()
         })
+//        tableView.mj_footer = MJRefreshAutoNormalFooter.init(refreshingBlock: {
+//             self.getData()
+//        })
+        
         return tableView
     }()
     
