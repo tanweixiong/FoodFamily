@@ -1,30 +1,30 @@
 //
-//  RecommendedMoneyCell.swift
+//  RecommendedListMoneyCell.swift
 //  FoodFamily
 //
-//  Created by tam on 2017/11/6.
+//  Created by tam on 2017/11/22.
 //  Copyright © 2017年 Wilkinson. All rights reserved.
 //
 
 import UIKit
 
-class RecommendedMoneyCell: UITableViewCell {
+class RecommendedListMoneyCell: UITableViewCell {
     var moneyDataModel : RecommendVoucherDataModel = RecommendVoucherDataModel()!{
         didSet{
-            self.pricelabel.text = "¥" + (moneyDataModel.price?.stringValue)! + "代" + (moneyDataModel.vouPrice?.stringValue)! + "元"
+            self.pircelabel.text = "¥" + (moneyDataModel.price?.stringValue)! + "代" + (moneyDataModel.vouPrice?.stringValue)! + "元"
+//            self.buyButton.tag = moneyDataModel.id?.stringVale
         }
     }
-    @IBOutlet weak var pricelabel: UILabel!
-    var recommendedMoneyCallBack:((RecommendVoucherDataModel)->())?;
+    @IBOutlet weak var pircelabel: UILabel!
     @IBOutlet weak var buyButton: UIButton!
-
+    var recommendedMoneyCallBack:((RecommendVoucherDataModel)->())?;
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
         buyButton.layer.borderColor = UIColor.R_UIRGBColor(red: 237, green: 237, blue: 237, alpha: 1).cgColor
         buyButton.layer.borderWidth = 1
     }
-    @IBAction func buyNowClick(_ sender: UIButton) {
+    
+    @IBAction func OnClick(_ sender: UIButton) {
         if recommendedMoneyCallBack != nil {
             recommendedMoneyCallBack!(self.moneyDataModel)
         }

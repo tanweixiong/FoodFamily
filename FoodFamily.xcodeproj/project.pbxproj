@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		065325FDDDF5167D2625021D /* Pods_FoodFamilyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0968298AEB219742737CBE3 /* Pods_FoodFamilyUITests.framework */; };
+		230A73741FC58407009F7202 /* RecommendedListMoneyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230A73721FC58407009F7202 /* RecommendedListMoneyCell.swift */; };
+		230A73751FC58407009F7202 /* RecommendedListMoneyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 230A73731FC58407009F7202 /* RecommendedListMoneyCell.xib */; };
 		230BE0CD1FB68F1300AD47E0 /* MineOptionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 230BE0CC1FB68F1300AD47E0 /* MineOptionView.xib */; };
 		230BE0CF1FB69B2A00AD47E0 /* MineCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230BE0CE1FB69B2A00AD47E0 /* MineCollectionVC.swift */; };
 		230BE0D31FB69B5800AD47E0 /* MineCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230BE0D11FB69B5800AD47E0 /* MineCollectionCell.swift */; };
@@ -319,6 +321,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		230A73721FC58407009F7202 /* RecommendedListMoneyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedListMoneyCell.swift; sourceTree = "<group>"; };
+		230A73731FC58407009F7202 /* RecommendedListMoneyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecommendedListMoneyCell.xib; sourceTree = "<group>"; };
 		230BE0CC1FB68F1300AD47E0 /* MineOptionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineOptionView.xib; sourceTree = "<group>"; };
 		230BE0CE1FB69B2A00AD47E0 /* MineCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineCollectionVC.swift; sourceTree = "<group>"; };
 		230BE0D11FB69B5800AD47E0 /* MineCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineCollectionCell.swift; sourceTree = "<group>"; };
@@ -1476,6 +1480,8 @@
 				239F06CC1FB2F4000067D810 /* RecommendedReasonCell.xib */,
 				239F06C91FB2F4000067D810 /* RecommendedMoneyCell.swift */,
 				239F06CA1FB2F4000067D810 /* RecommendedMoneyCell.xib */,
+				230A73721FC58407009F7202 /* RecommendedListMoneyCell.swift */,
+				230A73731FC58407009F7202 /* RecommendedListMoneyCell.xib */,
 				23118AC01FC55C8000B8CE33 /* RecommendMealCell.swift */,
 				23118AC11FC55C8000B8CE33 /* RecommendMealCell.xib */,
 				239F06C51FB2F4000067D810 /* RecommendedCommentCell.swift */,
@@ -1874,6 +1880,7 @@
 				238092E41FB945100051EF3D /* MineSetCell.xib in Resources */,
 				239F07071FB2F4020067D810 /* FoodReservationPaymentCardCell.xib in Resources */,
 				23D147461FBA938A0028CD09 /* FoodEvaluationHeadCell.xib in Resources */,
+				230A73751FC58407009F7202 /* RecommendedListMoneyCell.xib in Resources */,
 				239F06F31FB2F4020067D810 /* FoodReservationFinishHeadCell.xib in Resources */,
 				2319F1421FBD86D100EB0F14 /* FoodPaymentConsumptionVC.xib in Resources */,
 				239F06F11FB2F4020067D810 /* FoodReservationFilliCell.xib in Resources */,
@@ -2073,6 +2080,7 @@
 				2316A2BB1FAD8BD000A0B512 /* RegularDefinition.swift in Sources */,
 				238093441FB97BAD0051EF3D /* UILayoutSupport+Extensions.swift in Sources */,
 				23F4A7451FBBEE74004C9266 /* MineRechargeVC.swift in Sources */,
+				230A73741FC58407009F7202 /* RecommendedListMoneyCell.swift in Sources */,
 				2380936D1FB9813D0051EF3D /* DictionaryTransform.swift in Sources */,
 				238093821FB9A22D0051EF3D /* RegisterAndForgetPsdVC.swift in Sources */,
 				238093261FB97BAD0051EF3D /* ConstraintDescription.swift in Sources */,

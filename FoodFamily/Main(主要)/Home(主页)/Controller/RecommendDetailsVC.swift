@@ -19,6 +19,7 @@ class RecommendDetailsVC: UIViewController,UITableViewDelegate,UITableViewDataSo
     fileprivate let recommendedMomeyCell = "recommendedMomeyCell"
     fileprivate let recommendedCommentCell = "recommendedCommentCell"
     fileprivate let recommendMealCell = "RecommendMealCell"
+    fileprivate let recommendedListMoneyCell = "RecommendedListMoneyCell"
     fileprivate var pageNum:Int = 0
     fileprivate let dataSource = NSMutableArray()
     var storeID = ""
@@ -156,11 +157,25 @@ class RecommendDetailsVC: UIViewController,UITableViewDelegate,UITableViewDataSo
             let model = array[indexPath.row]
             //金额
             if ((model as? RecommendVoucherDataModel) != nil) {
-                let cell = tableView.dequeueReusableCell(withIdentifier: recommendedMomeyCell, for: indexPath) as! RecommendedMoneyCell
-                cell.selectionStyle = .none
-                cell.moneyDataModel = model as! RecommendVoucherDataModel
-                 UserDefaults.standard.set(CGFloat(109), forKey: "height")
-                return cell
+                if indexPath.row == 0 {
+                    let cell = tableView.dequeueReusableCell(withIdentifier: recommendedMomeyCell, for: indexPath) as! RecommendedMoneyCell
+                    cell.selectionStyle = .none
+                    cell.moneyDataModel = model as! RecommendVoucherDataModel
+                    UserDefaults.standard.set(CGFloat(109), forKey: "height")
+                    cell.recommendedMoneyCallBack = {(model:RecommendVoucherDataModel) in
+                        
+                    }
+                    return cell
+                }else{
+                    let cell = tableView.dequeueReusableCell(withIdentifier: recommendedListMoneyCell, for: indexPath) as! RecommendedListMoneyCell
+                    cell.selectionStyle = .none
+                    cell.moneyDataModel = model as! RecommendVoucherDataModel
+                    UserDefaults.standard.set(CGFloat(72), forKey: "height")
+                    cell.recommendedMoneyCallBack = {(model:RecommendVoucherDataModel) in
+                        
+                    }
+                    return cell
+                }
             }
             //套餐
             if ((model as? RecommendMealDataModel) != nil) {
@@ -190,6 +205,7 @@ class RecommendDetailsVC: UIViewController,UITableViewDelegate,UITableViewDataSo
         tableView.register(UINib(nibName: "RecommendedMoneyCell", bundle: nil),forCellReuseIdentifier: self.recommendedMomeyCell)
        tableView.register(UINib(nibName: "RecommendedCommentCell", bundle: nil),forCellReuseIdentifier: self.recommendedCommentCell)
        tableView.register(UINib(nibName: "RecommendMealCell", bundle: nil),forCellReuseIdentifier: self.recommendMealCell)
+       tableView.register(UINib(nibName: "recommendedListMoneyCell", bundle: nil),forCellReuseIdentifier: self.recommendedListMoneyCell)
         tableView.backgroundColor = UIColor.white
         let headView = UIView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: RecommendDetailsUX.headViewHeight))
         headView.backgroundColor = UIColor.white
