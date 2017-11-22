@@ -9,7 +9,16 @@
 import UIKit
 
 class RecommendNaviCell: UITableViewCell {
+    
+     var recommendDataModel : RecommendDataModel = RecommendDataModel()!{
+        didSet{
+           self.detailsAddressLabel.text = recommendDataModel.detailedAddress
+        }
+     }
+    @IBOutlet weak var detailsAddressLabel: UILabel!
+    
     @IBOutlet weak var naviButton: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         naviButton.layer.borderColor = UIColor.R_UIRGBColor(red: 237, green: 237, blue: 237, alpha: 1).cgColor

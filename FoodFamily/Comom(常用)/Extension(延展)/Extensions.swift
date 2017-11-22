@@ -90,8 +90,24 @@ extension UIView {
 //    
 //}
 //
-//extension String {
-//    
+extension String {
+    
+    var html2AttributedString: NSAttributedString? {
+        do {
+            return try NSAttributedString(data: Data(utf8),
+                                          options: [.documentType: NSAttributedString.DocumentType.html,
+                                                    .characterEncoding: String.Encoding.utf8.rawValue],
+                                          documentAttributes: nil)
+        } catch {
+            print("error: ", error)
+            return nil
+        }
+    }
+    var html2String: String {
+        return html2AttributedString?.string ?? ""
+    }
+}
+    
 //    func md5() -> String {
 //        let str = self.cString(using: String.Encoding.utf8)
 //        let strLen = CC_LONG(self.lengthOfBytes(using: String.Encoding.utf8))
@@ -103,10 +119,10 @@ extension UIView {
 //            hash.appendFormat("%02x", result[i])
 //        }
 //        result.deinitialize()
-//        
+//
 //        return String(format: hash as String)
 //    }
-//    
+    
 //}
 
 extension UserDefaults {

@@ -41,6 +41,8 @@
 		230FA76F1FB5A94500190F2B /* MineOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230FA76E1FB5A94500190F2B /* MineOptionView.swift */; };
 		230FA7711FB5AA7C00190F2B /* MineHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230FA7701FB5AA7C00190F2B /* MineHeadView.swift */; };
 		230FA7731FB5AA8B00190F2B /* MineHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 230FA7721FB5AA8B00190F2B /* MineHeadView.xib */; };
+		23118AC21FC55C8000B8CE33 /* RecommendMealCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23118AC01FC55C8000B8CE33 /* RecommendMealCell.swift */; };
+		23118AC31FC55C8000B8CE33 /* RecommendMealCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23118AC11FC55C8000B8CE33 /* RecommendMealCell.xib */; };
 		2313CEA51FC425860038BDDF /* DefaultRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2313CE9D1FC425850038BDDF /* DefaultRefreshView.swift */; };
 		2313CEA61FC425860038BDDF /* DefaultViewAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2313CE9E1FC425850038BDDF /* DefaultViewAnimator.swift */; };
 		2313CEA71FC425860038BDDF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2313CE9F1FC425850038BDDF /* Info.plist */; };
@@ -357,6 +359,8 @@
 		230FA76E1FB5A94500190F2B /* MineOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineOptionView.swift; sourceTree = "<group>"; };
 		230FA7701FB5AA7C00190F2B /* MineHeadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineHeadView.swift; sourceTree = "<group>"; };
 		230FA7721FB5AA8B00190F2B /* MineHeadView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineHeadView.xib; sourceTree = "<group>"; };
+		23118AC01FC55C8000B8CE33 /* RecommendMealCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendMealCell.swift; sourceTree = "<group>"; };
+		23118AC11FC55C8000B8CE33 /* RecommendMealCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecommendMealCell.xib; sourceTree = "<group>"; };
 		2313CE9D1FC425850038BDDF /* DefaultRefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultRefreshView.swift; sourceTree = "<group>"; };
 		2313CE9E1FC425850038BDDF /* DefaultViewAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultViewAnimator.swift; sourceTree = "<group>"; };
 		2313CE9F1FC425850038BDDF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -1470,10 +1474,12 @@
 				239F06CE1FB2F4000067D810 /* RecommendHeadView.xib */,
 				239F06CB1FB2F4000067D810 /* RecommendedReasonCell.swift */,
 				239F06CC1FB2F4000067D810 /* RecommendedReasonCell.xib */,
-				239F06C51FB2F4000067D810 /* RecommendedCommentCell.swift */,
-				239F06C61FB2F4000067D810 /* RecommendedCommentCell.xib */,
 				239F06C91FB2F4000067D810 /* RecommendedMoneyCell.swift */,
 				239F06CA1FB2F4000067D810 /* RecommendedMoneyCell.xib */,
+				23118AC01FC55C8000B8CE33 /* RecommendMealCell.swift */,
+				23118AC11FC55C8000B8CE33 /* RecommendMealCell.xib */,
+				239F06C51FB2F4000067D810 /* RecommendedCommentCell.swift */,
+				239F06C61FB2F4000067D810 /* RecommendedCommentCell.xib */,
 				239F06CF1FB2F4000067D810 /* RecommendNaviCell.swift */,
 				239F06D01FB2F4000067D810 /* RecommendNaviCell.xib */,
 				239F06C71FB2F4000067D810 /* RecommendedFoodView.swift */,
@@ -1827,6 +1833,7 @@
 				239F07011FB2F4020067D810 /* RecommendNaviCell.xib in Resources */,
 				238093861FB9A24F0051EF3D /* RegisterView.xib in Resources */,
 				236C44301FB4750800AC3010 /* FoodMerchantsHeadView.xib in Resources */,
+				23118AC31FC55C8000B8CE33 /* RecommendMealCell.xib in Resources */,
 				239F070F1FB2F4020067D810 /* FoodPurchaseSuccessView.xib in Resources */,
 				230BE10A1FB6E2EC00AD47E0 /* MineReservationCell.xib in Resources */,
 				230FA7731FB5AA8B00190F2B /* MineHeadView.xib in Resources */,
@@ -2255,6 +2262,7 @@
 				23F4A7361FBBE88E004C9266 /* MineWalletVC.swift in Sources */,
 				23CB44F31FBBCC4700D8988D /* MyBlankCardManagementCell.swift in Sources */,
 				2380933B1FB97BAD0051EF3D /* ConstraintRelation.swift in Sources */,
+				23118AC21FC55C8000B8CE33 /* RecommendMealCell.swift in Sources */,
 				2380933F1FB97BAD0051EF3D /* Debugging.swift in Sources */,
 				2323931F1FB43B6E00425BDA /* FoodNormalOrderDetailsVC.swift in Sources */,
 				23F4A7631FBBEFA0004C9266 /* UIView+Extension.m in Sources */,

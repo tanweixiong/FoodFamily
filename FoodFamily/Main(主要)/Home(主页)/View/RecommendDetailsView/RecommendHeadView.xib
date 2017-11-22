@@ -31,14 +31,14 @@
                                     <rect key="frame" x="0.0" y="0.0" width="106.5" height="17"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_home_rejun" translatesAutoresizingMaskIntoConstraints="NO" id="xoh-le-zdF">
-                                            <rect key="frame" x="16.5" y="-2" width="20" height="20"/>
+                                            <rect key="frame" x="15" y="-2" width="20" height="20"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="20" id="gqA-da-2M8"/>
                                                 <constraint firstAttribute="width" constant="20" id="pIe-Xc-9wn"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZII-dY-fYs">
-                                            <rect key="frame" x="41.5" y="1.5" width="65" height="14.5"/>
+                                            <rect key="frame" x="40" y="1.5" width="66.5" height="14.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <color key="textColor" red="0.26274509800000001" green="0.25882352939999997" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -46,11 +46,11 @@
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
+                                        <constraint firstItem="xoh-le-zdF" firstAttribute="leading" secondItem="zjU-vI-gw8" secondAttribute="leading" constant="15" id="Awm-wG-jX1"/>
                                         <constraint firstAttribute="trailing" secondItem="ZII-dY-fYs" secondAttribute="trailing" id="dOI-sZ-Nlr"/>
                                         <constraint firstItem="xoh-le-zdF" firstAttribute="centerY" secondItem="zjU-vI-gw8" secondAttribute="centerY" id="gjh-cK-yRh"/>
                                         <constraint firstItem="ZII-dY-fYs" firstAttribute="leading" secondItem="xoh-le-zdF" secondAttribute="trailing" constant="5" id="heJ-uC-GFe"/>
                                         <constraint firstItem="ZII-dY-fYs" firstAttribute="centerY" secondItem="zjU-vI-gw8" secondAttribute="centerY" id="ifY-wp-11D"/>
-                                        <constraint firstItem="xoh-le-zdF" firstAttribute="centerX" secondItem="zjU-vI-gw8" secondAttribute="centerX" constant="-27" id="rLR-Q6-Zgz"/>
                                         <constraint firstItem="ZII-dY-fYs" firstAttribute="centerY" secondItem="xoh-le-zdF" secondAttribute="centerY" id="zOL-wF-ViE"/>
                                     </constraints>
                                 </view>
@@ -58,13 +58,13 @@
                                     <rect key="frame" x="106.5" y="0.0" width="107" height="17"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CyV-cm-PuY">
-                                            <rect key="frame" x="40.5" y="1" width="66.5" height="14.5"/>
+                                            <rect key="frame" x="37.5" y="1" width="69.5" height="14.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <color key="textColor" red="0.26274509800000001" green="0.25882352939999997" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_home_ribenliaoli" translatesAutoresizingMaskIntoConstraints="NO" id="zw8-vt-uQS">
-                                            <rect key="frame" x="18" y="0.0" width="17" height="17"/>
+                                            <rect key="frame" x="15" y="0.0" width="17" height="17"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="17" id="BDJ-58-2Ub"/>
                                                 <constraint firstAttribute="width" constant="17" id="OXp-pI-SCY"/>
@@ -76,7 +76,7 @@
                                         <constraint firstItem="CyV-cm-PuY" firstAttribute="leading" secondItem="zw8-vt-uQS" secondAttribute="trailing" constant="5" id="CNL-8H-HgA"/>
                                         <constraint firstItem="CyV-cm-PuY" firstAttribute="centerY" secondItem="hPT-hh-y9Y" secondAttribute="centerY" id="LXL-8r-2kP"/>
                                         <constraint firstAttribute="trailing" secondItem="CyV-cm-PuY" secondAttribute="trailing" id="P7f-Le-tXj"/>
-                                        <constraint firstItem="zw8-vt-uQS" firstAttribute="centerX" secondItem="hPT-hh-y9Y" secondAttribute="centerX" constant="-27" id="dhO-cF-WhE"/>
+                                        <constraint firstItem="zw8-vt-uQS" firstAttribute="centerX" secondItem="hPT-hh-y9Y" secondAttribute="centerX" constant="-30" id="dhO-cF-WhE"/>
                                         <constraint firstItem="zw8-vt-uQS" firstAttribute="centerY" secondItem="hPT-hh-y9Y" secondAttribute="centerY" id="xTl-WM-epi"/>
                                     </constraints>
                                 </view>
@@ -84,13 +84,13 @@
                                     <rect key="frame" x="213.5" y="0.0" width="106.5" height="17"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mLQ-1z-Pfr">
-                                            <rect key="frame" x="40" y="1" width="66.5" height="14.5"/>
+                                            <rect key="frame" x="80" y="1" width="11.5" height="14.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <color key="textColor" red="0.26274509800000001" green="0.25882352939999997" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_home_shop" translatesAutoresizingMaskIntoConstraints="NO" id="skW-MU-Ixd">
-                                            <rect key="frame" x="18" y="0.0" width="17" height="17"/>
+                                            <rect key="frame" x="58" y="0.0" width="17" height="17"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="17" id="YF0-NQ-Ji8"/>
                                                 <constraint firstAttribute="width" constant="17" id="cOR-kw-Gbi"/>
@@ -99,9 +99,8 @@
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="mLQ-1z-Pfr" secondAttribute="trailing" id="EQx-IE-2c0"/>
                                         <constraint firstItem="mLQ-1z-Pfr" firstAttribute="leading" secondItem="skW-MU-Ixd" secondAttribute="trailing" constant="5" id="EZ8-L8-wEW"/>
-                                        <constraint firstItem="skW-MU-Ixd" firstAttribute="centerX" secondItem="E1f-2T-AHE" secondAttribute="centerX" constant="-27" id="clW-fb-eYU"/>
+                                        <constraint firstAttribute="trailing" secondItem="mLQ-1z-Pfr" secondAttribute="trailing" constant="15" id="Ebt-Vl-6uM"/>
                                         <constraint firstItem="mLQ-1z-Pfr" firstAttribute="centerY" secondItem="E1f-2T-AHE" secondAttribute="centerY" id="e9v-gl-XUh"/>
                                         <constraint firstItem="skW-MU-Ixd" firstAttribute="centerY" secondItem="E1f-2T-AHE" secondAttribute="centerY" id="nUB-YD-FYZ"/>
                                     </constraints>

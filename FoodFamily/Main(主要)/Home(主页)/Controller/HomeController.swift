@@ -135,7 +135,6 @@ class HomeController: MainViewController,UITableViewDelegate,UITableViewDataSour
 //        tableView.mj_footer = MJRefreshAutoNormalFooter.init(refreshingBlock: {
 //             self.getData()
 //        })
-        
         return tableView
     }()
     

@@ -9,6 +9,11 @@
 import UIKit
 
 class RecommendedMoneyCell: UITableViewCell {
+    var moneyDataModel : RecommendVoucherDataModel = RecommendVoucherDataModel()!{
+        didSet{
+            
+        }
+    }
    var recommendedMoneyCallBack:((UIButton)->())?;
     @IBOutlet weak var buyButton: UIButton!
 

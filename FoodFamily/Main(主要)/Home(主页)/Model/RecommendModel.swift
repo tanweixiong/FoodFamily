@@ -8,6 +8,98 @@
 
 import UIKit
 
+class RecommendFoodDataModel: Mappable {
+    var createDate: String?
+    var flag: NSNumber?
+    var foodImg: String?
+    var foodName: String?
+    var id: NSNumber?
+    var storeId: NSNumber?
+    
+    required init?(map: Map) {
+        
+    }
+    
+    required init?() {
+        
+    }
+    
+    func mapping(map: Map) {
+        createDate                <- map["createDate"]
+        flag                      <- map["flag"]
+        foodImg                   <- map["foodImg"]
+        foodName                  <- map["foodName"]
+        id                        <- map["id"]
+        storeId                   <- map["storeId"]
+    }
+}
+
+class RecommendMealDataModel: Mappable {
+    var cycle: String?
+    var id: NSNumber?
+    var marketPrice: NSNumber?
+    var mealEndDate: NSNumber?
+    var mealImgDetail: String?
+    var mealIntroduction: String?
+    var mealStartDate: NSNumber?
+    var mealType: NSNumber?
+    var price: NSNumber?
+    var remark: String?
+    var sale: NSNumber?
+    var storeId: NSNumber?
+    
+    required init?(map: Map) {
+        
+    }
+    
+    required init?() {
+        
+    }
+    
+    func mapping(map: Map) {
+        cycle                   <- map["cycle"]
+        id                      <- map["id"]
+        marketPrice             <- map["marketPrice"]
+        mealEndDate             <- map["mealEndDate"]
+        mealImgDetail           <- map["mealImgDetail"]
+        mealIntroduction        <- map["mealIntroduction"]
+        mealStartDate           <- map["mealStartDate"]
+        mealType                <- map["mealType"]
+        price                   <- map["price"]
+        remark                  <- map["remark"]
+        sale                    <- map["sale"]
+        storeId                 <- map["storeId"]
+    }
+}
+
+class RecommendVoucherDataModel: Mappable {
+    var id: NSNumber?
+    var needKnow: String?
+    var price: NSNumber?
+    var remark: String?
+    var storeId: NSNumber?
+    var vouPrice: NSNumber?
+    
+    
+    required init?(map: Map) {
+        
+    }
+    
+    required init?() {
+        
+    }
+    
+    func mapping(map: Map) {
+        id                 <- map["id"]
+        needKnow            <- map["needKnow"]
+        price              <- map["price"]
+        remark             <- map["remark"]
+        storeId           <- map["storeId"]
+        vouPrice         <- map["vouPrice"]
+    }
+}
+
+
 class RecommendDataModel: Mappable {
     var address: String?
     var coverPic: NSArray?
@@ -17,8 +109,10 @@ class RecommendDataModel: Mappable {
     var message: String?
     var perPay: AnyObject?
     var storeName: String?
-    var voucher: NSArray?
     var storeType: String?
+    var food: [RecommendFoodDataModel]?
+    var meal: [RecommendMealDataModel]?
+    var voucher: [RecommendVoucherDataModel]?
     
     required init?(map: Map) {
         
@@ -39,6 +133,8 @@ class RecommendDataModel: Mappable {
         storeName              <- map["storeName"]
         voucher                <- map["voucher"]
         storeType              <- map["storeType"]
+        food                   <- map["food"]
+        meal                   <- map["meal"]
     }
 }
 

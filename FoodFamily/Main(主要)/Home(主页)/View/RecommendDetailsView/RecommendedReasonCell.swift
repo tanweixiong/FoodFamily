@@ -9,6 +9,14 @@
 import UIKit
 
 class RecommendedReasonCell: UITableViewCell {
+    var recommendDataModel : RecommendDataModel = RecommendDataModel()!{
+        didSet{
+            if recommendDataModel.message != nil {
+               self.setData(self.recommendDataModel)
+            }
+        }
+    }
+    
     var recommendedReasonCallBack:((RecommendedType)->())?;
     var recommendedReasonRefreshTheData:(()->())?;
     
@@ -25,7 +33,7 @@ class RecommendedReasonCell: UITableViewCell {
         // Initialization code
     }
     
-    func setData() {
+    func setData(_ model:RecommendDataModel) {
         contentView.addSubview(conventionThumbsUp)
         contentView.addSubview(conventionLabel)
         contentView.addSubview(conventionContentLabel)
@@ -35,9 +43,7 @@ class RecommendedReasonCell: UITableViewCell {
         contentView.addSubview(featuresLabel)
         contentView.addSubview(seefeaturesDetail)
         
-        let text = "古朴的和风原木在奢华的商场里独树一帜雪花澳洲和牛牛小排有着摄人心魄的美妙餐厅里的每样摆件和器皿都是来源于日本华的商场里独树一帜雪古朴"
-        conventionContentLabel.text = text
-        
+        conventionContentLabel.attributedText = (model.message)!.html2AttributedString
         //推荐菜
         let conventionSize:CGSize = conventionLabel.getStringSize(text: conventionLabel.text!, size: CGSize(width:SCREEN_WIDTH,height:RecommendedReasonUX.titleLabelHeight), font: 16)
         conventionLabel.frame = CGRect(x: SCREEN_WIDTH/2 - conventionSize.width/2, y: 18, width: conventionSize.width, height: RecommendedReasonUX.titleLabelHeight)
@@ -46,8 +52,9 @@ class RecommendedReasonCell: UITableViewCell {
         conventionThumbsUp.frame = CGRect(x: conventionLabel.frame.origin.x - conventionThumbsUp.frame.size.width - 5, y: conventionLabel.frame.origin.y + 4, width: conventionThumbsUp.frame.size.width, height: conventionThumbsUp.frame.size.height)
         
         //推荐详情
-        let conventionContentSize:CGSize = conventionContentLabel.getStringSize(text: conventionContentLabel.text!, size: CGSize(width:SCREEN_WIDTH - 60,height:CGFloat(MAXFLOAT)), font: 14)
-          conventionContentLabel.frame = CGRect(x: 30, y: conventionLabel.frame.maxY + 15, width: conventionContentSize.width, height: conventionContentSize.height)
+        let conventionContentSize:CGSize = OCTools.calculateMeaasgeHeight(withText: conventionContentLabel.text, andWidth: SCREEN_WIDTH - 60, andFont: UIFont.systemFont(ofSize: 14))
+        
+        conventionContentLabel.frame = CGRect(x: SCREEN_WIDTH/2 - conventionContentSize.width/2, y: conventionLabel.frame.maxY + 15, width: conventionContentSize.width, height: conventionContentSize.height)
         
         //查看更多
         seeConventionDetail.frame = CGRect(x: SCREEN_WIDTH/2 - seeConventionDetail.frame.size.width/2, y: conventionContentLabel.frame.maxY + 20, width: seeConventionDetail.frame.size.width, height: seeConventionDetail.frame.size.height)
@@ -67,15 +74,17 @@ class RecommendedReasonCell: UITableViewCell {
         let space:CGFloat = 13.5
         let width = (SCREEN_WIDTH - space * 4)/3
         let maxY = featuresLabel.frame.maxY + 16
-        for index in 0...2 {
+        
+        for index in 0...(model.food?.count)! - 1 {
+            let foodModel = model.food![index]
             let x = space + CGFloat(index) * (width + space)
             let imageView = UIImageView()
-            imageView.image = UIImage.init(named: "ic_home_food")
+            imageView.sd_setImage(with: NSURL(string: foodModel.foodImg!)! as URL, placeholderImage: UIImage.init(named: "ic_all_imageDefault"))
             imageView.frame = CGRect(x: x, y: maxY, width: width, height: width)
             contentView.addSubview(imageView)
             
             let label = UILabel()
-            label.text = "特上小排"
+            label.text = foodModel.foodName
             label.textColor = UIColor.R_UIRGBColor(red: 67, green: 66, blue: 67, alpha: 1)
             label.textAlignment = .center
             label.font = UIFont.systemFont(ofSize: 14)
@@ -88,7 +97,8 @@ class RecommendedReasonCell: UITableViewCell {
        //查看更多
         seefeaturesDetail.frame = CGRect(x: SCREEN_WIDTH/2 - seefeaturesDetail.frame.size.width/2, y: seeConventionMaxY, width: seefeaturesDetail.frame.size.width, height: seefeaturesDetail.frame.size.height)
         
-        let sum = seefeaturesDetail.frame.maxY + 23
+        var sum = seefeaturesDetail.frame.maxY + 23
+        sum = model.food?.count == 0 ? layers.frame.maxY : sum
         UserDefaults.standard.set(sum, forKey: "height")
     }
     
@@ -119,7 +129,7 @@ class RecommendedReasonCell: UITableViewCell {
     lazy var conventionContentLabel:UILabel = {
         let label = UILabel()
         label.textColor = UIColor.R_UIRGBColor(red: 67, green: 66, blue: 67, alpha: 1)
-        label.textAlignment = .left
+        label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 14)
         label.numberOfLines = 0
         label.lineBreakMode = NSLineBreakMode.byCharWrapping

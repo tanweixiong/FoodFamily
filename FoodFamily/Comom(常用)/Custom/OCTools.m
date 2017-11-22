@@ -71,6 +71,30 @@
     return dic;
 }
 
+NSMutableAttributedString *GetAttributedText(NSString *value) {//这里调整富文本的段落格式
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:value];
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+//    [paragraphStyle setLineSpacing:8.0];
+    //    [paragraphStyle setParagraphSpacing:11];  //调整段间距
+    //    [paragraphStyle setHeadIndent:75.0];//段落整体缩进
+    //    [paragraphStyle setFirstLineHeadIndent:.0];//首行缩进
+    [attributedString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, [value length])];
+    return attributedString;
+}
+
++(CGSize)calculateMeaasgeHeightWithText:(NSString *)string andWidth:(CGFloat)width andFont:(UIFont *)font {
+    static UILabel *stringLabel = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{//生成一个同于计算文本高度的label
+        stringLabel = [[UILabel alloc] init];
+        stringLabel.numberOfLines = 0;
+    });
+    stringLabel.font = font;
+    stringLabel.attributedText = GetAttributedText(string);
+    CGSize size = CGSizeMake([stringLabel sizeThatFits:CGSizeMake(width, MAXFLOAT)].width, [stringLabel sizeThatFits:CGSizeMake(width, MAXFLOAT)].height);
+    return size;
+}
+
 
 //- (NSData *)toJSONData:(id)theData{
 //    
