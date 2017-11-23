@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -74,7 +73,11 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="-6.5" y="-180"/>
+            <connections>
+                <outlet property="pirceLabel" destination="A6h-NC-rdc" id="EV7-NZ-NFl"/>
+                <outlet property="storeNameLabel" destination="N5t-Aa-Zhx" id="OSp-PV-3xa"/>
+            </connections>
+            <point key="canvasLocation" x="-213" y="-154"/>
         </view>
     </objects>
     <resources>

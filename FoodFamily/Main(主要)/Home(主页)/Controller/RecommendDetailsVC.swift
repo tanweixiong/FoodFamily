@@ -169,7 +169,7 @@ class RecommendDetailsVC: UIViewController,UITableViewDelegate,UITableViewDataSo
                     cell.moneyDataModel = model as! RecommendVoucherDataModel
                     UserDefaults.standard.set(CGFloat(RecommendDetailsUX.recommendedMomeyHeight), forKey: "height")
                     cell.recommendedMoneyCallBack = {(model:RecommendVoucherDataModel) in
-                        
+                        self.pushVouchersDetailStatus(model)
                     }
                     return cell
                 }else{
@@ -178,7 +178,7 @@ class RecommendDetailsVC: UIViewController,UITableViewDelegate,UITableViewDataSo
                     cell.moneyDataModel = model as! RecommendVoucherDataModel
                     UserDefaults.standard.set(CGFloat(RecommendDetailsUX.recommendedListMoneyHeight), forKey: "height")
                     cell.recommendedMoneyCallBack = {(model:RecommendVoucherDataModel) in
-                        
+                        self.pushVouchersDetailStatus(model)
                     }
                     return cell
                 }
@@ -284,7 +284,7 @@ class RecommendDetailsVC: UIViewController,UITableViewDelegate,UITableViewDataSo
             self.navigationController?.pushViewController(foodFeaturesDetailVC, animated: true)
             break
         case .vouchersDetailStatus:
-            let foodPurchaseNotesVC = FoodPurchaseNotesVC()
+            let foodPurchaseNotesVC = FoodVoucherDetailsVC()
             self.navigationController?.pushViewController(foodPurchaseNotesVC, animated: true)
             break
         case .defaultDetailStatus:
@@ -293,6 +293,12 @@ class RecommendDetailsVC: UIViewController,UITableViewDelegate,UITableViewDataSo
             break
         default: break
         }
+    }
+    
+    func pushVouchersDetailStatus(_ model:RecommendVoucherDataModel){
+        let foodVoucherDetailsVC = FoodVoucherDetailsVC()
+        foodVoucherDetailsVC.voucherID = model.voucherId!
+        self.navigationController?.pushViewController(foodVoucherDetailsVC, animated: true)
     }
     
     lazy var backBtn: UIButton = {

@@ -73,13 +73,10 @@ class RecommendMealDataModel: Mappable {
 }
 
 class RecommendVoucherDataModel: Mappable {
-    var id: NSNumber?
-    var needKnow: String?
+    var content: String?
     var price: NSNumber?
-    var remark: String?
-    var storeId: NSNumber?
+    var voucherId: NSNumber?
     var vouPrice: NSNumber?
-    
     
     required init?(map: Map) {
         
@@ -90,11 +87,9 @@ class RecommendVoucherDataModel: Mappable {
     }
     
     func mapping(map: Map) {
-        id                 <- map["id"]
-        needKnow            <- map["needKnow"]
-        price              <- map["price"]
-        remark             <- map["remark"]
-        storeId           <- map["storeId"]
+        content          <- map["content"]
+        price            <- map["price"]
+        voucherId        <- map["voucherId"]
         vouPrice         <- map["vouPrice"]
     }
 }

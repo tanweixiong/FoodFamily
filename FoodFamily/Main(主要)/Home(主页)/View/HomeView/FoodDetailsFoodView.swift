@@ -9,6 +9,7 @@
 import UIKit
 
 class FoodDetailsFoodView: UIView {
+    @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var discountLabel: UILabel!
     var buyNowCallBack:((UIButton)->())?;
     /*
