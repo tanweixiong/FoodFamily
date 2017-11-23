@@ -30,6 +30,8 @@ class RecommendDetailsVC: UIViewController,UITableViewDelegate,UITableViewDataSo
         static let recommendedReasonHeight:CGFloat = 409
         static let recommendedMomeyHeight:CGFloat = 109
         static let recommendedCommentHeight:CGFloat = 200
+        static let recommendedMealHeight:CGFloat = 113
+        static let recommendedListMoneyHeight:CGFloat = 72
         static let sectionHeight:CGFloat = 20
         static let headimageHeight:CGFloat = 200
         static let headViewHeight:CGFloat = headimageHeight + recommendHeadHeight
@@ -63,7 +65,6 @@ class RecommendDetailsVC: UIViewController,UITableViewDelegate,UITableViewDataSo
         recommendDetailsVM.loadSuccessfullyReturnedData(requestType: .get, URLString: ConstAPI.kAPIStoreGetStoreInfo, parameters: parameters, showIndicator: false) {
             self.headScrollView.recommendDataModel = self.recommendDetailsVM.recommendDataModel
             self.recommendHeadView.recommendDataModel = self.recommendDetailsVM.recommendDataModel
-            
             if self.recommendDetailsVM.recommendDataModel.voucher?.count != 0 {
                 self.dataSource.add(self.recommendDetailsVM.recommendDataModel.voucher!)
             }
@@ -80,13 +81,13 @@ class RecommendDetailsVC: UIViewController,UITableViewDelegate,UITableViewDataSo
         let commentParameters = ["storeId":"1","pageNum":"\(self.pageNum)","pageSize":""]
         recommendDetailsVM.loadSuccessfullyCommentReturnedData(requestType: .get, URLString: ConstAPI.kAPIAssessGetAssessList, parameters: commentParameters, showIndicator: false) {
             self.pageNum = self.pageNum + 1
-            if !isfirst && self.recommendDetailsVM.recommendListModel.count != 0{
-              let indexPath = IndexPath(item: self.recommendDetailsVM.recommendListModel.count - 1, section: self.dataSource.count - 1)
-              self.tableView.scrollToRow(at: indexPath, at: .bottom, animated: false)
-              self.dataSource.replaceObject(at: self.dataSource.count - 1, with: self.recommendDetailsVM.recommendListModel)
-            }
             if isfirst && self.recommendDetailsVM.recommendListModel.count != 0{
                 self.dataSource.add(self.recommendDetailsVM.recommendListModel)
+            }
+            if !isfirst && self.recommendDetailsVM.recommendListModel.count != 0{
+                let indexPath = IndexPath(item: self.recommendDetailsVM.recommendListModel.count - 1, section: self.dataSource.count - 1)
+                self.tableView.scrollToRow(at: indexPath, at: .bottom, animated: false)
+                self.dataSource.replaceObject(at: self.dataSource.count - 1, with: self.recommendDetailsVM.recommendListModel)
             }
             self.tableView.reloadData()
         }
@@ -103,11 +104,7 @@ class RecommendDetailsVC: UIViewController,UITableViewDelegate,UITableViewDataSo
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.section == 0 {
-            return RecommendDetailsUX.recommendNaviHeight
-        }else {
-            return  UserDefaults.standard.object(forKey: "height") != nil ? UserDefaults.standard.object(forKey: "height") as! CGFloat : 0
-        }
+        return  UserDefaults.standard.object(forKey: "height") != nil ? UserDefaults.standard.object(forKey: "height") as! CGFloat : 0
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -139,6 +136,7 @@ class RecommendDetailsVC: UIViewController,UITableViewDelegate,UITableViewDataSo
             let cell = tableView.dequeueReusableCell(withIdentifier: recommendNaviCell, for: indexPath) as! RecommendNaviCell
             cell.recommendDataModel = self.recommendDetailsVM.recommendDataModel
             cell.selectionStyle = .none
+            UserDefaults.standard.set(RecommendDetailsUX.recommendNaviHeight, forKey: "height")
             return cell
         }else if indexPath.section == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: recommendedReasonCell, for: indexPath) as! RecommendedReasonCell
@@ -161,7 +159,7 @@ class RecommendDetailsVC: UIViewController,UITableViewDelegate,UITableViewDataSo
                     let cell = tableView.dequeueReusableCell(withIdentifier: recommendedMomeyCell, for: indexPath) as! RecommendedMoneyCell
                     cell.selectionStyle = .none
                     cell.moneyDataModel = model as! RecommendVoucherDataModel
-                    UserDefaults.standard.set(CGFloat(109), forKey: "height")
+                    UserDefaults.standard.set(CGFloat(RecommendDetailsUX.recommendedMomeyHeight), forKey: "height")
                     cell.recommendedMoneyCallBack = {(model:RecommendVoucherDataModel) in
                         
                     }
@@ -170,7 +168,7 @@ class RecommendDetailsVC: UIViewController,UITableViewDelegate,UITableViewDataSo
                     let cell = tableView.dequeueReusableCell(withIdentifier: recommendedListMoneyCell, for: indexPath) as! RecommendedListMoneyCell
                     cell.selectionStyle = .none
                     cell.moneyDataModel = model as! RecommendVoucherDataModel
-                    UserDefaults.standard.set(CGFloat(72), forKey: "height")
+                    UserDefaults.standard.set(CGFloat(RecommendDetailsUX.recommendedListMoneyHeight), forKey: "height")
                     cell.recommendedMoneyCallBack = {(model:RecommendVoucherDataModel) in
                         
                     }
@@ -182,16 +180,17 @@ class RecommendDetailsVC: UIViewController,UITableViewDelegate,UITableViewDataSo
                 let cell = tableView.dequeueReusableCell(withIdentifier: recommendMealCell, for: indexPath) as! RecommendMealCell
                 cell.selectionStyle = .none
                 cell.mealDataModel = model as! RecommendMealDataModel
-                UserDefaults.standard.set(CGFloat(113), forKey: "height")
+                UserDefaults.standard.set(CGFloat(RecommendDetailsUX.recommendedMealHeight), forKey: "height")
+                return cell
+            }else{
+                let cell = tableView.dequeueReusableCell(withIdentifier: recommendedCommentCell, for: indexPath) as! RecommendedCommentCell
+                cell.selectionStyle = .none
+                if self.recommendDetailsVM.recommendListModel.count != 0{
+                    cell.commentDataModel = self.recommendDetailsVM.recommendListModel[indexPath.row]
+                    cell.setData()
+                }
                 return cell
             }
-            let cell = tableView.dequeueReusableCell(withIdentifier: recommendedCommentCell, for: indexPath) as! RecommendedCommentCell
-            cell.selectionStyle = .none
-            if self.recommendDetailsVM.recommendListModel.count != 0{
-                  cell.commentDataModel = self.recommendDetailsVM.recommendListModel[indexPath.row]
-                  cell.setData()
-            }
-            return cell
         }
     }
     
@@ -255,7 +254,6 @@ class RecommendDetailsVC: UIViewController,UITableViewDelegate,UITableViewDataSo
         self.navigationController?.navigationBar.alpha = 1
         switch recommendedType {
         case .collectionStatus:
-            
             break
         case .reservationStatus:
             let foodReservationVC = FoodReservationVC()
@@ -281,9 +279,7 @@ class RecommendDetailsVC: UIViewController,UITableViewDelegate,UITableViewDataSo
             let foodDetailsVC = FoodDetailsVC()
             self.navigationController?.pushViewController(foodDetailsVC, animated: true)
             break
-
         default: break
-   
         }
     }
     
