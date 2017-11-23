@@ -32,28 +32,23 @@ class RecommendedCommentCell: UITableViewCell {
     }
     
     func setData(){
-        if commentDataModel.assessPic?.count == 1 {
-            assessImageView1.sd_setImage(with: NSURL(string: commentDataModel.assessPic?.firstObject as! String)! as URL, placeholderImage: UIImage.init(named: "ic_all_imageDefault"))
-        }else if commentDataModel.assessPic?.count == 2 {
-            assessImageView1.sd_setImage(with: NSURL(string: commentDataModel.assessPic?.firstObject as! String)! as URL, placeholderImage: UIImage.init(named: "ic_all_imageDefault"))
-            assessImageView2.sd_setImage(with: NSURL(string: commentDataModel.assessPic?.lastObject as! String )! as URL, placeholderImage: UIImage.init(named: "ic_all_imageDefault"))
-        }else if commentDataModel.assessPic?.count == 3 {
-            assessImageView1.sd_setImage(with: NSURL(string: commentDataModel.assessPic?.firstObject as! String)! as URL, placeholderImage: UIImage.init(named: "ic_all_imageDefault"))
-            assessImageView2.sd_setImage(with: NSURL(string: commentDataModel.assessPic?[1] as! String )! as URL, placeholderImage: UIImage.init(named: "ic_all_imageDefault"))
-            assessImageView3.sd_setImage(with: NSURL(string: commentDataModel.assessPic?.lastObject as! String )! as URL, placeholderImage: UIImage.init(named: "ic_all_imageDefault"))
-        }
-        
+//        if commentDataModel.assessPic?.count != nil {
+//            self.imageBackgroundVw.isHidden = false
+//            if commentDataModel.assessPic?.count == 1 {
+//                assessImageView1.sd_setImage(with: NSURL(string: commentDataModel.assessPic?.firstObject as! String)! as URL, placeholderImage: UIImage.init(named: "ic_all_imageDefault"))
+//            }else if commentDataModel.assessPic?.count == 2 {
+//                assessImageView1.sd_setImage(with: NSURL(string: commentDataModel.assessPic?.firstObject as! String)! as URL, placeholderImage: UIImage.init(named: "ic_all_imageDefault"))
+//                assessImageView2.sd_setImage(with: NSURL(string: commentDataModel.assessPic?.lastObject as! String )! as URL, placeholderImage: UIImage.init(named: "ic_all_imageDefault"))
+//            }else if commentDataModel.assessPic?.count == 3 {
+//                assessImageView1.sd_setImage(with: NSURL(string: commentDataModel.assessPic?.firstObject as! String)! as URL, placeholderImage: UIImage.init(named: "ic_all_imageDefault"))
+//                assessImageView2.sd_setImage(with: NSURL(string: commentDataModel.assessPic?[1] as! String )! as URL, placeholderImage: UIImage.init(named: "ic_all_imageDefault"))
+//                assessImageView3.sd_setImage(with: NSURL(string: commentDataModel.assessPic?.lastObject as! String )! as URL, placeholderImage: UIImage.init(named: "ic_all_imageDefault"))
+//            }
+//        }
         let size:CGSize = contextLabel.getStringSize(text: contextLabel.text!, size: CGSize(width:SCREEN_WIDTH - 98,height:CGFloat(MAXFLOAT)), font: 14)
-        contextLabel.backgroundColor = UIColor.red
-        
+
         let labelMaxY = size.height + 63
-        
-        var sumHeight:CGFloat = commentDataModel.assessPic?.count == 0 ? labelMaxY : labelMaxY + imageBackgroundVw.frame.size.height
-        
-        if !(commentDataModel.assessPic?.isKind(of: NSArray.classForCoder()))! {
-             sumHeight = labelMaxY
-         }
-        
+        let sumHeight:CGFloat = commentDataModel.assessPic?.count == nil ? labelMaxY : labelMaxY + imageBackgroundVw.frame.size.height
          UserDefaults.standard.set(sumHeight + 15 , forKey: "height")
     }
 

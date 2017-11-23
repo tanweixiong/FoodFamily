@@ -31,7 +31,7 @@ class RecommendDetailsVC: UIViewController,UITableViewDelegate,UITableViewDataSo
         static let recommendedMomeyHeight:CGFloat = 109
         static let recommendedCommentHeight:CGFloat = 200
         static let recommendedMealHeight:CGFloat = 113
-        static let recommendedListMoneyHeight:CGFloat = 72
+        static let recommendedListMoneyHeight:CGFloat = 75
         static let sectionHeight:CGFloat = 20
         static let headimageHeight:CGFloat = 200
         static let headViewHeight:CGFloat = headimageHeight + recommendHeadHeight
@@ -83,13 +83,20 @@ class RecommendDetailsVC: UIViewController,UITableViewDelegate,UITableViewDataSo
             self.pageNum = self.pageNum + 1
             if isfirst && self.recommendDetailsVM.recommendListModel.count != 0{
                 self.dataSource.add(self.recommendDetailsVM.recommendListModel)
+                self.tableView.reloadData()
             }
+ 
             if !isfirst && self.recommendDetailsVM.recommendListModel.count != 0{
-                let indexPath = IndexPath(item: self.recommendDetailsVM.recommendListModel.count - 1, section: self.dataSource.count - 1)
-                self.tableView.scrollToRow(at: indexPath, at: .bottom, animated: false)
                 self.dataSource.replaceObject(at: self.dataSource.count - 1, with: self.recommendDetailsVM.recommendListModel)
+                self.tableView.reloadData()
+                
+                let indexPath = IndexPath(item: self.recommendDetailsVM.recommendListModel.count - 1, section: self.dataSource.count - 1)
+                self.tableView.scrollToRow(at: indexPath, at: .bottom, animated: false)                
+//                DispatchQueue.main.async(execute: {
+//                    let indexPath = IndexPath(item: self.recommendDetailsVM.recommendListModel.count - 1, section: self.dataSource.count - 1)
+//                    self.tableView.scrollToRow(at: indexPath, at: .bottom, animated: false)
+//                })
             }
-            self.tableView.reloadData()
         }
          self.tableView.endRefreshing(at: .bottom)
     }
@@ -117,19 +124,19 @@ class RecommendDetailsVC: UIViewController,UITableViewDelegate,UITableViewDataSo
         return view
     }
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let sectionHeaderHeight:CGFloat = RecommendDetailsUX.sectionHeight
-        if scrollView == self.tableView {
-            if scrollView.contentOffset.y <= sectionHeaderHeight&&scrollView.contentOffset.y >= 20 {
-                scrollView.contentInset = UIEdgeInsetsMake(-scrollView.contentOffset.y, 0, 0, 0);
-            }else if scrollView.contentOffset.y >= RecommendDetailsUX.sectionHeight {
-                scrollView.contentInset = UIEdgeInsetsMake(-sectionHeaderHeight, 0, 0, 0);
-            }
-            if scrollView.contentOffset.y < 0 {
-                scrollView.contentInset = UIEdgeInsetsMake(-sectionHeaderHeight, 0, 0, 0);
-            }
-        }
-    }
+//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//        let sectionHeaderHeight:CGFloat = RecommendDetailsUX.sectionHeight
+//        if scrollView == self.tableView {
+//            if scrollView.contentOffset.y <= sectionHeaderHeight&&scrollView.contentOffset.y >= 20 {
+//                scrollView.contentInset = UIEdgeInsetsMake(-scrollView.contentOffset.y, 0, 0, 0);
+//            }else if scrollView.contentOffset.y >= RecommendDetailsUX.sectionHeight {
+//                scrollView.contentInset = UIEdgeInsetsMake(-sectionHeaderHeight, 0, 0, 0);
+//            }
+//            if scrollView.contentOffset.y < 0 {
+//                scrollView.contentInset = UIEdgeInsetsMake(-sectionHeaderHeight, 0, 0, 0);
+//            }
+//        }
+//    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
@@ -204,7 +211,7 @@ class RecommendDetailsVC: UIViewController,UITableViewDelegate,UITableViewDataSo
         tableView.register(UINib(nibName: "RecommendedMoneyCell", bundle: nil),forCellReuseIdentifier: self.recommendedMomeyCell)
        tableView.register(UINib(nibName: "RecommendedCommentCell", bundle: nil),forCellReuseIdentifier: self.recommendedCommentCell)
        tableView.register(UINib(nibName: "RecommendMealCell", bundle: nil),forCellReuseIdentifier: self.recommendMealCell)
-       tableView.register(UINib(nibName: "recommendedListMoneyCell", bundle: nil),forCellReuseIdentifier: self.recommendedListMoneyCell)
+       tableView.register(UINib(nibName: "RecommendedListMoneyCell", bundle: nil),forCellReuseIdentifier: self.recommendedListMoneyCell)
         tableView.backgroundColor = UIColor.white
         let headView = UIView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: RecommendDetailsUX.headViewHeight))
         headView.backgroundColor = UIColor.white

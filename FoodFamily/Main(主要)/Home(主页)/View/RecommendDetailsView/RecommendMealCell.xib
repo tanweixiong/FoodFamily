@@ -19,8 +19,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="112.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lev-iq-LHP">
-                        <rect key="frame" x="15" y="15" width="13" height="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="食刻" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lev-iq-LHP">
+                        <rect key="frame" x="15" y="15" width="29" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" red="0.26274509800000001" green="0.25882352939999997" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -67,14 +67,22 @@
                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                         </userDefinedRuntimeAttributes>
                     </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u3i-iY-zHg">
+                        <rect key="frame" x="86.5" y="81" width="13" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.57254901960000004" green="0.57254901960000004" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="Lev-iq-LHP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="3dV-Bg-446"/>
                     <constraint firstItem="grv-nk-bU9" firstAttribute="leading" secondItem="Lev-iq-LHP" secondAttribute="leading" id="9k7-82-fg4"/>
+                    <constraint firstItem="u3i-iY-zHg" firstAttribute="centerY" secondItem="hQV-aV-5XJ" secondAttribute="centerY" id="F8F-BF-hkg"/>
                     <constraint firstItem="Lev-iq-LHP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="OYd-J4-KBl"/>
                     <constraint firstItem="hQV-aV-5XJ" firstAttribute="bottom" secondItem="grv-nk-bU9" secondAttribute="bottom" id="PjU-1d-6PY"/>
                     <constraint firstItem="grv-nk-bU9" firstAttribute="top" secondItem="Lev-iq-LHP" secondAttribute="bottom" constant="15" id="ZCn-d7-Nwq"/>
                     <constraint firstItem="hQV-aV-5XJ" firstAttribute="leading" secondItem="Tpg-Ll-tPF" secondAttribute="leading" id="Zb9-H3-zrW"/>
+                    <constraint firstItem="u3i-iY-zHg" firstAttribute="leading" secondItem="hQV-aV-5XJ" secondAttribute="trailing" constant="5" id="aG4-bd-aXc"/>
                     <constraint firstItem="A0y-4E-yUq" firstAttribute="centerY" secondItem="grv-nk-bU9" secondAttribute="centerY" id="gYs-yU-kwU"/>
                     <constraint firstItem="Tpg-Ll-tPF" firstAttribute="top" secondItem="grv-nk-bU9" secondAttribute="top" constant="5" id="vW7-tL-HmZ"/>
                     <constraint firstItem="Tpg-Ll-tPF" firstAttribute="leading" secondItem="grv-nk-bU9" secondAttribute="trailing" constant="5" id="xNu-Ch-Y0B"/>
@@ -83,6 +91,8 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="buyButton" destination="A0y-4E-yUq" id="kZ0-SL-q67"/>
+                <outlet property="discountLabel" destination="u3i-iY-zHg" id="GKg-Yg-NL5"/>
                 <outlet property="headingLabel" destination="Lev-iq-LHP" id="Mpw-Xr-3im"/>
                 <outlet property="iconImageView" destination="grv-nk-bU9" id="myF-MM-q9p"/>
                 <outlet property="pricelabel" destination="hQV-aV-5XJ" id="B1o-M6-ycT"/>
