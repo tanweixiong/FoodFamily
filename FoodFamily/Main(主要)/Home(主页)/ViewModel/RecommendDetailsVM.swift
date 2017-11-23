@@ -32,7 +32,7 @@ class RecommendDetailsVM: NSObject {
     }
     
     lazy var recommendListModel : [RecommendCommentListDataModel] = [RecommendCommentListDataModel]()
-    func loadSuccessfullyCommentReturnedData(requestType: HTTPMethod, URLString : String, parameters : [String : Any]? = nil, showIndicator: Bool,finishedCallback : @escaping () -> ()) {
+    func loadSuccessfullyCommentReturnedData(requestType: HTTPMethod, URLString : String, parameters : [String : Any]? = nil, showIndicator: Bool,finishedCallback : @escaping (_ noData:Bool) -> ()) {
         NetWorkTool.request(requestType: requestType, URLString:URLString, parameters: parameters, showIndicator: true, success: { (json) in
             print(json)
             let responseData = Mapper<RecommendCommentModel>().map(JSONObject: json)
@@ -50,8 +50,10 @@ class RecommendDetailsVM: NSObject {
                     array.addObjects(from: self.recommendListModel)
                     array.addObjects(from: (responseData?.data?.list)!)
                     self.recommendListModel = array as! [RecommendCommentListDataModel]
+                     finishedCallback(false)
+                }else{
+                     finishedCallback(true)
                 }
-                finishedCallback()
             }
         }) { (error) in
         }

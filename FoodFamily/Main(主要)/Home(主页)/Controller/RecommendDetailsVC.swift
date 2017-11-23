@@ -22,6 +22,8 @@ class RecommendDetailsVC: UIViewController,UITableViewDelegate,UITableViewDataSo
     fileprivate let recommendedListMoneyCell = "RecommendedListMoneyCell"
     fileprivate var pageNum:Int = 0
     fileprivate let dataSource = NSMutableArray()
+    fileprivate var isFirst:Bool = true
+    fileprivate var refreshFooterView = SDRefreshFooterView()
     var storeID = ""
     
     struct RecommendDetailsUX {
@@ -57,6 +59,12 @@ class RecommendDetailsVC: UIViewController,UITableViewDelegate,UITableViewDataSo
        self.view.addSubview(recommendFootView)
        self.view.addSubview(backBtn)
        self.getData()
+        
+        if #available(iOS 11.0, *) {
+            tableView.contentInsetAdjustmentBehavior = .never
+            tableView.contentInset = UIEdgeInsetsMake(64, 0, 49, 0)
+            tableView.scrollIndicatorInsets = tableView.contentInset
+        }
     }
     
     func getData(){
@@ -79,26 +87,18 @@ class RecommendDetailsVC: UIViewController,UITableViewDelegate,UITableViewDataSo
     func getCommentData(isfirst:Bool){
         //获取评论列表
         let commentParameters = ["storeId":"1","pageNum":"\(self.pageNum)","pageSize":""]
-        recommendDetailsVM.loadSuccessfullyCommentReturnedData(requestType: .get, URLString: ConstAPI.kAPIAssessGetAssessList, parameters: commentParameters, showIndicator: false) {
+        recommendDetailsVM.loadSuccessfullyCommentReturnedData(requestType: .get, URLString: ConstAPI.kAPIAssessGetAssessList, parameters: commentParameters, showIndicator: false) {(noData:Bool) in
             self.pageNum = self.pageNum + 1
             if isfirst && self.recommendDetailsVM.recommendListModel.count != 0{
                 self.dataSource.add(self.recommendDetailsVM.recommendListModel)
                 self.tableView.reloadData()
             }
- 
-            if !isfirst && self.recommendDetailsVM.recommendListModel.count != 0{
+            if noData == false && !isfirst{
                 self.dataSource.replaceObject(at: self.dataSource.count - 1, with: self.recommendDetailsVM.recommendListModel)
                 self.tableView.reloadData()
-                
-                let indexPath = IndexPath(item: self.recommendDetailsVM.recommendListModel.count - 1, section: self.dataSource.count - 1)
-                self.tableView.scrollToRow(at: indexPath, at: .bottom, animated: false)                
-//                DispatchQueue.main.async(execute: {
-//                    let indexPath = IndexPath(item: self.recommendDetailsVM.recommendListModel.count - 1, section: self.dataSource.count - 1)
-//                    self.tableView.scrollToRow(at: indexPath, at: .bottom, animated: false)
-//                })
+                self.refreshFooterView.endRefreshing()
             }
         }
-         self.tableView.endRefreshing(at: .bottom)
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -124,19 +124,20 @@ class RecommendDetailsVC: UIViewController,UITableViewDelegate,UITableViewDataSo
         return view
     }
     
-//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        let sectionHeaderHeight:CGFloat = RecommendDetailsUX.sectionHeight
-//        if scrollView == self.tableView {
-//            if scrollView.contentOffset.y <= sectionHeaderHeight&&scrollView.contentOffset.y >= 20 {
-//                scrollView.contentInset = UIEdgeInsetsMake(-scrollView.contentOffset.y, 0, 0, 0);
-//            }else if scrollView.contentOffset.y >= RecommendDetailsUX.sectionHeight {
-//                scrollView.contentInset = UIEdgeInsetsMake(-sectionHeaderHeight, 0, 0, 0);
-//            }
-//            if scrollView.contentOffset.y < 0 {
-//                scrollView.contentInset = UIEdgeInsetsMake(-sectionHeaderHeight, 0, 0, 0);
-//            }
-//        }
-//    }
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let sectionHeaderHeight:CGFloat = RecommendDetailsUX.sectionHeight
+        if scrollView == self.tableView {
+            if scrollView.contentOffset.y <= sectionHeaderHeight&&scrollView.contentOffset.y >= 20 {
+                scrollView.contentInset = UIEdgeInsetsMake(-scrollView.contentOffset.y, 0, 0, 0);
+            }else if scrollView.contentOffset.y >= RecommendDetailsUX.sectionHeight {
+                scrollView.contentInset = UIEdgeInsetsMake(-sectionHeaderHeight, 0, 0, 0);
+            }
+            if scrollView.contentOffset.y < 0 && self.isFirst{
+                scrollView.contentInset = UIEdgeInsetsMake(-sectionHeaderHeight, 0, 0, 0);
+                self.isFirst = false
+            }
+        }
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
@@ -189,15 +190,15 @@ class RecommendDetailsVC: UIViewController,UITableViewDelegate,UITableViewDataSo
                 cell.mealDataModel = model as! RecommendMealDataModel
                 UserDefaults.standard.set(CGFloat(RecommendDetailsUX.recommendedMealHeight), forKey: "height")
                 return cell
-            }else{
-                let cell = tableView.dequeueReusableCell(withIdentifier: recommendedCommentCell, for: indexPath) as! RecommendedCommentCell
-                cell.selectionStyle = .none
-                if self.recommendDetailsVM.recommendListModel.count != 0{
-                    cell.commentDataModel = self.recommendDetailsVM.recommendListModel[indexPath.row]
-                    cell.setData()
-                }
-                return cell
             }
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: recommendedCommentCell, for: indexPath) as! RecommendedCommentCell
+            cell.selectionStyle = .none
+            if self.recommendDetailsVM.recommendListModel.count != 0{
+                cell.commentDataModel = self.recommendDetailsVM.recommendListModel[indexPath.row]
+                cell.setData()
+            }
+            return cell
         }
     }
     
@@ -219,11 +220,15 @@ class RecommendDetailsVC: UIViewController,UITableViewDelegate,UITableViewDataSo
         headView.addSubview(headScrollView)
         headView.addSubview(recommendHeadView)
         headView.addSubview(logoView)
-        tableView.addPullToRefresh(PullToRefresh(position: .bottom)) { [weak self] in
-            self?.getCommentData(isfirst: false)
-        }
+        self.refreshFooterView = SDRefreshFooterView.init()
+        self.refreshFooterView.add(toScroll: tableView)
+        self.refreshFooterView.addTarget(self, refreshAction: #selector(getComment))
         return tableView
     }()
+    
+    @objc func getComment(){
+        self.getCommentData(isfirst: false)
+    }
     
     lazy var headScrollView: RecommendDetailsScrollView = {
         let view = RecommendDetailsScrollView.init(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: RecommendDetailsUX.headimageHeight))

@@ -53,13 +53,6 @@
 		23113BFE1FC65EA100BE1784 /* FoodNormalOrderDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23113BFD1FC65EA100BE1784 /* FoodNormalOrderDetailsModel.swift */; };
 		23118AC21FC55C8000B8CE33 /* RecommendMealCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23118AC01FC55C8000B8CE33 /* RecommendMealCell.swift */; };
 		23118AC31FC55C8000B8CE33 /* RecommendMealCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23118AC11FC55C8000B8CE33 /* RecommendMealCell.xib */; };
-		2313CEA51FC425860038BDDF /* DefaultRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2313CE9D1FC425850038BDDF /* DefaultRefreshView.swift */; };
-		2313CEA61FC425860038BDDF /* DefaultViewAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2313CE9E1FC425850038BDDF /* DefaultViewAnimator.swift */; };
-		2313CEA71FC425860038BDDF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2313CE9F1FC425850038BDDF /* Info.plist */; };
-		2313CEA81FC425860038BDDF /* PullToRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2313CEA11FC425850038BDDF /* PullToRefresh.swift */; };
-		2313CEA91FC425860038BDDF /* RefreshViewAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2313CEA21FC425850038BDDF /* RefreshViewAnimator.swift */; };
-		2313CEAA1FC425860038BDDF /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2313CEA31FC425850038BDDF /* State.swift */; };
-		2313CEAB1FC425860038BDDF /* UIScrollView+PullToRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2313CEA41FC425850038BDDF /* UIScrollView+PullToRefresh.swift */; };
 		2316A2831FAD71FE00A0B512 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2316A2821FAD71FE00A0B512 /* AppDelegate.swift */; };
 		2316A2851FAD71FE00A0B512 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2316A2841FAD71FE00A0B512 /* ViewController.swift */; };
 		2316A2881FAD71FE00A0B512 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2316A2861FAD71FE00A0B512 /* Main.storyboard */; };
@@ -83,6 +76,11 @@
 		231A10731FC2BF8A00150257 /* RecommendModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231A10721FC2BF8A00150257 /* RecommendModel.swift */; };
 		231A10751FC2BFA200150257 /* RecommendDetailsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231A10741FC2BFA200150257 /* RecommendDetailsVM.swift */; };
 		231A107C1FC2C67B00150257 /* LocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 231A107B1FC2C67B00150257 /* LocationViewController.m */; };
+		231EAA891FC6998300E022EB /* sdRefeshView_arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 231EAA7F1FC6998200E022EB /* sdRefeshView_arrow@2x.png */; };
+		231EAA8A1FC6998300E022EB /* SDRefreshFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 231EAA821FC6998200E022EB /* SDRefreshFooterView.m */; };
+		231EAA8B1FC6998300E022EB /* SDRefreshHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 231EAA841FC6998200E022EB /* SDRefreshHeaderView.m */; };
+		231EAA8C1FC6998300E022EB /* SDRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = 231EAA861FC6998200E022EB /* SDRefreshView.m */; };
+		231EAA8D1FC6998300E022EB /* UIView+SDExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 231EAA881FC6998200E022EB /* UIView+SDExtension.m */; };
 		2320D3E01FBC3F7800A5B507 /* MineRechargeMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2320D3DE1FBC3F7800A5B507 /* MineRechargeMessageCell.swift */; };
 		2320D3E11FBC3F7800A5B507 /* MineRechargeMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2320D3DF1FBC3F7800A5B507 /* MineRechargeMessageCell.xib */; };
 		232357B61FBC16700006E9A6 /* MineAmountOperationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232357B51FBC16700006E9A6 /* MineAmountOperationVC.swift */; };
@@ -381,14 +379,6 @@
 		23113BFD1FC65EA100BE1784 /* FoodNormalOrderDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodNormalOrderDetailsModel.swift; sourceTree = "<group>"; };
 		23118AC01FC55C8000B8CE33 /* RecommendMealCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendMealCell.swift; sourceTree = "<group>"; };
 		23118AC11FC55C8000B8CE33 /* RecommendMealCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecommendMealCell.xib; sourceTree = "<group>"; };
-		2313CE9D1FC425850038BDDF /* DefaultRefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultRefreshView.swift; sourceTree = "<group>"; };
-		2313CE9E1FC425850038BDDF /* DefaultViewAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultViewAnimator.swift; sourceTree = "<group>"; };
-		2313CE9F1FC425850038BDDF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2313CEA01FC425850038BDDF /* PullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PullToRefresh.h; sourceTree = "<group>"; };
-		2313CEA11FC425850038BDDF /* PullToRefresh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullToRefresh.swift; sourceTree = "<group>"; };
-		2313CEA21FC425850038BDDF /* RefreshViewAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshViewAnimator.swift; sourceTree = "<group>"; };
-		2313CEA31FC425850038BDDF /* State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
-		2313CEA41FC425850038BDDF /* UIScrollView+PullToRefresh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+PullToRefresh.swift"; sourceTree = "<group>"; };
 		2316A27F1FAD71FE00A0B512 /* FoodFamily.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodFamily.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2316A2821FAD71FE00A0B512 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2316A2841FAD71FE00A0B512 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -419,6 +409,16 @@
 		231A10741FC2BFA200150257 /* RecommendDetailsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendDetailsVM.swift; sourceTree = "<group>"; };
 		231A107A1FC2C67B00150257 /* LocationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocationViewController.h; sourceTree = "<group>"; };
 		231A107B1FC2C67B00150257 /* LocationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationViewController.m; sourceTree = "<group>"; };
+		231EAA7F1FC6998200E022EB /* sdRefeshView_arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sdRefeshView_arrow@2x.png"; sourceTree = "<group>"; };
+		231EAA801FC6998200E022EB /* SDRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDRefresh.h; sourceTree = "<group>"; };
+		231EAA811FC6998200E022EB /* SDRefreshFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDRefreshFooterView.h; sourceTree = "<group>"; };
+		231EAA821FC6998200E022EB /* SDRefreshFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDRefreshFooterView.m; sourceTree = "<group>"; };
+		231EAA831FC6998200E022EB /* SDRefreshHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDRefreshHeaderView.h; sourceTree = "<group>"; };
+		231EAA841FC6998200E022EB /* SDRefreshHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDRefreshHeaderView.m; sourceTree = "<group>"; };
+		231EAA851FC6998200E022EB /* SDRefreshView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDRefreshView.h; sourceTree = "<group>"; };
+		231EAA861FC6998200E022EB /* SDRefreshView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDRefreshView.m; sourceTree = "<group>"; };
+		231EAA871FC6998200E022EB /* UIView+SDExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SDExtension.h"; sourceTree = "<group>"; };
+		231EAA881FC6998200E022EB /* UIView+SDExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SDExtension.m"; sourceTree = "<group>"; };
 		2320D3DE1FBC3F7800A5B507 /* MineRechargeMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineRechargeMessageCell.swift; sourceTree = "<group>"; };
 		2320D3DF1FBC3F7800A5B507 /* MineRechargeMessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineRechargeMessageCell.xib; sourceTree = "<group>"; };
 		232357B51FBC16700006E9A6 /* MineAmountOperationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineAmountOperationVC.swift; sourceTree = "<group>"; };
@@ -857,21 +857,6 @@
 			path = MineControllerView;
 			sourceTree = "<group>";
 		};
-		2313CE9C1FC425850038BDDF /* PullToRefresh */ = {
-			isa = PBXGroup;
-			children = (
-				2313CE9D1FC425850038BDDF /* DefaultRefreshView.swift */,
-				2313CE9E1FC425850038BDDF /* DefaultViewAnimator.swift */,
-				2313CE9F1FC425850038BDDF /* Info.plist */,
-				2313CEA01FC425850038BDDF /* PullToRefresh.h */,
-				2313CEA11FC425850038BDDF /* PullToRefresh.swift */,
-				2313CEA21FC425850038BDDF /* RefreshViewAnimator.swift */,
-				2313CEA31FC425850038BDDF /* State.swift */,
-				2313CEA41FC425850038BDDF /* UIScrollView+PullToRefresh.swift */,
-			);
-			path = PullToRefresh;
-			sourceTree = "<group>";
-		};
 		2316A2761FAD71FE00A0B512 = {
 			isa = PBXGroup;
 			children = (
@@ -1188,6 +1173,23 @@
 				2316A2E21FAD942C00A0B512 /* CrowdfundingController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		231EAA7E1FC6998200E022EB /* SDRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				231EAA7F1FC6998200E022EB /* sdRefeshView_arrow@2x.png */,
+				231EAA801FC6998200E022EB /* SDRefresh.h */,
+				231EAA811FC6998200E022EB /* SDRefreshFooterView.h */,
+				231EAA821FC6998200E022EB /* SDRefreshFooterView.m */,
+				231EAA831FC6998200E022EB /* SDRefreshHeaderView.h */,
+				231EAA841FC6998200E022EB /* SDRefreshHeaderView.m */,
+				231EAA851FC6998200E022EB /* SDRefreshView.h */,
+				231EAA861FC6998200E022EB /* SDRefreshView.m */,
+				231EAA871FC6998200E022EB /* UIView+SDExtension.h */,
+				231EAA881FC6998200E022EB /* UIView+SDExtension.m */,
+			);
+			path = SDRefresh;
 			sourceTree = "<group>";
 		};
 		232357B71FBC18F90006E9A6 /* MineAmountOperationView */ = {
@@ -1610,7 +1612,7 @@
 		23D0E3EA1FADBC000058EA34 /* Vender(第三方) */ = {
 			isa = PBXGroup;
 			children = (
-				2313CE9C1FC425850038BDDF /* PullToRefresh */,
+				231EAA7E1FC6998200E022EB /* SDRefresh */,
 				23747F241FBD201F007FD859 /* InputPaymentPassword */,
 				238092E71FB94EEF0051EF3D /* CountDown */,
 				238092DA1FB93FE40051EF3D /* LJXPhotoAlbum */,
@@ -1898,6 +1900,7 @@
 				230BE0D41FB69B5800AD47E0 /* MineCollectionCell.xib in Resources */,
 				23F4A7431FBBE9EB004C9266 /* MineSuccessfulOperationVC.xib in Resources */,
 				239F06ED1FB2F4020067D810 /* FoodReservationCell.xib in Resources */,
+				231EAA891FC6998300E022EB /* sdRefeshView_arrow@2x.png in Resources */,
 				230BE0F01FB6A4BE00AD47E0 /* MineExpensesRecordCell.xib in Resources */,
 				232357BB1FBC190D0006E9A6 /* MineAmountOperationCell.xib in Resources */,
 				230BE0FE1FB6DBAF00AD47E0 /* MineDiscountCouponsCell.xib in Resources */,
@@ -1917,7 +1920,6 @@
 				239F06F51FB2F4020067D810 /* FoodReservationFinishListCell.xib in Resources */,
 				23F4A74A1FBBEF3A004C9266 /* MyRechargeHeadCell.xib in Resources */,
 				239F07031FB2F4020067D810 /* FoodRecommendDetailCell.xib in Resources */,
-				2313CEA71FC425860038BDDF /* Info.plist in Resources */,
 				239F06EF1FB2F4020067D810 /* FoodReservationCodeCell.xib in Resources */,
 				236C44341FB4788000AC3010 /* FoodMerchantsCell.xib in Resources */,
 				2316A2881FAD71FE00A0B512 /* Main.storyboard in Resources */,
@@ -2096,9 +2098,9 @@
 				2380934B1FB97D240051EF3D /* NetWorkTool.swift in Sources */,
 				23CB44FC1FBBCD2B00D8988D /* MineAddBankCardDetailVC.swift in Sources */,
 				23113BFC1FC65DFC00BE1784 /* FoodReservationPayModel.swift in Sources */,
-				2313CEAA1FC425860038BDDF /* State.swift in Sources */,
 				230BE0EB1FB6A39F00AD47E0 /* MineOrderUseVC.swift in Sources */,
 				2388E0A81FB0485A00AB6853 /* FoodDetailsFoodView.swift in Sources */,
+				231EAA8C1FC6998300E022EB /* SDRefreshView.m in Sources */,
 				238093411FB97BAD0051EF3D /* LayoutConstraint.swift in Sources */,
 				230BE0E51FB6A2BA00AD47E0 /* MineExpensesRecordVC.swift in Sources */,
 				230FA76F1FB5A94500190F2B /* MineOptionView.swift in Sources */,
@@ -2117,7 +2119,6 @@
 				239F06F01FB2F4020067D810 /* FoodReservationFilliCell.swift in Sources */,
 				2319F1451FBD921300EB0F14 /* FoodVolumeCodeCell.swift in Sources */,
 				2380933D1FB97BAD0051EF3D /* ConstraintView.swift in Sources */,
-				2313CEAB1FC425860038BDDF /* UIScrollView+PullToRefresh.swift in Sources */,
 				239F06AC1FB2F3D30067D810 /* FoodReservationVC.swift in Sources */,
 				238093371FB97BAD0051EF3D /* ConstraintOffsetTarget.swift in Sources */,
 				238092EE1FB94F580051EF3D /* MineSetPayPasswordCell.swift in Sources */,
@@ -2139,6 +2140,7 @@
 				238093221FB97BAD0051EF3D /* Constraint.swift in Sources */,
 				230E69F21FC3C8F9005D4F10 /* RecommendCommentModel.swift in Sources */,
 				239F06FE1FB2F4020067D810 /* RecommendHeadView.swift in Sources */,
+				231EAA8D1FC6998300E022EB /* UIView+SDExtension.m in Sources */,
 				239F06A71FB2F3D30067D810 /* FoodPurchaseSuccessVC.swift in Sources */,
 				238093271FB97BAD0051EF3D /* ConstraintDSL.swift in Sources */,
 				238093421FB97BAD0051EF3D /* LayoutConstraintItem.swift in Sources */,
@@ -2164,11 +2166,11 @@
 				23113BF21FC65D3100BE1784 /* FoodVoucherOrderDetailsVM.swift in Sources */,
 				236C442E1FB474EA00AC3010 /* FoodMerchantsHeadView.swift in Sources */,
 				23E214C61FB6EA1B00C7D085 /* MineInformationHeadCell.swift in Sources */,
-				2313CEA51FC425860038BDDF /* DefaultRefreshView.swift in Sources */,
 				238093751FB9813D0051EF3D /* ISO8601DateTransform.swift in Sources */,
 				23D1473F1FBA879D0028CD09 /* RigisterFinshVC.swift in Sources */,
 				238093251FB97BAD0051EF3D /* ConstraintConstantTarget.swift in Sources */,
 				23D0E3F41FADBC000058EA34 /* TYPageControl.m in Sources */,
+				231EAA8A1FC6998300E022EB /* SDRefreshFooterView.m in Sources */,
 				238093341FB97BAD0051EF3D /* ConstraintMakerPriortizable.swift in Sources */,
 				238093391FB97BAD0051EF3D /* ConstraintPriorityTarget.swift in Sources */,
 				230BE1001FB6E16800AD47E0 /* MineReservationVC.swift in Sources */,
@@ -2203,7 +2205,6 @@
 				230BE0E01FB6A27600AD47E0 /* SGHelperTool.m in Sources */,
 				23D147451FBA938A0028CD09 /* FoodEvaluationHeadCell.swift in Sources */,
 				23F4A7671FBBEFA0004C9266 /* ZCTradeView.m in Sources */,
-				2313CEA61FC425860038BDDF /* DefaultViewAnimator.swift in Sources */,
 				238093711FB9813D0051EF3D /* HexColorTransform.swift in Sources */,
 				239F06F41FB2F4020067D810 /* FoodReservationFinishListCell.swift in Sources */,
 				230BE0F71FB6DAF600AD47E0 /* MineUsableCoupons.swift in Sources */,
@@ -2239,7 +2240,6 @@
 				239F06A81FB2F3D30067D810 /* FoodVoucherOrderDetailsVC.swift in Sources */,
 				239F07061FB2F4020067D810 /* FoodReservationPaymentCardCell.swift in Sources */,
 				2380933C1FB97BAD0051EF3D /* ConstraintView+Extensions.swift in Sources */,
-				2313CEA81FC425860038BDDF /* PullToRefresh.swift in Sources */,
 				239F070A1FB2F4020067D810 /* FoodPurchaseNotesCell.swift in Sources */,
 				230F3C731FBAEA0900D188DB /* TggStarEvaluationView.m in Sources */,
 				2380932C1FB97BAD0051EF3D /* ConstraintLayoutGuide.swift in Sources */,
@@ -2288,7 +2288,6 @@
 				23D0E3F21FADBC000058EA34 /* TYCyclePagerTransformLayout.m in Sources */,
 				2380932B1FB97BAD0051EF3D /* ConstraintLayoutGuide+Extensions.swift in Sources */,
 				238092DF1FB943D30051EF3D /* MineSetVC.swift in Sources */,
-				2313CEA91FC425860038BDDF /* RefreshViewAnimator.swift in Sources */,
 				23F4A74E1FBBEF52004C9266 /* MyRechargeListCell.swift in Sources */,
 				2380937C1FB9813D0051EF3D /* ToJSON.swift in Sources */,
 				238093791FB9813D0051EF3D /* Mapper.swift in Sources */,
@@ -2314,6 +2313,7 @@
 				238093331FB97BAD0051EF3D /* ConstraintMakerFinalizable.swift in Sources */,
 				238092F61FB96D420051EF3D /* LoginVC.swift in Sources */,
 				2380937B1FB9813D0051EF3D /* Operators.swift in Sources */,
+				231EAA8B1FC6998300E022EB /* SDRefreshHeaderView.m in Sources */,
 				238093291FB97BAD0051EF3D /* ConstraintInsetTarget.swift in Sources */,
 				23C7FFBA1FC285D300BEE237 /* HomeModel.swift in Sources */,
 				238093311FB97BAD0051EF3D /* ConstraintMakerEditable.swift in Sources */,

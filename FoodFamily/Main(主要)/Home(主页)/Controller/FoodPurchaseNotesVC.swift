@@ -25,6 +25,8 @@ class FoodPurchaseNotesVC: UIViewController,UITableViewDataSource,UITableViewDel
         self.navigationController?.navigationBar.alpha = 0
     }
 
+    //优惠券
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(tableView)
