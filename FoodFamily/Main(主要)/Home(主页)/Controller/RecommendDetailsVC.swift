@@ -73,11 +73,14 @@ class RecommendDetailsVC: UIViewController,UITableViewDelegate,UITableViewDataSo
         recommendDetailsVM.loadSuccessfullyReturnedData(requestType: .get, URLString: ConstAPI.kAPIStoreGetStoreInfo, parameters: parameters, showIndicator: false) {
             self.headScrollView.recommendDataModel = self.recommendDetailsVM.recommendDataModel
             self.recommendHeadView.recommendDataModel = self.recommendDetailsVM.recommendDataModel
-            if self.recommendDetailsVM.recommendDataModel.voucher?.count != 0 {
-                self.dataSource.add(self.recommendDetailsVM.recommendDataModel.voucher!)
+            let voucherArray:NSArray = self.recommendDetailsVM.recommendDataModel.voucherList! as NSArray
+            if voucherArray.count != 0 {
+               self.dataSource.add(voucherArray)
             }
-            if self.recommendDetailsVM.recommendDataModel.meal?.count != 0 {
-                self.dataSource.add(self.recommendDetailsVM.recommendDataModel.meal!)
+            
+            let mealArray:NSArray = self.recommendDetailsVM.recommendDataModel.mealList! as NSArray
+            if mealArray.count != 0 {
+               self.dataSource.add(mealArray)
             }
             self.tableView.reloadData()
             self.getCommentData(isfirst: true)
@@ -162,11 +165,14 @@ class RecommendDetailsVC: UIViewController,UITableViewDelegate,UITableViewDataSo
             let array:NSArray = self.dataSource[indexPath.section] as! NSArray
             let model = array[indexPath.row]
             //金额
-            if ((model as? RecommendVoucherDataModel) != nil) {
+            if ((model as? RecommendVouchersModel) != nil) {
+                
+                let models:RecommendVouchersModel = model as! RecommendVouchersModel
+                
                 if indexPath.row == 0 {
                     let cell = tableView.dequeueReusableCell(withIdentifier: recommendedMomeyCell, for: indexPath) as! RecommendedMoneyCell
                     cell.selectionStyle = .none
-                    cell.moneyDataModel = model as! RecommendVoucherDataModel
+                    cell.moneyDataModel = models.voucher
                     UserDefaults.standard.set(CGFloat(RecommendDetailsUX.recommendedMomeyHeight), forKey: "height")
                     cell.recommendedMoneyCallBack = {(model:RecommendVoucherDataModel) in
                         self.pushVouchersDetailStatus(model)
@@ -175,7 +181,7 @@ class RecommendDetailsVC: UIViewController,UITableViewDelegate,UITableViewDataSo
                 }else{
                     let cell = tableView.dequeueReusableCell(withIdentifier: recommendedListMoneyCell, for: indexPath) as! RecommendedListMoneyCell
                     cell.selectionStyle = .none
-                    cell.moneyDataModel = model as! RecommendVoucherDataModel
+                    cell.moneyDataModel = model as! RecommendVouchersModel
                     UserDefaults.standard.set(CGFloat(RecommendDetailsUX.recommendedListMoneyHeight), forKey: "height")
                     cell.recommendedMoneyCallBack = {(model:RecommendVoucherDataModel) in
                         self.pushVouchersDetailStatus(model)
@@ -184,7 +190,7 @@ class RecommendDetailsVC: UIViewController,UITableViewDelegate,UITableViewDataSo
                 }
             }
             //套餐
-            if ((model as? RecommendMealDataModel) != nil) {
+            if ((model as? RecommendMealsModel) != nil) {
                 let cell = tableView.dequeueReusableCell(withIdentifier: recommendMealCell, for: indexPath) as! RecommendMealCell
                 cell.selectionStyle = .none
                 cell.mealDataModel = model as! RecommendMealDataModel

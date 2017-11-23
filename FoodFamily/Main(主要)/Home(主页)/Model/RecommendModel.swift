@@ -95,6 +95,40 @@ class RecommendVoucherDataModel: Mappable {
 }
 
 
+class RecommendVouchersModel: Mappable {
+    var voucher: RecommendVoucherDataModel?
+    required init?(map: Map) {
+    }
+    required init?() {
+    }
+    func mapping(map: Map) {
+      voucher     <- map["voucher"]
+    }
+}
+
+class RecommendFoodsModel: Mappable {
+    var food: RecommendFoodDataModel?
+    required init?(map: Map) {
+    }
+    required init?() {
+    }
+    func mapping(map: Map) {
+        food     <- map["food"]
+    }
+}
+
+class RecommendMealsModel: Mappable {
+    var meal: RecommendMealDataModel?
+    required init?(map: Map) {
+    }
+    required init?() {
+    }
+    func mapping(map: Map) {
+        meal     <- map["meal"]
+    }
+}
+
+
 class RecommendDataModel: Mappable {
     var address: String?
     var coverPic: NSArray?
@@ -105,9 +139,9 @@ class RecommendDataModel: Mappable {
     var perPay: AnyObject?
     var storeName: String?
     var storeType: String?
-    var food: [RecommendFoodDataModel]?
-    var meal: [RecommendMealDataModel]?
-    var voucher: [RecommendVoucherDataModel]?
+    var foodList: [RecommendFoodsModel]?
+    var mealList: [RecommendMealsModel]?
+    var voucherList: [RecommendVouchersModel]?
     
     required init?(map: Map) {
         
@@ -126,10 +160,10 @@ class RecommendDataModel: Mappable {
         message                <- map["message"]
         perPay                 <- map["perPay"]
         storeName              <- map["storeName"]
-        voucher                <- map["voucher"]
         storeType              <- map["storeType"]
-        food                   <- map["food"]
-        meal                   <- map["meal"]
+        foodList               <- map["foodList"]
+        mealList               <- map["mealList"]
+        voucherList            <- map["voucherList"]
     }
 }
 

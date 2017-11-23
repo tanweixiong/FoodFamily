@@ -40,8 +40,8 @@ class FoodVoucherDetailsVC: UIViewController,UITableViewDataSource,UITableViewDe
     
     //加载优惠券详情
     func getData(){
-        let parameters = ["id":"\(self.voucherID)"]
-        viewModel.loadSuccessfullyReturnedData(requestType: .post, URLString: ConstAPI.kAPIStoreGetStoreInfo, parameters: parameters, showIndicator: false) {
+        let parameters = ["voucherId":"\(self.voucherID)"]
+        viewModel.loadSuccessfullyReturnedData(requestType: .post, URLString: ConstAPI.kAPIVouchersGetVoucherById, parameters: parameters, showIndicator: false) {
             self.setDisplayData()
             self.tableView.reloadData()
         }
