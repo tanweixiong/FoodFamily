@@ -73,6 +73,7 @@ class RecommendDetailsVC: UIViewController,UITableViewDelegate,UITableViewDataSo
         recommendDetailsVM.loadSuccessfullyReturnedData(requestType: .get, URLString: ConstAPI.kAPIStoreGetStoreInfo, parameters: parameters, showIndicator: false) {
             self.headScrollView.recommendDataModel = self.recommendDetailsVM.recommendDataModel
             self.recommendHeadView.recommendDataModel = self.recommendDetailsVM.recommendDataModel
+            self.logoView.sd_setImage(with: NSURL(string: (self.recommendDetailsVM.recommendDataModel.logo!))! as URL, placeholderImage: UIImage.init(named: "ic_all_imageDefault"))
             let voucherArray:NSArray = self.recommendDetailsVM.recommendDataModel.voucherList! as NSArray
             if voucherArray.count != 0 {
                self.dataSource.add(voucherArray)
@@ -166,13 +167,11 @@ class RecommendDetailsVC: UIViewController,UITableViewDelegate,UITableViewDataSo
             let model = array[indexPath.row]
             //金额
             if ((model as? RecommendVouchersModel) != nil) {
-                
                 let models:RecommendVouchersModel = model as! RecommendVouchersModel
-                
                 if indexPath.row == 0 {
                     let cell = tableView.dequeueReusableCell(withIdentifier: recommendedMomeyCell, for: indexPath) as! RecommendedMoneyCell
                     cell.selectionStyle = .none
-                    cell.moneyDataModel = models.voucher
+                    cell.moneyDataModel = models.voucher!
                     UserDefaults.standard.set(CGFloat(RecommendDetailsUX.recommendedMomeyHeight), forKey: "height")
                     cell.recommendedMoneyCallBack = {(model:RecommendVoucherDataModel) in
                         self.pushVouchersDetailStatus(model)
@@ -181,7 +180,7 @@ class RecommendDetailsVC: UIViewController,UITableViewDelegate,UITableViewDataSo
                 }else{
                     let cell = tableView.dequeueReusableCell(withIdentifier: recommendedListMoneyCell, for: indexPath) as! RecommendedListMoneyCell
                     cell.selectionStyle = .none
-                    cell.moneyDataModel = model as! RecommendVouchersModel
+                    cell.moneyDataModel = models.voucher!
                     UserDefaults.standard.set(CGFloat(RecommendDetailsUX.recommendedListMoneyHeight), forKey: "height")
                     cell.recommendedMoneyCallBack = {(model:RecommendVoucherDataModel) in
                         self.pushVouchersDetailStatus(model)
@@ -191,9 +190,13 @@ class RecommendDetailsVC: UIViewController,UITableViewDelegate,UITableViewDataSo
             }
             //套餐
             if ((model as? RecommendMealsModel) != nil) {
+            let models:RecommendMealsModel = model as! RecommendMealsModel
                 let cell = tableView.dequeueReusableCell(withIdentifier: recommendMealCell, for: indexPath) as! RecommendMealCell
                 cell.selectionStyle = .none
-                cell.mealDataModel = model as! RecommendMealDataModel
+                cell.mealModel = models.meal!
+                cell.recommendMealCallBack = { (model:RecommendMealDataModel) in
+                    self.pushMealsDetailStatus(model)
+                }
                 UserDefaults.standard.set(CGFloat(RecommendDetailsUX.recommendedMealHeight), forKey: "height")
                 return cell
             }
@@ -219,8 +222,9 @@ class RecommendDetailsVC: UIViewController,UITableViewDelegate,UITableViewDataSo
        tableView.register(UINib(nibName: "RecommendedCommentCell", bundle: nil),forCellReuseIdentifier: self.recommendedCommentCell)
        tableView.register(UINib(nibName: "RecommendMealCell", bundle: nil),forCellReuseIdentifier: self.recommendMealCell)
        tableView.register(UINib(nibName: "RecommendedListMoneyCell", bundle: nil),forCellReuseIdentifier: self.recommendedListMoneyCell)
-        tableView.backgroundColor = UIColor.white
-        let headView = UIView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: RecommendDetailsUX.headViewHeight))
+       tableView.backgroundColor = UIColor.white
+       tableView.tableFooterView = UIView()
+       let headView = UIView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: RecommendDetailsUX.headViewHeight))
         headView.backgroundColor = UIColor.white
         tableView.tableHeaderView = headView
         headView.addSubview(headScrollView)
@@ -244,7 +248,7 @@ class RecommendDetailsVC: UIViewController,UITableViewDelegate,UITableViewDataSo
     lazy var logoView: UIImageView = {
         let space:CGFloat = 2
         let imageView = UIImageView()
-        imageView.image = UIImage.init(named: "foodDeatil")
+        imageView.sd_setImage(with: NSURL(string: "")! as URL, placeholderImage: UIImage.init(named: "ic_all_imageDefault"))
         imageView.frame = CGRect(x: SCREEN_WIDTH/2 - RecommendDetailsUX.logoViewSize.width/2 , y:RecommendDetailsUX.headimageHeight - RecommendDetailsUX.logoViewSize.height/2, width: RecommendDetailsUX.logoViewSize.width, height: RecommendDetailsUX.logoViewSize.height);
         imageView.layer.cornerRadius = imageView.frame.size.width/2
         imageView.clipsToBounds = true
@@ -294,8 +298,8 @@ class RecommendDetailsVC: UIViewController,UITableViewDelegate,UITableViewDataSo
             self.navigationController?.pushViewController(foodPurchaseNotesVC, animated: true)
             break
         case .defaultDetailStatus:
-            let foodDetailsVC = FoodDetailsVC()
-            self.navigationController?.pushViewController(foodDetailsVC, animated: true)
+            let foodMealDetailsVC = FoodMealDetailsVC()
+            self.navigationController?.pushViewController(foodMealDetailsVC, animated: true)
             break
         default: break
         }
@@ -304,7 +308,15 @@ class RecommendDetailsVC: UIViewController,UITableViewDelegate,UITableViewDataSo
     func pushVouchersDetailStatus(_ model:RecommendVoucherDataModel){
         let foodVoucherDetailsVC = FoodVoucherDetailsVC()
         foodVoucherDetailsVC.voucherID = model.voucherId!
+        foodVoucherDetailsVC.recommendModel = self.recommendDetailsVM.recommendDataModel
         self.navigationController?.pushViewController(foodVoucherDetailsVC, animated: true)
+    }
+    
+    func pushMealsDetailStatus(_ model:RecommendMealDataModel){
+        let foodMealDetailsVC = FoodMealDetailsVC()
+        foodMealDetailsVC.mealId = model.mealId!
+        foodMealDetailsVC.recommendModel = self.recommendDetailsVM.recommendDataModel
+        self.navigationController?.pushViewController(foodMealDetailsVC, animated: true)
     }
     
     lazy var backBtn: UIButton = {
@@ -312,7 +324,7 @@ class RecommendDetailsVC: UIViewController,UITableViewDelegate,UITableViewDataSo
         backButton.setImage(UIImage(named: "ic_nav_back_white"), for: .normal)
         backButton.sizeToFit()
         backButton.contentEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0)
-        backButton.addTarget(self, action:  #selector(FoodDetailsVC.backClick), for: .touchUpInside)
+        backButton.addTarget(self, action:  #selector(RecommendDetailsVC.backClick), for: .touchUpInside)
         backButton.frame = CGRect(x: 1, y: 21, width: 40, height: 40)
         return backButton
     }()

@@ -10,45 +10,42 @@ import UIKit
 
 class FoodVoucherDataModel: Mappable {
     var content: String?
-    var createtime: String?
-    var flag: NSNumber?
+    var endTime: String?
     var id: NSNumber?
-    var lastNum: NSNumber?
     var name: String?
     var needKnow: String?
     var price: NSNumber?
-    var remark: String?
-    var sellNum: NSNumber?
     var startTime: String?
-    var endTime: String?
-    var storeId: NSNumber?
-    var totalNum: NSNumber?
+    var useTime: String?
     var vouPrice: NSNumber?
+
     
     required init?(map: Map) {
         
     }
     
     required init?() {
-        
+         content = "--"
+         id = 0
+         name = "--"
+         needKnow = "--"
+         price = 0
+         startTime = "--"
+         endTime = "--"
+         useTime = "--"
+         vouPrice = 0
     }
     
     func mapping(map: Map) {
-        content                 <- map["content"]
-        createtime            <- map["createtime"]
+        content              <- map["content"]
+        id                   <- map["id"]
+        name                 <- map["name"]
+        needKnow             <- map["needKnow"]
+        price                <- map["price"]
+        startTime            <- map["startTime"]
         endTime              <- map["endTime"]
-        flag             <- map["flag"]
-        id           <- map["id"]
-        lastNum         <- map["lastNum"]
-        name         <- map["name"]
-        needKnow         <- map["needKnow"]
-        price         <- map["price"]
-        remark         <- map["remark"]
-        sellNum         <- map["sellNum"]
-        startTime         <- map["startTime"]
-        storeId         <- map["storeId"]
-        totalNum         <- map["totalNum"]
-        vouPrice         <- map["vouPrice"]
+        useTime              <- map["useTime"]
+        vouPrice             <- map["vouPrice"]
     }
 }
 

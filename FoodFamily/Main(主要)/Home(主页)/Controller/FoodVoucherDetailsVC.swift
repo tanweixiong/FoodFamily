@@ -21,7 +21,8 @@ class FoodVoucherDetailsVC: UIViewController,UITableViewDataSource,UITableViewDe
     struct FoodPurchaseNotesUX {
          static let footHeight:CGFloat = 50
          static let headViewHeight:CGFloat = 308
-         static let sectionHeight:CGFloat = 20
+         static let sectionHeight:CGFloat = 15
+         static let headimageHeight:CGFloat = 200
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -41,7 +42,7 @@ class FoodVoucherDetailsVC: UIViewController,UITableViewDataSource,UITableViewDe
     //加载优惠券详情
     func getData(){
         let parameters = ["voucherId":"\(self.voucherID)"]
-        viewModel.loadSuccessfullyReturnedData(requestType: .post, URLString: ConstAPI.kAPIVouchersGetVoucherById, parameters: parameters, showIndicator: false) {
+        viewModel.loadSuccessfullyReturnedData(requestType: .get, URLString: ConstAPI.kAPIVouchersGetVoucherById, parameters: parameters, showIndicator: false) {
             self.setDisplayData()
             self.tableView.reloadData()
         }
@@ -49,7 +50,8 @@ class FoodVoucherDetailsVC: UIViewController,UITableViewDataSource,UITableViewDe
     
     //绑定并且刷新数据
     func setDisplayData(){
-       headView.pirceLabel.text = "¥" + (viewModel.voucherModel.price?.stringValue)! + "代" + (viewModel.voucherModel.vouPrice?.stringValue)! + "元"
+        headView.pirceLabel.text = "¥" + (viewModel.voucherModel.price?.stringValue)! + "代" + (viewModel.voucherModel.vouPrice?.stringValue)! + "元"
+        
         let priceString = NSMutableAttributedString.init(string: (viewModel.voucherModel.price?.stringValue)!)
         priceString.addAttribute(NSAttributedStringKey.strikethroughStyle, value: NSNumber.init(value: 1), range: NSRange(location: 0, length: priceString.length))
         footView.discountLabel.attributedText = priceString
@@ -116,6 +118,14 @@ class FoodVoucherDetailsVC: UIViewController,UITableViewDataSource,UITableViewDe
         let view = Bundle.main.loadNibNamed("FoodPurchaseNotesHeadView", owner: nil, options: nil)?.last as! FoodPurchaseNotesHeadView
         view.frame = CGRect(x: 0, y: 0 , width: SCREEN_WIDTH, height: FoodPurchaseNotesUX.headViewHeight)
         view.storeNameLabel.text = self.recommendModel.storeName
+        view.logoImageView.sd_setImage(with: NSURL(string: (self.recommendModel.logo)!)! as URL, placeholderImage: UIImage.init(named: "ic_all_smallImageDefault"))
+        view.storeImageView.addSubview(headScrollView)
+        return view
+    }()
+    
+    lazy var headScrollView: RecommendDetailsScrollView = {
+        let view = RecommendDetailsScrollView.init(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: FoodPurchaseNotesUX.headimageHeight))
+        view.recommendDataModel = self.recommendModel
         return view
     }()
     
@@ -129,11 +139,6 @@ class FoodVoucherDetailsVC: UIViewController,UITableViewDataSource,UITableViewDe
         return backButton
     }()
     
-    @objc func backClick(){
-        self.navigationController?.navigationBar.alpha = 0
-        self.navigationController?.popViewController(animated: true)
-    }
-    
     lazy var footView: FoodDetailsFoodView = {
         let view = Bundle.main.loadNibNamed("FoodDetailsFoodView", owner: nil, options: nil)?.last as! FoodDetailsFoodView
         view.frame = CGRect(x: 0, y: SCREEN_HEIGHT - 50 , width: SCREEN_WIDTH, height: FoodPurchaseNotesUX.footHeight)
@@ -146,5 +151,10 @@ class FoodVoucherDetailsVC: UIViewController,UITableViewDataSource,UITableViewDe
         }
         return view
     }()
+    
+    @objc func backClick(){
+        self.navigationController?.navigationBar.alpha = 0
+        self.navigationController?.popViewController(animated: true)
+    }
 
 }

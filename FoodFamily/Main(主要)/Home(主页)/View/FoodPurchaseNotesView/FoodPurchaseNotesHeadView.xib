@@ -19,12 +19,13 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nRQ-Sf-2Hg">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="308"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="foodDeatil" translatesAutoresizingMaskIntoConstraints="NO" id="zCY-2y-gIe">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zf2-Mg-2iz">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="200" id="n7d-AU-udU"/>
+                                <constraint firstAttribute="height" constant="200" id="Cty-IE-So7"/>
                             </constraints>
-                        </imageView>
+                        </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100元代金券一张" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A6h-NC-rdc">
                             <rect key="frame" x="0.0" y="250" width="375" height="25"/>
                             <constraints>
@@ -46,21 +47,27 @@
                                 <constraint firstAttribute="height" constant="50" id="psF-ap-3Lz"/>
                                 <constraint firstAttribute="width" constant="50" id="sFl-Fy-9pl"/>
                             </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="25"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                            </userDefinedRuntimeAttributes>
                         </imageView>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstItem="zCY-2y-gIe" firstAttribute="leading" secondItem="nRQ-Sf-2Hg" secondAttribute="leading" id="18N-0S-NL6"/>
                         <constraint firstItem="A6h-NC-rdc" firstAttribute="centerX" secondItem="nRQ-Sf-2Hg" secondAttribute="centerX" id="5Hq-mO-6cl"/>
                         <constraint firstAttribute="trailing" secondItem="A6h-NC-rdc" secondAttribute="trailing" id="7Le-bd-2We"/>
-                        <constraint firstAttribute="trailing" secondItem="zCY-2y-gIe" secondAttribute="trailing" id="Fo9-x9-FKN"/>
+                        <constraint firstAttribute="trailing" secondItem="Zf2-Mg-2iz" secondAttribute="trailing" id="9QI-uq-cUR"/>
                         <constraint firstItem="N5t-Aa-Zhx" firstAttribute="leading" secondItem="nRQ-Sf-2Hg" secondAttribute="leading" constant="82" id="Fyl-5s-aGm"/>
-                        <constraint firstItem="zCY-2y-gIe" firstAttribute="top" secondItem="nRQ-Sf-2Hg" secondAttribute="top" id="QeU-va-xFj"/>
-                        <constraint firstItem="A6h-NC-rdc" firstAttribute="top" secondItem="zCY-2y-gIe" secondAttribute="bottom" constant="50" id="Tm1-mM-HS9"/>
+                        <constraint firstItem="A6h-NC-rdc" firstAttribute="top" secondItem="oYX-uW-Kvv" secondAttribute="bottom" constant="25" id="KQs-tv-GcL"/>
+                        <constraint firstItem="Zf2-Mg-2iz" firstAttribute="leading" secondItem="nRQ-Sf-2Hg" secondAttribute="leading" id="Xch-0o-ZSI"/>
                         <constraint firstItem="oYX-uW-Kvv" firstAttribute="leading" secondItem="nRQ-Sf-2Hg" secondAttribute="leading" constant="20" id="Yg3-9N-IIS"/>
-                        <constraint firstItem="oYX-uW-Kvv" firstAttribute="centerY" secondItem="zCY-2y-gIe" secondAttribute="bottom" id="lVK-Cn-TKl"/>
-                        <constraint firstItem="N5t-Aa-Zhx" firstAttribute="top" secondItem="zCY-2y-gIe" secondAttribute="bottom" constant="3" id="qvK-9a-sKn"/>
+                        <constraint firstItem="N5t-Aa-Zhx" firstAttribute="top" secondItem="Zf2-Mg-2iz" secondAttribute="bottom" constant="3" id="cTb-MN-g8N"/>
+                        <constraint firstItem="oYX-uW-Kvv" firstAttribute="centerY" secondItem="Zf2-Mg-2iz" secondAttribute="bottom" id="caR-Zd-dN2"/>
                         <constraint firstItem="A6h-NC-rdc" firstAttribute="leading" secondItem="nRQ-Sf-2Hg" secondAttribute="leading" id="uZV-lq-Mtv"/>
+                        <constraint firstItem="Zf2-Mg-2iz" firstAttribute="top" secondItem="nRQ-Sf-2Hg" secondAttribute="top" id="wAg-Gk-38e"/>
                     </constraints>
                 </view>
             </subviews>
@@ -74,14 +81,15 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
+                <outlet property="logoImageView" destination="oYX-uW-Kvv" id="YvS-3u-myO"/>
                 <outlet property="pirceLabel" destination="A6h-NC-rdc" id="EV7-NZ-NFl"/>
+                <outlet property="storeImageView" destination="Zf2-Mg-2iz" id="xnd-0J-0Ns"/>
                 <outlet property="storeNameLabel" destination="N5t-Aa-Zhx" id="OSp-PV-3xa"/>
             </connections>
-            <point key="canvasLocation" x="-213" y="-154"/>
+            <point key="canvasLocation" x="-551.5" y="-178"/>
         </view>
     </objects>
     <resources>
-        <image name="foodDeatil" width="506" height="216"/>
         <image name="ic_home_mydianpu" width="49" height="49"/>
     </resources>
 </document>

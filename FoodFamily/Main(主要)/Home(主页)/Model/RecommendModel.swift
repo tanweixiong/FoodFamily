@@ -35,18 +35,12 @@ class RecommendFoodDataModel: Mappable {
 }
 
 class RecommendMealDataModel: Mappable {
-    var cycle: String?
-    var id: NSNumber?
-    var marketPrice: NSNumber?
-    var mealEndDate: NSNumber?
+    var mealId: NSNumber?
     var mealImgDetail: String?
     var mealIntroduction: String?
-    var mealStartDate: NSNumber?
-    var mealType: NSNumber?
-    var price: NSNumber?
+    var mealMarketPrice: NSNumber?
+    var mealPrice: NSNumber?
     var remark: String?
-    var sale: NSNumber?
-    var storeId: NSNumber?
     
     required init?(map: Map) {
         
@@ -57,18 +51,12 @@ class RecommendMealDataModel: Mappable {
     }
     
     func mapping(map: Map) {
-        cycle                   <- map["cycle"]
-        id                      <- map["id"]
-        marketPrice             <- map["marketPrice"]
-        mealEndDate             <- map["mealEndDate"]
+        mealId                  <- map["mealId"]
         mealImgDetail           <- map["mealImgDetail"]
         mealIntroduction        <- map["mealIntroduction"]
-        mealStartDate           <- map["mealStartDate"]
-        mealType                <- map["mealType"]
-        price                   <- map["price"]
+        mealMarketPrice         <- map["mealMarketPrice"]
+        mealPrice               <- map["mealPrice"]
         remark                  <- map["remark"]
-        sale                    <- map["sale"]
-        storeId                 <- map["storeId"]
     }
 }
 

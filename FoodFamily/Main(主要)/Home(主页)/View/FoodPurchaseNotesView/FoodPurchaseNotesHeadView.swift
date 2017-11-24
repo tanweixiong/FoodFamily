@@ -9,9 +9,10 @@
 import UIKit
 
 class FoodPurchaseNotesHeadView: UIView {
-
+    @IBOutlet weak var storeImageView: UIView!
     @IBOutlet weak var storeNameLabel: UILabel!
     @IBOutlet weak var pirceLabel: UILabel!
+    @IBOutlet weak var logoImageView: UIImageView!
     /*
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.

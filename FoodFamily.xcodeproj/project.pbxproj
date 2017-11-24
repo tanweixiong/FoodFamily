@@ -190,7 +190,7 @@
 		2388E0A81FB0485A00AB6853 /* FoodDetailsFoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2388E0A71FB0485A00AB6853 /* FoodDetailsFoodView.swift */; };
 		2388E0AA1FB0486C00AB6853 /* FoodDetailsFoodView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2388E0A91FB0486C00AB6853 /* FoodDetailsFoodView.xib */; };
 		239F06A41FB2F3D30067D810 /* RecommendDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239F06981FB2F3D10067D810 /* RecommendDetailsVC.swift */; };
-		239F06A51FB2F3D30067D810 /* FoodDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239F06991FB2F3D10067D810 /* FoodDetailsVC.swift */; };
+		239F06A51FB2F3D30067D810 /* FoodMealDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239F06991FB2F3D10067D810 /* FoodMealDetailsVC.swift */; };
 		239F06A61FB2F3D30067D810 /* FoodFeaturesDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239F069A1FB2F3D10067D810 /* FoodFeaturesDetailVC.swift */; };
 		239F06A71FB2F3D30067D810 /* FoodPurchaseSuccessVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239F069B1FB2F3D20067D810 /* FoodPurchaseSuccessVC.swift */; };
 		239F06A81FB2F3D30067D810 /* FoodVoucherOrderDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239F069C1FB2F3D20067D810 /* FoodVoucherOrderDetailsVC.swift */; };
@@ -247,6 +247,8 @@
 		239F07111FB2F4020067D810 /* FoodFeaturesDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 239F06E51FB2F4010067D810 /* FoodFeaturesDetailCell.xib */; };
 		23B67CFC1FBBD665000B18DB /* AddBankTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B67CFA1FBBD665000B18DB /* AddBankTextFieldCell.swift */; };
 		23B67CFD1FBBD665000B18DB /* AddBankTextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23B67CFB1FBBD665000B18DB /* AddBankTextFieldCell.xib */; };
+		23C1CED61FC7B10100AA8252 /* FoodMealDetailsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C1CED51FC7B10100AA8252 /* FoodMealDetailsVM.swift */; };
+		23C1CED81FC7B21F00AA8252 /* FoodMealDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C1CED71FC7B21F00AA8252 /* FoodMealDetailsModel.swift */; };
 		23C7FFBA1FC285D300BEE237 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C7FFB91FC285D300BEE237 /* HomeModel.swift */; };
 		23CB44EE1FBBCBE700D8988D /* MineBlankCardManagementVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CB44ED1FBBCBE700D8988D /* MineBlankCardManagementVC.swift */; };
 		23CB44F21FBBCC4700D8988D /* MyBlankCardManagementCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23CB44F01FBBCC4700D8988D /* MyBlankCardManagementCell.xib */; };
@@ -541,7 +543,7 @@
 		2388E0A71FB0485A00AB6853 /* FoodDetailsFoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDetailsFoodView.swift; sourceTree = "<group>"; };
 		2388E0A91FB0486C00AB6853 /* FoodDetailsFoodView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoodDetailsFoodView.xib; sourceTree = "<group>"; };
 		239F06981FB2F3D10067D810 /* RecommendDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendDetailsVC.swift; sourceTree = "<group>"; };
-		239F06991FB2F3D10067D810 /* FoodDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodDetailsVC.swift; sourceTree = "<group>"; };
+		239F06991FB2F3D10067D810 /* FoodMealDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodMealDetailsVC.swift; sourceTree = "<group>"; };
 		239F069A1FB2F3D10067D810 /* FoodFeaturesDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodFeaturesDetailVC.swift; sourceTree = "<group>"; };
 		239F069B1FB2F3D20067D810 /* FoodPurchaseSuccessVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodPurchaseSuccessVC.swift; sourceTree = "<group>"; };
 		239F069C1FB2F3D20067D810 /* FoodVoucherOrderDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodVoucherOrderDetailsVC.swift; sourceTree = "<group>"; };
@@ -598,6 +600,8 @@
 		239F06E51FB2F4010067D810 /* FoodFeaturesDetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FoodFeaturesDetailCell.xib; sourceTree = "<group>"; };
 		23B67CFA1FBBD665000B18DB /* AddBankTextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBankTextFieldCell.swift; sourceTree = "<group>"; };
 		23B67CFB1FBBD665000B18DB /* AddBankTextFieldCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddBankTextFieldCell.xib; sourceTree = "<group>"; };
+		23C1CED51FC7B10100AA8252 /* FoodMealDetailsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodMealDetailsVM.swift; sourceTree = "<group>"; };
+		23C1CED71FC7B21F00AA8252 /* FoodMealDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodMealDetailsModel.swift; sourceTree = "<group>"; };
 		23C7FFB91FC285D300BEE237 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		23CB44ED1FBBCBE700D8988D /* MineBlankCardManagementVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MineBlankCardManagementVC.swift; sourceTree = "<group>"; };
 		23CB44F01FBBCC4700D8988D /* MyBlankCardManagementCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyBlankCardManagementCell.xib; sourceTree = "<group>"; };
@@ -1006,7 +1010,7 @@
 				239F06A11FB2F3D30067D810 /* HomeController.swift */,
 				239F06981FB2F3D10067D810 /* RecommendDetailsVC.swift */,
 				239F06A31FB2F3D30067D810 /* FoodVoucherDetailsVC.swift */,
-				239F06991FB2F3D10067D810 /* FoodDetailsVC.swift */,
+				239F06991FB2F3D10067D810 /* FoodMealDetailsVC.swift */,
 				239F06A21FB2F3D30067D810 /* FoodRecommendDetailVC.swift */,
 				239F069A1FB2F3D10067D810 /* FoodFeaturesDetailVC.swift */,
 				239F06A01FB2F3D20067D810 /* FoodReservationVC.swift */,
@@ -1577,6 +1581,7 @@
 				231A10721FC2BF8A00150257 /* RecommendModel.swift */,
 				230E69F11FC3C8F9005D4F10 /* RecommendCommentModel.swift */,
 				2321DD0D1FC6BE7200AC0469 /* FoodVoucherDetailsModel.swift */,
+				23C1CED71FC7B21F00AA8252 /* FoodMealDetailsModel.swift */,
 				23113BFB1FC65DFC00BE1784 /* FoodReservationPayModel.swift */,
 				23113BF51FC65D7300BE1784 /* FoodPaymentCardCouponsModel.swift */,
 				23113BF71FC65D8600BE1784 /* FoodVoucherOrderDetailsModel.swift */,
@@ -1673,6 +1678,7 @@
 				23EECD6C1FBF101400CA274C /* HomeControllerVM.swift */,
 				231A10741FC2BFA200150257 /* RecommendDetailsVM.swift */,
 				2321DD0B1FC6BE4A00AC0469 /* FoodVoucherDetailsVM.swift */,
+				23C1CED51FC7B10100AA8252 /* FoodMealDetailsVM.swift */,
 				23113BF91FC65DEA00BE1784 /* FoodReservationPayVM.swift */,
 				23113BEF1FC65D1200BE1784 /* FoodPaymentCardCouponsVM.swift */,
 				23113BF11FC65D3100BE1784 /* FoodVoucherOrderDetailsVM.swift */,
@@ -2123,6 +2129,7 @@
 				2380937E1FB9813D0051EF3D /* TransformOperators.swift in Sources */,
 				2380936B1FB9813D0051EF3D /* DateFormatterTransform.swift in Sources */,
 				239F06F01FB2F4020067D810 /* FoodReservationFilliCell.swift in Sources */,
+				23C1CED81FC7B21F00AA8252 /* FoodMealDetailsModel.swift in Sources */,
 				2319F1451FBD921300EB0F14 /* FoodVolumeCodeCell.swift in Sources */,
 				2380933D1FB97BAD0051EF3D /* ConstraintView.swift in Sources */,
 				239F06AC1FB2F3D30067D810 /* FoodReservationVC.swift in Sources */,
@@ -2261,7 +2268,7 @@
 				238093881FB9BEFE0051EF3D /* BaseViewModel.swift in Sources */,
 				2380934A1FB97D240051EF3D /* ConstAPIURL.swift in Sources */,
 				2388E0A31FB00D0C00AB6853 /* MainViewController.swift in Sources */,
-				239F06A51FB2F3D30067D810 /* FoodDetailsVC.swift in Sources */,
+				239F06A51FB2F3D30067D810 /* FoodMealDetailsVC.swift in Sources */,
 				23D0E3F31FADBC000058EA34 /* TYCyclePagerView.m in Sources */,
 				2316A2B71FAD8AF300A0B512 /* FMNavigationController.swift in Sources */,
 				239F06FC1FB2F4020067D810 /* RecommendedReasonCell.swift in Sources */,
@@ -2290,6 +2297,7 @@
 				23747F2D1FBD207B007FD859 /* InputPaymentPasswordVw.m in Sources */,
 				2321DD0E1FC6BE7200AC0469 /* FoodVoucherDetailsModel.swift in Sources */,
 				238093771FB9813D0051EF3D /* MapError.swift in Sources */,
+				23C1CED61FC7B10100AA8252 /* FoodMealDetailsVM.swift in Sources */,
 				23B67CFC1FBBD665000B18DB /* AddBankTextFieldCell.swift in Sources */,
 				239F06AF1FB2F3D30067D810 /* FoodVoucherDetailsVC.swift in Sources */,
 				2316A2E91FAD947300A0B512 /* MineController.swift in Sources */,
