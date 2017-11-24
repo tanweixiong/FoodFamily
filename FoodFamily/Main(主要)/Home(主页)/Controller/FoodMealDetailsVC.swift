@@ -17,7 +17,6 @@ class FoodMealDetailsVC: MainViewController,UITableViewDelegate,UITableViewDataS
     struct FoodDetailsUX {
         static let rowHeight:CGFloat = 135
         static let sectionHeight:CGFloat = 15
-//        static let imageHeight:CGFloat =  640 / (1200/SCREEN_WIDTH)
         static let logoViewSize:CGSize = CGSize(width: 50, height: 50)
         static let titleHeight:CGFloat = 22
         static let headViewHeight: CGFloat = 280
@@ -92,9 +91,11 @@ class FoodMealDetailsVC: MainViewController,UITableViewDelegate,UITableViewDataS
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let sectionHeaderHeight:CGFloat = FoodDetailsUX.sectionHeight
-        if scrollView.contentOffset.y < 0 {
-            scrollView.contentInset = UIEdgeInsetsMake(-sectionHeaderHeight, 0, 0, 0);
+        let sectionHeaderHeight:CGFloat = 20
+        if scrollView == self.tableView {
+            if scrollView.contentOffset.y < 0 {
+                scrollView.contentInset = UIEdgeInsetsMake(-sectionHeaderHeight, 0, 0, 0);
+            }
         }
     }
     

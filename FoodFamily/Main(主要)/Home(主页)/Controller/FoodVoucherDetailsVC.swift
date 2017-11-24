@@ -89,13 +89,8 @@ class FoodVoucherDetailsVC: UIViewController,UITableViewDataSource,UITableViewDe
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let sectionHeaderHeight:CGFloat = FoodPurchaseNotesUX.sectionHeight
+        let sectionHeaderHeight:CGFloat = 20
         if scrollView == self.tableView {
-            if scrollView.contentOffset.y <= sectionHeaderHeight&&scrollView.contentOffset.y >= 20 {
-                scrollView.contentInset = UIEdgeInsetsMake(-scrollView.contentOffset.y, 0, 0, 0);
-            }else if scrollView.contentOffset.y >= FoodPurchaseNotesUX.sectionHeight {
-                scrollView.contentInset = UIEdgeInsetsMake(-sectionHeaderHeight, 0, 0, 0);
-            }
             if scrollView.contentOffset.y < 0 {
                 scrollView.contentInset = UIEdgeInsetsMake(-sectionHeaderHeight, 0, 0, 0);
             }
