@@ -5,7 +5,6 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -20,13 +19,9 @@
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mine_rectangle" translatesAutoresizingMaskIntoConstraints="NO" id="EGj-HV-idV">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="215"/>
-                            <constraints>
-                                <constraint firstAttribute="width" secondItem="EGj-HV-idV" secondAttribute="height" multiplier="75:43" id="GJu-8c-hUg"/>
-                            </constraints>
                         </imageView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0xm-9E-aC6">
                             <rect key="frame" x="0.0" y="215" width="375" height="452"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
                     </subviews>
                     <color key="backgroundColor" red="0.98431372549019602" green="0.98431372549019602" blue="0.98431372549019602" alpha="1" colorSpace="calibratedRGB"/>
@@ -48,11 +43,12 @@
                 <constraint firstAttribute="trailing" secondItem="GpK-dl-96M" secondAttribute="trailing" id="h0r-z2-vnk"/>
                 <constraint firstItem="GpK-dl-96M" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="rMl-c4-Tc7"/>
             </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="headView" destination="EGj-HV-idV" id="nIs-vm-Kj0"/>
                 <outlet property="listView" destination="0xm-9E-aC6" id="Ahq-av-2OC"/>
             </connections>
-            <point key="canvasLocation" x="-129" y="173"/>
+            <point key="canvasLocation" x="-270" y="174"/>
         </view>
     </objects>
     <resources>

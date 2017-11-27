@@ -9,7 +9,6 @@
 import UIKit
 
 class MineWalletCell: UITableViewCell {
-
     @IBOutlet weak var detailTypeLabel: UILabel!
     @IBOutlet weak var createTimeLabel: UILabel!
     @IBOutlet weak var detailPriceLabel: UILabel!

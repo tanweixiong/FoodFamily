@@ -48,10 +48,12 @@ class BaseViewModel: NSObject {
                     return
                 }
                 if (json["data"] != nil) && String(describing: json["data"]) != "" {
+                    let password = UserDefaults.standard.getUserInfo().password
                     let data = json["data"] as![String:AnyObject]
                     let user = data["user"] as![String:AnyObject]
                     UserDefaults.standard.set(true, forKey: R_Theme_isLogin)
                     let userInfo = UserInfo(dict: user as [String : AnyObject])
+                    userInfo.password = password
                     UserDefaults.standard.saveCustomObject(customObject: userInfo, key: R_UserInfo)
                 }
                 finishedCallback()
