@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import MJRefresh
 
-class MineWalletVC: UIViewController {
+class MineWalletVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     fileprivate let SCREEN_KeyWindowBounds = (UIApplication.shared.keyWindow?.bounds)!
+    fileprivate var pageNum:Int = 0
+    fileprivate lazy var viewModel : MineWalletVM = MineWalletVM()
     struct MyBalanceUX {
         static let myBalanceViewSize:CGSize = CGSize(width: SCREEN_WIDTH, height: SCREEN_HEIGHT)
         static let myBalanceListView:CGSize = CGSize(width: SCREEN_WIDTH, height: YMAKE(62))
@@ -21,12 +24,21 @@ class MineWalletVC: UIViewController {
         super.viewDidLoad()
         self.title = "我的钱包"
         self.createUI()
+        self.getData()
+    }
+    
+    func getData(){
+        let parameters = ["pageNum":"\(self.pageNum)","pageSize":""]
+        viewModel.loadSuccessfullyReturnedData(requestType: .post, URLString:  ConstAPI.kAPIUserWalletGetUserWalletList, parameters: parameters, showIndicator: false) {
+            self.pageNum = self.pageNum + 1
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.setColor(UIColor.clear)
     }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.navigationController?.navigationBar.setColor(R_UINavigationBarColor)
@@ -105,5 +117,23 @@ class MineWalletVC: UIViewController {
         }
         return view
     }()
-
+    
+    lazy var tableView: UITableView = {
+        let tableView = UITableView.init(frame: CGRect(x: 0, y: 0 , width: SCREEN_WIDTH, height: SCREEN_HEIGHT - 64))
+        tableView.showsVerticalScrollIndicator = false
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(UINib(nibName: "BoutiqueTableViewCell", bundle: nil),forCellReuseIdentifier: self.boutiqueTableViewCell)
+        tableView.register(UINib(nibName: "TopicTableViewCell", bundle: nil),forCellReuseIdentifier: self.topicTableViewCell)
+        tableView.register(UINib(nibName: "RecommendTableViewCell", bundle: nil),forCellReuseIdentifier: self.recommendTableViewCell)
+        tableView.backgroundColor = R_UIThemeBackgroundColor
+        tableView.separatorInset = UIEdgeInsetsMake(0,SCREEN_WIDTH, 0,SCREEN_WIDTH);
+        tableView.tableFooterView = UIView()
+        tableView.mj_footer = MJRefreshAutoNormalFooter.init(refreshingBlock: {
+             self.getData()
+        })
+        return tableView
+    }()
+    
+    
 }

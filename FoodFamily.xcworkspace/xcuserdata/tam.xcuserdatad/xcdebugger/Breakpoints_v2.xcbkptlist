@@ -25,22 +25,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FoodFamily/Main(&#x4e3b;&#x8981;)/Mine(&#x4e2a;&#x4eba;)/Controller/MineBlankCardManagementVC.swift"
-            timestampString = "532487429.080259"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "FoodFamily/Main(&#x4e3b;&#x8981;)/Login&amp;Register(&#x6ce8;&#x518c;&#x4e0e;&#x767b;&#x5f55;)/Model/UserData.swift"
             timestampString = "532840605.421331"
             startingColumnNumber = "9223372036854775807"
@@ -49,38 +33,6 @@
             endingLineNumber = "73"
             landmarkName = "init(coder:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FoodFamily/Main(&#x4e3b;&#x8981;)/Mine(&#x4e2a;&#x4eba;)/ViewModel/MineOrderVM.swift"
-            timestampString = "533210012.920092"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "18"
-            endingLineNumber = "18"
-            landmarkName = "unknown"
-            landmarkType = "0">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FoodFamily/Main(&#x4e3b;&#x8981;)/Mine(&#x4e2a;&#x4eba;)/ViewModel/MineOrderVM.swift"
-            timestampString = "533210021.17855"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
-            landmarkName = "unknown"
-            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

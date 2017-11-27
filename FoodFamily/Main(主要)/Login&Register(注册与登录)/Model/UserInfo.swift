@@ -16,6 +16,7 @@ class UserInfo: NSObject,NSCoding {
     @objc var flag: AnyObject?
     @objc var fpassword: AnyObject?
     @objc var fpwd: AnyObject?
+    @objc var password: AnyObject?
 
     @objc var id: AnyObject?
     @objc var lastTime: AnyObject?
@@ -66,6 +67,7 @@ class UserInfo: NSObject,NSCoding {
         star = "" as AnyObject
         storeId = "" as AnyObject
         type = "" as AnyObject
+        password = "" as AnyObject
     }
     
     //    从object解析回来
@@ -90,6 +92,7 @@ class UserInfo: NSObject,NSCoding {
         self.star = decoder.decodeObject(forKey: "star")  as AnyObject
         self.storeId = decoder.decodeObject(forKey: "storeId") as AnyObject
         self.type = decoder.decodeObject(forKey: "type") as AnyObject
+        self.password = decoder.decodeObject(forKey: "password") as AnyObject
     }
 
     //编码成object
@@ -114,6 +117,7 @@ class UserInfo: NSObject,NSCoding {
         coder.encode(star, forKey:"star")
         coder.encode(storeId, forKey:"storeId")
         coder.encode(type, forKey:"type")
+        coder.encode(password, forKey:"password")
     }
 }
 

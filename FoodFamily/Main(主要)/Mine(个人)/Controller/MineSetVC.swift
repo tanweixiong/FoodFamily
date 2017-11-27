@@ -56,7 +56,14 @@ class MineSetVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 0 {
+            let spassword = UserDefaults.standard.getUserInfo().spassword as! String
             let mineSetPayPasswordVC = MineSetPayPasswordVC()
+            //没有设置支付密码
+            if spassword == "" {
+                mineSetPayPasswordVC.mineSetPayPasswordType = .setPayPasswordStatus
+            }else{
+                mineSetPayPasswordVC.mineSetPayPasswordType = .getBackPayPasswordStatus
+            }
             self.navigationController?.pushViewController(mineSetPayPasswordVC, animated: true)
         }
     }

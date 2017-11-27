@@ -42,7 +42,6 @@ class BaseViewModel: NSObject {
     class func loadSuccessfullyLoginData(requestType: HTTPMethod, URLString : String, parameters : [String : Any]? = nil, finishedCallback : @escaping () -> ()) {
         NetWorkTool.request(requestType: requestType, URLString:URLString, parameters: parameters, showIndicator: true, success: { (json) in
             let responseData = Mapper<ResponseData>().map(JSONObject: json)
-            print(json)
             if let code = responseData?.code {
                 guard  100 == code else {
                     SVProgressHUD.showInfo(withStatus: responseData?.message)

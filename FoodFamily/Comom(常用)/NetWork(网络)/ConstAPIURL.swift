@@ -26,6 +26,8 @@ struct ConstAPI {
     static let kAPIUserCouponBuyCoupon = kAPIBaseURL + "userCoupon/buyCoupon" //首页详情优惠券
     static let kAPIUserCouponGetUserCouponList = kAPIBaseURL + "userCoupon/getUserCouponList" //首页购买优惠券
     static let kAPIOrderGetOrderList = kAPIBaseURL + "order/getOrderList" //获取订单列表
-    
+    static let kAPIUserSetSpassword = kAPIBaseURL + "user/setSpassword" //设置支付密码
+    static let kAPIUserUpdateSpassword = kAPIBaseURL + "user/updateSpassword" //修改支付密码
+    static let kAPIUserWalletGetUserWalletList = kAPIBaseURL + "userWallet/getUserWalletList" //我的钱包
 }
 

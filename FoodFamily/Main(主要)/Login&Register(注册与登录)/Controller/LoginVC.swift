@@ -31,8 +31,8 @@ class LoginVC: UIViewController,RegisterAndForgetPsdDeleagte {
         self.setCloseRoundKeyboard()
         self.createUI()
         
-        self.phoneTextField.AGTextField.text = "17876489900"
-        self.passwordTextField.AGTextField.text = "123456"
+//        self.phoneTextField.AGTextField.text = "17876489900"
+//        self.passwordTextField.AGTextField.text = "123456"
     }
     
     func loginOnClick(){
@@ -40,6 +40,11 @@ class LoginVC: UIViewController,RegisterAndForgetPsdDeleagte {
             let parameters = ["acount":self.phoneTextField.AGTextField.text!,"password":self.passwordTextField.AGTextField.text!]
             SVProgressHUD.show(withStatus: "请稍等")
             BaseViewModel.loadSuccessfullyLoginData(requestType: .post, URLString: ConstAPI.kAPIUserLogin, parameters: parameters, finishedCallback: {
+                //保存登录密码下次调用
+                let userInfo = UserDefaults.standard.getUserInfo()
+                userInfo.password = self.passwordTextField.AGTextField.text! as AnyObject
+                UserDefaults.standard.saveCustomObject(customObject: userInfo, key: R_UserInfo)
+                //登录后操作
                 SVProgressHUD.showSuccess(withStatus: "登录成功")
                 SVProgressHUD.dismiss()
                 let tab = MainTabBarController()
@@ -52,7 +57,7 @@ class LoginVC: UIViewController,RegisterAndForgetPsdDeleagte {
    class func setAutoLogin(){
         if UserDefaults.standard.bool(forKey:R_Theme_isLogin) {
             let acount = UserDefaults.standard.getUserInfo().acount
-            let password = UserDefaults.standard.getUserInfo().fpwd
+            let password = UserDefaults.standard.getUserInfo().password
             let parameters = ["acount":acount!,"password":password!]
             BaseViewModel.loadSuccessfullyLoginData(requestType: .post, URLString: ConstAPI.kAPIUserLogin, parameters: parameters, finishedCallback: {
             })

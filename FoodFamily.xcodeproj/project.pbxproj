@@ -85,6 +85,11 @@
 		231EAA8B1FC6998300E022EB /* SDRefreshHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 231EAA841FC6998200E022EB /* SDRefreshHeaderView.m */; };
 		231EAA8C1FC6998300E022EB /* SDRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = 231EAA861FC6998200E022EB /* SDRefreshView.m */; };
 		231EAA8D1FC6998300E022EB /* UIView+SDExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 231EAA881FC6998200E022EB /* UIView+SDExtension.m */; };
+		23202CFA1FCBF0460029C494 /* MineReservationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23202CF91FCBF0460029C494 /* MineReservationModel.swift */; };
+		23202CFC1FCBF1310029C494 /* MineWalletModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23202CFB1FCBF1310029C494 /* MineWalletModel.swift */; };
+		23202CFE1FCBF1460029C494 /* MineWalletVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23202CFD1FCBF1460029C494 /* MineWalletVM.swift */; };
+		23202D051FCBF5990029C494 /* MineWalletCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23202D031FCBF5990029C494 /* MineWalletCell.swift */; };
+		23202D061FCBF5990029C494 /* MineWalletCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23202D041FCBF5990029C494 /* MineWalletCell.xib */; };
 		2320D3E01FBC3F7800A5B507 /* MineRechargeMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2320D3DE1FBC3F7800A5B507 /* MineRechargeMessageCell.swift */; };
 		2320D3E11FBC3F7800A5B507 /* MineRechargeMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2320D3DF1FBC3F7800A5B507 /* MineRechargeMessageCell.xib */; };
 		2321DD0C1FC6BE4A00AC0469 /* FoodVoucherDetailsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2321DD0B1FC6BE4A00AC0469 /* FoodVoucherDetailsVM.swift */; };
@@ -431,6 +436,11 @@
 		231EAA861FC6998200E022EB /* SDRefreshView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDRefreshView.m; sourceTree = "<group>"; };
 		231EAA871FC6998200E022EB /* UIView+SDExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SDExtension.h"; sourceTree = "<group>"; };
 		231EAA881FC6998200E022EB /* UIView+SDExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SDExtension.m"; sourceTree = "<group>"; };
+		23202CF91FCBF0460029C494 /* MineReservationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineReservationModel.swift; sourceTree = "<group>"; };
+		23202CFB1FCBF1310029C494 /* MineWalletModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineWalletModel.swift; sourceTree = "<group>"; };
+		23202CFD1FCBF1460029C494 /* MineWalletVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineWalletVM.swift; sourceTree = "<group>"; };
+		23202D031FCBF5990029C494 /* MineWalletCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineWalletCell.swift; sourceTree = "<group>"; };
+		23202D041FCBF5990029C494 /* MineWalletCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineWalletCell.xib; sourceTree = "<group>"; };
 		2320D3DE1FBC3F7800A5B507 /* MineRechargeMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineRechargeMessageCell.swift; sourceTree = "<group>"; };
 		2320D3DF1FBC3F7800A5B507 /* MineRechargeMessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineRechargeMessageCell.xib; sourceTree = "<group>"; };
 		2321DD0B1FC6BE4A00AC0469 /* FoodVoucherDetailsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodVoucherDetailsVM.swift; sourceTree = "<group>"; };
@@ -829,6 +839,7 @@
 			children = (
 				230FCB161FC7FAC900C8C0F2 /* MineCollectionVM.swift */,
 				230DFCF81FC8177300828395 /* MineOrderVM.swift */,
+				23202CFD1FCBF1460029C494 /* MineWalletVM.swift */,
 			);
 			name = ViewModel;
 			path = "FoodFamily/Main(主要)/Mine(个人)/ViewModel";
@@ -861,6 +872,8 @@
 			children = (
 				230FCB141FC7FABA00C8C0F2 /* MineCollectionModel.swift */,
 				230DFCF61FC8173E00828395 /* MineOrderModel.swift */,
+				23202CF91FCBF0460029C494 /* MineReservationModel.swift */,
+				23202CFB1FCBF1310029C494 /* MineWalletModel.swift */,
 			);
 			name = Model;
 			path = "FoodFamily/Main(主要)/Mine(个人)/Model";
@@ -1707,6 +1720,8 @@
 				23F4A7381FBBE8ED004C9266 /* MyBalanceView.xib */,
 				23F4A73C1FBBE938004C9266 /* MyBalanceListView.swift */,
 				23F4A73D1FBBE938004C9266 /* MyBalanceListView.xib */,
+				23202D031FCBF5990029C494 /* MineWalletCell.swift */,
+				23202D041FCBF5990029C494 /* MineWalletCell.xib */,
 			);
 			path = MineWalletView;
 			sourceTree = "<group>";
@@ -1891,6 +1906,7 @@
 				236C44301FB4750800AC3010 /* FoodMerchantsHeadView.xib in Resources */,
 				23118AC31FC55C8000B8CE33 /* RecommendMealCell.xib in Resources */,
 				239F070F1FB2F4020067D810 /* FoodPurchaseSuccessView.xib in Resources */,
+				23202D061FCBF5990029C494 /* MineWalletCell.xib in Resources */,
 				230BE10A1FB6E2EC00AD47E0 /* MineReservationCell.xib in Resources */,
 				230FA7731FB5AA8B00190F2B /* MineHeadView.xib in Resources */,
 				23E214CB1FB6EA3600C7D085 /* MineInformationListCell.xib in Resources */,
@@ -2132,6 +2148,7 @@
 				2316A2BB1FAD8BD000A0B512 /* RegularDefinition.swift in Sources */,
 				238093441FB97BAD0051EF3D /* UILayoutSupport+Extensions.swift in Sources */,
 				23F4A7451FBBEE74004C9266 /* MineRechargeVC.swift in Sources */,
+				23202D051FCBF5990029C494 /* MineWalletCell.swift in Sources */,
 				230A73741FC58407009F7202 /* RecommendedListMoneyCell.swift in Sources */,
 				230FCB171FC7FAC900C8C0F2 /* MineCollectionVM.swift in Sources */,
 				2380936D1FB9813D0051EF3D /* DictionaryTransform.swift in Sources */,
@@ -2163,6 +2180,7 @@
 				2353EC1C1FB3F6BA005E1548 /* OCTools.m in Sources */,
 				2380932A1FB97BAD0051EF3D /* ConstraintItem.swift in Sources */,
 				238093801FB9813D0051EF3D /* URLTransform.swift in Sources */,
+				23202CFC1FCBF1310029C494 /* MineWalletModel.swift in Sources */,
 				238093781FB9813D0051EF3D /* Mappable.swift in Sources */,
 				238093221FB97BAD0051EF3D /* Constraint.swift in Sources */,
 				230E69F21FC3C8F9005D4F10 /* RecommendCommentModel.swift in Sources */,
@@ -2223,6 +2241,7 @@
 				238093241FB97BAD0051EF3D /* ConstraintConfig.swift in Sources */,
 				2380933A1FB97BAD0051EF3D /* ConstraintRelatableTarget.swift in Sources */,
 				23113BFE1FC65EA100BE1784 /* FoodNormalOrderDetailsModel.swift in Sources */,
+				23202CFE1FCBF1460029C494 /* MineWalletVM.swift in Sources */,
 				23113BF61FC65D7300BE1784 /* FoodPaymentCardCouponsModel.swift in Sources */,
 				23113BF81FC65D8600BE1784 /* FoodVoucherOrderDetailsModel.swift in Sources */,
 				238093741FB9813D0051EF3D /* IntegerOperators.swift in Sources */,
@@ -2233,6 +2252,7 @@
 				230BE0E01FB6A27600AD47E0 /* SGHelperTool.m in Sources */,
 				23D147451FBA938A0028CD09 /* FoodEvaluationHeadCell.swift in Sources */,
 				23F4A7671FBBEFA0004C9266 /* ZCTradeView.m in Sources */,
+				23202CFA1FCBF0460029C494 /* MineReservationModel.swift in Sources */,
 				2321DD0C1FC6BE4A00AC0469 /* FoodVoucherDetailsVM.swift in Sources */,
 				238093711FB9813D0051EF3D /* HexColorTransform.swift in Sources */,
 				239F06F41FB2F4020067D810 /* FoodReservationFinishListCell.swift in Sources */,

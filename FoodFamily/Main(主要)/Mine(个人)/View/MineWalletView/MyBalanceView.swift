@@ -9,7 +9,7 @@
 import UIKit
 
 class MyBalanceView: UIView {
-
+    @IBOutlet weak var listView: UIView!
     @IBOutlet weak var headView: UIImageView!
     /*
     // Only override draw() if you perform custom drawing.
