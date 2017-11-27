@@ -194,6 +194,23 @@ static CGFloat const kDotWith_height = 10;
     [self.paymentPasswordAlertVw.backgroundVw addSubview:self.passwordField];
 }
 
+
+/**
+ 设置需要支付金额
+ @param price 金额
+ */
+-(void)setNeedPayPrice:(NSString *)price{
+    self.paymentPasswordAlertVw.needPayLabel.text = price;
+}
+
+/**
+ 设置钱包余额
+ @param balance 余额
+ */
+-(void)setWalletBalance:(NSString *)balance{
+    self.paymentPasswordAlertVw.pirceLabel.text = balance;
+}
+
 - (void)cleanPassword
 {
     _passwordField.text = @"";

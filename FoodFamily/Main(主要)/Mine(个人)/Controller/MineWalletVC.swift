@@ -108,7 +108,17 @@ class MineWalletVC: UIViewController,UITableViewDataSource,UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-     
+        let model = viewModel.walletModel[indexPath.row]
+        //套餐
+        if model.orderType?.intValue == 1 {
+          
+        //代金券
+        }else if model.orderType?.intValue == 2 {
+            
+        //预约
+        }else if model.orderType?.intValue == 3{
+            
+        }
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -118,20 +128,17 @@ class MineWalletVC: UIViewController,UITableViewDataSource,UITableViewDelegate{
         var detailType = ""
         switch (model.detailType?.intValue)! {
         case 1:
-            detailType = "ec币"
+            detailType = "+"
             break
         case 2:
-            detailType = "积分"
-            break
-        case 3:
-             detailType = "消费"
+            detailType = "-"
             break
         default:
             break
         }
-        cell.detailTypeLabel.text = detailType
+        cell.detailTypeLabel.text = model.detailRemark
         cell.createTimeLabel.text = model.createTime
-        cell.detailPriceLabel.text = model.detailPrice?.stringValue
+        cell.detailPriceLabel.text =  detailType + (model.detailPrice?.stringValue)!
         return cell
     }
     
@@ -161,13 +168,12 @@ class MineWalletVC: UIViewController,UITableViewDataSource,UITableViewDelegate{
         let view = Bundle.main.loadNibNamed("MyBalanceListView", owner: nil, options: nil)?.last as! MyBalanceListView
         view.frame = CGRect(x: 0, y: 0, width: MyBalanceUX.myBalanceListView.width, height: MyBalanceUX.myBalanceListView.height)
         view.myBalanceCallBack = {(sender:UIButton) in
-            if sender.tag == 1 {
-                let mineAmountChoiceVC = MineAmountChoiceVC()
-                self.navigationController?.pushViewController(mineAmountChoiceVC, animated: true)
-            }else{
-                let mineWithdrawVC = MineWithdrawVC()
-                self.navigationController?.pushViewController(mineWithdrawVC, animated: true)
-            }
+            let alertView = UIAlertView()
+            alertView.title = "提示"
+            alertView.message = "该功能正在开发中敬请期待"
+            alertView.addButton(withTitle: "确定")
+            alertView.delegate=self;
+            alertView.show()
         }
         return view
     }()

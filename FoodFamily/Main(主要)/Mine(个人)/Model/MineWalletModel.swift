@@ -12,8 +12,9 @@ class MineWalletDataModel: Mappable {
     var contact: String?
     var createTime: String?
     var detailPrice: NSNumber?
-    var detailRemark: NSNumber?
+    var detailRemark: String?
     var detailType: NSNumber?
+    var orderType:NSNumber?
     
     required init?(map: Map) {
         
@@ -29,6 +30,7 @@ class MineWalletDataModel: Mappable {
         detailPrice    <- map["detailPrice"]
         detailRemark   <- map["detailRemark"]
         detailType     <- map["detailType"]
+        orderType      <- map["orderType"]
     }
 }
 

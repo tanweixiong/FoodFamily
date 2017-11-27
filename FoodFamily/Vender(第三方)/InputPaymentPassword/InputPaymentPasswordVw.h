@@ -19,8 +19,10 @@ typedef enum{
 - (NSString *)inputPaymentPassword:(NSString *)pwd;
 @end
 @interface InputPaymentPasswordVw : UIView
-- (instancetype)initWithFrame:(CGRect)frame;
 @property (nonatomic,assign)InputPaymentPasswordType  style;
 @property (nonatomic, weak) id<InputPaymentPasswordDelegate> delegate;
 - (void)show;
+- (instancetype)initWithFrame:(CGRect)frame;
+-(void)setNeedPayPrice:(NSString *)price;
+-(void)setWalletBalance:(NSString *)balance;
 @end

@@ -278,7 +278,7 @@ class RecommendDetailsVC: UIViewController,UITableViewDelegate,UITableViewDataSo
     }()
     
     func pushViewController(_ recommendedType:RecommendedType,_ model:RecommendDataModel){
-        self.navigationController?.navigationBar.alpha = 1
+        self.navigationController?.navigationBar.alpha =  recommendedType == .collectionStatus ? 0 : 1
         switch recommendedType {
         case .collectionStatus:
             let isCollection = !self.recommendFootView.collectView.isSelected

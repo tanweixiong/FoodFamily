@@ -13,7 +13,7 @@ enum FoodPaymentMethodStatus {
     case reservationPaymentStatus
 }
 
-class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate {
+class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate,InputPaymentPasswordDelegate {
     fileprivate let dataScorce = [[""],["输入消费金额","钱包支付"],["微信支付","支付宝支付"],["积分券  "]]
     fileprivate let imageArray = [[""],["","ic_home_card"],["ic_home_wechat","ic_home_alipay"],["ic_home_wodejifen"]]
     fileprivate let foodReservationPayCell = "FoodReservationPayCell"
@@ -42,7 +42,7 @@ class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
-         self.indexPath = NSIndexPath(row: 0, section: 2) as IndexPath
+         self.indexPath = NSIndexPath(row: 1, section: 1) as IndexPath
         view.addSubview(tableView)
         tableView.addSubview(confirmBtn)
     }
@@ -82,26 +82,17 @@ class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewData
             cell.selectionStyle = .none
             cell.storeInfoModel = self.storeInfoModel
             return cell
-        }else if indexPath.section == 1 {
-            if indexPath.row == 0 {
-                let cell = tableView.dequeueReusableCell(withIdentifier: foodPaymentConsumptionVC, for: indexPath) as! FoodPaymentConsumptionVC
-                cell.selectionStyle = .none
-                cell.textfield.delegate = self
-              return cell
-            }else{
-                let cell = tableView.dequeueReusableCell(withIdentifier: foodReservationPaymentCardCell, for: indexPath) as! FoodReservationPaymentCardCell
-                cell.selectionStyle = .none
-                cell.headingLabel.text = headingArray[indexPath.row] as? String
-                cell.iconImageView.image = UIImage.init(named: (imageViewArray[indexPath.row] as? String)!)
-                return cell
-            }
+        }else if indexPath.section == 1 && indexPath.row == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: foodPaymentConsumptionVC, for: indexPath) as! FoodPaymentConsumptionVC
+            cell.selectionStyle = .none
+            cell.textfield.delegate = self
+            return cell
         }else {
             let cell = tableView.dequeueReusableCell(withIdentifier: foodReservationPaymentMethodCell, for: indexPath) as! FoodReservationPaymentMethodCell
             cell.chooseBtn.isSelected = indexPath == self.indexPath ? true : false
             cell.selectionStyle = .none
             cell.headingLabel.text = headingArray[indexPath.row] as? String
             cell.iconImageView.image = UIImage.init(named: (imageViewArray[indexPath.row] as? String)!)
-            
             if indexPath.section == 3 {
                 let heading = headingArray[indexPath.row] as? String
                 let newHeading = heading! + "(-10000抵扣100)"
@@ -114,13 +105,12 @@ class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewData
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.section == 0  {return}
-        if indexPath.section == 1 {
-            let foodPaymentCardCouponsVC = FoodPaymentCardCouponsVC()
-            self.navigationController?.pushViewController(foodPaymentCardCouponsVC, animated: true)
-            return}
-        
-        if indexPath.section == 2 {
+        if (indexPath.section == 0) || (indexPath.section == 1 && indexPath.row == 0)  {return}
+//        if indexPath.section == 1  {
+//            let foodPaymentCardCouponsVC = FoodPaymentCardCouponsVC()
+//            self.navigationController?.pushViewController(foodPaymentCardCouponsVC, animated: true)
+//            return}
+        if indexPath.section == 1 || indexPath.section == 2 {
             if indexPath == self.indexPath { return }
             let selectedCell = tableView.cellForRow(at: IndexPath(row: indexPath.row, section: indexPath.section))as! FoodReservationPaymentMethodCell
             selectedCell.chooseBtn.isSelected = true
@@ -171,10 +161,19 @@ class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewData
         return btn
     }()
     
+    func inputPaymentPasswordChangeBankCard() {
+        
+    }
+    
     @objc func confirmOnClick(){
-        let foodPurchaseSuccessVC = FoodPurchaseSuccessVC()
-        foodPurchaseSuccessVC.paymentMethod = self.paymentMethod
-        self.navigationController?.pushViewController(foodPurchaseSuccessVC, animated: true)
+//        let foodPurchaseSuccessVC = FoodPurchaseSuccessVC()
+//        foodPurchaseSuccessVC.paymentMethod = self.paymentMethod
+//        self.navigationController?.pushViewController(foodPurchaseSuccessVC, animated: true)
+        let view = InputPaymentPasswordVw(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT))
+        view?.delegate = self
+        view?.setNeedPayPrice("12908")
+        view?.setWalletBalance("20010")
+        view?.show()
     }
     
 }

@@ -13,5 +13,7 @@
 @property (weak, nonatomic) IBOutlet UIView *backgroundVw;
 @property (weak, nonatomic) IBOutlet UILabel *needPayLabel;
 @property (weak, nonatomic) IBOutlet UIButton *changeButton;
+@property (weak, nonatomic) IBOutlet UILabel *pirceLabel;
+
 
 @end
