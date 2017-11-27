@@ -10,15 +10,23 @@ import UIKit
 
 class MineAllOrderVC: UIViewController,UITableViewDataSource,UITableViewDelegate {
     fileprivate let mineAllOrderCell = "MineAllOrderCell"
+    fileprivate lazy var viewModel : MineOrderVM = MineOrderVM()
     
     struct MineAllOrderUX {
         static let cellHeight:CGFloat = 121
-        static let sectionHeight:CGFloat = 20
+        static let sectionHeight:CGFloat = 15
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(tableView)
+        self.getData()
+    }
+    
+    func getData(){
+        viewModel.loadSuccessfullyReturnedData(requestType: .get, URLString: ConstAPI.kAPIOrderGetOrderList, showIndicator: false) {
+            
+        }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

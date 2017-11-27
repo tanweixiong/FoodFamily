@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -34,24 +33,19 @@
                         </userDefinedRuntimeAttributes>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="orJ-aG-Kms">
-                        <rect key="frame" x="74" y="31.5" width="168" height="28"/>
+                        <rect key="frame" x="74" y="38.5" width="168" height="14"/>
                         <attributedString key="attributedText">
-                            <fragment content="喜贺极上烤肉（花城汇店">
+                            <fragment content="--">
                                 <attributes>
                                     <color key="NSColor" red="0.26274509800000001" green="0.25882352939999997" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <font key="NSFont" size="14" name=".PingFangSC-Regular"/>
-                                </attributes>
-                            </fragment>
-                            <fragment content="喜贺极上烤肉汇店喜贺极上烤肉汇店喜贺极上烤肉">
-                                <attributes>
-                                    <color key="NSColor" red="0.26274999999999998" green="0.25881999999999999" blue="0.26274999999999998" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                    <font key="NSFont" size="14" name=".PingFangSC-Regular"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                 </attributes>
                             </fragment>
                         </attributedString>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="¥399" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SIo-c9-g6u">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="¥0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SIo-c9-g6u">
                         <rect key="frame" x="280" y="33" width="80" height="24"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="80" id="l8U-SC-TNa"/>
@@ -74,8 +68,10 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="iconImageView" destination="ec4-mh-UNf" id="xb7-BC-WR6"/>
+                <outlet property="priceLabel" destination="SIo-c9-g6u" id="PU8-Gq-NGV"/>
+                <outlet property="storeNameLabel" destination="orJ-aG-Kms" id="WDc-YO-oNN"/>
             </connections>
-            <point key="canvasLocation" x="25.5" y="52"/>
+            <point key="canvasLocation" x="-243" y="60"/>
         </tableViewCell>
     </objects>
     <resources>

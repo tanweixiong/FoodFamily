@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -23,9 +22,15 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y8o-3b-6Hl">
                             <rect key="frame" x="0.0" y="0.0" width="96" height="50"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_home_collect" translatesAutoresizingMaskIntoConstraints="NO" id="ODx-tB-Eiu">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rnv-5g-TJz">
                                     <rect key="frame" x="38" y="7" width="20" height="19"/>
-                                </imageView>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="20" id="dLD-Os-Oag"/>
+                                        <constraint firstAttribute="height" constant="19" id="gXA-L9-ykT"/>
+                                    </constraints>
+                                    <state key="normal" backgroundImage="ic_home_collect"/>
+                                    <state key="selected" backgroundImage="ic_home_iscollectfinish"/>
+                                </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="收藏" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hSb-4L-fg0">
                                     <rect key="frame" x="33.5" y="28" width="29" height="20"/>
                                     <constraints>
@@ -44,13 +49,14 @@
                             </subviews>
                             <constraints>
                                 <constraint firstItem="fkK-7R-pC3" firstAttribute="leading" secondItem="y8o-3b-6Hl" secondAttribute="leading" id="1ek-uT-UQn"/>
+                                <constraint firstItem="Rnv-5g-TJz" firstAttribute="top" secondItem="y8o-3b-6Hl" secondAttribute="top" constant="7" id="4QH-ie-e2l"/>
                                 <constraint firstAttribute="trailing" secondItem="fkK-7R-pC3" secondAttribute="trailing" id="LEh-gg-Uca"/>
+                                <constraint firstItem="hSb-4L-fg0" firstAttribute="top" secondItem="Rnv-5g-TJz" secondAttribute="bottom" constant="2" id="MQL-ZE-pik"/>
                                 <constraint firstItem="fkK-7R-pC3" firstAttribute="top" secondItem="y8o-3b-6Hl" secondAttribute="top" id="Plr-No-cfs"/>
-                                <constraint firstItem="hSb-4L-fg0" firstAttribute="centerX" secondItem="ODx-tB-Eiu" secondAttribute="centerX" id="Qfs-T4-6sB"/>
-                                <constraint firstItem="hSb-4L-fg0" firstAttribute="top" secondItem="ODx-tB-Eiu" secondAttribute="bottom" constant="2" id="Qt0-dn-ep5"/>
-                                <constraint firstItem="ODx-tB-Eiu" firstAttribute="top" secondItem="y8o-3b-6Hl" secondAttribute="top" constant="7" id="cpB-kC-lWH"/>
+                                <constraint firstItem="Rnv-5g-TJz" firstAttribute="centerX" secondItem="y8o-3b-6Hl" secondAttribute="centerX" id="ayu-zH-OV8"/>
+                                <constraint firstItem="hSb-4L-fg0" firstAttribute="centerX" secondItem="y8o-3b-6Hl" secondAttribute="centerX" id="dDP-dK-AlR"/>
+                                <constraint firstItem="Rnv-5g-TJz" firstAttribute="centerX" secondItem="y8o-3b-6Hl" secondAttribute="centerX" id="fft-AC-zJV"/>
                                 <constraint firstAttribute="bottom" secondItem="fkK-7R-pC3" secondAttribute="bottom" id="jeU-Yl-08O"/>
-                                <constraint firstItem="ODx-tB-Eiu" firstAttribute="centerX" secondItem="y8o-3b-6Hl" secondAttribute="centerX" id="yOk-7r-lvb"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qo0-eb-t7V">
@@ -109,8 +115,8 @@
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstItem="Znh-aI-GDB" firstAttribute="top" secondItem="ODx-tB-Eiu" secondAttribute="top" id="1Du-St-Csc"/>
                         <constraint firstItem="qo0-eb-t7V" firstAttribute="leading" secondItem="y8o-3b-6Hl" secondAttribute="trailing" id="2Wj-XB-5mn"/>
+                        <constraint firstItem="Znh-aI-GDB" firstAttribute="top" secondItem="Rnv-5g-TJz" secondAttribute="top" id="4DI-Eq-sF7"/>
                         <constraint firstItem="y8o-3b-6Hl" firstAttribute="leading" secondItem="ndc-qr-6Db" secondAttribute="leading" id="8wu-JN-Arq"/>
                         <constraint firstItem="o8S-dG-P6i" firstAttribute="width" secondItem="y8o-3b-6Hl" secondAttribute="width" multiplier="1.9:1" id="EtC-wA-e2T"/>
                         <constraint firstAttribute="bottom" secondItem="qo0-eb-t7V" secondAttribute="bottom" id="NkC-Wt-Mpq"/>
@@ -136,11 +142,15 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="collectView" destination="Rnv-5g-TJz" id="rDN-oP-4eh"/>
+            </connections>
             <point key="canvasLocation" x="-204" y="58"/>
         </view>
     </objects>
     <resources>
         <image name="ic_home_collect" width="20" height="19"/>
+        <image name="ic_home_iscollectfinish" width="16" height="15"/>
         <image name="ic_home_yuyue" width="20" height="19"/>
     </resources>
 </document>

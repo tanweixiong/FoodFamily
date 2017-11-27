@@ -13,7 +13,7 @@ class FoodPurchaseNotesCell: UITableViewCell {
     @IBOutlet weak var headingImageView: UIImageView!
     
     struct FoodPurchaseNotesUX {
-        static let startSpace:CGFloat = 30
+        static let startSpace:CGFloat = 60
         static let bottomSpace:CGFloat = 10
     }
     
@@ -35,9 +35,15 @@ class FoodPurchaseNotesCell: UITableViewCell {
         self.addSubview(headingContentLabel)
         
         headingContentLabel.text = model.content
-        let size:CGSize = OCTools.calculateMeaasgeHeight(withText: headingContentLabel.text, andWidth: SCREEN_WIDTH - 60, andFont: UIFont.systemFont(ofSize: 14))
-        headingContentLabel.frame = CGRect(x: 30, y: headingLabel.frame.maxY + 15, width: size.width, height: size.height)
-        UserDefaults.standard.set(headingContentLabel.frame.maxY + 20, forKey: "height")
+        let size:CGSize = OCTools.calculateMeaasgeHeight(withText: headingContentLabel.text, andWidth: SCREEN_WIDTH - FoodPurchaseNotesUX.startSpace, andFont: UIFont.systemFont(ofSize: 14))
+        headingContentLabel.snp.updateConstraints { (make) in
+            make.centerX.equalTo(contentView.snp.centerX)
+            make.top.greaterThanOrEqualTo(headingLabel.frame.maxY + 15)
+            make.width.equalTo(size.width)
+            make.height.equalTo(size.height)
+        }
+        let sum = headingLabel.frame.maxY + 15 + size.height
+        UserDefaults.standard.set(sum + 20, forKey: "height")
     }
 
     //购买需知的数据 优惠券
@@ -46,7 +52,6 @@ class FoodPurchaseNotesCell: UITableViewCell {
         self.contentView.addSubview(usageTimeLabel)
         self.contentView.addSubview(usageRulesLabel)
         
-//        validityLabel.text = "有效期：" + model.startTime! + "-" + model.endTime!
         validityLabel.text = "有效期：" + model.startTime! + "~" + model.endTime!
         usageTimeLabel.text = "使用时间：" + model.useTime!
         usageRulesLabel.text = "使用规则：" + model.needKnow!
@@ -91,10 +96,15 @@ class FoodPurchaseNotesCell: UITableViewCell {
         
         conventionContentLabel.text = model.mealIntroduction!
 
-        let conventionContentSize:CGSize = OCTools.calculateMeaasgeHeight(withText: conventionContentLabel.text, andWidth: SCREEN_WIDTH - 60, andFont: UIFont.systemFont(ofSize: 14))
-        conventionContentLabel.frame = CGRect(x: SCREEN_WIDTH/2 - conventionContentSize.width/2, y: 20, width: conventionContentSize.width, height: conventionContentSize.height)
+        let size:CGSize = OCTools.calculateMeaasgeHeight(withText: conventionContentLabel.text, andWidth: SCREEN_WIDTH - 60, andFont: UIFont.systemFont(ofSize: 14))
+        conventionContentLabel.snp.updateConstraints { (make) in
+            make.centerX.equalTo(contentView.snp.centerX)
+            make.top.greaterThanOrEqualTo(20)
+            make.width.equalTo(size.width)
+            make.height.equalTo(size.height)
+        }
         
-        let sum = conventionContentLabel.frame.maxY
+        let sum = 20 + size.height
         UserDefaults.standard.set(sum + 20, forKey: "height")
     }
     

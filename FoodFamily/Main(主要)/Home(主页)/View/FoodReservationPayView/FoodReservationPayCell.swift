@@ -9,6 +9,16 @@
 import UIKit
 
 class FoodReservationPayCell: UITableViewCell {
+    var storeInfoModel : RecommendDataModel = RecommendDataModel()!{
+        didSet{
+//            priceLabel.text = storeInfoModel.p
+            storeNameLabel.text = storeInfoModel.storeName
+            iconImageView.sd_setImage(with: NSURL(string: (storeInfoModel.logo)!)! as URL, placeholderImage: UIImage.init(named: "ic_all_imageDefault"))
+        }
+    }
+    
+    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var storeNameLabel: UILabel!
     @IBOutlet weak var iconImageView: UIImageView! {
         didSet {
             iconImageView.layer.borderWidth = 2

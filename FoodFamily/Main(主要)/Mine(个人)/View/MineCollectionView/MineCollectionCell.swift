@@ -9,7 +9,23 @@
 import UIKit
 
 class MineCollectionCell: UITableViewCell {
-
+    @IBOutlet weak var logoImageView: UIImageView!
+    @IBOutlet weak var storeNameLabel: UILabel!
+    @IBOutlet weak var collectLabel: UILabel!
+    @IBOutlet weak var collectButton: UIButton!
+    var  mineCollectionBlock:((_ sender:UIButton)->())?;
+    var collectionListModel : MineCollectionDataModel = MineCollectionDataModel()!{
+        didSet{
+            logoImageView.sd_setImage(with: NSURL(string: (collectionListModel.logo)!)! as URL, placeholderImage: UIImage.init(named: "ic_all_smallImageDefault"))
+            storeNameLabel.text = collectionListModel.storeName
+        }
+    }
+    
+    @IBAction func collecttionClick(_ sender: UIButton) {
+        if mineCollectionBlock != nil {
+            mineCollectionBlock!(self.collectButton)
+        }
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

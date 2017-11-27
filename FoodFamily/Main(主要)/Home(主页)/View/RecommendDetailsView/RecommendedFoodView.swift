@@ -18,8 +18,10 @@ enum RecommendedType {
     case defaultDetailStatus
 }
 var recommendedType = RecommendedType.collectionStatus
+
 class RecommendedFoodView: UIView {
-   var recommendedFoodCallBack:((RecommendedType)->())?;
+    @IBOutlet weak var collectView: UIButton!
+    var recommendedFoodCallBack:((RecommendedType)->())?;
     @IBAction func OnClick(_ sender: UIButton) {
         switch sender.tag {
         case 1:
@@ -27,7 +29,7 @@ class RecommendedFoodView: UIView {
         case 2:
             recommendedType = .reservationStatus
         case 3:
-            recommendedType = .defaultDetailStatus
+            recommendedType = .payStatus
         default:
             break
         }

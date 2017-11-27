@@ -48,6 +48,17 @@ class LoginVC: UIViewController,RegisterAndForgetPsdDeleagte {
         }
     }
     
+    //完成自动登录功能
+   class func setAutoLogin(){
+        if UserDefaults.standard.bool(forKey:R_Theme_isLogin) {
+            let acount = UserDefaults.standard.getUserInfo().acount
+            let password = UserDefaults.standard.getUserInfo().fpwd
+            let parameters = ["acount":acount!,"password":password!]
+            BaseViewModel.loadSuccessfullyLoginData(requestType: .post, URLString: ConstAPI.kAPIUserLogin, parameters: parameters, finishedCallback: {
+            })
+        }
+    }
+    
     func checkTheInput()->Bool{
         if !Tools.validateMobile(mobile:self.phoneTextField.AGTextField.text!){
             SVProgressHUD.showInfo(withStatus: "请输入正确的手机号码")

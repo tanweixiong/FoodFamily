@@ -23,7 +23,9 @@ class RecommendDetailsVM: NSObject {
                 if showIndicator {
                     SVProgressHUD.showSuccess(withStatus: responseData?.message)
                 }
-                self.recommendDataModel = (responseData?.data)!
+                if responseData?.data != nil{
+                   self.recommendDataModel = (responseData?.data)!
+                }
                 finishedCallback()
             }
         }) { (error) in

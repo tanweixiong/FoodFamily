@@ -20,5 +20,12 @@ struct ConstAPI {
     static let kAPIAssessGetAssessList = kAPIBaseURL + "assess/getAssessList" //首页详情评论列表
     static let kAPIVouchersGetVoucherById = kAPIBaseURL + "vouchers/getVoucherById" //首页详情代金券
     static let kAPIMealGetMealInfoById = kAPIBaseURL + "meal/getMealInfoById" //首页详情套餐
+    static let kAPIStoreCollectionStore = kAPIBaseURL + "store/collectionStore" //首页详情收藏店铺
+    static let kAPIStoreCancelCollection = kAPIBaseURL + "store/cancelCollection" //首页详情取消收藏店铺
+    static let kAPICollectionGetCollectionList = kAPIBaseURL + "collection/getCollectionList" //获取收藏列表
+    static let kAPIUserCouponBuyCoupon = kAPIBaseURL + "userCoupon/buyCoupon" //首页详情优惠券
+    static let kAPIUserCouponGetUserCouponList = kAPIBaseURL + "userCoupon/getUserCouponList" //首页购买优惠券
+    static let kAPIOrderGetOrderList = kAPIBaseURL + "order/getOrderList" //获取订单列表
+    
 }
 

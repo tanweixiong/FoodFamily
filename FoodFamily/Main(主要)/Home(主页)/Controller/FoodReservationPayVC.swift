@@ -21,7 +21,7 @@ class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewData
     fileprivate let foodReservationPaymentMethodCell = "FoodReservationPaymentMethodCell"
     fileprivate let foodPaymentConsumptionVC = "FoodPaymentConsumptionVC"
     fileprivate var indexPath = IndexPath()
-    
+    lazy var storeInfoModel : RecommendDataModel = RecommendDataModel()!
     var foodPaymentMethod = FoodPaymentMethodStatus.normalPaymentStatus
     var paymentMethod = OrderPaymentMethod.ordinaryPaymentStatus
     
@@ -33,7 +33,6 @@ class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewData
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        self.setCloseRoundKeyboard()
         if foodPaymentMethod == .normalPaymentStatus {
             self.title = "支付"
         }else{
@@ -81,6 +80,7 @@ class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewData
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: foodReservationPayCell, for: indexPath) as! FoodReservationPayCell
             cell.selectionStyle = .none
+            cell.storeInfoModel = self.storeInfoModel
             return cell
         }else if indexPath.section == 1 {
             if indexPath.row == 0 {

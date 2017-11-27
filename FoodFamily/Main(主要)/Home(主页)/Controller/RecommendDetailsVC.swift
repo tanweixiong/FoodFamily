@@ -8,12 +8,8 @@
 
 import UIKit
 
-
 class RecommendDetailsVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
-    
     fileprivate lazy var recommendDetailsVM : RecommendDetailsVM = RecommendDetailsVM()
-//    fileprivate lazy var homeVM : HomeControllerVM = HomeControllerVM()
-
     fileprivate let recommendNaviCell = "recommendNaviCell"
     fileprivate let recommendedReasonCell = "recommendedReasonCell"
     fileprivate let recommendedMomeyCell = "recommendedMomeyCell"
@@ -74,6 +70,7 @@ class RecommendDetailsVC: UIViewController,UITableViewDelegate,UITableViewDataSo
             self.headScrollView.recommendDataModel = self.recommendDetailsVM.recommendDataModel
             self.recommendHeadView.recommendDataModel = self.recommendDetailsVM.recommendDataModel
             self.logoView.sd_setImage(with: NSURL(string: (self.recommendDetailsVM.recommendDataModel.logo!))! as URL, placeholderImage: UIImage.init(named: "ic_all_imageDefault"))
+            self.recommendFootView.collectView.isSelected = self.recommendDetailsVM.recommendDataModel.isCollection == 0 ? false : true
             let voucherArray:NSArray = self.recommendDetailsVM.recommendDataModel.voucherList! as NSArray
             if voucherArray.count != 0 {
                self.dataSource.add(voucherArray)
@@ -104,7 +101,15 @@ class RecommendDetailsVC: UIViewController,UITableViewDelegate,UITableViewDataSo
             }
         }
     }
-
+    
+    func setCollectionStore(isCollection:Bool){
+        let parameters = ["storeId":"1"]
+        let url = isCollection ? ConstAPI.kAPIStoreCollectionStore : ConstAPI.kAPIStoreCancelCollection
+        recommendDetailsVM.loadSuccessfullyReturnedData(requestType: .post, URLString: url, parameters: parameters, showIndicator: true, finishedCallback: {
+            self.recommendFootView.collectView.isSelected = isCollection
+        })
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return self.dataSource.count
     }
@@ -154,7 +159,7 @@ class RecommendDetailsVC: UIViewController,UITableViewDelegate,UITableViewDataSo
             let cell = tableView.dequeueReusableCell(withIdentifier: recommendedReasonCell, for: indexPath) as! RecommendedReasonCell
             cell.recommendDataModel = self.recommendDetailsVM.recommendDataModel
             cell.recommendedReasonCallBack = { (_ type:RecommendedType) in
-                self.pushViewController(type)
+                self.pushViewController(type,self.recommendDetailsVM.recommendDataModel)
             }
             cell.recommendedReasonRefreshTheData = {() in
                 let vc = OCTools.getCurrentVC() as! RecommendDetailsVC
@@ -267,22 +272,26 @@ class RecommendDetailsVC: UIViewController,UITableViewDelegate,UITableViewDataSo
         let view = Bundle.main.loadNibNamed("RecommendedFoodView", owner: nil, options: nil)?.last as! RecommendedFoodView
         view.frame = CGRect(x: 0, y:self.tableView.frame.maxY, width: SCREEN_WIDTH, height: RecommendDetailsUX.footViewHeight)
         view.recommendedFoodCallBack = {(_ type:RecommendedType) in
-           self.pushViewController(recommendedType)
+            self.pushViewController(type,self.recommendDetailsVM.recommendDataModel)
         }
         return view
     }()
     
-    func pushViewController(_ recommendedType:RecommendedType){
+    func pushViewController(_ recommendedType:RecommendedType,_ model:RecommendDataModel){
         self.navigationController?.navigationBar.alpha = 1
         switch recommendedType {
         case .collectionStatus:
+            let isCollection = !self.recommendFootView.collectView.isSelected
+            self.setCollectionStore(isCollection: isCollection)
             break
         case .reservationStatus:
             let foodReservationVC = FoodReservationVC()
             self.navigationController?.pushViewController(foodReservationVC, animated: true)
             break
+        //支付入口
         case .payStatus:
             let foodReservationPayVC = FoodReservationPayVC()
+            foodReservationPayVC.storeInfoModel = self.recommendDetailsVM.recommendDataModel
             self.navigationController?.pushViewController(foodReservationPayVC, animated: true)
             break
         case .recommendStatus:
