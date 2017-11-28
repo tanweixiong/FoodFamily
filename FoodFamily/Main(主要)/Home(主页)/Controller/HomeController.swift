@@ -9,7 +9,7 @@
 import UIKit
 import MJRefresh
 
-class HomeController: MainViewController,UITableViewDelegate,UITableViewDataSource,LocationDelegate {
+class HomeController: MainViewController,UITableViewDelegate,UITableViewDataSource,LocationDelegate,UITextFieldDelegate {
     
    fileprivate lazy var homeVM : HomeControllerVM = HomeControllerVM()
    fileprivate let boutiqueTableViewCell = "BoutiqueTableViewCell"
@@ -27,6 +27,7 @@ class HomeController: MainViewController,UITableViewDelegate,UITableViewDataSour
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.titleView = self.addSearchBar()
         self.getData()
         self.getTargetingData()
         self.view.addSubview(tableView)
@@ -118,6 +119,10 @@ class HomeController: MainViewController,UITableViewDelegate,UITableViewDataSour
         }
     }
     
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        return true
+    }
+    
     lazy var tableView: UITableView = {
         let tableView = UITableView.init(frame: CGRect(x: 0, y: 0 , width: SCREEN_WIDTH, height: SCREEN_HEIGHT - 64))
         tableView.showsVerticalScrollIndicator = false
@@ -150,6 +155,32 @@ class HomeController: MainViewController,UITableViewDelegate,UITableViewDataSour
         button.titleLabel?.font = UIFont.systemFont(ofSize: 16)
         return button
     }()
+    
+    func addSearchBar() ->UIView{
+        let viewHeight:CGFloat = 40
+        let textFieldHeight:CGFloat = 18
+        let view = UIView()
+        view.frame = CGRect(x: 0, y: 0, width: XMAKE(250), height: viewHeight)
+        view.backgroundColor = R_UINavigationBarColor
+        view.layer.cornerRadius = 15
+        view.clipsToBounds = true
+        view.layer.borderWidth = 1
+        view.layer.borderColor = UIColor.R_UIRGBColor(red: 67, green: 66, blue: 67, alpha: 1).cgColor
+        
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "home_search")
+        imageView.frame = CGRect(x: XMAKE(5), y: view.frame.height/2 - XMAKE(20)/2, width: XMAKE(20), height: XMAKE(20))
+        view.addSubview(imageView)
+        let textField = SearchTextField()
+        textField.frame = CGRect(x: imageView.frame.maxX + XMAKE(5) , y: view.frame.height/2 - textFieldHeight/2, width: view.frame.size.width - imageView.frame.maxX - XMAKE(5), height: textFieldHeight)
+        textField.placeholder = "搜索商户、类型、厨师"
+        textField.delegate = self
+        textField.setValue(UIColor.R_UIRGBColor(red: 67, green: 66, blue: 67, alpha: 1), forKeyPath: "_placeholderLabel.textColor")
+        textField.placeholderFont(UIFont.systemFont(ofSize: 14))
+        view.addSubview(textField)
+//        textField.backgroundColor = UIColor.red
+        return view
+    }
     
     override func rightTextBtn(_ sender: UIBarButtonItem) {
         let foodMerchantsVC = FoodMerchantsVC()

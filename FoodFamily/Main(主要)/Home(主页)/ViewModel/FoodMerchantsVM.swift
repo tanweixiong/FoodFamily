@@ -1,8 +1,8 @@
 //
-//  MineOrderVM.swift
+//  FoodMerchantsVM.swift
 //  FoodFamily
 //
-//  Created by tam on 2017/11/24.
+//  Created by tam on 2017/11/28.
 //  Copyright © 2017年 Wilkinson. All rights reserved.
 //
 
@@ -10,13 +10,13 @@ import UIKit
 import Alamofire
 import SVProgressHUD
 
-class MineOrderVM: NSObject {
+class FoodMerchantsVM: NSObject {
     //一般请求的方法 不带模型数组
-    lazy var orderModel : [MineOrderDataModel] = [MineOrderDataModel]()
+    lazy var merchantsModel : [FoodMerchantsDataModel] = [FoodMerchantsDataModel]()
     func loadSuccessfullyReturnedData(requestType: HTTPMethod, URLString : String, parameters : [String : Any]? = nil, showIndicator: Bool,finishedCallback : @escaping () -> ()) {
         NetWorkTool.request(requestType: requestType, URLString:URLString, parameters: parameters, showIndicator: true, success: { (json) in
             print(json)
-            let responseData = Mapper<MineOrderModel>().map(JSONObject: json)
+            let responseData = Mapper<FoodMerchantsModel>().map(JSONObject: json)
             if let code = responseData?.code {
                 guard  100 == code else {
                     SVProgressHUD.showInfo(withStatus: responseData?.message)
@@ -25,7 +25,7 @@ class MineOrderVM: NSObject {
                 if showIndicator {
                     SVProgressHUD.showSuccess(withStatus: responseData?.message)
                 }
-                self.orderModel = (responseData?.data?.list)!
+                self.merchantsModel = (responseData?.data)!
                 finishedCallback()
             }
         }) { (error) in

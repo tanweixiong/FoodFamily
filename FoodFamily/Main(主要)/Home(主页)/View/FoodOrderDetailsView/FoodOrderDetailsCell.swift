@@ -10,29 +10,73 @@ import UIKit
 
 class FoodOrderDetailsCell: UITableViewCell {
     var orderPaymentMethod = OrderPaymentMethod.ordinaryPaymentStatus
+    var headingContentArray = NSArray()
+    var headingContentDataArray = NSArray()
     struct FoodOrderDetailsUX {
         static let titleHeight:CGFloat = 14
         static let backgroundHeight:CGFloat = 38.5
         static let space:CGFloat = 0
     }
     
-    var headingContentArray:NSArray = [] {
+    
+    //堂吃 预约
+    var canteenModel : FoodOrderCanteenListModel = FoodOrderCanteenListModel()!{
         didSet{
-            if orderPaymentMethod == .ordinaryPaymentStatus {
-                headingContentArray = ["订单号码","订单时间","支付方式","积分折扣","消费总额"]
-            }else{
-                headingContentArray = ["卷码","订单号码","订单时间","支付方式","积分折扣","消费总额"]
+            headingContentArray = ["订单号码","订单时间","支付方式"]
+            let orderNo = canteenModel.orderNo?.stringValue
+            let createTime = canteenModel.createTime
+            var payType = ""
+            if canteenModel.payType == 1 {
+                payType = "余额支付"
+            }else if canteenModel.payType == 2 {
+                payType = "微信支付"
+            }else if canteenModel.payType == 3 {
+                payType = "支付宝支付"
             }
+            headingContentDataArray = [orderNo!,createTime!,payType]
         }
     }
-    
-    var contentArray:NSArray = [] {
+    //代金券
+    var voucherModel : FoodOrderVoucherListModel = FoodOrderVoucherListModel()!{
         didSet{
-            if orderPaymentMethod == .ordinaryPaymentStatus {
-                contentArray = ["123123128390","2017-10-27 10:22:41","余额支付","-100（10元）","¥248"]
-            }else{
-                contentArray = ["123192031239","123192031239","2017-10-27 10:22:41","余额支付","-100（10元）","70"]
+           headingContentArray = ["卷码","订单号码","订单时间","支付方式"]
+            let vouNum = voucherModel.vouNum?.stringValue
+            let orderNo = voucherModel.orderNo?.stringValue
+            let createTime = voucherModel.createTime
+            var payType = ""
+            if voucherModel.payType == 1 {
+                payType = "余额支付"
+            }else if voucherModel.payType == 2 {
+                payType = "微信支付"
+            }else if voucherModel.payType == 3 {
+                payType = "支付宝支付"
             }
+            headingContentDataArray = [vouNum!,orderNo!,createTime!,payType]
+        }
+    }
+    //套餐
+    var packageModel : FoodOrderPackageListModel = FoodOrderPackageListModel()!{
+        didSet{
+            headingContentArray = ["订单号码","订单时间","支付方式","积分折扣","消费总额"]
+            let orderNo = packageModel.orderNo?.stringValue
+            let createTime = packageModel.createTime
+            var orderStatus = ""
+            if packageModel.orderStatus == 1{
+                orderStatus = "未支付"
+            }else if packageModel.orderStatus == 2 {
+                orderStatus = "已支付"
+            }else if packageModel.orderStatus == 5 {
+                orderStatus = "未评价"
+            }else if packageModel.orderStatus == 6 {
+                orderStatus = "已评价"
+            }else if packageModel.orderStatus == 7 {
+                orderStatus = "交易完成"
+            }else if packageModel.orderStatus == 8 {
+                orderStatus = "交易关闭"
+            }
+            let integral = packageModel.integral?.stringValue
+            let paymentAmount = packageModel.paymentAmount?.stringValue
+            headingContentDataArray = [orderNo!,createTime!,orderStatus,integral!,paymentAmount!]
         }
     }
     
@@ -41,15 +85,11 @@ class FoodOrderDetailsCell: UITableViewCell {
         // Initialization code
     }
     
-    func setData(_ orderPaymentMethod:OrderPaymentMethod){
-        self.orderPaymentMethod = orderPaymentMethod
+    func setData(){
         self.contentView.addSubview(listView)
     }
 
     lazy var listView: UIView = {
-        headingContentArray = NSArray()
-        contentArray = NSArray()
-        
         let view = UIView()
         for item in 0...headingContentArray.count - 1 {
             let backgroundVw = UIView()
@@ -67,7 +107,7 @@ class FoodOrderDetailsCell: UITableViewCell {
             backgroundVw.addSubview(headingLab)
             
             let contentLab = UILabel()
-            contentLab.text = contentArray[item] as? String
+            contentLab.text = headingContentDataArray[item] as? String
             contentLab.font = UIFont.systemFont(ofSize: 14)
             let x = headingLab.frame.maxX + 15
             contentLab.frame = CGRect(x: x, y: 0, width:SCREEN_WIDTH - x - 15, height:backgroundVw.frame.size.height)

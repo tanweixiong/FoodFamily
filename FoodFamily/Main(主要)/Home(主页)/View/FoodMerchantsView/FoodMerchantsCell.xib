@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -20,7 +19,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="99.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_home_mydianpu" translatesAutoresizingMaskIntoConstraints="NO" id="xwy-4E-BWj">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_all_smallImageDefault" translatesAutoresizingMaskIntoConstraints="NO" id="xwy-4E-BWj">
                         <rect key="frame" x="15" y="15" width="70" height="70"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="xwy-4E-BWj" secondAttribute="height" multiplier="1:1" id="MZm-ZQ-B6B"/>
@@ -33,8 +32,8 @@
                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                         </userDefinedRuntimeAttributes>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="喜贺极上烤肉" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HqW-nw-Luo">
-                        <rect key="frame" x="95" y="15" width="98" height="22"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HqW-nw-Luo">
+                        <rect key="frame" x="95" y="15" width="210" height="22"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="22" id="IEd-6M-pbX"/>
                         </constraints>
@@ -42,26 +41,17 @@
                         <color key="textColor" red="0.098039215690000001" green="0.086274509799999996" blue="0.098039215690000001" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="花城汇北 | 烤肉" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mxd-rH-TYM">
-                        <rect key="frame" x="95" y="42.5" width="100" height="14.5"/>
-                        <constraints>
-                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="txN-s8-WFF"/>
-                        </constraints>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mxd-rH-TYM">
+                        <rect key="frame" x="95" y="42.5" width="210" height="14.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="人均：183 元" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3h2-ib-A70">
-                        <rect key="frame" x="95" y="69" width="73.5" height="16"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="人均：--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3h2-ib-A70">
+                        <rect key="frame" x="95" y="62.5" width="48.5" height="16"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="16" id="DhT-AM-wot"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                        <color key="textColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="&gt;182112km" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="itr-K4-zsC">
-                        <rect key="frame" x="200" y="42" width="105" height="15"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -70,23 +60,21 @@
                 <constraints>
                     <constraint firstItem="3h2-ib-A70" firstAttribute="leading" secondItem="Mxd-rH-TYM" secondAttribute="leading" id="5E2-FT-G1X"/>
                     <constraint firstItem="xwy-4E-BWj" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="BF4-ZN-8eE"/>
-                    <constraint firstAttribute="trailing" secondItem="itr-K4-zsC" secondAttribute="trailing" constant="15" id="Dvm-2T-YYU"/>
-                    <constraint firstItem="3h2-ib-A70" firstAttribute="bottom" secondItem="xwy-4E-BWj" secondAttribute="bottom" id="P0j-0Y-CNo"/>
+                    <constraint firstItem="3h2-ib-A70" firstAttribute="top" secondItem="Mxd-rH-TYM" secondAttribute="bottom" constant="5.5" id="Gm8-m9-pnD"/>
+                    <constraint firstAttribute="trailing" secondItem="HqW-nw-Luo" secondAttribute="trailing" constant="15" id="PHQ-vj-KZ5"/>
                     <constraint firstItem="Mxd-rH-TYM" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="PbM-4b-fpi"/>
                     <constraint firstItem="Mxd-rH-TYM" firstAttribute="leading" secondItem="HqW-nw-Luo" secondAttribute="leading" id="Rrx-Hx-ka5"/>
+                    <constraint firstAttribute="trailing" secondItem="Mxd-rH-TYM" secondAttribute="trailing" constant="15" id="SEd-qW-hOg"/>
                     <constraint firstItem="xwy-4E-BWj" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="T4W-Pb-VIa"/>
-                    <constraint firstItem="itr-K4-zsC" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Twp-nG-Mro"/>
                     <constraint firstItem="Mxd-rH-TYM" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="l6f-hJ-gH2"/>
                     <constraint firstItem="xwy-4E-BWj" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="nwl-k7-zbc"/>
                     <constraint firstItem="HqW-nw-Luo" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="95" id="o7o-7j-Okc"/>
                     <constraint firstItem="HqW-nw-Luo" firstAttribute="top" secondItem="xwy-4E-BWj" secondAttribute="top" id="t5r-bU-pYM"/>
-                    <constraint firstItem="itr-K4-zsC" firstAttribute="leading" secondItem="Mxd-rH-TYM" secondAttribute="trailing" constant="5" id="vPd-WY-i3H"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="addressLabel" destination="Mxd-rH-TYM" id="UQv-sI-Rwh"/>
-                <outlet property="distanceLabel" destination="itr-K4-zsC" id="Tcp-5u-XeN"/>
                 <outlet property="headingLabel" destination="HqW-nw-Luo" id="ESJ-bc-yQI"/>
                 <outlet property="iconImageView" destination="xwy-4E-BWj" id="lme-2e-Fdu"/>
                 <outlet property="perCapitaLabel" destination="3h2-ib-A70" id="IDv-4X-g3O"/>
@@ -94,6 +82,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="ic_home_mydianpu" width="49" height="49"/>
+        <image name="ic_all_smallImageDefault" width="50" height="50"/>
     </resources>
 </document>

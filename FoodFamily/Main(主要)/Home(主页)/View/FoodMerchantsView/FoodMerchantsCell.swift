@@ -9,10 +9,21 @@
 import UIKit
 
 class FoodMerchantsCell: UITableViewCell {
+    var merchantsModel : FoodMerchantsDataModel = FoodMerchantsDataModel()!{
+        didSet{
+            iconImageView.sd_setImage(with: NSURL(string: (merchantsModel.logo)!)! as URL, placeholderImage: UIImage.init(named: "ic_all_smallImageDefault"))
+            iconImageView.contentMode = .scaleAspectFit
+            
+            headingLabel.text = merchantsModel.storeName
+            perCapitaLabel.text = "人均：" + (merchantsModel.perPay?.stringValue)!
+            addressLabel.text = (merchantsModel.province)! + (merchantsModel.city)! + " | " + "<" +  (merchantsModel.distance?.stringValue)! + "km"
+        }
+    }
+    
     @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var headingLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
-    @IBOutlet weak var distanceLabel: UILabel!
+//    @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var perCapitaLabel: UILabel!
     
     override func awakeFromNib() {

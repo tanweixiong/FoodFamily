@@ -13,7 +13,7 @@ class MineExpensesRecordVC: UIViewController,SGPageTitleViewDelegate, SGPageCont
     fileprivate let contentViewHeight:CGFloat = SCREEN_HEIGHT_INSIDE - 44
     fileprivate var pageContentView = SGPageContentView()
     fileprivate var pageTitleView = SGPageTitleView()
-    fileprivate let titleArr:NSArray = ["全部订单", "待付款", "可使用"]
+    fileprivate let titleArr:NSArray = ["全部订单", "待付款", "已支付"]
     
     struct MineExpensesRecordUX {
         static let pageTitleViewHeight:CGFloat = 44
@@ -43,7 +43,6 @@ class MineExpensesRecordVC: UIViewController,SGPageTitleViewDelegate, SGPageCont
         self.pageTitleView.indicatorColor = UIColor.clear
         self.pageTitleView.backgroundColor = UIColor.white
         view.addSubview(self.pageTitleView)
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -59,6 +58,4 @@ class MineExpensesRecordVC: UIViewController,SGPageTitleViewDelegate, SGPageCont
     func sgPageContentView(_ SGPageContentView: SGPageContentView!, progress: CGFloat, originalIndex: Int, targetIndex: Int) {
         self.pageTitleView.setPageTitleViewWithProgress(progress, originalIndex: originalIndex, targetIndex: targetIndex)
     }
-
-
 }

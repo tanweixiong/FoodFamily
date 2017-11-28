@@ -9,8 +9,27 @@
 import UIKit
 
 class RecommendNaviCell: UITableViewCell {
+    @IBOutlet weak var addressLabel: UILabel!
+    //堂吃 预约
+    var canteenModel : FoodOrderCanteenListModel = FoodOrderCanteenListModel()!{
+        didSet{
+            self.detailsAddressLabel.text = canteenModel.address
+        }
+    }
+    //代金券
+    var voucherModel : FoodOrderVoucherListModel = FoodOrderVoucherListModel()!{
+        didSet{
+            self.detailsAddressLabel.text = voucherModel.address
+        }
+    }
+    //套餐
+    var packageModel : FoodOrderPackageListModel = FoodOrderPackageListModel()!{
+        didSet{
+            self.detailsAddressLabel.text = packageModel.address
+        }
+    }
     
-     var recommendDataModel : RecommendDataModel = RecommendDataModel()!{
+    var recommendDataModel : RecommendDataModel = RecommendDataModel()!{
         didSet{
            self.detailsAddressLabel.text = recommendDataModel.detailedAddress
         }

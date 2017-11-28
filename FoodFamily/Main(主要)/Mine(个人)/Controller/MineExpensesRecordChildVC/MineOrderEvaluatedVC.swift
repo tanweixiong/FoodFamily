@@ -10,10 +10,11 @@ import UIKit
 
 class MineOrderEvaluatedVC: UIViewController,UITableViewDataSource,UITableViewDelegate {
     fileprivate let mineOrderEvaluatedCell = "MineOrderEvaluatedCell"
+    fileprivate lazy var viewModel : MineOrderVM = MineOrderVM()
     
     struct MineOrderEvaluatedUX {
         static let cellHeight:CGFloat = 121
-        static let sectionHeight:CGFloat = 20
+        static let sectionHeight:CGFloat = 15
     }
     
     override func viewDidLoad() {
@@ -21,12 +22,19 @@ class MineOrderEvaluatedVC: UIViewController,UITableViewDataSource,UITableViewDe
         view.addSubview(tableView)
     }
     
+    func getData(){
+        let parameters = ["type":"1"]
+        viewModel.loadSuccessfullyReturnedData(requestType: .get, URLString: ConstAPI.kAPIOrderGetOrderList, parameters: parameters, showIndicator: true) {
+            self.tableView.reloadData()
+        }
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
-        return  1
+        return self.viewModel.orderModel.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return 1
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -36,7 +44,7 @@ class MineOrderEvaluatedVC: UIViewController,UITableViewDataSource,UITableViewDe
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: mineOrderEvaluatedCell, for: indexPath) as! MineExpensesRecordCell
         cell.selectionStyle = .none
-        cell.setData()
+        cell.orderModel = self.viewModel.orderModel[indexPath.section]
         return cell
     }
     

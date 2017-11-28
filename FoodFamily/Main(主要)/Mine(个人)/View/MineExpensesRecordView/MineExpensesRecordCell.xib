@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -17,7 +16,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="121"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="121"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="120.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7WD-mb-Ru7">
@@ -67,12 +66,12 @@
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--    " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x51-UP-7YG">
-                        <rect key="frame" x="24" y="90" width="33" height="20"/>
+                        <rect key="frame" x="30" y="90" width="21.5" height="20"/>
                         <color key="backgroundColor" red="0.92941176469999998" green="0.92941176469999998" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="E8K-ev-t8N"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
                         <color key="textColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                         <userDefinedRuntimeAttributes>
@@ -99,7 +98,7 @@
                         </userDefinedRuntimeAttributes>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="合计:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o7S-v4-1Xj">
-                        <rect key="frame" x="62" y="92" width="188" height="16"/>
+                        <rect key="frame" x="56.5" y="92" width="193.5" height="16"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="16" id="to2-0x-hEO"/>
                         </constraints>
@@ -136,9 +135,13 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="commentButton" destination="bpE-7g-JbI" id="k0a-DF-UPP"/>
+                <outlet property="logoImageView" destination="7WD-mb-Ru7" id="Keq-5g-JfF"/>
+                <outlet property="mealNameLabel" destination="zSP-gl-y51" id="ShP-A2-5I4"/>
+                <outlet property="orderTimeLabel" destination="NqZ-ho-lsk" id="l9D-9G-NdP"/>
                 <outlet property="sumLabel" destination="o7S-v4-1Xj" id="TRh-jO-6nZ"/>
+                <outlet property="typeLabel" destination="x51-UP-7YG" id="mo7-1G-lqx"/>
             </connections>
-            <point key="canvasLocation" x="-262" y="52"/>
+            <point key="canvasLocation" x="-399" y="17"/>
         </tableViewCell>
     </objects>
     <resources>

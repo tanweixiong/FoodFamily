@@ -12,6 +12,21 @@ class FoodVolumeCodeCell: UITableViewCell {
 
     @IBOutlet weak var headingLabel: UILabel!
     @IBOutlet weak var headingContentLabel: UILabel!
+    
+    //代金券
+    var voucherModel : FoodOrderVoucherListModel = FoodOrderVoucherListModel()!{
+        didSet{
+            self.headingContentLabel.text = packageModel.vouNum?.stringValue
+        }
+    }
+    
+    //套餐
+    var packageModel : FoodOrderPackageListModel = FoodOrderPackageListModel()!{
+        didSet{
+            self.headingContentLabel.text = packageModel.vouNum?.stringValue
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

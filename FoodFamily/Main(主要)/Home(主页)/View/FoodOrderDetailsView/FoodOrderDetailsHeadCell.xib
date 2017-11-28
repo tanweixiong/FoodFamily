@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -81,7 +80,12 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="95P-zB-0kz"/>
-            <point key="canvasLocation" x="25.5" y="52"/>
+            <connections>
+                <outlet property="contentLabel" destination="5Zd-N3-cC5" id="mgj-bQ-SiQ"/>
+                <outlet property="nameLabel" destination="mbi-G3-b34" id="bYY-t6-qDl"/>
+                <outlet property="totalPriceLabel" destination="Gij-cb-ug4" id="afQ-Ks-3ab"/>
+            </connections>
+            <point key="canvasLocation" x="143" y="42"/>
         </tableViewCell>
     </objects>
     <resources>

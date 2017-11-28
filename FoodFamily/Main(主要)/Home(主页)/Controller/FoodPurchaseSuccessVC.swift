@@ -47,8 +47,8 @@ class FoodPurchaseSuccessVC: MainViewController {
         view.foodPurchaseSuccessCallBack = {(_ foodPurchaseSuccessChooseType:FoodPurchaseSuccessChooseType) in
             if foodPurchaseSuccessChooseType == .seeDetailsStatus{
                 if self.paymentMethod == .ordinaryPaymentStatus{
-                    let foodNormalOrderDetailsVC = FoodNormalOrderDetailsVC()
-                    self.navigationController?.pushViewController(foodNormalOrderDetailsVC, animated: true)
+                    let foodPackageOrderDetailsVC = FoodPackageOrderDetailsVC()
+                    self.navigationController?.pushViewController(foodPackageOrderDetailsVC, animated: true)
                 }else{
                     let foodVoucherOrderDetailsVC = FoodVoucherOrderDetailsVC()
                     self.navigationController?.pushViewController(foodVoucherOrderDetailsVC, animated: true)

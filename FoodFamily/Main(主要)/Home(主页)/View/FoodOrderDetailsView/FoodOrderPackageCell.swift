@@ -9,7 +9,8 @@
 import UIKit
 
 class FoodOrderPackageCell: UITableViewCell {
-
+    var headingContentArray = NSArray()
+    var headingContentDataArray = NSArray()
     struct FoodOrderPackageUX {
         static let backgroundHeight:CGFloat = 38.5
         static let space:CGFloat = 40
@@ -19,18 +20,50 @@ class FoodOrderPackageCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
+    
+    //堂吃 预约
+    var canteenModel : FoodOrderCanteenListModel = FoodOrderCanteenListModel()!{
+        didSet{
+            headingContentArray = ["消费金额","积分抵扣","实际付费"]
+            let totalPrice = canteenModel.totalPrice?.stringValue
+            let integral = "-" + (canteenModel.integral?.stringValue)!
+            let paymentAmount = canteenModel.paymentAmount?.stringValue
+            headingContentDataArray = [totalPrice!,integral,paymentAmount!]
+        }
+    }
+    
+    //代金券
+    var voucherModel : FoodOrderVoucherListModel = FoodOrderVoucherListModel()!{
+        didSet{
+            let content = voucherModel.content
+            let voucherPrice = "¥" + (voucherModel.voucherPrice?.stringValue)!
+            let orderMsg = voucherModel.orderMsg
+            headingContentArray = ["套餐内容",orderMsg!,"使用范围："]
+            headingContentDataArray = ["",voucherPrice,""]
+        }
+    }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
 
-    func setData(){
+    func setData(type:FoodOrderDetailsVMType){
         self.contentView.addSubview(listView)
+        if type == .voucherModel {
+            self.contentView.addSubview(conventionContentLabel)
+            let size:CGSize = OCTools.calculateMeaasgeHeight(withText: conventionContentLabel.text, andWidth: SCREEN_WIDTH - 60, andFont: UIFont.systemFont(ofSize: 14))
+            conventionContentLabel.snp.makeConstraints { (make) in
+                make.left.equalTo(self.contentView.snp.left).offset(15)
+                make.top.equalTo(listView.snp.top).offset(15)
+                make.width.greaterThanOrEqualTo(size.width)
+                make.height.greaterThanOrEqualTo(size.height)
+            }
+            UserDefaults.standard.set(listView.frame.size.height + size.height + FoodOrderPackageUX.space, forKey: "height")
+        }
     }
     
     lazy var listView: UIView = {
         let view = UIView()
-        let headingContentArray:NSArray = ["套餐内容","代金券（1张）","使用范围：除酒水、全场通用"]
         for item in 0...headingContentArray.count - 1 {
             let backgroundVw = UIView()
             let backgroundHeight:CGFloat = FoodOrderPackageUX.backgroundHeight
@@ -53,22 +86,32 @@ class FoodOrderPackageCell: UITableViewCell {
                 let priceString = NSMutableAttributedString.init(string: heading!)
                 priceString.addAttribute(NSAttributedStringKey.foregroundColor, value: UIColor.R_UIRGBColor(red: 155, green: 155, blue: 155, alpha: 1),range: NSMakeRange(3, 4))
                 headingLab.attributedText = priceString
-                
-                //内容
-                let contentLab = UILabel()
-                contentLab.text = "¥1000000000000000000000"
-                contentLab.font = UIFont.systemFont(ofSize: 16)
-                let x =  headingLab.frame.maxX + 5
-                contentLab.frame = CGRect(x: x, y: 0, width:SCREEN_WIDTH - x - 15, height:backgroundVw.frame.size.height)
-                contentLab.textColor = UIColor.R_UIRGBColor(red: 67, green: 66, blue: 67, alpha: 1)
-                contentLab.textAlignment = .right
-                backgroundVw.addSubview(contentLab)
             }
+            
+            //内容
+            let contentLab = UILabel()
+            contentLab.text = "¥1000000000000000000000"
+            contentLab.font = UIFont.systemFont(ofSize: 16)
+            let x =  headingLab.frame.maxX + 5
+            contentLab.frame = CGRect(x: x, y: 0, width:SCREEN_WIDTH - x - 15, height:backgroundVw.frame.size.height)
+            contentLab.textColor = UIColor.R_UIRGBColor(red: 67, green: 66, blue: 67, alpha: 1)
+            contentLab.textAlignment = .right
+            backgroundVw.addSubview(contentLab)
+            
         }
         let tagView = view.viewWithTag(headingContentArray.count)!
-        view.frame = CGRect(x: 0, y:0, width: SCREEN_HEIGHT, height: tagView.frame.maxY + FoodOrderPackageUX.space)
-        UserDefaults.standard.set(view.frame.maxY, forKey: "height")
+        view.frame = CGRect(x: 0, y:0, width: SCREEN_HEIGHT, height: tagView.frame.maxY)
+        UserDefaults.standard.set(view.frame.maxY + FoodOrderPackageUX.space, forKey: "height")
         return view
     }()
     
+    lazy var conventionContentLabel:UILabel = {
+        let label = UILabel()
+        label.textColor = UIColor.R_UIRGBColor(red: 67, green: 66, blue: 67, alpha: 1)
+        label.textAlignment = .center
+        label.font = UIFont.systemFont(ofSize: 14)
+        label.numberOfLines = 0
+        label.lineBreakMode = NSLineBreakMode.byCharWrapping
+        return label
+    }()
 }

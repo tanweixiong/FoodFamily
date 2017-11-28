@@ -24,13 +24,14 @@ class MineAllOrderVC: UIViewController,UITableViewDataSource,UITableViewDelegate
     }
     
     func getData(){
-        viewModel.loadSuccessfullyReturnedData(requestType: .get, URLString: ConstAPI.kAPIOrderGetOrderList, showIndicator: false) {
-            
+        let parameters = ["type":"0"]
+        viewModel.loadSuccessfullyReturnedData(requestType: .get, URLString: ConstAPI.kAPIOrderGetOrderList, parameters: parameters, showIndicator: false) {
+             self.tableView.reloadData()
         }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return  10
+        return  self.viewModel.orderModel.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -44,7 +45,17 @@ class MineAllOrderVC: UIViewController,UITableViewDataSource,UITableViewDelegate
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: mineAllOrderCell, for: indexPath) as! MineExpensesRecordCell
         cell.selectionStyle = .none
-        cell.setData()
+        cell.orderModel = self.viewModel.orderModel[indexPath.section]
+        let model = self.viewModel.orderModel[indexPath.section]
+        var type = ""
+        if model.type == 1 {
+            type = "套餐"
+        }else if model.type == 2 {
+            type = "代金券"
+        }else if model.type == 3 {
+            type = "预约"
+        }
+        cell.typeLabel.text = type + " "
         return cell
     }
     
@@ -56,6 +67,26 @@ class MineAllOrderVC: UIViewController,UITableViewDataSource,UITableViewDelegate
         let view = UIView.init(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: MineAllOrderUX.sectionHeight))
         view.backgroundColor = R_UISectionLineColor
         return view
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+         let model = self.viewModel.orderModel[indexPath.section]
+        //套餐类型
+        if model.type == 1 {
+            let foodPackageOrderDetailsVC = FoodPackageOrderDetailsVC()
+            foodPackageOrderDetailsVC.orderNo = model.orderNo!
+            self.navigationController?.pushViewController(foodPackageOrderDetailsVC, animated: true)
+        //代金券类型
+        }else if model.type == 2 {
+            let foodVoucherOrderDetailsVC = FoodVoucherOrderDetailsVC()
+            foodVoucherOrderDetailsVC.orderNo = model.orderNo!
+            self.navigationController?.pushViewController(foodVoucherOrderDetailsVC, animated: true)
+        //预约类型
+        }else if model.type == 3 {
+            let foodCanteenOrderDetailsVC = FoodCanteenOrderDetailsVC()
+            foodCanteenOrderDetailsVC.orderNo = model.orderNo!
+            self.navigationController?.pushViewController(foodCanteenOrderDetailsVC, animated: true)
+        }
     }
     
     lazy var tableView: UITableView = {

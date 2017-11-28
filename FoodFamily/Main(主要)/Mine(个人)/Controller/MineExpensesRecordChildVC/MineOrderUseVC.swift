@@ -10,19 +10,28 @@ import UIKit
 
 class MineOrderUseVC: UIViewController,UITableViewDataSource,UITableViewDelegate {
     fileprivate let mineOrderUseCell = "MineOrderUseCell"
+    fileprivate lazy var viewModel : MineOrderVM = MineOrderVM()
     
     struct MineOrderUseUX {
         static let cellHeight:CGFloat = 121
-        static let sectionHeight:CGFloat = 20
+        static let sectionHeight:CGFloat = 15
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(tableView)
+        self.getData()
+    }
+    
+    func getData(){
+        let parameters = ["type":"2"]
+        viewModel.loadSuccessfullyReturnedData(requestType: .get, URLString: ConstAPI.kAPIOrderGetOrderList, parameters: parameters, showIndicator: true) {
+            self.tableView.reloadData()
+        }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return  10
+       return self.viewModel.orderModel.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -36,7 +45,7 @@ class MineOrderUseVC: UIViewController,UITableViewDataSource,UITableViewDelegate
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: mineOrderUseCell, for: indexPath) as! MineExpensesRecordCell
         cell.selectionStyle = .none
-        cell.setData()
+        cell.orderModel = self.viewModel.orderModel[indexPath.section]
         return cell
     }
     

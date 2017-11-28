@@ -9,23 +9,12 @@
 import UIKit
 
 class MineOrderDataModel: Mappable {
-    var appointmentNum: NSNumber?
-    var appointmentTime: String?
-    var buyId: NSNumber?
-    var finalyTime: String?
-    var flag: NSNumber?
-    var id: NSNumber?
-    var mealId: NSNumber?
-    var mealName: String?
-    var orderNo: NSNumber?
-    var orderPassword: NSNumber?
+    var logo: String?
+    var orderNo: String?
     var orderStatus: NSNumber?
     var orderTime: String?
-    var payStatus: NSNumber?
     var payType: NSNumber?
-    var paymentAmount: NSNumber?
-    var storeId: NSNumber?
-    var totalNum: NSNumber?
+    var storeName: String?
     var totalPrice: NSNumber?
     var type: NSNumber?
     
@@ -38,30 +27,19 @@ class MineOrderDataModel: Mappable {
     }
     
     func mapping(map: Map) {
-        appointmentNum        <- map["appointmentNum"]
-        appointmentTime       <- map["appointmentTime"]
-        buyId                 <- map["buyId"]
-        finalyTime            <- map["finalyTime"]
-        flag                  <- map["flag"]
-        id                    <- map["id"]
-        mealId                <- map["mealId"]
-        mealName              <- map["mealName"]
-        orderNo               <- map["orderNo"]
-        orderPassword         <- map["orderPassword"]
-        orderStatus           <- map["orderStatus"]
-        orderTime             <- map["orderTime"]
-        payStatus             <- map["payStatus"]
-        payType               <- map["payType"]
-        paymentAmount         <- map["paymentAmount"]
-        storeId               <- map["storeId"]
-        totalNum              <- map["totalNum"]
-        totalPrice            <- map["totalPrice"]
-        type                  <- map["type"]
+        logo          <- map["logo"]
+        orderNo       <- map["orderNo"]
+        orderStatus   <- map["orderStatus"]
+        orderTime     <- map["orderTime"]
+        payType       <- map["payType"]
+        storeName     <- map["storeName"]
+        totalPrice    <- map["totalPrice"]
+        type          <- map["type"]
     }
 }
 
 class MineOrderListModel: Mappable {
-    var orderList: [MineOrderDataModel]?
+    var list: [MineOrderDataModel]?
     
     required init?(map: Map) {
         
@@ -72,7 +50,7 @@ class MineOrderListModel: Mappable {
     }
     
     func mapping(map: Map) {
-        orderList        <- map["orderList"]
+        list        <- map["list"]
     }
 }
 
