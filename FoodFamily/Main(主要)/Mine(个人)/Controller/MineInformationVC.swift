@@ -8,15 +8,24 @@
 
 import UIKit
 import IQKeyboardManager
+import SVProgressHUD
 
-class MineInformationVC: MainViewController,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate {
+class MineInformationVC: MainViewController,UITableViewDelegate,UITableViewDataSource,UIImagePickerControllerDelegate, UINavigationControllerDelegate,UITextFieldDelegate {
     fileprivate let photoAlbum = LJXPhotoAlbum()
     fileprivate var headCell = MineInformationHeadCell()
     fileprivate let mineInformationHeadCell = "MineInformationHeadCell"
     fileprivate let mineInformationListCell = "MineInformationListCell"
     let headingContentArray = ["头像","昵称","年龄","星座","城市","签名"]
-    let contentArray = ["头像","昵称","年龄","星座","城市","签名"]
+    var contentArray = NSArray()
     var textfieldRect = CGRect()
+    var province = ""
+    var city     = ""
+    var nicknameTextField = UITextField()
+    var ageTextField = UITextField()
+    var starTextField = UITextField()
+    var positionTextField = UITextField()
+    var signTextField = UITextField()
+//    ["nickname":"","age":"","star":"","province":"","city":"","sign":""]
     
     struct MineInformationUX {
         static let cellHeight:CGFloat = 60
@@ -27,10 +36,23 @@ class MineInformationVC: MainViewController,UITableViewDelegate,UITableViewDataS
         self.title = "个人资料"
         self.addDefaultButtonTextRight("保存")
         self.setCloseRoundKeyboard()
+        
+        let age = UserDefaults.standard.getUserInfo().age as Any
+        let nickname = UserDefaults.standard.getUserInfo().nickname as Any
+        let sign = UserDefaults.standard.getUserInfo().sign as Any
+        let star = UserDefaults.standard.getUserInfo().star as Any
+        let avatar = UserDefaults.standard.getUserInfo().pice as Any
+        self.city = UserDefaults.standard.getUserInfo().city as! String
+        self.province = UserDefaults.standard.getUserInfo().province as! String
+        var position = ""
+        if self.city != "" && self.province != "" {
+           position = self.province + "、" + self.city
+        }else{
+           position = self.province + self.city
+        }
+        self.contentArray = [avatar,nickname,age,star,position,sign]
+        
         view.addSubview(tableView)
-        
-        
-        print(self.view.frame)
         NotificationCenter.default.addObserver(self, selector:#selector(keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector:#selector(keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
@@ -48,6 +70,56 @@ class MineInformationVC: MainViewController,UITableViewDelegate,UITableViewDataS
     }
     
     override func rightTextBtn(_ sender: UIBarButtonItem) {
+        let parameters = ["nickname":self.nicknameTextField.text!,"age":self.ageTextField.text!,"star":self.starTextField.text!,"province":self.province,"city":self.city,"sign":self.signTextField.text!]
+        let avatar = (headCell.avatarImageView.image)!
+        
+        let jsonParameters =  NetWorkTool.getJSONStringFromDictionary(dictionary:parameters as NSDictionary)
+        let newParameters = ["data":jsonParameters]
+        
+        NetWorkTool.uploadPictures(url: ConstAPI.kAPIUserUpdateUserInfo, parameter: newParameters, image: avatar, imageKey: "photo", success: { (json) in
+            let responseData = Mapper<ResponseData>().map(JSONObject: json)
+            if let code = responseData?.code {
+                guard  100 == code else {
+                    SVProgressHUD.showInfo(withStatus: responseData?.message)
+                    return
+                }
+                SVProgressHUD.showSuccess(withStatus: "上传成功")
+                let userInfo = UserDefaults.standard.getUserInfo()
+                userInfo.nickname = self.nicknameTextField.text! as AnyObject
+                userInfo.age = self.ageTextField.text! as AnyObject
+                userInfo.star = self.starTextField.text! as AnyObject
+                userInfo.province = self.province as AnyObject
+                userInfo.city = self.city as AnyObject
+                userInfo.sign = self.signTextField.text! as AnyObject
+                UserDefaults.standard.saveCustomObject(customObject: userInfo, key: R_UserInfo)
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: {
+                    self.navigationController?.popViewController(animated: true)
+                })
+            }
+        }) { (error) in
+            
+        }
+        
+    }
+    
+    //上传头像
+    func uploadPhoto(_ image:UIImage){
+        headCell.avatarImageView.image = image
+//        self.avatarImage = image
+//        NetWorkTool.uploadPictures(url: ConstAPI.kAPIUserUpdateUserInfo, parameter: nil, image: image, imageKey: "photo", success: { (json) in
+//            let responseData = Mapper<ResponseData>().map(JSONObject: json)
+//            if let code = responseData?.code {
+//                guard  100 == code else {
+//                    SVProgressHUD.showInfo(withStatus: responseData?.message)
+//                    return
+//                }
+//               SVProgressHUD.showSuccess(withStatus: "上传成功")
+//            }
+//        }) { (error) in
+//        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
     }
     
@@ -68,19 +140,51 @@ class MineInformationVC: MainViewController,UITableViewDelegate,UITableViewDataS
             headCell = tableView.dequeueReusableCell(withIdentifier: mineInformationHeadCell, for: indexPath) as! MineInformationHeadCell
             headCell.selectionStyle = .none
             headCell.headingLabel.text = headingContentArray[indexPath.row]
-            headCell.avatarImageView.image = UIImage.init(named: "")
+            headCell.avatarImageView.sd_setImage(with: NSURL(string: contentArray[indexPath.row] as! String)! as URL, placeholderImage: UIImage.init(named: "ic_all_smallImageDefault"))
             headCell.mineInformationHeadCallBack = { () in
-                self.photoAlbum.getOrTakeAPhoto(with: self) { (imgae) in
-                    self.headCell.avatarImageView.image = imgae
-                }
+                self.addPickController()
             }
             return headCell
         }else{
             let cell = tableView.dequeueReusableCell(withIdentifier: mineInformationListCell, for: indexPath) as! MineInformationListCell
+            cell.mineInformationListCallBack = {(sender:UIButton) in
+                self.closeKeyboard()
+                if sender.tag == 3 {
+                    BRStringPickerView.showStringPicker(withTitle: "星座", dataSource: ["白羊座","金牛座","双子座","巨蟹座","狮子座","处女座","天秤座","天蝎座","射手座","摩羯座","水瓶座","双鱼座"], defaultSelValue: "白羊", isAutoSelect: false, resultBlock: { (data:Any) in
+                        let start = data as! String
+                        self.starTextField.text = start
+                    })
+                }else{
+                    BRAddressPickerView.showAddressPicker(withDefaultSelected: [10,0], isAutoSelect: false
+                        , resultBlock: { (data:Any) in
+                            let selectAddressArr = data as! NSArray
+                            self.province = selectAddressArr.firstObject as! String
+                            self.city = selectAddressArr.lastObject as! String
+                            self.positionTextField.text = self.province + "、" + self.city
+                    })
+                }
+            }
             cell.selectionStyle = .none
             cell.headingLabel.text = headingContentArray[indexPath.row]
-            cell.textfield.text = contentArray[indexPath.row]
+            cell.textfield.text = contentArray[indexPath.row] as? String
             cell.textfield.delegate = self
+            cell.textfieldButton.tag = indexPath.row
+            if indexPath.row == 1 {
+                self.nicknameTextField = cell.textfield
+            }else if indexPath.row == 2 {
+                self.ageTextField = cell.textfield
+                cell.textfield.keyboardType = .decimalPad
+            }else if indexPath.row == 3 {
+                cell.textfield.isEnabled = false
+                cell.textfieldButton.isHidden = false
+                self.starTextField = cell.textfield
+            }else if indexPath.row == 4 {
+                 cell.textfield.isEnabled = false
+                 cell.textfieldButton.isHidden = false
+                self.positionTextField = cell.textfield
+            }else if indexPath.row == 5 {
+                self.signTextField = cell.textfield
+            }
             return cell
         }
     }
@@ -121,6 +225,45 @@ class MineInformationVC: MainViewController,UITableViewDelegate,UITableViewDataS
         let rect = cell.convert(textField.frame, to: self.tableView)
         self.textfieldRect = rect
         return true
+    }
+    
+    func addPickController(){
+        let alertAction = UIAlertController.init(title: nil, message: nil, preferredStyle: .actionSheet)
+        alertAction.addAction(UIAlertAction.init(title: "相册", style: .default, handler: { (alertCamera) in
+            let pickerVC = UIImagePickerController()
+            pickerVC.delegate = self
+            pickerVC.sourceType = .photoLibrary
+            pickerVC.allowsEditing = true
+            if UIImagePickerController.isSourceTypeAvailable(.camera) {
+                self.present(pickerVC, animated: true, completion: nil)
+            } else {
+                SVProgressHUD.show(withStatus: "请允许访问相册")
+            }
+            
+        }))
+        alertAction.addAction(UIAlertAction.init(title: "相机", style: .default, handler: { (alertPhoto) in
+            let pickerVC = UIImagePickerController()
+            pickerVC.delegate = self
+            pickerVC.sourceType = .camera
+            pickerVC.allowsEditing = true
+            
+            if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+                self.present(pickerVC, animated: true, completion: nil)
+            }  else {
+                SVProgressHUD .show(withStatus: "请允许访问相机")
+            }
+        }))
+        alertAction.addAction(UIAlertAction.init(title: "取消", style: .cancel, handler: { (alertCancel) in
+            
+        }))
+        self.present(alertAction, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let chosenImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            picker.dismiss(animated: true, completion: nil)
+            self.uploadPhoto(chosenImage)
+        }
     }
     
     lazy var tableView: UITableView = {

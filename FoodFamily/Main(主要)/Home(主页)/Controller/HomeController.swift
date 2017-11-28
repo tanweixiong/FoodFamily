@@ -141,7 +141,7 @@ class HomeController: MainViewController,UITableViewDelegate,UITableViewDataSour
     lazy var filterButton:UIButton = {
         let button =   UIButton(type: .custom)
         button.frame = CGRect(x:0, y:0, width:60, height:50)
-        button.setTitle("筛选", for: .normal)
+        button.setTitle("附近", for: .normal)
         button.setImage(UIImage.init(named: "ic_nav_right_white"), for: .normal)
         button.setTitleColor(UIColor.white, for: .normal)
         button.imageEdgeInsets = UIEdgeInsetsMake(10, 10, 10, -70);

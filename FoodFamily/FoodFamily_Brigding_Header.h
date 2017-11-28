@@ -21,4 +21,5 @@
 #import "InputPaymentPasswordVw.h"
 #import "LocationViewController.h"
 #import "SDRefresh.h"
+#import "BRPickerView.h"
 #endif

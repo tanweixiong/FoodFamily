@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -20,33 +19,47 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oIy-Ls-kUp">
-                        <rect key="frame" x="15" y="21" width="13" height="17"/>
+                        <rect key="frame" x="15" y="21" width="100" height="17"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="100" id="3YZ-98-hMl"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" red="0.40784313729999999" green="0.40784313729999999" blue="0.40784313729999999" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请填写您的信息" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HZH-vA-aFp">
-                        <rect key="frame" x="105" y="19" width="200" height="20"/>
+                        <rect key="frame" x="125" y="19" width="180" height="20"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="200" id="X1h-hX-1Kx"/>
                             <constraint firstAttribute="height" constant="20" id="eub-eq-Dqv"/>
                         </constraints>
                         <nil key="textColor"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits"/>
                     </textField>
+                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CUb-FE-9qx">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+                        <connections>
+                            <action selector="onClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="D6t-fG-wjf"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="CUb-FE-9qx" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Jd8-UL-vdZ"/>
                     <constraint firstAttribute="trailing" secondItem="HZH-vA-aFp" secondAttribute="trailing" constant="15" id="LBa-u4-xWV"/>
+                    <constraint firstItem="HZH-vA-aFp" firstAttribute="leading" secondItem="oIy-Ls-kUp" secondAttribute="trailing" constant="10" id="Qym-NE-H1V"/>
+                    <constraint firstAttribute="bottom" secondItem="CUb-FE-9qx" secondAttribute="bottom" id="Teh-bY-LKe"/>
                     <constraint firstItem="HZH-vA-aFp" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="fAj-7L-IY7"/>
                     <constraint firstItem="oIy-Ls-kUp" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="hhN-Q4-0WS"/>
                     <constraint firstItem="oIy-Ls-kUp" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="jkC-v5-OLi"/>
+                    <constraint firstItem="CUb-FE-9qx" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="lsi-tI-6Gb"/>
+                    <constraint firstAttribute="trailing" secondItem="CUb-FE-9qx" secondAttribute="trailing" id="ymF-JG-aGj"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="headingLabel" destination="oIy-Ls-kUp" id="bYs-O9-WBu"/>
                 <outlet property="textfield" destination="HZH-vA-aFp" id="Ogi-XC-Emn"/>
+                <outlet property="textfieldButton" destination="CUb-FE-9qx" id="efM-tK-kMD"/>
             </connections>
         </tableViewCell>
     </objects>

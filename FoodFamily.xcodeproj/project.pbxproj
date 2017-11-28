@@ -98,6 +98,16 @@
 		232357BA1FBC190D0006E9A6 /* MineAmountOperationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232357B81FBC190D0006E9A6 /* MineAmountOperationCell.swift */; };
 		232357BB1FBC190D0006E9A6 /* MineAmountOperationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 232357B91FBC190D0006E9A6 /* MineAmountOperationCell.xib */; };
 		2323931F1FB43B6E00425BDA /* FoodNormalOrderDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2323931E1FB43B6E00425BDA /* FoodNormalOrderDetailsVC.swift */; };
+		232ED6CF1FCCF22A00208BDD /* BRStringPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 232ED6B81FCCF22A00208BDD /* BRStringPickerView.m */; };
+		232ED6D01FCCF22A00208BDD /* BRDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 232ED6BC1FCCF22A00208BDD /* BRDatePickerView.m */; };
+		232ED6D11FCCF22A00208BDD /* BaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 232ED6BE1FCCF22A00208BDD /* BaseView.m */; };
+		232ED6D21FCCF22A00208BDD /* BRAddressModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 232ED6C11FCCF22A00208BDD /* BRAddressModel.m */; };
+		232ED6D31FCCF22A00208BDD /* BRCity.plist in Resources */ = {isa = PBXBuildFile; fileRef = 232ED6C41FCCF22A00208BDD /* BRCity.plist */; };
+		232ED6D41FCCF22A00208BDD /* BRAddressPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 232ED6C51FCCF22A00208BDD /* BRAddressPickerView.m */; };
+		232ED6D51FCCF22A00208BDD /* NSObject+YYModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 232ED6CA1FCCF22A00208BDD /* NSObject+YYModel.m */; };
+		232ED6D61FCCF22A00208BDD /* YYClassInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 232ED6CB1FCCF22A00208BDD /* YYClassInfo.m */; };
+		232ED6D71FCCF22A00208BDD /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 232ED6CD1FCCF22A00208BDD /* LICENSE */; };
+		232ED6D81FCCF22A00208BDD /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 232ED6CE1FCCF22A00208BDD /* README.md */; };
 		2353EC1C1FB3F6BA005E1548 /* OCTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 2353EC1B1FB3F6BA005E1548 /* OCTools.m */; };
 		2353EC1F1FB4047A005E1548 /* FoodOrderDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2353EC1D1FB4047A005E1548 /* FoodOrderDetailsCell.swift */; };
 		2353EC201FB4047A005E1548 /* FoodOrderDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2353EC1E1FB4047A005E1548 /* FoodOrderDetailsCell.xib */; };
@@ -449,6 +459,25 @@
 		232357B81FBC190D0006E9A6 /* MineAmountOperationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineAmountOperationCell.swift; sourceTree = "<group>"; };
 		232357B91FBC190D0006E9A6 /* MineAmountOperationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineAmountOperationCell.xib; sourceTree = "<group>"; };
 		2323931E1FB43B6E00425BDA /* FoodNormalOrderDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodNormalOrderDetailsVC.swift; sourceTree = "<group>"; };
+		232ED6B71FCCF22A00208BDD /* BRStringPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRStringPickerView.h; sourceTree = "<group>"; };
+		232ED6B81FCCF22A00208BDD /* BRStringPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRStringPickerView.m; sourceTree = "<group>"; };
+		232ED6B91FCCF22A00208BDD /* BRPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRPickerView.h; sourceTree = "<group>"; };
+		232ED6BB1FCCF22A00208BDD /* BRDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRDatePickerView.h; sourceTree = "<group>"; };
+		232ED6BC1FCCF22A00208BDD /* BRDatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRDatePickerView.m; sourceTree = "<group>"; };
+		232ED6BE1FCCF22A00208BDD /* BaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseView.m; sourceTree = "<group>"; };
+		232ED6BF1FCCF22A00208BDD /* BaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseView.h; sourceTree = "<group>"; };
+		232ED6C11FCCF22A00208BDD /* BRAddressModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRAddressModel.m; sourceTree = "<group>"; };
+		232ED6C21FCCF22A00208BDD /* BRAddressPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRAddressPickerView.h; sourceTree = "<group>"; };
+		232ED6C31FCCF22A00208BDD /* BRAddressModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRAddressModel.h; sourceTree = "<group>"; };
+		232ED6C41FCCF22A00208BDD /* BRCity.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = BRCity.plist; sourceTree = "<group>"; };
+		232ED6C51FCCF22A00208BDD /* BRAddressPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRAddressPickerView.m; sourceTree = "<group>"; };
+		232ED6C81FCCF22A00208BDD /* YYClassInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYClassInfo.h; sourceTree = "<group>"; };
+		232ED6C91FCCF22A00208BDD /* YYModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYModel.h; sourceTree = "<group>"; };
+		232ED6CA1FCCF22A00208BDD /* NSObject+YYModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+YYModel.m"; sourceTree = "<group>"; };
+		232ED6CB1FCCF22A00208BDD /* YYClassInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYClassInfo.m; sourceTree = "<group>"; };
+		232ED6CC1FCCF22A00208BDD /* NSObject+YYModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+YYModel.h"; sourceTree = "<group>"; };
+		232ED6CD1FCCF22A00208BDD /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		232ED6CE1FCCF22A00208BDD /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		2353EC1A1FB3F6BA005E1548 /* OCTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCTools.h; sourceTree = "<group>"; };
 		2353EC1B1FB3F6BA005E1548 /* OCTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCTools.m; sourceTree = "<group>"; };
 		2353EC1D1FB4047A005E1548 /* FoodOrderDetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodOrderDetailsCell.swift; sourceTree = "<group>"; };
@@ -1234,9 +1263,92 @@
 			path = MineAmountOperationView;
 			sourceTree = "<group>";
 		};
+		232ED6B41FCCF22A00208BDD /* BRPickerView */ = {
+			isa = PBXGroup;
+			children = (
+				232ED6B51FCCF22A00208BDD /* BRPickerView */,
+				232ED6CD1FCCF22A00208BDD /* LICENSE */,
+				232ED6CE1FCCF22A00208BDD /* README.md */,
+			);
+			path = BRPickerView;
+			sourceTree = "<group>";
+		};
+		232ED6B51FCCF22A00208BDD /* BRPickerView */ = {
+			isa = PBXGroup;
+			children = (
+				232ED6B61FCCF22A00208BDD /* StringPickerView */,
+				232ED6B91FCCF22A00208BDD /* BRPickerView.h */,
+				232ED6BA1FCCF22A00208BDD /* DatePickerView */,
+				232ED6BD1FCCF22A00208BDD /* Base */,
+				232ED6C01FCCF22A00208BDD /* AddressPickerView */,
+				232ED6C61FCCF22A00208BDD /* Vendor */,
+			);
+			path = BRPickerView;
+			sourceTree = "<group>";
+		};
+		232ED6B61FCCF22A00208BDD /* StringPickerView */ = {
+			isa = PBXGroup;
+			children = (
+				232ED6B71FCCF22A00208BDD /* BRStringPickerView.h */,
+				232ED6B81FCCF22A00208BDD /* BRStringPickerView.m */,
+			);
+			path = StringPickerView;
+			sourceTree = "<group>";
+		};
+		232ED6BA1FCCF22A00208BDD /* DatePickerView */ = {
+			isa = PBXGroup;
+			children = (
+				232ED6BB1FCCF22A00208BDD /* BRDatePickerView.h */,
+				232ED6BC1FCCF22A00208BDD /* BRDatePickerView.m */,
+			);
+			path = DatePickerView;
+			sourceTree = "<group>";
+		};
+		232ED6BD1FCCF22A00208BDD /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				232ED6BE1FCCF22A00208BDD /* BaseView.m */,
+				232ED6BF1FCCF22A00208BDD /* BaseView.h */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		232ED6C01FCCF22A00208BDD /* AddressPickerView */ = {
+			isa = PBXGroup;
+			children = (
+				232ED6C11FCCF22A00208BDD /* BRAddressModel.m */,
+				232ED6C21FCCF22A00208BDD /* BRAddressPickerView.h */,
+				232ED6C51FCCF22A00208BDD /* BRAddressPickerView.m */,
+				232ED6C31FCCF22A00208BDD /* BRAddressModel.h */,
+				232ED6C41FCCF22A00208BDD /* BRCity.plist */,
+			);
+			path = AddressPickerView;
+			sourceTree = "<group>";
+		};
+		232ED6C61FCCF22A00208BDD /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				232ED6C71FCCF22A00208BDD /* YYModel */,
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+		232ED6C71FCCF22A00208BDD /* YYModel */ = {
+			isa = PBXGroup;
+			children = (
+				232ED6C81FCCF22A00208BDD /* YYClassInfo.h */,
+				232ED6C91FCCF22A00208BDD /* YYModel.h */,
+				232ED6CA1FCCF22A00208BDD /* NSObject+YYModel.m */,
+				232ED6CB1FCCF22A00208BDD /* YYClassInfo.m */,
+				232ED6CC1FCCF22A00208BDD /* NSObject+YYModel.h */,
+			);
+			path = YYModel;
+			sourceTree = "<group>";
+		};
 		2353EC191FB3F6BA005E1548 /* Custom */ = {
 			isa = PBXGroup;
 			children = (
+				232ED6B41FCCF22A00208BDD /* BRPickerView */,
 				2353EC1A1FB3F6BA005E1548 /* OCTools.h */,
 				2353EC1B1FB3F6BA005E1548 /* OCTools.m */,
 				231A107A1FC2C67B00150257 /* LocationViewController.h */,
@@ -1946,6 +2058,7 @@
 				230BE0FE1FB6DBAF00AD47E0 /* MineDiscountCouponsCell.xib in Resources */,
 				238092E41FB945100051EF3D /* MineSetCell.xib in Resources */,
 				239F07071FB2F4020067D810 /* FoodReservationPaymentCardCell.xib in Resources */,
+				232ED6D71FCCF22A00208BDD /* LICENSE in Resources */,
 				23D147461FBA938A0028CD09 /* FoodEvaluationHeadCell.xib in Resources */,
 				230A73751FC58407009F7202 /* RecommendedListMoneyCell.xib in Resources */,
 				239F06F31FB2F4020067D810 /* FoodReservationFinishHeadCell.xib in Resources */,
@@ -1960,11 +2073,13 @@
 				239F06F51FB2F4020067D810 /* FoodReservationFinishListCell.xib in Resources */,
 				23F4A74A1FBBEF3A004C9266 /* MyRechargeHeadCell.xib in Resources */,
 				239F07031FB2F4020067D810 /* FoodRecommendDetailCell.xib in Resources */,
+				232ED6D31FCCF22A00208BDD /* BRCity.plist in Resources */,
 				239F06EF1FB2F4020067D810 /* FoodReservationCodeCell.xib in Resources */,
 				236C44341FB4788000AC3010 /* FoodMerchantsCell.xib in Resources */,
 				2316A2881FAD71FE00A0B512 /* Main.storyboard in Resources */,
 				23747F361FBD29A6007FD859 /* PaymentPasswordAlertVw.xib in Resources */,
 				2353EC241FB4080D005E1548 /* FoodOrderPackageCell.xib in Resources */,
+				232ED6D81FCCF22A00208BDD /* README.md in Resources */,
 				239F06F91FB2F4020067D810 /* RecommendedFoodView.xib in Resources */,
 				2353EC201FB4047A005E1548 /* FoodOrderDetailsCell.xib in Resources */,
 				2320D3E11FBC3F7800A5B507 /* MineRechargeMessageCell.xib in Resources */,
@@ -2156,6 +2271,7 @@
 				238093261FB97BAD0051EF3D /* ConstraintDescription.swift in Sources */,
 				23D0E3E81FADA2740058EA34 /* BoutiqueTableViewCell.swift in Sources */,
 				23F4A73B1FBBE8ED004C9266 /* MyBalanceView.swift in Sources */,
+				232ED6D01FCCF22A00208BDD /* BRDatePickerView.m in Sources */,
 				230BE0D31FB69B5800AD47E0 /* MineCollectionCell.swift in Sources */,
 				2380937E1FB9813D0051EF3D /* TransformOperators.swift in Sources */,
 				2380936B1FB9813D0051EF3D /* DateFormatterTransform.swift in Sources */,
@@ -2177,6 +2293,7 @@
 				23E214CA1FB6EA3600C7D085 /* MineInformationListCell.swift in Sources */,
 				2380936A1FB9813D0051EF3D /* DataTransform.swift in Sources */,
 				239F06EA1FB2F4020067D810 /* FoodPaymentCardCouponsCell.swift in Sources */,
+				232ED6CF1FCCF22A00208BDD /* BRStringPickerView.m in Sources */,
 				2353EC1C1FB3F6BA005E1548 /* OCTools.m in Sources */,
 				2380932A1FB97BAD0051EF3D /* ConstraintItem.swift in Sources */,
 				238093801FB9813D0051EF3D /* URLTransform.swift in Sources */,
@@ -2239,6 +2356,7 @@
 				2316A2E71FAD945600A0B512 /* ChefController.swift in Sources */,
 				2353EC231FB4080D005E1548 /* FoodOrderPackageCell.swift in Sources */,
 				238093241FB97BAD0051EF3D /* ConstraintConfig.swift in Sources */,
+				232ED6D11FCCF22A00208BDD /* BaseView.m in Sources */,
 				2380933A1FB97BAD0051EF3D /* ConstraintRelatableTarget.swift in Sources */,
 				23113BFE1FC65EA100BE1784 /* FoodNormalOrderDetailsModel.swift in Sources */,
 				23202CFE1FCBF1460029C494 /* MineWalletVM.swift in Sources */,
@@ -2255,7 +2373,9 @@
 				23202CFA1FCBF0460029C494 /* MineReservationModel.swift in Sources */,
 				2321DD0C1FC6BE4A00AC0469 /* FoodVoucherDetailsVM.swift in Sources */,
 				238093711FB9813D0051EF3D /* HexColorTransform.swift in Sources */,
+				232ED6D61FCCF22A00208BDD /* YYClassInfo.m in Sources */,
 				239F06F41FB2F4020067D810 /* FoodReservationFinishListCell.swift in Sources */,
+				232ED6D41FCCF22A00208BDD /* BRAddressPickerView.m in Sources */,
 				230BE0F71FB6DAF600AD47E0 /* MineUsableCoupons.swift in Sources */,
 				232357B61FBC16700006E9A6 /* MineAmountOperationVC.swift in Sources */,
 				2380937A1FB9813D0051EF3D /* NSDecimalNumberTransform.swift in Sources */,
@@ -2265,6 +2385,7 @@
 				23D0E3F71FADBC4B0058EA34 /* TYCyclePagerViewCell.m in Sources */,
 				230E69F01FC3BE72005D4F10 /* RecommendDetailsScrollView.swift in Sources */,
 				232357BA1FBC190D0006E9A6 /* MineAmountOperationCell.swift in Sources */,
+				232ED6D51FCCF22A00208BDD /* NSObject+YYModel.m in Sources */,
 				2380933E1FB97BAD0051EF3D /* ConstraintViewDSL.swift in Sources */,
 				238093231FB97BAD0051EF3D /* ConstraintAttributes.swift in Sources */,
 				2319F1411FBD86D100EB0F14 /* FoodPaymentConsumptionVC.swift in Sources */,
@@ -2341,6 +2462,7 @@
 				2380932B1FB97BAD0051EF3D /* ConstraintLayoutGuide+Extensions.swift in Sources */,
 				238092DF1FB943D30051EF3D /* MineSetVC.swift in Sources */,
 				23F4A74E1FBBEF52004C9266 /* MyRechargeListCell.swift in Sources */,
+				232ED6D21FCCF22A00208BDD /* BRAddressModel.m in Sources */,
 				2380937C1FB9813D0051EF3D /* ToJSON.swift in Sources */,
 				238093791FB9813D0051EF3D /* Mapper.swift in Sources */,
 				230BE0E71FB6A34E00AD47E0 /* MineAllOrderVC.swift in Sources */,

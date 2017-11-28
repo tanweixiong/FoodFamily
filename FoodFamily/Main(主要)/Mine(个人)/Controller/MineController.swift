@@ -61,7 +61,8 @@ class MineController: MainViewController {
             break
             
         case 5:
-   
+            let mineInformationVC = MineInformationVC()
+            self.navigationController?.pushViewController(mineInformationVC, animated: true)
             break
             
         default:

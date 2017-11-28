@@ -29,5 +29,6 @@ struct ConstAPI {
     static let kAPIUserSetSpassword = kAPIBaseURL + "user/setSpassword" //设置支付密码
     static let kAPIUserUpdateSpassword = kAPIBaseURL + "user/updateSpassword" //修改支付密码
     static let kAPIUserWalletGetUserWalletList = kAPIBaseURL + "userWallet/getUserWalletList" //我的钱包
+    static let kAPIUserUpdateUserInfo = kAPIBaseURL + "user/updateUserInfo" //保存个人信息
 }
 
