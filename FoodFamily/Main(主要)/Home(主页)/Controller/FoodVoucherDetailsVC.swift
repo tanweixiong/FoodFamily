@@ -52,10 +52,10 @@ class FoodVoucherDetailsVC: UIViewController,UITableViewDataSource,UITableViewDe
     func setDisplayData(){
         headView.pirceLabel.text = "¥" + (viewModel.voucherModel.price?.stringValue)! + "代" + (viewModel.voucherModel.vouPrice?.stringValue)! + "元"
         
-        let priceString = NSMutableAttributedString.init(string: (viewModel.voucherModel.price?.stringValue)!)
+        let priceString = NSMutableAttributedString.init(string: (viewModel.voucherModel.vouPrice?.stringValue)!)
         priceString.addAttribute(NSAttributedStringKey.strikethroughStyle, value: NSNumber.init(value: 1), range: NSRange(location: 0, length: priceString.length))
         footView.discountLabel.attributedText = priceString
-        footView.priceLabel.text = viewModel.voucherModel.vouPrice?.stringValue
+        footView.priceLabel.text = viewModel.voucherModel.price?.stringValue
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -142,6 +142,8 @@ class FoodVoucherDetailsVC: UIViewController,UITableViewDataSource,UITableViewDe
             let foodReservationPayVC = FoodReservationPayVC()
             foodReservationPayVC.foodPaymentMethod = .normalPaymentStatus
             foodReservationPayVC.paymentMethod = .voucherPaymentStatus
+            foodReservationPayVC.payPrice = self.footView.priceLabel.text!
+            foodReservationPayVC.detailsModel = self.recommendModel
             self.navigationController?.pushViewController(foodReservationPayVC, animated: true)
         }
         return view

@@ -96,11 +96,19 @@
 		232357BA1FBC190D0006E9A6 /* MineAmountOperationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232357B81FBC190D0006E9A6 /* MineAmountOperationCell.swift */; };
 		232357BB1FBC190D0006E9A6 /* MineAmountOperationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 232357B91FBC190D0006E9A6 /* MineAmountOperationCell.xib */; };
 		2323931F1FB43B6E00425BDA /* FoodPackageOrderDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2323931E1FB43B6E00425BDA /* FoodPackageOrderDetailsVC.swift */; };
+		232549AA1FCE681D00256B33 /* FoodSelectNumberReservationsVw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232549A91FCE681D00256B33 /* FoodSelectNumberReservationsVw.swift */; };
+		2325D9D21FCEB9CF0085BD80 /* FoodSelectNumberPeopleVw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2325D9D11FCEB9CF0085BD80 /* FoodSelectNumberPeopleVw.swift */; };
+		2325D9D41FCEEAE80085BD80 /* FoodIntegralVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2325D9D31FCEEAE80085BD80 /* FoodIntegralVM.swift */; };
+		2325D9D61FCEEB170085BD80 /* FoodIntegralModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2325D9D51FCEEB170085BD80 /* FoodIntegralModel.swift */; };
 		2326894C1FCD4F090074275E /* FoodOrderDetailsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2326894B1FCD4F090074275E /* FoodOrderDetailsVM.swift */; };
 		2326A8791FCD4FF700E8CD83 /* FoodOrderCanteenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2326A8781FCD4FF700E8CD83 /* FoodOrderCanteenModel.swift */; };
 		2326A87B1FCD551800E8CD83 /* FoodOrderVoucherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2326A87A1FCD551800E8CD83 /* FoodOrderVoucherModel.swift */; };
 		2326A87D1FCD554300E8CD83 /* FoodOrderPackageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2326A87C1FCD554300E8CD83 /* FoodOrderPackageModel.swift */; };
 		2326A87F1FCD5AD300E8CD83 /* FoodCanteenOrderDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2326A87E1FCD5AD300E8CD83 /* FoodCanteenOrderDetailsVC.swift */; };
+		23279ADE1FCE82F70097911C /* FoodSelectNumberDayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23279ADC1FCE82F70097911C /* FoodSelectNumberDayCell.swift */; };
+		23279ADF1FCE82F70097911C /* FoodSelectNumberDayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23279ADD1FCE82F70097911C /* FoodSelectNumberDayCell.xib */; };
+		23279AE21FCE83230097911C /* FoodSelectNumberTimeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23279AE01FCE83230097911C /* FoodSelectNumberTimeCell.swift */; };
+		23279AE31FCE83230097911C /* FoodSelectNumberTimeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23279AE11FCE83230097911C /* FoodSelectNumberTimeCell.xib */; };
 		23286BDB1FCD8FFB00782A2C /* SearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23286BDA1FCD8FFB00782A2C /* SearchTextField.swift */; };
 		23286BDD1FCD92F300782A2C /* FoodSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23286BDC1FCD92F300782A2C /* FoodSearchVC.swift */; };
 		23286BDF1FCD930C00782A2C /* FoodSearchVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23286BDE1FCD930C00782A2C /* FoodSearchVM.swift */; };
@@ -119,6 +127,7 @@
 		232ED6DC1FCD3F2A00208BDD /* FoodMerchantsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232ED6DB1FCD3F2A00208BDD /* FoodMerchantsModel.swift */; };
 		2332CE161FCE48C700941BF3 /* FoodSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2332CE141FCE48C700941BF3 /* FoodSearchCell.swift */; };
 		2332CE171FCE48C700941BF3 /* FoodSearchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2332CE151FCE48C700941BF3 /* FoodSearchCell.xib */; };
+		2332CE191FCE65CA00941BF3 /* FoodReservationVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2332CE181FCE65CA00941BF3 /* FoodReservationVM.swift */; };
 		2353EC1C1FB3F6BA005E1548 /* OCTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 2353EC1B1FB3F6BA005E1548 /* OCTools.m */; };
 		2353EC1F1FB4047A005E1548 /* FoodOrderDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2353EC1D1FB4047A005E1548 /* FoodOrderDetailsCell.swift */; };
 		2353EC201FB4047A005E1548 /* FoodOrderDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2353EC1E1FB4047A005E1548 /* FoodOrderDetailsCell.xib */; };
@@ -468,11 +477,19 @@
 		232357B81FBC190D0006E9A6 /* MineAmountOperationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineAmountOperationCell.swift; sourceTree = "<group>"; };
 		232357B91FBC190D0006E9A6 /* MineAmountOperationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineAmountOperationCell.xib; sourceTree = "<group>"; };
 		2323931E1FB43B6E00425BDA /* FoodPackageOrderDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodPackageOrderDetailsVC.swift; sourceTree = "<group>"; };
+		232549A91FCE681D00256B33 /* FoodSelectNumberReservationsVw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodSelectNumberReservationsVw.swift; sourceTree = "<group>"; };
+		2325D9D11FCEB9CF0085BD80 /* FoodSelectNumberPeopleVw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodSelectNumberPeopleVw.swift; sourceTree = "<group>"; };
+		2325D9D31FCEEAE80085BD80 /* FoodIntegralVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodIntegralVM.swift; sourceTree = "<group>"; };
+		2325D9D51FCEEB170085BD80 /* FoodIntegralModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodIntegralModel.swift; sourceTree = "<group>"; };
 		2326894B1FCD4F090074275E /* FoodOrderDetailsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodOrderDetailsVM.swift; sourceTree = "<group>"; };
 		2326A8781FCD4FF700E8CD83 /* FoodOrderCanteenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodOrderCanteenModel.swift; sourceTree = "<group>"; };
 		2326A87A1FCD551800E8CD83 /* FoodOrderVoucherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodOrderVoucherModel.swift; sourceTree = "<group>"; };
 		2326A87C1FCD554300E8CD83 /* FoodOrderPackageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodOrderPackageModel.swift; sourceTree = "<group>"; };
 		2326A87E1FCD5AD300E8CD83 /* FoodCanteenOrderDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCanteenOrderDetailsVC.swift; sourceTree = "<group>"; };
+		23279ADC1FCE82F70097911C /* FoodSelectNumberDayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodSelectNumberDayCell.swift; sourceTree = "<group>"; };
+		23279ADD1FCE82F70097911C /* FoodSelectNumberDayCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoodSelectNumberDayCell.xib; sourceTree = "<group>"; };
+		23279AE01FCE83230097911C /* FoodSelectNumberTimeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodSelectNumberTimeCell.swift; sourceTree = "<group>"; };
+		23279AE11FCE83230097911C /* FoodSelectNumberTimeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoodSelectNumberTimeCell.xib; sourceTree = "<group>"; };
 		23286BDA1FCD8FFB00782A2C /* SearchTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTextField.swift; sourceTree = "<group>"; };
 		23286BDC1FCD92F300782A2C /* FoodSearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodSearchVC.swift; sourceTree = "<group>"; };
 		23286BDE1FCD930C00782A2C /* FoodSearchVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodSearchVM.swift; sourceTree = "<group>"; };
@@ -500,6 +517,7 @@
 		232ED6DB1FCD3F2A00208BDD /* FoodMerchantsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodMerchantsModel.swift; sourceTree = "<group>"; };
 		2332CE141FCE48C700941BF3 /* FoodSearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodSearchCell.swift; sourceTree = "<group>"; };
 		2332CE151FCE48C700941BF3 /* FoodSearchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoodSearchCell.xib; sourceTree = "<group>"; };
+		2332CE181FCE65CA00941BF3 /* FoodReservationVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodReservationVM.swift; sourceTree = "<group>"; };
 		2353EC1A1FB3F6BA005E1548 /* OCTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCTools.h; sourceTree = "<group>"; };
 		2353EC1B1FB3F6BA005E1548 /* OCTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCTools.m; sourceTree = "<group>"; };
 		2353EC1D1FB4047A005E1548 /* FoodOrderDetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodOrderDetailsCell.swift; sourceTree = "<group>"; };
@@ -1087,12 +1105,12 @@
 				239F06981FB2F3D10067D810 /* RecommendDetailsVC.swift */,
 				239F06A31FB2F3D30067D810 /* FoodVoucherDetailsVC.swift */,
 				239F06991FB2F3D10067D810 /* FoodMealDetailsVC.swift */,
+				239F06A01FB2F3D20067D810 /* FoodReservationVC.swift */,
 				239F06A21FB2F3D30067D810 /* FoodRecommendDetailVC.swift */,
 				239F069A1FB2F3D10067D810 /* FoodFeaturesDetailVC.swift */,
-				239F06A01FB2F3D20067D810 /* FoodReservationVC.swift */,
 				239F069E1FB2F3D20067D810 /* FoodReservationPayVC.swift */,
-				239F069D1FB2F3D20067D810 /* FoodPaymentCardCouponsVC.swift */,
 				239F069F1FB2F3D20067D810 /* FoodReservationFinishVC.swift */,
+				239F069D1FB2F3D20067D810 /* FoodPaymentCardCouponsVC.swift */,
 				239F069B1FB2F3D20067D810 /* FoodPurchaseSuccessVC.swift */,
 				239F069C1FB2F3D20067D810 /* FoodVoucherOrderDetailsVC.swift */,
 				2323931E1FB43B6E00425BDA /* FoodPackageOrderDetailsVC.swift */,
@@ -1654,6 +1672,12 @@
 				239F06BC1FB2F3FF0067D810 /* FoodReservationCodeCell.xib */,
 				239F06BD1FB2F3FF0067D810 /* FoodReservationFilliCell.swift */,
 				239F06BE1FB2F3FF0067D810 /* FoodReservationFilliCell.xib */,
+				2325D9D11FCEB9CF0085BD80 /* FoodSelectNumberPeopleVw.swift */,
+				232549A91FCE681D00256B33 /* FoodSelectNumberReservationsVw.swift */,
+				23279ADC1FCE82F70097911C /* FoodSelectNumberDayCell.swift */,
+				23279ADD1FCE82F70097911C /* FoodSelectNumberDayCell.xib */,
+				23279AE01FCE83230097911C /* FoodSelectNumberTimeCell.swift */,
+				23279AE11FCE83230097911C /* FoodSelectNumberTimeCell.xib */,
 			);
 			path = FoodReservationView;
 			sourceTree = "<group>";
@@ -1762,6 +1786,7 @@
 				2326A87A1FCD551800E8CD83 /* FoodOrderVoucherModel.swift */,
 				2326A87C1FCD554300E8CD83 /* FoodOrderPackageModel.swift */,
 				23286BE01FCD932000782A2C /* FoodSearchModel.swift */,
+				2325D9D51FCEEB170085BD80 /* FoodIntegralModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1855,12 +1880,14 @@
 				231A10741FC2BFA200150257 /* RecommendDetailsVM.swift */,
 				2321DD0B1FC6BE4A00AC0469 /* FoodVoucherDetailsVM.swift */,
 				23C1CED51FC7B10100AA8252 /* FoodMealDetailsVM.swift */,
-				23113BF91FC65DEA00BE1784 /* FoodReservationPayVM.swift */,
 				23113BEF1FC65D1200BE1784 /* FoodPaymentCardCouponsVM.swift */,
 				23113BF31FC65D4300BE1784 /* FoodNormalOrderDetailsVM.swift */,
+				23113BF91FC65DEA00BE1784 /* FoodReservationPayVM.swift */,
 				232ED6D91FCD3EFE00208BDD /* FoodMerchantsVM.swift */,
 				2326894B1FCD4F090074275E /* FoodOrderDetailsVM.swift */,
 				23286BDE1FCD930C00782A2C /* FoodSearchVM.swift */,
+				2332CE181FCE65CA00941BF3 /* FoodReservationVM.swift */,
+				2325D9D31FCEEAE80085BD80 /* FoodIntegralVM.swift */,
 			);
 			name = ViewModel;
 			path = "FoodFamily/Main(主要)/Home(主页)/ViewModel";
@@ -2091,6 +2118,7 @@
 				23CB44FA1FBBCD0600D8988D /* AddBankCardCell.xib in Resources */,
 				23B67CFD1FBBD665000B18DB /* AddBankTextFieldCell.xib in Resources */,
 				23D0E3E51FAD9C380058EA34 /* RecommendTableViewCell.xib in Resources */,
+				23279AE31FCE83230097911C /* FoodSelectNumberTimeCell.xib in Resources */,
 				230BE0D41FB69B5800AD47E0 /* MineCollectionCell.xib in Resources */,
 				23F4A7431FBBE9EB004C9266 /* MineSuccessfulOperationVC.xib in Resources */,
 				239F06ED1FB2F4020067D810 /* FoodReservationCell.xib in Resources */,
@@ -2125,6 +2153,7 @@
 				239F06F91FB2F4020067D810 /* RecommendedFoodView.xib in Resources */,
 				2353EC201FB4047A005E1548 /* FoodOrderDetailsCell.xib in Resources */,
 				2320D3E11FBC3F7800A5B507 /* MineRechargeMessageCell.xib in Resources */,
+				23279ADF1FCE82F70097911C /* FoodSelectNumberDayCell.xib in Resources */,
 				239F06F71FB2F4020067D810 /* RecommendedCommentCell.xib in Resources */,
 				2388E0A01FAFFF7B00AB6853 /* FoodDetailsCell.xib in Resources */,
 				239F06E71FB2F4020067D810 /* FoodOrderDetailsEvaluationCell.xib in Resources */,
@@ -2328,6 +2357,7 @@
 				238092EE1FB94F580051EF3D /* MineSetPayPasswordCell.swift in Sources */,
 				23EECD6A1FBEFC7800CA274C /* LoginModel.swift in Sources */,
 				239F06F81FB2F4020067D810 /* RecommendedFoodView.swift in Sources */,
+				2325D9D21FCEB9CF0085BD80 /* FoodSelectNumberPeopleVw.swift in Sources */,
 				2316A2E31FAD942C00A0B512 /* CrowdfundingController.swift in Sources */,
 				23F4A7491FBBEF3A004C9266 /* MyRechargeHeadCell.swift in Sources */,
 				230FA7651FB539C600190F2B /* FoodMerchantsListView.swift in Sources */,
@@ -2335,6 +2365,7 @@
 				238092DD1FB93FE40051EF3D /* LJXPhotoAlbum.m in Sources */,
 				23F4A7421FBBE9EB004C9266 /* MineSuccessfulOperationVC.swift in Sources */,
 				23E214CA1FB6EA3600C7D085 /* MineInformationListCell.swift in Sources */,
+				232549AA1FCE681D00256B33 /* FoodSelectNumberReservationsVw.swift in Sources */,
 				2380936A1FB9813D0051EF3D /* DataTransform.swift in Sources */,
 				239F06EA1FB2F4020067D810 /* FoodPaymentCardCouponsCell.swift in Sources */,
 				232ED6CF1FCCF22A00208BDD /* BRStringPickerView.m in Sources */,
@@ -2446,11 +2477,14 @@
 				230BE0F91FB6DB1900AD47E0 /* MineExpiredCoupons.swift in Sources */,
 				239F06EE1FB2F4020067D810 /* FoodReservationCodeCell.swift in Sources */,
 				23D147581FBA9A2E0028CD09 /* FoodEvaluationListCell.swift in Sources */,
+				2332CE191FCE65CA00941BF3 /* FoodReservationVM.swift in Sources */,
 				2380937D1FB9813D0051EF3D /* TransformOf.swift in Sources */,
 				230BE0E21FB6A27600AD47E0 /* SGPageTitleView.m in Sources */,
 				2380937F1FB9813D0051EF3D /* TransformType.swift in Sources */,
+				23279ADE1FCE82F70097911C /* FoodSelectNumberDayCell.swift in Sources */,
 				239F07101FB2F4020067D810 /* FoodFeaturesDetailCell.swift in Sources */,
 				239F07001FB2F4020067D810 /* RecommendNaviCell.swift in Sources */,
+				2325D9D61FCEEB170085BD80 /* FoodIntegralModel.swift in Sources */,
 				238093841FB9A2410051EF3D /* RegisterView.swift in Sources */,
 				2326894C1FCD4F090074275E /* FoodOrderDetailsVM.swift in Sources */,
 				2316A2C41FAD8F4700A0B512 /* TPTextField.swift in Sources */,
@@ -2487,6 +2521,7 @@
 				239F06AB1FB2F3D30067D810 /* FoodReservationFinishVC.swift in Sources */,
 				23D147411FBA92FA0028CD09 /* FoodEvaluationVC.swift in Sources */,
 				230FA7711FB5AA7C00190F2B /* MineHeadView.swift in Sources */,
+				2325D9D41FCEEAE80085BD80 /* FoodIntegralVM.swift in Sources */,
 				238093721FB9813D0051EF3D /* ImmutableMappable.swift in Sources */,
 				2326A87F1FCD5AD300E8CD83 /* FoodCanteenOrderDetailsVC.swift in Sources */,
 				239F06AE1FB2F3D30067D810 /* FoodRecommendDetailVC.swift in Sources */,
@@ -2537,6 +2572,7 @@
 				238093431FB97BAD0051EF3D /* Typealiases.swift in Sources */,
 				238093331FB97BAD0051EF3D /* ConstraintMakerFinalizable.swift in Sources */,
 				2326A87D1FCD554300E8CD83 /* FoodOrderPackageModel.swift in Sources */,
+				23279AE21FCE83230097911C /* FoodSelectNumberTimeCell.swift in Sources */,
 				238092F61FB96D420051EF3D /* LoginVC.swift in Sources */,
 				2380937B1FB9813D0051EF3D /* Operators.swift in Sources */,
 				231EAA8B1FC6998300E022EB /* SDRefreshHeaderView.m in Sources */,

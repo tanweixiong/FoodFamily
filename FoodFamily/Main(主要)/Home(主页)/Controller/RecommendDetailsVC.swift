@@ -286,12 +286,13 @@ class RecommendDetailsVC: UIViewController,UITableViewDelegate,UITableViewDataSo
             break
         case .reservationStatus:
             let foodReservationVC = FoodReservationVC()
+            foodReservationVC.detailsModel = self.recommendDetailsVM.recommendDataModel
             self.navigationController?.pushViewController(foodReservationVC, animated: true)
             break
         //支付入口
         case .payStatus:
             let foodReservationPayVC = FoodReservationPayVC()
-            foodReservationPayVC.storeInfoModel = self.recommendDetailsVM.recommendDataModel
+            foodReservationPayVC.detailsModel = self.recommendDetailsVM.recommendDataModel
             self.navigationController?.pushViewController(foodReservationPayVC, animated: true)
             break
         case .recommendStatus:

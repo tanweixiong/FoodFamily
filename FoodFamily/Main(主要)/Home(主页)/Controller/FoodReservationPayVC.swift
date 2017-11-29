@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 enum FoodPaymentMethodStatus {
     case normalPaymentStatus
@@ -14,16 +15,24 @@ enum FoodPaymentMethodStatus {
 }
 
 class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate,InputPaymentPasswordDelegate {
-    fileprivate let dataScorce = [[""],["输入消费金额","钱包支付"],["微信支付","支付宝支付"],["积分券  "]]
+    fileprivate lazy var viewModel : FoodIntegralVM = FoodIntegralVM()
+    fileprivate let dataScorce = [[""],["输入消费金额","钱包支付"],["积分券  "]]
     fileprivate let imageArray = [[""],["","ic_home_card"],["ic_home_wechat","ic_home_alipay"],["ic_home_wodejifen"]]
     fileprivate let foodReservationPayCell = "FoodReservationPayCell"
     fileprivate let foodReservationPaymentCardCell = "FoodReservationPaymentCardCell"
     fileprivate let foodReservationPaymentMethodCell = "FoodReservationPaymentMethodCell"
     fileprivate let foodPaymentConsumptionVC = "FoodPaymentConsumptionVC"
     fileprivate var indexPath = IndexPath()
-    lazy var storeInfoModel : RecommendDataModel = RecommendDataModel()!
+    lazy var detailsModel : RecommendDataModel = RecommendDataModel()!
     var foodPaymentMethod = FoodPaymentMethodStatus.normalPaymentStatus
     var paymentMethod = OrderPaymentMethod.ordinaryPaymentStatus
+    var payAppointmentTime = ""
+    var payPhone = ""
+    var payCode = ""
+    var payStoreId = ""
+    var payVould = ""
+    var mealId = ""
+    var payPrice = ""
     
     struct FoodReservationPayUX {
         static let foodReservationPayHeight:CGFloat = 90
@@ -42,9 +51,9 @@ class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
-         self.indexPath = NSIndexPath(row: 1, section: 1) as IndexPath
         view.addSubview(tableView)
         tableView.addSubview(confirmBtn)
+        self.getData()
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -52,7 +61,7 @@ class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewData
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if indexPath.section == 0 {
+        if section == 0 {
             return 1
         }else{
             let array:NSArray = self.dataScorce[section] as NSArray
@@ -80,7 +89,14 @@ class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewData
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: foodReservationPayCell, for: indexPath) as! FoodReservationPayCell
             cell.selectionStyle = .none
-            cell.storeInfoModel = self.storeInfoModel
+            var logoUrl = ""
+            if detailsModel.logo != nil{
+                logoUrl = detailsModel.logo!
+            }
+     
+            cell.iconImageView.sd_setImage(with: NSURL(string: logoUrl)! as URL, placeholderImage: UIImage.init(named: "ic_all_smallImageDefault"))
+            cell.priceLabel.text = payPrice
+            cell.storeNameLabel.text = self.detailsModel.storeName
             return cell
         }else if indexPath.section == 1 && indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: foodPaymentConsumptionVC, for: indexPath) as! FoodPaymentConsumptionVC
@@ -89,7 +105,7 @@ class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewData
             return cell
         }else {
             let cell = tableView.dequeueReusableCell(withIdentifier: foodReservationPaymentMethodCell, for: indexPath) as! FoodReservationPaymentMethodCell
-            cell.chooseBtn.isSelected = indexPath == self.indexPath ? true : false
+            cell.chooseBtn.isSelected = (indexPath.section == 1 && indexPath.row == 1) ? true : false
             cell.selectionStyle = .none
             cell.headingLabel.text = headingArray[indexPath.row] as? String
             cell.iconImageView.image = UIImage.init(named: (imageViewArray[indexPath.row] as? String)!)
@@ -105,21 +121,7 @@ class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewData
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if (indexPath.section == 0) || (indexPath.section == 1 && indexPath.row == 0)  {return}
-//        if indexPath.section == 1  {
-//            let foodPaymentCardCouponsVC = FoodPaymentCardCouponsVC()
-//            self.navigationController?.pushViewController(foodPaymentCardCouponsVC, animated: true)
-//            return}
-        if indexPath.section == 1 || indexPath.section == 2 {
-            if indexPath == self.indexPath { return }
-            let selectedCell = tableView.cellForRow(at: IndexPath(row: indexPath.row, section: indexPath.section))as! FoodReservationPaymentMethodCell
-            selectedCell.chooseBtn.isSelected = true
-            let restoreCell = tableView.cellForRow(at: self.indexPath as IndexPath) as! FoodReservationPaymentMethodCell
-            restoreCell.chooseBtn.isSelected = false
-            self.indexPath  = NSIndexPath(row: indexPath.row, section: indexPath.section) as IndexPath
-        }
-        
-        if indexPath.section == 3  {
+        if indexPath.section == 2  {
             let cell = tableView.cellForRow(at: IndexPath(row: indexPath.row, section: indexPath.section))as! FoodReservationPaymentMethodCell
             cell.chooseBtn.isSelected = !cell.chooseBtn.isSelected
         }
@@ -162,7 +164,27 @@ class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewData
     }()
     
     func inputPaymentPasswordChangeBankCard() {
-        
+        let storeId = (self.detailsModel.storeId?.stringValue)!
+        let payAppointmentTime = self.payAppointmentTime
+        let payPhone = self.payPhone
+        let payCode = self.payCode
+        var price = "0"
+        if self.detailsModel.reserPrice != nil {
+            price = (self.detailsModel.reserPrice?.stringValue)!
+        }
+        let parameters = ["storeId":storeId,"price":price,"payAppointmentTime":payAppointmentTime,"payPhone":payPhone,"payCode":payCode]
+        BaseViewModel.loadSuccessfullyReturnedData(requestType: .get, URLString: ConstAPI.kAPIOrderAddAppointmentOrderInfo, parameters: parameters, showIndicator: false) {
+            SVProgressHUD.showSuccess(withStatus: "支付成功")
+            let foodPurchaseSuccessVC = FoodPurchaseSuccessVC()
+            self.navigationController?.pushViewController(foodPurchaseSuccessVC, animated: true)
+        }
+    }
+    
+    func getData(){
+        let parameters = ["vouId":self.payVould,"mealId":self.mealId]
+        viewModel.loadSuccessfullyReturnedData(requestType: .get, URLString: ConstAPI.kAPIUserWalletGetIntegralByUserId, parameters: parameters, showIndicator: false) {
+            
+        }
     }
     
     @objc func confirmOnClick(){

@@ -127,9 +127,11 @@ class RecommendDataModel: Mappable {
     var perPay: AnyObject?
     var storeName: String?
     var storeType: String?
+    var reserPrice:NSNumber?
     var foodList: [RecommendFoodsModel]?
     var mealList: [RecommendMealsModel]?
     var voucherList: [RecommendVouchersModel]?
+    var storeId: NSNumber?
     
     required init?(map: Map) {
         
@@ -152,6 +154,8 @@ class RecommendDataModel: Mappable {
         foodList               <- map["foodList"]
         mealList               <- map["mealList"]
         voucherList            <- map["voucherList"]
+        reserPrice             <- map["reserPrice"]
+        storeId                <- map["storeId"]
     }
 }
 

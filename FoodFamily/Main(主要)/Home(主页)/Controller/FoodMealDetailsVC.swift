@@ -55,10 +55,10 @@ class FoodMealDetailsVC: MainViewController,UITableViewDelegate,UITableViewDataS
     func setDisplayData(){
         titleLabel.text = self.recommendModel.storeName
         
-        let priceString = NSMutableAttributedString.init(string: (viewModel.mealModel.mealPrice?.stringValue)!)
+        let priceString = NSMutableAttributedString.init(string: (viewModel.mealModel.mealMarketPrice?.stringValue)!)
         priceString.addAttribute(NSAttributedStringKey.strikethroughStyle, value: NSNumber.init(value: 1), range: NSRange(location: 0, length: priceString.length))
         footView.discountLabel.attributedText = priceString
-        footView.priceLabel.text = viewModel.mealModel.mealMarketPrice?.stringValue
+        footView.priceLabel.text = viewModel.mealModel.mealPrice?.stringValue
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -166,6 +166,8 @@ class FoodMealDetailsVC: MainViewController,UITableViewDelegate,UITableViewDataS
             let foodReservationPayVC = FoodReservationPayVC()
             foodReservationPayVC.foodPaymentMethod = .normalPaymentStatus
             foodReservationPayVC.paymentMethod = .ordinaryPaymentStatus
+            foodReservationPayVC.payPrice = self.footView.priceLabel.text!
+            foodReservationPayVC.detailsModel = self.recommendModel
             self.navigationController?.pushViewController(foodReservationPayVC, animated: true)
         }
         return view

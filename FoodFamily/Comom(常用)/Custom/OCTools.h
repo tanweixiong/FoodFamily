@@ -15,4 +15,5 @@
 +(NSString *)getJSONStringFromDictionary:(id)testDict;
 +(NSDictionary *)setValuesForKeysWithDictionary:(NSDictionary<NSString *,id> *)keyedValues;
 +(CGSize)calculateMeaasgeHeightWithText:(NSString *)string andWidth:(CGFloat)width andFont:(UIFont *)font;
++(NSArray *)getCurrentNumberDays;
 @end

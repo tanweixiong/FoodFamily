@@ -93,6 +93,15 @@ class Tools: NSObject {
         return currentTime;
     }
     
+    //根据根式获取当前时间
+    class func getCurrentFormatTime(_ format:String)-> String {
+        let data = NSDate()
+        let timeFormat = DateFormatter()
+        timeFormat.dateFormat = format
+        let currentTime = timeFormat.string(from: data as Date) as String
+        return currentTime;
+    }
+    
       //转化特定的时间格式
     class func getTimeStampToString(timeStamp:String)->String {
         let string = NSString(string: timeStamp)

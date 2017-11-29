@@ -7,14 +7,21 @@
 //
 
 import UIKit
+import SVProgressHUD
 
-class FoodReservationVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
-    
-    fileprivate let dataScore:NSArray = ["预约人数","预约时间","请手机号输入","验证码天蝎","需支付预金"]
+class FoodReservationVC: UIViewController,UITableViewDelegate,UITableViewDataSource,FoodSelectNumberReservationsDelegate,FoodSelectNumberPeopleDelegate,UITextFieldDelegate {
+    var detailsModel : RecommendDataModel = RecommendDataModel()!
+    fileprivate lazy var viewModel : FoodReservationVM = FoodReservationVM()
+    fileprivate let dataScore:NSArray = ["预约人数","预约时间","请手机号输入","验证码填写","需支付预金"]
     fileprivate let foodReservationCell = "FoodReservationCell"
     fileprivate let foodReservationCodeCell = "FoodReservationCodeCell"
     fileprivate let foodReservationFilliCell = "FoodReservationFilliCell"
     fileprivate var foodReservationCodeText = ""
+    fileprivate var reservationsTime = ""
+    fileprivate var reservationsNumber = ""
+    fileprivate var reserPrice = "0"
+    fileprivate var codeTextField = UITextField()
+    fileprivate var phoneTextField = UITextField()
     
     struct FoodReservationUX {
         static let rowHeight:CGFloat = 44
@@ -25,12 +32,18 @@ class FoodReservationVC: UIViewController,UITableViewDelegate,UITableViewDataSou
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.alpha = 1
         self.title = "预约"
+        
+        phoneTextField.text = "17876489945"
+        codeTextField.text = "9999999"
+        reservationsTime = "11111"
+        reservationsNumber = "1111"
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(tableView)
         tableView.addSubview(nextBtn)
+        print(detailsModel.storeName!);
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -55,29 +68,70 @@ class FoodReservationVC: UIViewController,UITableViewDelegate,UITableViewDataSou
         return view
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 0 {
+            let foodSelectNumberPeopleVw = FoodSelectNumberPeopleVw(frame: CGRect(x: 0, y: 0, width: (UIApplication.shared.keyWindow?.bounds.width)!, height: (UIApplication.shared.keyWindow?.bounds.height)!))
+            foodSelectNumberPeopleVw.delegate = self
+            UIApplication.shared.keyWindow?.addSubview(foodSelectNumberPeopleVw)
+        }else if indexPath.section == 1 {
+            let foodSelectNumberReservationsVw = FoodSelectNumberReservationsVw(frame: CGRect(x: 0, y: 0, width: (UIApplication.shared.keyWindow?.bounds.width)!, height: (UIApplication.shared.keyWindow?.bounds.height)!))
+            foodSelectNumberReservationsVw.delegate = self
+            UIApplication.shared.keyWindow?.addSubview(foodSelectNumberReservationsVw)
+        }
+    }
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        self.closeKeyboard()
+    }
+    
+    //选择预约时间
+    func foodSelectNumberReservationsChoose(_ day: String, _ time: String) {
+        let cell = tableView.cellForRow(at: IndexPath(row: 0, section: 1))as! FoodReservationCell
+        reservationsTime = day + time
+        cell.dataLabel.text = reservationsTime
+    }
+    
+    //选择预约人数
+    func foodSelectNumberPeopleChoose(_ data:String){
+        let cell = tableView.cellForRow(at: IndexPath(row: 0, section: 0))as! FoodReservationCell
+        reservationsNumber = data
+        cell.dataLabel.text = reservationsNumber
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 || indexPath.section == 1 || indexPath.section == 4 {
             let cell = tableView.dequeueReusableCell(withIdentifier: foodReservationCell, for: indexPath) as! FoodReservationCell
             cell.selectionStyle = .none
             cell.chooseView.isHidden = indexPath.section == 0 || indexPath.section == 1 ? false : true
             cell.priceLabel.isHidden = indexPath.section == 4 ? false : true
+            var reserPrice = "0"
+            if self.detailsModel.reserPrice != nil{
+                reserPrice = (self.detailsModel.reserPrice?.stringValue)!
+            }
+            cell.priceLabel.text = "¥" + reserPrice
             cell.headingLabel.text = self.dataScore[indexPath.section] as? String
             return cell
         }else if indexPath.section == 2 {
             let cell = tableView.dequeueReusableCell(withIdentifier: foodReservationCodeCell, for: indexPath) as! FoodReservationCodeCell
-            cell.headingLabel.text = self.dataScore[indexPath.section] as? String
-            cell.foodReservationCodeCallBack = {() in
-                
-            }
+            cell.phoneTextField.delegate = self
+            phoneTextField = cell.phoneTextField
+            cell.contentView.addSubview(getCodeButton)
             cell.selectionStyle = .none
+            
+            
+            cell.phoneTextField.text = "17876489945"
             return cell
         }else{
             let cell = tableView.dequeueReusableCell(withIdentifier: foodReservationFilliCell, for: indexPath) as! FoodReservationFilliCell
             cell.selectionStyle = .none
             cell.headingLabel.text = self.dataScore[indexPath.section] as? String
+            cell.codeTextField.delegate = self
+            codeTextField = cell.codeTextField
             cell.foodReservationFillTextFiledCallBack = { (codeStr:String) in
                 self.foodReservationCodeText = codeStr
             }
+            
+            cell.codeTextField.text = "8888888"
             return cell
         }
     }
@@ -92,6 +146,19 @@ class FoodReservationVC: UIViewController,UITableViewDelegate,UITableViewDataSou
                 scrollView.contentInset = UIEdgeInsetsMake(-sectionHeaderHeight, 0, 0, 0);
             }
         }
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        var maxLength:Int = 0
+        if textField == self.phoneTextField {
+            maxLength = 11
+        }else if textField == self.codeTextField{
+            maxLength = 8
+        }
+        //限制长度
+        let proposeLength = (textField.text?.lengthOfBytes(using: String.Encoding.utf8))! - range.length + string.lengthOfBytes(using: String.Encoding.utf8)
+        if proposeLength > maxLength { return false }
+        return true
     }
     
     lazy var tableView: UITableView = {
@@ -120,10 +187,65 @@ class FoodReservationVC: UIViewController,UITableViewDelegate,UITableViewDataSou
         return btn
     }()
     
+    lazy var getCodeButton: UIButton = {
+        let button = UIButton()
+        let width:CGFloat = 80
+        let height:CGFloat = 28
+        button.frame = CGRect(x: SCREEN_WIDTH - 15 - width, y: FoodReservationUX.rowHeight/2 - height/2, width: width, height: height)
+        button.setTitleColor(UIColor.R_UIRGBColor(red: 255, green: 92, blue: 132, alpha: 1), for: .normal)
+        button.setTitle("获取验证码", for: .normal)
+        button.backgroundColor = UIColor.clear
+        button.layer.borderWidth = 1
+        button.layer.borderColor = UIColor.R_UIRGBColor(red: 237, green: 237, blue: 237, alpha: 1).cgColor
+        button.layer.cornerRadius = 6
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 14)
+        button.clipsToBounds = true
+        button.addTarget(self, action: #selector(getCodeClick(_:)), for: .touchUpInside)
+        button.tag = 0
+        return button
+    }()
+    
     @objc func nextOnClick(){
-        let vc = FoodReservationPayVC()
-        vc.foodPaymentMethod = .reservationPaymentStatus
-        self.navigationController?.pushViewController(vc, animated: true)
+        if checkInpunt() {
+            let vc = FoodReservationPayVC()
+            vc.foodPaymentMethod = .reservationPaymentStatus
+            vc.payStoreId = (self.detailsModel.storeId?.stringValue)!
+            vc.payPrice = self.reserPrice
+            vc.detailsModel = self.detailsModel
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    
+    @objc func getCodeClick(_ sender:UIButton){
+         sender.start(withTime: 60, title: "重新获取", countDownTitle: "s", mainColor: UIColor.clear, count:UIColor.clear)
+    }
+    
+    func checkInpunt()->Bool{
+        if reservationsNumber.characters.count == 0 && reservationsTime.characters.count == 0 && !Tools.validateMobile(mobile: phoneTextField.text!) && !Tools.validateCode(code: codeTextField.text!) {
+            SVProgressHUD.showInfo(withStatus: "输入不能为空")
+            return false
+        }
+        
+        if reservationsNumber.characters.count == 0 {
+            SVProgressHUD.showInfo(withStatus: "请输入预约人数")
+            return false
+        }
+        
+        if reservationsTime.characters.count == 0 {
+            SVProgressHUD.showInfo(withStatus: "请输入预约时间")
+            return false
+        }
+        
+        if !Tools.validateMobile(mobile: phoneTextField.text!) {
+            SVProgressHUD.showInfo(withStatus: "请输入正确的手机号码")
+            return false
+        }
+        
+        if !Tools.validateCode(code: codeTextField.text!) {
+            SVProgressHUD.showInfo(withStatus: "请输入正确的验证码")
+            return false
+        }
+        return true
     }
     
 }

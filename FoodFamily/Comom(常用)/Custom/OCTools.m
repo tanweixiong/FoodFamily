@@ -95,6 +95,83 @@ NSMutableAttributedString *GetAttributedText(NSString *value) {//这里调整富
     return size;
 }
 
++(NSArray *)getCurrentNumberDays{
+    NSDate * date = [NSDate date];//当前时间
+    
+    NSMutableArray *dayArray= [[NSMutableArray alloc] init];
+    
+    NSDate *day = [NSDate dateWithTimeInterval:1*60*60 sinceDate:date];
+//    NSString *time = [OCTools timeStringFromFormat:@"yyyy-MM-dd" withDate:day];
+//    NSString *week = [OCTools getTheDayOfTheWeekByDateString:time];
+    NSString *nowTime = [OCTools timeStringFromFormat:@"MM-dd" withDate:day];
+    NSString *nowDay = [NSString stringWithFormat:@"%@ %@",@"今天",nowTime];
+    [dayArray addObject:nowDay];
+    
+    NSDate *day1 = [NSDate dateWithTimeInterval:24*60*60 sinceDate:date];
+//    NSString *time1 = [OCTools timeStringFromFormat:@"yyyy-MM-dd" withDate:day1];
+//    NSString *week1 = [OCTools getTheDayOfTheWeekByDateString:time1];
+    NSString *nowTime1 = [OCTools timeStringFromFormat:@"MM-dd" withDate:day1];
+    NSString *nowDay1 = [NSString stringWithFormat:@"%@ %@",@"明天",nowTime1];
+    [dayArray addObject:nowDay1];
+    
+    NSDate *day2 = [NSDate dateWithTimeInterval:48*60*60 sinceDate:date];
+    NSString *time2 = [OCTools timeStringFromFormat:@"yyyy-MM-dd" withDate:day2];
+    NSString *week2 = [OCTools getTheDayOfTheWeekByDateString:time2];
+    NSString *nowTime2 = [OCTools timeStringFromFormat:@"MM-dd" withDate:day2];
+    NSString *nowDay2 = [NSString stringWithFormat:@"%@ %@",week2,nowTime2];
+    [dayArray addObject:nowDay2];
+    
+    NSDate *day3 = [NSDate dateWithTimeInterval:72*60*60 sinceDate:date];
+    NSString *time3 = [OCTools timeStringFromFormat:@"yyyy-MM-dd" withDate:day3];
+    NSString *week3 = [OCTools getTheDayOfTheWeekByDateString:time3];
+    NSString *nowTime3 = [OCTools timeStringFromFormat:@"MM-dd" withDate:day3];
+    NSString *nowDay3 = [NSString stringWithFormat:@"%@ %@",week3,nowTime3];
+    [dayArray addObject:nowDay3];
+    
+    NSDate *day4 = [NSDate dateWithTimeInterval:96*60*60 sinceDate:date];
+    NSString *time4 = [OCTools timeStringFromFormat:@"yyyy-MM-dd" withDate:day4];
+    NSString *week4 = [OCTools getTheDayOfTheWeekByDateString:time4];
+    NSString *nowTime4 = [OCTools timeStringFromFormat:@"MM-dd" withDate:day4];
+    NSString *nowDay4 = [NSString stringWithFormat:@"%@ %@",week4,nowTime4];
+    [dayArray addObject:nowDay4];
+    
+    NSDate *day5 = [NSDate dateWithTimeInterval:120*60*60 sinceDate:date];
+    NSString *time5 = [OCTools timeStringFromFormat:@"yyyy-MM-dd" withDate:day5];
+    NSString *week5 = [OCTools getTheDayOfTheWeekByDateString:time5];
+    NSString *nowTime5 = [OCTools timeStringFromFormat:@"MM-dd" withDate:day5];
+    NSString *nowDay5 = [NSString stringWithFormat:@"%@ %@",week5,nowTime5];
+    [dayArray addObject:nowDay5];
+    
+    NSDate *day6 = [NSDate dateWithTimeInterval:144*60*60 sinceDate:date];
+    NSString *time6 = [OCTools timeStringFromFormat:@"yyyy-MM-dd" withDate:day6];
+    NSString *week6 = [OCTools getTheDayOfTheWeekByDateString:time6];
+    NSString *nowTime6 = [OCTools timeStringFromFormat:@"MM-dd" withDate:day6];
+    NSString *nowDay6 = [NSString stringWithFormat:@"%@ %@",week6,nowTime6];
+    [dayArray addObject:nowDay6];
+    
+    NSArray *data = dayArray;
+    return data;
+}
+
++(NSString *)timeStringFromFormat:(NSString *)format withDate:(NSDate *)data{
+    NSString *strDiff = nil;
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+    [dateFormatter setDateFormat:format];
+    strDiff = [NSString stringWithFormat:@"%@",[dateFormatter stringFromDate:data]];
+    return  strDiff;
+}
+
+///根据用户输入的时间(dateString)确定当天是星期几,输入的时间格式 yyyy-MM-dd ,如 2015-12-18
++(NSString *)getTheDayOfTheWeekByDateString:(NSString *)dateString{
+    NSDateFormatter *inputFormatter=[[NSDateFormatter alloc]init];
+    [inputFormatter setDateFormat:@"yyyy-MM-dd"];
+    NSDate *formatterDate=[inputFormatter dateFromString:dateString];
+    NSDateFormatter *outputFormatter=[[NSDateFormatter alloc]init];
+    [outputFormatter setDateFormat:@"EEEE-MMMM-d"];
+    NSString *outputDateStr=[outputFormatter stringFromDate:formatterDate];
+    NSArray *weekArray=[outputDateStr componentsSeparatedByString:@"-"];
+    return [weekArray objectAtIndex:0];
+}
 
 //- (NSData *)toJSONData:(id)theData{
 //    
