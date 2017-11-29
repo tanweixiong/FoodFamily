@@ -219,7 +219,7 @@ class MineInformationVC: MainViewController,UITableViewDelegate,UITableViewDataS
         }
     }
     
-    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+   func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         let content:UIView = textField.superview!
         let cell:UIView = content.superview!
         let rect = cell.convert(textField.frame, to: self.tableView)

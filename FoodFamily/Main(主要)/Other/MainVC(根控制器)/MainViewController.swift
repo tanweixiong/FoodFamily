@@ -80,4 +80,32 @@ extension MainViewController {
         viewController.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(viewController, animated: animated)
     }
+    
+    func addSearchBar() ->(view:UIView,textfield:UITextField){
+        let viewHeight:CGFloat = 28
+//        let textFieldHeight:CGFloat = 18
+        let view = UIView()
+        view.frame = CGRect(x: 0, y: 0, width: XMAKE(246), height: viewHeight)
+        view.backgroundColor = R_UINavigationBarColor
+        view.layer.cornerRadius = 15
+        view.clipsToBounds = true
+        view.layer.borderWidth = 1
+        view.layer.borderColor = UIColor.R_UIRGBColor(red: 67, green: 66, blue: 67, alpha: 1).cgColor
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "home_search")
+        imageView.frame = CGRect(x: XMAKE(5), y: view.frame.height/2 - XMAKE(20)/2 + 2, width: XMAKE(15), height: XMAKE(15))
+        view.addSubview(imageView)
+        let textField = SearchTextField()
+        textField.frame = CGRect(x: imageView.frame.maxX + XMAKE(5) , y: 0, width: view.frame.size.width - imageView.frame.maxX - XMAKE(5), height: viewHeight)
+        textField.placeholder = "搜索商户、地点、厨师"
+//        textField.delegate = self
+        textField.setValue(UIColor.R_UIRGBColor(red: 67, green: 66, blue: 67, alpha: 1), forKeyPath: "_placeholderLabel.textColor")
+        textField.resignFirstResponder()
+        textField.textColor = UIColor.white
+        textField.placeholderFont(UIFont.systemFont(ofSize: 12))
+//        textField.backgroundColor = UIColor.red
+        textField.font = UIFont.systemFont(ofSize: 12)
+        view.addSubview(textField)
+        return (view,textField)
+    }
 }

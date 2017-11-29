@@ -117,6 +117,8 @@
 		232ED6D81FCCF22A00208BDD /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 232ED6CE1FCCF22A00208BDD /* README.md */; };
 		232ED6DA1FCD3EFE00208BDD /* FoodMerchantsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232ED6D91FCD3EFE00208BDD /* FoodMerchantsVM.swift */; };
 		232ED6DC1FCD3F2A00208BDD /* FoodMerchantsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232ED6DB1FCD3F2A00208BDD /* FoodMerchantsModel.swift */; };
+		2332CE161FCE48C700941BF3 /* FoodSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2332CE141FCE48C700941BF3 /* FoodSearchCell.swift */; };
+		2332CE171FCE48C700941BF3 /* FoodSearchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2332CE151FCE48C700941BF3 /* FoodSearchCell.xib */; };
 		2353EC1C1FB3F6BA005E1548 /* OCTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 2353EC1B1FB3F6BA005E1548 /* OCTools.m */; };
 		2353EC1F1FB4047A005E1548 /* FoodOrderDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2353EC1D1FB4047A005E1548 /* FoodOrderDetailsCell.swift */; };
 		2353EC201FB4047A005E1548 /* FoodOrderDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2353EC1E1FB4047A005E1548 /* FoodOrderDetailsCell.xib */; };
@@ -496,6 +498,8 @@
 		232ED6CE1FCCF22A00208BDD /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		232ED6D91FCD3EFE00208BDD /* FoodMerchantsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodMerchantsVM.swift; sourceTree = "<group>"; };
 		232ED6DB1FCD3F2A00208BDD /* FoodMerchantsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodMerchantsModel.swift; sourceTree = "<group>"; };
+		2332CE141FCE48C700941BF3 /* FoodSearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodSearchCell.swift; sourceTree = "<group>"; };
+		2332CE151FCE48C700941BF3 /* FoodSearchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoodSearchCell.xib; sourceTree = "<group>"; };
 		2353EC1A1FB3F6BA005E1548 /* OCTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCTools.h; sourceTree = "<group>"; };
 		2353EC1B1FB3F6BA005E1548 /* OCTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCTools.m; sourceTree = "<group>"; };
 		2353EC1D1FB4047A005E1548 /* FoodOrderDetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodOrderDetailsCell.swift; sourceTree = "<group>"; };
@@ -1116,6 +1120,7 @@
 				239F06D41FB2F4010067D810 /* FoodReservationPayView */,
 				236C442C1FB474D000AC3010 /* FoodMerchantsView */,
 				23D147421FBA93540028CD09 /* FoodEvaluationView */,
+				2332CE131FCE48A300941BF3 /* FoodSearchView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1363,6 +1368,15 @@
 				232ED6CC1FCCF22A00208BDD /* NSObject+YYModel.h */,
 			);
 			path = YYModel;
+			sourceTree = "<group>";
+		};
+		2332CE131FCE48A300941BF3 /* FoodSearchView */ = {
+			isa = PBXGroup;
+			children = (
+				2332CE141FCE48C700941BF3 /* FoodSearchCell.swift */,
+				2332CE151FCE48C700941BF3 /* FoodSearchCell.xib */,
+			);
+			path = FoodSearchView;
 			sourceTree = "<group>";
 		};
 		2353EC191FB3F6BA005E1548 /* Custom */ = {
@@ -2050,6 +2064,7 @@
 				230FA7731FB5AA8B00190F2B /* MineHeadView.xib in Resources */,
 				23E214CB1FB6EA3600C7D085 /* MineInformationListCell.xib in Resources */,
 				2319F1461FBD921300EB0F14 /* FoodVolumeCodeCell.xib in Resources */,
+				2332CE171FCE48C700941BF3 /* FoodSearchCell.xib in Resources */,
 				23CB44F21FBBCC4700D8988D /* MyBlankCardManagementCell.xib in Resources */,
 				239F070B1FB2F4020067D810 /* FoodPurchaseNotesCell.xib in Resources */,
 				23F4A73A1FBBE8ED004C9266 /* MyBalanceView.xib in Resources */,
@@ -2297,6 +2312,7 @@
 				238093821FB9A22D0051EF3D /* RegisterAndForgetPsdVC.swift in Sources */,
 				238093261FB97BAD0051EF3D /* ConstraintDescription.swift in Sources */,
 				23D0E3E81FADA2740058EA34 /* BoutiqueTableViewCell.swift in Sources */,
+				2332CE161FCE48C700941BF3 /* FoodSearchCell.swift in Sources */,
 				23F4A73B1FBBE8ED004C9266 /* MyBalanceView.swift in Sources */,
 				232ED6D01FCCF22A00208BDD /* BRDatePickerView.m in Sources */,
 				230BE0D31FB69B5800AD47E0 /* MineCollectionCell.swift in Sources */,

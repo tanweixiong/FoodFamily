@@ -10,11 +10,8 @@ import UIKit
 
 class SearchTextField: UITextField {
 
-
     override func placeholderRect(forBounds bounds: CGRect) -> CGRect {
-        
-        let inset = CGRect(x: bounds.origin.x, y: bounds.origin.y + 2, width: bounds.size.width, height: bounds.size.height)
-        
+        let inset = CGRect(x: bounds.origin.x, y: bounds.origin.y, width: bounds.size.width, height: bounds.size.height)
         return inset
     }
     
