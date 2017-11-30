@@ -19,7 +19,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="120.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7WD-mb-Ru7">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_all_smallImageDefault" translatesAutoresizingMaskIntoConstraints="NO" id="7WD-mb-Ru7">
                         <rect key="frame" x="15" y="14" width="50" height="50"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="7WD-mb-Ru7" secondAttribute="height" multiplier="1:1" id="HmI-f1-FzW"/>
@@ -145,6 +145,7 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="ic_all_smallImageDefault" width="50" height="50"/>
         <image name="ic_home_more" width="8" height="12"/>
     </resources>
 </document>

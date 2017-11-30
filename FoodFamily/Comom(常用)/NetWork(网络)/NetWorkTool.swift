@@ -66,6 +66,40 @@ class NetWorkTool: NSObject {
         )
     }
     
+    class func uploadMuchPictures(url: String, parameter :[String:Any]?, imageArray: NSArray, imageKey: String,success : @escaping (_ response : [String : AnyObject])->(), fail : @escaping (_ error : Error)->()){
+        let requestHead = ["content-type":"multipart/form-data"]
+        Alamofire.upload(
+            multipartFormData: { multipartFormData in
+                if parameter != nil {
+                    for (key,value) in parameter!{
+                        multipartFormData.append((value as AnyObject).data(using: String.Encoding.utf8.rawValue)!, withName:key)
+                    }
+                }
+                let imageName = Tools.getCurrentTime() + ".jpg"
+                for index in 0...imageArray.count - 1 {
+                    let image:UIImage = imageArray[index] as! UIImage
+                   multipartFormData.append(UIImageJPEGRepresentation(image, 1.0)!, withName: imageKey, fileName: imageName, mimeType: "image/jpeg")
+                }
+        },
+            to: url,
+            headers: requestHead,
+            encodingCompletion: { result in
+                switch result {
+                    
+                case .success(let upload, _, _):
+                    upload.responseJSON { response in
+                        if let value = response.result.value as? [String: AnyObject]{
+                            success(value)
+                        }
+                    }
+                    
+                case .failure(let error):
+                    fail(error)
+                }
+        }
+        )
+    }
+    
    class func getJSONStringFromDictionary(dictionary:NSDictionary) -> String {
         if (!JSONSerialization.isValidJSONObject(dictionary)) {
             print("无法解析出JSONString")

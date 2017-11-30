@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -20,7 +19,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="113.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="X5k-hB-DtF">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_all_smallImageDefault" translatesAutoresizingMaskIntoConstraints="NO" id="X5k-hB-DtF">
                         <rect key="frame" x="15" y="17" width="90" height="80"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="80" id="kft-4z-0Q5"/>
@@ -63,4 +62,7 @@
             <point key="canvasLocation" x="-270" y="-112"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="ic_all_smallImageDefault" width="50" height="50"/>
+    </resources>
 </document>

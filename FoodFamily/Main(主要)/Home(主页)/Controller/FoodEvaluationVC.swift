@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import SVProgressHUD
+import YYText
 
 class FoodEvaluationVC: UIViewController,UITableViewDataSource,UITableViewDelegate {
     fileprivate let foodEvaluationHeadCell = "FoodEvaluationHeadCell"
     fileprivate let foodEvaluationListCell = "FoodEvaluationListCell"
+    fileprivate var textfied = YYTextView()
     struct FoodEvaluationUX {
         static let headViewHeight:CGFloat = 116
         static let sectionHeight:CGFloat = 15
@@ -24,7 +27,21 @@ class FoodEvaluationVC: UIViewController,UITableViewDataSource,UITableViewDelega
     }
     
     @objc func rightTextBtn(_ sender:UIButton){
-        
+        let parameters = ["context":textfied.text!,"star":"","storeId":""] as [String : Any]
+        let jsonParameters =  NetWorkTool.getJSONStringFromDictionary(dictionary:parameters as NSDictionary)
+        let newParameters = ["data":jsonParameters]
+        NetWorkTool.uploadMuchPictures(url:  ConstAPI.kAPIUserUpdateUserInfo, parameter: newParameters, imageArray: [""], imageKey: "photo", success: { (json) in
+            let responseData = Mapper<ResponseData>().map(JSONObject: json)
+            if let code = responseData?.code {
+                guard  100 == code else {
+                    SVProgressHUD.showInfo(withStatus: responseData?.message)
+                    return
+                }
+            }
+            SVProgressHUD.showSuccess(withStatus: "上传成功")
+        }) { (error) in
+            
+        }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -49,6 +66,7 @@ class FoodEvaluationVC: UIViewController,UITableViewDataSource,UITableViewDelega
             let cell = tableView.dequeueReusableCell(withIdentifier: foodEvaluationListCell, for: indexPath) as! FoodEvaluationListCell
             cell.selectionStyle = .none
             cell.setData()
+            textfied = cell.textView!
             return cell
         }
     }
