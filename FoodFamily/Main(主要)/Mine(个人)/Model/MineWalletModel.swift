@@ -36,6 +36,8 @@ class MineWalletDataModel: Mappable {
 
 class MineWalletPriceModel: Mappable {
     var price: NSNumber?
+    var leverPrice: NSNumber?
+    var integralPrice: NSNumber?
     var type: String?
     
     required init?(map: Map) {
@@ -47,8 +49,10 @@ class MineWalletPriceModel: Mappable {
     }
     
     func mapping(map: Map) {
-        price        <- map["price"]
-        type         <- map["type"]
+        price         <- map["price"]
+        leverPrice    <- map["leverPrice"]
+        integralPrice <- map["integralPrice"]
+        type          <- map["type"]
     }
 }
 

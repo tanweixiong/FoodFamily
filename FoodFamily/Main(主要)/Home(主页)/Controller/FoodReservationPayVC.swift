@@ -20,6 +20,7 @@ class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewData
     
     fileprivate lazy var integralViewModel : FoodIntegralVM = FoodIntegralVM()
     fileprivate lazy var payViewModel : FoodPaymentMethodVM = FoodPaymentMethodVM()
+    fileprivate lazy var walletViewModel : MineWalletVM = MineWalletVM()
     fileprivate var dataScorce = [[""],["输入消费金额","钱包支付"],["积分券  "]]
     fileprivate var imageArray = [[""],["","ic_home_card"],["ic_home_wechat","ic_home_alipay"],["ic_home_wodejifen"]]
     fileprivate let foodReservationPayCell = "FoodReservationPayCell"
@@ -30,6 +31,7 @@ class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewData
     fileprivate var totalNumTextField = UITextField()
     fileprivate var currentAmount = ""
     fileprivate var payPassword = ""
+    fileprivate var walletPrice = ""
     
     var detailsModel : RecommendDataModel = RecommendDataModel()!
     var mealModel: RecommendMealDataModel = RecommendMealDataModel()!
@@ -53,15 +55,23 @@ class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewData
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if foodPaymentMethod == .voucherPaymentStatus || foodPaymentMethod == .mealPaymentStatus {
-            self.title = "支付"
-        }else{
+        if foodPaymentMethod == .reservationPaymentStatus {
             self.title = "预约"
+        }else{
+            self.title = "支付"
         }
     
         if foodPaymentMethod == .voucherPaymentStatus || foodPaymentMethod == .mealPaymentStatus || foodPaymentMethod == .reservationPaymentStatus {
             self.dataScorce = [[""],["钱包支付"],["积分券  "]]
             self.imageArray = [[""],["ic_home_card"],["ic_home_wodejifen"]]
+        }
+        
+        //如果代金券和套餐则加载积分
+        if foodPaymentMethod == .voucherPaymentStatus || foodPaymentMethod == .mealPaymentStatus {
+            self.getConsumptionIntegral()
+        //如果立即支付和预约支付则使用钱包
+        }else{
+            self.getWallet()
         }
         
         self.indexPath = NSIndexPath(row: 0, section: 2) as IndexPath
@@ -72,7 +82,6 @@ class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewData
         self.closeKeyboard()
         view.addSubview(tableView)
         tableView.addSubview(confirmBtn)
-        self.getConsumptionIntegral()
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -123,7 +132,7 @@ class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewData
             cell.priceLabel.text = payPrice
             cell.storeNameLabel.text = self.detailsModel.storeName
             return cell
-        }else if (indexPath.section == 1 && indexPath.row == 0) && (foodPaymentMethod != .voucherPaymentStatus && foodPaymentMethod != .mealPaymentStatus) {
+        }else if (indexPath.section == 1 && indexPath.row == 0) && (foodPaymentMethod == .immediatelyPaymentStatus) {
             let cell = tableView.dequeueReusableCell(withIdentifier: foodPaymentConsumptionVC, for: indexPath) as! FoodPaymentConsumptionVC
             cell.selectionStyle = .none
             cell.textfield.delegate = self
@@ -138,7 +147,6 @@ class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewData
             cell.iconImageView.image = UIImage.init(named: (imageViewArray[indexPath.row] as? String)!)
             if indexPath.section == 2 {
                 let heading = headingArray[indexPath.row] as? String
-//                let newHeading = heading! + "(-10000抵扣100)"
                 var deduction = heading!
                 //获取抵扣金额
                 if integralViewModel.model.canDe == 1 && integralViewModel.model.totalPrice != 0 && integralViewModel.model.deduction != 0 {
@@ -241,7 +249,7 @@ class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewData
         if self.detailsModel.reserPrice != nil {
             reserPrice = (self.detailsModel.reserPrice?.stringValue)!
         }
-        let parameters = ["spassword":spassword,"storeId":storeId,"reserPrice":reserPrice,"appointmentNum":appointmentNum,"appointmentTime":appointmentTime,"payPhone":payPhone,"payCode":payCode]
+        let parameters = ["spassword":spassword,"storeId":storeId,"reserPrice":reserPrice,"appointmentNum":appointmentNum,"appointmentTime":appointmentTime,"phone":payPhone,"code":payCode]
         SVProgressHUD.show(withStatus: "请稍等")
         payViewModel.loadReservationPaySuccessfullyReturnedData(requestType: .post, URLString: ConstAPI.kAPIOrderAddAppointmentOrderInfo, parameters: parameters, showIndicator: false) {
             SVProgressHUD.showSuccess(withStatus: "支付成功")
@@ -315,6 +323,17 @@ class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewData
         }
     }
     
+    //获取钱包
+    func getWallet(){
+        let parameters = ["pageNum":"0","pageSize":""]
+        SVProgressHUD.show(withStatus: "请稍等")
+        walletViewModel.loadSuccessfullyReturnedData(requestType: .get, URLString:  ConstAPI.kAPIUserWalletGetUserWalletList, parameters: parameters, showIndicator: false) {
+            SVProgressHUD.dismiss()
+            self.walletPrice = (self.walletViewModel.walletPirceModel.price?.stringValue)!
+            self.tableView.reloadData()
+        }
+    }
+    
     @objc func confirmOnClick(){
         let view = InputPaymentPasswordVw(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT))
         view?.delegate = self
@@ -325,6 +344,13 @@ class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewData
             needPay = self.setVoucherAndMealPrice().needPay
             ecPrice = walletPrice
         }
+        
+        if  self.foodPaymentMethod == .reservationPaymentStatus {
+            walletPrice = self.payPrice
+            needPay = self.walletPrice
+            ecPrice = self.payPrice
+        }
+        
         view?.setNeedPayPrice(needPay)
         view?.setWalletBalance(walletPrice)
         view?.show()

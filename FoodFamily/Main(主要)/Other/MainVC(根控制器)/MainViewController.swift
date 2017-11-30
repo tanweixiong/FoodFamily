@@ -64,6 +64,17 @@ extension MainViewController {
         self.navigationItem.rightBarButtonItem = leftBarBtn
     }
     
+    func addDefaultButtonTextLeft(_ title:String) {
+        let button =   UIButton(type: .custom)
+        button.frame = CGRect(x:0, y:0, width:60, height:44)
+        button.setTitle(title, for: .normal)
+        button.setTitleColor(UIColor.white, for: .normal)
+        button.addTarget(self, action: #selector(rightTextBtn(_:)), for: .touchUpInside)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 17)
+        let leftBarBtn = UIBarButtonItem(customView: button)
+        self.navigationItem.leftBarButtonItem = leftBarBtn
+    }
+    
     func addDefaultButtonImageRight(_ buttonImage:String) {
         let image = UIImage(named:buttonImage)?.withRenderingMode(.alwaysOriginal)
         let item = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(rightImageBtn(_ :)))

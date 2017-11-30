@@ -220,8 +220,17 @@ class FoodReservationVC: UIViewController,UITableViewDelegate,UITableViewDataSou
         }
     }
     
+    //获取验证码
     @objc func getCodeClick(_ sender:UIButton){
-         sender.start(withTime: 60, title: "重新获取", countDownTitle: "s", mainColor: UIColor.clear, count:UIColor.clear)
+        if Tools.validateMobile(mobile:phoneTextField.text!) {
+            let parameters =  ["acount":phoneTextField.text!]
+            BaseViewModel.loadSuccessfullyReturnedData(requestType: .post, URLString: ConstAPI.kAPIUserGetPhoneCode, parameters: parameters, showIndicator: false) {
+                sender.start(withTime: 60, title: "重新获取", countDownTitle: "s", mainColor: UIColor.clear, count:UIColor.clear)
+                SVProgressHUD.showSuccess(withStatus: "验证码发送成功")
+            }
+        }else{
+            SVProgressHUD.showInfo(withStatus: "请输入正确的手机号码")
+        }
     }
     
     func checkInpunt()->Bool{

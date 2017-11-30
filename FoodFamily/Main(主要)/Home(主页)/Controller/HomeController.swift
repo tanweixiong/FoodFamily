@@ -34,6 +34,7 @@ class HomeController: MainViewController,UITableViewDelegate,UITableViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.addDefaultButtonTextLeft("广州")
         self.getData()
         self.getTargetingData()
         self.view.addSubview(tableView)
