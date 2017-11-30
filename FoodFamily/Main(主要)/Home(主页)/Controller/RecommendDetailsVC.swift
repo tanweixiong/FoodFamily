@@ -319,6 +319,7 @@ class RecommendDetailsVC: UIViewController,UITableViewDelegate,UITableViewDataSo
         let foodVoucherDetailsVC = FoodVoucherDetailsVC()
         foodVoucherDetailsVC.voucherID = model.voucherId!
         foodVoucherDetailsVC.recommendModel = self.recommendDetailsVM.recommendDataModel
+        foodVoucherDetailsVC.voucherModel = model
         self.navigationController?.pushViewController(foodVoucherDetailsVC, animated: true)
     }
     
@@ -326,6 +327,7 @@ class RecommendDetailsVC: UIViewController,UITableViewDelegate,UITableViewDataSo
         let foodMealDetailsVC = FoodMealDetailsVC()
         foodMealDetailsVC.mealId = model.mealId!
         foodMealDetailsVC.recommendModel = self.recommendDetailsVM.recommendDataModel
+        foodMealDetailsVC.mealModel = model
         self.navigationController?.pushViewController(foodMealDetailsVC, animated: true)
     }
     

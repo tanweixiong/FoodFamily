@@ -15,7 +15,7 @@ class FoodVoucherDetailsVC: UIViewController,UITableViewDataSource,UITableViewDe
     fileprivate let foodPurchaseNotesCell = "FoodPurchaseNotesCell"
     fileprivate let titleContentArray = ["套餐内容","购买须知"]
     var voucherID:NSNumber = 0
-//    var voucherModel: FoodVoucherDataModel = FoodVoucherDataModel()!
+    var voucherModel: RecommendVoucherDataModel = RecommendVoucherDataModel()!
     var recommendModel: RecommendDataModel = RecommendDataModel()!
 
     struct FoodPurchaseNotesUX {
@@ -144,6 +144,7 @@ class FoodVoucherDetailsVC: UIViewController,UITableViewDataSource,UITableViewDe
             foodReservationPayVC.paymentMethod = .voucherPaymentStatus
             foodReservationPayVC.payPrice = self.footView.priceLabel.text!
             foodReservationPayVC.detailsModel = self.recommendModel
+            foodReservationPayVC.voucherModel = self.voucherModel
             self.navigationController?.pushViewController(foodReservationPayVC, animated: true)
         }
         return view

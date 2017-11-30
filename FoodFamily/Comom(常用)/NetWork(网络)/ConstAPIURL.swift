@@ -34,6 +34,8 @@ struct ConstAPI {
     static let kAPIStoreGetNearStoreList = kAPIBaseURL + "store/getNearStoreList" //获取附近的店铺
     static let kAPIStoreSelectStoreByStoreName = kAPIBaseURL + "store/selectStoreByStoreName" //搜索附近的店铺
     static let kAPIOrderAddAppointmentOrderInfo = kAPIBaseURL + "order/addAppointmentOrderInfo" //预约支付
+    static let kAPIOrderAddMealOrderInfo = kAPIBaseURL + "order/addMealOrderInfo" //套餐支付
+    static let kAPIOrderAddVouOrderInfo = kAPIBaseURL + "order/addVouOrderInfo" //代金券支付
     static let kAPIUserWalletGetIntegralByUserId = kAPIBaseURL + "userWallet/getIntegralByUserId" //获取积分接口
     
 }

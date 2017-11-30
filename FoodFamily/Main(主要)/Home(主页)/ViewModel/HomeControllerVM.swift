@@ -31,5 +31,4 @@ class HomeControllerVM: NSObject {
         }) { (error) in
         }
     }
-    
 }

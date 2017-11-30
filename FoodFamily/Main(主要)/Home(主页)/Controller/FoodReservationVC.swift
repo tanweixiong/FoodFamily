@@ -104,7 +104,7 @@ class FoodReservationVC: UIViewController,UITableViewDelegate,UITableViewDataSou
             cell.selectionStyle = .none
             cell.chooseView.isHidden = indexPath.section == 0 || indexPath.section == 1 ? false : true
             cell.priceLabel.isHidden = indexPath.section == 4 ? false : true
-            var reserPrice = "0"
+            reserPrice = "0"
             if self.detailsModel.reserPrice != nil{
                 reserPrice = (self.detailsModel.reserPrice?.stringValue)!
             }

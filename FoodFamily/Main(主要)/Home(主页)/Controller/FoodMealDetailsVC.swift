@@ -12,6 +12,7 @@ class FoodMealDetailsVC: MainViewController,UITableViewDelegate,UITableViewDataS
     fileprivate let foodPurchaseNotesCell = "FoodPurchaseNotesCell"
     fileprivate lazy var viewModel : FoodMealDetailsVM = FoodMealDetailsVM()
     var recommendModel: RecommendDataModel = RecommendDataModel()!
+    var mealModel: RecommendMealDataModel = RecommendMealDataModel()!
     var mealId:NSNumber = 0
     
     struct FoodDetailsUX {
@@ -168,6 +169,7 @@ class FoodMealDetailsVC: MainViewController,UITableViewDelegate,UITableViewDataS
             foodReservationPayVC.paymentMethod = .ordinaryPaymentStatus
             foodReservationPayVC.payPrice = self.footView.priceLabel.text!
             foodReservationPayVC.detailsModel = self.recommendModel
+            foodReservationPayVC.mealModel = self.mealModel
             self.navigationController?.pushViewController(foodReservationPayVC, animated: true)
         }
         return view

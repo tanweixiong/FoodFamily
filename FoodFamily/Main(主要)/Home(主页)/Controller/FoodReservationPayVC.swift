@@ -16,6 +16,7 @@ enum FoodPaymentMethodStatus {
 
 class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate,InputPaymentPasswordDelegate {
     fileprivate lazy var viewModel : FoodIntegralVM = FoodIntegralVM()
+    fileprivate lazy var payViewModel : FoodPaymentMethodVM = FoodPaymentMethodVM()
     fileprivate let dataScorce = [[""],["输入消费金额","钱包支付"],["积分券  "]]
     fileprivate let imageArray = [[""],["","ic_home_card"],["ic_home_wechat","ic_home_alipay"],["ic_home_wodejifen"]]
     fileprivate let foodReservationPayCell = "FoodReservationPayCell"
@@ -23,15 +24,18 @@ class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewData
     fileprivate let foodReservationPaymentMethodCell = "FoodReservationPaymentMethodCell"
     fileprivate let foodPaymentConsumptionVC = "FoodPaymentConsumptionVC"
     fileprivate var indexPath = IndexPath()
+    fileprivate var totalNumTextField = UITextField()
+    
     lazy var detailsModel : RecommendDataModel = RecommendDataModel()!
+    var mealModel: RecommendMealDataModel = RecommendMealDataModel()!
+    var voucherModel: RecommendVoucherDataModel = RecommendVoucherDataModel()!
+
     var foodPaymentMethod = FoodPaymentMethodStatus.normalPaymentStatus
     var paymentMethod = OrderPaymentMethod.ordinaryPaymentStatus
     var payAppointmentTime = ""
     var payPhone = ""
     var payCode = ""
     var payStoreId = ""
-    var payVould = ""
-    var mealId = ""
     var payPrice = ""
     
     struct FoodReservationPayUX {
@@ -53,7 +57,7 @@ class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewData
         super.viewDidLoad()
         view.addSubview(tableView)
         tableView.addSubview(confirmBtn)
-        self.getData()
+        self.getConsumptionIntegral()
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -93,7 +97,6 @@ class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewData
             if detailsModel.logo != nil{
                 logoUrl = detailsModel.logo!
             }
-     
             cell.iconImageView.sd_setImage(with: NSURL(string: logoUrl)! as URL, placeholderImage: UIImage.init(named: "ic_all_smallImageDefault"))
             cell.priceLabel.text = payPrice
             cell.storeNameLabel.text = self.detailsModel.storeName
@@ -102,6 +105,7 @@ class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewData
             let cell = tableView.dequeueReusableCell(withIdentifier: foodPaymentConsumptionVC, for: indexPath) as! FoodPaymentConsumptionVC
             cell.selectionStyle = .none
             cell.textfield.delegate = self
+            totalNumTextField = cell.textfield
             return cell
         }else {
             let cell = tableView.dequeueReusableCell(withIdentifier: foodReservationPaymentMethodCell, for: indexPath) as! FoodReservationPaymentMethodCell
@@ -163,27 +167,70 @@ class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewData
         return btn
     }()
     
+    //预约支付的接口
     func inputPaymentPasswordChangeBankCard() {
+   
+    }
+    
+    //预约支付
+    func reservationPayment(){
         let storeId = (self.detailsModel.storeId?.stringValue)!
+        var price = self.payPrice
         let payAppointmentTime = self.payAppointmentTime
         let payPhone = self.payPhone
         let payCode = self.payCode
-        var price = "0"
         if self.detailsModel.reserPrice != nil {
             price = (self.detailsModel.reserPrice?.stringValue)!
         }
-        let parameters = ["storeId":storeId,"price":price,"payAppointmentTime":payAppointmentTime,"payPhone":payPhone,"payCode":payCode]
-        BaseViewModel.loadSuccessfullyReturnedData(requestType: .get, URLString: ConstAPI.kAPIOrderAddAppointmentOrderInfo, parameters: parameters, showIndicator: false) {
+        let parameters = ["storeId":storeId,"price":price,"payAppointmentTime":payAppointmentTime,"phone":payPhone,"code":payCode]
+        payViewModel.loadReservationPaySuccessfullyReturnedData(requestType: .get, URLString: ConstAPI.kAPIOrderAddAppointmentOrderInfo, parameters: parameters, showIndicator: false) {
+            SVProgressHUD.showSuccess(withStatus: "支付成功")
+            let foodPurchaseSuccessVC = FoodPurchaseSuccessVC()
+            self.navigationController?.pushViewController(foodPurchaseSuccessVC, animated: true)
+        }
+    }
+
+    //套餐支付
+    func packagePayment(){
+        let storeId = (self.detailsModel.storeId?.stringValue)!
+        let mealId = (self.mealModel.mealId?.stringValue)!
+        let price = self.payPrice
+        let totalNum = self.totalNumTextField.text!
+        let parameters = ["mealId":mealId,"storeId":storeId,"price":price,"totalNum":totalNum]
+        payViewModel.loadMealPaySuccessfullyReturnedData(requestType: .get, URLString: ConstAPI.kAPIOrderAddMealOrderInfo, parameters: parameters, showIndicator: false) {
             SVProgressHUD.showSuccess(withStatus: "支付成功")
             let foodPurchaseSuccessVC = FoodPurchaseSuccessVC()
             self.navigationController?.pushViewController(foodPurchaseSuccessVC, animated: true)
         }
     }
     
-    func getData(){
-        let parameters = ["vouId":self.payVould,"mealId":self.mealId]
+    //代金券支付
+    func vouchersPayment(){
+        let storeId = (self.detailsModel.storeId?.stringValue)!
+        let vouId = (self.voucherModel.voucherId?.stringValue)!
+        let price = self.payPrice
+        let point = ""
+        let totalNum = self.totalNumTextField.text!
+        let parameters = ["vouId":vouId,"storeId":storeId,"price":price,"point":point,"totalNum":totalNum]
+        payViewModel.loadMealPaySuccessfullyReturnedData(requestType: .get, URLString: ConstAPI.kAPIOrderAddVouOrderInfo, parameters: parameters, showIndicator: false) {
+            SVProgressHUD.showSuccess(withStatus: "支付成功")
+            let foodPurchaseSuccessVC = FoodPurchaseSuccessVC()
+            self.navigationController?.pushViewController(foodPurchaseSuccessVC, animated: true)
+        }
+    }
+    
+    //获取消费积分
+    func getConsumptionIntegral(){
+        var vouId = ""
+        if self.voucherModel.voucherId != nil {
+            vouId = (self.voucherModel.voucherId?.stringValue)!
+        }
+        var mealId = ""
+        if self.mealModel.mealId != nil {
+            mealId = (self.mealModel.mealId?.stringValue)!
+        }
+        let parameters = ["vouId":vouId,"mealId":mealId]
         viewModel.loadSuccessfullyReturnedData(requestType: .get, URLString: ConstAPI.kAPIUserWalletGetIntegralByUserId, parameters: parameters, showIndicator: false) {
-            
         }
     }
     
