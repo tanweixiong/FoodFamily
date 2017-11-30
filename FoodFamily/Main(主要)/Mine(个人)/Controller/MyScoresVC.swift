@@ -8,9 +8,10 @@
 
 import UIKit
 
-class MyScoresVC: UIViewController {
+class MyScoresVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
     fileprivate let lead:CGFloat = 10
+    fileprivate let mineScoresCell = "MineScoresCell"
     struct MyScoresUX {
         static let myScoresViewSize:CGSize = CGSize(width: SCREEN_KeyWindowBounds.size.width, height: SCREEN_KeyWindowBounds.size.height)
         static let myScoresHeadViewSize:CGSize = CGSize(width: SCREEN_WIDTH, height: YMAKE(62))
@@ -18,6 +19,17 @@ class MyScoresVC: UIViewController {
         static let scoresImageSize:CGSize = CGSize(width: 30, height: 30)
         static let lineHeight:CGFloat = 2
         static let lineWidth:CGFloat = XMAKE(70)
+        static let rowHeight:CGFloat = 60
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.setColor(UIColor.clear)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.navigationBar.setColor(R_UINavigationBarColor)
     }
 
     override func viewDidLoad() {
@@ -60,6 +72,30 @@ class MyScoresVC: UIViewController {
         }
         
         self.createLine()
+        
+        myScoresView.addSubview(tableView)
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return  1
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return MyScoresUX.rowHeight
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: mineScoresCell, for: indexPath) as! MineScoresCell
+        cell.selectionStyle = .none
+        return cell
     }
     
     func createLine(){
@@ -113,6 +149,23 @@ class MyScoresVC: UIViewController {
         let view = UIView()
         view.backgroundColor = UIColor.R_UIRGBColor(red: 70, green: 168, blue: 241, alpha: 1)
         return view
+    }()
+    
+    lazy var tableView: UITableView = {
+        let maxY = MyScoresUX.myScoresHeadViewSize.height/2 + 15 + 215
+        let tableView = UITableView.init(frame: CGRect(x: 0, y: maxY , width: SCREEN_WIDTH, height: SCREEN_HEIGHT - 215 - MyScoresUX.myScoresHeadViewSize.height/2 - 15))
+        tableView.showsVerticalScrollIndicator = false
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(UINib(nibName: "MineScoresCell", bundle: nil),forCellReuseIdentifier: self.mineScoresCell)
+        tableView.backgroundColor = R_UISectionLineColor
+        tableView.separatorInset = UIEdgeInsetsMake(0,SCREEN_WIDTH, 0,SCREEN_WIDTH);
+        tableView.tableFooterView = UIView()
+        tableView.separatorColor = R_UISectionLineColor
+//        tableView.mj_footer = MJRefreshAutoNormalFooter.init(refreshingBlock: {
+//            self.getData()
+//        })
+        return tableView
     }()
 
 }

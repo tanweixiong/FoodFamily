@@ -10,7 +10,8 @@ import UIKit
 
 struct ConstAPI {
     //正式
-    static let kAPIBaseURL: String = "http://47.92.105.209:8080/app/"
+//    static let kAPIBaseURL: String = "http://47.92.105.209/app/"
+    static let kAPIBaseURL: String = "http://beyondkg.51vip.biz/app/"
 //    static let kAPIBaseURL: String = "http://10.0.0.27/app/"
     static let kAPIUserGetPhoneCode = kAPIBaseURL + "user/getPhoneCode" //注册
     static let kAPIUserLogin = kAPIBaseURL + "user/login" //登录
@@ -38,6 +39,7 @@ struct ConstAPI {
     static let kAPIOrderAddMealOrderInfo = kAPIBaseURL + "order/addMealOrderInfo" //套餐支付
     static let kAPIOrderAddVouOrderInfo = kAPIBaseURL + "order/addVouOrderInfo" //代金券支付
     static let kAPIUserWalletGetIntegralByUserId = kAPIBaseURL + "userWallet/getIntegralByUserId" //获取积分接口
+    static let kAPIReservationList = kAPIBaseURL + "userWallet/getIntegralByUserId" //我的预约列表
     
 }
 

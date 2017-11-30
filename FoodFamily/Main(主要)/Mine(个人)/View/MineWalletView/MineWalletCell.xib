@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -53,6 +54,7 @@
                 <outlet property="detailPriceLabel" destination="pdS-Rq-4e9" id="eje-5b-bWL"/>
                 <outlet property="detailTypeLabel" destination="yDE-yZ-1ZS" id="tRd-WM-xDP"/>
             </connections>
+            <point key="canvasLocation" x="-207" y="15"/>
         </tableViewCell>
     </objects>
 </document>

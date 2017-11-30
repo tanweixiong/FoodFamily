@@ -9,7 +9,7 @@
 import UIKit
 
 class MineReservationFinishVC: UIViewController,UITableViewDataSource,UITableViewDelegate {
-    
+    fileprivate lazy var viewModel : MineReservationVM = MineReservationVM()
     fileprivate let mineReservationFinishCell = "mineReservationFinishCell"
     
     struct MineReservationFinishUX {
@@ -25,7 +25,10 @@ class MineReservationFinishVC: UIViewController,UITableViewDataSource,UITableVie
     }
     
     func getData(){
-        
+        let parameters = ["":""]
+        viewModel.loadSuccessfullyReturnedData(requestType: .get, URLString:ConstAPI.kAPIReservationList , parameters: parameters, showIndicator: false) {
+            
+        }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -54,6 +57,9 @@ class MineReservationFinishVC: UIViewController,UITableViewDataSource,UITableVie
         let cell = tableView.dequeueReusableCell(withIdentifier: mineReservationFinishCell, for: indexPath) as! MineReservationCell
         cell.selectionStyle = .none
         cell.reservationStatusLabel.text = "预约成功"
+        cell.logoImageView.sd_setImage(with: NSURL(string: "")! as URL, placeholderImage: UIImage.init(named: "ic_all_imageDefault"))
+        cell.storeName.text = ""
+        cell.createTimeLabel.text = ""
         return cell
     }
     

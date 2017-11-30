@@ -108,6 +108,7 @@ class MineSetVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     }()
     
     @objc func loginOutHandle(){
-        
+       let login = LoginVC()
+       UIApplication.shared.keyWindow?.rootViewController = login
     }
 }

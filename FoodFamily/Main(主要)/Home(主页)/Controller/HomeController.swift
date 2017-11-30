@@ -52,7 +52,6 @@ class HomeController: MainViewController,UITableViewDelegate,UITableViewDataSour
             self.tableView.reloadData()
         }
          self.tableView.mj_header.endRefreshing()
-//        self.tableView.mj_footer.endRefreshing()
     }
     
     //上传经纬度

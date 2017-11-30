@@ -9,7 +9,7 @@
 import UIKit
 
 class MineReservationExpiredVC: UIViewController,UITableViewDataSource,UITableViewDelegate {
-    
+    fileprivate lazy var viewModel : MineReservationVM = MineReservationVM()
     fileprivate let mineReservationExpiredCell = "MineReservationExpiredCell"
     
     struct MineReservationExpiredUX {
@@ -21,6 +21,14 @@ class MineReservationExpiredVC: UIViewController,UITableViewDataSource,UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(tableView)
+        self.getData()
+    }
+    
+    func getData(){
+        let parameters = ["":""]
+        viewModel.loadSuccessfullyReturnedData(requestType: .get, URLString:ConstAPI.kAPIReservationList , parameters: parameters, showIndicator: false) {
+            
+        }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -49,6 +57,9 @@ class MineReservationExpiredVC: UIViewController,UITableViewDataSource,UITableVi
         let cell = tableView.dequeueReusableCell(withIdentifier: mineReservationExpiredCell, for: indexPath) as! MineReservationCell
         cell.selectionStyle = .none
         cell.reservationStatusLabel.text = "预约失效"
+        cell.logoImageView.sd_setImage(with: NSURL(string: "")! as URL, placeholderImage: UIImage.init(named: "ic_all_imageDefault"))
+        cell.storeName.text = ""
+        cell.createTimeLabel.text = ""
         return cell
     }
     

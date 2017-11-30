@@ -1,19 +1,15 @@
 //
-//  MineReservationCell.swift
+//  MineScoresCell.swift
 //  FoodFamily
 //
-//  Created by tam on 2017/11/11.
+//  Created by tam on 2017/11/30.
 //  Copyright © 2017年 Wilkinson. All rights reserved.
 //
 
 import UIKit
 
-class MineReservationCell: UITableViewCell {
+class MineScoresCell: UITableViewCell {
 
-    @IBOutlet weak var reservationStatusLabel: UILabel!
-    @IBOutlet weak var logoImageView: UIImageView!
-    @IBOutlet weak var storeName: UILabel!
-    @IBOutlet weak var createTimeLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

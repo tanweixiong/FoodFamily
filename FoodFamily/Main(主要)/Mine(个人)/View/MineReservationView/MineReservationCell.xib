@@ -80,8 +80,12 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="createTimeLabel" destination="fZe-W3-089" id="65q-FX-Ykb"/>
+                <outlet property="logoImageView" destination="cSR-TE-e8F" id="Uvu-DI-MTh"/>
                 <outlet property="reservationStatusLabel" destination="nrb-am-yuT" id="zcv-yu-FOz"/>
+                <outlet property="storeName" destination="8cp-kH-phu" id="46R-Jk-fOa"/>
             </connections>
+            <point key="canvasLocation" x="-84" y="-16"/>
         </tableViewCell>
     </objects>
     <resources>

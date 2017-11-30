@@ -53,6 +53,7 @@ class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewData
         }else{
             self.title = "预约"
         }
+        self.indexPath = NSIndexPath(row: 0, section: 2) as IndexPath
     }
     
     override func viewDidLoad() {
@@ -68,7 +69,7 @@ class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewData
             return dataScorce.count - 1
         }
         //0不能抵扣 1可以抵扣
-        if integralViewModel.model.canPay != 1 {
+        if integralViewModel.model.canPay == 0 {
             return dataScorce.count - 1
         }
         return  dataScorce.count
@@ -124,7 +125,7 @@ class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewData
             cell.selectionStyle = .none
             cell.headingLabel.text = headingArray[indexPath.row] as? String
             cell.iconImageView.image = UIImage.init(named: (imageViewArray[indexPath.row] as? String)!)
-            if indexPath.section == 3 {
+            if indexPath.section == 2 {
                 let heading = headingArray[indexPath.row] as? String
 //                let newHeading = heading! + "(-10000抵扣100)"
                 var deduction = heading!
@@ -273,7 +274,9 @@ class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewData
             mealId = (self.mealModel.mealId?.stringValue)!
         }
         let parameters = ["vouId":vouId,"mealId":mealId]
+        SVProgressHUD.show(withStatus: "请稍等")
         integralViewModel.loadSuccessfullyReturnedData(requestType: .get, URLString: ConstAPI.kAPIUserWalletGetIntegralByUserId, parameters: parameters, showIndicator: false) {
+            SVProgressHUD.dismiss()
             self.tableView.reloadData()
             //返回后的积分
 //            let  confirmText = "确定支付 " + "¥99999.00"
@@ -284,11 +287,34 @@ class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewData
     @objc func confirmOnClick(){
         let view = InputPaymentPasswordVw(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT))
         view?.delegate = self
-//        let price = self.integralViewModel.to
-        let ecprice = (self.integralViewModel.model.changeEcPrice?.stringValue)!
-        view?.setNeedPayPrice("12908")
-        view?.setWalletBalance(ecprice)
+        var walletPrice =  ""
+        var needPay = ""
+        if self.foodPaymentMethod == .voucherPaymentStatus{
+            walletPrice = self.setVoucherPrice().walletBalance
+            needPay = self.setVoucherPrice().needPay
+        }
+    
+        view?.setNeedPayPrice(needPay)
+        view?.setWalletBalance(walletPrice)
         view?.show()
     }
     
+    //设置 代金券金额
+    func setVoucherPrice()->(needPay:String,walletBalance:String){
+        var walletBalance =  ""
+        var needPay = ""
+        if self.integralViewModel.model.canDe == 1 {
+            let cell = tableView.cellForRow(at: IndexPath(row: indexPath.row, section: indexPath.section))as! FoodReservationPaymentMethodCell
+            if cell.chooseBtn.isSelected {
+                needPay = (self.integralViewModel.model.changeEcPrice?.stringValue)!
+            }else{
+                needPay = (self.integralViewModel.model.NoChangeEcPrice?.stringValue)!
+            }
+            
+        }else{
+            needPay = (self.integralViewModel.model.NoChangeEcPrice?.stringValue)!
+        }
+        walletBalance = (self.integralViewModel.model.ECPrice?.stringValue)!
+        return (walletBalance,needPay)
+    }
 }

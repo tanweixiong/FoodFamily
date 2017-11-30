@@ -200,7 +200,7 @@ static CGFloat const kDotWith_height = 10;
  @param price 金额
  */
 -(void)setNeedPayPrice:(NSString *)price{
-    self.paymentPasswordAlertVw.needPayLabel.text = price;
+   self.paymentPasswordAlertVw.pirceLabel.text = price;
 }
 
 /**
@@ -208,7 +208,7 @@ static CGFloat const kDotWith_height = 10;
  @param balance 余额
  */
 -(void)setWalletBalance:(NSString *)balance{
-    self.paymentPasswordAlertVw.pirceLabel.text = balance;
+    self.paymentPasswordAlertVw.needPayLabel.text = balance;
 }
 
 - (void)cleanPassword
