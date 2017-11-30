@@ -233,6 +233,8 @@ class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewData
             self.vouchersPayment()
         }else if foodPaymentMethod == .reservationPaymentStatus {
             self.reservationPayment()
+        }else if foodPaymentMethod == .immediatelyPaymentStatus {
+            
         }
         return pwd
     }
@@ -305,6 +307,25 @@ class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewData
         }
     }
     
+    //现金支付
+    func immediatelyPaymentStatusPayment(){
+        let storeId = (self.detailsModel.storeId?.stringValue)!
+        let price = self.totalNumTextField.text!
+        let point = "0"
+        let parameters = ["storeId":storeId,"price":price,"point":point]
+        SVProgressHUD.show(withStatus: "请稍等")
+        payViewModel.loadMealPaySuccessfullyReturnedData(requestType: .post, URLString: ConstAPI.kAPIOrderAddCashOrderInfo, parameters: parameters, showIndicator: false) {
+            SVProgressHUD.showSuccess(withStatus: "支付成功")
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5, execute: {
+                SVProgressHUD.dismiss()
+                let foodPurchaseSuccessVC = FoodPurchaseSuccessVC()
+                foodPurchaseSuccessVC.ecPrice = self.ecPrice
+                foodPurchaseSuccessVC.paymentMethod = .immediatelyPaymentStatus
+                self.navigationController?.pushViewController(foodPurchaseSuccessVC, animated: true)
+            })
+        }
+    }
+    
     //获取消费积分
     func getConsumptionIntegral(){
         var vouId = ""
@@ -335,10 +356,9 @@ class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewData
     }
     
     @objc func confirmOnClick(){
-        let view = InputPaymentPasswordVw(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT))
-        view?.delegate = self
         var walletPrice =  ""
         var needPay = ""
+        
         if self.foodPaymentMethod == .voucherPaymentStatus || foodPaymentMethod == .mealPaymentStatus{
             walletPrice = self.setVoucherAndMealPrice().walletBalance
             needPay = self.setVoucherAndMealPrice().needPay
@@ -346,11 +366,22 @@ class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewData
         }
         
         if  self.foodPaymentMethod == .reservationPaymentStatus {
-            walletPrice = self.payPrice
             needPay = self.walletPrice
+            walletPrice = self.payPrice
             ecPrice = self.payPrice
         }
         
+        if self.foodPaymentMethod == .immediatelyPaymentStatus {
+            if self.totalNumTextField.text == "" {
+                SVProgressHUD.showInfo(withStatus: "请入支付金额")
+                needPay = self.walletPrice
+                walletPrice = self.totalNumTextField.text!
+                ecPrice = self.totalNumTextField.text!
+            }
+        }
+        
+        let view = InputPaymentPasswordVw(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT))
+        view?.delegate = self
         view?.setNeedPayPrice(needPay)
         view?.setWalletBalance(walletPrice)
         view?.show()

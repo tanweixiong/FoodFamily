@@ -293,6 +293,7 @@ class RecommendDetailsVC: UIViewController,UITableViewDelegate,UITableViewDataSo
         case .payStatus:
             let foodReservationPayVC = FoodReservationPayVC()
             foodReservationPayVC.detailsModel = self.recommendDetailsVM.recommendDataModel
+            foodReservationPayVC.foodPaymentMethod = .immediatelyPaymentStatus
             self.navigationController?.pushViewController(foodReservationPayVC, animated: true)
             break
         case .recommendStatus:

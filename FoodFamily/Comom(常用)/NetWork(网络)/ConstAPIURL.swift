@@ -38,6 +38,7 @@ struct ConstAPI {
     static let kAPIOrderAddAppointmentOrderInfo = kAPIBaseURL + "order/addAppointmentOrderInfo" //预约支付
     static let kAPIOrderAddMealOrderInfo = kAPIBaseURL + "order/addMealOrderInfo" //套餐支付
     static let kAPIOrderAddVouOrderInfo = kAPIBaseURL + "order/addVouOrderInfo" //代金券支付
+    static let kAPIOrderAddCashOrderInfo = kAPIBaseURL + "order/addCashOrderInfo" //现金支付
     static let kAPIUserWalletGetIntegralByUserId = kAPIBaseURL + "userWallet/getIntegralByUserId" //获取积分接口
     static let kAPIReservationList = kAPIBaseURL + "userWallet/getIntegralByUserId" //我的预约列表
     
