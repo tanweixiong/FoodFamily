@@ -211,6 +211,10 @@ class FoodReservationVC: UIViewController,UITableViewDelegate,UITableViewDataSou
             vc.foodPaymentMethod = .reservationPaymentStatus
             vc.payStoreId = (self.detailsModel.storeId?.stringValue)!
             vc.payPrice = self.reserPrice
+            vc.payAppointmentNum = reservationsNumber
+            vc.payAppointmentTime = reservationsTime
+            vc.payPhone = phoneTextField.text!
+            vc.payCode = codeTextField.text!
             vc.detailsModel = self.detailsModel
             self.navigationController?.pushViewController(vc, animated: true)
         }

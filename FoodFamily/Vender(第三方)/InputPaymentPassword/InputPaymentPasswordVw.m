@@ -258,18 +258,23 @@ static CGFloat const kDotWith_height = 10;
     }
     if (_passwordField.text.length == 6)
     {
-        //正确的支付密码
-        if ([_passwordField.text isEqualToString:_payThePassword]) {
-            [self cancel];
-            if ([self.delegate respondsToSelector:@selector(inputPaymentPassword:)]) {
-                [self.delegate inputPaymentPassword:_passwordField.text];
-            }
-        //错误的支付密码
-        }else{
-            _paymentPasswordAlertVw.hidden = YES;
-            UIAlertView *alertview = [[UIAlertView alloc] initWithTitle:@"提示" message:@"支付密码不正确" delegate:self cancelButtonTitle:@"重新输入" otherButtonTitles:@"忘记密码", nil];
-            [alertview show];
+        
+        [self cancel];
+        if ([self.delegate respondsToSelector:@selector(inputPaymentPassword:)]) {
+            [self.delegate inputPaymentPassword:_passwordField.text];
         }
+//        //正确的支付密码
+//        if ([_passwordField.text isEqualToString:_payThePassword]) {
+//            [self cancel];
+//            if ([self.delegate respondsToSelector:@selector(inputPaymentPassword:)]) {
+//                [self.delegate inputPaymentPassword:_passwordField.text];
+//            }
+//        //错误的支付密码
+//        }else{
+//            _paymentPasswordAlertVw.hidden = YES;
+//            UIAlertView *alertview = [[UIAlertView alloc] initWithTitle:@"提示" message:@"支付密码不正确" delegate:self cancelButtonTitle:@"重新输入" otherButtonTitles:@"忘记密码", nil];
+//            [alertview show];
+//        }
     }
 }
 

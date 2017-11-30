@@ -12,12 +12,13 @@ enum OrderPaymentMethod {
     case ordinaryPaymentStatus //线上支付方式
     case voucherPaymentStatus //代金券支付方式
 }
-
 class FoodPurchaseSuccessVC: MainViewController {
-    var paymentMethod = OrderPaymentMethod.ordinaryPaymentStatus
+    var paymentMethod = FoodPaymentMethodStatus.voucherPaymentStatus
     var finishText = ""
+    var ecPrice = ""
+    var price = ""
     struct FoodPurchaseSuccessUX {
-        static let foodPurchaseSuccessViewHeight:CGFloat = 300
+        static let foodPurchaseSuccessViewHeight:CGFloat = 220
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -26,6 +27,12 @@ class FoodPurchaseSuccessVC: MainViewController {
         view.backgroundColor = UIColor.R_UIRGBColor(red: 251, green: 251, blue: 251, alpha: 1)
         view.addSubview(headView)
         headView.finishLabel.text = finishText
+        let text = "支付成功，消费"
+        if paymentMethod == .mealPaymentStatus || paymentMethod == .voucherPaymentStatus {
+            self.headView.finishLabel.text = text + ecPrice + "个EC"
+        }else{
+            self.headView.finishLabel.text = text + price + "个金额"
+        }
     }
     
     override func viewDidLoad() {
@@ -47,13 +54,13 @@ class FoodPurchaseSuccessVC: MainViewController {
         view.frame = CGRect(x: 0, y: 0 , width: SCREEN_WIDTH, height:FoodPurchaseSuccessUX.foodPurchaseSuccessViewHeight)
         view.foodPurchaseSuccessCallBack = {(_ foodPurchaseSuccessChooseType:FoodPurchaseSuccessChooseType) in
             if foodPurchaseSuccessChooseType == .seeDetailsStatus{
-                if self.paymentMethod == .ordinaryPaymentStatus{
-                    let foodPackageOrderDetailsVC = FoodPackageOrderDetailsVC()
-                    self.navigationController?.pushViewController(foodPackageOrderDetailsVC, animated: true)
-                }else{
-                    let foodVoucherOrderDetailsVC = FoodVoucherOrderDetailsVC()
-                    self.navigationController?.pushViewController(foodVoucherOrderDetailsVC, animated: true)
-                }
+//                if self.paymentMethod == .ordinaryPaymentStatus{
+//                    let foodPackageOrderDetailsVC = FoodPackageOrderDetailsVC()
+//                    self.navigationController?.pushViewController(foodPackageOrderDetailsVC, animated: true)
+//                }else{
+//                    let foodVoucherOrderDetailsVC = FoodVoucherOrderDetailsVC()
+//                    self.navigationController?.pushViewController(foodVoucherOrderDetailsVC, animated: true)
+//                }
             }else{
                 
             }

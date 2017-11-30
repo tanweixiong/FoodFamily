@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class FoodVoucherDetailsVC: UIViewController,UITableViewDataSource,UITableViewDelegate {
     fileprivate lazy var viewModel : FoodVoucherDetailsVM = FoodVoucherDetailsVM()
@@ -42,7 +43,9 @@ class FoodVoucherDetailsVC: UIViewController,UITableViewDataSource,UITableViewDe
     //加载优惠券详情
     func getData(){
         let parameters = ["voucherId":"\(self.voucherID)"]
+        SVProgressHUD.show(withStatus: "请稍等")
         viewModel.loadSuccessfullyReturnedData(requestType: .get, URLString: ConstAPI.kAPIVouchersGetVoucherById, parameters: parameters, showIndicator: false) {
+            SVProgressHUD.dismiss()
             self.setDisplayData()
             self.tableView.reloadData()
         }
