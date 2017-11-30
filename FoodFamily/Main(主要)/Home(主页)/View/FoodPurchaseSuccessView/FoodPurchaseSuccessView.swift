@@ -16,6 +16,7 @@ enum FoodPurchaseSuccessChooseType{
 class FoodPurchaseSuccessView: UIView {
    var foodPurchaseSuccessCallBack:((FoodPurchaseSuccessChooseType)->())?;
    var foodPurchaseSuccessChooseType = FoodPurchaseSuccessChooseType.seeDetailsStatus
+    @IBOutlet weak var finishLabel: UILabel!
     @IBOutlet weak var buyNowButton: UIButton!
     @IBOutlet weak var seeDetailsButton: UIButton!{
         didSet{

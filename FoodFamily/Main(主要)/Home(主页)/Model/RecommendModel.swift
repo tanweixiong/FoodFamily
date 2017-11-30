@@ -9,12 +9,9 @@
 import UIKit
 
 class RecommendFoodDataModel: Mappable {
-    var createDate: String?
-    var flag: NSNumber?
+    var foodId: NSNumber?
     var foodImg: String?
     var foodName: String?
-    var id: NSNumber?
-    var storeId: NSNumber?
     
     required init?(map: Map) {
         
@@ -25,12 +22,9 @@ class RecommendFoodDataModel: Mappable {
     }
     
     func mapping(map: Map) {
-        createDate                <- map["createDate"]
-        flag                      <- map["flag"]
+        foodId                    <- map["foodId"]
         foodImg                   <- map["foodImg"]
         foodName                  <- map["foodName"]
-        id                        <- map["id"]
-        storeId                   <- map["storeId"]
     }
 }
 
@@ -94,16 +88,16 @@ class RecommendVouchersModel: Mappable {
     }
 }
 
-class RecommendFoodsModel: Mappable {
-    var food: RecommendFoodDataModel?
-    required init?(map: Map) {
-    }
-    required init?() {
-    }
-    func mapping(map: Map) {
-        food     <- map["food"]
-    }
-}
+//class RecommendFoodsModel: Mappable {
+//    var food: RecommendFoodDataModel?
+//    required init?(map: Map) {
+//    }
+//    required init?() {
+//    }
+//    func mapping(map: Map) {
+//        food     <- map["food"]
+//    }
+//}
 
 class RecommendMealsModel: Mappable {
     var meal: RecommendMealDataModel?
@@ -128,7 +122,7 @@ class RecommendDataModel: Mappable {
     var storeName: String?
     var storeType: String?
     var reserPrice:NSNumber?
-    var foodList: [RecommendFoodsModel]?
+    var foodList: [RecommendFoodDataModel]?
     var mealList: [RecommendMealsModel]?
     var voucherList: [RecommendVouchersModel]?
     var storeId: NSNumber?

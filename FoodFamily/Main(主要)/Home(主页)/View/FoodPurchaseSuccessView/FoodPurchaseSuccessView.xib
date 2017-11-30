@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -27,7 +26,7 @@
                                 <constraint firstAttribute="height" constant="103.5" id="xfA-Oo-vdI"/>
                             </constraints>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="购买成功，消费 12909个EC" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HEP-Z7-kx8">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HEP-Z7-kx8">
                             <rect key="frame" x="0.0" y="173" width="375" height="20"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="20" id="1eo-BD-4eJ"/>
@@ -36,7 +35,7 @@
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mKf-ci-tJU">
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mKf-ci-tJU">
                             <rect key="frame" x="52.5" y="210" width="130" height="40"/>
                             <state key="normal" title="查看详情">
                                 <color key="titleColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -51,7 +50,7 @@
                                 <action selector="onClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="zmI-GF-PIH"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Huq-Ws-XkC">
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Huq-Ws-XkC">
                             <rect key="frame" x="192.5" y="210" width="130" height="40"/>
                             <color key="backgroundColor" red="0.82745098039999998" green="0.69803921570000005" blue="0.41176470590000003" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
@@ -101,6 +100,7 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
                 <outlet property="buyNowButton" destination="Huq-Ws-XkC" id="ML9-tM-MSN"/>
+                <outlet property="finishLabel" destination="HEP-Z7-kx8" id="aju-96-Lz5"/>
                 <outlet property="seeDetailsButton" destination="mKf-ci-tJU" id="Jbq-Oh-yVk"/>
             </connections>
             <point key="canvasLocation" x="-110" y="-271"/>

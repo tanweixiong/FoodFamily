@@ -111,6 +111,11 @@
 		23286BDD1FCD92F300782A2C /* FoodSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23286BDC1FCD92F300782A2C /* FoodSearchVC.swift */; };
 		23286BDF1FCD930C00782A2C /* FoodSearchVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23286BDE1FCD930C00782A2C /* FoodSearchVM.swift */; };
 		23286BE11FCD932000782A2C /* FoodSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23286BE01FCD932000782A2C /* FoodSearchModel.swift */; };
+		232D2FDA1FCFDFAB009FF21B /* MyScoresVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232D2FD91FCFDFAA009FF21B /* MyScoresVC.swift */; };
+		232D2FE01FCFE01F009FF21B /* MyScoresView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 232D2FDC1FCFE01E009FF21B /* MyScoresView.xib */; };
+		232D2FE11FCFE01F009FF21B /* MyScoresHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232D2FDD1FCFE01E009FF21B /* MyScoresHeadView.swift */; };
+		232D2FE21FCFE01F009FF21B /* MyScoresHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 232D2FDE1FCFE01F009FF21B /* MyScoresHeadView.xib */; };
+		232D2FE31FCFE01F009FF21B /* MyScoresView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232D2FDF1FCFE01F009FF21B /* MyScoresView.swift */; };
 		232ED6CF1FCCF22A00208BDD /* BRStringPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 232ED6B81FCCF22A00208BDD /* BRStringPickerView.m */; };
 		232ED6D01FCCF22A00208BDD /* BRDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 232ED6BC1FCCF22A00208BDD /* BRDatePickerView.m */; };
 		232ED6D11FCCF22A00208BDD /* BaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 232ED6BE1FCCF22A00208BDD /* BaseView.m */; };
@@ -493,6 +498,11 @@
 		23286BDC1FCD92F300782A2C /* FoodSearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodSearchVC.swift; sourceTree = "<group>"; };
 		23286BDE1FCD930C00782A2C /* FoodSearchVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodSearchVM.swift; sourceTree = "<group>"; };
 		23286BE01FCD932000782A2C /* FoodSearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodSearchModel.swift; sourceTree = "<group>"; };
+		232D2FD91FCFDFAA009FF21B /* MyScoresVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyScoresVC.swift; sourceTree = "<group>"; };
+		232D2FDC1FCFE01E009FF21B /* MyScoresView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyScoresView.xib; sourceTree = "<group>"; };
+		232D2FDD1FCFE01E009FF21B /* MyScoresHeadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyScoresHeadView.swift; sourceTree = "<group>"; };
+		232D2FDE1FCFE01F009FF21B /* MyScoresHeadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyScoresHeadView.xib; sourceTree = "<group>"; };
+		232D2FDF1FCFE01F009FF21B /* MyScoresView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyScoresView.swift; sourceTree = "<group>"; };
 		232ED6B71FCCF22A00208BDD /* BRStringPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRStringPickerView.h; sourceTree = "<group>"; };
 		232ED6B81FCCF22A00208BDD /* BRStringPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRStringPickerView.m; sourceTree = "<group>"; };
 		232ED6B91FCCF22A00208BDD /* BRPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRPickerView.h; sourceTree = "<group>"; };
@@ -933,6 +943,7 @@
 				23F4A7461FBBEEFB004C9266 /* MineRechargeView */,
 				232357B71FBC18F90006E9A6 /* MineAmountOperationView */,
 				23CF994E1FBC217B0002241F /* MineWithdrawView */,
+				232D2FDB1FCFDFEF009FF21B /* MineScoresView */,
 			);
 			name = View;
 			path = "FoodFamily/Main(主要)/Mine(个人)/View";
@@ -1219,6 +1230,7 @@
 				23F4A7401FBBE9EB004C9266 /* MineSuccessfulOperationVC.swift */,
 				23F4A7411FBBE9EB004C9266 /* MineSuccessfulOperationVC.xib */,
 				232357B51FBC16700006E9A6 /* MineAmountOperationVC.swift */,
+				232D2FD91FCFDFAA009FF21B /* MyScoresVC.swift */,
 				230BE0F21FB6AD8700AD47E0 /* MineExpensesRecordChildVC */,
 				230BE0F51FB6DAC800AD47E0 /* MineDiscountCouponsChildVC */,
 				230BE1011FB6E18400AD47E0 /* MineReservationChildVC */,
@@ -1306,6 +1318,17 @@
 				232357B91FBC190D0006E9A6 /* MineAmountOperationCell.xib */,
 			);
 			path = MineAmountOperationView;
+			sourceTree = "<group>";
+		};
+		232D2FDB1FCFDFEF009FF21B /* MineScoresView */ = {
+			isa = PBXGroup;
+			children = (
+				232D2FDD1FCFE01E009FF21B /* MyScoresHeadView.swift */,
+				232D2FDE1FCFE01F009FF21B /* MyScoresHeadView.xib */,
+				232D2FDF1FCFE01F009FF21B /* MyScoresView.swift */,
+				232D2FDC1FCFE01E009FF21B /* MyScoresView.xib */,
+			);
+			path = MineScoresView;
 			sourceTree = "<group>";
 		};
 		232ED6B41FCCF22A00208BDD /* BRPickerView */ = {
@@ -2089,6 +2112,7 @@
 				236C44301FB4750800AC3010 /* FoodMerchantsHeadView.xib in Resources */,
 				23118AC31FC55C8000B8CE33 /* RecommendMealCell.xib in Resources */,
 				239F070F1FB2F4020067D810 /* FoodPurchaseSuccessView.xib in Resources */,
+				232D2FE01FCFE01F009FF21B /* MyScoresView.xib in Resources */,
 				23202D061FCBF5990029C494 /* MineWalletCell.xib in Resources */,
 				230BE10A1FB6E2EC00AD47E0 /* MineReservationCell.xib in Resources */,
 				230FA7731FB5AA8B00190F2B /* MineHeadView.xib in Resources */,
@@ -2154,6 +2178,7 @@
 				2353EC241FB4080D005E1548 /* FoodOrderPackageCell.xib in Resources */,
 				232ED6D81FCCF22A00208BDD /* README.md in Resources */,
 				239F06F91FB2F4020067D810 /* RecommendedFoodView.xib in Resources */,
+				232D2FE21FCFE01F009FF21B /* MyScoresHeadView.xib in Resources */,
 				2353EC201FB4047A005E1548 /* FoodOrderDetailsCell.xib in Resources */,
 				2320D3E11FBC3F7800A5B507 /* MineRechargeMessageCell.xib in Resources */,
 				23279ADF1FCE82F70097911C /* FoodSelectNumberDayCell.xib in Resources */,
@@ -2375,6 +2400,7 @@
 				232ED6CF1FCCF22A00208BDD /* BRStringPickerView.m in Sources */,
 				2353EC1C1FB3F6BA005E1548 /* OCTools.m in Sources */,
 				2380932A1FB97BAD0051EF3D /* ConstraintItem.swift in Sources */,
+				232D2FDA1FCFDFAB009FF21B /* MyScoresVC.swift in Sources */,
 				238093801FB9813D0051EF3D /* URLTransform.swift in Sources */,
 				23202CFC1FCBF1310029C494 /* MineWalletModel.swift in Sources */,
 				238093781FB9813D0051EF3D /* Mappable.swift in Sources */,
@@ -2451,6 +2477,7 @@
 				239F07021FB2F4020067D810 /* FoodRecommendDetailCell.swift in Sources */,
 				230BE0E01FB6A27600AD47E0 /* SGHelperTool.m in Sources */,
 				23D147451FBA938A0028CD09 /* FoodEvaluationHeadCell.swift in Sources */,
+				232D2FE31FCFE01F009FF21B /* MyScoresView.swift in Sources */,
 				23F4A7671FBBEFA0004C9266 /* ZCTradeView.m in Sources */,
 				23202CFA1FCBF0460029C494 /* MineReservationModel.swift in Sources */,
 				238093711FB9813D0051EF3D /* HexColorTransform.swift in Sources */,
@@ -2565,6 +2592,7 @@
 				23F4A7361FBBE88E004C9266 /* MineWalletVC.swift in Sources */,
 				23CB44F31FBBCC4700D8988D /* MyBlankCardManagementCell.swift in Sources */,
 				2380933B1FB97BAD0051EF3D /* ConstraintRelation.swift in Sources */,
+				232D2FE11FCFE01F009FF21B /* MyScoresHeadView.swift in Sources */,
 				23118AC21FC55C8000B8CE33 /* RecommendMealCell.swift in Sources */,
 				2380933F1FB97BAD0051EF3D /* Debugging.swift in Sources */,
 				2323931F1FB43B6E00425BDA /* FoodPackageOrderDetailsVC.swift in Sources */,
@@ -2758,7 +2786,7 @@
 					"$(PROJECT_DIR)/FoodFamily/Vender(第三方)/SnapKit",
 				);
 				INFOPLIST_FILE = FoodFamily/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hqtech.FoodFamily;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2780,7 +2808,7 @@
 					"$(PROJECT_DIR)/FoodFamily/Vender(第三方)/SnapKit",
 				);
 				INFOPLIST_FILE = FoodFamily/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hqtech.FoodFamily;
 				PRODUCT_NAME = "$(TARGET_NAME)";

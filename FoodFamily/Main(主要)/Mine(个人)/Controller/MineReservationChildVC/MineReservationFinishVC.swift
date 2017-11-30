@@ -21,6 +21,11 @@ class MineReservationFinishVC: UIViewController,UITableViewDataSource,UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(tableView)
+        self.getData()
+    }
+    
+    func getData(){
+        
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

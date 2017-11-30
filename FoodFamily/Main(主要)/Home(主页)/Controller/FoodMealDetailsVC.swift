@@ -165,8 +165,7 @@ class FoodMealDetailsVC: MainViewController,UITableViewDelegate,UITableViewDataS
         view.buyNowCallBack = {(sender:UIButton) in
             self.navigationController?.navigationBar.alpha = 1
             let foodReservationPayVC = FoodReservationPayVC()
-            foodReservationPayVC.foodPaymentMethod = .normalPaymentStatus
-            foodReservationPayVC.paymentMethod = .ordinaryPaymentStatus
+            foodReservationPayVC.foodPaymentMethod = .mealPaymentStatus
             foodReservationPayVC.payPrice = self.footView.priceLabel.text!
             foodReservationPayVC.detailsModel = self.recommendModel
             foodReservationPayVC.mealModel = self.mealModel

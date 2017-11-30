@@ -15,16 +15,17 @@ enum OrderPaymentMethod {
 
 class FoodPurchaseSuccessVC: MainViewController {
     var paymentMethod = OrderPaymentMethod.ordinaryPaymentStatus
+    var finishText = ""
     struct FoodPurchaseSuccessUX {
         static let foodPurchaseSuccessViewHeight:CGFloat = 300
     }
-
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         title = "支付"
         navigationController?.navigationBar.alpha = 1
         view.backgroundColor = UIColor.R_UIRGBColor(red: 251, green: 251, blue: 251, alpha: 1)
-        view.addSubview(footView)
+        view.addSubview(headView)
+        headView.finishLabel.text = finishText
     }
     
     override func viewDidLoad() {
@@ -41,7 +42,7 @@ class FoodPurchaseSuccessVC: MainViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
-    lazy var footView: FoodPurchaseSuccessView = {
+    lazy var headView: FoodPurchaseSuccessView = {
         let view = Bundle.main.loadNibNamed("FoodPurchaseSuccessView", owner: nil, options: nil)?.last as! FoodPurchaseSuccessView
         view.frame = CGRect(x: 0, y: 0 , width: SCREEN_WIDTH, height:FoodPurchaseSuccessUX.foodPurchaseSuccessViewHeight)
         view.foodPurchaseSuccessCallBack = {(_ foodPurchaseSuccessChooseType:FoodPurchaseSuccessChooseType) in

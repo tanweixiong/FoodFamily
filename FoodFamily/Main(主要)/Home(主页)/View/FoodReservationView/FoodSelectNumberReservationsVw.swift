@@ -17,7 +17,7 @@ class FoodSelectNumberReservationsVw: UIView,UITableViewDelegate,UITableViewData
     fileprivate let foodSelectNumberDayCell = "FoodSelectNumberDayCell"
     fileprivate let foodSelectNumberTimeCell = "FoodSelectNumberTimeCell"
     fileprivate var dayArray = NSArray()
-    fileprivate let timeArray = ["88","88","88","4","5","6","7"]
+    fileprivate var timeArray = NSArray()
     fileprivate let backgroundVwHeight:CGFloat = YMAKE(250)
     fileprivate let titleViewHeight:CGFloat = 44
     fileprivate var dayIndexPath = IndexPath()
@@ -48,6 +48,7 @@ class FoodSelectNumberReservationsVw: UIView,UITableViewDelegate,UITableViewData
        self.timeIndexPath = NSIndexPath(row: 0, section: 0) as IndexPath
         
         self.setDayArray()
+        self.setTimeArray()
         
         self.addSubview(backgroundView)
         self.addSubview(backgroundListView)
@@ -103,7 +104,7 @@ class FoodSelectNumberReservationsVw: UIView,UITableViewDelegate,UITableViewData
         }else{
             let cell = tableView.dequeueReusableCell(withIdentifier: foodSelectNumberTimeCell, for: indexPath) as! FoodSelectNumberTimeCell
             cell.selectionStyle = .none
-            cell.timeLabel.text = timeArray[indexPath.row]
+            cell.timeLabel.text = timeArray[indexPath.row] as? String
             cell.timeLabel.textColor = indexPath == timeIndexPath ? chooseTextColor : normlTextColor
             return cell
         }
@@ -112,7 +113,7 @@ class FoodSelectNumberReservationsVw: UIView,UITableViewDelegate,UITableViewData
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let dayStr = self.dayArray[self.dayIndexPath.row]
         let timeStr = self.timeArray[self.timeIndexPath.row]
-        self.delegate?.foodSelectNumberReservationsChoose(dayStr as! String, timeStr)
+        self.delegate?.foodSelectNumberReservationsChoose(dayStr as! String, timeStr as! String)
         if tableView == dayTableView {
             if indexPath == self.dayIndexPath { return }
             self.dayTableView.reloadData()
@@ -145,7 +146,28 @@ class FoodSelectNumberReservationsVw: UIView,UITableViewDelegate,UITableViewData
     
     func setDayArray(){
         self.dayArray =  OCTools.getCurrentNumberDays()! as NSArray
-        print(self.dayArray)
+    }
+    
+    func setTimeArray(){
+        var startTime:Int = 9
+        let endTime:Int = 21
+        let intervalHours:Int = 2
+        let timeNumber = (endTime - startTime) * intervalHours
+        var isOns:Bool = true
+        let timeArray = NSMutableArray()
+        for _ in 0...timeNumber {
+            var time = ""
+            if isOns {
+                 time = "\(startTime)" + ":00"
+                 isOns = false
+            }else{
+                 time = "\(startTime)" + ":30"
+                 isOns = true
+                 startTime = startTime + 1
+            }
+            timeArray.add(time)
+        }
+        self.timeArray = timeArray
     }
     
     func setDayTableView ()-> UITableView{

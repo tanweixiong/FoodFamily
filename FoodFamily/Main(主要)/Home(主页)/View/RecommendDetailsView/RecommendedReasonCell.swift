@@ -79,12 +79,12 @@ class RecommendedReasonCell: UITableViewCell {
             let foodModel = model.foodList![index] 
             let x = space + CGFloat(index) * (width + space)
             let imageView = UIImageView()
-            imageView.sd_setImage(with: NSURL(string: (foodModel.food?.foodImg)!)! as URL, placeholderImage: UIImage.init(named: "ic_all_imageDefault"))
+            imageView.sd_setImage(with: NSURL(string: (foodModel.foodImg)!)! as URL, placeholderImage: UIImage.init(named: "ic_all_imageDefault"))
             imageView.frame = CGRect(x: x, y: maxY, width: width, height: width)
             contentView.addSubview(imageView)
             
             let label = UILabel()
-            label.text = foodModel.food?.foodName
+            label.text = foodModel.foodName
             label.textColor = UIColor.R_UIRGBColor(red: 67, green: 66, blue: 67, alpha: 1)
             label.textAlignment = .center
             label.font = UIFont.systemFont(ofSize: 14)
