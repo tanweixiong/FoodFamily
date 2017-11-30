@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import MJRefresh
 
 class MineReservationFinishVC: UIViewController,UITableViewDataSource,UITableViewDelegate {
     fileprivate lazy var viewModel : MineReservationVM = MineReservationVM()
     fileprivate let mineReservationFinishCell = "mineReservationFinishCell"
+    fileprivate var pageNum:Int = 0
     
     struct MineReservationFinishUX {
         static let sectionHeight:CGFloat = 20
@@ -25,14 +27,19 @@ class MineReservationFinishVC: UIViewController,UITableViewDataSource,UITableVie
     }
     
     func getData(){
-        let parameters = ["":""]
-        viewModel.loadSuccessfullyReturnedData(requestType: .get, URLString:ConstAPI.kAPIReservationList , parameters: parameters, showIndicator: false) {
-            
+        //1为已完成
+        let parameters = ["pageNum":"\(self.pageNum)","pageSize":"","type":"1"]
+        viewModel.loadSuccessfullyReturnedData(requestType: .get, URLString:ConstAPI.kAPIReservationList , parameters: parameters, showIndicator: false) {(hasData:Bool) in
+            if hasData {
+                self.pageNum = self.pageNum + 1
+            }
+            self.tableView.reloadData()
+            self.tableView.mj_footer.endRefreshing()
         }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return  10
+        return  self.viewModel.model.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -57,9 +64,11 @@ class MineReservationFinishVC: UIViewController,UITableViewDataSource,UITableVie
         let cell = tableView.dequeueReusableCell(withIdentifier: mineReservationFinishCell, for: indexPath) as! MineReservationCell
         cell.selectionStyle = .none
         cell.reservationStatusLabel.text = "预约成功"
-        cell.logoImageView.sd_setImage(with: NSURL(string: "")! as URL, placeholderImage: UIImage.init(named: "ic_all_imageDefault"))
-        cell.storeName.text = ""
-        cell.createTimeLabel.text = ""
+        
+        let model = viewModel.model[indexPath.section]
+        cell.logoImageView.sd_setImage(with: NSURL(string: model.logo!)! as URL, placeholderImage: UIImage.init(named: "ic_all_imageDefault"))
+        cell.storeName.text = model.storeName
+        cell.createTimeLabel.text = model.appointmentTime
         return cell
     }
     
@@ -72,6 +81,9 @@ class MineReservationFinishVC: UIViewController,UITableViewDataSource,UITableVie
         tableView.backgroundColor = R_UISectionLineColor
         tableView.separatorColor = UIColor.clear
         tableView.tableFooterView = UIView()
+        tableView.mj_footer = MJRefreshAutoNormalFooter.init(refreshingBlock: {
+            self.getData()
+        })
         return tableView
     }()
 

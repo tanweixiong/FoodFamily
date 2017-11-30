@@ -9,7 +9,10 @@
 import UIKit
 
 class MineReservationDataModel: Mappable {
-    var data: String?
+    var orderNo: NSNumber?
+    var logo: String?
+    var storeName: String?
+    var appointmentTime: String?
 
     required init?(map: Map) {
         
@@ -20,7 +23,10 @@ class MineReservationDataModel: Mappable {
     }
     
     func mapping(map: Map) {
-        data        <- map["data"]
+        orderNo                <- map["orderNo"]
+        logo                   <- map["logo"]
+        storeName              <- map["storeName"]
+        appointmentTime        <- map["appointmentTime"]
     }
 }
 

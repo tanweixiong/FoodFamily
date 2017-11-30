@@ -12,7 +12,7 @@ import SVProgressHUD
 
 class MineReservationVM: NSObject {
     lazy var model : [MineReservationDataModel] = [MineReservationDataModel]()
-    func loadSuccessfullyReturnedData(requestType: HTTPMethod, URLString : String, parameters : [String : Any]? = nil, showIndicator: Bool,finishedCallback : @escaping () -> ()) {
+    func loadSuccessfullyReturnedData(requestType: HTTPMethod, URLString : String, parameters : [String : Any]? = nil, showIndicator: Bool,finishedCallback : @escaping (_ hasData:Bool) -> ()) {
         NetWorkTool.request(requestType: requestType, URLString:URLString, parameters: parameters, showIndicator: true, success: { (json) in
             print(json)
             let responseData = Mapper<MineReservationModel>().map(JSONObject: json)
@@ -24,10 +24,47 @@ class MineReservationVM: NSObject {
                 if showIndicator {
                     SVProgressHUD.showSuccess(withStatus: responseData?.message)
                 }
-                self.model = (responseData?.data)!
-                finishedCallback()
+  
+                if responseData?.data?.count != 0 {
+                    let array = NSMutableArray()
+                    array.addObjects(from: self.model)
+                    array.addObjects(from: (responseData?.data)!)
+                    self.model = array as! [MineReservationDataModel]
+                    finishedCallback(true)
+                }else{
+                    finishedCallback(false)
+                }
             }
         }) { (error) in
         }
     }
+    
+    
+    lazy var expiredModel : [MineReservationDataModel] = [MineReservationDataModel]()
+    func loadExpiredSuccessfullyReturnedData(requestType: HTTPMethod, URLString : String, parameters : [String : Any]? = nil, showIndicator: Bool,finishedCallback : @escaping (_ hasData:Bool) -> ()) {
+        NetWorkTool.request(requestType: requestType, URLString:URLString, parameters: parameters, showIndicator: true, success: { (json) in
+            let responseData = Mapper<MineReservationModel>().map(JSONObject: json)
+            if let code = responseData?.code {
+                guard  100 == code else {
+                    SVProgressHUD.showInfo(withStatus: responseData?.message)
+                    return
+                }
+                if showIndicator {
+                    SVProgressHUD.showSuccess(withStatus: responseData?.message)
+                }
+
+                if responseData?.data?.count != 0 {
+                    let array = NSMutableArray()
+                    array.addObjects(from: self.expiredModel)
+                    array.addObjects(from: (responseData?.data)!)
+                    self.expiredModel = array as! [MineReservationDataModel]
+                    finishedCallback(true)
+                }else{
+                    finishedCallback(false)
+                }
+            }
+        }) { (error) in
+        }
+    }
+    
 }
