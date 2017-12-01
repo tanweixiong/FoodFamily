@@ -139,7 +139,11 @@ class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewData
             return cell
         }else {
             let cell = tableView.dequeueReusableCell(withIdentifier: foodReservationPaymentMethodCell, for: indexPath) as! FoodReservationPaymentMethodCell
-            cell.chooseBtn.isSelected = (indexPath.section == 1 && indexPath.row == 0) ? true : false
+            if (foodPaymentMethod == .immediatelyPaymentStatus) && (indexPath.section == 1 && indexPath.row == 1) {
+                cell.chooseBtn.isSelected = true
+            }else{
+                cell.chooseBtn.isSelected = (indexPath.section == 1 && indexPath.row == 0) ? true : false
+            }
             cell.selectionStyle = .none
             cell.headingLabel.text = headingArray[indexPath.row] as? String
             cell.iconImageView.image = UIImage.init(named: (imageViewArray[indexPath.row] as? String)!)
@@ -232,7 +236,7 @@ class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewData
         }else if foodPaymentMethod == .reservationPaymentStatus {
             self.reservationPayment()
         }else if foodPaymentMethod == .immediatelyPaymentStatus {
-            
+            self.immediatelyPaymentStatusPayment()
         }
         return pwd
     }

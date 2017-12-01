@@ -10,6 +10,9 @@ import UIKit
 import IQKeyboardManager
 import SVProgressHUD
 
+protocol MineInformationDelegate {
+    func mineInformationChangeUserInfo()
+}
 class MineInformationVC: MainViewController,UITableViewDelegate,UITableViewDataSource,UIImagePickerControllerDelegate, UINavigationControllerDelegate,UITextFieldDelegate {
     fileprivate let photoAlbum = LJXPhotoAlbum()
     fileprivate var headCell = MineInformationHeadCell()
@@ -25,6 +28,7 @@ class MineInformationVC: MainViewController,UITableViewDelegate,UITableViewDataS
     var starTextField = UITextField()
     var positionTextField = UITextField()
     var signTextField = UITextField()
+    var delegate:MineInformationDelegate?
 //    ["nickname":"","age":"","star":"","province":"","city":"","sign":""]
     
     struct MineInformationUX {
@@ -77,12 +81,17 @@ class MineInformationVC: MainViewController,UITableViewDelegate,UITableViewDataS
         let newParameters = ["data":jsonParameters]
         
         NetWorkTool.uploadPictures(url: ConstAPI.kAPIUserUpdateUserInfo, parameter: newParameters, image: avatar, imageKey: "photo", success: { (json) in
+            print(json)
             let responseData = Mapper<ResponseData>().map(JSONObject: json)
             if let code = responseData?.code {
                 guard  100 == code else {
                     SVProgressHUD.showInfo(withStatus: responseData?.message)
                     return
                 }
+                let data = json["data"] as![String:AnyObject]
+                let user = data["user"] as![String:AnyObject]
+                let price = user["pice"] as! String
+                
                 SVProgressHUD.showSuccess(withStatus: "上传成功")
                 let userInfo = UserDefaults.standard.getUserInfo()
                 userInfo.nickname = self.nicknameTextField.text! as AnyObject
@@ -91,7 +100,9 @@ class MineInformationVC: MainViewController,UITableViewDelegate,UITableViewDataS
                 userInfo.province = self.province as AnyObject
                 userInfo.city = self.city as AnyObject
                 userInfo.sign = self.signTextField.text! as AnyObject
+                userInfo.pice = price as AnyObject
                 UserDefaults.standard.saveCustomObject(customObject: userInfo, key: R_UserInfo)
+                self.delegate?.mineInformationChangeUserInfo()
                 DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: {
                     self.navigationController?.popViewController(animated: true)
                 })
@@ -104,7 +115,7 @@ class MineInformationVC: MainViewController,UITableViewDelegate,UITableViewDataS
     
     //上传头像
     func uploadPhoto(_ image:UIImage){
-        headCell.avatarImageView.image = image
+        headCell.avatarImageView.image = MineInformationVC.resizeImage(image: image, newSize: CGSize(width: 50, height: 50))
 //        self.avatarImage = image
 //        NetWorkTool.uploadPictures(url: ConstAPI.kAPIUserUpdateUserInfo, parameter: nil, image: image, imageKey: "photo", success: { (json) in
 //            let responseData = Mapper<ResponseData>().map(JSONObject: json)
@@ -281,4 +292,12 @@ class MineInformationVC: MainViewController,UITableViewDelegate,UITableViewDataS
         return tableView
     }()
 
+    class func resizeImage(image: UIImage, newSize: CGSize) -> UIImage {
+        UIGraphicsBeginImageContext(newSize)
+        image.draw(in: CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height))
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return newImage!
+    }
+    
 }

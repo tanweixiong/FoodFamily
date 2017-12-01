@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MineController: MainViewController {
+class MineController: MainViewController,MineInformationDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -22,6 +22,7 @@ class MineController: MainViewController {
         view.addSubview(headView)
         mineOptionView.frame = CGRect(x: 0, y: headView.frame.maxY, width: SCREEN_WIDTH, height: self.mineOptionView.backgroundVw.frame.size.height)
         view.addSubview(mineOptionView)
+        self.setData()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -35,6 +36,10 @@ class MineController: MainViewController {
     
     override func leftImageBtn(_ sender: UIBarButtonItem) {
         
+    }
+    
+    func mineInformationChangeUserInfo() {
+        self.setData()
     }
     
     func pushNextViewController(type:Int){
@@ -62,6 +67,7 @@ class MineController: MainViewController {
             
         case 5:
             let mineInformationVC = MineInformationVC()
+            mineInformationVC.delegate = self
             self.navigationController?.pushViewController(mineInformationVC, animated: true)
             break
             
@@ -77,6 +83,14 @@ class MineController: MainViewController {
         }
         return view
     }()
+    
+    func setData(){
+        let name = UserDefaults.standard.getUserInfo().nickname as! String
+        self.headView.nameLabel.text = name
+        
+        let pice = UserDefaults.standard.getUserInfo().pice as! String
+        self.headView.headImageView.sd_setImage(with: NSURL(string: (pice))! as URL, placeholderImage: UIImage.init(named: "ic_all_smallImageDefault"))
+    }
     
     lazy var mineOptionView: MineOptionView = {
         let view = Bundle.main.loadNibNamed("MineOptionView", owner: nil, options: nil)?.last as! MineOptionView

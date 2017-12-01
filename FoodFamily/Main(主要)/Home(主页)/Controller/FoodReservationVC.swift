@@ -32,11 +32,6 @@ class FoodReservationVC: UIViewController,UITableViewDelegate,UITableViewDataSou
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.alpha = 1
         self.title = "预约"
-        
-        phoneTextField.text = "17876489945"
-        codeTextField.text = "9999999"
-        reservationsTime = "11111"
-        reservationsNumber = "1111"
     }
     
     override func viewDidLoad() {
@@ -117,9 +112,6 @@ class FoodReservationVC: UIViewController,UITableViewDelegate,UITableViewDataSou
             phoneTextField = cell.phoneTextField
             cell.contentView.addSubview(getCodeButton)
             cell.selectionStyle = .none
-            
-            
-            cell.phoneTextField.text = "17876489945"
             return cell
         }else{
             let cell = tableView.dequeueReusableCell(withIdentifier: foodReservationFilliCell, for: indexPath) as! FoodReservationFilliCell
@@ -130,8 +122,6 @@ class FoodReservationVC: UIViewController,UITableViewDelegate,UITableViewDataSou
             cell.foodReservationFillTextFiledCallBack = { (codeStr:String) in
                 self.foodReservationCodeText = codeStr
             }
-            
-            cell.codeTextField.text = "8888888"
             return cell
         }
     }
