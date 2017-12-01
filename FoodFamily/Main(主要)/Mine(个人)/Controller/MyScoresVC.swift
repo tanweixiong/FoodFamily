@@ -7,11 +7,25 @@
 //
 
 import UIKit
+import SVProgressHUD
+import MJRefresh
 
 class MyScoresVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
-    
+    fileprivate lazy var viewModel : MineScoresVM = MineScoresVM()
     fileprivate let lead:CGFloat = 10
     fileprivate let mineScoresCell = "MineScoresCell"
+    fileprivate var allTableView = UITableView()
+    fileprivate var incomeTableView = UITableView()
+    fileprivate var expenditureTableView = UITableView()
+    
+    fileprivate var isLoadIncome:Bool = true
+    fileprivate var isLoadExpenditure:Bool = true
+    
+    fileprivate var allPageNum:Int = 0
+    fileprivate var incomePageNum:Int = 0
+    fileprivate var expenditurePageNum:Int = 0
+    
+    
     struct MyScoresUX {
         static let myScoresViewSize:CGSize = CGSize(width: SCREEN_KeyWindowBounds.size.width, height: SCREEN_KeyWindowBounds.size.height)
         static let myScoresHeadViewSize:CGSize = CGSize(width: SCREEN_WIDTH, height: YMAKE(62))
@@ -73,7 +87,50 @@ class MyScoresVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         
         self.createLine()
         
-        myScoresView.addSubview(tableView)
+        myScoresView.addSubview(scrollView)
+        scrollView.addSubview(self.setAllTableView())
+        scrollView.addSubview(self.setIncomeTableView())
+        scrollView.addSubview(self.setExpenditureTableView())
+        
+        self.getALlData()
+//        self.getIncomeData()
+//        self.getExpenditureData()
+    }
+    
+    //获取所有记录
+    func getALlData(){
+        let parameters = ["type":"0","pageNum":"\(allPageNum)","pageSize":""]
+        viewModel.loadAllSuccessfullyReturnedData(requestType: .get, URLString: ConstAPI.kAPIUserWalletGetUserIntegral, parameters: parameters, showIndicator: false) {(hasData:Bool) in
+            if hasData{
+                self.allPageNum = self.allPageNum + 1
+                self.allTableView.reloadData()
+            }
+            self.allTableView.mj_footer.endRefreshing()
+        }
+    }
+    
+    //获取收入记录
+    func getIncomeData(){
+        let parameters = ["type":"1","pageNum":"\(incomePageNum)","pageSize":""]
+        viewModel.loadIncomeSuccessfullyReturnedData(requestType: .get, URLString: ConstAPI.kAPIUserWalletGetUserIntegral, parameters: parameters, showIndicator: false) {(hasData:Bool) in
+            if hasData {
+                self.incomePageNum = self.incomePageNum + 1
+                self.allTableView.reloadData()
+            }
+                self.allTableView.mj_footer.endRefreshing()
+        }
+    }
+    
+    //获取支出记录
+    func getExpenditureData(){
+        let parameters = ["type":"2","pageNum":"\(expenditurePageNum)","pageSize":""]
+        viewModel.loadExpenditureSuccessfullyReturnedData(requestType: .get, URLString: ConstAPI.kAPIUserWalletGetUserIntegral, parameters: parameters, showIndicator: false) {(hasData:Bool) in
+            if hasData {
+                self.expenditurePageNum = self.expenditurePageNum + 1
+                self.allTableView.reloadData()
+            }
+               self.allTableView.mj_footer.endRefreshing()
+        }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -81,7 +138,13 @@ class MyScoresVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        if tableView == allTableView {
+            return viewModel.allModel.count
+        }else if tableView == incomeTableView {
+            return viewModel.incomeModel.count
+        }else{
+            return viewModel.expenditureModel.count
+        }
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -93,9 +156,23 @@ class MyScoresVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: mineScoresCell, for: indexPath) as! MineScoresCell
-        cell.selectionStyle = .none
-        return cell
+        //全部列表
+        if tableView == allTableView {
+            let cell = tableView.dequeueReusableCell(withIdentifier: mineScoresCell, for: indexPath) as! MineScoresCell
+            cell.selectionStyle = .none
+            cell.model = viewModel.allModel[indexPath.row]
+            return cell
+        }else if tableView == incomeTableView {
+            let cell = tableView.dequeueReusableCell(withIdentifier: mineScoresCell, for: indexPath) as! MineScoresCell
+            cell.selectionStyle = .none
+            cell.model = viewModel.incomeModel[indexPath.row]
+            return cell
+        }else{
+            let cell = tableView.dequeueReusableCell(withIdentifier: mineScoresCell, for: indexPath) as! MineScoresCell
+            cell.selectionStyle = .none
+            cell.model = viewModel.expenditureModel[indexPath.row]
+            return cell
+        }
     }
     
     func createLine(){
@@ -105,7 +182,7 @@ class MyScoresVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     }
     
     func setAnimate(sender:UIButton){
-        UIView.animate(withDuration: 0.8, animations: {
+        UIView.animate(withDuration: 0.2, animations: {
             let x = CGFloat((sender.frame.origin.x + sender.frame.size.width/2) - (MyScoresUX.lineWidth/2) - self.lead)
             let y = CGFloat(sender.frame.size.height - MyScoresUX.lineHeight)
             self.line.frame = CGRect(x: x, y: y, width: MyScoresUX.lineWidth, height: MyScoresUX.lineHeight)
@@ -140,6 +217,17 @@ class MyScoresVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         view.frame = CGRect(x: 0, y: 0, width: MyScoresUX.myScoresHeadViewSize.width, height: MyScoresUX.myScoresHeadViewSize.height)
         view.addSubview(self.line)
         view.myScoresHeadViewCallBack = {(sender:UIButton) in
+            if sender.tag == 1 && self.isLoadIncome{
+                self.scrollView.contentOffset = CGPoint(x: SCREEN_WIDTH, y: 0)
+                self.isLoadIncome = false
+                self.getIncomeData()
+            }else if sender.tag == 2 && self.isLoadExpenditure {
+                self.scrollView.contentOffset = CGPoint(x: SCREEN_WIDTH * 2, y: 0)
+                self.isLoadExpenditure = false
+                self.getExpenditureData()
+            }else{
+                self.scrollView.contentOffset = CGPoint(x: 0, y: 0)
+            }
             self.setAnimate(sender: sender)
         }
         return view
@@ -151,21 +239,82 @@ class MyScoresVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         return view
     }()
     
-    lazy var tableView: UITableView = {
+    lazy var scrollView:UIScrollView = {
         let maxY = MyScoresUX.myScoresHeadViewSize.height/2 + 15 + 215
-        let tableView = UITableView.init(frame: CGRect(x: 0, y: maxY , width: SCREEN_WIDTH, height: SCREEN_HEIGHT - 215 - MyScoresUX.myScoresHeadViewSize.height/2 - 15))
-        tableView.showsVerticalScrollIndicator = false
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.register(UINib(nibName: "MineScoresCell", bundle: nil),forCellReuseIdentifier: self.mineScoresCell)
-        tableView.backgroundColor = R_UISectionLineColor
-        tableView.separatorInset = UIEdgeInsetsMake(0,SCREEN_WIDTH, 0,SCREEN_WIDTH);
-        tableView.tableFooterView = UIView()
-        tableView.separatorColor = R_UISectionLineColor
-//        tableView.mj_footer = MJRefreshAutoNormalFooter.init(refreshingBlock: {
-//            self.getData()
-//        })
-        return tableView
+        let scrollView = UIScrollView()
+        scrollView.frame = CGRect(x: 0, y: maxY, width: SCREEN_WIDTH, height: SCREEN_HEIGHT - 215 - MyScoresUX.myScoresHeadViewSize.height/2 - 15)
+        scrollView.isPagingEnabled = true;
+        scrollView.showsHorizontalScrollIndicator = false;
+        scrollView.clipsToBounds = false;
+        scrollView.bounces = false;
+        scrollView.contentSize = CGSize(width: SCREEN_WIDTH, height: scrollView.frame.size.height)
+        return scrollView
     }()
+    
+    func setAllTableView()->UITableView {
+        allTableView = UITableView.init(frame: CGRect(x: 0, y: 0 , width: SCREEN_WIDTH, height:self.scrollView.frame.size.height))
+        allTableView.showsVerticalScrollIndicator = false
+        allTableView.dataSource = self
+        allTableView.delegate = self
+        allTableView.register(UINib(nibName: "MineScoresCell", bundle: nil),forCellReuseIdentifier: self.mineScoresCell)
+        allTableView.backgroundColor = R_UISectionLineColor
+        allTableView.separatorInset = UIEdgeInsetsMake(0,SCREEN_WIDTH, 0,SCREEN_WIDTH);
+        allTableView.tableFooterView = UIView()
+        allTableView.separatorColor = R_UISectionLineColor
+        allTableView.mj_footer = MJRefreshAutoNormalFooter.init(refreshingBlock: {
+             self.getALlData()
+        })
+        return allTableView
+    }
+    
+
+    func setIncomeTableView()->UITableView {
+        incomeTableView = UITableView.init(frame: CGRect(x: SCREEN_WIDTH, y: 0 , width: SCREEN_WIDTH, height:self.scrollView.frame.size.height))
+        incomeTableView.showsVerticalScrollIndicator = false
+        incomeTableView.dataSource = self
+        incomeTableView.delegate = self
+        incomeTableView.register(UINib(nibName: "MineScoresCell", bundle: nil),forCellReuseIdentifier: self.mineScoresCell)
+        incomeTableView.backgroundColor = R_UISectionLineColor
+        incomeTableView.separatorInset = UIEdgeInsetsMake(0,SCREEN_WIDTH, 0,SCREEN_WIDTH);
+        incomeTableView.tableFooterView = UIView()
+        incomeTableView.separatorColor = R_UISectionLineColor
+        incomeTableView.mj_footer = MJRefreshAutoNormalFooter.init(refreshingBlock: {
+            self.getIncomeData()
+        })
+        return incomeTableView
+    }
+    
+    func setExpenditureTableView()->UITableView {
+        expenditureTableView = UITableView.init(frame: CGRect(x: SCREEN_WIDTH * 2, y: 0 , width: SCREEN_WIDTH, height:self.scrollView.frame.size.height))
+        expenditureTableView.showsVerticalScrollIndicator = false
+        expenditureTableView.dataSource = self
+        expenditureTableView.delegate = self
+        expenditureTableView.register(UINib(nibName: "MineScoresCell", bundle: nil),forCellReuseIdentifier: self.mineScoresCell)
+        expenditureTableView.backgroundColor = R_UISectionLineColor
+        expenditureTableView.separatorInset = UIEdgeInsetsMake(0,SCREEN_WIDTH, 0,SCREEN_WIDTH);
+        expenditureTableView.tableFooterView = UIView()
+        expenditureTableView.separatorColor = R_UISectionLineColor
+        expenditureTableView.mj_footer = MJRefreshAutoNormalFooter.init(refreshingBlock: {
+            self.getExpenditureData()
+        })
+        return expenditureTableView
+    }
+
+//    lazy var tableView: UITableView = {
+//        let maxY = MyScoresUX.myScoresHeadViewSize.height/2 + 15 + 215
+//        let tableView = UITableView.init(frame: CGRect(x: 0, y: maxY , width: SCREEN_WIDTH, height: SCREEN_HEIGHT - 215 - MyScoresUX.myScoresHeadViewSize.height/2 - 15))
+//        tableView.showsVerticalScrollIndicator = false
+//        tableView.dataSource = self
+//        tableView.delegate = self
+//        tableView.register(UINib(nibName: "MineScoresCell", bundle: nil),forCellReuseIdentifier: self.mineScoresCell)
+//        tableView.backgroundColor = R_UISectionLineColor
+//        tableView.separatorInset = UIEdgeInsetsMake(0,SCREEN_WIDTH, 0,SCREEN_WIDTH);
+//        tableView.tableFooterView = UIView()
+//        tableView.separatorColor = R_UISectionLineColor
+////        tableView.mj_footer = MJRefreshAutoNormalFooter.init(refreshingBlock: {
+////            self.getData()
+////        })
+//        return tableView
+//    }()
 
 }

@@ -43,6 +43,9 @@ struct ConstAPI {
     static let kAPIReservationList = kAPIBaseURL + "order/getUserReserve" //我的预约列表
     static let kAPIOrdreGetUserReserveInfo = kAPIBaseURL + "ordre/getUserReserveInfo" //我的预约详情
     static let kAPIAssessAddAssessList = kAPIBaseURL + "assess/addAssessList" //评论功能
+    static let kAPIUserWalletGetUserIntegral = kAPIBaseURL + "userWallet/getUserIntegral" //评论功能
+    
+    
     
 }
 

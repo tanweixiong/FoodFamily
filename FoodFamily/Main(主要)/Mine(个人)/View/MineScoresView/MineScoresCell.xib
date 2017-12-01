@@ -63,7 +63,13 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="IiA-7X-fTz"/>
-            <point key="canvasLocation" x="-342" y="-22"/>
+            <connections>
+                <outlet property="logoImageView" destination="6Oh-wk-G3p" id="Ae7-kA-okW"/>
+                <outlet property="nameLabel" destination="7KW-Dh-7kq" id="nQv-go-bW0"/>
+                <outlet property="priceLabel" destination="Rmt-8T-RSu" id="RyS-If-786"/>
+                <outlet property="remarkLabel" destination="biI-zD-2LP" id="S7l-1q-sDY"/>
+            </connections>
+            <point key="canvasLocation" x="-454" y="63"/>
         </tableViewCell>
     </objects>
     <resources>
