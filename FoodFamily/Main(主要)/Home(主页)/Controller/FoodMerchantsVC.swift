@@ -53,7 +53,7 @@ class FoodMerchantsVC: UIViewController,UITableViewDelegate,UITableViewDataSourc
     //获取店铺分类
     func getClassificationData(){
         let parameters = ["longitude":"113.30764","latitude":"23.1200483","typeId":typeId,"pageNum":"\(pageNum)","pageSize":""]
-        viewModel.loadClassificationSuccessfullyReturnedData(requestType: .get, URLString: ConstAPI.kAPIAppIndex, parameters: parameters, showIndicator: false) {(hasData:Bool) in
+        viewModel.loadClassificationSuccessfullyReturnedData(requestType: .get, URLString: ConstAPI.kAPIStoreSelectStoreByStoreType, parameters: parameters, showIndicator: false) {(hasData:Bool) in
             if hasData{
                 self.pageNum = self.pageNum + 1
                 self.tableView.reloadData()

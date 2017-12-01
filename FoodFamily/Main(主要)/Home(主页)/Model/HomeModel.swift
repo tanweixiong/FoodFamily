@@ -71,11 +71,11 @@ class BannerListModel: Mappable {
 }
 
 class CategoryListModel: Mappable {
-    var id: String?
+    var id: NSNumber?
     var categoryName: String?
-    var depth: String?
-    var pid: String?
-    var flag: String?
+    var depth: NSNumber?
+    var pid: NSNumber?
+    var flag: NSNumber?
     var icon: String?
     
     required init?(map: Map) {

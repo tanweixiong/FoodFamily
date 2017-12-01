@@ -110,6 +110,9 @@ class HomeController: MainViewController,UITableViewDelegate,UITableViewDataSour
                 cell.setData((self.homeVM.homeModel.data?.categoryList)!, (self.homeVM.homeModel.data?.bannerList)!)
             }
             cell.selectionStyle = .none
+            cell.boutiqueTableCallBack = {(sender:UIButton) in
+                self.pushViewController(sender.tag)
+            }
             return cell
         }else if indexPath.section == 1{
             let cell = tableView.dequeueReusableCell(withIdentifier: topicTableViewCell, for: indexPath) as! TopicTableViewCell
@@ -167,7 +170,14 @@ class HomeController: MainViewController,UITableViewDelegate,UITableViewDataSour
         return button
     }()
 
-    
+    func pushViewController(_ index:NSInteger){
+        let model = homeVM.homeModel.data?.categoryList![index]
+        let foodMerchantsVC = FoodMerchantsVC()
+        foodMerchantsVC.foodMerchantsStatus = .classificationStatus
+        foodMerchantsVC.typeId = (model?.id?.stringValue)!
+        self.navigationController?.pushViewController(foodMerchantsVC, animated: true)
+    }
+
     override func rightTextBtn(_ sender: UIBarButtonItem) {
         let foodMerchantsVC = FoodMerchantsVC()
         self.navigationController?.pushViewController(foodMerchantsVC, animated: true)

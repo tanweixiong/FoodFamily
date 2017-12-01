@@ -19,7 +19,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="129.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_home_food" translatesAutoresizingMaskIntoConstraints="NO" id="Gc8-lk-xVt">
+                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_all_imageDefault" translatesAutoresizingMaskIntoConstraints="NO" id="Gc8-lk-xVt">
                         <rect key="frame" x="15" y="15" width="150" height="100"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="100" id="a7w-dt-pUJ"/>
@@ -35,16 +35,17 @@
                     <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="characterWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ps9-dx-knX">
                         <rect key="frame" x="175" y="18" width="130" height="14"/>
                         <attributedString key="attributedText">
-                            <fragment content="特上小扒">
+                            <fragment content="--">
                                 <attributes>
                                     <color key="NSColor" red="0.2627450980392157" green="0.25882352941176467" blue="0.2627450980392157" alpha="1" colorSpace="calibratedRGB"/>
                                     <font key="NSFont" size="14" name=".PingFangSC-Regular"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                 </attributes>
                             </fragment>
                         </attributedString>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="158元" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H7h-YI-FaE">
+                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="158元" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H7h-YI-FaE">
                         <rect key="frame" x="175" y="40" width="130" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -73,9 +74,14 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="iconImageView" destination="Gc8-lk-xVt" id="A5i-jd-egu"/>
+                <outlet property="nameLabel" destination="ps9-dx-knX" id="3sc-SH-B7o"/>
+            </connections>
+            <point key="canvasLocation" x="-160" y="42"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="ic_home_food" width="151" height="129"/>
+        <image name="ic_all_imageDefault" width="330" height="168"/>
     </resources>
 </document>

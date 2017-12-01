@@ -9,6 +9,7 @@
 import UIKit
 
 class FoodFeaturesDetailVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
+    var foodModel : [RecommendFoodDataModel] = [RecommendFoodDataModel]()
     fileprivate let foodFeaturesDetailCell = "FoodFeaturesDetailCell"
     
     struct FoodFeaturesDetailUX {
@@ -18,6 +19,7 @@ class FoodFeaturesDetailVC: UIViewController,UITableViewDelegate,UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "特色菜"
+        self.view.addSubview(tableView)
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -25,7 +27,7 @@ class FoodFeaturesDetailVC: UIViewController,UITableViewDelegate,UITableViewData
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return foodModel.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -35,6 +37,9 @@ class FoodFeaturesDetailVC: UIViewController,UITableViewDelegate,UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: foodFeaturesDetailCell, for: indexPath) as! FoodFeaturesDetailCell
         cell.selectionStyle = .none
+        let model = foodModel[indexPath.row]
+        cell.iconImageView.sd_setImage(with: NSURL(string: (model.foodImg)!)! as URL, placeholderImage: UIImage.init(named: "ic_all_imageDefault"))
+        cell.nameLabel.text = model.foodName
         return cell
     }
     

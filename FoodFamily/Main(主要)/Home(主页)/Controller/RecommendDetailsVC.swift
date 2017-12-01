@@ -302,6 +302,7 @@ class RecommendDetailsVC: UIViewController,UITableViewDelegate,UITableViewDataSo
             break
         case .featuresStatus:
             let foodFeaturesDetailVC = FoodFeaturesDetailVC()
+            foodFeaturesDetailVC.foodModel = self.recommendDetailsVM.recommendDataModel.foodList!
             self.navigationController?.pushViewController(foodFeaturesDetailVC, animated: true)
             break
         case .vouchersDetailStatus:
