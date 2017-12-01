@@ -53,9 +53,9 @@ class BoutiqueTableViewCell: UITableViewCell,UIScrollViewDelegate {
         for index in 0...self.categoryListModel.count - 1 {
             let model = classificationArray[index] as! CategoryListModel
             let x = 36 +   CGFloat(index) * (classfImgWidth + 65)
+            
             let imageView = UIImageView(frame: CGRect(x: x, y: 13, width: classfImgWidth, height: classfImgHeight))
-            //            imageView.sd_setImage(with: NSURL(string: classificationImgArray[index])! as URL, placeholderImage: UIImage.init(named: "morentouxiang"))
-            imageView.image = UIImage.init(named: "")
+            imageView.sd_setImage(with: NSURL(string: model.icon!)! as URL, placeholderImage: UIImage.init(named: "ic_all_smallImageDefault"))
             classificationVw.addSubview(imageView)
             
             let label = UILabel()
@@ -70,6 +70,8 @@ class BoutiqueTableViewCell: UITableViewCell,UIScrollViewDelegate {
             
             let btn = UIButton()
             btn.frame = CGRect(x: imageView.frame.origin.x, y: imageView.frame.origin.y, width: imageView.frame.size.width, height: label.frame.maxY - imageView.frame.origin.y)
+            classificationVw.addSubview(btn)
+            
             classificationVw.addSubview(label)
         }
         

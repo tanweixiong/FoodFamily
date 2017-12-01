@@ -76,6 +76,7 @@ class CategoryListModel: Mappable {
     var depth: String?
     var pid: String?
     var flag: String?
+    var icon: String?
     
     required init?(map: Map) {
         
@@ -87,6 +88,7 @@ class CategoryListModel: Mappable {
         depth     <- map["depth"]
         pid      <- map["pid"]
         flag     <- map["flag"]
+        icon     <- map["icon"]
     }
 }
 
