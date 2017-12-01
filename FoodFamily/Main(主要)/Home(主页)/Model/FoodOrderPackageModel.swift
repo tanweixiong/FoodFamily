@@ -22,11 +22,11 @@ class FoodOrderPackageListModel: Mappable {
   
     var totalPrice: NSNumber?
     var paymentAmount: NSNumber?
-    var integral: NSNumber?
+    var integral: String?
     var mealId: NSNumber?
     var mealName: NSString?
     var vouId: NSNumber?
-    var vouNum: NSNumber?
+    var vouNum: AnyObject?
     var orderStatus: NSNumber? //1未支付 2已支付 5未评价 6已评价 7交易完成 8交易关闭
     
     required init?(map: Map) {

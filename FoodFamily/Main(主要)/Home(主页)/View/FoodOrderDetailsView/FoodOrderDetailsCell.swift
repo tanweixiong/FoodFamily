@@ -74,9 +74,9 @@ class FoodOrderDetailsCell: UITableViewCell {
             }else if packageModel.orderStatus == 8 {
                 orderStatus = "交易关闭"
             }
-            let integral = packageModel.integral?.stringValue
+            let integral = packageModel.integral!
             let paymentAmount = packageModel.paymentAmount?.stringValue
-            headingContentDataArray = [orderNo!,createTime!,orderStatus,integral!,paymentAmount!]
+            headingContentDataArray = [orderNo!,createTime!,orderStatus,integral,paymentAmount!]
         }
     }
     

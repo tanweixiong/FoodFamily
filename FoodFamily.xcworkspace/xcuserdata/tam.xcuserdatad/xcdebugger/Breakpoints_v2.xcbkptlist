@@ -67,5 +67,85 @@
             landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FoodFamily/Main(&#x4e3b;&#x8981;)/Home(&#x4e3b;&#x9875;)/View/FoodOrderDetailsView/FoodOrderDetailsCell.swift"
+            timestampString = "533799420.449733"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
+            landmarkName = "packageModel"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FoodFamily/Main(&#x4e3b;&#x8981;)/Home(&#x4e3b;&#x9875;)/ViewModel/FoodOrderDetailsVM.swift"
+            timestampString = "533799311.156238"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "loadSuccessfullyReturnedData(requestType:URLString:type:parameters:showIndicator:finishedCallback:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FoodFamily/Main(&#x4e3b;&#x8981;)/Home(&#x4e3b;&#x9875;)/ViewModel/FoodOrderDetailsVM.swift"
+            timestampString = "533799313.147131"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "loadSuccessfullyReturnedData(requestType:URLString:type:parameters:showIndicator:finishedCallback:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Dictionary&lt;Swift.String, Swift.AnyObject&gt;) -&gt; () in FoodFamily.FoodOrderDetailsVM.loadSuccessfullyReturnedData(requestType: Alamofire.HTTPMethod, URLString: Swift.String, type: FoodFamily.FoodOrderDetailsVMType, parameters: Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Any&gt;&gt;, showIndicator: Swift.Bool, finishedCallback: () -&gt; ()) -&gt; ()"
+                  moduleName = "FoodFamily"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tam/Desktop/%E5%BF%A0%E9%A3%9F%E5%AE%B6/FoodFamily/Main(%E4%B8%BB%E8%A6%81)/Home(%E4%B8%BB%E9%A1%B5)/ViewModel/FoodOrderDetailsVM.swift"
+                  timestampString = "533799420.70002"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "1512">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Dictionary&lt;Swift.String, Swift.AnyObject&gt;) -&gt; () in FoodFamily.FoodOrderDetailsVM.loadSuccessfullyReturnedData(requestType: Alamofire.HTTPMethod, URLString: Swift.String, type: FoodFamily.FoodOrderDetailsVMType, parameters: Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Any&gt;&gt;, showIndicator: Swift.Bool, finishedCallback: () -&gt; ()) -&gt; ()"
+                  moduleName = "FoodFamily"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tam/Desktop/%E5%BF%A0%E9%A3%9F%E5%AE%B6/FoodFamily/Main(%E4%B8%BB%E8%A6%81)/Home(%E4%B8%BB%E9%A1%B5)/ViewModel/FoodOrderDetailsVM.swift"
+                  timestampString = "533799420.701797"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "2336">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

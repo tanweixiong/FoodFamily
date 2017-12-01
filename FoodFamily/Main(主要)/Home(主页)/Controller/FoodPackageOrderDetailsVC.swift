@@ -39,6 +39,9 @@ class FoodPackageOrderDetailsVC: UIViewController,UITableViewDelegate,UITableVie
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
+        if viewModel.packageModel.storeId == nil {
+            return 0
+        }
         return  5
     }
     
