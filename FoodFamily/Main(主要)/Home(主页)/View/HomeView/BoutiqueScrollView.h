@@ -14,5 +14,6 @@
 
 @interface BoutiqueScrollView : UIView
 //- (instancetype)initWithFrame:(CGRect)frame;
+@property(nonatomic,assign) id<BoutiqueScrollDelegate> delegate;
 - (instancetype)initWithFrame:(CGRect)frame dataArray:(NSArray *)dataArray;
 @end

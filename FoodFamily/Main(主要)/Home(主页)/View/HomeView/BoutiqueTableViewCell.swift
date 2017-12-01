@@ -9,7 +9,7 @@
 import UIKit
 import SDWebImage
 
-class BoutiqueTableViewCell: UITableViewCell,UIScrollViewDelegate {
+class BoutiqueTableViewCell: UITableViewCell,UIScrollViewDelegate,BoutiqueScrollDelegate {
    var boutiqueTableCallBack:((UIButton)->())?;
     @IBOutlet weak var advertisingVw: UIView!
     @IBOutlet weak var classificationScrollVw: UIScrollView!
@@ -40,8 +40,13 @@ class BoutiqueTableViewCell: UITableViewCell,UIScrollViewDelegate {
             imageData.add(model.bannerImg!)
         }
         let view = BoutiqueScrollView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: self.advertisingVw.frame.size.height), dataArray: imageData as! [Any])
+        view?.delegate = self
         return view!
     }()
+    
+    func boutiqueScrollChoose(_ index: Int) {
+        print(index)
+    }
     
     lazy var classification: UIView = {
        let classificationVw = UIView()

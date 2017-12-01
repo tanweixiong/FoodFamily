@@ -92,7 +92,9 @@
 }
 
 - (void)pagerView:(TYCyclePagerView *)pageView didSelectedItemCell:(__kindof UICollectionViewCell *)cell atIndex:(NSInteger)index{
-    
+    if ([self.delegate respondsToSelector:@selector(boutiqueScrollChoose:)]) {
+        [self.delegate boutiqueScrollChoose:index];
+    }
 }
 
 -(NSArray *)datas{
