@@ -11,7 +11,7 @@ import UIKit
 class RecommendedReasonCell: UITableViewCell {
     var recommendDataModel : RecommendDataModel = RecommendDataModel()!{
         didSet{
-            if recommendDataModel.message != nil {
+            if recommendDataModel.msgInfo != nil {
                self.setData(self.recommendDataModel)
             }
         }
@@ -43,7 +43,7 @@ class RecommendedReasonCell: UITableViewCell {
         contentView.addSubview(featuresLabel)
         contentView.addSubview(seefeaturesDetail)
         
-        conventionContentLabel.attributedText = (model.message)!.html2AttributedString
+        conventionContentLabel.attributedText = (model.msgInfo)!.html2AttributedString
         //推荐菜
         let conventionSize:CGSize = conventionLabel.getStringSize(text: conventionLabel.text!, size: CGSize(width:SCREEN_WIDTH,height:RecommendedReasonUX.titleLabelHeight), font: 16)
         conventionLabel.frame = CGRect(x: SCREEN_WIDTH/2 - conventionSize.width/2, y: 18, width: conventionSize.width, height: RecommendedReasonUX.titleLabelHeight)

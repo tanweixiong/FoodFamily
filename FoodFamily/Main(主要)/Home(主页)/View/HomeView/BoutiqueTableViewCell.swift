@@ -10,7 +10,7 @@ import UIKit
 import SDWebImage
 
 class BoutiqueTableViewCell: UITableViewCell,UIScrollViewDelegate {
-
+   var boutiqueTableCallBack:((UIButton)->())?;
     @IBOutlet weak var advertisingVw: UIView!
     @IBOutlet weak var classificationScrollVw: UIScrollView!
     
@@ -70,6 +70,8 @@ class BoutiqueTableViewCell: UITableViewCell,UIScrollViewDelegate {
             
             let btn = UIButton()
             btn.frame = CGRect(x: imageView.frame.origin.x, y: imageView.frame.origin.y, width: imageView.frame.size.width, height: label.frame.maxY - imageView.frame.origin.y)
+            btn.addTarget(self, action: #selector(onClick(_:)), for: .touchUpInside)
+            btn.tag = index
             classificationVw.addSubview(btn)
             
             classificationVw.addSubview(label)
@@ -79,6 +81,12 @@ class BoutiqueTableViewCell: UITableViewCell,UIScrollViewDelegate {
         classificationVw.frame = CGRect(x: 0, y: 0, width: classificationWidth + classfImgWidth, height: classificationScrollVw.frame.size.height)
         return classificationVw
     }()
+    
+    @objc func onClick(_ sender:UIButton){
+        if boutiqueTableCallBack != nil {
+            self.boutiqueTableCallBack!(sender)
+        }
+    }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

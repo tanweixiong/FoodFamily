@@ -117,7 +117,7 @@ class RecommendDataModel: Mappable {
     var detailedAddress: String?
     var isCollection: NSNumber?
     var logo: String?
-    var message: String?
+    var msgInfo: String?
     var perPay: AnyObject?
     var storeName: String?
     var storeType: String?
@@ -141,7 +141,7 @@ class RecommendDataModel: Mappable {
         detailedAddress        <- map["detailedAddress"]
         isCollection           <- map["isCollection"]
         logo                   <- map["logo"]
-        message                <- map["message"]
+        msgInfo                <- map["msgInfo"]
         perPay                 <- map["perPay"]
         storeName              <- map["storeName"]
         storeType              <- map["storeType"]
