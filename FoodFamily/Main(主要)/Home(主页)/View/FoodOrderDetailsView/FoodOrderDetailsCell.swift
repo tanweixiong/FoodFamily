@@ -40,8 +40,8 @@ class FoodOrderDetailsCell: UITableViewCell {
     var voucherModel : FoodOrderVoucherListModel = FoodOrderVoucherListModel()!{
         didSet{
            headingContentArray = ["卷码","订单号码","订单时间","支付方式"]
-            let vouNum = voucherModel.vouNum?.stringValue
-            let orderNo = voucherModel.orderNo?.stringValue
+            let vouNum = voucherModel.vouNum!
+            let orderNo = voucherModel.orderNo!
             let createTime = voucherModel.createTime
             var payType = ""
             if voucherModel.payType == 1 {
@@ -51,7 +51,7 @@ class FoodOrderDetailsCell: UITableViewCell {
             }else if voucherModel.payType == 3 {
                 payType = "支付宝支付"
             }
-            headingContentDataArray = [vouNum!,orderNo!,createTime!,payType]
+            headingContentDataArray = [vouNum,orderNo,createTime!,payType]
         }
     }
     //套餐

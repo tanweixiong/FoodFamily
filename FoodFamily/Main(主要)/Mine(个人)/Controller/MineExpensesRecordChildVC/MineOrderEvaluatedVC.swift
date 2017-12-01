@@ -24,13 +24,13 @@ class MineOrderEvaluatedVC: UIViewController,UITableViewDataSource,UITableViewDe
     
     func getData(){
         let parameters = ["type":"1"]
-        viewModel.loadSuccessfullyReturnedData(requestType: .get, URLString: ConstAPI.kAPIOrderGetOrderList, parameters: parameters, showIndicator: true) {
+        viewModel.loadUnpaidSuccessfullyReturnedData(requestType: .get, URLString: ConstAPI.kAPIOrderGetOrderList, parameters: parameters, showIndicator: false) {
             self.tableView.reloadData()
         }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return self.viewModel.orderModel.count
+        return  self.viewModel.unpaidModel.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -44,7 +44,17 @@ class MineOrderEvaluatedVC: UIViewController,UITableViewDataSource,UITableViewDe
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: mineOrderEvaluatedCell, for: indexPath) as! MineExpensesRecordCell
         cell.selectionStyle = .none
-        cell.orderModel = self.viewModel.orderModel[indexPath.section]
+        cell.orderModel = self.viewModel.unpaidModel[indexPath.section]
+        let model = self.viewModel.unpaidModel[indexPath.section]
+        var type = ""
+        if model.type == 1 {
+            type = "套餐"
+        }else if model.type == 2 {
+            type = "代金券"
+        }else if model.type == 3 {
+            type = "预约"
+        }
+        cell.typeLabel.text = type + " "
         return cell
     }
     
@@ -56,6 +66,37 @@ class MineOrderEvaluatedVC: UIViewController,UITableViewDataSource,UITableViewDe
         let view = UIView.init(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: MineOrderEvaluatedUX.sectionHeight))
         view.backgroundColor = R_UISectionLineColor
         return view
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let sectionHeaderHeight:CGFloat = 20
+        if scrollView == self.tableView {
+            if scrollView.contentOffset.y <= sectionHeaderHeight&&scrollView.contentOffset.y >= 20 {
+                scrollView.contentInset = UIEdgeInsetsMake(-scrollView.contentOffset.y, 0, 0, 0);
+            }else if scrollView.contentOffset.y >= sectionHeaderHeight {
+                scrollView.contentInset = UIEdgeInsetsMake(-sectionHeaderHeight, 0, 0, 0);
+            }
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let model = self.viewModel.unpaidModel[indexPath.section]
+        //套餐类型
+        if model.type == 1 {
+            let foodPackageOrderDetailsVC = FoodPackageOrderDetailsVC()
+            foodPackageOrderDetailsVC.orderNo = model.orderNo!
+            self.navigationController?.pushViewController(foodPackageOrderDetailsVC, animated: true)
+            //代金券类型
+        }else if model.type == 2 {
+            let foodVoucherOrderDetailsVC = FoodVoucherOrderDetailsVC()
+            foodVoucherOrderDetailsVC.orderNo = model.orderNo!
+            self.navigationController?.pushViewController(foodVoucherOrderDetailsVC, animated: true)
+            //预约类型
+        }else if model.type == 3 {
+            let foodCanteenOrderDetailsVC = FoodCanteenOrderDetailsVC()
+            foodCanteenOrderDetailsVC.orderNo = model.orderNo!
+            self.navigationController?.pushViewController(foodCanteenOrderDetailsVC, animated: true)
+        }
     }
     
     lazy var tableView: UITableView = {

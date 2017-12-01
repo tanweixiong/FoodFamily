@@ -33,12 +33,15 @@ class FoodVoucherOrderDetailsVC: UIViewController,UITableViewDelegate,UITableVie
     
     func getData(){
         let parameters = ["orderNo":self.orderNo]
-        viewModel.loadSuccessfullyReturnedData(requestType:.post, URLString: ConstAPI.kAPIOrderGetOrderInfo, type:.voucherModel, parameters: parameters, showIndicator: false) {
+        viewModel.loadSuccessfullyReturnedData(requestType:.get, URLString: ConstAPI.kAPIOrderGetOrderInfo, type:.voucherModel, parameters: parameters, showIndicator: false) {
             self.tableView.reloadData()
         }
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
+        if self.viewModel.voucherModel.storeId == nil {
+            return 0
+        }
         return  5
     }
     

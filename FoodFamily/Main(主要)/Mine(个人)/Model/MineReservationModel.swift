@@ -30,11 +30,26 @@ class MineReservationDataModel: Mappable {
     }
 }
 
+class MineReservationListModel: Mappable {
+    var list: [MineReservationDataModel]?
+    
+    required init?(map: Map) {
+        
+    }
+    
+    required init?() {
+        
+    }
+    
+    func mapping(map: Map) {
+        list                <- map["list"]
+    }
+}
 
 class MineReservationModel: Mappable {
     var code: NSNumber?
     var message: String?
-    var data: [MineReservationDataModel]?
+    var data: MineReservationListModel?
     
     required init?(map: Map) {
         

@@ -12,8 +12,8 @@ import SVProgressHUD
 
 class MineOrderVM: NSObject {
     //一般请求的方法 不带模型数组
-    lazy var orderModel : [MineOrderDataModel] = [MineOrderDataModel]()
-    func loadSuccessfullyReturnedData(requestType: HTTPMethod, URLString : String, parameters : [String : Any]? = nil, showIndicator: Bool,finishedCallback : @escaping () -> ()) {
+    lazy var allOrderModel : [MineOrderDataModel] = [MineOrderDataModel]()
+    func loadAllOrderSuccessfullyReturnedData(requestType: HTTPMethod, URLString : String, parameters : [String : Any]? = nil, showIndicator: Bool,finishedCallback : @escaping () -> ()) {
         NetWorkTool.request(requestType: requestType, URLString:URLString, parameters: parameters, showIndicator: true, success: { (json) in
             print(json)
             let responseData = Mapper<MineOrderModel>().map(JSONObject: json)
@@ -25,10 +25,52 @@ class MineOrderVM: NSObject {
                 if showIndicator {
                     SVProgressHUD.showSuccess(withStatus: responseData?.message)
                 }
-                self.orderModel = (responseData?.data?.list)!
+                self.allOrderModel = (responseData?.data?.list)!
                 finishedCallback()
             }
         }) { (error) in
         }
     }
+    
+    lazy var unpaidModel : [MineOrderDataModel] = [MineOrderDataModel]()
+    func loadUnpaidSuccessfullyReturnedData(requestType: HTTPMethod, URLString : String, parameters : [String : Any]? = nil, showIndicator: Bool,finishedCallback : @escaping () -> ()) {
+        NetWorkTool.request(requestType: requestType, URLString:URLString, parameters: parameters, showIndicator: true, success: { (json) in
+            print(json)
+            let responseData = Mapper<MineOrderModel>().map(JSONObject: json)
+            if let code = responseData?.code {
+                guard  100 == code else {
+                    SVProgressHUD.showInfo(withStatus: responseData?.message)
+                    return
+                }
+                if showIndicator {
+                    SVProgressHUD.showSuccess(withStatus: responseData?.message)
+                }
+                self.unpaidModel = (responseData?.data?.list)!
+                finishedCallback()
+            }
+        }) { (error) in
+        }
+    }
+    
+    lazy var finishPayModel : [MineOrderDataModel] = [MineOrderDataModel]()
+    func loadFinishPaySuccessfullyReturnedData(requestType: HTTPMethod, URLString : String, parameters : [String : Any]? = nil, showIndicator: Bool,finishedCallback : @escaping () -> ()) {
+        NetWorkTool.request(requestType: requestType, URLString:URLString, parameters: parameters, showIndicator: true, success: { (json) in
+            print(json)
+            let responseData = Mapper<MineOrderModel>().map(JSONObject: json)
+            if let code = responseData?.code {
+                guard  100 == code else {
+                    SVProgressHUD.showInfo(withStatus: responseData?.message)
+                    return
+                }
+                if showIndicator {
+                    SVProgressHUD.showSuccess(withStatus: responseData?.message)
+                }
+                self.finishPayModel = (responseData?.data?.list)!
+                finishedCallback()
+            }
+        }) { (error) in
+        }
+    }
+    
+    
 }

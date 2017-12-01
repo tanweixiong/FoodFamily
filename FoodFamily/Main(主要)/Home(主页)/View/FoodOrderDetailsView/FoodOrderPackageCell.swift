@@ -13,7 +13,7 @@ class FoodOrderPackageCell: UITableViewCell {
     var headingContentDataArray = NSArray()
     struct FoodOrderPackageUX {
         static let backgroundHeight:CGFloat = 38.5
-        static let space:CGFloat = 40
+        static let space:CGFloat = 15
     }
     
     override func awakeFromNib() {
@@ -35,7 +35,6 @@ class FoodOrderPackageCell: UITableViewCell {
     //代金券
     var voucherModel : FoodOrderVoucherListModel = FoodOrderVoucherListModel()!{
         didSet{
-            let content = voucherModel.content
             let voucherPrice = "¥" + (voucherModel.voucherPrice?.stringValue)!
             let orderMsg = voucherModel.orderMsg
             headingContentArray = ["套餐内容",orderMsg!,"使用范围："]
@@ -50,11 +49,13 @@ class FoodOrderPackageCell: UITableViewCell {
     func setData(type:FoodOrderDetailsVMType){
         self.contentView.addSubview(listView)
         if type == .voucherModel {
+            conventionContentLabel.text = self.voucherModel.content
+    
             self.contentView.addSubview(conventionContentLabel)
             let size:CGSize = OCTools.calculateMeaasgeHeight(withText: conventionContentLabel.text, andWidth: SCREEN_WIDTH - 60, andFont: UIFont.systemFont(ofSize: 14))
             conventionContentLabel.snp.makeConstraints { (make) in
                 make.left.equalTo(self.contentView.snp.left).offset(15)
-                make.top.equalTo(listView.snp.top).offset(15)
+                make.top.equalTo(listView.snp.bottom).offset(0)
                 make.width.greaterThanOrEqualTo(size.width)
                 make.height.greaterThanOrEqualTo(size.height)
             }
@@ -90,7 +91,7 @@ class FoodOrderPackageCell: UITableViewCell {
             
             //内容
             let contentLab = UILabel()
-            contentLab.text = "¥1000000000000000000000"
+            contentLab.text = headingContentDataArray[item] as? String
             contentLab.font = UIFont.systemFont(ofSize: 16)
             let x =  headingLab.frame.maxX + 5
             contentLab.frame = CGRect(x: x, y: 0, width:SCREEN_WIDTH - x - 15, height:backgroundVw.frame.size.height)

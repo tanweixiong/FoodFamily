@@ -25,10 +25,10 @@ class MineReservationVM: NSObject {
                     SVProgressHUD.showSuccess(withStatus: responseData?.message)
                 }
   
-                if responseData?.data?.count != 0 {
+                if responseData?.data?.list?.count != 0 {
                     let array = NSMutableArray()
                     array.addObjects(from: self.model)
-                    array.addObjects(from: (responseData?.data)!)
+                    array.addObjects(from: (responseData?.data?.list)!)
                     self.model = array as! [MineReservationDataModel]
                     finishedCallback(true)
                 }else{
@@ -53,10 +53,10 @@ class MineReservationVM: NSObject {
                     SVProgressHUD.showSuccess(withStatus: responseData?.message)
                 }
 
-                if responseData?.data?.count != 0 {
+                if responseData?.data?.list?.count != 0 {
                     let array = NSMutableArray()
                     array.addObjects(from: self.expiredModel)
-                    array.addObjects(from: (responseData?.data)!)
+                    array.addObjects(from: (responseData?.data?.list)!)
                     self.expiredModel = array as! [MineReservationDataModel]
                     finishedCallback(true)
                 }else{

@@ -55,31 +55,29 @@ class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewData
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.closeKeyboard()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
         if foodPaymentMethod == .reservationPaymentStatus {
             self.title = "预约"
         }else{
             self.title = "支付"
         }
-    
         if foodPaymentMethod == .voucherPaymentStatus || foodPaymentMethod == .mealPaymentStatus || foodPaymentMethod == .reservationPaymentStatus {
             self.dataScorce = [[""],["钱包支付"],["积分券  "]]
             self.imageArray = [[""],["ic_home_card"],["ic_home_wodejifen"]]
         }
-        
         //如果代金券和套餐则加载积分
         if foodPaymentMethod == .voucherPaymentStatus || foodPaymentMethod == .mealPaymentStatus {
             self.getConsumptionIntegral()
-        //如果立即支付和预约支付则使用钱包
+            //如果立即支付和预约支付则使用钱包
         }else{
             self.getWallet()
         }
-        
         self.indexPath = NSIndexPath(row: 0, section: 2) as IndexPath
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.closeKeyboard()
+
         view.addSubview(tableView)
         tableView.addSubview(confirmBtn)
     }
@@ -256,7 +254,6 @@ class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewData
         payViewModel.loadReservationPaySuccessfullyReturnedData(requestType: .post, URLString: ConstAPI.kAPIOrderAddAppointmentOrderInfo, parameters: parameters, showIndicator: false) {
             SVProgressHUD.showSuccess(withStatus: "支付成功")
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5, execute: {
-                SVProgressHUD.dismiss()
                 let foodPurchaseSuccessVC = FoodPurchaseSuccessVC()
                 foodPurchaseSuccessVC.ecPrice = reserPrice
                 foodPurchaseSuccessVC.paymentMethod = .reservationPaymentStatus
@@ -274,10 +271,9 @@ class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewData
         let point = cell.chooseBtn.isSelected ? (integralViewModel.model.totalPrice?.stringValue)! : "0"
         let parameters = ["mealId":mealId,"storeId":storeId,"point":point,"spassword":spassword]
         SVProgressHUD.show(withStatus: "请稍等")
-        payViewModel.loadMealPaySuccessfullyReturnedData(requestType: .get, URLString: ConstAPI.kAPIOrderAddMealOrderInfo, parameters: parameters, showIndicator: false) {
+        payViewModel.loadMealPaySuccessfullyReturnedData(requestType: .post, URLString: ConstAPI.kAPIOrderAddMealOrderInfo, parameters: parameters, showIndicator: false) {
             SVProgressHUD.showSuccess(withStatus: "支付成功")
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5, execute: {
-                SVProgressHUD.dismiss()
                 let foodPurchaseSuccessVC = FoodPurchaseSuccessVC()
                 foodPurchaseSuccessVC.ecPrice = self.ecPrice
                 foodPurchaseSuccessVC.paymentMethod = .mealPaymentStatus
@@ -298,7 +294,6 @@ class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewData
         payViewModel.loadMealPaySuccessfullyReturnedData(requestType: .post, URLString: ConstAPI.kAPIOrderAddVouOrderInfo, parameters: parameters, showIndicator: false) {
             SVProgressHUD.showSuccess(withStatus: "支付成功")
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5, execute: {
-                SVProgressHUD.dismiss()
                 let foodPurchaseSuccessVC = FoodPurchaseSuccessVC()
                 foodPurchaseSuccessVC.ecPrice = self.ecPrice
                 foodPurchaseSuccessVC.paymentMethod = .voucherPaymentStatus
@@ -317,7 +312,6 @@ class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewData
         payViewModel.loadMealPaySuccessfullyReturnedData(requestType: .post, URLString: ConstAPI.kAPIOrderAddCashOrderInfo, parameters: parameters, showIndicator: false) {
             SVProgressHUD.showSuccess(withStatus: "支付成功")
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5, execute: {
-                SVProgressHUD.dismiss()
                 let foodPurchaseSuccessVC = FoodPurchaseSuccessVC()
                 foodPurchaseSuccessVC.ecPrice = self.ecPrice
                 foodPurchaseSuccessVC.paymentMethod = .immediatelyPaymentStatus

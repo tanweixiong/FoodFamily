@@ -40,10 +40,9 @@ struct ConstAPI {
     static let kAPIOrderAddVouOrderInfo = kAPIBaseURL + "order/addVouOrderInfo" //代金券支付
     static let kAPIOrderAddCashOrderInfo = kAPIBaseURL + "order/addCashOrderInfo" //现金支付
     static let kAPIUserWalletGetIntegralByUserId = kAPIBaseURL + "userWallet/getIntegralByUserId" //获取积分接口
-    static let kAPIReservationList = kAPIBaseURL + "ordre/getUserReserve" //我的预约列表
+    static let kAPIReservationList = kAPIBaseURL + "order/getUserReserve" //我的预约列表
     static let kAPIOrdreGetUserReserveInfo = kAPIBaseURL + "ordre/getUserReserveInfo" //我的预约详情
     static let kAPIAssessAddAssessList = kAPIBaseURL + "assess/addAssessList" //评论功能
-    
     
 }
 

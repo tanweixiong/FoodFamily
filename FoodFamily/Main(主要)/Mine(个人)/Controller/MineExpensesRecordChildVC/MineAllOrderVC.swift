@@ -25,13 +25,13 @@ class MineAllOrderVC: UIViewController,UITableViewDataSource,UITableViewDelegate
     
     func getData(){
         let parameters = ["type":"0"]
-        viewModel.loadSuccessfullyReturnedData(requestType: .get, URLString: ConstAPI.kAPIOrderGetOrderList, parameters: parameters, showIndicator: false) {
+        viewModel.loadAllOrderSuccessfullyReturnedData(requestType: .get, URLString: ConstAPI.kAPIOrderGetOrderList, parameters: parameters, showIndicator: false) {
              self.tableView.reloadData()
         }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return  self.viewModel.orderModel.count
+        return  self.viewModel.allOrderModel.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -45,8 +45,8 @@ class MineAllOrderVC: UIViewController,UITableViewDataSource,UITableViewDelegate
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: mineAllOrderCell, for: indexPath) as! MineExpensesRecordCell
         cell.selectionStyle = .none
-        cell.orderModel = self.viewModel.orderModel[indexPath.section]
-        let model = self.viewModel.orderModel[indexPath.section]
+        cell.orderModel = self.viewModel.allOrderModel[indexPath.section]
+        let model = self.viewModel.allOrderModel[indexPath.section]
         var type = ""
         if model.type == 1 {
             type = "套餐"
@@ -69,8 +69,19 @@ class MineAllOrderVC: UIViewController,UITableViewDataSource,UITableViewDelegate
         return view
     }
     
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let sectionHeaderHeight:CGFloat = 20
+        if scrollView == self.tableView {
+            if scrollView.contentOffset.y <= sectionHeaderHeight&&scrollView.contentOffset.y >= 20 {
+                scrollView.contentInset = UIEdgeInsetsMake(-scrollView.contentOffset.y, 0, 0, 0);
+            }else if scrollView.contentOffset.y >= sectionHeaderHeight {
+                scrollView.contentInset = UIEdgeInsetsMake(-sectionHeaderHeight, 0, 0, 0);
+            }
+        }
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-         let model = self.viewModel.orderModel[indexPath.section]
+         let model = self.viewModel.allOrderModel[indexPath.section]
         //套餐类型
         if model.type == 1 {
             let foodPackageOrderDetailsVC = FoodPackageOrderDetailsVC()
