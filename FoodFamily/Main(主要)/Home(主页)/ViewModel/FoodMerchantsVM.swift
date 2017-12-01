@@ -15,7 +15,6 @@ class FoodMerchantsVM: NSObject {
     lazy var merchantsModel : [FoodMerchantsDataModel] = [FoodMerchantsDataModel]()
     func loadSuccessfullyReturnedData(requestType: HTTPMethod, URLString : String, parameters : [String : Any]? = nil, showIndicator: Bool,finishedCallback : @escaping () -> ()) {
         NetWorkTool.request(requestType: requestType, URLString:URLString, parameters: parameters, showIndicator: true, success: { (json) in
-            print(json)
             let responseData = Mapper<FoodMerchantsModel>().map(JSONObject: json)
             if let code = responseData?.code {
                 guard  100 == code else {
@@ -31,4 +30,33 @@ class FoodMerchantsVM: NSObject {
         }) { (error) in
         }
     }
+    
+    //获取分类
+    lazy var classificationModel : [FoodSearchDataModel] = [FoodSearchDataModel]()
+    func loadClassificationSuccessfullyReturnedData(requestType: HTTPMethod, URLString : String, parameters : [String : Any]? = nil, showIndicator: Bool,finishedCallback : @escaping (_ hasData:Bool) -> ()) {
+        NetWorkTool.request(requestType: requestType, URLString:URLString, parameters: parameters, showIndicator: true, success: { (json) in
+            print(json)
+            let responseData = Mapper<FoodSearchModel>().map(JSONObject: json)
+            if let code = responseData?.code {
+                guard  100 == code else {
+                    SVProgressHUD.showInfo(withStatus: responseData?.message)
+                    return
+                }
+                if showIndicator {
+                    SVProgressHUD.showSuccess(withStatus: responseData?.message)
+                }
+                if responseData?.data?.list?.count != 0 {
+                    let array = NSMutableArray()
+                    array.addObjects(from: self.classificationModel)
+                    array.addObjects(from: (responseData?.data?.list)!)
+                    self.classificationModel = array as! [FoodSearchDataModel]
+                    finishedCallback(true)
+                }else{
+                    finishedCallback(false)
+                }
+            }
+        }) { (error) in
+        }
+    }
+    
 }

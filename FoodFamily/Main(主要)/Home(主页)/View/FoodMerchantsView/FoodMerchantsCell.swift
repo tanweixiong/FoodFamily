@@ -20,6 +20,17 @@ class FoodMerchantsCell: UITableViewCell {
         }
     }
     
+    var classificationModel : FoodSearchDataModel = FoodSearchDataModel()!{
+        didSet{
+          iconImageView.sd_setImage(with: NSURL(string: (classificationModel.logo)!)! as URL, placeholderImage: UIImage.init(named: "ic_all_smallImageDefault"))
+          iconImageView.contentMode = .scaleAspectFit
+        
+          headingLabel.text = classificationModel.storeName
+          perCapitaLabel.text = "人均：" + (classificationModel.perPay?.stringValue)!
+          addressLabel.text = classificationModel.address!
+        }
+    }
+    
     @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var headingLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
