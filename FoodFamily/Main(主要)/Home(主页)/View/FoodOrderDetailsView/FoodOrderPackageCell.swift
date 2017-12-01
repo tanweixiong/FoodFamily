@@ -11,6 +11,8 @@ import UIKit
 class FoodOrderPackageCell: UITableViewCell {
     var headingContentArray = NSArray()
     var headingContentDataArray = NSArray()
+    var type = FoodOrderDetailsVMType.canteenModel
+    
     struct FoodOrderPackageUX {
         static let backgroundHeight:CGFloat = 38.5
         static let space:CGFloat = 15
@@ -26,7 +28,7 @@ class FoodOrderPackageCell: UITableViewCell {
         didSet{
             headingContentArray = ["消费金额","积分抵扣","实际付费"]
             let totalPrice = canteenModel.totalPrice?.stringValue
-            let integral = "-" + (canteenModel.integral?.stringValue)!
+            let integral = "-" + (canteenModel.integral!)
             let paymentAmount = canteenModel.paymentAmount?.stringValue
             headingContentDataArray = [totalPrice!,integral,paymentAmount!]
         }
@@ -47,10 +49,11 @@ class FoodOrderPackageCell: UITableViewCell {
     }
 
     func setData(type:FoodOrderDetailsVMType){
+        self.type = type
         self.contentView.addSubview(listView)
+        
         if type == .voucherModel {
             conventionContentLabel.text = self.voucherModel.content
-    
             self.contentView.addSubview(conventionContentLabel)
             let size:CGSize = OCTools.calculateMeaasgeHeight(withText: conventionContentLabel.text, andWidth: SCREEN_WIDTH - 60, andFont: UIFont.systemFont(ofSize: 14))
             conventionContentLabel.snp.makeConstraints { (make) in
@@ -82,7 +85,7 @@ class FoodOrderPackageCell: UITableViewCell {
             let size:CGSize = headingLab.getStringSize(text: heading!, size: CGSize(width:SCREEN_WIDTH - 30,height:backgroundVw.frame.size.height), font: 14)
             headingLab.frame = CGRect(x: 15, y: 0, width: size.width, height: backgroundVw.frame.size.height)
         
-            if item == 1 {
+            if item == 1  && self.type == .voucherModel{
                 //字体变色
                 let priceString = NSMutableAttributedString.init(string: heading!)
                 priceString.addAttribute(NSAttributedStringKey.foregroundColor, value: UIColor.R_UIRGBColor(red: 155, green: 155, blue: 155, alpha: 1),range: NSMakeRange(3, 4))

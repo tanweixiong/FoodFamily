@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class FoodVoucherOrderDetailsVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     fileprivate lazy var viewModel : FoodOrderDetailsVM = FoodOrderDetailsVM()
@@ -33,7 +34,9 @@ class FoodVoucherOrderDetailsVC: UIViewController,UITableViewDelegate,UITableVie
     
     func getData(){
         let parameters = ["orderNo":self.orderNo]
+        SVProgressHUD.show(withStatus: "请稍等")
         viewModel.loadSuccessfullyReturnedData(requestType:.get, URLString: ConstAPI.kAPIOrderGetOrderInfo, type:.voucherModel, parameters: parameters, showIndicator: false) {
+            SVProgressHUD.dismiss()
             self.tableView.reloadData()
         }
     }

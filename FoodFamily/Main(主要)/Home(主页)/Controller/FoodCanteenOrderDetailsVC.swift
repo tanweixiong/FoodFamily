@@ -7,6 +7,7 @@
 //  套餐类型
 
 import UIKit
+import SVProgressHUD
 
 class FoodCanteenOrderDetailsVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     fileprivate lazy var viewModel : FoodOrderDetailsVM = FoodOrderDetailsVM()
@@ -34,7 +35,9 @@ class FoodCanteenOrderDetailsVC: UIViewController,UITableViewDelegate,UITableVie
     
     func getData(){
         let parameters = ["orderNo":self.orderNo]
+        SVProgressHUD.show(withStatus: "请稍等")
         viewModel.loadSuccessfullyReturnedData(requestType:.get, URLString: ConstAPI.kAPIOrderGetOrderInfo, type: .canteenModel, parameters: parameters, showIndicator: false) {
+            SVProgressHUD.dismiss()
             self.tableView.reloadData()
         }
     }
@@ -58,7 +61,7 @@ class FoodCanteenOrderDetailsVC: UIViewController,UITableViewDelegate,UITableVie
         }else if indexPath.section == 2 {
             return FoodNormalOrderDetailsUX.naviHeight
         }else if indexPath.section == 3 {
-            return FoodNormalOrderDetailsUX.naviHeight
+            return  UserDefaults.standard.object(forKey: "height") != nil ? UserDefaults.standard.object(forKey: "height") as! CGFloat : 0
         }else {
             return  UserDefaults.standard.object(forKey: "height") != nil ? UserDefaults.standard.object(forKey: "height") as! CGFloat : 0
         }

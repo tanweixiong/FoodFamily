@@ -23,7 +23,7 @@ class FoodOrderDetailsCell: UITableViewCell {
     var canteenModel : FoodOrderCanteenListModel = FoodOrderCanteenListModel()!{
         didSet{
             headingContentArray = ["订单号码","订单时间","支付方式"]
-            let orderNo = canteenModel.orderNo?.stringValue
+            let orderNo = canteenModel.orderNo
             let createTime = canteenModel.createTime
             var payType = ""
             if canteenModel.payType == 1 {
