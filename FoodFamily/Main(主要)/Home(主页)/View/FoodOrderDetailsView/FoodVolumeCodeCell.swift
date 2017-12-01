@@ -23,7 +23,7 @@ class FoodVolumeCodeCell: UITableViewCell {
     //套餐
     var packageModel : FoodOrderPackageListModel = FoodOrderPackageListModel()!{
         didSet{
-            self.headingContentLabel.text = packageModel.vouNum! as? String
+            self.headingContentLabel.text = ""
         }
     }
     

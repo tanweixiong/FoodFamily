@@ -13,6 +13,7 @@ class FoodOrderDetailsHeadCell: UITableViewCell {
     var canteenModel : FoodOrderCanteenListModel = FoodOrderCanteenListModel()!{
         didSet{
            self.nameLabel.text = canteenModel.name
+           self.storeLogoImageView.sd_setImage(with: NSURL(string: (canteenModel.storeLogo)!)! as URL, placeholderImage: UIImage.init(named: "ic_all_imageDefault"))
         }
     }
     //代金券
@@ -21,6 +22,7 @@ class FoodOrderDetailsHeadCell: UITableViewCell {
             self.nameLabel.text = voucherModel.name
             self.totalPriceLabel.text = voucherModel.totalPrice?.stringValue
             self.contentLabel.text = voucherModel.remark
+            self.storeLogoImageView.sd_setImage(with: NSURL(string: (voucherModel.storeLogo)!)! as URL, placeholderImage: UIImage.init(named: "ic_all_imageDefault"))
         }
     }
     //套餐
@@ -28,13 +30,15 @@ class FoodOrderDetailsHeadCell: UITableViewCell {
         didSet{
             self.nameLabel.text = packageModel.name
             self.totalPriceLabel.text = packageModel.totalPrice?.stringValue
-            self.contentLabel.text = packageModel.content
+            self.contentLabel.text = packageModel.remark
+            self.storeLogoImageView.sd_setImage(with: NSURL(string: (packageModel.storeLogo)!)! as URL, placeholderImage: UIImage.init(named: "ic_all_imageDefault"))
         }
     }
 
     @IBOutlet weak var contentLabel: UILabel!
     @IBOutlet weak var totalPriceLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var storeLogoImageView: UIImageView!
     
     
     override func awakeFromNib() {

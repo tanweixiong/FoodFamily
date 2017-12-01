@@ -58,7 +58,7 @@ class FoodOrderDetailsCell: UITableViewCell {
     var packageModel : FoodOrderPackageListModel = FoodOrderPackageListModel()!{
         didSet{
             headingContentArray = ["订单号码","订单时间","支付方式","积分折扣","消费总额"]
-            let orderNo = packageModel.orderNo?.stringValue
+            let orderNo = packageModel.orderNo!
             let createTime = packageModel.createTime
             var orderStatus = ""
             if packageModel.orderStatus == 1{
@@ -76,7 +76,7 @@ class FoodOrderDetailsCell: UITableViewCell {
             }
             let integral = packageModel.integral!
             let paymentAmount = packageModel.paymentAmount?.stringValue
-            headingContentDataArray = [orderNo!,createTime!,orderStatus,integral,paymentAmount!]
+            headingContentDataArray = [orderNo,createTime!,orderStatus,integral,paymentAmount!]
         }
     }
     

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class MineOrderUseVC: UIViewController,UITableViewDataSource,UITableViewDelegate {
     fileprivate let mineOrderUseCell = "MineOrderUseCell"
@@ -25,7 +26,9 @@ class MineOrderUseVC: UIViewController,UITableViewDataSource,UITableViewDelegate
     
     func getData(){
         let parameters = ["type":"2"]
+        SVProgressHUD.show(withStatus: "请稍等")
         viewModel.loadFinishPaySuccessfullyReturnedData(requestType: .get, URLString: ConstAPI.kAPIOrderGetOrderList, parameters: parameters, showIndicator: false) {
+            SVProgressHUD.dismiss()
             self.tableView.reloadData()
         }
     }

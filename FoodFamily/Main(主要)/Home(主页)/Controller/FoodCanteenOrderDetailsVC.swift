@@ -40,6 +40,9 @@ class FoodCanteenOrderDetailsVC: UIViewController,UITableViewDelegate,UITableVie
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
+        if viewModel.canteenModel.storeId == nil {
+            return 0
+        }
         return  5
     }
     

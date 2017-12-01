@@ -17,7 +17,7 @@ class FoodOrderPackageListModel: Mappable {
 
     var content: String?
     var address: String?
-    var orderNo: NSNumber?
+    var orderNo: String?
     var payType: NSNumber?
   
     var totalPrice: NSNumber?
@@ -26,8 +26,9 @@ class FoodOrderPackageListModel: Mappable {
     var mealId: NSNumber?
     var mealName: NSString?
     var vouId: NSNumber?
-    var vouNum: AnyObject?
+    var vouNum: String?
     var orderStatus: NSNumber? //1未支付 2已支付 5未评价 6已评价 7交易完成 8交易关闭
+    var remark: String?
     
     required init?(map: Map) {
         
@@ -56,6 +57,7 @@ class FoodOrderPackageListModel: Mappable {
         vouId          <- map["vouId"]
         vouNum         <- map["vouNum"]
         orderStatus    <- map["orderStatus"]
+        remark         <- map["remark"]
     }
 }
 
