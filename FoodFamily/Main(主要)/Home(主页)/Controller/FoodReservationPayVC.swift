@@ -247,7 +247,8 @@ class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewData
         let storeId = (self.detailsModel.storeId?.stringValue)!
         var reserPrice = ""
         let appointmentNum = self.payAppointmentNum
-        let appointmentTime = self.payAppointmentTime
+//        let appointmentTime = self.payAppointmentTime
+        let appointmentTime = self.stringToTimeStamp(stringTime: "2017年11月10日")
         let payPhone = self.payPhone
         let payCode = self.payCode
         if self.detailsModel.reserPrice != nil {
@@ -264,6 +265,16 @@ class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewData
                 self.navigationController?.pushViewController(foodPurchaseSuccessVC, animated: true)
             })
         }
+    }
+    
+    func stringToTimeStamp(stringTime:String)->String {
+        let dfmatter = DateFormatter()
+        dfmatter.dateFormat="yyyy年MM月dd日"
+        let date = dfmatter.date(from: stringTime)
+        let dateStamp:TimeInterval = date!.timeIntervalSince1970
+        let dateSt:Int = Int(dateStamp)
+        print(dateSt)
+        return String(dateSt)
     }
 
     //套餐支付
@@ -310,8 +321,8 @@ class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewData
     func immediatelyPaymentStatusPayment(){
         let storeId = (self.detailsModel.storeId?.stringValue)!
         let price = self.totalNumTextField.text!
-        let point = "0"
-        let parameters = ["storeId":storeId,"price":price,"point":point]
+        let spassword =  self.payPassword
+        let parameters = ["storeId":storeId,"price":price,"spassword":spassword]
         SVProgressHUD.show(withStatus: "请稍等")
         payViewModel.loadMealPaySuccessfullyReturnedData(requestType: .post, URLString: ConstAPI.kAPIOrderAddCashOrderInfo, parameters: parameters, showIndicator: false) {
             SVProgressHUD.showSuccess(withStatus: "支付成功")

@@ -34,7 +34,7 @@ class FoodCanteenOrderDetailsVC: UIViewController,UITableViewDelegate,UITableVie
     
     func getData(){
         let parameters = ["orderNo":self.orderNo]
-        viewModel.loadSuccessfullyReturnedData(requestType:.post, URLString: ConstAPI.kAPIOrderGetOrderInfo, type: .canteenModel, parameters: parameters, showIndicator: false) {
+        viewModel.loadSuccessfullyReturnedData(requestType:.get, URLString: ConstAPI.kAPIOrderGetOrderInfo, type: .canteenModel, parameters: parameters, showIndicator: false) {
             self.tableView.reloadData()
         }
     }
