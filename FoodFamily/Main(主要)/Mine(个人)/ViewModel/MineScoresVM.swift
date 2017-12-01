@@ -17,6 +17,7 @@ enum MineScoresStatus {
 }
 
 class MineScoresVM: NSObject {
+    lazy var scoreModel : MineScoresListModel = MineScoresListModel()!
     lazy var allModel : [MineScoresDataModel] = [MineScoresDataModel]()
     lazy var incomeModel : [MineScoresDataModel] = [MineScoresDataModel]()
     lazy var expenditureModel : [MineScoresDataModel] = [MineScoresDataModel]()
@@ -33,7 +34,7 @@ class MineScoresVM: NSObject {
                 if showIndicator {
                     SVProgressHUD.showSuccess(withStatus: responseData?.message)
                 }
-
+                self.scoreModel = (responseData?.data)!
                 if responseData?.data?.detaiList?.count != 0 {
                     let array = NSMutableArray()
                     array.addObjects(from: self.allModel)

@@ -93,14 +93,13 @@ class MyScoresVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         scrollView.addSubview(self.setExpenditureTableView())
         
         self.getALlData()
-//        self.getIncomeData()
-//        self.getExpenditureData()
     }
     
     //获取所有记录
     func getALlData(){
         let parameters = ["type":"0","pageNum":"\(allPageNum)","pageSize":""]
         viewModel.loadAllSuccessfullyReturnedData(requestType: .get, URLString: ConstAPI.kAPIUserWalletGetUserIntegral, parameters: parameters, showIndicator: false) {(hasData:Bool) in
+            self.updataPrice()
             if hasData{
                 self.allPageNum = self.allPageNum + 1
                 self.allTableView.reloadData()
@@ -198,11 +197,30 @@ class MyScoresVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         })
     }
     
+    func updataPrice(){
+        scoresLabel.text = (self.viewModel.scoreModel.wallet?.price?.stringValue)!
+        
+        let scoresSize:CGSize = scoresLabel.getStringSize(text:scoresLabel.text!, size: CGSize(width: SCREEN_WIDTH, height: MyScoresUX.scoresLabelFont), font:  MyScoresUX.scoresLabelFont)
+        scoresLabel.snp.updateConstraints{ (make) -> Void in
+            make.centerX.equalTo(myScoresView.headView.snp.centerX)
+            make.centerY.equalTo(myScoresView.headView.snp.centerY)
+            make.width.equalTo(scoresSize.width + 1)
+            make.height.equalTo(scoresSize.height)
+        }
+        
+        scoresImageView.snp.updateConstraints{ (make) -> Void in
+            make.right.equalTo(scoresLabel.snp.left).offset(0)
+            make.centerY.equalTo(scoresLabel.snp.centerY).offset(-5)
+            make.width.equalTo(MyScoresUX.scoresImageSize.width)
+            make.height.equalTo(MyScoresUX.scoresImageSize.height)
+        }
+    }
+    
     lazy var scoresLabel: UILabel = {
         let label = UILabel()
         label.textColor = UIColor.white
         label.font = UIFont.systemFont(ofSize: MyScoresUX.scoresLabelFont)
-        label.text = "1200"
+        label.text = "--"
         return label
     }()
     
