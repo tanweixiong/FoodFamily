@@ -19,9 +19,9 @@ class MyScoresHeadView: UIView {
     }
     */
     @IBOutlet weak var mySubView: UIView!
-    
     @IBOutlet weak var chooseBtn: UIButton!
     @IBAction func optionClick(_ sender: UIButton) {
+        print(sender.tag)
         if myScoresHeadViewCallBack != nil {
             myScoresHeadViewCallBack!(sender)
         }

@@ -112,24 +112,32 @@ class MyScoresVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     //获取收入记录
     func getIncomeData(){
         let parameters = ["type":"1","pageNum":"\(incomePageNum)","pageSize":""]
+        if isLoadIncome {
+             SVProgressHUD.show(withStatus: "请稍等")
+        }
         viewModel.loadIncomeSuccessfullyReturnedData(requestType: .get, URLString: ConstAPI.kAPIUserWalletGetUserIntegral, parameters: parameters, showIndicator: false) {(hasData:Bool) in
+            SVProgressHUD.dismiss()
             if hasData {
                 self.incomePageNum = self.incomePageNum + 1
-                self.allTableView.reloadData()
+                self.incomeTableView.reloadData()
             }
-                self.allTableView.mj_footer.endRefreshing()
+                self.incomeTableView.mj_footer.endRefreshing()
         }
     }
     
     //获取支出记录
     func getExpenditureData(){
         let parameters = ["type":"2","pageNum":"\(expenditurePageNum)","pageSize":""]
+        if isLoadExpenditure {
+            SVProgressHUD.show(withStatus: "请稍等")
+        }
         viewModel.loadExpenditureSuccessfullyReturnedData(requestType: .get, URLString: ConstAPI.kAPIUserWalletGetUserIntegral, parameters: parameters, showIndicator: false) {(hasData:Bool) in
+            SVProgressHUD.dismiss()
             if hasData {
                 self.expenditurePageNum = self.expenditurePageNum + 1
-                self.allTableView.reloadData()
+                self.expenditureTableView.reloadData()
             }
-               self.allTableView.mj_footer.endRefreshing()
+               self.expenditureTableView.mj_footer.endRefreshing()
         }
     }
     
@@ -217,14 +225,18 @@ class MyScoresVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         view.frame = CGRect(x: 0, y: 0, width: MyScoresUX.myScoresHeadViewSize.width, height: MyScoresUX.myScoresHeadViewSize.height)
         view.addSubview(self.line)
         view.myScoresHeadViewCallBack = {(sender:UIButton) in
-            if sender.tag == 1 && self.isLoadIncome{
+            if sender.tag == 1{
                 self.scrollView.contentOffset = CGPoint(x: SCREEN_WIDTH, y: 0)
+                if self.isLoadIncome{
+                    self.getIncomeData()
+                }
                 self.isLoadIncome = false
-                self.getIncomeData()
             }else if sender.tag == 2 && self.isLoadExpenditure {
                 self.scrollView.contentOffset = CGPoint(x: SCREEN_WIDTH * 2, y: 0)
+                if self.isLoadExpenditure {
+                     self.getExpenditureData()
+                }
                 self.isLoadExpenditure = false
-                self.getExpenditureData()
             }else{
                 self.scrollView.contentOffset = CGPoint(x: 0, y: 0)
             }
@@ -247,7 +259,7 @@ class MyScoresVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         scrollView.showsHorizontalScrollIndicator = false;
         scrollView.clipsToBounds = false;
         scrollView.bounces = false;
-        scrollView.contentSize = CGSize(width: SCREEN_WIDTH, height: scrollView.frame.size.height)
+        scrollView.contentSize = CGSize(width: SCREEN_WIDTH * 3, height: scrollView.frame.size.height)
         return scrollView
     }()
     
@@ -299,22 +311,4 @@ class MyScoresVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         })
         return expenditureTableView
     }
-
-//    lazy var tableView: UITableView = {
-//        let maxY = MyScoresUX.myScoresHeadViewSize.height/2 + 15 + 215
-//        let tableView = UITableView.init(frame: CGRect(x: 0, y: maxY , width: SCREEN_WIDTH, height: SCREEN_HEIGHT - 215 - MyScoresUX.myScoresHeadViewSize.height/2 - 15))
-//        tableView.showsVerticalScrollIndicator = false
-//        tableView.dataSource = self
-//        tableView.delegate = self
-//        tableView.register(UINib(nibName: "MineScoresCell", bundle: nil),forCellReuseIdentifier: self.mineScoresCell)
-//        tableView.backgroundColor = R_UISectionLineColor
-//        tableView.separatorInset = UIEdgeInsetsMake(0,SCREEN_WIDTH, 0,SCREEN_WIDTH);
-//        tableView.tableFooterView = UIView()
-//        tableView.separatorColor = R_UISectionLineColor
-////        tableView.mj_footer = MJRefreshAutoNormalFooter.init(refreshingBlock: {
-////            self.getData()
-////        })
-//        return tableView
-//    }()
-
 }
