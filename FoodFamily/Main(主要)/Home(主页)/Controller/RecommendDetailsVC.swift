@@ -87,7 +87,7 @@ class RecommendDetailsVC: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     func getCommentData(isfirst:Bool){
         //获取评论列表
-        let commentParameters = ["storeId":"1","pageNum":"\(self.pageNum)","pageSize":""]
+        let commentParameters = ["storeId":storeID,"pageNum":"\(self.pageNum)","pageSize":""]
         recommendDetailsVM.loadSuccessfullyCommentReturnedData(requestType: .get, URLString: ConstAPI.kAPIAssessGetAssessList, parameters: commentParameters, showIndicator: false) {(noData:Bool) in
             self.pageNum = self.pageNum + 1
             if isfirst && self.recommendDetailsVM.recommendListModel.count != 0{
@@ -142,7 +142,7 @@ class RecommendDetailsVC: UIViewController,UITableViewDelegate,UITableViewDataSo
                 scrollView.contentInset = UIEdgeInsetsMake(-sectionHeaderHeight, 0, 0, 0);
             }
             if scrollView.contentOffset.y < 0 && self.isFirst{
-                scrollView.contentInset = UIEdgeInsetsMake(-sectionHeaderHeight, 0, 0, 0);
+                scrollView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
                 self.isFirst = false
             }
         }
