@@ -8,6 +8,7 @@
 
 import UIKit
 import MJRefresh
+import SVProgressHUD
 
 class MineReservationFinishVC: UIViewController,UITableViewDataSource,UITableViewDelegate {
     fileprivate lazy var viewModel : MineReservationVM = MineReservationVM()
@@ -29,7 +30,9 @@ class MineReservationFinishVC: UIViewController,UITableViewDataSource,UITableVie
     func getData(){
         //1为已完成
         let parameters = ["pageNum":"\(self.pageNum)","pageSize":"","type":"1"]
+        SVProgressHUD.show(withStatus: "请稍等")
         viewModel.loadSuccessfullyReturnedData(requestType: .get, URLString:ConstAPI.kAPIReservationList , parameters: parameters, showIndicator: false) {(hasData:Bool) in
+            SVProgressHUD.dismiss()
             if hasData {
                 self.pageNum = self.pageNum + 1
             }
@@ -39,7 +42,7 @@ class MineReservationFinishVC: UIViewController,UITableViewDataSource,UITableVie
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return  self.viewModel.model.count
+        return  self.viewModel.finishModel.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -60,12 +63,19 @@ class MineReservationFinishVC: UIViewController,UITableViewDataSource,UITableVie
         return  MineReservationFinishUX.sectionHeight
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let model = self.viewModel.finishModel[indexPath.section]
+        let mineReservationDetailsVC = MineReservationDetailsVC()
+        mineReservationDetailsVC.orderNo = model.orderNo!
+        self.navigationController?.pushViewController(mineReservationDetailsVC, animated: true)
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: mineReservationFinishCell, for: indexPath) as! MineReservationCell
         cell.selectionStyle = .none
         cell.reservationStatusLabel.text = "预约成功"
         
-        let model = viewModel.model[indexPath.section]
+        let model = viewModel.finishModel[indexPath.section]
         cell.logoImageView.sd_setImage(with: NSURL(string: model.logo!)! as URL, placeholderImage: UIImage.init(named: "ic_all_imageDefault"))
         cell.storeName.text = model.storeName
         cell.createTimeLabel.text = model.appointmentTime

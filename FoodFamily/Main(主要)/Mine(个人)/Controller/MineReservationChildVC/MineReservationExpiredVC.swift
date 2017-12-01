@@ -8,6 +8,7 @@
 
 import UIKit
 import MJRefresh
+import SVProgressHUD
 
 class MineReservationExpiredVC: UIViewController,UITableViewDataSource,UITableViewDelegate {
     fileprivate lazy var viewModel : MineReservationVM = MineReservationVM()
@@ -29,7 +30,9 @@ class MineReservationExpiredVC: UIViewController,UITableViewDataSource,UITableVi
     func getData(){
         //2为已过期
         let parameters = ["pageNum":"\(self.pageNum)","pageSize":"","type":"2"]
+        SVProgressHUD.show(withStatus: "请稍等")
         viewModel.loadExpiredSuccessfullyReturnedData(requestType: .get, URLString:ConstAPI.kAPIReservationList , parameters: parameters, showIndicator: false) {(hasData:Bool) in
+            SVProgressHUD.dismiss()
             if hasData {
                 self.pageNum = self.pageNum + 1
             }
@@ -58,6 +61,13 @@ class MineReservationExpiredVC: UIViewController,UITableViewDataSource,UITableVi
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return  MineReservationExpiredUX.sectionHeight
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let model = self.viewModel.expiredModel[indexPath.section]
+        let mineReservationDetailsVC = MineReservationDetailsVC()
+        mineReservationDetailsVC.orderNo = model.orderNo!
+        self.navigationController?.pushViewController(mineReservationDetailsVC, animated: true)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

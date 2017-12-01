@@ -9,7 +9,7 @@
 import UIKit
 
 class MineReservationDataModel: Mappable {
-    var orderNo: NSNumber?
+    var orderNo: String?
     var logo: String?
     var storeName: String?
     var appointmentTime: String?

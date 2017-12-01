@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 //导航栏的颜色
 public let navigationColor:UIColor = R_UINavigationBarColor
@@ -48,6 +49,7 @@ class FMNavigationController: UINavigationController,UIGestureRecognizerDelegate
     
     /// 返回
     @objc func backClick() {
+        SVProgressHUD.dismiss()
         self.popViewController(animated: true)
     }
     

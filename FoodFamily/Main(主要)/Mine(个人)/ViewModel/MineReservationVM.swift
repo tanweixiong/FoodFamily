@@ -11,7 +11,7 @@ import Alamofire
 import SVProgressHUD
 
 class MineReservationVM: NSObject {
-    lazy var model : [MineReservationDataModel] = [MineReservationDataModel]()
+    lazy var finishModel : [MineReservationDataModel] = [MineReservationDataModel]()
     func loadSuccessfullyReturnedData(requestType: HTTPMethod, URLString : String, parameters : [String : Any]? = nil, showIndicator: Bool,finishedCallback : @escaping (_ hasData:Bool) -> ()) {
         NetWorkTool.request(requestType: requestType, URLString:URLString, parameters: parameters, showIndicator: true, success: { (json) in
             print(json)
@@ -27,9 +27,9 @@ class MineReservationVM: NSObject {
   
                 if responseData?.data?.list?.count != 0 {
                     let array = NSMutableArray()
-                    array.addObjects(from: self.model)
+                    array.addObjects(from: self.finishModel)
                     array.addObjects(from: (responseData?.data?.list)!)
-                    self.model = array as! [MineReservationDataModel]
+                    self.finishModel = array as! [MineReservationDataModel]
                     finishedCallback(true)
                 }else{
                     finishedCallback(false)
