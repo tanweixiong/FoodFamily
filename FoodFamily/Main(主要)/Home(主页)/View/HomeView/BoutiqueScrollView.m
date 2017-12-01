@@ -91,6 +91,10 @@
     NSLog(@"%ld ->  %ld",fromIndex,toIndex);
 }
 
+- (void)pagerView:(TYCyclePagerView *)pageView didSelectedItemCell:(__kindof UICollectionViewCell *)cell atIndex:(NSInteger)index{
+    
+}
+
 -(NSArray *)datas{
     if (_datas == nil) {
         _datas = [[NSArray alloc] init];

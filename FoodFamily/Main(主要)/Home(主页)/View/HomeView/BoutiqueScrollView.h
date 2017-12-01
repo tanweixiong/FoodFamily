@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol BoutiqueScrollDelegate <NSObject>
+- (void)boutiqueScrollChoose:(NSInteger)index;
+@end
+
 @interface BoutiqueScrollView : UIView
 //- (instancetype)initWithFrame:(CGRect)frame;
 - (instancetype)initWithFrame:(CGRect)frame dataArray:(NSArray *)dataArray;
