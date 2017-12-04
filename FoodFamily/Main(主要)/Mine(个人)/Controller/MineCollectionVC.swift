@@ -13,7 +13,7 @@ import SVProgressHUD
 class MineCollectionVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     fileprivate lazy var viewModel : MineCollectionVM = MineCollectionVM()
     fileprivate let mineCollectionCell = "MineCollectionCell"
-    fileprivate var pageNum:Int = 0
+    fileprivate var pageNum:Int = 1
     
     struct MineCollectionUX {
         static let cellHeight:CGFloat = 74.5

@@ -30,6 +30,8 @@ class MineCollectionDataModel: Mappable {
 
 class MineCollectionListModel: Mappable {
     var list: [MineCollectionDataModel]?
+    var pages: Int?
+    var pageNum: Int?
     
     required init?(map: Map) {
         
@@ -41,6 +43,8 @@ class MineCollectionListModel: Mappable {
     
     func mapping(map: Map) {
         list        <- map["list"]
+        pages       <- map["pages"]
+        pageNum     <- map["pageNum"]
     }
 }
 
