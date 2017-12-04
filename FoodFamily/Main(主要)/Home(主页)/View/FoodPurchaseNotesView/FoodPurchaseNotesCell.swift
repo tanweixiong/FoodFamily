@@ -92,21 +92,33 @@ class FoodPurchaseNotesCell: UITableViewCell {
     func setPackageDetails(model:FoodMealDetailsDataModel){
         self.headingLabel.isHidden = true
         self.headingImageView.isHidden = true
-        self.contentView.addSubview(conventionContentLabel)
-        
-        conventionContentLabel.text = model.mealIntroduction!
+        self.contentView.addSubview(self.webView)
+//        self.contentView.addSubview(conventionContentLabel)
 
-        let size:CGSize = OCTools.calculateMeaasgeHeight(withText: conventionContentLabel.text, andWidth: SCREEN_WIDTH - 60, andFont: UIFont.systemFont(ofSize: 14))
-        conventionContentLabel.snp.updateConstraints { (make) in
-            make.centerX.equalTo(contentView.snp.centerX)
-            make.top.greaterThanOrEqualTo(20)
-            make.width.equalTo(size.width)
-            make.height.equalTo(size.height)
-        }
+//        conventionContentLabel.text = model.mealIntroduction!
+//        let size:CGSize = OCTools.calculateMeaasgeHeight(withText: conventionContentLabel.text, andWidth: SCREEN_WIDTH - 60, andFont: UIFont.systemFont(ofSize: 14))
+//        conventionContentLabel.snp.updateConstraints { (make) in
+//            make.centerX.equalTo(contentView.snp.centerX)
+//            make.top.greaterThanOrEqualTo(20)
+//            make.width.equalTo(size.width)
+//            make.height.equalTo(size.height)
+//        }
+
+//        let webView = UIWebView(frame: CGRect(x: 30, y: 20, width: SCREEN_WIDTH - 60, height: 100))
+//        webView.delegate = self
+//        self.contentView.addSubview(webView)
         
-        let sum = 20 + size.height
-        UserDefaults.standard.set(sum + 20, forKey: "height")
+        
+        
+//        let sum = 20 + size.height
+//        UserDefaults.standard.set(sum + 20, forKey: "height")
     }
+    
+    lazy var  webView:UIWebView = {
+        let vw = UIWebView(frame: CGRect(x: 30, y: 20, width: SCREEN_WIDTH - 60, height: 100))
+        vw.scrollView.bounces = false
+        return vw
+    }()
     
     lazy var headingContentLabel:UILabel = {
         let label = UILabel()

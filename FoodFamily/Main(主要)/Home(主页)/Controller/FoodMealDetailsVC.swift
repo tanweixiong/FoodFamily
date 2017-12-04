@@ -8,12 +8,13 @@
 
 import UIKit
 
-class FoodMealDetailsVC: MainViewController,UITableViewDelegate,UITableViewDataSource {
+class FoodMealDetailsVC: MainViewController,UITableViewDelegate,UITableViewDataSource,UIWebViewDelegate {
     fileprivate let foodPurchaseNotesCell = "FoodPurchaseNotesCell"
     fileprivate lazy var viewModel : FoodMealDetailsVM = FoodMealDetailsVM()
     var recommendModel: RecommendDataModel = RecommendDataModel()!
     var mealModel: RecommendMealDataModel = RecommendMealDataModel()!
     var mealId:NSNumber = 0
+    var isFirstLoad:Bool = true
     
     struct FoodDetailsUX {
         static let rowHeight:CGFloat = 135
@@ -88,7 +89,21 @@ class FoodMealDetailsVC: MainViewController,UITableViewDelegate,UITableViewDataS
         let cell = tableView.dequeueReusableCell(withIdentifier: foodPurchaseNotesCell, for: indexPath) as! FoodPurchaseNotesCell
         cell.selectionStyle = .none
         cell.setPackageDetails(model: self.viewModel.mealModel)
+        let url = self.viewModel.mealModel.mealIntroduction!
+        cell.webView.loadHTMLString(url, baseURL: nil)
+        cell.webView.delegate = self
+        cell.webView.frame.size.height = UserDefaults.standard.object(forKey: "height") != nil ? UserDefaults.standard.object(forKey: "height") as! CGFloat : 0
         return cell
+    }
+    
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        let webViewHeight:String = (webView.stringByEvaluatingJavaScript(from: "document.body.offsetHeight"))!
+        let intVal: Int = Int(webViewHeight)!
+        UserDefaults.standard.set(intVal + 40, forKey: "height")
+        if isFirstLoad {
+            self.tableView.reloadData()
+            isFirstLoad = false
+        }
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

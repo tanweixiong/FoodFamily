@@ -57,22 +57,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FoodFamily/Main(&#x4e3b;&#x8981;)/Mine(&#x4e2a;&#x4eba;)/Controller/MineSetPayPasswordVC.swift"
-            timestampString = "533650688.272161"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "214"
-            endingLineNumber = "214"
-            landmarkName = "getCodeButton"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "FoodFamily/Main(&#x4e3b;&#x8981;)/Mine(&#x4e2a;&#x4eba;)/ViewModel/MineReservationDetailsVM.swift"
             timestampString = "533824711.738503"
             startingColumnNumber = "9223372036854775807"
@@ -91,6 +75,54 @@
             continueAfterRunningActions = "No"
             filePath = "FoodFamily/Main(&#x4e3b;&#x8981;)/Mine(&#x4e2a;&#x4eba;)/ViewModel/MineReservationDetailsVM.swift"
             timestampString = "533824711.738636"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "loadSuccessfullyReturnedData(requestType:URLString:parameters:showIndicator:finishedCallback:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FoodFamily/Main(&#x4e3b;&#x8981;)/Mine(&#x4e2a;&#x4eba;)/Controller/MineSetVC.swift"
+            timestampString = "534078352.125838"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
+            landmarkName = "tableView(_:didSelectRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FoodFamily/Main(&#x4e3b;&#x8981;)/Home(&#x4e3b;&#x9875;)/ViewModel/FoodIntegralVM.swift"
+            timestampString = "534075756.954168"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "loadSuccessfullyReturnedData(requestType:URLString:parameters:showIndicator:finishedCallback:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FoodFamily/Main(&#x4e3b;&#x8981;)/Home(&#x4e3b;&#x9875;)/ViewModel/FoodIntegralVM.swift"
+            timestampString = "534075765.986927"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "18"
