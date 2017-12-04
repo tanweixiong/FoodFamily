@@ -104,7 +104,7 @@ class RecommendDetailsVC: UIViewController,UITableViewDelegate,UITableViewDataSo
     }
     
     func setCollectionStore(isCollection:Bool){
-        let parameters = ["storeId":"1"]
+        let parameters = ["storeId":storeID]
         let url = isCollection ? ConstAPI.kAPIStoreCollectionStore : ConstAPI.kAPIStoreCancelCollection
         recommendDetailsVM.loadSuccessfullyReturnedData(requestType: .post, URLString: url, parameters: parameters, showIndicator: true, finishedCallback: {
             self.recommendFootView.collectView.isSelected = isCollection

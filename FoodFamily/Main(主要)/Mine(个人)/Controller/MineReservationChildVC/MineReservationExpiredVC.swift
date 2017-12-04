@@ -17,7 +17,7 @@ class MineReservationExpiredVC: UIViewController,UITableViewDataSource,UITableVi
     fileprivate var isFirstLoad:Bool = true
     
     struct MineReservationExpiredUX {
-        static let sectionHeight:CGFloat = 20
+        static let sectionHeight:CGFloat = 15
         static let cellHeight:CGFloat = 100
         static let textColor = UIColor.R_UIRGBColor(red: 155, green: 155, blue: 155, alpha: 1)
     }
