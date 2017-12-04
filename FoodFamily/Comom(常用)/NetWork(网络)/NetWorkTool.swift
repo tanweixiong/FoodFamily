@@ -26,7 +26,7 @@ class NetWorkTool: NSObject {
             case .success(let value):
                 let data = value as! [String : AnyObject]
                 if data["code"] as! NSNumber == -1 {
-                    let login = LoginVC()
+                    let login = FMNavigationController(rootViewController: LoginVC())
                     UIApplication.shared.keyWindow?.rootViewController = login
                 }
                 success(data)
