@@ -36,6 +36,8 @@ class RecommendCommentListDataModel: Mappable {
 
 class RecommendCommentListModel: Mappable {
     var list: [RecommendCommentListDataModel]?
+    var pages: Int?
+    var pageNum: Int?
     
     required init?(map: Map) {
         
@@ -47,6 +49,8 @@ class RecommendCommentListModel: Mappable {
     
     func mapping(map: Map) {
         list        <- map["list"]
+        pages       <- map["pages"]
+        pageNum     <- map["pageNum"]
     }
 }
 

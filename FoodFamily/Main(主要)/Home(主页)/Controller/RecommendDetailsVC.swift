@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class RecommendDetailsVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     fileprivate lazy var recommendDetailsVM : RecommendDetailsVM = RecommendDetailsVM()
@@ -16,7 +17,7 @@ class RecommendDetailsVC: UIViewController,UITableViewDelegate,UITableViewDataSo
     fileprivate let recommendedCommentCell = "recommendedCommentCell"
     fileprivate let recommendMealCell = "RecommendMealCell"
     fileprivate let recommendedListMoneyCell = "RecommendedListMoneyCell"
-    fileprivate var pageNum:Int = 0
+    fileprivate var pageNum:Int = 1
     fileprivate let dataSource = NSMutableArray()
     fileprivate var isFirst:Bool = true
     fileprivate var refreshFooterView = SDRefreshFooterView()
@@ -88,17 +89,17 @@ class RecommendDetailsVC: UIViewController,UITableViewDelegate,UITableViewDataSo
     func getCommentData(isfirst:Bool){
         //获取评论列表
         let commentParameters = ["storeId":storeID,"pageNum":"\(self.pageNum)","pageSize":""]
-        recommendDetailsVM.loadSuccessfullyCommentReturnedData(requestType: .get, URLString: ConstAPI.kAPIAssessGetAssessList, parameters: commentParameters, showIndicator: false) {(noData:Bool) in
+        recommendDetailsVM.loadSuccessfullyCommentReturnedData(requestType: .get, URLString: ConstAPI.kAPIAssessGetAssessList, parameters: commentParameters, showIndicator: false) {(hasData:Bool) in
             self.pageNum = self.pageNum + 1
             if isfirst && self.recommendDetailsVM.recommendListModel.count != 0{
                 self.dataSource.add(self.recommendDetailsVM.recommendListModel)
                 self.tableView.reloadData()
             }
-            if noData == false && !isfirst{
+            if !isfirst && hasData == true {
                 self.dataSource.replaceObject(at: self.dataSource.count - 1, with: self.recommendDetailsVM.recommendListModel)
                 self.tableView.reloadData()
-                self.refreshFooterView.endRefreshing()
             }
+           self.refreshFooterView.endRefreshing()
         }
     }
     

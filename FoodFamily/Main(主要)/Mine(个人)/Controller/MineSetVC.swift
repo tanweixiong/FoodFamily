@@ -110,5 +110,6 @@ class MineSetVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     @objc func loginOutHandle(){
        let login = FMNavigationController(rootViewController: LoginVC())
        UIApplication.shared.keyWindow?.rootViewController = login
+       UserDefaults.standard.set(false, forKey: R_Theme_isLogin)
     }
 }
