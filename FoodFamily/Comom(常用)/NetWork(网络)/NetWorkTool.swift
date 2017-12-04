@@ -25,7 +25,7 @@ class NetWorkTool: NSObject {
             switch response.result {
             case .success(let value):
                 let data = value as! [String : AnyObject]
-                if data["code"] as! NSNumber == 200 {
+                if data["code"] as! NSNumber == -1 {
                     let login = LoginVC()
                     UIApplication.shared.keyWindow?.rootViewController = login
                 }

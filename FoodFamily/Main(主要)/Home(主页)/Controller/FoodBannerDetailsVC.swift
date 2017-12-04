@@ -20,7 +20,7 @@ class FoodBannerDetailsVC: UIViewController,UIWebViewDelegate {
     
     func setWebView(){
         webView.delegate = self
-        SVProgressHUD.show(withStatus: "请稍等", maskType: .black)
+//        SVProgressHUD.show(withStatus: "请稍等", maskType: .black)
         let url:NSURL = NSURL.init(string: self.url)!
         webView.loadRequest(NSURLRequest(url: url as URL) as URLRequest)
         self.view.addSubview(webView)
@@ -31,10 +31,10 @@ class FoodBannerDetailsVC: UIViewController,UIWebViewDelegate {
     }
     
     func webViewDidFinishLoad(_ webView: UIWebView) {
-        let time: TimeInterval = 0.1
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + time) {
-            SVProgressHUD.dismiss()
-        }
+//        let time: TimeInterval = 0.1
+//        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + time) {
+//            SVProgressHUD.dismiss()
+//        }
     }
     
     func webView(_ webView: UIWebView, didFailLoadWithError error: Error) {
