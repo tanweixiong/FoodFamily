@@ -13,7 +13,7 @@ import MJRefresh
 class FoodSearchVC: MainViewController,UITextFieldDelegate,UITableViewDataSource,UITableViewDelegate {
     fileprivate lazy var viewModel : FoodSearchVM = FoodSearchVM()
     fileprivate let foodSearchCell = "FoodSearchCell"
-    fileprivate var pageNum:Int = 0
+    fileprivate var pageNum:Int = 1
     fileprivate var searchTextfield = UITextField()
     var latitudeStr = "" //设置广州为默认经纬度
     var longitudeStr = ""
@@ -57,14 +57,14 @@ class FoodSearchVC: MainViewController,UITextFieldDelegate,UITableViewDataSource
     func refreshData(){
         let parameters = ["storeName":searchTextfield.text!,"longitude":self.latitudeStr,"latitude":self.longitudeStr,"pageSize":"","pageNum":"\(self.pageNum)"]
         viewModel.loadSuccessfullyReturnedData(requestType: .get, URLString: ConstAPI.kAPIStoreSelectStoreByStoreName, parameters: parameters, showIndicator: false) { (hasData:Bool) in
-            self.tableView.reloadData()
+            self.pageNum = self.pageNum + 1
             if hasData {
-               self.pageNum = self.pageNum + 1
+               self.tableView.reloadData()
             }else{
                SVProgressHUD.showInfo(withStatus: "暂无数据")
             }
         }
-        tableView.mj_footer.endRefreshing()
+            self.tableView.mj_footer.endRefreshing()
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

@@ -33,8 +33,8 @@ class FoodMerchantsVM: NSObject {
     
     //获取分类
     lazy var classificationModel : [FoodSearchDataModel] = [FoodSearchDataModel]()
-    lazy var pages = 0
-    lazy var pageNum = 0
+    var pages = 0
+    var pageNum = 0
     func loadClassificationSuccessfullyReturnedData(requestType: HTTPMethod, URLString : String, parameters : [String : Any]? = nil, showIndicator: Bool,finishedCallback : @escaping (_ hasData:Bool) -> ()) {
         if pageNum <= pages {
             NetWorkTool.request(requestType: requestType, URLString:URLString, parameters: parameters, showIndicator: true, success: { (json) in
