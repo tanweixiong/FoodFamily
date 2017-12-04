@@ -21,9 +21,9 @@ class MyScoresVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     fileprivate var isLoadIncome:Bool = true
     fileprivate var isLoadExpenditure:Bool = true
     
-    fileprivate var allPageNum:Int = 0
-    fileprivate var incomePageNum:Int = 0
-    fileprivate var expenditurePageNum:Int = 0
+    fileprivate var allPageNum:Int = 1
+    fileprivate var incomePageNum:Int = 1
+    fileprivate var expenditurePageNum:Int = 1
     
     
     struct MyScoresUX {
@@ -100,8 +100,8 @@ class MyScoresVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         let parameters = ["type":"0","pageNum":"\(allPageNum)","pageSize":""]
         viewModel.loadAllSuccessfullyReturnedData(requestType: .get, URLString: ConstAPI.kAPIUserWalletGetUserIntegral, parameters: parameters, showIndicator: false) {(hasData:Bool) in
             self.updataPrice()
+            self.allPageNum = self.allPageNum + 1
             if hasData{
-                self.allPageNum = self.allPageNum + 1
                 self.allTableView.reloadData()
             }
             self.allTableView.mj_footer.endRefreshing()
@@ -116,8 +116,8 @@ class MyScoresVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         }
         viewModel.loadIncomeSuccessfullyReturnedData(requestType: .get, URLString: ConstAPI.kAPIUserWalletGetUserIntegral, parameters: parameters, showIndicator: false) {(hasData:Bool) in
             SVProgressHUD.dismiss()
+            self.incomePageNum = self.incomePageNum + 1
             if hasData {
-                self.incomePageNum = self.incomePageNum + 1
                 self.incomeTableView.reloadData()
             }
                 self.incomeTableView.mj_footer.endRefreshing()
@@ -132,8 +132,8 @@ class MyScoresVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         }
         viewModel.loadExpenditureSuccessfullyReturnedData(requestType: .get, URLString: ConstAPI.kAPIUserWalletGetUserIntegral, parameters: parameters, showIndicator: false) {(hasData:Bool) in
             SVProgressHUD.dismiss()
+            self.expenditurePageNum = self.expenditurePageNum + 1
             if hasData {
-                self.expenditurePageNum = self.expenditurePageNum + 1
                 self.expenditureTableView.reloadData()
             }
                self.expenditureTableView.mj_footer.endRefreshing()
