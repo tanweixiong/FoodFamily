@@ -18,7 +18,7 @@ class FoodMerchantsVC: UIViewController,UITableViewDelegate,UITableViewDataSourc
     fileprivate lazy var viewModel : FoodMerchantsVM = FoodMerchantsVM()
     fileprivate let foodMerchantsCell = "FoodMerchantsCell"
     var foodMerchantsStatus = FoodMerchantsStatus.merchantsStatus
-    var pageNum:Int = 0
+    var pageNum:Int = 1
     var typeId = ""
     struct FoodMerchantsUX {
         static let cellHeight:CGFloat = 100
@@ -54,11 +54,11 @@ class FoodMerchantsVC: UIViewController,UITableViewDelegate,UITableViewDataSourc
     func getClassificationData(){
         let parameters = ["longitude":"113.30764","latitude":"23.1200483","typeId":typeId,"pageNum":"\(pageNum)","pageSize":""]
         viewModel.loadClassificationSuccessfullyReturnedData(requestType: .get, URLString: ConstAPI.kAPIStoreSelectStoreByStoreType, parameters: parameters, showIndicator: false) {(hasData:Bool) in
+            self.tableView.mj_footer.endRefreshing()
             if hasData{
                 self.pageNum = self.pageNum + 1
                 self.tableView.reloadData()
             }
-            self.tableView.mj_footer.endRefreshing()
         }
 
     }

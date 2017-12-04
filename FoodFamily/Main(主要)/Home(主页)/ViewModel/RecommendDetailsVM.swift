@@ -50,7 +50,6 @@ class RecommendDetailsVM: NSObject {
                     self.pages = (responseData?.data?.pages)!
                     //当前已经加载了一条 所以在原来基础上+1
                     self.pageNum = (responseData?.data?.pageNum)! + 1
-                    
                     let array = NSMutableArray()
                     array.addObjects(from: self.recommendListModel)
                     array.addObjects(from: (responseData?.data?.list)!)

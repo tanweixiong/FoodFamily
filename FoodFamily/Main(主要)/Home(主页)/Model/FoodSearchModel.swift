@@ -38,6 +38,8 @@ class FoodSearchDataModel: Mappable {
 
 class FoodSearchListModel: Mappable {
     var list: [FoodSearchDataModel]?
+    var pages: Int?
+    var pageNum: Int?
     
     required init?(map: Map) {
         
@@ -49,6 +51,8 @@ class FoodSearchListModel: Mappable {
     
     func mapping(map: Map) {
         list        <- map["list"]
+        pages       <- map["pages"]
+        pageNum     <- map["pageNum"]
     }
 }
 

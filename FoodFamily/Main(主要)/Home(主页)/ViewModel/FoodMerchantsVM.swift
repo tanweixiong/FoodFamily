@@ -33,30 +33,35 @@ class FoodMerchantsVM: NSObject {
     
     //获取分类
     lazy var classificationModel : [FoodSearchDataModel] = [FoodSearchDataModel]()
+    lazy var pages = 0
+    lazy var pageNum = 0
     func loadClassificationSuccessfullyReturnedData(requestType: HTTPMethod, URLString : String, parameters : [String : Any]? = nil, showIndicator: Bool,finishedCallback : @escaping (_ hasData:Bool) -> ()) {
-        NetWorkTool.request(requestType: requestType, URLString:URLString, parameters: parameters, showIndicator: true, success: { (json) in
-            print(json)
-            let responseData = Mapper<FoodSearchModel>().map(JSONObject: json)
-            if let code = responseData?.code {
-                guard  100 == code else {
-                    SVProgressHUD.showInfo(withStatus: responseData?.message)
-                    return
-                }
-                if showIndicator {
-                    SVProgressHUD.showSuccess(withStatus: responseData?.message)
-                }
-                if responseData?.data?.list?.count != 0 {
+        if pageNum <= pages {
+            NetWorkTool.request(requestType: requestType, URLString:URLString, parameters: parameters, showIndicator: true, success: { (json) in
+                let responseData = Mapper<FoodSearchModel>().map(JSONObject: json)
+                if let code = responseData?.code {
+                    guard  100 == code else {
+                        SVProgressHUD.showInfo(withStatus: responseData?.message)
+                        return
+                    }
+                    if showIndicator {
+                        SVProgressHUD.showSuccess(withStatus: responseData?.message)
+                    }
+                    self.pages = (responseData?.data?.pages)!
+                    //当前已经加载了一条 所以在原来基础上+1
+                    self.pageNum = (responseData?.data?.pageNum)! + 1
                     let array = NSMutableArray()
                     array.addObjects(from: self.classificationModel)
                     array.addObjects(from: (responseData?.data?.list)!)
                     self.classificationModel = array as! [FoodSearchDataModel]
                     finishedCallback(true)
-                }else{
-                    finishedCallback(false)
                 }
+            }) { (error) in
             }
-        }) { (error) in
+        }else{
+             finishedCallback(false)
         }
+        
     }
     
 }
