@@ -24,7 +24,12 @@ class NetWorkTool: NSObject {
         sessionManager.request(URLString, method: requestType, parameters: requestParameters).validate().responseJSON { (response) in
             switch response.result {
             case .success(let value):
-                success(value as! [String : AnyObject])
+                let data = value as! [String : AnyObject]
+                if data["code"] as! NSNumber == 200 {
+                    let login = LoginVC()
+                    UIApplication.shared.keyWindow?.rootViewController = login
+                }
+                success(data)
             case .failure(let error):
                 failture(error)
                 if showIndicator {

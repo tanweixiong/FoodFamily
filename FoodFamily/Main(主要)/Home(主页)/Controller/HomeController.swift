@@ -9,7 +9,7 @@
 import UIKit
 import MJRefresh
 
-class HomeController: MainViewController,UITableViewDelegate,UITableViewDataSource,LocationDelegate,UITextFieldDelegate {
+class HomeController: MainViewController,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate,LocationDelegate,BoutiqueTableViewDelegate {
     
    fileprivate lazy var homeVM : HomeControllerVM = HomeControllerVM()
    fileprivate let boutiqueTableViewCell = "BoutiqueTableViewCell"
@@ -57,12 +57,12 @@ class HomeController: MainViewController,UITableViewDelegate,UITableViewDataSour
     
     //上传经纬度
     func locationCallBackDataLatitude(_ latitude: CGFloat, longitude: CGFloat) {
-        self.latitudeStr = "\(latitude)"
-        self.longitudeStr = "\(longitude)"
-        let parameters = ["lat":self.latitudeStr,"lng":self.longitudeStr]
-        homeVM.loadSuccessfullyReturnedData(requestType: .get, URLString: ConstAPI.kAPIAppIndex, parameters: parameters, showIndicator: false) {
-             self.tableView.reloadData()
-        }
+//        self.latitudeStr = "\(latitude)"
+//        self.longitudeStr = "\(longitude)"
+//        let parameters = ["lat":self.latitudeStr,"lng":self.longitudeStr]
+//        homeVM.loadSuccessfullyReturnedData(requestType: .get, URLString: ConstAPI.kAPIAppIndex, parameters: parameters, showIndicator: false) {
+//             self.tableView.reloadData()
+//        }
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -113,6 +113,7 @@ class HomeController: MainViewController,UITableViewDelegate,UITableViewDataSour
             cell.boutiqueTableCallBack = {(sender:UIButton) in
                 self.pushViewController(sender.tag)
             }
+            cell.delegate = self
             return cell
         }else if indexPath.section == 1{
             let cell = tableView.dequeueReusableCell(withIdentifier: topicTableViewCell, for: indexPath) as! TopicTableViewCell
@@ -137,6 +138,13 @@ class HomeController: MainViewController,UITableViewDelegate,UITableViewDataSour
         return false
     }
     
+    func boutiqueTableViewHeadOption(_ index: NSInteger) {
+        let model = homeVM.homeModel.data?.bannerList![index]
+        let foodBannerDetailsVC = FoodBannerDetailsVC()
+        foodBannerDetailsVC.url = (model?.returnUrl)!
+        self.navigationController?.pushViewController(foodBannerDetailsVC, animated: true)
+    }
+    
     lazy var tableView: UITableView = {
         let tableView = UITableView.init(frame: CGRect(x: 0, y: 0 , width: SCREEN_WIDTH, height: SCREEN_HEIGHT - 64))
         tableView.showsVerticalScrollIndicator = false
@@ -151,9 +159,6 @@ class HomeController: MainViewController,UITableViewDelegate,UITableViewDataSour
         tableView.mj_header = MJRefreshNormalHeader.init(refreshingBlock: {
             self.getData()
         })
-//        tableView.mj_footer = MJRefreshAutoNormalFooter.init(refreshingBlock: {
-//             self.getData()
-//        })
         return tableView
     }()
     

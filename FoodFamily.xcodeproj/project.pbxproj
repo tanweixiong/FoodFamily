@@ -150,6 +150,7 @@
 		2359F79E1FCFA0600081BD96 /* FoodPaymentMethodVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2359F79D1FCFA0600081BD96 /* FoodPaymentMethodVM.swift */; };
 		2359F7A01FCFA5FD0081BD96 /* FoodVoucherDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2359F79F1FCFA5FD0081BD96 /* FoodVoucherDetailsModel.swift */; };
 		2359F7A21FCFA6150081BD96 /* FoodVoucherDetailsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2359F7A11FCFA6150081BD96 /* FoodVoucherDetailsVM.swift */; };
+		236BC0431FD4E3340061AC15 /* FoodBannerDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236BC0421FD4E3340061AC15 /* FoodBannerDetailsVC.swift */; };
 		236C442B1FB474B700AC3010 /* FoodMerchantsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236C442A1FB474B700AC3010 /* FoodMerchantsVC.swift */; };
 		236C442E1FB474EA00AC3010 /* FoodMerchantsHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236C442D1FB474EA00AC3010 /* FoodMerchantsHeadView.swift */; };
 		236C44301FB4750800AC3010 /* FoodMerchantsHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 236C442F1FB4750800AC3010 /* FoodMerchantsHeadView.xib */; };
@@ -558,6 +559,7 @@
 		2359F79D1FCFA0600081BD96 /* FoodPaymentMethodVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodPaymentMethodVM.swift; sourceTree = "<group>"; };
 		2359F79F1FCFA5FD0081BD96 /* FoodVoucherDetailsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodVoucherDetailsModel.swift; sourceTree = "<group>"; };
 		2359F7A11FCFA6150081BD96 /* FoodVoucherDetailsVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodVoucherDetailsVM.swift; sourceTree = "<group>"; };
+		236BC0421FD4E3340061AC15 /* FoodBannerDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodBannerDetailsVC.swift; sourceTree = "<group>"; };
 		236C442A1FB474B700AC3010 /* FoodMerchantsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodMerchantsVC.swift; sourceTree = "<group>"; };
 		236C442D1FB474EA00AC3010 /* FoodMerchantsHeadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodMerchantsHeadView.swift; sourceTree = "<group>"; };
 		236C442F1FB4750800AC3010 /* FoodMerchantsHeadView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoodMerchantsHeadView.xib; sourceTree = "<group>"; };
@@ -1160,6 +1162,7 @@
 				23D147401FBA92FA0028CD09 /* FoodEvaluationVC.swift */,
 				23286BDC1FCD92F300782A2C /* FoodSearchVC.swift */,
 				2325E66A1FD17CA800DE81D9 /* FoodSelectStoreVC.swift */,
+				236BC0421FD4E3340061AC15 /* FoodBannerDetailsVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -2600,6 +2603,7 @@
 				239F06AB1FB2F3D30067D810 /* FoodReservationFinishVC.swift in Sources */,
 				23D147411FBA92FA0028CD09 /* FoodEvaluationVC.swift in Sources */,
 				230FA7711FB5AA7C00190F2B /* MineHeadView.swift in Sources */,
+				236BC0431FD4E3340061AC15 /* FoodBannerDetailsVC.swift in Sources */,
 				2325D9D41FCEEAE80085BD80 /* FoodIntegralVM.swift in Sources */,
 				238093721FB9813D0051EF3D /* ImmutableMappable.swift in Sources */,
 				2326A87F1FCD5AD300E8CD83 /* FoodCanteenOrderDetailsVC.swift in Sources */,
@@ -2838,7 +2842,7 @@
 					"$(PROJECT_DIR)/FoodFamily/Vender(第三方)/SnapKit",
 				);
 				INFOPLIST_FILE = FoodFamily/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hqtech.FoodFamily;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2860,7 +2864,7 @@
 					"$(PROJECT_DIR)/FoodFamily/Vender(第三方)/SnapKit",
 				);
 				INFOPLIST_FILE = FoodFamily/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hqtech.FoodFamily;
 				PRODUCT_NAME = "$(TARGET_NAME)";

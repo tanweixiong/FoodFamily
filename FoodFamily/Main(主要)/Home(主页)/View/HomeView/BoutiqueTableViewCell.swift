@@ -9,10 +9,14 @@
 import UIKit
 import SDWebImage
 
+protocol BoutiqueTableViewDelegate {
+    func boutiqueTableViewHeadOption(_ index:NSInteger)
+}
 class BoutiqueTableViewCell: UITableViewCell,UIScrollViewDelegate,BoutiqueScrollDelegate {
    var boutiqueTableCallBack:((UIButton)->())?;
     @IBOutlet weak var advertisingVw: UIView!
     @IBOutlet weak var classificationScrollVw: UIScrollView!
+    var delegate:BoutiqueTableViewDelegate?
     
     var categoryListModel : [CategoryListModel] = [CategoryListModel]()
     var bannerListModel : [BannerListModel] = [BannerListModel]()
@@ -45,7 +49,7 @@ class BoutiqueTableViewCell: UITableViewCell,UIScrollViewDelegate,BoutiqueScroll
     }()
     
     func boutiqueScrollChoose(_ index: Int) {
-        print(index)
+        self.delegate?.boutiqueTableViewHeadOption(index)
     }
     
     lazy var classification: UIView = {
