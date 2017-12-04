@@ -9,7 +9,7 @@
 import UIKit
 
 protocol FoodSelectNumberReservationsDelegate {
-    func foodSelectNumberReservationsChoose(_ day:String,_ time:String)
+    func foodSelectNumberReservationsChoose(_ day:String,_ time:String,_ dayIndexPath:NSIndexPath,_ timeIndexPath :NSIndexPath)
 }
 
 class FoodSelectNumberReservationsVw: UIView,UITableViewDelegate,UITableViewDataSource {
@@ -27,10 +27,8 @@ class FoodSelectNumberReservationsVw: UIView,UITableViewDelegate,UITableViewData
     fileprivate var foodDayCell = FoodSelectNumberDayCell()
     fileprivate var chooseColor:UIColor = UIColor.R_UIRGBColor(red: 242, green: 242, blue: 242, alpha: 1)
     fileprivate var normlColor:UIColor = UIColor.white
-    
     fileprivate var chooseTextColor:UIColor = R_UIThemeGoldColor
     fileprivate var normlTextColor:UIColor = UIColor.R_UIRGBColor(red: 67, green: 66, blue: 67, alpha: 1)
-    
     var delegate:FoodSelectNumberReservationsDelegate?
     
     override init(frame: CGRect) {
@@ -39,14 +37,21 @@ class FoodSelectNumberReservationsVw: UIView,UITableViewDelegate,UITableViewData
         self.show()
     }
     
+     init(frame: CGRect,day:NSIndexPath,time :NSIndexPath) {
+        super.init(frame: frame)
+        self.frame = (UIApplication.shared.keyWindow?.bounds)!
+        //传值选中项
+        self.dayIndexPath = day as IndexPath
+        self.timeIndexPath = time as IndexPath
+        self.show()
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
     func createUI(){
-       self.dayIndexPath = NSIndexPath(row: 0, section: 0) as IndexPath
-       self.timeIndexPath = NSIndexPath(row: 0, section: 0) as IndexPath
-        
+
         self.setDayArray()
         self.setTimeArray()
         
@@ -111,28 +116,28 @@ class FoodSelectNumberReservationsVw: UIView,UITableViewDelegate,UITableViewData
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let dayStr = self.dayArray[self.dayIndexPath.row]
-        let timeStr = self.timeArray[self.timeIndexPath.row]
-        self.delegate?.foodSelectNumberReservationsChoose(dayStr as! String, timeStr as! String)
+        var dayStr = self.dayArray[self.dayIndexPath.row]
+        var timeStr = self.timeArray[self.timeIndexPath.row]
         if tableView == dayTableView {
             if indexPath == self.dayIndexPath { return }
             self.dayTableView.reloadData()
             self.dayIndexPath  = NSIndexPath(row: indexPath.row, section: indexPath.section) as IndexPath
-            
             foodDayCell = tableView.cellForRow(at: IndexPath(row: indexPath.row, section: indexPath.section))as! FoodSelectNumberDayCell
             foodDayCell.dayLabel.textColor = chooseTextColor
             foodDayCell.backgroundColor = chooseColor
             
+            dayStr = self.dayArray[self.dayIndexPath.row]
         }else if tableView == timeTableView {
             if indexPath == self.timeIndexPath { return }
             self.timeTableView.reloadData()
             self.timeIndexPath  = NSIndexPath(row: indexPath.row, section: indexPath.section) as IndexPath
-            
             let selectedCell = tableView.cellForRow(at: IndexPath(row: indexPath.row, section: indexPath.section))as! FoodSelectNumberTimeCell
             selectedCell.timeLabel.textColor = chooseTextColor
-            
             self.clean()
+            
+            timeStr = self.timeArray[self.timeIndexPath.row]
         }
+        self.delegate?.foodSelectNumberReservationsChoose(dayStr as! String, timeStr as! String, self.dayIndexPath as NSIndexPath, self.timeIndexPath as NSIndexPath)
     }
     
     func clean(){

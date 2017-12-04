@@ -22,6 +22,8 @@ class FoodReservationVC: UIViewController,UITableViewDelegate,UITableViewDataSou
     fileprivate var reserPrice = "0"
     fileprivate var codeTextField = UITextField()
     fileprivate var phoneTextField = UITextField()
+    fileprivate var dayIndexPath = NSIndexPath(row: 0, section: 0)
+    fileprivate var timeIndexPath = NSIndexPath(row: 0, section: 0)
     
     struct FoodReservationUX {
         static let rowHeight:CGFloat = 44
@@ -69,9 +71,9 @@ class FoodReservationVC: UIViewController,UITableViewDelegate,UITableViewDataSou
             foodSelectNumberPeopleVw.delegate = self
             UIApplication.shared.keyWindow?.addSubview(foodSelectNumberPeopleVw)
         }else if indexPath.section == 1 {
-            let foodSelectNumberReservationsVw = FoodSelectNumberReservationsVw(frame: CGRect(x: 0, y: 0, width: (UIApplication.shared.keyWindow?.bounds.width)!, height: (UIApplication.shared.keyWindow?.bounds.height)!))
-            foodSelectNumberReservationsVw.delegate = self
-            UIApplication.shared.keyWindow?.addSubview(foodSelectNumberReservationsVw)
+            let view = FoodSelectNumberReservationsVw(frame: CGRect(x: 0, y: 0, width: (UIApplication.shared.keyWindow?.bounds.width)!, height: (UIApplication.shared.keyWindow?.bounds.height)!),day: dayIndexPath,time: timeIndexPath)
+            view.delegate = self
+            UIApplication.shared.keyWindow?.addSubview(view)
         }
     }
     
@@ -79,14 +81,15 @@ class FoodReservationVC: UIViewController,UITableViewDelegate,UITableViewDataSou
         self.closeKeyboard()
     }
     
-    //选择预约时间
-    func foodSelectNumberReservationsChoose(_ day: String, _ time: String) {
+    func foodSelectNumberReservationsChoose(_ day: String, _ time: String, _ dayIndexPath: NSIndexPath, _ timeIndexPath: NSIndexPath) {
         let cell = tableView.cellForRow(at: IndexPath(row: 0, section: 1))as! FoodReservationCell
         var newDay = day
         let range = newDay.index(newDay.endIndex, offsetBy: -3)..<newDay.index(newDay.endIndex, offsetBy: -2)
         newDay.replaceSubrange(range, with: "月")
         newDay = newDay + "日" + " " + time
         cell.dataLabel.text = newDay
+        self.timeIndexPath = timeIndexPath
+        self.dayIndexPath = dayIndexPath
     }
     
     //选择预约人数
