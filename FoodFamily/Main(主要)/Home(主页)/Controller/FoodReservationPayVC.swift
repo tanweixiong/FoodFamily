@@ -357,7 +357,7 @@ class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewData
     func getWallet(){
         let parameters = ["pageNum":"0","pageSize":""]
         SVProgressHUD.show(withStatus: "请稍等")
-        walletViewModel.loadSuccessfullyReturnedData(requestType: .get, URLString:  ConstAPI.kAPIUserWalletGetUserWalletList, parameters: parameters, showIndicator: false) {
+        walletViewModel.loadSuccessfullyReturnedData(requestType: .get, URLString:  ConstAPI.kAPIUserWalletGetUserWalletList, parameters: parameters, showIndicator: false) {(hasData:Bool) in
             SVProgressHUD.dismiss()
             self.walletPrice = (self.walletViewModel.walletPirceModel.price?.stringValue)!
             self.tableView.reloadData()

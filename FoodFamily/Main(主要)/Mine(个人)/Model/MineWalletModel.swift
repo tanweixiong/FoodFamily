@@ -59,6 +59,8 @@ class MineWalletPriceModel: Mappable {
 class MineWalletDetaiListModel: Mappable {
     var detaiList: [MineWalletDataModel]?
     var wallet: MineWalletPriceModel?
+    var pages: Int?
+    var pageNum: Int?
     
     required init?(map: Map) {
         
@@ -70,6 +72,8 @@ class MineWalletDetaiListModel: Mappable {
     
     func mapping(map: Map) {
         detaiList        <- map["detaiList"]
+        pages       <- map["pages"]
+        pageNum     <- map["pageNum"]
         wallet       <- map["wallet"]
     }
 }

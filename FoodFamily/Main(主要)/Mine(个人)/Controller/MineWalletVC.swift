@@ -12,7 +12,7 @@ import MJRefresh
 class MineWalletVC: UIViewController,UITableViewDataSource,UITableViewDelegate{
     fileprivate let mineWalletCell = "MineWalletCell"
     fileprivate let SCREEN_KeyWindowBounds = (UIApplication.shared.keyWindow?.bounds)!
-    fileprivate var pageNum:Int = 0
+    fileprivate var pageNum:Int = 1
     fileprivate lazy var viewModel : MineWalletVM = MineWalletVM()
     
     struct MyBalanceUX {
@@ -42,12 +42,14 @@ class MineWalletVC: UIViewController,UITableViewDataSource,UITableViewDelegate{
     
     func getData(){
         let parameters = ["pageNum":"\(self.pageNum)","pageSize":""]
-        viewModel.loadSuccessfullyReturnedData(requestType: .get, URLString:  ConstAPI.kAPIUserWalletGetUserWalletList, parameters: parameters, showIndicator: false) {
+        viewModel.loadSuccessfullyReturnedData(requestType: .get, URLString:  ConstAPI.kAPIUserWalletGetUserWalletList, parameters: parameters, showIndicator: false) {(hasData:Bool) in
+            self.pageNum = self.pageNum + 1
             self.balanceLabel.text = self.viewModel.walletPirceModel.price?.stringValue
             self.repaintView()
-            self.pageNum = self.pageNum + 1
-            self.tableView.reloadData()
-            self.tableView.mj_footer.endRefreshing()
+            if hasData {
+                self.tableView.reloadData()
+                self.tableView.mj_footer.endRefreshing()
+            }
         }
         self.tableView.mj_footer.endRefreshing()
     }
