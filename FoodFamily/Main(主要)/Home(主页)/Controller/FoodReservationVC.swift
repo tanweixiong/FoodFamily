@@ -82,8 +82,11 @@ class FoodReservationVC: UIViewController,UITableViewDelegate,UITableViewDataSou
     //选择预约时间
     func foodSelectNumberReservationsChoose(_ day: String, _ time: String) {
         let cell = tableView.cellForRow(at: IndexPath(row: 0, section: 1))as! FoodReservationCell
-        reservationsTime = day + time
-        cell.dataLabel.text = reservationsTime
+        var newDay = day
+        let range = newDay.index(newDay.endIndex, offsetBy: -3)..<newDay.index(newDay.endIndex, offsetBy: -2)
+        newDay.replaceSubrange(range, with: "月")
+        newDay = newDay + "日" + " " + time
+        cell.dataLabel.text = newDay
     }
     
     //选择预约人数
