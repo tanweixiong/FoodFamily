@@ -245,12 +245,12 @@ class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewData
     func reservationPayment(){
         let spassword = self.payPassword
         let storeId = (self.detailsModel.storeId?.stringValue)!
-        var reserPrice = ""
         let appointmentNum = self.payAppointmentNum
 //        let appointmentTime = self.payAppointmentTime
         let appointmentTime = self.stringToTimeStamp(stringTime: "2017年11月10日")
         let payPhone = self.payPhone
         let payCode = self.payCode
+        var reserPrice = ""
         if self.detailsModel.reserPrice != nil {
             reserPrice = (self.detailsModel.reserPrice?.stringValue)!
         }
@@ -266,24 +266,13 @@ class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewData
             })
         }
     }
-    
-    func stringToTimeStamp(stringTime:String)->String {
-        let dfmatter = DateFormatter()
-        dfmatter.dateFormat="yyyy年MM月dd日"
-        let date = dfmatter.date(from: stringTime)
-        let dateStamp:TimeInterval = date!.timeIntervalSince1970
-        let dateSt:Int = Int(dateStamp)
-        print(dateSt)
-        return String(dateSt)
-    }
 
     //套餐支付
     func mealPayment(){
-        let cell = tableView.cellForRow(at: IndexPath(row: indexPath.row, section: indexPath.section))as! FoodReservationPaymentMethodCell
         let mealId = (self.mealModel.mealId?.stringValue)!
         let storeId = (self.detailsModel.storeId?.stringValue)!
         let spassword = self.payPassword
-        let point = cell.chooseBtn.isSelected ? (integralViewModel.model.totalPrice?.stringValue)! : "0"
+        let point = self.getPoint()
         let parameters = ["mealId":mealId,"storeId":storeId,"point":point,"spassword":spassword]
         SVProgressHUD.show(withStatus: "请稍等")
         payViewModel.loadMealPaySuccessfullyReturnedData(requestType: .post, URLString: ConstAPI.kAPIOrderAddMealOrderInfo, parameters: parameters, showIndicator: false) {
@@ -292,6 +281,7 @@ class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewData
                 let foodPurchaseSuccessVC = FoodPurchaseSuccessVC()
                 foodPurchaseSuccessVC.ecPrice = self.ecPrice
                 foodPurchaseSuccessVC.paymentMethod = .mealPaymentStatus
+                foodPurchaseSuccessVC.orderNo = mealId
                 self.navigationController?.pushViewController(foodPurchaseSuccessVC, animated: true)
             })
         }
@@ -299,11 +289,10 @@ class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewData
     
     //代金券支付
     func vouchersPayment(){
-        let cell = tableView.cellForRow(at: IndexPath(row: indexPath.row, section: indexPath.section))as! FoodReservationPaymentMethodCell
         let vouId = (self.voucherModel.voucherId?.stringValue)!
         let storeId = (self.detailsModel.storeId?.stringValue)!
         let spassword = self.payPassword
-        let point = cell.chooseBtn.isSelected ? (integralViewModel.model.totalPrice?.stringValue)! : "0"
+        let point = self.getPoint()
         let parameters = ["vouId":vouId,"storeId":storeId,"point":point,"spassword":spassword]
         SVProgressHUD.show(withStatus: "请稍等")
         payViewModel.loadMealPaySuccessfullyReturnedData(requestType: .post, URLString: ConstAPI.kAPIOrderAddVouOrderInfo, parameters: parameters, showIndicator: false) {
@@ -312,6 +301,7 @@ class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewData
                 let foodPurchaseSuccessVC = FoodPurchaseSuccessVC()
                 foodPurchaseSuccessVC.ecPrice = self.ecPrice
                 foodPurchaseSuccessVC.paymentMethod = .voucherPaymentStatus
+                foodPurchaseSuccessVC.orderNo = vouId
                 self.navigationController?.pushViewController(foodPurchaseSuccessVC, animated: true)
               })
         }
@@ -330,6 +320,7 @@ class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewData
                 let foodPurchaseSuccessVC = FoodPurchaseSuccessVC()
                 foodPurchaseSuccessVC.ecPrice = self.ecPrice
                 foodPurchaseSuccessVC.paymentMethod = .immediatelyPaymentStatus
+                foodPurchaseSuccessVC.orderNo = storeId
                 self.navigationController?.pushViewController(foodPurchaseSuccessVC, animated: true)
             })
         }
@@ -385,6 +376,10 @@ class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewData
                 needPay = self.walletPrice
                 walletPrice = self.totalNumTextField.text! + "消费金额"
                 ecPrice = self.totalNumTextField.text!
+                if needPay == "" || needPay == "0" {
+                   SVProgressHUD.showInfo(withStatus: "您的余额足请确认后再消费")
+                   return
+                }
             }else{
                 SVProgressHUD.showInfo(withStatus: "请输入消费金额")
                 return
@@ -396,6 +391,18 @@ class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewData
         view?.setNeedPayPrice(needPay)
         view?.setWalletBalance(walletPrice)
         view?.show()
+    }
+    
+    //获取代金券或套餐的金额
+    func getPoint()->String{
+        var point = ""
+        if integralViewModel.model.canDe == 0 {
+            point = "0"
+        }else{
+            let cell = tableView.cellForRow(at: IndexPath(row: indexPath.row, section: indexPath.section))as! FoodReservationPaymentMethodCell
+            point = cell.chooseBtn.isSelected ? (integralViewModel.model.totalPrice?.stringValue)! : "0"
+        }
+        return point
     }
     
     //设置 代金券金额
@@ -415,5 +422,15 @@ class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewData
         }
         walletBalance = (self.integralViewModel.model.ECPrice?.stringValue)!
         return (walletBalance,needPay)
+    }
+    
+    func stringToTimeStamp(stringTime:String)->String {
+        let dfmatter = DateFormatter()
+        dfmatter.dateFormat="yyyy年MM月dd日"
+        let date = dfmatter.date(from: stringTime)
+        let dateStamp:TimeInterval = date!.timeIntervalSince1970
+        let dateSt:Int = Int(dateStamp)
+        print(dateSt)
+        return String(dateSt)
     }
 }

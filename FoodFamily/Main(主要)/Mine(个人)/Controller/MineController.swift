@@ -71,6 +71,11 @@ class MineController: MainViewController,MineInformationDelegate {
             self.navigationController?.pushViewController(mineInformationVC, animated: true)
             break
             
+        case 6:
+            let mineChefVC = MineChefVC()
+            self.navigationController?.pushViewController(mineChefVC, animated: true)
+            break
+            
         default:
             break
         }

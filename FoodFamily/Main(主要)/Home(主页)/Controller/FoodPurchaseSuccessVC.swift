@@ -17,8 +17,9 @@ class FoodPurchaseSuccessVC: MainViewController {
     var finishText = ""
     var ecPrice = ""
     var price = ""
+    var orderNo = ""
     struct FoodPurchaseSuccessUX {
-        static let foodPurchaseSuccessViewHeight:CGFloat = 220
+        static let foodPurchaseSuccessViewHeight:CGFloat = 300
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -54,15 +55,25 @@ class FoodPurchaseSuccessVC: MainViewController {
         view.frame = CGRect(x: 0, y: 0 , width: SCREEN_WIDTH, height:FoodPurchaseSuccessUX.foodPurchaseSuccessViewHeight)
         view.foodPurchaseSuccessCallBack = {(_ foodPurchaseSuccessChooseType:FoodPurchaseSuccessChooseType) in
             if foodPurchaseSuccessChooseType == .seeDetailsStatus{
-//                if self.paymentMethod == .ordinaryPaymentStatus{
-//                    let foodPackageOrderDetailsVC = FoodPackageOrderDetailsVC()
-//                    self.navigationController?.pushViewController(foodPackageOrderDetailsVC, animated: true)
-//                }else{
-//                    let foodVoucherOrderDetailsVC = FoodVoucherOrderDetailsVC()
-//                    self.navigationController?.pushViewController(foodVoucherOrderDetailsVC, animated: true)
-//                }
+                if self.paymentMethod == .voucherPaymentStatus{
+                    let foodVoucherOrderDetailsVC = FoodVoucherOrderDetailsVC()
+                    foodVoucherOrderDetailsVC.orderNo = self.orderNo
+                    self.navigationController?.pushViewController(foodVoucherOrderDetailsVC, animated: true)
+                }else if self.paymentMethod == .mealPaymentStatus{
+                    let letfFoodPackageOrderDetailsVC = FoodPackageOrderDetailsVC()
+                    letfFoodPackageOrderDetailsVC.orderNo = self.orderNo
+                    self.navigationController?.pushViewController(letfFoodPackageOrderDetailsVC, animated: true)
+                }else if self.paymentMethod == .reservationPaymentStatus{
+                    let foodCanteenOrderDetailsVC = FoodCanteenOrderDetailsVC()
+                    foodCanteenOrderDetailsVC.orderNo = self.orderNo
+                    self.navigationController?.pushViewController(foodCanteenOrderDetailsVC, animated: true)
+                }else if self.paymentMethod == .immediatelyPaymentStatus{
+                    let letfFoodPackageOrderDetailsVC = FoodPackageOrderDetailsVC()
+                    letfFoodPackageOrderDetailsVC.orderNo = self.orderNo
+                    self.navigationController?.pushViewController(letfFoodPackageOrderDetailsVC, animated: true)
+                }
             }else{
-                
+                self.navigationController?.popViewController(animated: true)
             }
         }
         return view
