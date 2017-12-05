@@ -29,6 +29,7 @@ class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewData
     fileprivate let foodPaymentConsumptionVC = "FoodPaymentConsumptionVC"
     fileprivate var indexPath = IndexPath()
     fileprivate var totalNumTextField = UITextField()
+    fileprivate var isInsufficientBalance:Bool = false //余额是否足够
     fileprivate var currentAmount = ""
     fileprivate var payPassword = ""
     fileprivate var walletPrice = ""
@@ -310,6 +311,10 @@ class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewData
     
     //现金支付
     func immediatelyPaymentStatusPayment(){
+        if isInsufficientBalance {
+            SVProgressHUD.showInfo(withStatus: "您的余额不足请充值后再试")
+            return
+        }
         let storeId = (self.detailsModel.storeId?.stringValue)!
         let price = self.totalNumTextField.text!
         let spassword =  self.payPassword
@@ -352,6 +357,7 @@ class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewData
         walletViewModel.loadSuccessfullyReturnedData(requestType: .get, URLString:  ConstAPI.kAPIUserWalletGetUserWalletList, parameters: parameters, showIndicator: false) {(hasData:Bool) in
             SVProgressHUD.dismiss()
             self.walletPrice = (self.walletViewModel.walletPirceModel.price?.stringValue)!
+//            self.payPrice = self.walletPrice
             self.tableView.reloadData()
         }
     }
@@ -378,15 +384,14 @@ class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewData
                 walletPrice = self.totalNumTextField.text! + "消费金额"
                 ecPrice = self.totalNumTextField.text!
                 if needPay == "" || needPay == "0" {
-                   SVProgressHUD.showInfo(withStatus: "您的余额足请确认后再消费")
-                   return
+                    //余额不足
+                   self.isInsufficientBalance = true
                 }
             }else{
                 SVProgressHUD.showInfo(withStatus: "请输入消费金额")
                 return
             }
         }
-        
         let view = InputPaymentPasswordVw(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT))
         view?.delegate = self
         view?.setNeedPayPrice(needPay)
