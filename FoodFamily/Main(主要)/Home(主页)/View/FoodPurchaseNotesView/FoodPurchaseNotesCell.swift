@@ -54,13 +54,9 @@ class FoodPurchaseNotesCell: UITableViewCell {
         
         validityLabel.text = "有效期：" + model.startTime! + "~" + model.endTime!
         usageTimeLabel.text = "使用时间：" + model.useTime!
-        let needKnow:String = Tools.judgmentNull(data:model.needKnow!)
+        let needKnow = ((model.needKnow) != nil) ? model.needKnow! : ""
         usageRulesLabel.text = "使用规则：" + needKnow
-        
-         print(validityLabel.text!)
-         print(usageTimeLabel.text!)
-         print(usageRulesLabel.text!)
-        
+
         let validitySize:CGSize = OCTools.calculateMeaasgeHeight(withText: validityLabel.text!, andWidth: SCREEN_WIDTH - FoodPurchaseNotesUX.startSpace, andFont: validityLabel.font)
         validityLabel.snp.updateConstraints { (make) in
             make.centerX.equalTo(contentView.snp.centerX)

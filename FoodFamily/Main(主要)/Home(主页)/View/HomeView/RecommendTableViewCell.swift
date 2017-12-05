@@ -22,7 +22,8 @@ class RecommendTableViewCell: UITableViewCell {
         self.storeNameLabel.text = model.storeName
         self.perPayLabel.text = model.perPay?.stringValue
         self.streetLabel.text = model.street
-//        self.backgroundImageVw.sd_setImage(with: NSURL(string: Tools.judgmentNull(data: model.coverPic! as AnyObject))! as URL, placeholderImage: UIImage.init(named: "ic_all_imageDefault"))
+        let coverPic = ((model.coverPic) != nil) ? model.coverPic! : ""
+        self.backgroundImageVw.sd_setImage(with: NSURL(string: coverPic)! as URL, placeholderImage: UIImage.init(named: "ic_all_imageDefault"))
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

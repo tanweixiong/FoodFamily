@@ -70,18 +70,18 @@ class Tools: NSObject {
     }
     
     //判断是否为空值
-    class func judgmentNull(data:String)->String{
+    class func judgmentNull(data:NSString)->String{
       
         if (((data as AnyObject).isEqual(NSNull.init())) == false) {
-            return data
+            return data as String
         }
         
         if (((data as AnyObject).isEqual(NSNull.init())) == false) {
-            return data
+            return data as String
         }
         
         if (((data as AnyObject).isEqual(NSNull())) == false)  {
-            return data
+            return data as String
         }
         return ""
     }
