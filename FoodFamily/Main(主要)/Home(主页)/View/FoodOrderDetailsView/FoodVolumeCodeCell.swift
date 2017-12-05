@@ -16,14 +16,14 @@ class FoodVolumeCodeCell: UITableViewCell {
     //代金券
     var voucherModel : FoodOrderVoucherListModel = FoodOrderVoucherListModel()!{
         didSet{
-            self.headingContentLabel.text = voucherModel.vouNum!
+            self.headingContentLabel.text = (voucherModel.vouNum?.stringValue)!
         }
     }
     
     //套餐
     var packageModel : FoodOrderPackageListModel = FoodOrderPackageListModel()!{
         didSet{
-            self.headingContentLabel.text = ""
+            self.headingContentLabel.text = (packageModel.vouNum?.stringValue)!
         }
     }
     

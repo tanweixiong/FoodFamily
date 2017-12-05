@@ -23,14 +23,12 @@ class FoodOrderPackageCell: UITableViewCell {
         // Initialization code
     }
     
-    //堂吃 预约
+    //立即支付
     var canteenModel : FoodOrderCanteenListModel = FoodOrderCanteenListModel()!{
         didSet{
-            headingContentArray = ["消费金额","积分抵扣","实际付费"]
-            let totalPrice = canteenModel.totalPrice?.stringValue
-            let integral = "-" + (canteenModel.integral!)
-            let paymentAmount = canteenModel.paymentAmount?.stringValue
-            headingContentDataArray = [totalPrice!,integral,paymentAmount!]
+            headingContentArray = ["消费金额"]
+            let totalPrice = (canteenModel.totalPrice?.stringValue)!
+            headingContentDataArray = [totalPrice]
         }
     }
     
@@ -106,6 +104,9 @@ class FoodOrderPackageCell: UITableViewCell {
         let tagView = view.viewWithTag(headingContentArray.count)!
         view.frame = CGRect(x: 0, y:0, width: SCREEN_HEIGHT, height: tagView.frame.maxY)
         UserDefaults.standard.set(view.frame.maxY + FoodOrderPackageUX.space, forKey: "height")
+        if self.type == .canteenModel{
+           UserDefaults.standard.set(view.frame.maxY + 3, forKey: "height")
+        }
         return view
     }()
     

@@ -26,7 +26,6 @@ class FoodOrderDetailsVM: NSObject {
     
     func loadSuccessfullyReturnedData(requestType: HTTPMethod, URLString : String,type: FoodOrderDetailsVMType ,parameters : [String : Any]? = nil, showIndicator: Bool,finishedCallback : @escaping () -> ()) {
         NetWorkTool.request(requestType: requestType, URLString:URLString, parameters: parameters, showIndicator: true, success: { (json) in
-            print(json)
             let responseData = Mapper<ResponseData>().map(JSONObject: json)
             if let code = responseData?.code {
                 guard  100 == code else {

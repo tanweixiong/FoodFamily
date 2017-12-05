@@ -75,22 +75,24 @@ class RecommendedReasonCell: UITableViewCell {
         let width = (SCREEN_WIDTH - space * 4)/3
         let maxY = featuresLabel.frame.maxY + 16
         
-        for index in 0...(model.foodList?.count)! - 1 {
-            let foodModel = model.foodList![index] 
-            let x = space + CGFloat(index) * (width + space)
-            let imageView = UIImageView()
-            imageView.sd_setImage(with: NSURL(string: (foodModel.foodImg)!)! as URL, placeholderImage: UIImage.init(named: "ic_all_imageDefault"))
-            imageView.frame = CGRect(x: x, y: maxY, width: width, height: width)
-            contentView.addSubview(imageView)
-            
-            let label = UILabel()
-            label.text = foodModel.foodName
-            label.textColor = UIColor.R_UIRGBColor(red: 67, green: 66, blue: 67, alpha: 1)
-            label.textAlignment = .center
-            label.font = UIFont.systemFont(ofSize: 14)
-            contentView.addSubview(label)
-            let size = label.getStringSize(text: label.text!, size: CGSize(width:SCREEN_WIDTH,height:20), font: 14)
-            label.frame = CGRect(x: (imageView.frame.origin.x + width/2) - (size.width/2), y: imageView.frame.maxY + 16, width: size.width, height: 20)
+        if model.foodList?.count != 0 {
+            for index in 0...(model.foodList?.count)! - 1 {
+                let foodModel = model.foodList![index]
+                let x = space + CGFloat(index) * (width + space)
+                let imageView = UIImageView()
+                imageView.sd_setImage(with: NSURL(string: (foodModel.foodImg)!)! as URL, placeholderImage: UIImage.init(named: "ic_all_imageDefault"))
+                imageView.frame = CGRect(x: x, y: maxY, width: width, height: width)
+                contentView.addSubview(imageView)
+                
+                let label = UILabel()
+                label.text = foodModel.foodName
+                label.textColor = UIColor.R_UIRGBColor(red: 67, green: 66, blue: 67, alpha: 1)
+                label.textAlignment = .center
+                label.font = UIFont.systemFont(ofSize: 14)
+                contentView.addSubview(label)
+                let size = label.getStringSize(text: label.text!, size: CGSize(width:SCREEN_WIDTH,height:20), font: 14)
+                label.frame = CGRect(x: (imageView.frame.origin.x + width/2) - (size.width/2), y: imageView.frame.maxY + 16, width: size.width, height: 20)
+            }
         }
         
         let seeConventionMaxY = maxY + width + 16 + 20 + 20

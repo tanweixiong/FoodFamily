@@ -54,7 +54,8 @@ class FoodPurchaseNotesCell: UITableViewCell {
         
         validityLabel.text = "有效期：" + model.startTime! + "~" + model.endTime!
         usageTimeLabel.text = "使用时间：" + model.useTime!
-        usageRulesLabel.text = "使用规则：" + model.needKnow!
+        let needKnow:String = Tools.judgmentNull(data:model.needKnow!)
+        usageRulesLabel.text = "使用规则：" + needKnow
         
          print(validityLabel.text!)
          print(usageTimeLabel.text!)

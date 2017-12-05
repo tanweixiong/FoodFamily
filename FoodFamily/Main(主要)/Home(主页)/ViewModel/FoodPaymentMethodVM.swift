@@ -12,11 +12,11 @@ import SVProgressHUD
 
 class FoodPaymentMethodVM: NSObject {
     //代金券支付
-//    lazy var homeModel : HomeModel = HomeModel()!
+    lazy var model : FoodPayDataModel = FoodPayDataModel()!
     func loadVouchersPaySuccessfullyReturnedData(requestType: HTTPMethod, URLString : String, parameters : [String : Any]? = nil, showIndicator: Bool,finishedCallback : @escaping () -> ()) {
         NetWorkTool.request(requestType: requestType, URLString:URLString, parameters: parameters, showIndicator: true, success: { (json) in
             print(json)
-            let responseData = Mapper<ResponseData>().map(JSONObject: json)
+            let responseData = Mapper<FoodReservationPayModel>().map(JSONObject: json)
             if let code = responseData?.code {
                 guard  100 == code else {
                     SVProgressHUD.showInfo(withStatus: responseData?.message)
@@ -25,6 +25,7 @@ class FoodPaymentMethodVM: NSObject {
                 if showIndicator {
                     SVProgressHUD.showSuccess(withStatus: responseData?.message)
                 }
+                self.model = (responseData?.data)!
                 finishedCallback()
             }
         }) { (error) in
@@ -35,7 +36,7 @@ class FoodPaymentMethodVM: NSObject {
     func loadMealPaySuccessfullyReturnedData(requestType: HTTPMethod, URLString : String, parameters : [String : Any]? = nil, showIndicator: Bool,finishedCallback : @escaping () -> ()) {
         NetWorkTool.request(requestType: requestType, URLString:URLString, parameters: parameters, showIndicator: true, success: { (json) in
             print(json)
-            let responseData = Mapper<ResponseData>().map(JSONObject: json)
+            let responseData = Mapper<FoodReservationPayModel>().map(JSONObject: json)
             if let code = responseData?.code {
                 guard  100 == code else {
                     SVProgressHUD.showInfo(withStatus: responseData?.message)
@@ -44,6 +45,7 @@ class FoodPaymentMethodVM: NSObject {
                 if showIndicator {
                     SVProgressHUD.showSuccess(withStatus: responseData?.message)
                 }
+                self.model = (responseData?.data)!
                 finishedCallback()
             }
         }) { (error) in
@@ -54,7 +56,7 @@ class FoodPaymentMethodVM: NSObject {
     func loadReservationPaySuccessfullyReturnedData(requestType: HTTPMethod, URLString : String, parameters : [String : Any]? = nil, showIndicator: Bool,finishedCallback : @escaping () -> ()) {
         NetWorkTool.request(requestType: requestType, URLString:URLString, parameters: parameters, showIndicator: true, success: { (json) in
             print(json)
-            let responseData = Mapper<ResponseData>().map(JSONObject: json)
+            let responseData = Mapper<FoodReservationPayModel>().map(JSONObject: json)
             if let code = responseData?.code {
                 guard  100 == code else {
                     SVProgressHUD.showInfo(withStatus: responseData?.message)
@@ -63,6 +65,7 @@ class FoodPaymentMethodVM: NSObject {
                 if showIndicator {
                     SVProgressHUD.showSuccess(withStatus: responseData?.message)
                 }
+                self.model = (responseData?.data)!
                 finishedCallback()
             }
         }) { (error) in

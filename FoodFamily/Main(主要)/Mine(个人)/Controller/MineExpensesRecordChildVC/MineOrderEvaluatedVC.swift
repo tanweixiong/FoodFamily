@@ -8,10 +8,13 @@
 
 import UIKit
 import SVProgressHUD
+import MJRefresh
 
 class MineOrderEvaluatedVC: UIViewController,UITableViewDataSource,UITableViewDelegate {
     fileprivate let mineOrderEvaluatedCell = "MineOrderEvaluatedCell"
     fileprivate lazy var viewModel : MineOrderVM = MineOrderVM()
+    fileprivate var pageNum:Int = 1
+    fileprivate var isFirstLoad:Bool = true
     
     struct MineOrderEvaluatedUX {
         static let cellHeight:CGFloat = 121
@@ -24,11 +27,18 @@ class MineOrderEvaluatedVC: UIViewController,UITableViewDataSource,UITableViewDe
     }
     
     func getData(){
-        let parameters = ["type":"1"]
-        SVProgressHUD.show(withStatus: "请稍等")
-        viewModel.loadUnpaidSuccessfullyReturnedData(requestType: .get, URLString: ConstAPI.kAPIOrderGetOrderList, parameters: parameters, showIndicator: false) {
+        let parameters = ["type":"1","pageSize":"","pageNum":"\(self.pageNum)"]
+        if isFirstLoad {
+           SVProgressHUD.show(withStatus: "请稍等")
+           isFirstLoad = false
+        }
+        viewModel.loadUnpaidSuccessfullyReturnedData(requestType: .get, URLString: ConstAPI.kAPIOrderGetOrderList, parameters: parameters, showIndicator: false) {(hasData:Bool) in
+            self.pageNum = self.pageNum + 1
             SVProgressHUD.dismiss()
-            self.tableView.reloadData()
+            if hasData{
+                self.tableView.reloadData()
+            }
+            self.tableView.mj_footer.endRefreshing()
         }
     }
     
@@ -51,11 +61,11 @@ class MineOrderEvaluatedVC: UIViewController,UITableViewDataSource,UITableViewDe
         let model = self.viewModel.unpaidModel[indexPath.section]
         var type = ""
         if model.type == 1 {
-            type = "立即支付"
+            type = "套餐"
         }else if model.type == 2 {
             type = "代金券"
-        }else if model.type == 3 {
-            type = "预约"
+        }else if model.type == 4 {
+            type = "立即支付"
         }
         cell.typeLabel.text = type + " "
         return cell
@@ -84,21 +94,21 @@ class MineOrderEvaluatedVC: UIViewController,UITableViewDataSource,UITableViewDe
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let model = self.viewModel.unpaidModel[indexPath.section]
-        //立即支付类型
+        //套餐类型
         if model.type == 1 {
-            let foodCanteenOrderDetailsVC = FoodCanteenOrderDetailsVC()
-            foodCanteenOrderDetailsVC.orderNo = model.orderNo!
-            self.navigationController?.pushViewController(foodCanteenOrderDetailsVC, animated: true)
+            let foodPackageOrderDetailsVC = FoodPackageOrderDetailsVC()
+            foodPackageOrderDetailsVC.orderNo = model.orderNo!
+            self.navigationController?.pushViewController(foodPackageOrderDetailsVC, animated: true)
             //代金券类型
         }else if model.type == 2 {
             let foodVoucherOrderDetailsVC = FoodVoucherOrderDetailsVC()
             foodVoucherOrderDetailsVC.orderNo = model.orderNo!
             self.navigationController?.pushViewController(foodVoucherOrderDetailsVC, animated: true)
-            //套餐类型
-        }else if model.type == 3 {
-            let foodPackageOrderDetailsVC = FoodPackageOrderDetailsVC()
-            foodPackageOrderDetailsVC.orderNo = model.orderNo!
-            self.navigationController?.pushViewController(foodPackageOrderDetailsVC, animated: true)
+            //立即支付类型
+        }else if model.type == 4 {
+            let foodCanteenOrderDetailsVC = FoodCanteenOrderDetailsVC()
+            foodCanteenOrderDetailsVC.orderNo = model.orderNo!
+            self.navigationController?.pushViewController(foodCanteenOrderDetailsVC, animated: true)
         }
     }
     
@@ -111,6 +121,9 @@ class MineOrderEvaluatedVC: UIViewController,UITableViewDataSource,UITableViewDe
         tableView.backgroundColor = R_UISectionLineColor
         tableView.separatorColor = UIColor.R_UIRGBColor(red: 237, green: 237, blue: 237, alpha: 1)
         tableView.tableFooterView = UIView()
+        tableView.mj_footer = MJRefreshAutoNormalFooter.init(refreshingBlock: {
+            self.getData()
+        })
         return tableView
     }()
 }

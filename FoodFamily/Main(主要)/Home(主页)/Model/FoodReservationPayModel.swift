@@ -8,10 +8,26 @@
 
 import UIKit
 
+class FoodPayDataModel: Mappable {
+    var orderNo: String?
+    
+    required init?(map: Map) {
+        
+    }
+    
+    required init?() {
+        
+    }
+    
+    func mapping(map: Map) {
+        orderNo        <- map["orderNo"]
+    }
+}
+
 class FoodReservationPayModel: Mappable {
     var code: NSNumber?
     var message: String?
-    var data: RecommendDataModel?
+    var data: FoodPayDataModel?
     
     required init?(map: Map) {
         

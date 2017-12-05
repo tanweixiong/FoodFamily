@@ -10,40 +10,36 @@ import UIKit
 
 //代金券详情
 class FoodOrderCanteenListModel: Mappable {
-    var storeId: NSNumber?
-    var storeLogo: String?
+    var address: String?
     var createTime: String?
     var name: String?
-    var address: String?
     var orderNo: String?
-    var payType: NSNumber?
-    
-    var totalPrice: NSNumber?
-    var paymentAmount: NSNumber?
-    var integral: String?
     var orderStatus: NSNumber? //1未支付 2已支付 5未评价 6已评价 7交易完成 8交易关闭
-    
+    var payType: NSNumber?
+    var remark: String?
+    var storeId: NSNumber?
+    var storeLogo: String?
+    var totalPrice: NSNumber?
+
     required init?(map: Map) {
         
     }
     
     required init?() {
-        
     }
     
     func mapping(map: Map) {
-        storeId        <- map["storeId"]
-        storeLogo      <- map["storeLogo"]
+        address        <- map["address"]
         createTime     <- map["createTime"]
         name           <- map["name"]
-        address        <- map["address"]
         orderNo        <- map["orderNo"]
-        payType        <- map["payType"]
-        
-        totalPrice     <- map["totalPrice"]
-        paymentAmount  <- map["paymentAmount"]
-        integral       <- map["integral"]
         orderStatus    <- map["orderStatus"]
+        payType        <- map["payType"]
+        remark         <- map["remark"]
+        
+        storeId        <- map["storeId"]
+        storeLogo      <- map["storeLogo"]
+        totalPrice     <- map["totalPrice"]
     }
 }
 

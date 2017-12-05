@@ -26,7 +26,7 @@ class FoodOrderPackageListModel: Mappable {
     var mealId: NSNumber?
     var mealName: NSString?
     var vouId: NSNumber?
-    var vouNum: String?
+    var vouNum: NSNumber?
     var orderStatus: NSNumber? //1未支付 2已支付 5未评价 6已评价 7交易完成 8交易关闭
     var remark: String?
     
@@ -35,7 +35,7 @@ class FoodOrderPackageListModel: Mappable {
     }
     
     required init?() {
-        
+    
     }
     
     func mapping(map: Map) {

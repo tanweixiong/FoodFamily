@@ -65,7 +65,7 @@ class RecommendDetailsVC: UIViewController,UITableViewDelegate,UITableViewDataSo
     }
     
     func getData(){
-        let parameters = ["storeId":storeID]
+        let parameters = ["storeId":"1"]
         //获取头部
         recommendDetailsVM.loadSuccessfullyReturnedData(requestType: .get, URLString: ConstAPI.kAPIStoreGetStoreInfo, parameters: parameters, showIndicator: false) {
             self.headScrollView.recommendDataModel = self.recommendDetailsVM.recommendDataModel

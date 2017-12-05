@@ -19,7 +19,7 @@ class FoodPurchaseSuccessVC: MainViewController {
     var price = ""
     var orderNo = ""
     struct FoodPurchaseSuccessUX {
-        static let foodPurchaseSuccessViewHeight:CGFloat = 300
+        static let foodPurchaseSuccessViewHeight:CGFloat = 270
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -55,6 +55,7 @@ class FoodPurchaseSuccessVC: MainViewController {
         view.frame = CGRect(x: 0, y: 0 , width: SCREEN_WIDTH, height:FoodPurchaseSuccessUX.foodPurchaseSuccessViewHeight)
         view.foodPurchaseSuccessCallBack = {(_ foodPurchaseSuccessChooseType:FoodPurchaseSuccessChooseType) in
             if foodPurchaseSuccessChooseType == .seeDetailsStatus{
+//                print(self.orderNo)
                 if self.paymentMethod == .voucherPaymentStatus{
                     let foodVoucherOrderDetailsVC = FoodVoucherOrderDetailsVC()
                     foodVoucherOrderDetailsVC.orderNo = self.orderNo

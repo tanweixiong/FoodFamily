@@ -69,6 +69,23 @@ class Tools: NSObject {
         }
     }
     
+    //判断是否为空值
+    class func judgmentNull(data:String)->String{
+      
+        if (((data as AnyObject).isEqual(NSNull.init())) == false) {
+            return data
+        }
+        
+        if (((data as AnyObject).isEqual(NSNull.init())) == false) {
+            return data
+        }
+        
+        if (((data as AnyObject).isEqual(NSNull())) == false)  {
+            return data
+        }
+        return ""
+    }
+    
     //图片data转化字符串
     class func 获取图片转化字符串返回字符串(图片: UIImage)-> String {
         var 数据: NSData;

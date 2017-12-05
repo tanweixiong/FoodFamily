@@ -132,7 +132,7 @@ class RegisterAndForgetPsdVC: MainViewController,UITextFieldDelegate {
         }
         
         if !Tools.validatePassword(password: registerView.passwordTextField.text!) {
-            SVProgressHUD.showInfo(withStatus: "请输入6-16个字符数组与者字母的密码")
+            SVProgressHUD.showInfo(withStatus: "密码由6~16位的英文字母与数字组成")
             return false
         }
         return true

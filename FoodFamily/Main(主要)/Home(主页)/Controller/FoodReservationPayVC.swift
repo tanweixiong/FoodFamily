@@ -169,14 +169,6 @@ class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewData
             //观察选项是否能够进行抵扣
             let cell = tableView.cellForRow(at: IndexPath(row: indexPath.row, section: indexPath.section))as! FoodReservationPaymentMethodCell
             cell.chooseBtn.isSelected = !cell.chooseBtn.isSelected
-            //观察是否能够选中
-//            if cell.chooseBtn.isSelected {
-//                self.currentAmount = (self.integralViewModel.model.price?.stringValue)!
-//                self.confirmBtn.setTitle(self.currentAmount, for: .normal)
-//            }else{
-//                self.currentAmount = self.payPrice
-//                self.confirmBtn.setTitle(self.currentAmount, for: .normal)
-//            }
         }
     }
     
@@ -248,7 +240,6 @@ class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewData
         let spassword = self.payPassword
         let storeId = (self.detailsModel.storeId?.stringValue)!
         let appointmentNum = self.payAppointmentNum
-//        let appointmentTime = self.payAppointmentTime
         let appointmentTime = self.stringToTimeStamp(stringTime: "2017年11月10日")
         let payPhone = self.payPhone
         let payCode = self.payCode
@@ -264,7 +255,7 @@ class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewData
                 let foodPurchaseSuccessVC = FoodPurchaseSuccessVC()
                 foodPurchaseSuccessVC.ecPrice = reserPrice
                 foodPurchaseSuccessVC.paymentMethod = .reservationPaymentStatus
-                foodPurchaseSuccessVC.orderNo = storeId
+                foodPurchaseSuccessVC.orderNo = self.payViewModel.model.orderNo!
                 self.navigationController?.pushViewController(foodPurchaseSuccessVC, animated: true)
             })
         }
@@ -284,7 +275,7 @@ class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewData
                 let foodPurchaseSuccessVC = FoodPurchaseSuccessVC()
                 foodPurchaseSuccessVC.ecPrice = self.ecPrice
                 foodPurchaseSuccessVC.paymentMethod = .mealPaymentStatus
-                foodPurchaseSuccessVC.orderNo = mealId
+                foodPurchaseSuccessVC.orderNo = self.payViewModel.model.orderNo!
                 self.navigationController?.pushViewController(foodPurchaseSuccessVC, animated: true)
             })
         }
@@ -298,13 +289,13 @@ class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewData
         let point = self.getPoint()
         let parameters = ["vouId":vouId,"storeId":storeId,"point":point,"spassword":spassword]
         SVProgressHUD.show(withStatus: "请稍等")
-        payViewModel.loadMealPaySuccessfullyReturnedData(requestType: .post, URLString: ConstAPI.kAPIOrderAddVouOrderInfo, parameters: parameters, showIndicator: false) {
+        payViewModel.loadVouchersPaySuccessfullyReturnedData(requestType: .post, URLString: ConstAPI.kAPIOrderAddVouOrderInfo, parameters: parameters, showIndicator: false) {
             SVProgressHUD.showSuccess(withStatus: "支付成功")
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5, execute: {
                 let foodPurchaseSuccessVC = FoodPurchaseSuccessVC()
                 foodPurchaseSuccessVC.ecPrice = self.ecPrice
                 foodPurchaseSuccessVC.paymentMethod = .voucherPaymentStatus
-                foodPurchaseSuccessVC.orderNo = vouId
+                foodPurchaseSuccessVC.orderNo = self.payViewModel.model.orderNo!
                 self.navigationController?.pushViewController(foodPurchaseSuccessVC, animated: true)
               })
         }
@@ -327,7 +318,7 @@ class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewData
                 let foodPurchaseSuccessVC = FoodPurchaseSuccessVC()
                 foodPurchaseSuccessVC.ecPrice = self.ecPrice
                 foodPurchaseSuccessVC.paymentMethod = .immediatelyPaymentStatus
-                foodPurchaseSuccessVC.orderNo = storeId
+                foodPurchaseSuccessVC.orderNo = self.payViewModel.model.orderNo!
                 self.navigationController?.pushViewController(foodPurchaseSuccessVC, animated: true)
             })
         }
@@ -359,7 +350,6 @@ class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewData
         walletViewModel.loadSuccessfullyReturnedData(requestType: .get, URLString:  ConstAPI.kAPIUserWalletGetUserWalletList, parameters: parameters, showIndicator: false) {(hasData:Bool) in
             SVProgressHUD.dismiss()
             self.walletPrice = (self.walletViewModel.walletPirceModel.price?.stringValue)!
-//            self.payPrice = self.walletPrice
             self.tableView.reloadData()
         }
     }

@@ -30,7 +30,7 @@ class FoodPurchaseSuccessView: UIView {
         case 0:
             foodPurchaseSuccessChooseType = .seeDetailsStatus
             break
-        case 0:
+        case 1:
             foodPurchaseSuccessChooseType = .buyNowsStatus
             break
         default: break
