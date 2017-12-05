@@ -72,6 +72,7 @@ class RecommendDetailsVC: UIViewController,UITableViewDelegate,UITableViewDataSo
             self.recommendHeadView.recommendDataModel = self.recommendDetailsVM.recommendDataModel
             self.logoView.sd_setImage(with: NSURL(string: (self.recommendDetailsVM.recommendDataModel.logo!))! as URL, placeholderImage: UIImage.init(named: "ic_all_imageDefault"))
             self.recommendFootView.collectView.isSelected = self.recommendDetailsVM.recommendDataModel.isCollection == 0 ? false : true
+            
             let voucherArray:NSArray = self.recommendDetailsVM.recommendDataModel.voucherList! as NSArray
             if voucherArray.count != 0 {
                self.dataSource.add(voucherArray)

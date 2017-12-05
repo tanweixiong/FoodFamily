@@ -39,7 +39,7 @@ class RecommendedReasonCell: UITableViewCell {
         contentView.addSubview(conventionContentLabel)
         contentView.addSubview(seeConventionDetail)
         contentView.addSubview(featuresThumbsUp)
-        contentView.layer.addSublayer(layers)
+        contentView.addSubview(line)
         contentView.addSubview(featuresLabel)
         contentView.addSubview(seefeaturesDetail)
         
@@ -60,11 +60,11 @@ class RecommendedReasonCell: UITableViewCell {
         seeConventionDetail.frame = CGRect(x: SCREEN_WIDTH/2 - seeConventionDetail.frame.size.width/2, y: conventionContentLabel.frame.maxY + 20, width: seeConventionDetail.frame.size.width, height: seeConventionDetail.frame.size.height)
         
         //灰色线条
-         layers.frame = CGRect(x: 26, y: seeConventionDetail.frame.maxY + 20, width: SCREEN_WIDTH - 52, height: 0.5)
+         line.frame = CGRect(x: 26, y: seeConventionDetail.frame.maxY + 20, width: SCREEN_WIDTH - 52, height: 0.5)
         
         //特色菜
         let featuresSize:CGSize = featuresLabel.getStringSize(text: featuresLabel.text!, size: CGSize(width:SCREEN_WIDTH,height:RecommendedReasonUX.titleLabelHeight), font: 16)
-        featuresLabel.frame = CGRect(x: SCREEN_WIDTH/2 - featuresSize.width/2, y: layers.frame.maxY + 20, width: featuresSize.width, height: RecommendedReasonUX.titleLabelHeight)
+        featuresLabel.frame = CGRect(x: SCREEN_WIDTH/2 - featuresSize.width/2, y: line.frame.maxY + 20, width: featuresSize.width, height: RecommendedReasonUX.titleLabelHeight)
         
         //推荐点赞
         featuresThumbsUp.frame = CGRect(x: featuresLabel.frame.origin.x - featuresThumbsUp.frame.size.width - 5 , y: featuresLabel.frame.origin.y + 5, width: featuresThumbsUp.frame.size.width, height: featuresThumbsUp.frame.size.height)
@@ -93,6 +93,18 @@ class RecommendedReasonCell: UITableViewCell {
                 let size = label.getStringSize(text: label.text!, size: CGSize(width:SCREEN_WIDTH,height:20), font: 14)
                 label.frame = CGRect(x: (imageView.frame.origin.x + width/2) - (size.width/2), y: imageView.frame.maxY + 16, width: size.width, height: 20)
             }
+        }else{
+            //什么都不存在的情况
+            if model.msgInfo == "" && model.foodList?.count == 0 {
+                UserDefaults.standard.set(0, forKey: "height")
+                self.clean()
+                return
+            }else{
+                //只存在上边
+                UserDefaults.standard.set(seeConventionDetail.frame.maxY + 20, forKey: "height")
+                self.cleanDownData()
+                return
+            }
         }
         
         let seeConventionMaxY = maxY + width + 16 + 20 + 20
@@ -100,9 +112,32 @@ class RecommendedReasonCell: UITableViewCell {
         seefeaturesDetail.frame = CGRect(x: SCREEN_WIDTH/2 - seefeaturesDetail.frame.size.width/2, y: seeConventionMaxY, width: seefeaturesDetail.frame.size.width, height: seefeaturesDetail.frame.size.height)
         
         var sum = seefeaturesDetail.frame.maxY + 23
-        sum = model.foodList?.count == 0 ? layers.frame.maxY : sum
+        sum = model.foodList?.count == 0 ? line.frame.maxY : sum
         UserDefaults.standard.set(sum, forKey: "height")
     }
+    
+    //清除所有
+    func clean(){
+        self.cleanUpData()
+        self.cleanDownData()
+    }
+    
+    //清除上部分
+    func cleanUpData(){
+        conventionLabel.removeFromSuperview()
+        conventionThumbsUp.removeFromSuperview()
+        conventionContentLabel.removeFromSuperview()
+        seeConventionDetail.removeFromSuperview()
+    }
+    
+    //清除下部分
+    func cleanDownData(){
+        featuresThumbsUp.removeFromSuperview()
+        featuresLabel.removeFromSuperview()
+        line.removeFromSuperview()
+        seefeaturesDetail.removeFromSuperview()
+    }
+    
     
     lazy var conventionThumbsUp :UIImageView = {
         let imageView = UIImageView()
@@ -168,14 +203,20 @@ class RecommendedReasonCell: UITableViewCell {
         return btn
     }()
     
-    lazy var layers: CALayer = {
-        let layers = CALayer()
-        layers.frame = CGRect(x: 0, y: 0 ,width: SCREEN_WIDTH - 52  ,height:0.5)
-        layers.backgroundColor  = UIColor.R_UIRGBColor(red: 237, green: 237, blue: 237, alpha: 1).cgColor
-        //        layers.backgroundColor = UIColor.orange.cgColor
-        return layers
-    }()
+//    lazy var layers: CALayer = {
+//        let layers = CALayer()
+//        layers.frame = CGRect(x: 0, y: 0 ,width: SCREEN_WIDTH - 52  ,height:0.5)
+//        layers.backgroundColor  = UIColor.R_UIRGBColor(red: 237, green: 237, blue: 237, alpha: 1).cgColor
+//        //        layers.backgroundColor = UIColor.orange.cgColor
+//        return layers
+//    }()
     
+    lazy var line: UIView = {
+        let view = UIView()
+        view.frame = CGRect(x: 0, y: 0 ,width: SCREEN_WIDTH - 52  ,height:0.5)
+        view.backgroundColor = UIColor.R_UIRGBColor(red: 237, green: 237, blue: 237, alpha: 1)
+        return view
+    }()
     
    @objc func recommendOnClick(_ sender: UIButton) {
         if recommendedReasonCallBack != nil {

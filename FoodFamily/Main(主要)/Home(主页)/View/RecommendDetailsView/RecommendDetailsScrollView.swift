@@ -20,15 +20,14 @@ class RecommendDetailsScrollView: UIView {
         self.addSubview(scrollView)
     }
     
-    func setData(_ data:NSArray){
-        if data.count != 0 {
-            for index in 0...data.count - 1 {
-                let imageView = UIImageView(frame: CGRect(x: CGFloat(index) * SCREEN_WIDTH, y: 0, width: SCREEN_WIDTH, height: self.frame.size.height))
-                imageView.sd_setImage(with: NSURL(string: data[index] as! String)! as URL, placeholderImage: UIImage.init(named: "ic_all_imageDefault"))
-                scrollView.addSubview(imageView)
-            }
-            scrollView.contentSize = CGSize(width: SCREEN_WIDTH * CGFloat(data.count), height: self.frame.size.height)
+    func setData(_ array:NSArray){
+        let dataScore = array.count != 0 ? array : [""]
+        for index in 0...dataScore.count - 1 {
+            let imageView = UIImageView(frame: CGRect(x: CGFloat(index) * SCREEN_WIDTH, y: 0, width: SCREEN_WIDTH, height: self.frame.size.height))
+            imageView.sd_setImage(with: NSURL(string: dataScore[index] as! String)! as URL, placeholderImage: UIImage.init(named: "ic_all_imageDefault"))
+            scrollView.addSubview(imageView)
         }
+        scrollView.contentSize = CGSize(width: SCREEN_WIDTH * CGFloat(dataScore.count), height: self.frame.size.height)
     }
     
     lazy var scrollView:UIScrollView = {
