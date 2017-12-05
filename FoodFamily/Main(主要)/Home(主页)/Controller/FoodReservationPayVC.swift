@@ -262,6 +262,7 @@ class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewData
                 let foodPurchaseSuccessVC = FoodPurchaseSuccessVC()
                 foodPurchaseSuccessVC.ecPrice = reserPrice
                 foodPurchaseSuccessVC.paymentMethod = .reservationPaymentStatus
+                foodPurchaseSuccessVC.orderNo = storeId
                 self.navigationController?.pushViewController(foodPurchaseSuccessVC, animated: true)
             })
         }

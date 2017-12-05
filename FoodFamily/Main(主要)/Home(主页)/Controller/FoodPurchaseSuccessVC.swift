@@ -64,13 +64,13 @@ class FoodPurchaseSuccessVC: MainViewController {
                     letfFoodPackageOrderDetailsVC.orderNo = self.orderNo
                     self.navigationController?.pushViewController(letfFoodPackageOrderDetailsVC, animated: true)
                 }else if self.paymentMethod == .reservationPaymentStatus{
+                    let mineReservationDetailsVC = MineReservationDetailsVC()
+                    mineReservationDetailsVC.orderNo = self.orderNo
+                    self.navigationController?.pushViewController(mineReservationDetailsVC, animated: true)
+                }else if self.paymentMethod == .immediatelyPaymentStatus{
                     let foodCanteenOrderDetailsVC = FoodCanteenOrderDetailsVC()
                     foodCanteenOrderDetailsVC.orderNo = self.orderNo
                     self.navigationController?.pushViewController(foodCanteenOrderDetailsVC, animated: true)
-                }else if self.paymentMethod == .immediatelyPaymentStatus{
-                    let letfFoodPackageOrderDetailsVC = FoodPackageOrderDetailsVC()
-                    letfFoodPackageOrderDetailsVC.orderNo = self.orderNo
-                    self.navigationController?.pushViewController(letfFoodPackageOrderDetailsVC, animated: true)
                 }
             }else{
                 self.navigationController?.popViewController(animated: true)
