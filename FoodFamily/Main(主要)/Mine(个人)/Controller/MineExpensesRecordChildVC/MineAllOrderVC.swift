@@ -87,10 +87,6 @@ class MineAllOrderVC: UIViewController,UITableViewDataSource,UITableViewDelegate
          let model = self.viewModel.allOrderModel[indexPath.section]
         //立即支付类型
         if model.type == 1 {
-//            let foodPackageOrderDetailsVC = FoodPackageOrderDetailsVC()
-//            foodPackageOrderDetailsVC.orderNo = model.orderNo!
-//            self.navigationController?.pushViewController(foodPackageOrderDetailsVC, animated: true)
-            
             let foodCanteenOrderDetailsVC = FoodCanteenOrderDetailsVC()
             foodCanteenOrderDetailsVC.orderNo = model.orderNo!
             self.navigationController?.pushViewController(foodCanteenOrderDetailsVC, animated: true)

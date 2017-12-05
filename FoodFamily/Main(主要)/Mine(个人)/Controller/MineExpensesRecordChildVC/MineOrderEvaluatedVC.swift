@@ -51,7 +51,7 @@ class MineOrderEvaluatedVC: UIViewController,UITableViewDataSource,UITableViewDe
         let model = self.viewModel.unpaidModel[indexPath.section]
         var type = ""
         if model.type == 1 {
-            type = "套餐"
+            type = "立即支付"
         }else if model.type == 2 {
             type = "代金券"
         }else if model.type == 3 {
@@ -84,21 +84,21 @@ class MineOrderEvaluatedVC: UIViewController,UITableViewDataSource,UITableViewDe
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let model = self.viewModel.unpaidModel[indexPath.section]
-        //套餐类型
+        //立即支付类型
         if model.type == 1 {
-            let foodPackageOrderDetailsVC = FoodPackageOrderDetailsVC()
-            foodPackageOrderDetailsVC.orderNo = model.orderNo!
-            self.navigationController?.pushViewController(foodPackageOrderDetailsVC, animated: true)
+            let foodCanteenOrderDetailsVC = FoodCanteenOrderDetailsVC()
+            foodCanteenOrderDetailsVC.orderNo = model.orderNo!
+            self.navigationController?.pushViewController(foodCanteenOrderDetailsVC, animated: true)
             //代金券类型
         }else if model.type == 2 {
             let foodVoucherOrderDetailsVC = FoodVoucherOrderDetailsVC()
             foodVoucherOrderDetailsVC.orderNo = model.orderNo!
             self.navigationController?.pushViewController(foodVoucherOrderDetailsVC, animated: true)
-            //预约类型
+            //套餐类型
         }else if model.type == 3 {
-            let foodCanteenOrderDetailsVC = FoodCanteenOrderDetailsVC()
-            foodCanteenOrderDetailsVC.orderNo = model.orderNo!
-            self.navigationController?.pushViewController(foodCanteenOrderDetailsVC, animated: true)
+            let foodPackageOrderDetailsVC = FoodPackageOrderDetailsVC()
+            foodPackageOrderDetailsVC.orderNo = model.orderNo!
+            self.navigationController?.pushViewController(foodPackageOrderDetailsVC, animated: true)
         }
     }
     
