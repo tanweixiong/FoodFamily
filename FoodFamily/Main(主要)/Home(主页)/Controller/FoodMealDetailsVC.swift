@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class FoodMealDetailsVC: MainViewController,UITableViewDelegate,UITableViewDataSource,UIWebViewDelegate {
     fileprivate let foodPurchaseNotesCell = "FoodPurchaseNotesCell"
@@ -41,6 +42,7 @@ class FoodMealDetailsVC: MainViewController,UITableViewDelegate,UITableViewDataS
     
     func getData(){
         let parameters = ["mealId":"\(self.mealId)"]
+        SVProgressHUD.show(withStatus: "请稍等")
         viewModel.loadSuccessfullyReturnedData(requestType: .get, URLString: ConstAPI.kAPIMealGetMealInfoById, parameters: parameters, showIndicator: false) {
             self.setDisplayData()
             self.tableView.reloadData()
@@ -103,6 +105,7 @@ class FoodMealDetailsVC: MainViewController,UITableViewDelegate,UITableViewDataS
         if isFirstLoad {
             self.tableView.reloadData()
             isFirstLoad = false
+            SVProgressHUD.dismiss()
         }
     }
     

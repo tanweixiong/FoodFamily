@@ -369,23 +369,25 @@ class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewData
         var needPay = ""
         
         if self.foodPaymentMethod == .voucherPaymentStatus || foodPaymentMethod == .mealPaymentStatus{
-            walletPrice = self.setVoucherAndMealPrice().walletBalance
+            walletPrice = self.setVoucherAndMealPrice().walletBalance + "EC币"
             needPay = self.setVoucherAndMealPrice().needPay
             ecPrice = walletPrice
         }
         
         if  self.foodPaymentMethod == .reservationPaymentStatus {
             needPay = self.walletPrice
-            walletPrice = self.payPrice
+            walletPrice = self.payPrice + "EC币"
             ecPrice = self.payPrice
         }
         
         if self.foodPaymentMethod == .immediatelyPaymentStatus {
-            if self.totalNumTextField.text == "" {
-                SVProgressHUD.showInfo(withStatus: "请入支付金额")
+            if self.totalNumTextField.text != "" {
                 needPay = self.walletPrice
-                walletPrice = self.totalNumTextField.text!
+                walletPrice = self.totalNumTextField.text! + "消费金额"
                 ecPrice = self.totalNumTextField.text!
+            }else{
+                SVProgressHUD.showInfo(withStatus: "请输入消费金额")
+                return
             }
         }
         

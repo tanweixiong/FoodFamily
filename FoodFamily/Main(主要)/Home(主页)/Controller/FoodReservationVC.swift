@@ -87,6 +87,7 @@ class FoodReservationVC: UIViewController,UITableViewDelegate,UITableViewDataSou
         let range = newDay.index(newDay.endIndex, offsetBy: -3)..<newDay.index(newDay.endIndex, offsetBy: -2)
         newDay.replaceSubrange(range, with: "月")
         newDay = newDay + "日" + " " + time
+        reservationsTime = newDay
         cell.dataLabel.text = newDay
         self.timeIndexPath = timeIndexPath
         self.dayIndexPath = dayIndexPath
