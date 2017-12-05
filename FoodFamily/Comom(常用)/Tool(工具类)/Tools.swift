@@ -42,7 +42,7 @@ class Tools: NSObject {
     
     //判断是否为密码
     class func validatePassword(password: String) -> Bool {
-        let passwordRegex = "^[a-zA-Z0-9]{6,20}+$"
+        let passwordRegex = "^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,16}$"
         let passwordTest = NSPredicate(format: "SELF MATCHES %@", passwordRegex)
         return passwordTest.evaluate(with: password)
     }

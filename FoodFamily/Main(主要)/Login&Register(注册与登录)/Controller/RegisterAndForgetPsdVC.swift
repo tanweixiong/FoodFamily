@@ -26,13 +26,15 @@ class RegisterAndForgetPsdVC: MainViewController,UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-         self.title = "注册"
          self.setCloseRoundKeyboard()
          self.createUI()
         if registerAndForgetPsdType == .forgetPsdStatus{
+            self.title = "忘记密码"
             self.addDefaultButtonTextRight("确定")
             self.registerView.finishButton.isHidden = true
             self.registerView.recommendView.isHidden = true
+        }else{
+            self.title = "注册"
         }
     }
     
@@ -105,7 +107,7 @@ class RegisterAndForgetPsdVC: MainViewController,UITextFieldDelegate {
         }else if textField == registerView.codeTextField{
             maxLength = 8
         }else if textField == registerView.passwordTextField{
-            maxLength = 20
+            maxLength = 16
         }
         //限制长度
         let proposeLength = (textField.text?.lengthOfBytes(using: String.Encoding.utf8))! - range.length + string.lengthOfBytes(using: String.Encoding.utf8)
@@ -131,7 +133,7 @@ class RegisterAndForgetPsdVC: MainViewController,UITextFieldDelegate {
         }
         
         if !Tools.validatePassword(password: registerView.passwordTextField.text!) {
-            SVProgressHUD.showInfo(withStatus: "请输入6-20个字符数组或者字母的密码")
+            SVProgressHUD.showInfo(withStatus: "请输入6-20个字符数组与者字母的密码")
             return false
         }
         return true
