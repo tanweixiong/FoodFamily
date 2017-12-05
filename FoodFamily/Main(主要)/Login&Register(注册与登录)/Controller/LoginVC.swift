@@ -231,6 +231,7 @@ class LoginVC: UIViewController,RegisterAndForgetPsdDeleagte {
         case 2:
             let registerAndForgetPsdVC = RegisterAndForgetPsdVC()
             registerAndForgetPsdVC.registerAndForgetPsdType = .forgetPsdStatus
+            registerAndForgetPsdVC.delegate = self
             self.navigationController?.pushViewController(registerAndForgetPsdVC, animated: true)
             break
         default:

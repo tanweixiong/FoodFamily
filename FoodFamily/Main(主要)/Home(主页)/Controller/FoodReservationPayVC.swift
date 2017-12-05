@@ -33,6 +33,7 @@ class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewData
     fileprivate var currentAmount = ""
     fileprivate var payPassword = ""
     fileprivate var walletPrice = ""
+    fileprivate var isDeduction:Bool = false
     
     var detailsModel : RecommendDataModel = RecommendDataModel()!
     var mealModel: RecommendMealDataModel = RecommendMealDataModel()!
@@ -346,6 +347,7 @@ class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewData
         SVProgressHUD.show(withStatus: "请稍等")
         integralViewModel.loadSuccessfullyReturnedData(requestType: .get, URLString: ConstAPI.kAPIUserWalletGetIntegralByUserId, parameters: parameters, showIndicator: false) {
             SVProgressHUD.dismiss()
+            self.isDeduction = self.integralViewModel.model.canDe == 0 ? false : true
             self.tableView.reloadData()
         }
     }
@@ -402,11 +404,11 @@ class FoodReservationPayVC: UIViewController,UITableViewDelegate,UITableViewData
     //获取代金券或套餐的金额
     func getPoint()->String{
         var point = ""
-        if integralViewModel.model.canDe == 0 {
-            point = "0"
-        }else{
+        if isDeduction {
             let cell = tableView.cellForRow(at: IndexPath(row: indexPath.row, section: indexPath.section))as! FoodReservationPaymentMethodCell
             point = cell.chooseBtn.isSelected ? (integralViewModel.model.totalPrice?.stringValue)! : "0"
+        }else{
+            point = "0"
         }
         return point
     }

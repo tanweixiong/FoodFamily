@@ -95,7 +95,6 @@ class RegisterAndForgetPsdVC: MainViewController,UITextFieldDelegate {
                     SVProgressHUD.dismiss()
                     self.navigationController?.popViewController(animated: true)
                 })
-   
             }
         }
     }
@@ -133,7 +132,7 @@ class RegisterAndForgetPsdVC: MainViewController,UITextFieldDelegate {
         }
         
         if !Tools.validatePassword(password: registerView.passwordTextField.text!) {
-            SVProgressHUD.showInfo(withStatus: "请输入6-20个字符数组与者字母的密码")
+            SVProgressHUD.showInfo(withStatus: "请输入6-16个字符数组与者字母的密码")
             return false
         }
         return true
