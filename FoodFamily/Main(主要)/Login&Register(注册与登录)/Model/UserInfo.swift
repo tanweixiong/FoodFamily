@@ -11,7 +11,7 @@ import MJExtension
 
 class UserInfo: NSObject,NSCoding {
     @objc var acount: AnyObject?
-    @objc var age: AnyObject?
+    @objc var age: NSNumber?
     @objc var city: AnyObject?
     @objc var flag: AnyObject?
     @objc var fpassword: AnyObject?
@@ -49,7 +49,7 @@ class UserInfo: NSObject,NSCoding {
     required override init() {
         super.init()
         acount = "" as AnyObject
-        age  = "" as AnyObject
+        age  = 0
         city = "" as AnyObject
         flag = "" as AnyObject
         fpassword = "" as AnyObject
@@ -73,7 +73,7 @@ class UserInfo: NSObject,NSCoding {
     //    从object解析回来
     required init(coder decoder: NSCoder) {
         self.acount = decoder.decodeObject(forKey: "acount") as AnyObject
-        self.age = decoder.decodeObject(forKey: "age") as AnyObject
+        self.age = decoder.decodeObject(forKey: "age") as? NSNumber ?? 0
         self.city = decoder.decodeObject(forKey: "city") as AnyObject
         self.flag = decoder.decodeObject(forKey: "flag") as AnyObject
         self.fpassword = decoder.decodeObject(forKey: "fpassword") as AnyObject

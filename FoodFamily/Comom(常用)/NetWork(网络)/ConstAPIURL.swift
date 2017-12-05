@@ -11,8 +11,8 @@ import UIKit
 struct ConstAPI {
     //正式
 //    static let kAPIBaseURL: String = "http://47.92.105.209/app/"
-    static let kAPIBaseURL: String = "http://beyondkg.51vip.biz/app/"
-//    static let kAPIBaseURL: String = "http://10.0.0.27/app/"
+//    static let kAPIBaseURL: String = "http://beyondkg.51vip.biz/app/"
+    static let kAPIBaseURL: String = "http://10.0.0.27/app/"
     static let kAPIUserGetPhoneCode = kAPIBaseURL + "user/getPhoneCode" //注册
     static let kAPIUserLogin = kAPIBaseURL + "user/login" //登录
     static let kAPIUserForgetPassword = kAPIBaseURL + "user/forgetPassword" //忘记密码

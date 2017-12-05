@@ -41,7 +41,7 @@ class MineInformationVC: MainViewController,UITableViewDelegate,UITableViewDataS
         self.addDefaultButtonTextRight("保存")
         self.setCloseRoundKeyboard()
         
-        let age = UserDefaults.standard.getUserInfo().age as Any
+        let newAge = NSNumber(value: UserDefaults.standard.getUserInfo().age as! Float).stringValue
         let nickname = UserDefaults.standard.getUserInfo().nickname as Any
         let sign = UserDefaults.standard.getUserInfo().sign as Any
         let star = UserDefaults.standard.getUserInfo().star as Any
@@ -54,7 +54,7 @@ class MineInformationVC: MainViewController,UITableViewDelegate,UITableViewDataS
         }else{
            position = self.province + self.city
         }
-        self.contentArray = [avatar,nickname,age,star,position,sign]
+        self.contentArray = [avatar,nickname,newAge,star,position,sign]
         
         view.addSubview(tableView)
         NotificationCenter.default.addObserver(self, selector:#selector(keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
@@ -95,7 +95,7 @@ class MineInformationVC: MainViewController,UITableViewDelegate,UITableViewDataS
                 SVProgressHUD.showSuccess(withStatus: "上传成功")
                 let userInfo = UserDefaults.standard.getUserInfo()
                 userInfo.nickname = self.nicknameTextField.text! as AnyObject
-                userInfo.age = self.ageTextField.text! as AnyObject
+                userInfo.age = NSNumber(value: NSString(string: self.ageTextField.text!).floatValue)
                 userInfo.star = self.starTextField.text! as AnyObject
                 userInfo.province = self.province as AnyObject
                 userInfo.city = self.city as AnyObject
@@ -178,13 +178,14 @@ class MineInformationVC: MainViewController,UITableViewDelegate,UITableViewDataS
             cell.selectionStyle = .none
             cell.headingLabel.text = headingContentArray[indexPath.row]
             cell.textfield.text = contentArray[indexPath.row] as? String
+            
             cell.textfield.delegate = self
             cell.textfieldButton.tag = indexPath.row
             if indexPath.row == 1 {
                 self.nicknameTextField = cell.textfield
             }else if indexPath.row == 2 {
                 self.ageTextField = cell.textfield
-                cell.textfield.keyboardType = .decimalPad
+                cell.textfield.keyboardType = .numberPad
             }else if indexPath.row == 3 {
                 cell.textfield.isEnabled = false
                 cell.textfieldButton.isHidden = false
