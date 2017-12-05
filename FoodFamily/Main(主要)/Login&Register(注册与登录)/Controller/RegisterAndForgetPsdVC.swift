@@ -150,6 +150,7 @@ class RegisterAndForgetPsdVC: MainViewController,UITextFieldDelegate {
         view.codeTextField.delegate = self
         
         view.passwordTextField.delegate = self
+        view.passwordTextField.isSecureTextEntry = true
         return view
     }()
     
