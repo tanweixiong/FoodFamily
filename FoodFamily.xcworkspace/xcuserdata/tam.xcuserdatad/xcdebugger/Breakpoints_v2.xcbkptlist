@@ -57,22 +57,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FoodFamily/Main(&#x4e3b;&#x8981;)/Mine(&#x4e2a;&#x4eba;)/Controller/MineSetVC.swift"
-            timestampString = "534078352.125838"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
-            landmarkName = "tableView(_:didSelectRowAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "FoodFamily/Main(&#x4e3b;&#x8981;)/Home(&#x4e3b;&#x9875;)/ViewModel/FoodOrderDetailsVM.swift"
             timestampString = "534168237.371371"
             startingColumnNumber = "9223372036854775807"

@@ -122,10 +122,11 @@ class MineSetPayPasswordVC: MainViewController,UITableViewDelegate,UITableViewDa
             return false
         }
         
-        if !Tools.validatePassword(password: self.passwordCell.textfield.text!) {
-            SVProgressHUD.showInfo(withStatus: "请输入6-20个字符数组或者字母的密码")
+        if self.passwordCell.textfield.text?.count != 6 {
+            SVProgressHUD.showInfo(withStatus: "请输入6位数字的交易密码")
             return false
         }
+        
         return true
     }
     
@@ -180,6 +181,10 @@ class MineSetPayPasswordVC: MainViewController,UITableViewDelegate,UITableViewDa
         cell.textfield.delegate = self
         if indexPath.section == 0{
             cell.contentView.addSubview(self.getCodeButton)
+        }
+        if indexPath.section == 1 && indexPath.row == 1 {
+            cell.textfield.keyboardType = .numberPad
+            cell.textfield.isSecureTextEntry = true
         }
         return cell
     }

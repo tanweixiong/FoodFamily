@@ -94,17 +94,10 @@ class RecommendedReasonCell: UITableViewCell {
                 label.frame = CGRect(x: (imageView.frame.origin.x + width/2) - (size.width/2), y: imageView.frame.maxY + 16, width: size.width, height: 20)
             }
         }else{
-            //什么都不存在的情况
-            if model.msgInfo == "" && model.foodList?.count == 0 {
-                UserDefaults.standard.set(0, forKey: "height")
-                self.clean()
-                return
-            }else{
-                //只存在上边
-                UserDefaults.standard.set(seeConventionDetail.frame.maxY + 20, forKey: "height")
-                self.cleanDownData()
-                return
-            }
+            //只存在上边
+            UserDefaults.standard.set(seeConventionDetail.frame.maxY + 20, forKey: "height")
+            self.cleanDownData()
+            return
         }
         
         let seeConventionMaxY = maxY + width + 16 + 20 + 20

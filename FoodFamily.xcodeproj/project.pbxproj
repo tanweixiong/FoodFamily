@@ -142,7 +142,7 @@
 		2332CE161FCE48C700941BF3 /* FoodSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2332CE141FCE48C700941BF3 /* FoodSearchCell.swift */; };
 		2332CE171FCE48C700941BF3 /* FoodSearchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2332CE151FCE48C700941BF3 /* FoodSearchCell.xib */; };
 		2332CE191FCE65CA00941BF3 /* FoodReservationVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2332CE181FCE65CA00941BF3 /* FoodReservationVM.swift */; };
-		233C46011FD6416900264592 /* MineChefDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233C46001FD6416900264592 /* MineChefDetailsVC.swift */; };
+		233C46011FD6416900264592 /* MineChefVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233C46001FD6416900264592 /* MineChefVC.swift */; };
 		233C46051FD6431E00264592 /* MineChefDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233C46031FD6431E00264592 /* MineChefDetailsCell.swift */; };
 		233C46061FD6431E00264592 /* MineChefDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 233C46041FD6431E00264592 /* MineChefDetailsCell.xib */; };
 		233C46091FD6433700264592 /* MineChefDetailsHeadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233C46071FD6433700264592 /* MineChefDetailsHeadCell.swift */; };
@@ -555,7 +555,7 @@
 		2332CE141FCE48C700941BF3 /* FoodSearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodSearchCell.swift; sourceTree = "<group>"; };
 		2332CE151FCE48C700941BF3 /* FoodSearchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoodSearchCell.xib; sourceTree = "<group>"; };
 		2332CE181FCE65CA00941BF3 /* FoodReservationVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodReservationVM.swift; sourceTree = "<group>"; };
-		233C46001FD6416900264592 /* MineChefDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineChefDetailsVC.swift; sourceTree = "<group>"; };
+		233C46001FD6416900264592 /* MineChefVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineChefVC.swift; sourceTree = "<group>"; };
 		233C46031FD6431E00264592 /* MineChefDetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineChefDetailsCell.swift; sourceTree = "<group>"; };
 		233C46041FD6431E00264592 /* MineChefDetailsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineChefDetailsCell.xib; sourceTree = "<group>"; };
 		233C46071FD6433700264592 /* MineChefDetailsHeadCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineChefDetailsHeadCell.swift; sourceTree = "<group>"; };
@@ -1275,7 +1275,7 @@
 				23F4A7411FBBE9EB004C9266 /* MineSuccessfulOperationVC.xib */,
 				232357B51FBC16700006E9A6 /* MineAmountOperationVC.swift */,
 				232D2FD91FCFDFAA009FF21B /* MyScoresVC.swift */,
-				233C46001FD6416900264592 /* MineChefDetailsVC.swift */,
+				233C46001FD6416900264592 /* MineChefVC.swift */,
 				230BE0F21FB6AD8700AD47E0 /* MineExpensesRecordChildVC */,
 				230BE0F51FB6DAC800AD47E0 /* MineDiscountCouponsChildVC */,
 				230BE1011FB6E18400AD47E0 /* MineReservationChildVC */,
@@ -1481,10 +1481,10 @@
 		233C46021FD6430000264592 /* MineChefDetailsView */ = {
 			isa = PBXGroup;
 			children = (
-				233C46031FD6431E00264592 /* MineChefDetailsCell.swift */,
-				233C46041FD6431E00264592 /* MineChefDetailsCell.xib */,
 				233C46071FD6433700264592 /* MineChefDetailsHeadCell.swift */,
 				233C46081FD6433700264592 /* MineChefDetailsHeadCell.xib */,
+				233C46031FD6431E00264592 /* MineChefDetailsCell.swift */,
+				233C46041FD6431E00264592 /* MineChefDetailsCell.xib */,
 			);
 			path = MineChefDetailsView;
 			sourceTree = "<group>";
@@ -2582,7 +2582,7 @@
 				239F06EE1FB2F4020067D810 /* FoodReservationCodeCell.swift in Sources */,
 				23D147581FBA9A2E0028CD09 /* FoodEvaluationListCell.swift in Sources */,
 				2332CE191FCE65CA00941BF3 /* FoodReservationVM.swift in Sources */,
-				233C46011FD6416900264592 /* MineChefDetailsVC.swift in Sources */,
+				233C46011FD6416900264592 /* MineChefVC.swift in Sources */,
 				2380937D1FB9813D0051EF3D /* TransformOf.swift in Sources */,
 				230BE0E21FB6A27600AD47E0 /* SGPageTitleView.m in Sources */,
 				2380937F1FB9813D0051EF3D /* TransformType.swift in Sources */,
