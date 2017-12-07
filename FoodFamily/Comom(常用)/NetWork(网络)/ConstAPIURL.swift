@@ -45,6 +45,8 @@ struct ConstAPI {
     static let kAPIAssessAddAssessList = kAPIBaseURL + "assess/addAssessList" //评论功能
     static let kAPIUserWalletGetUserIntegral = kAPIBaseURL + "userWallet/getUserIntegral" //获取钱包功能
     static let kAPIStoreSelectStoreByStoreType = kAPIBaseURL + "store/selectStoreByStoreType" //搜索附近的店铺
+    static let kAPICrowdGetUserCrowdList = kAPIBaseURL + "crowd/getUserCrowdList" //获取众筹列表
+    static let kAPIPointGetPointList = kAPIBaseURL + "point/getPointList" //获取众筹积分列表
 
 }
 

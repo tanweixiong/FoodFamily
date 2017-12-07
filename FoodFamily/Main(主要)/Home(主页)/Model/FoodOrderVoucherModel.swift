@@ -24,7 +24,7 @@ class FoodOrderVoucherListModel: Mappable {
     var paymentAmount: NSNumber?
     var integral: String?
     var vouId: NSNumber?
-    var vouNum: NSNumber?
+    var vouNum: String?
     var orderStatus: NSNumber? //1未支付 2已支付 5未评价 6已评价 7交易完成 8交易关闭
     var voucherPrice: NSNumber?
     var orderMsg: String?

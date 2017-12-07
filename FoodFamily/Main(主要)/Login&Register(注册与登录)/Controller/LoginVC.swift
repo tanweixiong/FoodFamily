@@ -26,6 +26,9 @@ class LoginVC: UIViewController,RegisterAndForgetPsdDeleagte {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.phoneTextField.AGTextField.text = "17876489945"
+        self.passwordTextField.AGTextField.text = "a123456"
+        
         self.navigationController?.navigationBar.alpha = 0
         self.title = "登录"
         self.setCloseRoundKeyboard()
@@ -216,6 +219,12 @@ class LoginVC: UIViewController,RegisterAndForgetPsdDeleagte {
         button.tag = 2
         return button
     }()
+    
+    class func switchRootVCToLoginVC() {
+        UserDefaults.standard.set(false, forKey: R_Theme_isLogin)
+        let navi = FMNavigationController(rootViewController: LoginVC())
+        UIApplication.shared.keyWindow?.rootViewController = navi
+    }
     
     @objc func onClick(_ sender:UIButton){
         switch sender.tag {

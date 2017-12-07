@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="CrowdfundingPriceAgreementCell" customModule="FoodFamily" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ObS-Nx-CVM">
+                        <rect key="frame" x="15" y="13.5" width="15" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="15" id="tzT-s1-gcn"/>
+                            <constraint firstAttribute="height" constant="15" id="yRR-YU-6nk"/>
+                        </constraints>
+                        <state key="normal" backgroundImage="mine_crowdfunding_pay_s"/>
+                        <state key="selected" backgroundImage="mine_crowdfunding_pay_n"/>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="签订协议" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b2o-IV-Wuf">
+                        <rect key="frame" x="40" y="14" width="49.5" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.25879535079999999" green="0.25884389880000003" blue="0.25878500939999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0DO-uv-qyX">
+                        <rect key="frame" x="15" y="6" width="91" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="91" id="MVv-OO-i6Y"/>
+                        </constraints>
+                        <connections>
+                            <action selector="onClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ya9-Qq-tyT"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="ObS-Nx-CVM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="0Va-ye-edg"/>
+                    <constraint firstItem="b2o-IV-Wuf" firstAttribute="centerY" secondItem="ObS-Nx-CVM" secondAttribute="centerY" id="GGp-aS-Qh4"/>
+                    <constraint firstItem="0DO-uv-qyX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="LH6-ix-jVe"/>
+                    <constraint firstItem="0DO-uv-qyX" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="N3z-0B-480"/>
+                    <constraint firstItem="ObS-Nx-CVM" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="bcT-Tc-9YK"/>
+                    <constraint firstItem="b2o-IV-Wuf" firstAttribute="leading" secondItem="ObS-Nx-CVM" secondAttribute="trailing" constant="10" id="qfF-5t-M6h"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="agreementChooseBtn" destination="ObS-Nx-CVM" id="duK-ne-mIR"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="mine_crowdfunding_pay_n" width="20" height="20"/>
+        <image name="mine_crowdfunding_pay_s" width="20" height="20"/>
+    </resources>
+</document>

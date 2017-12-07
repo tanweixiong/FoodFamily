@@ -33,13 +33,22 @@
                         <color key="textColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_home_more" translatesAutoresizingMaskIntoConstraints="NO" id="0KP-cC-qZu">
+                        <rect key="frame" x="298" y="16.5" width="7" height="10.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="7.2000000000000002" id="mYz-5b-sd7"/>
+                            <constraint firstAttribute="height" constant="10.800000000000001" id="qz5-id-Ma6"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="f1u-2X-D0q" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="0lt-xm-x8S"/>
                     <constraint firstItem="JP5-eP-Mhc" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="930-cI-jdE"/>
+                    <constraint firstAttribute="trailing" secondItem="0KP-cC-qZu" secondAttribute="trailing" constant="15" id="BXx-UJ-AER"/>
                     <constraint firstAttribute="trailing" secondItem="f1u-2X-D0q" secondAttribute="trailing" constant="15" id="Dmf-ia-AAX"/>
                     <constraint firstItem="f1u-2X-D0q" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="PHx-Fl-Z2H"/>
                     <constraint firstItem="JP5-eP-Mhc" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="Y7Y-dE-ioK"/>
+                    <constraint firstItem="0KP-cC-qZu" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="aWB-dk-74g"/>
                     <constraint firstItem="f1u-2X-D0q" firstAttribute="leading" secondItem="JP5-eP-Mhc" secondAttribute="trailing" constant="5" id="s1X-n5-FVA"/>
                 </constraints>
             </tableViewCellContentView>
@@ -47,8 +56,12 @@
             <connections>
                 <outlet property="headingContentLabel" destination="f1u-2X-D0q" id="74H-Ba-xb0"/>
                 <outlet property="headingLabel" destination="JP5-eP-Mhc" id="tpV-Rp-7iY"/>
+                <outlet property="moreImageView" destination="0KP-cC-qZu" id="ISY-wj-ewl"/>
             </connections>
             <point key="canvasLocation" x="-260" y="58"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="ic_home_more" width="8" height="12"/>
+    </resources>
 </document>

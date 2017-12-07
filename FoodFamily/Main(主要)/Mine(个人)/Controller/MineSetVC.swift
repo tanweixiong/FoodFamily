@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MineSetVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
+class MineSetVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UIAlertViewDelegate {
     fileprivate let mineSetCell = "MineSetCell"
     fileprivate let dataSource = [["支付密码"],["商户入驻","厨师入驻"],["关于我们","常见问题"],["版本信息","服务及隐私条款"]]
     struct MineSetUX {
@@ -108,8 +108,16 @@ class MineSetVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     }()
     
     @objc func loginOutHandle(){
-       let login = FMNavigationController(rootViewController: LoginVC())
-       UIApplication.shared.keyWindow?.rootViewController = login
-       UserDefaults.standard.set(false, forKey: R_Theme_isLogin)
+        let alertController = UIAlertController(title: "提示",
+                                                message: "您确定要退出吗？", preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+        let okAction = UIAlertAction(title: "确定", style: .default, handler: {
+            action in
+              LoginVC.switchRootVCToLoginVC()
+        })
+        alertController.addAction(cancelAction)
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true, completion: nil)
     }
+    
 }

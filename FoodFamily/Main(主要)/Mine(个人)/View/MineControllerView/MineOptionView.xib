@@ -238,15 +238,15 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hVC-8s-i0z">
                             <rect key="frame" x="94" y="94" width="93.5" height="93.5"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Mine_chef_hat" translatesAutoresizingMaskIntoConstraints="NO" id="PXG-MA-3Fg">
-                                    <rect key="frame" x="33.5" y="17" width="25" height="25"/>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_mine_crowdfunding" translatesAutoresizingMaskIntoConstraints="NO" id="PXG-MA-3Fg">
+                                    <rect key="frame" x="33.5" y="17" width="25" height="22"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="25" id="bcX-SD-lXO"/>
-                                        <constraint firstAttribute="height" constant="25" id="sQR-14-bWa"/>
+                                        <constraint firstAttribute="height" constant="22" id="sQR-14-bWa"/>
                                     </constraints>
                                 </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="厨师管理" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OLh-za-3xO">
-                                    <rect key="frame" x="18.5" y="52" width="57.5" height="20"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我的众筹" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OLh-za-3xO">
+                                    <rect key="frame" x="18" y="52" width="57.5" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="20" id="AQI-uP-imy"/>
                                     </constraints>
@@ -254,7 +254,7 @@
                                     <color key="textColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nY0-7b-Msx">
+                                <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nY0-7b-Msx">
                                     <rect key="frame" x="0.0" y="0.0" width="93.5" height="93.5"/>
                                     <connections>
                                         <action selector="onClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="wUP-15-VDK"/>
@@ -271,24 +271,24 @@
                                 <constraint firstAttribute="trailing" secondItem="nY0-7b-Msx" secondAttribute="trailing" id="xta-Pq-Qme"/>
                             </constraints>
                         </view>
-                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="44K-z6-Umx" userLabel="line">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="44K-z6-Umx" userLabel="line">
                             <rect key="frame" x="187.5" y="94" width="0.5" height="93.5"/>
                             <color key="backgroundColor" red="0.92941176469999998" green="0.92941176469999998" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="0.5" id="GZP-xY-vab"/>
                             </constraints>
                         </view>
-                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0oE-hZ-dAp">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0oE-hZ-dAp">
                             <rect key="frame" x="188" y="94" width="93" height="93.5"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_mine_wallet" translatesAutoresizingMaskIntoConstraints="NO" id="eJY-gS-4KX">
-                                    <rect key="frame" x="31" y="17" width="30" height="30"/>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Mine_chef_hat" translatesAutoresizingMaskIntoConstraints="NO" id="eJY-gS-4KX">
+                                    <rect key="frame" x="33.5" y="17" width="25" height="22"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="30" id="pdL-kX-p8F"/>
-                                        <constraint firstAttribute="height" constant="30" id="xWa-Q6-BvQ"/>
+                                        <constraint firstAttribute="width" constant="25" id="pdL-kX-p8F"/>
+                                        <constraint firstAttribute="height" constant="22" id="xWa-Q6-BvQ"/>
                                     </constraints>
                                 </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我的钱包" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oeB-on-d2e">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="厨师管理" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oeB-on-d2e">
                                     <rect key="frame" x="18" y="52" width="57.5" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="20" id="d5G-79-8OM"/>
@@ -415,6 +415,7 @@
     <resources>
         <image name="Mine_chef_hat" width="19" height="21"/>
         <image name="ic_mine_collection" width="30" height="30"/>
+        <image name="ic_mine_crowdfunding" width="28" height="20"/>
         <image name="ic_mine_expensesrecord" width="31" height="30"/>
         <image name="ic_mine_reservation" width="31" height="30"/>
         <image name="ic_mine_wallet" width="30" height="30"/>

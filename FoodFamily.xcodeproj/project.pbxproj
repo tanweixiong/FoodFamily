@@ -8,6 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		065325FDDDF5167D2625021D /* Pods_FoodFamilyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0968298AEB219742737CBE3 /* Pods_FoodFamilyUITests.framework */; };
+		230A37E71FD91DE6005287D4 /* CrowdfundingDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230A37E51FD91DE6005287D4 /* CrowdfundingDetailsCell.swift */; };
+		230A37E81FD91DE6005287D4 /* CrowdfundingDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 230A37E61FD91DE6005287D4 /* CrowdfundingDetailsCell.xib */; };
+		230A37EA1FD92C0C005287D4 /* CrowdfundingDetailsFoodVw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230A37E91FD92C0C005287D4 /* CrowdfundingDetailsFoodVw.swift */; };
+		230A37EC1FD92C1C005287D4 /* CrowdfundingDetailsFoodVw.xib in Resources */ = {isa = PBXBuildFile; fileRef = 230A37EB1FD92C1C005287D4 /* CrowdfundingDetailsFoodVw.xib */; };
+		230A37EE1FD9304F005287D4 /* CrowdfundingPayCouponsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230A37ED1FD9304F005287D4 /* CrowdfundingPayCouponsVC.swift */; };
+		230A37F21FD9312F005287D4 /* CrowdfundingPayCouponsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230A37F01FD9312F005287D4 /* CrowdfundingPayCouponsCell.swift */; };
+		230A37F31FD9312F005287D4 /* CrowdfundingPayCouponsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 230A37F11FD9312F005287D4 /* CrowdfundingPayCouponsCell.xib */; };
+		230A37F51FD93578005287D4 /* CrowdfundingPayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230A37F41FD93578005287D4 /* CrowdfundingPayVC.swift */; };
+		230A37F91FD936E6005287D4 /* CrowdfundingPricePayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230A37F71FD936E6005287D4 /* CrowdfundingPricePayCell.swift */; };
+		230A37FA1FD936E6005287D4 /* CrowdfundingPricePayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 230A37F81FD936E6005287D4 /* CrowdfundingPricePayCell.xib */; };
+		230A37FD1FD93885005287D4 /* CrowdfundingPriceAgreementCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230A37FB1FD93885005287D4 /* CrowdfundingPriceAgreementCell.swift */; };
+		230A37FE1FD93885005287D4 /* CrowdfundingPriceAgreementCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 230A37FC1FD93885005287D4 /* CrowdfundingPriceAgreementCell.xib */; };
+		230A38001FD94668005287D4 /* CrowdfundingPayCouponsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230A37FF1FD94667005287D4 /* CrowdfundingPayCouponsModel.swift */; };
 		230A73741FC58407009F7202 /* RecommendedListMoneyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230A73721FC58407009F7202 /* RecommendedListMoneyCell.swift */; };
 		230A73751FC58407009F7202 /* RecommendedListMoneyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 230A73731FC58407009F7202 /* RecommendedListMoneyCell.xib */; };
 		230BE0CD1FB68F1300AD47E0 /* MineOptionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 230BE0CC1FB68F1300AD47E0 /* MineOptionView.xib */; };
@@ -55,6 +68,13 @@
 		23113BFE1FC65EA100BE1784 /* FoodNormalOrderDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23113BFD1FC65EA100BE1784 /* FoodNormalOrderDetailsModel.swift */; };
 		23118AC21FC55C8000B8CE33 /* RecommendMealCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23118AC01FC55C8000B8CE33 /* RecommendMealCell.swift */; };
 		23118AC31FC55C8000B8CE33 /* RecommendMealCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23118AC11FC55C8000B8CE33 /* RecommendMealCell.xib */; };
+		23137C3B1FD8D5C5008C69E0 /* MineCrowdfundingDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23137C3A1FD8D5C5008C69E0 /* MineCrowdfundingDetailsVC.swift */; };
+		23137C3E1FD8D6F2008C69E0 /* MineCrowdfundinHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23137C3D1FD8D6F2008C69E0 /* MineCrowdfundinHeadView.swift */; };
+		23137C401FD8D704008C69E0 /* MineCrowdfundinHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23137C3F1FD8D704008C69E0 /* MineCrowdfundinHeadView.xib */; };
+		23137C471FD8F0C8008C69E0 /* CrowdfundingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23137C451FD8F0C8008C69E0 /* CrowdfundingCell.swift */; };
+		23137C481FD8F0C8008C69E0 /* CrowdfundingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23137C461FD8F0C8008C69E0 /* CrowdfundingCell.xib */; };
+		23137C4A1FD9129E008C69E0 /* CrowdfundingVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23137C491FD9129E008C69E0 /* CrowdfundingVM.swift */; };
+		23137C4C1FD912C3008C69E0 /* CrowdfundingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23137C4B1FD912C3008C69E0 /* CrowdfundingModel.swift */; };
 		2316A2831FAD71FE00A0B512 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2316A2821FAD71FE00A0B512 /* AppDelegate.swift */; };
 		2316A2851FAD71FE00A0B512 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2316A2841FAD71FE00A0B512 /* ViewController.swift */; };
 		2316A2881FAD71FE00A0B512 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2316A2861FAD71FE00A0B512 /* Main.storyboard */; };
@@ -127,6 +147,7 @@
 		232D2FE11FCFE01F009FF21B /* MyScoresHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232D2FDD1FCFE01E009FF21B /* MyScoresHeadView.swift */; };
 		232D2FE21FCFE01F009FF21B /* MyScoresHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 232D2FDE1FCFE01F009FF21B /* MyScoresHeadView.xib */; };
 		232D2FE31FCFE01F009FF21B /* MyScoresView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232D2FDF1FCFE01F009FF21B /* MyScoresView.swift */; };
+		232E2BBB1FD91C8200873C2F /* CrowdfundingDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232E2BBA1FD91C8200873C2F /* CrowdfundingDetailsVC.swift */; };
 		232ED6CF1FCCF22A00208BDD /* BRStringPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 232ED6B81FCCF22A00208BDD /* BRStringPickerView.m */; };
 		232ED6D01FCCF22A00208BDD /* BRDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 232ED6BC1FCCF22A00208BDD /* BRDatePickerView.m */; };
 		232ED6D11FCCF22A00208BDD /* BaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 232ED6BE1FCCF22A00208BDD /* BaseView.m */; };
@@ -142,11 +163,11 @@
 		2332CE161FCE48C700941BF3 /* FoodSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2332CE141FCE48C700941BF3 /* FoodSearchCell.swift */; };
 		2332CE171FCE48C700941BF3 /* FoodSearchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2332CE151FCE48C700941BF3 /* FoodSearchCell.xib */; };
 		2332CE191FCE65CA00941BF3 /* FoodReservationVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2332CE181FCE65CA00941BF3 /* FoodReservationVM.swift */; };
-		233C46011FD6416900264592 /* MineChefVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233C46001FD6416900264592 /* MineChefVC.swift */; };
+		233C46011FD6416900264592 /* MineChefDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233C46001FD6416900264592 /* MineChefDetailsVC.swift */; };
 		233C46051FD6431E00264592 /* MineChefDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233C46031FD6431E00264592 /* MineChefDetailsCell.swift */; };
 		233C46061FD6431E00264592 /* MineChefDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 233C46041FD6431E00264592 /* MineChefDetailsCell.xib */; };
-		233C46091FD6433700264592 /* MineChefDetailsHeadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233C46071FD6433700264592 /* MineChefDetailsHeadCell.swift */; };
-		233C460A1FD6433700264592 /* MineChefDetailsHeadCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 233C46081FD6433700264592 /* MineChefDetailsHeadCell.xib */; };
+		233C46091FD6433700264592 /* ChefHeadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233C46071FD6433700264592 /* ChefHeadCell.swift */; };
+		233C460A1FD6433700264592 /* ChefHeadCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 233C46081FD6433700264592 /* ChefHeadCell.xib */; };
 		2353EC1C1FB3F6BA005E1548 /* OCTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 2353EC1B1FB3F6BA005E1548 /* OCTools.m */; };
 		2353EC1F1FB4047A005E1548 /* FoodOrderDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2353EC1D1FB4047A005E1548 /* FoodOrderDetailsCell.swift */; };
 		2353EC201FB4047A005E1548 /* FoodOrderDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2353EC1E1FB4047A005E1548 /* FoodOrderDetailsCell.xib */; };
@@ -344,6 +365,22 @@
 		23D147461FBA938A0028CD09 /* FoodEvaluationHeadCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23D147441FBA938A0028CD09 /* FoodEvaluationHeadCell.xib */; };
 		23D147581FBA9A2E0028CD09 /* FoodEvaluationListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D147561FBA9A2E0028CD09 /* FoodEvaluationListCell.swift */; };
 		23D147591FBA9A2E0028CD09 /* FoodEvaluationListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23D147571FBA9A2E0028CD09 /* FoodEvaluationListCell.xib */; };
+		23DDF72A1FD7936500747B78 /* ChefControllerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DDF7281FD7936500747B78 /* ChefControllerCell.swift */; };
+		23DDF72B1FD7936500747B78 /* ChefControllerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23DDF7291FD7936500747B78 /* ChefControllerCell.xib */; };
+		23DDF72D1FD7989800747B78 /* ChefDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DDF72C1FD7989800747B78 /* ChefDetailsVC.swift */; };
+		23DDF7311FD7991200747B78 /* ChefDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DDF72F1FD7991200747B78 /* ChefDetailsCell.swift */; };
+		23DDF7321FD7991200747B78 /* ChefDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23DDF7301FD7991200747B78 /* ChefDetailsCell.xib */; };
+		23DDF7341FD7C9B400747B78 /* ChefReservationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DDF7331FD7C9B400747B78 /* ChefReservationVC.swift */; };
+		23DDF7361FD7CA8100747B78 /* ChefReservationDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DDF7351FD7CA8100747B78 /* ChefReservationDetailsVC.swift */; };
+		23DDF7381FD7CD7B00747B78 /* ChefReservationPayFinishVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DDF7371FD7CD7B00747B78 /* ChefReservationPayFinishVC.swift */; };
+		23DDF73A1FD7CFCD00747B78 /* ChefReservationPayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DDF7391FD7CFCD00747B78 /* ChefReservationPayVC.swift */; };
+		23DDF73C1FD7EBCD00747B78 /* ChefPayFinishVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DDF73B1FD7EBCD00747B78 /* ChefPayFinishVC.swift */; };
+		23DDF73E1FD7EF6500747B78 /* MineCrowdfundingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DDF73D1FD7EF6500747B78 /* MineCrowdfundingVC.swift */; };
+		23DDF7411FD7EFD400747B78 /* MineAllCrowdfundingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DDF7401FD7EFD400747B78 /* MineAllCrowdfundingVC.swift */; };
+		23DDF7431FD7EFF300747B78 /* MineFinishCrowdfundingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DDF7421FD7EFF300747B78 /* MineFinishCrowdfundingVC.swift */; };
+		23DDF7451FD7F01A00747B78 /* MineFailureCrowdfundingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DDF7441FD7F01A00747B78 /* MineFailureCrowdfundingVC.swift */; };
+		23DDF7501FD7F0CC00747B78 /* MineCrowdfundingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DDF74E1FD7F0CC00747B78 /* MineCrowdfundingCell.swift */; };
+		23DDF7511FD7F0CC00747B78 /* MineCrowdfundingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23DDF74F1FD7F0CC00747B78 /* MineCrowdfundingCell.xib */; };
 		23E214C21FB6E91B00C7D085 /* MineInformationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E214C11FB6E91B00C7D085 /* MineInformationVC.swift */; };
 		23E214C61FB6EA1B00C7D085 /* MineInformationHeadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E214C41FB6EA1B00C7D085 /* MineInformationHeadCell.swift */; };
 		23E214C71FB6EA1B00C7D085 /* MineInformationHeadCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23E214C51FB6EA1B00C7D085 /* MineInformationHeadCell.xib */; };
@@ -393,6 +430,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		230A37E51FD91DE6005287D4 /* CrowdfundingDetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrowdfundingDetailsCell.swift; sourceTree = "<group>"; };
+		230A37E61FD91DE6005287D4 /* CrowdfundingDetailsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CrowdfundingDetailsCell.xib; sourceTree = "<group>"; };
+		230A37E91FD92C0C005287D4 /* CrowdfundingDetailsFoodVw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrowdfundingDetailsFoodVw.swift; sourceTree = "<group>"; };
+		230A37EB1FD92C1C005287D4 /* CrowdfundingDetailsFoodVw.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CrowdfundingDetailsFoodVw.xib; sourceTree = "<group>"; };
+		230A37ED1FD9304F005287D4 /* CrowdfundingPayCouponsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrowdfundingPayCouponsVC.swift; sourceTree = "<group>"; };
+		230A37F01FD9312F005287D4 /* CrowdfundingPayCouponsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrowdfundingPayCouponsCell.swift; sourceTree = "<group>"; };
+		230A37F11FD9312F005287D4 /* CrowdfundingPayCouponsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CrowdfundingPayCouponsCell.xib; sourceTree = "<group>"; };
+		230A37F41FD93578005287D4 /* CrowdfundingPayVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrowdfundingPayVC.swift; sourceTree = "<group>"; };
+		230A37F71FD936E6005287D4 /* CrowdfundingPricePayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrowdfundingPricePayCell.swift; sourceTree = "<group>"; };
+		230A37F81FD936E6005287D4 /* CrowdfundingPricePayCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CrowdfundingPricePayCell.xib; sourceTree = "<group>"; };
+		230A37FB1FD93885005287D4 /* CrowdfundingPriceAgreementCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrowdfundingPriceAgreementCell.swift; sourceTree = "<group>"; };
+		230A37FC1FD93885005287D4 /* CrowdfundingPriceAgreementCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CrowdfundingPriceAgreementCell.xib; sourceTree = "<group>"; };
+		230A37FF1FD94667005287D4 /* CrowdfundingPayCouponsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrowdfundingPayCouponsModel.swift; sourceTree = "<group>"; };
 		230A73721FC58407009F7202 /* RecommendedListMoneyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedListMoneyCell.swift; sourceTree = "<group>"; };
 		230A73731FC58407009F7202 /* RecommendedListMoneyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecommendedListMoneyCell.xib; sourceTree = "<group>"; };
 		230BE0CC1FB68F1300AD47E0 /* MineOptionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineOptionView.xib; sourceTree = "<group>"; };
@@ -447,6 +497,13 @@
 		23113BFD1FC65EA100BE1784 /* FoodNormalOrderDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodNormalOrderDetailsModel.swift; sourceTree = "<group>"; };
 		23118AC01FC55C8000B8CE33 /* RecommendMealCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendMealCell.swift; sourceTree = "<group>"; };
 		23118AC11FC55C8000B8CE33 /* RecommendMealCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecommendMealCell.xib; sourceTree = "<group>"; };
+		23137C3A1FD8D5C5008C69E0 /* MineCrowdfundingDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineCrowdfundingDetailsVC.swift; sourceTree = "<group>"; };
+		23137C3D1FD8D6F2008C69E0 /* MineCrowdfundinHeadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineCrowdfundinHeadView.swift; sourceTree = "<group>"; };
+		23137C3F1FD8D704008C69E0 /* MineCrowdfundinHeadView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineCrowdfundinHeadView.xib; sourceTree = "<group>"; };
+		23137C451FD8F0C8008C69E0 /* CrowdfundingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrowdfundingCell.swift; sourceTree = "<group>"; };
+		23137C461FD8F0C8008C69E0 /* CrowdfundingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CrowdfundingCell.xib; sourceTree = "<group>"; };
+		23137C491FD9129E008C69E0 /* CrowdfundingVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrowdfundingVM.swift; sourceTree = "<group>"; };
+		23137C4B1FD912C3008C69E0 /* CrowdfundingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrowdfundingModel.swift; sourceTree = "<group>"; };
 		2316A27F1FAD71FE00A0B512 /* FoodFamily.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodFamily.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2316A2821FAD71FE00A0B512 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2316A2841FAD71FE00A0B512 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -531,6 +588,7 @@
 		232D2FDD1FCFE01E009FF21B /* MyScoresHeadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyScoresHeadView.swift; sourceTree = "<group>"; };
 		232D2FDE1FCFE01F009FF21B /* MyScoresHeadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyScoresHeadView.xib; sourceTree = "<group>"; };
 		232D2FDF1FCFE01F009FF21B /* MyScoresView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyScoresView.swift; sourceTree = "<group>"; };
+		232E2BBA1FD91C8200873C2F /* CrowdfundingDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrowdfundingDetailsVC.swift; sourceTree = "<group>"; };
 		232ED6B71FCCF22A00208BDD /* BRStringPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRStringPickerView.h; sourceTree = "<group>"; };
 		232ED6B81FCCF22A00208BDD /* BRStringPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRStringPickerView.m; sourceTree = "<group>"; };
 		232ED6B91FCCF22A00208BDD /* BRPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRPickerView.h; sourceTree = "<group>"; };
@@ -555,11 +613,11 @@
 		2332CE141FCE48C700941BF3 /* FoodSearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodSearchCell.swift; sourceTree = "<group>"; };
 		2332CE151FCE48C700941BF3 /* FoodSearchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoodSearchCell.xib; sourceTree = "<group>"; };
 		2332CE181FCE65CA00941BF3 /* FoodReservationVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodReservationVM.swift; sourceTree = "<group>"; };
-		233C46001FD6416900264592 /* MineChefVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineChefVC.swift; sourceTree = "<group>"; };
+		233C46001FD6416900264592 /* MineChefDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineChefDetailsVC.swift; sourceTree = "<group>"; };
 		233C46031FD6431E00264592 /* MineChefDetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineChefDetailsCell.swift; sourceTree = "<group>"; };
 		233C46041FD6431E00264592 /* MineChefDetailsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineChefDetailsCell.xib; sourceTree = "<group>"; };
-		233C46071FD6433700264592 /* MineChefDetailsHeadCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineChefDetailsHeadCell.swift; sourceTree = "<group>"; };
-		233C46081FD6433700264592 /* MineChefDetailsHeadCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineChefDetailsHeadCell.xib; sourceTree = "<group>"; };
+		233C46071FD6433700264592 /* ChefHeadCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChefHeadCell.swift; sourceTree = "<group>"; };
+		233C46081FD6433700264592 /* ChefHeadCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChefHeadCell.xib; sourceTree = "<group>"; };
 		2353EC1A1FB3F6BA005E1548 /* OCTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCTools.h; sourceTree = "<group>"; };
 		2353EC1B1FB3F6BA005E1548 /* OCTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCTools.m; sourceTree = "<group>"; };
 		2353EC1D1FB4047A005E1548 /* FoodOrderDetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodOrderDetailsCell.swift; sourceTree = "<group>"; };
@@ -773,6 +831,22 @@
 		23D147441FBA938A0028CD09 /* FoodEvaluationHeadCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoodEvaluationHeadCell.xib; sourceTree = "<group>"; };
 		23D147561FBA9A2E0028CD09 /* FoodEvaluationListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodEvaluationListCell.swift; sourceTree = "<group>"; };
 		23D147571FBA9A2E0028CD09 /* FoodEvaluationListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoodEvaluationListCell.xib; sourceTree = "<group>"; };
+		23DDF7281FD7936500747B78 /* ChefControllerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChefControllerCell.swift; sourceTree = "<group>"; };
+		23DDF7291FD7936500747B78 /* ChefControllerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChefControllerCell.xib; sourceTree = "<group>"; };
+		23DDF72C1FD7989800747B78 /* ChefDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChefDetailsVC.swift; sourceTree = "<group>"; };
+		23DDF72F1FD7991200747B78 /* ChefDetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChefDetailsCell.swift; sourceTree = "<group>"; };
+		23DDF7301FD7991200747B78 /* ChefDetailsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChefDetailsCell.xib; sourceTree = "<group>"; };
+		23DDF7331FD7C9B400747B78 /* ChefReservationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChefReservationVC.swift; sourceTree = "<group>"; };
+		23DDF7351FD7CA8100747B78 /* ChefReservationDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChefReservationDetailsVC.swift; sourceTree = "<group>"; };
+		23DDF7371FD7CD7B00747B78 /* ChefReservationPayFinishVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChefReservationPayFinishVC.swift; sourceTree = "<group>"; };
+		23DDF7391FD7CFCD00747B78 /* ChefReservationPayVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChefReservationPayVC.swift; sourceTree = "<group>"; };
+		23DDF73B1FD7EBCD00747B78 /* ChefPayFinishVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChefPayFinishVC.swift; sourceTree = "<group>"; };
+		23DDF73D1FD7EF6500747B78 /* MineCrowdfundingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineCrowdfundingVC.swift; sourceTree = "<group>"; };
+		23DDF7401FD7EFD400747B78 /* MineAllCrowdfundingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineAllCrowdfundingVC.swift; sourceTree = "<group>"; };
+		23DDF7421FD7EFF300747B78 /* MineFinishCrowdfundingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineFinishCrowdfundingVC.swift; sourceTree = "<group>"; };
+		23DDF7441FD7F01A00747B78 /* MineFailureCrowdfundingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineFailureCrowdfundingVC.swift; sourceTree = "<group>"; };
+		23DDF74E1FD7F0CC00747B78 /* MineCrowdfundingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineCrowdfundingCell.swift; sourceTree = "<group>"; };
+		23DDF74F1FD7F0CC00747B78 /* MineCrowdfundingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineCrowdfundingCell.xib; sourceTree = "<group>"; };
 		23E214C11FB6E91B00C7D085 /* MineInformationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineInformationVC.swift; sourceTree = "<group>"; };
 		23E214C41FB6EA1B00C7D085 /* MineInformationHeadCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineInformationHeadCell.swift; sourceTree = "<group>"; };
 		23E214C51FB6EA1B00C7D085 /* MineInformationHeadCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineInformationHeadCell.xib; sourceTree = "<group>"; };
@@ -847,6 +921,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		230A37EF1FD93071005287D4 /* CrowdfundingPayCouponsView */ = {
+			isa = PBXGroup;
+			children = (
+				230A37F01FD9312F005287D4 /* CrowdfundingPayCouponsCell.swift */,
+				230A37F11FD9312F005287D4 /* CrowdfundingPayCouponsCell.xib */,
+			);
+			path = CrowdfundingPayCouponsView;
+			sourceTree = "<group>";
+		};
+		230A37F61FD936BC005287D4 /* CrowdfundingPayPriceVIew */ = {
+			isa = PBXGroup;
+			children = (
+				230A37F71FD936E6005287D4 /* CrowdfundingPricePayCell.swift */,
+				230A37F81FD936E6005287D4 /* CrowdfundingPricePayCell.xib */,
+				230A37FB1FD93885005287D4 /* CrowdfundingPriceAgreementCell.swift */,
+				230A37FC1FD93885005287D4 /* CrowdfundingPriceAgreementCell.xib */,
+			);
+			path = CrowdfundingPayPriceVIew;
+			sourceTree = "<group>";
+		};
 		230BE0D01FB69B4100AD47E0 /* MineCollectionView */ = {
 			isa = PBXGroup;
 			children = (
@@ -966,7 +1060,6 @@
 		230FA76B1FB5A8C600190F2B /* View */ = {
 			isa = PBXGroup;
 			children = (
-				233C46021FD6430000264592 /* MineChefDetailsView */,
 				230FA76D1FB5A90700190F2B /* MineControllerView */,
 				230BE0D01FB69B4100AD47E0 /* MineCollectionView */,
 				230BE0EC1FB6A46A00AD47E0 /* MineExpensesRecordView */,
@@ -983,6 +1076,9 @@
 				23CF994E1FBC217B0002241F /* MineWithdrawView */,
 				232D2FDB1FCFDFEF009FF21B /* MineScoresView */,
 				2325E6611FD1711B00DE81D9 /* MineReservationDetailsView */,
+				233C46021FD6430000264592 /* MineChefDetailsView */,
+				23DDF74D1FD7F09100747B78 /* MineCrowdfundingView */,
+				23137C3C1FD8D5F1008C69E0 /* MineCrowdfundingDetailsView */,
 			);
 			name = View;
 			path = "FoodFamily/Main(主要)/Mine(个人)/View";
@@ -1011,6 +1107,52 @@
 				230BE0CC1FB68F1300AD47E0 /* MineOptionView.xib */,
 			);
 			path = MineControllerView;
+			sourceTree = "<group>";
+		};
+		23137C3C1FD8D5F1008C69E0 /* MineCrowdfundingDetailsView */ = {
+			isa = PBXGroup;
+			children = (
+				23137C3D1FD8D6F2008C69E0 /* MineCrowdfundinHeadView.swift */,
+				23137C3F1FD8D704008C69E0 /* MineCrowdfundinHeadView.xib */,
+			);
+			path = MineCrowdfundingDetailsView;
+			sourceTree = "<group>";
+		};
+		23137C411FD8EBDF008C69E0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				23137C491FD9129E008C69E0 /* CrowdfundingVM.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		23137C421FD8EBDF008C69E0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				23137C4B1FD912C3008C69E0 /* CrowdfundingModel.swift */,
+				230A37FF1FD94667005287D4 /* CrowdfundingPayCouponsModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		23137C431FD8EBE0008C69E0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				23137C441FD8F048008C69E0 /* CrowdfundingView */,
+				232E2BBC1FD91CE600873C2F /* CrowdfundingDetailsView */,
+				230A37EF1FD93071005287D4 /* CrowdfundingPayCouponsView */,
+				230A37F61FD936BC005287D4 /* CrowdfundingPayPriceVIew */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		23137C441FD8F048008C69E0 /* CrowdfundingView */ = {
+			isa = PBXGroup;
+			children = (
+				23137C451FD8F0C8008C69E0 /* CrowdfundingCell.swift */,
+				23137C461FD8F0C8008C69E0 /* CrowdfundingCell.xib */,
+			);
+			path = CrowdfundingView;
 			sourceTree = "<group>";
 		};
 		2316A2761FAD71FE00A0B512 = {
@@ -1203,9 +1345,9 @@
 			isa = PBXGroup;
 			children = (
 				2316A2CD1FAD93D800A0B512 /* Controller */,
-				2316A2CE1FAD93D800A0B512 /* Model */,
-				2316A2CF1FAD93D800A0B512 /* View */,
-				2316A2D01FAD93D800A0B512 /* ViewModel */,
+				23DDF7261FD7930700747B78 /* Model */,
+				23DDF7241FD7930700747B78 /* View */,
+				23DDF7251FD7930700747B78 /* ViewModel */,
 			);
 			path = "Chef(厨师)";
 			sourceTree = "<group>";
@@ -1214,29 +1356,14 @@
 			isa = PBXGroup;
 			children = (
 				2316A2E61FAD945600A0B512 /* ChefController.swift */,
+				23DDF72C1FD7989800747B78 /* ChefDetailsVC.swift */,
+				23DDF7331FD7C9B400747B78 /* ChefReservationVC.swift */,
+				23DDF7351FD7CA8100747B78 /* ChefReservationDetailsVC.swift */,
+				23DDF7391FD7CFCD00747B78 /* ChefReservationPayVC.swift */,
+				23DDF7371FD7CD7B00747B78 /* ChefReservationPayFinishVC.swift */,
+				23DDF73B1FD7EBCD00747B78 /* ChefPayFinishVC.swift */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		2316A2CE1FAD93D800A0B512 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		2316A2CF1FAD93D800A0B512 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		2316A2D01FAD93D800A0B512 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		2316A2D11FAD93D800A0B512 /* Mine(个人) */ = {
@@ -1275,10 +1402,13 @@
 				23F4A7411FBBE9EB004C9266 /* MineSuccessfulOperationVC.xib */,
 				232357B51FBC16700006E9A6 /* MineAmountOperationVC.swift */,
 				232D2FD91FCFDFAA009FF21B /* MyScoresVC.swift */,
-				233C46001FD6416900264592 /* MineChefVC.swift */,
+				233C46001FD6416900264592 /* MineChefDetailsVC.swift */,
+				23DDF73D1FD7EF6500747B78 /* MineCrowdfundingVC.swift */,
+				23137C3A1FD8D5C5008C69E0 /* MineCrowdfundingDetailsVC.swift */,
 				230BE0F21FB6AD8700AD47E0 /* MineExpensesRecordChildVC */,
 				230BE0F51FB6DAC800AD47E0 /* MineDiscountCouponsChildVC */,
 				230BE1011FB6E18400AD47E0 /* MineReservationChildVC */,
+				23DDF73F1FD7EFB800747B78 /* MineCrowdfundingChildVC */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1327,6 +1457,9 @@
 			isa = PBXGroup;
 			children = (
 				2316A2DC1FAD93D800A0B512 /* Controller */,
+				23137C421FD8EBDF008C69E0 /* Model */,
+				23137C431FD8EBE0008C69E0 /* View */,
+				23137C411FD8EBDF008C69E0 /* ViewModel */,
 			);
 			path = "Crowdfunding(众筹)";
 			sourceTree = "<group>";
@@ -1335,6 +1468,9 @@
 			isa = PBXGroup;
 			children = (
 				2316A2E21FAD942C00A0B512 /* CrowdfundingController.swift */,
+				232E2BBA1FD91C8200873C2F /* CrowdfundingDetailsVC.swift */,
+				230A37ED1FD9304F005287D4 /* CrowdfundingPayCouponsVC.swift */,
+				230A37F41FD93578005287D4 /* CrowdfundingPayVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1385,6 +1521,17 @@
 				232514611FD021A0002D436F /* MineScoresCell.xib */,
 			);
 			path = MineScoresView;
+			sourceTree = "<group>";
+		};
+		232E2BBC1FD91CE600873C2F /* CrowdfundingDetailsView */ = {
+			isa = PBXGroup;
+			children = (
+				230A37E51FD91DE6005287D4 /* CrowdfundingDetailsCell.swift */,
+				230A37E61FD91DE6005287D4 /* CrowdfundingDetailsCell.xib */,
+				230A37E91FD92C0C005287D4 /* CrowdfundingDetailsFoodVw.swift */,
+				230A37EB1FD92C1C005287D4 /* CrowdfundingDetailsFoodVw.xib */,
+			);
+			path = CrowdfundingDetailsView;
 			sourceTree = "<group>";
 		};
 		232ED6B41FCCF22A00208BDD /* BRPickerView */ = {
@@ -1481,8 +1628,8 @@
 		233C46021FD6430000264592 /* MineChefDetailsView */ = {
 			isa = PBXGroup;
 			children = (
-				233C46071FD6433700264592 /* MineChefDetailsHeadCell.swift */,
-				233C46081FD6433700264592 /* MineChefDetailsHeadCell.xib */,
+				233C46071FD6433700264592 /* ChefHeadCell.swift */,
+				233C46081FD6433700264592 /* ChefHeadCell.xib */,
 				233C46031FD6431E00264592 /* MineChefDetailsCell.swift */,
 				233C46041FD6431E00264592 /* MineChefDetailsCell.xib */,
 			);
@@ -1954,6 +2101,67 @@
 			path = FoodEvaluationView;
 			sourceTree = "<group>";
 		};
+		23DDF7241FD7930700747B78 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				23DDF7271FD7933800747B78 /* ChefControllerView */,
+				23DDF72E1FD798F600747B78 /* ChefDetailsView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		23DDF7251FD7930700747B78 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		23DDF7261FD7930700747B78 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		23DDF7271FD7933800747B78 /* ChefControllerView */ = {
+			isa = PBXGroup;
+			children = (
+				23DDF7281FD7936500747B78 /* ChefControllerCell.swift */,
+				23DDF7291FD7936500747B78 /* ChefControllerCell.xib */,
+			);
+			path = ChefControllerView;
+			sourceTree = "<group>";
+		};
+		23DDF72E1FD798F600747B78 /* ChefDetailsView */ = {
+			isa = PBXGroup;
+			children = (
+				23DDF72F1FD7991200747B78 /* ChefDetailsCell.swift */,
+				23DDF7301FD7991200747B78 /* ChefDetailsCell.xib */,
+			);
+			path = ChefDetailsView;
+			sourceTree = "<group>";
+		};
+		23DDF73F1FD7EFB800747B78 /* MineCrowdfundingChildVC */ = {
+			isa = PBXGroup;
+			children = (
+				23DDF7401FD7EFD400747B78 /* MineAllCrowdfundingVC.swift */,
+				23DDF7421FD7EFF300747B78 /* MineFinishCrowdfundingVC.swift */,
+				23DDF7441FD7F01A00747B78 /* MineFailureCrowdfundingVC.swift */,
+			);
+			path = MineCrowdfundingChildVC;
+			sourceTree = "<group>";
+		};
+		23DDF74D1FD7F09100747B78 /* MineCrowdfundingView */ = {
+			isa = PBXGroup;
+			children = (
+				23DDF74E1FD7F0CC00747B78 /* MineCrowdfundingCell.swift */,
+				23DDF74F1FD7F0CC00747B78 /* MineCrowdfundingCell.xib */,
+			);
+			name = MineCrowdfundingView;
+			path = "FoodFamily/Main(主要)/Mine(个人)/View/MineCrowdfundingView";
+			sourceTree = SOURCE_ROOT;
+		};
 		23E214C31FB6E9FA00C7D085 /* MineInformationView */ = {
 			isa = PBXGroup;
 			children = (
@@ -2176,6 +2384,8 @@
 			files = (
 				239F07011FB2F4020067D810 /* RecommendNaviCell.xib in Resources */,
 				238093861FB9A24F0051EF3D /* RegisterView.xib in Resources */,
+				23DDF7511FD7F0CC00747B78 /* MineCrowdfundingCell.xib in Resources */,
+				230A37EC1FD92C1C005287D4 /* CrowdfundingDetailsFoodVw.xib in Resources */,
 				236C44301FB4750800AC3010 /* FoodMerchantsHeadView.xib in Resources */,
 				23118AC31FC55C8000B8CE33 /* RecommendMealCell.xib in Resources */,
 				239F070F1FB2F4020067D810 /* FoodPurchaseSuccessView.xib in Resources */,
@@ -2188,12 +2398,15 @@
 				2332CE171FCE48C700941BF3 /* FoodSearchCell.xib in Resources */,
 				23CB44F21FBBCC4700D8988D /* MyBlankCardManagementCell.xib in Resources */,
 				239F070B1FB2F4020067D810 /* FoodPurchaseNotesCell.xib in Resources */,
+				230A37FE1FD93885005287D4 /* CrowdfundingPriceAgreementCell.xib in Resources */,
 				23F4A73A1FBBE8ED004C9266 /* MyBalanceView.xib in Resources */,
 				23F4A74D1FBBEF52004C9266 /* MyRechargeListCell.xib in Resources */,
 				2316A28D1FAD71FE00A0B512 /* LaunchScreen.storyboard in Resources */,
 				23E214C71FB6EA1B00C7D085 /* MineInformationHeadCell.xib in Resources */,
 				23CB45001FBBCD5800D8988D /* MineAddBankCardFinishVC.xib in Resources */,
+				230A37E81FD91DE6005287D4 /* CrowdfundingDetailsCell.xib in Resources */,
 				23CF99521FBC21B00002241F /* MineWalletAddressCell.xib in Resources */,
+				230A37F31FD9312F005287D4 /* CrowdfundingPayCouponsCell.xib in Resources */,
 				239F070D1FB2F4020067D810 /* FoodPurchaseNotesHeadView.xib in Resources */,
 				232514631FD021A0002D436F /* MineScoresCell.xib in Resources */,
 				238093731FB9813D0051EF3D /* Info.plist in Resources */,
@@ -2219,10 +2432,12 @@
 				239F06ED1FB2F4020067D810 /* FoodReservationCell.xib in Resources */,
 				231EAA891FC6998300E022EB /* sdRefeshView_arrow@2x.png in Resources */,
 				230BE0F01FB6A4BE00AD47E0 /* MineExpensesRecordCell.xib in Resources */,
+				23DDF7321FD7991200747B78 /* ChefDetailsCell.xib in Resources */,
 				232357BB1FBC190D0006E9A6 /* MineAmountOperationCell.xib in Resources */,
 				230BE0FE1FB6DBAF00AD47E0 /* MineDiscountCouponsCell.xib in Resources */,
 				238092E41FB945100051EF3D /* MineSetCell.xib in Resources */,
 				239F07071FB2F4020067D810 /* FoodReservationPaymentCardCell.xib in Resources */,
+				23DDF72B1FD7936500747B78 /* ChefControllerCell.xib in Resources */,
 				232ED6D71FCCF22A00208BDD /* LICENSE in Resources */,
 				23D147461FBA938A0028CD09 /* FoodEvaluationHeadCell.xib in Resources */,
 				230A73751FC58407009F7202 /* RecommendedListMoneyCell.xib in Resources */,
@@ -2234,6 +2449,7 @@
 				23D147591FBA9A2E0028CD09 /* FoodEvaluationListCell.xib in Resources */,
 				2316A28A1FAD71FE00A0B512 /* Assets.xcassets in Resources */,
 				23F4A7611FBBEFA0004C9266 /* trade.bundle in Resources */,
+				23137C481FD8F0C8008C69E0 /* CrowdfundingCell.xib in Resources */,
 				239F06FF1FB2F4020067D810 /* RecommendHeadView.xib in Resources */,
 				239F06F51FB2F4020067D810 /* FoodReservationFinishListCell.xib in Resources */,
 				23F4A74A1FBBEF3A004C9266 /* MyRechargeHeadCell.xib in Resources */,
@@ -2241,13 +2457,15 @@
 				232ED6D31FCCF22A00208BDD /* BRCity.plist in Resources */,
 				239F06EF1FB2F4020067D810 /* FoodReservationCodeCell.xib in Resources */,
 				236C44341FB4788000AC3010 /* FoodMerchantsCell.xib in Resources */,
+				23137C401FD8D704008C69E0 /* MineCrowdfundinHeadView.xib in Resources */,
 				2316A2881FAD71FE00A0B512 /* Main.storyboard in Resources */,
+				230A37FA1FD936E6005287D4 /* CrowdfundingPricePayCell.xib in Resources */,
 				23747F361FBD29A6007FD859 /* PaymentPasswordAlertVw.xib in Resources */,
 				2353EC241FB4080D005E1548 /* FoodOrderPackageCell.xib in Resources */,
 				232ED6D81FCCF22A00208BDD /* README.md in Resources */,
 				239F06F91FB2F4020067D810 /* RecommendedFoodView.xib in Resources */,
 				232D2FE21FCFE01F009FF21B /* MyScoresHeadView.xib in Resources */,
-				233C460A1FD6433700264592 /* MineChefDetailsHeadCell.xib in Resources */,
+				233C460A1FD6433700264592 /* ChefHeadCell.xib in Resources */,
 				2353EC201FB4047A005E1548 /* FoodOrderDetailsCell.xib in Resources */,
 				2320D3E11FBC3F7800A5B507 /* MineRechargeMessageCell.xib in Resources */,
 				23279ADF1FCE82F70097911C /* FoodSelectNumberDayCell.xib in Resources */,
@@ -2439,14 +2657,19 @@
 				2380936D1FB9813D0051EF3D /* DictionaryTransform.swift in Sources */,
 				238093821FB9A22D0051EF3D /* RegisterAndForgetPsdVC.swift in Sources */,
 				238093261FB97BAD0051EF3D /* ConstraintDescription.swift in Sources */,
+				230A37FD1FD93885005287D4 /* CrowdfundingPriceAgreementCell.swift in Sources */,
+				23137C3E1FD8D6F2008C69E0 /* MineCrowdfundinHeadView.swift in Sources */,
 				23D0E3E81FADA2740058EA34 /* BoutiqueTableViewCell.swift in Sources */,
 				2332CE161FCE48C700941BF3 /* FoodSearchCell.swift in Sources */,
+				23DDF7431FD7EFF300747B78 /* MineFinishCrowdfundingVC.swift in Sources */,
 				23F4A73B1FBBE8ED004C9266 /* MyBalanceView.swift in Sources */,
 				232ED6D01FCCF22A00208BDD /* BRDatePickerView.m in Sources */,
 				230BE0D31FB69B5800AD47E0 /* MineCollectionCell.swift in Sources */,
+				23DDF7341FD7C9B400747B78 /* ChefReservationVC.swift in Sources */,
 				2380937E1FB9813D0051EF3D /* TransformOperators.swift in Sources */,
 				2380936B1FB9813D0051EF3D /* DateFormatterTransform.swift in Sources */,
 				239F06F01FB2F4020067D810 /* FoodReservationFilliCell.swift in Sources */,
+				23DDF72A1FD7936500747B78 /* ChefControllerCell.swift in Sources */,
 				23C1CED81FC7B21F00AA8252 /* FoodMealDetailsModel.swift in Sources */,
 				2326A8791FCD4FF700E8CD83 /* FoodOrderCanteenModel.swift in Sources */,
 				2319F1451FBD921300EB0F14 /* FoodVolumeCodeCell.swift in Sources */,
@@ -2458,6 +2681,7 @@
 				23EECD6A1FBEFC7800CA274C /* LoginModel.swift in Sources */,
 				239F06F81FB2F4020067D810 /* RecommendedFoodView.swift in Sources */,
 				2325D9D21FCEB9CF0085BD80 /* FoodSelectNumberPeopleVw.swift in Sources */,
+				23DDF7451FD7F01A00747B78 /* MineFailureCrowdfundingVC.swift in Sources */,
 				2316A2E31FAD942C00A0B512 /* CrowdfundingController.swift in Sources */,
 				23F4A7491FBBEF3A004C9266 /* MyRechargeHeadCell.swift in Sources */,
 				230FA7651FB539C600190F2B /* FoodMerchantsListView.swift in Sources */,
@@ -2493,6 +2717,8 @@
 				2316A2851FAD71FE00A0B512 /* ViewController.swift in Sources */,
 				230BE0E31FB6A27600AD47E0 /* UIView+SGFrame.m in Sources */,
 				23CB44FF1FBBCD5800D8988D /* MineAddBankCardFinishVC.swift in Sources */,
+				23DDF73C1FD7EBCD00747B78 /* ChefPayFinishVC.swift in Sources */,
+				230A37F91FD936E6005287D4 /* CrowdfundingPricePayCell.swift in Sources */,
 				23D0E3FC1FADBCFD0058EA34 /* BoutiqueScrollView.m in Sources */,
 				2380932F1FB97BAD0051EF3D /* ConstraintLayoutSupportDSL.swift in Sources */,
 				2380932E1FB97BAD0051EF3D /* ConstraintLayoutSupport.swift in Sources */,
@@ -2507,6 +2733,7 @@
 				238093281FB97BAD0051EF3D /* ConstraintInsets.swift in Sources */,
 				236C442E1FB474EA00AC3010 /* FoodMerchantsHeadView.swift in Sources */,
 				23E214C61FB6EA1B00C7D085 /* MineInformationHeadCell.swift in Sources */,
+				23DDF7411FD7EFD400747B78 /* MineAllCrowdfundingVC.swift in Sources */,
 				238093751FB9813D0051EF3D /* ISO8601DateTransform.swift in Sources */,
 				23D1473F1FBA879D0028CD09 /* RigisterFinshVC.swift in Sources */,
 				238093251FB97BAD0051EF3D /* ConstraintConstantTarget.swift in Sources */,
@@ -2521,6 +2748,7 @@
 				230BE0CF1FB69B2A00AD47E0 /* MineCollectionVC.swift in Sources */,
 				23113BFA1FC65DEA00BE1784 /* FoodReservationPayVM.swift in Sources */,
 				232ED6DC1FCD3F2A00208BDD /* FoodMerchantsModel.swift in Sources */,
+				230A38001FD94668005287D4 /* CrowdfundingPayCouponsModel.swift in Sources */,
 				239F06EC1FB2F4020067D810 /* FoodReservationCell.swift in Sources */,
 				23747F301FBD2234007FD859 /* UIView+category.m in Sources */,
 				2380936C1FB9813D0051EF3D /* DateTransform.swift in Sources */,
@@ -2533,6 +2761,7 @@
 				238093691FB9813D0051EF3D /* CustomDateFormatTransform.swift in Sources */,
 				2316A2B41FAD8ACF00A0B512 /* MainTabBarController.swift in Sources */,
 				230BE1051FB6E2A900AD47E0 /* MineReservationExpiredVC.swift in Sources */,
+				23137C471FD8F0C8008C69E0 /* CrowdfundingCell.swift in Sources */,
 				23CF994D1FBC215B0002241F /* MineWithdrawVC.swift in Sources */,
 				2316A2E71FAD945600A0B512 /* ChefController.swift in Sources */,
 				2353EC231FB4080D005E1548 /* FoodOrderPackageCell.swift in Sources */,
@@ -2569,6 +2798,7 @@
 				232ED6D51FCCF22A00208BDD /* NSObject+YYModel.m in Sources */,
 				2380933E1FB97BAD0051EF3D /* ConstraintViewDSL.swift in Sources */,
 				238093231FB97BAD0051EF3D /* ConstraintAttributes.swift in Sources */,
+				23DDF7501FD7F0CC00747B78 /* MineCrowdfundingCell.swift in Sources */,
 				2319F1411FBD86D100EB0F14 /* FoodPaymentConsumptionVC.swift in Sources */,
 				238093321FB97BAD0051EF3D /* ConstraintMakerExtendable.swift in Sources */,
 				231A107C1FC2C67B00150257 /* LocationViewController.m in Sources */,
@@ -2576,13 +2806,14 @@
 				238092E31FB945100051EF3D /* MineSetCell.swift in Sources */,
 				230BE0F41FB6DAA600AD47E0 /* MineDiscountCouponsVC.swift in Sources */,
 				2380938A1FB9BFB60051EF3D /* ResponseData.swift in Sources */,
+				230A37EA1FD92C0C005287D4 /* CrowdfundingDetailsFoodVw.swift in Sources */,
 				236C44331FB4788000AC3010 /* FoodMerchantsCell.swift in Sources */,
 				239F06AD1FB2F3D30067D810 /* HomeController.swift in Sources */,
 				230BE0F91FB6DB1900AD47E0 /* MineExpiredCoupons.swift in Sources */,
 				239F06EE1FB2F4020067D810 /* FoodReservationCodeCell.swift in Sources */,
 				23D147581FBA9A2E0028CD09 /* FoodEvaluationListCell.swift in Sources */,
 				2332CE191FCE65CA00941BF3 /* FoodReservationVM.swift in Sources */,
-				233C46011FD6416900264592 /* MineChefVC.swift in Sources */,
+				233C46011FD6416900264592 /* MineChefDetailsVC.swift in Sources */,
 				2380937D1FB9813D0051EF3D /* TransformOf.swift in Sources */,
 				230BE0E21FB6A27600AD47E0 /* SGPageTitleView.m in Sources */,
 				2380937F1FB9813D0051EF3D /* TransformType.swift in Sources */,
@@ -2597,12 +2828,13 @@
 				239F07061FB2F4020067D810 /* FoodReservationPaymentCardCell.swift in Sources */,
 				2380933C1FB97BAD0051EF3D /* ConstraintView+Extensions.swift in Sources */,
 				239F070A1FB2F4020067D810 /* FoodPurchaseNotesCell.swift in Sources */,
+				23DDF72D1FD7989800747B78 /* ChefDetailsVC.swift in Sources */,
 				230F3C731FBAEA0900D188DB /* TggStarEvaluationView.m in Sources */,
 				2380932C1FB97BAD0051EF3D /* ConstraintLayoutGuide.swift in Sources */,
 				230BE0EF1FB6A4BE00AD47E0 /* MineExpensesRecordCell.swift in Sources */,
 				2320D3E01FBC3F7800A5B507 /* MineRechargeMessageCell.swift in Sources */,
 				2380932D1FB97BAD0051EF3D /* ConstraintLayoutGuideDSL.swift in Sources */,
-				233C46091FD6433700264592 /* MineChefDetailsHeadCell.swift in Sources */,
+				233C46091FD6433700264592 /* ChefHeadCell.swift in Sources */,
 				23E214C21FB6E91B00C7D085 /* MineInformationVC.swift in Sources */,
 				230FA7681FB53BF800190F2B /* FoodMerchantsListCell.swift in Sources */,
 				236C442B1FB474B700AC3010 /* FoodMerchantsVC.swift in Sources */,
@@ -2612,6 +2844,7 @@
 				238093881FB9BEFE0051EF3D /* BaseViewModel.swift in Sources */,
 				2380934A1FB97D240051EF3D /* ConstAPIURL.swift in Sources */,
 				2388E0A31FB00D0C00AB6853 /* MainViewController.swift in Sources */,
+				230A37F21FD9312F005287D4 /* CrowdfundingPayCouponsCell.swift in Sources */,
 				239F06A51FB2F3D30067D810 /* FoodMealDetailsVC.swift in Sources */,
 				23D0E3F31FADBC000058EA34 /* TYCyclePagerView.m in Sources */,
 				233C46051FD6431E00264592 /* MineChefDetailsCell.swift in Sources */,
@@ -2620,6 +2853,8 @@
 				23113BF41FC65D4400BE1784 /* FoodNormalOrderDetailsVM.swift in Sources */,
 				23747F271FBD2020007FD859 /* GLTextField.m in Sources */,
 				239F07081FB2F4020067D810 /* FoodReservationPaymentMethodCell.swift in Sources */,
+				23137C4A1FD9129E008C69E0 /* CrowdfundingVM.swift in Sources */,
+				23DDF73A1FD7CFCD00747B78 /* ChefReservationPayVC.swift in Sources */,
 				23D0E3E01FAD97B70058EA34 /* TopicTableViewCell.swift in Sources */,
 				232ED6DA1FCD3EFE00208BDD /* FoodMerchantsVM.swift in Sources */,
 				2316A2E51FAD944300A0B512 /* CollegeController.swift in Sources */,
@@ -2634,6 +2869,7 @@
 				236BC0431FD4E3340061AC15 /* FoodBannerDetailsVC.swift in Sources */,
 				2325D9D41FCEEAE80085BD80 /* FoodIntegralVM.swift in Sources */,
 				238093721FB9813D0051EF3D /* ImmutableMappable.swift in Sources */,
+				23137C3B1FD8D5C5008C69E0 /* MineCrowdfundingDetailsVC.swift in Sources */,
 				2326A87F1FCD5AD300E8CD83 /* FoodCanteenOrderDetailsVC.swift in Sources */,
 				239F06AE1FB2F3D30067D810 /* FoodRecommendDetailVC.swift in Sources */,
 				23286BE11FCD932000782A2C /* FoodSearchModel.swift in Sources */,
@@ -2642,6 +2878,7 @@
 				23D1473B1FBA84780028CD09 /* RigisterFinshView.swift in Sources */,
 				23F4A7661FBBEFA0004C9266 /* ZCTradeKeyboard.m in Sources */,
 				239F070E1FB2F4020067D810 /* FoodPurchaseSuccessView.swift in Sources */,
+				23DDF7361FD7CA8100747B78 /* ChefReservationDetailsVC.swift in Sources */,
 				231A10731FC2BF8A00150257 /* RecommendModel.swift in Sources */,
 				239F06AA1FB2F3D30067D810 /* FoodReservationPayVC.swift in Sources */,
 				238093701FB9813D0051EF3D /* FromJSON.swift in Sources */,
@@ -2650,12 +2887,14 @@
 				23747F2D1FBD207B007FD859 /* InputPaymentPasswordVw.m in Sources */,
 				232514621FD021A0002D436F /* MineScoresCell.swift in Sources */,
 				238093771FB9813D0051EF3D /* MapError.swift in Sources */,
+				232E2BBB1FD91C8200873C2F /* CrowdfundingDetailsVC.swift in Sources */,
 				23C1CED61FC7B10100AA8252 /* FoodMealDetailsVM.swift in Sources */,
 				2325E6691FD173BB00DE81D9 /* MineReservationDetailsVM.swift in Sources */,
 				23B67CFC1FBBD665000B18DB /* AddBankTextFieldCell.swift in Sources */,
 				239F06AF1FB2F3D30067D810 /* FoodVoucherDetailsVC.swift in Sources */,
 				2316A2E91FAD947300A0B512 /* MineController.swift in Sources */,
 				23D0E3F21FADBC000058EA34 /* TYCyclePagerTransformLayout.m in Sources */,
+				230A37EE1FD9304F005287D4 /* CrowdfundingPayCouponsVC.swift in Sources */,
 				2380932B1FB97BAD0051EF3D /* ConstraintLayoutGuide+Extensions.swift in Sources */,
 				238092DF1FB943D30051EF3D /* MineSetVC.swift in Sources */,
 				23F4A74E1FBBEF52004C9266 /* MyRechargeListCell.swift in Sources */,
@@ -2665,6 +2904,7 @@
 				230BE0E71FB6A34E00AD47E0 /* MineAllOrderVC.swift in Sources */,
 				238093761FB9813D0051EF3D /* Map.swift in Sources */,
 				230BE0E91FB6A37D00AD47E0 /* MineOrderEvaluatedVC.swift in Sources */,
+				23DDF7381FD7CD7B00747B78 /* ChefReservationPayFinishVC.swift in Sources */,
 				239F06A91FB2F3D30067D810 /* FoodPaymentCardCouponsVC.swift in Sources */,
 				23286BDF1FCD930C00782A2C /* FoodSearchVM.swift in Sources */,
 				238093381FB97BAD0051EF3D /* ConstraintPriority.swift in Sources */,
@@ -2676,6 +2916,7 @@
 				232D2FE11FCFE01F009FF21B /* MyScoresHeadView.swift in Sources */,
 				23118AC21FC55C8000B8CE33 /* RecommendMealCell.swift in Sources */,
 				2380933F1FB97BAD0051EF3D /* Debugging.swift in Sources */,
+				23DDF73E1FD7EF6500747B78 /* MineCrowdfundingVC.swift in Sources */,
 				2323931F1FB43B6E00425BDA /* FoodPackageOrderDetailsVC.swift in Sources */,
 				23F4A7631FBBEFA0004C9266 /* UIView+Extension.m in Sources */,
 				232584201FD14042009CDEBD /* MineScoresVM.swift in Sources */,
@@ -2688,11 +2929,15 @@
 				238093431FB97BAD0051EF3D /* Typealiases.swift in Sources */,
 				238093331FB97BAD0051EF3D /* ConstraintMakerFinalizable.swift in Sources */,
 				2326A87D1FCD554300E8CD83 /* FoodOrderPackageModel.swift in Sources */,
+				230A37E71FD91DE6005287D4 /* CrowdfundingDetailsCell.swift in Sources */,
+				23137C4C1FD912C3008C69E0 /* CrowdfundingModel.swift in Sources */,
 				23279AE21FCE83230097911C /* FoodSelectNumberTimeCell.swift in Sources */,
+				23DDF7311FD7991200747B78 /* ChefDetailsCell.swift in Sources */,
 				238092F61FB96D420051EF3D /* LoginVC.swift in Sources */,
 				2380937B1FB9813D0051EF3D /* Operators.swift in Sources */,
 				231EAA8B1FC6998300E022EB /* SDRefreshHeaderView.m in Sources */,
 				238093291FB97BAD0051EF3D /* ConstraintInsetTarget.swift in Sources */,
+				230A37F51FD93578005287D4 /* CrowdfundingPayVC.swift in Sources */,
 				23C7FFBA1FC285D300BEE237 /* HomeModel.swift in Sources */,
 				238093311FB97BAD0051EF3D /* ConstraintMakerEditable.swift in Sources */,
 				239F070C1FB2F4020067D810 /* FoodPurchaseNotesHeadView.swift in Sources */,

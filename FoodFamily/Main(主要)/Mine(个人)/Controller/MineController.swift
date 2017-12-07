@@ -66,14 +66,19 @@ class MineController: MainViewController,MineInformationDelegate {
             break
             
         case 5:
-            let mineInformationVC = MineInformationVC()
-            mineInformationVC.delegate = self
-            self.navigationController?.pushViewController(mineInformationVC, animated: true)
+            let mineCrowdfundingVC = MineCrowdfundingVC()
+            self.navigationController?.pushViewController(mineCrowdfundingVC, animated: true)
             break
             
         case 6:
-            let mineChefVC = MineChefVC()
-            self.navigationController?.pushViewController(mineChefVC, animated: true)
+            let mineChefDetailsVC = MineChefDetailsVC()
+            self.navigationController?.pushViewController(mineChefDetailsVC, animated: true)
+            break
+            
+        case 10:
+            let mineInformationVC = MineInformationVC()
+            mineInformationVC.delegate = self
+            self.navigationController?.pushViewController(mineInformationVC, animated: true)
             break
             
         default:
@@ -84,7 +89,7 @@ class MineController: MainViewController,MineInformationDelegate {
     lazy var headView: MineHeadView = {
         let view = Bundle.main.loadNibNamed("MineHeadView", owner: nil, options: nil)?.last as! MineHeadView
         view.mineHeadCallBack = {() in
-            self.pushNextViewController(type: 5)
+            self.pushNextViewController(type: 10)
         }
         return view
     }()
